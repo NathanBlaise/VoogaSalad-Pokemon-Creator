@@ -1,0 +1,1 @@
+This package aims to manage the data and let data save to or load from files in resources.

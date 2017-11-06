@@ -1,0 +1,1 @@
+This package aims to hold all the classes for running the game and showing the game on screen, and call the APIs in engine when neccessary.

@@ -1,0 +1,1 @@
+This package aims to hold classes for editing the game configuration on front-end and convert it into a file after saving.

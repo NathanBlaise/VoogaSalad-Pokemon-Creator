@@ -1,0 +1,1 @@
+This package aims to give the users a splash screen and let them choose to go to the *play mode* or *edit mode*.

@@ -1,0 +1,1 @@
+This package provides a set of APIs to develop the game, such as collision, running a battle.
