@@ -1,0 +1,11 @@
+/* 
+	if you cannot edit css in Eclipse, please try to follow the first answer in:
+		https://stackoverflow.com/questions/43389337/autocomplete-von-available-css-classes-in-html-javascript-jquery-in-eclipse/43549935#43549935
+	if then there is still problems, please try to follow the first answer in:
+		https://stackoverflow.com/questions/7900575/how-to-add-css-autocomplete-to-eclipse */
+
+.root {
+ -fx-spacing: 30;
+ -fx-background: #000000;
+}
+

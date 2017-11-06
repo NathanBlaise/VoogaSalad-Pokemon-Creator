@@ -1,0 +1,1 @@
+This directory aims to put all the files of Unit Testing, in order to let different parts of the group have different Main class to test.
