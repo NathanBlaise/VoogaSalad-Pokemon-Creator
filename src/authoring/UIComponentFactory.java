@@ -1,5 +1,11 @@
 package authoring;
 
+import javax.swing.event.HyperlinkEvent.EventType;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.MenuItem;
+
 /**
  * 
  * @author cy122
@@ -8,5 +14,9 @@ package authoring;
  */
 
 public class UIComponentFactory {
-
+	static public MenuItem createMenuItem(String title, EventHandler<ActionEvent> handler){
+		MenuItem result =  new MenuItem(title);
+		result.setOnAction(handler);
+		return result;
+	}
 }
