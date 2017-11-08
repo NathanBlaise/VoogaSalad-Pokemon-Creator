@@ -1,7 +1,5 @@
 package authoring;
 
-import javax.swing.event.HyperlinkEvent.EventType;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.MenuItem;
