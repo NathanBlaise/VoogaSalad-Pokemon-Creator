@@ -1,17 +1,62 @@
 import start.SplashScreen;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import java.util.ArrayList;
+import authoring.BasicAuthorScreen;
+import authoring.SceneController;
+import authoring.ScreenDisplay;
+import authoring.StageDelegate;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
-public class Main extends Application{
-
+public class Main extends Application implements StageDelegate{
+	
+	private Stage myStage;
+	private ArrayList <Scene> myList;
+	private SceneController scControl;
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		new SplashScreen(primaryStage);
+		myStage = primaryStage;
+		scControl = new SceneController(this);
+		myList = scControl.getScList();
+		new SplashScreen(primaryStage,this);
+		
 	}
+
+	
+	@Override
+	public void GoButtonPressed() {
+		if (scControl.currentIndex < myList.size() - 1)
+		scControl.currentIndex +=1;
+		myStage.setScene(myList.get(scControl.currentIndex));
+		System.out.println("I am currently at scene " + scControl.currentIndex );
+		
+	}
+
+	@Override
+	public void BackButtonPressed() {
+		if (scControl.currentIndex > 0)
+			scControl.currentIndex -=1;
+			myStage.setScene(myList.get(scControl.currentIndex));
+			System.out.println("I am currently at scene " + scControl.currentIndex );
+		
+		
+	}
+
+	@Override
+	public void toFirstAuthorScene() {
+
+		myStage.setScene(myList.get(scControl.currentIndex));
+		//System.out.println("0");
+		
+	}
+	
+	
 
 }

@@ -6,24 +6,6 @@
 
 .root {
  -fx-spacing: 30;
- -fx-background: #3176B8;
-}
-
-.menu .label{
-	-fx-text-fill: white;
-	-fx-background: #3176B8;
-}
-
-/*https://stackoverflow.com/questions/12299162/how-to-style-menu-button-and-menu-items*/
-.context-menu {
-    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
-    -fx-background-color: #3176B8;
-}
-
-.menu-bar{
-	-fx-background-color: #3176B8;
-	-fx-border-color: #FFFFFF;
-	-fx-border-width: 0 0 3 0;
-	-fx-opacity: 0.7;
+ -fx-background: #000000;
 }
 
