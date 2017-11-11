@@ -1,6 +1,7 @@
 package authoring.dragdrop;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -13,10 +14,10 @@ import javafx.scene.layout.RowConstraints;
  * @author supertony
  *
  */
-public class DBMap {
+public class DBMap implements cellDelegate {
 	/*final variable*/
-	final private static int   PANE_WIDTH_NUMBER = 10;
-	final private static int  PANE_HEIGHT_NUMBER = 15;
+	final private static int   PANE_WIDTH_NUMBER = 15;
+	final private static int  PANE_HEIGHT_NUMBER = 10;
 	final private static int PANE_CELL_SIZE = 48;
 	/*instance variable*/
 	private GridPane myPane;
@@ -30,8 +31,8 @@ public class DBMap {
 		myCell = new DBCell[PANE_HEIGHT_NUMBER][PANE_WIDTH_NUMBER];
 		for (int i = 0; i < PANE_HEIGHT_NUMBER; i++) {
 			for (int j = 0; j < PANE_WIDTH_NUMBER; j++) {
-				myCell[i][j] = new DBCell(i,j,myPane);
-				myCell[i][j].UpdateDBCell(myPane);
+				myCell[i][j] = new DBCell(i,j,myPane,this);
+				
 			}
 		}
 		
@@ -48,12 +49,12 @@ public class DBMap {
 		//initialize the grid pane
 		myPane = new GridPane();
 		
-		for(int i = 0; i < PANE_HEIGHT_NUMBER ; i++) {
+		for(int i = 0; i < PANE_WIDTH_NUMBER ; i++) {
 			ColumnConstraints column = new ColumnConstraints(PANE_CELL_SIZE);
 			myPane.getColumnConstraints().add(column);
 		}
 
-	    for(int i = 0; i < PANE_WIDTH_NUMBER ; i++) {
+	    for(int i = 0; i < PANE_HEIGHT_NUMBER ; i++) {
 	        RowConstraints row = new RowConstraints(PANE_CELL_SIZE);
 	        myPane.getRowConstraints().add(row);
 	    }
@@ -66,5 +67,75 @@ public class DBMap {
 		return myPane;
 	}
 
+
+
+
+	
+	@Override
+	public void updateCellList(DBCell dbCell) {
+		//update my Cell
+		myCell[dbCell.getCellRow()][dbCell.getCellCol()] = dbCell;
+	}
+
+
+
+
+	@Override
+	public boolean checkSurroundingCells(int col, int row) {
+		
+			/*myGrid.add(new ImageView(db.getImage()), row-1,col);
+	    	myGrid.add(new ImageView(), row-1, col+1);
+	    	myGrid.add(new ImageView(), row-1, col-1);
+	    	myGrid.add(new ImageView(), row, col-1);
+	    	myGrid.add(new ImageView(), row, col+1);
+	    	myGrid.add(new ImageView(), row, col);
+	    	myGrid.add(new ImageView(), row-2, col+1);
+	    	myGrid.add(new ImageView(), row-2, col-1);
+	    	myGrid.add(new ImageView(), row-2, col);*/
+		
+		for (int i = col-1; i <= col+1; i++) {
+			for (int j = row-1; j <= row+1; j++) {
+				if (i>=0 && j>= 0 && i < PANE_WIDTH_NUMBER && j < PANE_HEIGHT_NUMBER ) {
+					System.out.println("col: " + col +" row: " + row);
+					System.out.println("x cor: " + i +" y cor: " + j);
+					if (myCell[j][i].getState() == false) {
+						System.out.println("x cor: " + i +" y cor: " + j + " openState: "+ myCell[j][i].getState());
+						return false;
+					}
+					
+				}
+				else {
+					return false;
+				}
+			}
+		}
+		
+		return true;
+		
+	}
+
+
+
+
+	@Override
+	public void UpdateSurroundingCells(int col,int row) {
+		
+		for (int i = col-1; i <= col+1; i++) {
+			for (int j = row-1; j <= row+1; j++) {
+				if (i>=0 && j>= 0 && !(i == col && j == row) && i < PANE_HEIGHT_NUMBER && j < PANE_WIDTH_NUMBER) {
+					myCell[j][i].setState(false);
+					myPane.add(new ImageView(), j, i);
+					
+				}
+			}
+		}
+		
+	}
+	
+	
+
+	
+	
+	
 
 }

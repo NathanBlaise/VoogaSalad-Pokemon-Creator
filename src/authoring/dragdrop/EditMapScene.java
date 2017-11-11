@@ -61,5 +61,27 @@ public class EditMapScene extends BasicAuthorScreen {
 	*/
 	
 	}
+	
+	
+	/**
+	 * The public method to pass the map to next scene
+	 * @return myMap
+	 */
+	public DBMap passMyMap() {
+		DBMap myMapCopy = myMap;
+		return myMapCopy;
+	}
+	
+	
+	/**
+	 * @param map: pass in the map from the scene before
+	 * 
+	 */
+	public void setMyMap(DBMap map) {
+		myMap = map;
+		this.rootRemove(myMap.getGrid());
+		this.rootAdd(myMap.getGrid(),200,0);
+	}
+	
 
 }
