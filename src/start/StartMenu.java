@@ -1,22 +1,24 @@
 package start;
 
-import authoring.UIComponentFactory;
-import javafx.animation.KeyFrame;
-import javafx.animation.RotateTransition;
-import javafx.animation.Timeline;
+import engine.UI.Fade;
+import authoring.Author;
+import authoring.StageDelegate;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-public class NewSplashScreen {
+/**
+ * 
+ * @author cy122
+ * 
+ * Showing the menu to user
+ *
+ */
+
+public class StartMenu {
 	private Scene scene;
 	private Pane root = new Pane();
 	
@@ -28,7 +30,7 @@ public class NewSplashScreen {
 	private final static double AreaHeight = 50.0;
 	
 	
-	public NewSplashScreen(Stage stage) {
+	public StartMenu(Stage stage) {
 //		root.getChildren().add(createMenuBar());
 		root.getChildren().add(createSplashMenu());
 		root.getChildren().add(createLogo());
@@ -56,7 +58,7 @@ public class NewSplashScreen {
 				if((x>=NewX)&&(x<=NewX+AreaWidth)){
 					//TODO create a new file in default configuration and let user edit this file
 				}else if((x>=EditX)&&(x<=EditX+AreaWidth)){
-					//TODO go to a existed file and let user edit it
+					goEdit();
 				}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
 					//TODO go to player
 				}
@@ -64,8 +66,11 @@ public class NewSplashScreen {
 		});
 		
 		
+		Fade.fadeIn(root, null).play();
+		
 		stage.setScene(scene);
 		stage.show();
+		stage.centerOnScreen();
 	}
 
 	private ImageView createLogo() {
@@ -74,24 +79,31 @@ public class NewSplashScreen {
 		imageView.setFitWidth(400);
 		imageView.setX(470);
 		imageView.setY(100);
-		RotateTransition rt = new RotateTransition(Duration.millis(600), imageView);
-		rt.setByAngle(360);
-		rt.setCycleCount(2);
-		rt.setAutoReverse(true);
-		new Timeline(new KeyFrame(Duration.seconds(1), e->rt.play())).play();
+//		RotateTransition rt = new RotateTransition(Duration.millis(600), imageView);
+//		rt.setByAngle(360);
+//		rt.setCycleCount(2);
+//		rt.setAutoReverse(true);
+//		new Timeline(new KeyFrame(Duration.seconds(1), e->rt.play())).play();
 		return imageView;
 	}
 	
-	private MenuBar createMenuBar(){
-		MenuItem createMenu = UIComponentFactory.createMenuItem("New", e->{});
-		MenuItem authorMenu = UIComponentFactory.createMenuItem("Edit", e->{});
-		MenuItem playMenu = UIComponentFactory.createMenuItem("Play", e->{});
-		return new MenuBar(new Menu("File",null,createMenu,authorMenu,playMenu));
-	}
+//	private MenuBar createMenuBar(){
+//		MenuItem createMenu = UIComponentFactory.createMenuItem("New", e->{});
+//		MenuItem authorMenu = UIComponentFactory.createMenuItem("Edit", e->{});
+//		MenuItem playMenu = UIComponentFactory.createMenuItem("Play", e->{});
+//		return new MenuBar(new Menu("File",null,createMenu,authorMenu,playMenu));
+//	}
 	
 	private ImageView createSplashMenu(){
 		ImageView imageView = new ImageView(new Image("resources/splashImage2.png"));
 		return imageView;
+	}
+	
+	private void goEdit(){
+		Stage editorStage = new Stage();
+		StageDelegate editor = new Author(editorStage);
+		editorStage.show();
+		editor.toFirstAuthorScene();
 	}
 	
 }

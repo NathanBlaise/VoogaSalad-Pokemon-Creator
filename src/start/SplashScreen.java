@@ -1,28 +1,32 @@
 package start;
 
-import authoring.StageDelegate;
+import engine.UI.Fade;
 import javafx.animation.KeyFrame;
 import javafx.animation.RotateTransition;
 import javafx.animation.Timeline;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCodeCombination;
-import javafx.scene.input.KeyCombination;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * 
+ * @author cy122
+ *
+ * splash screen: showing to user about loading the program and showing the Logo
+ *
+ */
+
 public class SplashScreen {
+	private Stage mainStage;
 	private Scene scene;
 	private VBox root = new VBox();
-	private StageDelegate sH;
 	
-	public SplashScreen(Stage stage, StageDelegate stageHelper) {
+	public SplashScreen(Stage stage) {
+		mainStage=stage;
+		
 		root.getChildren().addAll(createLogo());
 		
 		scene = new Scene(root,320,180);
@@ -30,12 +34,9 @@ public class SplashScreen {
 		
 		stage.setScene(scene);
 		stage.show();
-		
-		//set key event
-		sH = stageHelper;
-		scene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
-		
 	}
+	
+	
 	private ImageView createLogo() {
 		ImageView imageView = new ImageView(new Image("resources/splashImage.png"));
 		imageView.setPreserveRatio(true);
@@ -44,16 +45,9 @@ public class SplashScreen {
 		rt.setByAngle(360);
 		rt.setCycleCount(2);
 		rt.setAutoReverse(true);
+		rt.setOnFinished(e -> {Fade.fadeOut(root, (a)->{new StartMenu(mainStage);}).play();});
 		new Timeline(new KeyFrame(Duration.seconds(1), e->rt.play())).play();
 		return imageView;
-	}
-	
-	
-	private void handleKeyInput (KeyCode code) {
-		if (code == KeyCode.SPACE) {
-			sH.toFirstAuthorScene();
-		}
-		
 	}
 	
 }
