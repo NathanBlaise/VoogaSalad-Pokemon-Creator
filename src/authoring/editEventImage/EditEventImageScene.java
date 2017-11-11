@@ -27,6 +27,16 @@ public class EditEventImageScene extends BasicAuthorScreen {
 		
 	}
 	
+	/**
+	 * The public method to pass the map to next scene
+	 * @return myMap
+	 */
+	public DBMap passMyMap() {
+		DBMap myMapCopy = myMap;
+		return myMapCopy;
+	}
+	
+	
 	
 	/**
 	 * @param map: pass in the map from the scene before

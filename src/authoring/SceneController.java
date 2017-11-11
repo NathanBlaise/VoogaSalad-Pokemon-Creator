@@ -49,7 +49,14 @@ public class SceneController {
 	/**
 	 * Pass the map from the first scene to the second one
 	 */
-	public void passMap() {
+	public void passMapForward() {
 		eeis.setMyMap(bsc.passMyMap());
 	}
+	
+	public void passMapBackward() {
+		bsc.setMyMap(eeis.passMyMap());
+	}
+	
 }
+	
+	

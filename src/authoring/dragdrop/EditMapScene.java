@@ -71,5 +71,17 @@ public class EditMapScene extends BasicAuthorScreen {
 		DBMap myMapCopy = myMap;
 		return myMapCopy;
 	}
+	
+	
+	/**
+	 * @param map: pass in the map from the scene before
+	 * 
+	 */
+	public void setMyMap(DBMap map) {
+		myMap = map;
+		this.rootRemove(myMap.getGrid());
+		this.rootAdd(myMap.getGrid(),200,0);
+	}
+	
 
 }

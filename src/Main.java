@@ -35,7 +35,7 @@ public class Main extends Application implements StageDelegate{
 	public void GoButtonPressed() {
 		if (scControl.currentIndex < myList.size() - 1)
 		// pass the map to the next scene
-	    scControl.passMap();
+	    scControl.passMapForward();
 		scControl.currentIndex +=1;
 		myStage.setScene(myList.get(scControl.currentIndex));
 		System.out.println("I am currently at scene " + scControl.currentIndex );
@@ -45,6 +45,7 @@ public class Main extends Application implements StageDelegate{
 	@Override
 	public void BackButtonPressed() {
 		if (scControl.currentIndex > 0)
+			scControl.passMapBackward();
 			scControl.currentIndex -=1;
 			myStage.setScene(myList.get(scControl.currentIndex));
 			System.out.println("I am currently at scene " + scControl.currentIndex );
