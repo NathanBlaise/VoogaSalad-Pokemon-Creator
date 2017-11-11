@@ -22,41 +22,70 @@ public class DBCell {
 	/*instance variables*/
 	private ImageView image;
 	private DBEvent myEvent;
+	private Boolean openState;
 	private int row;
 	private int col;
 	private GridPane myGrid;
+	private cellDelegate app;
 	
 	/*ordinary cell constructor*/
-	public DBCell(int row, int col, Image image, DBEvent event, GridPane grid) {
+	public DBCell(int row, int col, Image image, DBEvent event, GridPane grid, cellDelegate app) {
 		this.row = row;
 		this.col = col;
 		this.image = new ImageView(image);
 		this.myEvent = event;
 		this.myGrid = grid;
+		this.app = app;
+		this.openState = true;
 		setDragTarget();
+		myGrid.add(this.image,col,row);
+	
 	}
 	
 	
 	/*default cell constructor for the initial map*/
-	public DBCell(int row, int col, GridPane grid) {
+	public DBCell(int row, int col, GridPane grid,cellDelegate app) {
 		this.row = row;
 		this.col = col;
 		this.image = new ImageView(new Image(REGTILE_PATH));
 		this.myEvent = new DBEvent();
 		this.myGrid = grid;
+		this.app = app;
 		setDragTarget();
+		myGrid.add(this.image,col,row);
+		this.openState = true;
 		
 	}
 	
 	
 	/**
-	 * @param myGrid: the grid pane you want to put the cell in
+	 * @param newImage: the image you want to change 
 	 * add a imageView into a specific cell given by the coordinate of int row, int col
 	 */
-	public void UpdateDBCell(GridPane grid) {
-		grid.add(image,row,col);
+	public DBCell UpdateDBCell(ImageView newImage) {
+		this.image = newImage;
+		app.updateCellList(this);
+		myGrid.add(image,col,row);
+		setDragTarget();
+		return this;
 	}
 	
+	
+	public int getCellRow() {
+		return row;
+	}
+	
+	public int getCellCol() {
+		return col;
+	}
+	
+	public boolean getState() {
+		return openState;
+	}
+	
+	public void setState(boolean newState) {
+		this.openState = newState;
+	}
 
 	
 	/**
@@ -110,21 +139,16 @@ public class DBCell {
 	             Dragboard db = event.getDragboard();
 	             boolean success = false;
 	             if (db.hasImage()) {
-	                if (db.hasString() ) {
-	                	myGrid.add(new ImageView(db.getImage()), row-1,col);
-	                	myGrid.add(new ImageView(), row-1, col+1);
-	                	myGrid.add(new ImageView(), row-1, col-1);
-	                	myGrid.add(new ImageView(), row, col-1);
-	                	myGrid.add(new ImageView(), row, col+1);
-	                	myGrid.add(new ImageView(), row, col);
-	                	myGrid.add(new ImageView(), row-2, col+1);
-	                	myGrid.add(new ImageView(), row-2, col-1);
-	                	myGrid.add(new ImageView(), row-2, col);
-	                	
+	            	 	System.out.println(app.checkSurroundingCells(col, row) == true );
+	                if (db.hasString()){
+	                		if (app.checkSurroundingCells(col, row) == true) {
+	                	myGrid.add(new ImageView(db.getImage()), col-1,row);
+	                	app.UpdateSurroundingCells(col,row);
 	                	success = true;
+	                		}
+
 	                } else {
-	                 image = new ImageView(db.getImage());
-	                 UpdateDBCell(myGrid);
+	                 UpdateDBCell(new ImageView(db.getImage()));
 	                 success = true;
 	                }
 	             }

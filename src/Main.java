@@ -6,6 +6,7 @@ import authoring.BasicAuthorScreen;
 import authoring.SceneController;
 import authoring.ScreenDisplay;
 import authoring.StageDelegate;
+import authoring.dragdrop.EditMapScene;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -33,6 +34,8 @@ public class Main extends Application implements StageDelegate{
 	@Override
 	public void GoButtonPressed() {
 		if (scControl.currentIndex < myList.size() - 1)
+		// pass the map to the next scene
+	    scControl.passMap();
 		scControl.currentIndex +=1;
 		myStage.setScene(myList.get(scControl.currentIndex));
 		System.out.println("I am currently at scene " + scControl.currentIndex );
@@ -54,7 +57,6 @@ public class Main extends Application implements StageDelegate{
 
 		myStage.setScene(myList.get(scControl.currentIndex));
 		//System.out.println("0");
-		
 	}
 	
 	
