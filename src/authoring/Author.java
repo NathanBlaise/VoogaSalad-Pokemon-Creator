@@ -5,6 +5,14 @@ import java.util.ArrayList;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * @author cy122, hy133
+ * 
+ * Author holds the key components and display the authoring environment to user
+ *
+ */
+
 public class Author implements StageDelegate{
 	private Stage myStage;
 	private ArrayList <Scene> myList;

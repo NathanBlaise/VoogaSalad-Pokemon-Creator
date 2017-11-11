@@ -1,6 +1,6 @@
 package start;
 
-import engine.UI_API.Fade;
+import engine.UI.Fade;
 import authoring.Author;
 import authoring.StageDelegate;
 import javafx.scene.Cursor;
@@ -9,6 +9,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+/**
+ * 
+ * @author cy122
+ * 
+ * Showing the menu to user
+ *
+ */
 
 public class StartMenu {
 	private Scene scene;

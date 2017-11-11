@@ -1,19 +1,23 @@
 package start;
 
-import engine.UI_API.Fade;
-import javafx.animation.FadeTransition;
+import engine.UI.Fade;
 import javafx.animation.KeyFrame;
 import javafx.animation.RotateTransition;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+/**
+ * 
+ * @author cy122
+ *
+ * splash screen: showing to user about loading the program and showing the Logo
+ *
+ */
 
 public class SplashScreen {
 	private Stage mainStage;

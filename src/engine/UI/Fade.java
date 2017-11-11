@@ -1,4 +1,4 @@
-package engine.UI_API;
+package engine.UI;
 
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
