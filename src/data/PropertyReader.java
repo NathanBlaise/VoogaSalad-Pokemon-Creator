@@ -4,6 +4,8 @@ package data;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 
@@ -48,5 +50,17 @@ public class PropertyReader{
 	
 	public String getString(String key){
 		return property.getProperty(key);
+	}
+	
+	public Map<String,String> getMap(String name){
+		Map<String,String> result = new HashMap<String,String>();
+		String[] keys = property.getProperty(name).split(",");
+		for(String key:keys){
+			String value = property.getProperty(key);
+			if(value!=null){
+				result.put(key, value);
+			}
+		}
+		return result;
 	}
 }

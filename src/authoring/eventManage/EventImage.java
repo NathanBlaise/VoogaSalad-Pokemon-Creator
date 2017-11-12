@@ -27,9 +27,9 @@ public class EventImage extends BorderPane{
 		Image image = new Image(new File(imagePath).toURI().toString());
 		imageHolder = new ImageView(image);
 		setCenter(imageHolder);
-		setTop(new Label("↓Double Click To Change Image"));
-		String style_outter="-fx-border-color: black;-fx-border-style: solid;-fx-border-width: 5;";
-		imageHolder.setStyle(style_outter);
+		setTop(new Label("↓Double Click to Change Image"));
+		String style_outter="-fx-border-color: #F5FFFA;-fx-border-style: solid;-fx-border-width: 5;-fx-background-color: #F5FFFA;";
+		super.setStyle(style_outter);
 		imageHolder.setOnMouseEntered(e->{setCursor(Cursor.HAND);});
 		imageHolder.setOnMouseExited(e->{setCursor(Cursor.DEFAULT);});
 		this.imagePath = new String(imagePath);
@@ -50,6 +50,7 @@ public class EventImage extends BorderPane{
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Open Resource File");
 		fileChooser.setInitialDirectory(new File("images"));
+		fileChooser.setInitialFileName("default.png");
 		File file = fileChooser.showOpenDialog(window);
 		if(file!=null){
 			Image newImage = new Image(file.toURI().toString());
