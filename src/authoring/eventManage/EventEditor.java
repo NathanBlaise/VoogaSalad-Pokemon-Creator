@@ -24,7 +24,7 @@ public class EventEditor {
 	private BorderPane root = new BorderPane();
 	private EventImage eventImage;
 	//TODO: load the actual data into this
-	private EventInstructions eventInstructions = new EventInstructions(new HashMap<String,String>());
+	private EventInstructions eventInstructions = new EventInstructions(new PropertyReader("../resources/English.properties").getMap("Instructions"));
 	private Scene scene = new Scene(root);
 	
 	public EventEditor(EventImage eventImage){
@@ -32,7 +32,8 @@ public class EventEditor {
 		this.eventImage.addFileChooser(root);
 		//TODO: add the whole components to event editor
 		root.setLeft(eventImage);
-		root.setCenter(eventInstructions);
+		root.setCenter(eventInstructions.getListView());
+		stage.setTitle("Event Editor");
 		stage.setScene(scene);
 		stage.show();
 	}

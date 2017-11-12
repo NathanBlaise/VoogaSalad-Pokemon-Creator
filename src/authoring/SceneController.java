@@ -2,6 +2,7 @@ package authoring;
 
 import java.util.ArrayList;
 
+import authoring.databaseEditor.DatabaseScene;
 import authoring.dragdrop.DBMap;
 import authoring.dragdrop.EditMapScene;
 import authoring.editEventImage.EditEventImageScene;
@@ -22,6 +23,7 @@ public class SceneController {
 	public int currentIndex = 0;
 	private EditMapScene bsc;
 	private EditEventImageScene  eeis;
+	private DatabaseScene dbs;
 	
 	public SceneController(StageDelegate app){
 		sceneList = new ArrayList<Scene>();
@@ -30,6 +32,10 @@ public class SceneController {
 			// create an Editing Map Screen
 			bsc = new EditMapScene(Color.WHITE,app);
 			sceneList.add(bsc.getScene());
+			
+			//create Database Screen
+			dbs = new DatabaseScene(Color.WHITE,app);
+			sceneList.add(dbs.getScene());
 			
 			// create a Event Picture Screen
 			eeis = new EditEventImageScene(Color.WHITE,app);

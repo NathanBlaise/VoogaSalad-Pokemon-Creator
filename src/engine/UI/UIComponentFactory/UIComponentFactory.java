@@ -1,4 +1,4 @@
-package authoring;
+package engine.UI.UIComponentFactory;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
