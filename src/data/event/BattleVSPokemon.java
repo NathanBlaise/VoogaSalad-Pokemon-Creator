@@ -10,7 +10,7 @@ public class BattleVSPokemon extends Instruction implements Serializable{
 
 
 	@Override
-	public void execute(Object parameter) {
+	public void execute(Object... parameters) {
 		// TODO call the API in Engine to begin a battle with pokemon
 		
 	}

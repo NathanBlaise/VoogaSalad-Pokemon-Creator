@@ -1,4 +1,4 @@
-package tests;
+package tests.authoring;
 
 import java.io.File;
 import data.PropertyReader;

@@ -22,6 +22,9 @@ public class BasicAuthorScreen extends ScreenDisplay{
 	private Button BackScene;
 	private StageDelegate stageHelper;
 
+	
+	private final static int BUTTONX = 600;
+	private final static int BUTTONY = 500;
 
 	public BasicAuthorScreen(int width, int height, Paint background,StageDelegate stageHelper) {
 		super(width, height, background);
@@ -59,10 +62,26 @@ public class BasicAuthorScreen extends ScreenDisplay{
 		
 		ButtonBox.getChildren().add(NextScene);
 		ButtonBox.getChildren().add(BackScene);
-		ButtonBox.setLayoutX(600);
-		ButtonBox.setLayoutY(500);
+		ButtonBox.setLayoutX(BUTTONX);
+		ButtonBox.setLayoutY(BUTTONY);
 		this.rootAdd(ButtonBox);
 		
+	}
+	
+	protected int getHeight(){
+		return HEIGHT;
+	}
+	
+	protected int getWidth(){
+		return WIDTH;
+	}
+	
+	protected int getButtonX(){
+		return BUTTONX;
+	}
+	
+	protected int getButtonY(){
+		return BUTTONY;
 	}
 	
 }

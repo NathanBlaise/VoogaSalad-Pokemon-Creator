@@ -9,19 +9,18 @@ import authoring.BasicAuthorScreen;
 import authoring.StageDelegate;
 
 public class DatabaseScene extends BasicAuthorScreen {
-	private TabPane tabPane = new TabPane();
+	private TabPane tabPane;
+//	AnchorPane anchorPaneContent = new AnchorPane();
 
 	public DatabaseScene(Color white, StageDelegate app) {
 		super(white,app);
 		Tab tabMonster = new Tab("Edit Monster");
 		Tab tabNPC = new Tab("Edit NPC");
-		Tab tabPlayer = new Tab("Edit Player");
-		tabPane.getTabs().add(tabMonster);
-		tabPane.getTabs().add(tabNPC);
-		tabPane.getTabs().add(tabPlayer);
-		tabPane.setSide(Side.LEFT);
+		tabPane = new TabPane(tabMonster, tabNPC, new PlayerTab().getTab());
+		tabPane.setSide(Side.TOP);
 		tabPane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
-		this.rootAdd(tabPane);
+		tabPane.setPrefSize(getWidth(), getButtonY());
+		this.getRootChildren().add(tabPane);
 	}
 
 }

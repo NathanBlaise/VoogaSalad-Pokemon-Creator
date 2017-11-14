@@ -14,6 +14,6 @@ public abstract class Instruction implements Serializable{
 	
 	//the execute instruction should call the related API in engine.
 	// For example, if an instruction is to begin a battle, 
-	// it should call the API of Engine related with beginning the battle in execute(Object) 
-	public abstract void execute(Object parameter);
+	// it should call the API of Engine related with beginning the battle in execute(Object...) 
+	public abstract void execute(Object... parameters);
 }
