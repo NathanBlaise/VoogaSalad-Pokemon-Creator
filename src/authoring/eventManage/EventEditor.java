@@ -1,13 +1,9 @@
 package authoring.eventManage;
 
-import java.io.File;
-import java.io.InputStream;
-import java.util.HashMap;
 
 import data.PropertyReader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
