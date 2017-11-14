@@ -54,7 +54,7 @@ public class PokemonRace implements Serializable{
 		return maxLevel;
 	}
 	
-	public Iterable<Move> getAvailableMoves(int currentLevel){
+	protected Iterable<Move> getAvailableMoves(int currentLevel){
 		Vector<Move> availableMoves = new Vector<Move>();
 		for(int i:levelMoves.keySet()){
 			if(i<=currentLevel){
@@ -64,15 +64,15 @@ public class PokemonRace implements Serializable{
 		return availableMoves;
 	}
 	
-	public PokemonStat getCurrentStat(int currentLevel){
+	protected PokemonStat getCurrentStat(int currentLevel){
 		return new PokemonStat(levelStats.get(currentLevel));
 	}
 	
-	public Double getUpNeededExp(int currentLevel){
+	protected Double getUpNeededExp(int currentLevel){
 		return new Double(levelExp.get(currentLevel));
 	}
 	
-	public String levelEvolutionImagePath(int currentLevel){
+	protected String levelEvolutionImagePath(int currentLevel){
 		String currentImagePath = "";
 		for(int i:levelMoves.keySet()){
 			if(i<=currentLevel){

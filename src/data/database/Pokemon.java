@@ -36,10 +36,9 @@ public class Pokemon extends PokemonRace implements Serializable{
 	/**
 	 * level up automatically
 	 * @param experience - the experience got after a battle
-	 * @param HP - the HP after battle ends
 	 * @return levelUp - whether Level is up. cannot make sure whether level up more than 1 if boolean is true.
 	 */
-	public boolean absorbExperience(double HP, double experience){
+	public boolean absorbExperience(double experience){
 		int originLevel = currentLevel;
 		double restExp = experience;
 		while((currentLevel!=super.getMaxLevel())&&(restExp>0.0)){
@@ -79,14 +78,6 @@ public class Pokemon extends PokemonRace implements Serializable{
 		currentHP = super.getCurrentStat(currentLevel).getMaxHP();
 	}
 	
-	public double getCurrentHP(){
-		return currentHP;
-	}
-	
-	public void setCurrentHP(double HP){
-		this.currentHP=Math.max(HP,super.getCurrentStat(currentLevel).getMaxHP());
-	}
-	
 	public int getCurrentLevel() {
 		return currentLevel;
 	}
@@ -97,5 +88,30 @@ public class Pokemon extends PokemonRace implements Serializable{
 
 	public double getCurrentExperience() {
 		return currentExperience;
+	}
+	
+	public PokemonStat getCurrentStat(){
+		PokemonStat result = new PokemonStat(super.getCurrentStat(currentLevel)){
+			private static final long serialVersionUID = 1637221041100808975L;
+			@Override
+			public void setHP(double HP){
+				this.setHP(HP);
+				currentHP=this.getHP(); //let currentHP be the same as the HP of battle
+			}
+		};
+		result.setHP(currentHP);
+		return result;
+	}
+	
+	public Iterable<Move> getAvailableMoves(){
+		return super.getAvailableMoves(currentLevel);
+	}
+	
+	public Double getUpNeededExp(){
+		return super.getUpNeededExp(currentLevel);
+	}
+	
+	public String levelEvolutionImagePath(int currentLevel){
+		return super.levelEvolutionImagePath(currentLevel);
 	}
 }

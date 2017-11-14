@@ -89,7 +89,8 @@ public class PokemonStat implements Serializable{
 	}
 	
 	public void setHP(double HP){
-		this.HP=HP;
+		this.HP=(HP>maxHP)?maxHP:HP;
+		this.HP=(HP<0)?0:HP;
 	}
 	
 }
