@@ -14,6 +14,7 @@ public class Pokemon extends PokemonRace implements Serializable{
 	private static final long serialVersionUID = -5135270377217672583L; //for serialization
 	private int currentLevel;
 	private Move[] moves = new Move[4];// the moves
+	private String name = new String(""); //the name of Pokemon
 	private double currentExperience; //the current experience got, it should greater or equal to 0, and smaller to the super.getUpNeededExp(currentLevel)
 	private double currentHP;
 	
@@ -113,5 +114,13 @@ public class Pokemon extends PokemonRace implements Serializable{
 	
 	public String levelEvolutionImagePath(int currentLevel){
 		return super.levelEvolutionImagePath(currentLevel);
+	}
+	
+	public String getName(){
+		return new String(name);
+	}
+	
+	public void setName(String name){
+		this.name = new String(name);
 	}
 }
