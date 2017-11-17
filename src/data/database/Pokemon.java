@@ -10,7 +10,7 @@ import data.database.moves.Move;
  *
  */
 
-public class Pokemon extends PokemonRace implements Serializable{
+public class Pokemon extends PokemonSpecie implements Serializable{
 	private static final long serialVersionUID = -5135270377217672583L; //for serialization
 	private int currentLevel;
 	private Move[] moves = new Move[4];// the moves
@@ -18,12 +18,12 @@ public class Pokemon extends PokemonRace implements Serializable{
 	private double currentExperience; //the current experience got, it should greater or equal to 0, and smaller to the super.getUpNeededExp(currentLevel)
 	private double currentHP;
 	
-	public Pokemon(PokemonRace origin, int targetLevel){
+	public Pokemon(PokemonSpecie origin, int targetLevel){
 		super(origin);
 		setField(targetLevel);
 	}
 	
-	public Pokemon(PokemonRace origin){
+	public Pokemon(PokemonSpecie origin){
 		super(origin);
 		setField(1);
 	}
