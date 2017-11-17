@@ -1,0 +1,7 @@
+<defaultPokemonSpecies>
+	<specie>
+		<name>Pikachu</name>
+		<elemental>Lightning</elemental></specie>
+	<specie>
+		<name>blah</name>
+		<elemental>water</elemental></specie></defaultPokemonSpecies>
