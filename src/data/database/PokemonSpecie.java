@@ -12,10 +12,10 @@ import data.database.moves.Move;
  *
  */
 
-public class PokemonRace implements Serializable{
+public class PokemonSpecie implements Serializable{
 	private static final long serialVersionUID = -7134194712571483657L; //needed for serialization
-	private String raceName; //the name of race
-	private String ability; //such as Fire, Water
+	private String specieName; //the name of race
+	private String elemental; //such as Fire, Water
 	private int maxLevel; //the max level of the pokemon race, when the pokemon goes to this level, 
 							//it cannot get more experience or go higher level. Example: maxLevel = 100
 	private Map<Integer,Move> levelMoves; //the key here is the lowest level for the pokemon to learn the related move
@@ -25,13 +25,13 @@ public class PokemonRace implements Serializable{
 	private Map<Integer,String> levelEvolutionImagePath; // the value here is the path of Image of pokemon for the related level.
 													// if there is no image for the current level, 
 													//then choose the image of the biggest level which is lower than or equal to the current level
-	public PokemonRace(String raceName, String ability, int maxLevel,
+	public PokemonSpecie(String raceName, String ability, int maxLevel,
 			Map<Integer, Move> levelMoves,
 			Map<Integer, PokemonStat> levelStats,
 			Map<Integer, Double> levelExp,
 			Map<Integer, String> levelEvolutionImagePath) {
-		this.raceName = raceName;
-		this.ability = ability;
+		this.specieName = raceName;
+		this.elemental = ability;
 		this.maxLevel = maxLevel;
 		this.levelMoves = levelMoves;
 		this.levelStats = levelStats;
@@ -39,9 +39,9 @@ public class PokemonRace implements Serializable{
 		this.levelEvolutionImagePath = levelEvolutionImagePath;
 	}
 	
-	public PokemonRace(PokemonRace origin){
-		this.raceName = origin.raceName;
-		this.ability = origin.ability;
+	public PokemonSpecie(PokemonSpecie origin){
+		this.specieName = origin.specieName;
+		this.elemental = origin.elemental;
 		this.maxLevel = origin.maxLevel;
 		this.levelMoves = origin.levelMoves;
 		this.levelStats = origin.levelStats;
@@ -50,11 +50,11 @@ public class PokemonRace implements Serializable{
 	}
 	
 	public String getRaceName(){
-		return new String(raceName);
+		return new String(specieName);
 	}
 	
 	public String getAbility(){
-		return new String(ability);
+		return new String(elemental);
 	}
 	
 	public int getMaxLevel(){
