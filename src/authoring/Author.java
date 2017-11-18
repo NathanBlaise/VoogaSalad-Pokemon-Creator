@@ -14,9 +14,14 @@ import javafx.stage.Stage;
  */
 
 public class Author implements StageDelegate{
+	/*final variable*/
+	final static int EDITMAPSCENE = 0;
+	final static int EDITEVENTIMAGESCENE = 1;
+	/*Instance Variable*/
 	private Stage myStage;
 	private ArrayList <Scene> myList;
 	private SceneController scControl;
+	
 	
 	public Author(Stage primaryStage){
 		myStage = primaryStage;
@@ -32,6 +37,11 @@ public class Author implements StageDelegate{
 		myStage.setScene(myList.get(scControl.currentIndex));
 		System.out.println("I am currently at scene " + scControl.currentIndex );
 		
+		
+		if (scControl.currentIndex ==  EDITEVENTIMAGESCENE) {
+			scControl.passMapForward();
+		}
+		
 	}
 
 	@Override
@@ -41,7 +51,9 @@ public class Author implements StageDelegate{
 			myStage.setScene(myList.get(scControl.currentIndex));
 			System.out.println("I am currently at scene " + scControl.currentIndex );
 		
-		
+		if (scControl.currentIndex == EDITMAPSCENE) {
+			scControl.passMapBackward();
+		}
 	}
 
 	@Override
