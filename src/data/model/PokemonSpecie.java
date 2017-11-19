@@ -14,8 +14,8 @@ import data.database.moves.Move;
 
 public class PokemonSpecie implements Serializable{
 	private static final long serialVersionUID = -7134194712571483657L; //needed for serialization
-	private String specieName; //the name of race
-	private String elemental; //such as Fire, Water
+	private String specieName = ""; //the name of race
+	private String elemental = ""; //such as Fire, Water
 	private int maxLevel; //the max level of the pokemon race, when the pokemon goes to this level, 
 							//it cannot get more experience or go higher level. Example: maxLevel = 100
 	private Map<Integer,Move> levelMoves; //the key here is the lowest level for the pokemon to learn the related move
@@ -39,6 +39,10 @@ public class PokemonSpecie implements Serializable{
 		this.levelEvolutionImagePath = levelEvolutionImagePath;
 	}
 	
+	public PokemonSpecie() {
+		
+	}
+	
 	public PokemonSpecie(PokemonSpecie origin){
 		this.specieName = origin.specieName;
 		this.elemental = origin.elemental;
@@ -46,19 +50,63 @@ public class PokemonSpecie implements Serializable{
 		this.levelMoves = origin.levelMoves;
 		this.levelStats = origin.levelStats;
 		this.levelExp = origin.levelExp;
-		this.levelEvolutionImagePath = origin.levelEvolutionImagePath;		
+		this.levelEvolutionImagePath = origin.levelEvolutionImagePath;	
 	}
 	
-	public String getRaceName(){
+	public String getSpecieName(){
 		return new String(specieName);
 	}
 	
-	public String getAbility(){
+	public void setSpecieName(String raceName) {
+		this.specieName = raceName;
+	}
+	
+	public String getElemental(){
 		return new String(elemental);
+	}
+	
+	public void setElemental(String ability) {
+		this.elemental = ability;
 	}
 	
 	public int getMaxLevel(){
 		return maxLevel;
+	}
+	
+	public void setMaxLevel(int maxLevel) {
+		this.maxLevel = maxLevel;
+	}
+	
+	public Map<Integer, Move> getLevelMoves(){
+		return levelMoves;
+	}
+	
+	public void setLevelMoves(Map<Integer, Move> moveMap) {
+		this.levelMoves = moveMap;
+	}
+	
+	public Map<Integer, PokemonStat> getLevelStats(){
+		return levelStats;
+	}
+	
+	public void setLevelStats(Map<Integer, PokemonStat> statMap) {
+		this.levelStats = statMap;
+	}
+	
+	public Map<Integer, Double> getLevelExp(){
+		return levelExp;
+	}
+	
+	public void setLevelExp(Map<Integer, Double> expMap) {
+		this.levelExp = expMap;
+	}
+	
+	public Map<Integer, String> getLevelEvolutionImagePath(){
+		return levelEvolutionImagePath;
+	}
+	
+	public void setLevelEvolutionImagePath(Map<Integer, String> stringMap) {
+		this.levelEvolutionImagePath = stringMap;
 	}
 	
 	protected Iterable<Move> getAvailableMoves(int currentLevel){

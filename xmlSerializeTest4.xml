@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_101" class="java.beans.XMLDecoder">
+ <object class="data.database.Pokemon">
+  <void property="currentHP">
+   <double>1.0</double>
+  </void>
+  <void property="currentLevel">
+   <int>1</int>
+  </void>
+  <void property="elemental">
+   <string>abil</string>
+  </void>
+  <void property="levelEvolutionImagePath">
+   <object class="java.util.HashMap">
+    <void method="put">
+     <int>1</int>
+     <string>string in map</string>
+    </void>
+   </object>
+  </void>
+  <void property="levelExp">
+   <object class="java.util.HashMap">
+    <void method="put">
+     <int>1</int>
+     <double>1.0</double>
+    </void>
+   </object>
+  </void>
+  <void property="levelMoves">
+   <object class="java.util.HashMap">
+    <void method="put">
+     <int>1</int>
+     <object class="data.database.moves.Move" id="Move0">
+      <void property="PP">
+       <int>1</int>
+      </void>
+      <void property="maxPP">
+       <int>1</int>
+      </void>
+      <void property="moveName">
+       <string>name</string>
+      </void>
+     </object>
+    </void>
+    <void method="put">
+     <int>2</int>
+     <object idref="Move0"/>
+    </void>
+    <void method="put">
+     <int>3</int>
+     <object idref="Move0"/>
+    </void>
+    <void method="put">
+     <int>4</int>
+     <object idref="Move0"/>
+    </void>
+   </object>
+  </void>
+  <void property="levelStats">
+   <object class="java.util.HashMap">
+    <void method="put">
+     <int>1</int>
+     <object class="data.database.PokemonStat">
+      <void property="HP">
+       <double>1.0</double>
+      </void>
+      <void property="normalAttack">
+       <double>2.0</double>
+      </void>
+      <void property="normalDefense">
+       <double>3.0</double>
+      </void>
+      <void property="specialAttack">
+       <double>4.0</double>
+      </void>
+      <void property="specialDefense">
+       <double>5.0</double>
+      </void>
+      <void property="speed">
+       <double>6.0</double>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void property="maxLevel">
+   <int>2</int>
+  </void>
+  <void property="name">
+   <string>temporary name</string>
+  </void>
+  <void property="specieName">
+   <string>race</string>
+  </void>
+ </object>
+</java>
