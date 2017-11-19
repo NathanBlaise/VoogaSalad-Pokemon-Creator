@@ -5,13 +5,15 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import data.database.Pokemon;
+
 public class xmlReader {
 
 	public xmlReader() {
-		// TODO Auto-generated constructor stub
+		//empty for now, not sure if this will change
 	}
 	
-	public void readXML(String file) {
+	public Object readXML(String file) {
 		
 		XMLDecoder decoder=null;
 		try {
@@ -19,7 +21,7 @@ public class xmlReader {
 		} catch (FileNotFoundException e) {
 			System.out.println("ERROR: File " + file + " not found");
 		}
-		Object obj = (Object) decoder.readObject();
+		return decoder.readObject();
 		//this should return the exact object passed to the xml file to be stored in the first place
 	}
 
