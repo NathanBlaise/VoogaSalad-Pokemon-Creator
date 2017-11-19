@@ -2,7 +2,7 @@ package data.event;
 
 import java.io.Serializable;
 
-import data.database.Pokemon;
+import data.model.Pokemon;
 
 public class BattleVSPokemon extends Instruction implements Serializable{
 
