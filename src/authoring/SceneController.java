@@ -33,13 +33,14 @@ public class SceneController {
 			bsc = new EditMapScene(Color.WHITE,app);
 			sceneList.add(bsc.getScene());
 			
-			//create Database Screen
-			dbs = new DatabaseScene(Color.WHITE,app);
-			sceneList.add(dbs.getScene());
 			
 			// create a Event Picture Screen
 			eeis = new EditEventImageScene(Color.WHITE,app);
 			sceneList.add(eeis.getScene());
+			
+			//create Database Screen
+			dbs = new DatabaseScene(Color.WHITE,app);
+			sceneList.add(dbs.getScene());
 			
 	}
 	
