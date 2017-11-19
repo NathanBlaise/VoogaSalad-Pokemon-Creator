@@ -2,7 +2,7 @@ package data.database.moves;
 
 import java.io.Serializable;
 
-import data.database.PokemonStat;
+import data.model.PokemonStat;
 
 /**
  * 

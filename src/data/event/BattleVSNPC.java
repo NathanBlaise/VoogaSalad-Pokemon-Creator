@@ -2,7 +2,7 @@ package data.event;
 
 import java.io.Serializable;
 
-import data.database.NPC;
+import data.model.NPC;
 
 public class BattleVSNPC  extends Instruction implements Serializable{
 

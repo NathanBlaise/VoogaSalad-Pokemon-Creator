@@ -12,6 +12,8 @@ import java.util.ArrayList;
  */
 
 public class Event implements Serializable{
+	private static final long serialVersionUID = -1088455784075495760L;
+
 	int posX, posY; // the position to display the event
 	
 	ArrayList<Instruction> instructions;
