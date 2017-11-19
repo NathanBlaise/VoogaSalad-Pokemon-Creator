@@ -7,8 +7,8 @@ import java.util.Vector;
 import data.model.moves.Move;
 
 /**
- * 
- * @author cy122
+ * This holds all the data needed for create a specie of Pokemon
+ * @author cy122 ko72
  *
  */
 
@@ -39,6 +39,10 @@ public class PokemonSpecie implements Serializable{
 		this.levelEvolutionImagePath = levelEvolutionImagePath;
 	}
 	
+	/**
+	 * WARNING!
+	 * This constructor is only used for serialization, it shouldn't be used for any intention else.
+	 */
 	public PokemonSpecie() {
 		
 	}
@@ -53,26 +57,50 @@ public class PokemonSpecie implements Serializable{
 		this.levelEvolutionImagePath = origin.levelEvolutionImagePath;	
 	}
 	
+	/**
+	 * 
+	 * @return - such as Pikachu
+	 */
 	public String getSpecieName(){
 		return new String(specieName);
 	}
 	
+	/**
+	 * 
+	 * @param raceName - such as Pikachu
+	 */
 	public void setSpecieName(String raceName) {
 		this.specieName = raceName;
 	}
 	
+	/**
+	 * 
+	 * @return- such as Fire, Water
+	 */
 	public String getElemental(){
 		return new String(elemental);
 	}
 	
+	/**
+	 * 
+	 * @param ability - such as Fire, Water
+	 */
 	public void setElemental(String ability) {
 		this.elemental = ability;
 	}
 	
+	/**
+	 * 
+	 * @return - the highest level that Pokemon can be
+	 */
 	public int getMaxLevel(){
 		return maxLevel;
 	}
 	
+	/**
+	 * 
+	 * @param maxLevel - the highest level that Pokemon can be
+	 */
 	public void setMaxLevel(int maxLevel) {
 		this.maxLevel = maxLevel;
 	}
@@ -127,7 +155,7 @@ public class PokemonSpecie implements Serializable{
 		return new Double(levelExp.get(currentLevel));
 	}
 	
-	protected String levelEvolutionImagePath(int currentLevel){
+	protected String getCurrentImagePath(int currentLevel){
 		String currentImagePath = "";
 		for(int i:levelMoves.keySet()){
 			if(i<=currentLevel){

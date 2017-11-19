@@ -3,10 +3,9 @@ package data.model;
 import java.io.Serializable;
 
 /**
- * 
- * @author cy122
- * 
  * This class holds a set of stat that the race of pokemon holds
+ * The formula of damage should be similar to the formula in https://bulbapedia.bulbagarden.net/wiki/Damage
+ * @author cy122 ko72
  *
  */
 
@@ -20,6 +19,15 @@ public class PokemonStat implements Serializable{
 	private double maxHP;
 	private double HP; // the HP the pokemon has during battle
 
+	/**
+	 * The formula of damage should be similar to the formula in https://bulbapedia.bulbagarden.net/wiki/Damage
+	 * @param maxHP
+	 * @param normalAttack
+	 * @param normalDefense
+	 * @param specialAttack
+	 * @param specialDefense
+	 * @param speed
+	 */
 	public PokemonStat(double maxHP, double normalAttack, double normalDefense, double specialAttack, double specialDefense, double speed){
 		this.maxHP=maxHP;
 		this.normalAttack=normalAttack;
@@ -30,6 +38,10 @@ public class PokemonStat implements Serializable{
 		this.HP = maxHP;
 	}
 	
+	/**
+	 * WARNING!
+	 * This constructor is only for serialization, it shouldn't be used for any intention else.
+	 */
 	public PokemonStat() {
 		
 	}
@@ -95,6 +107,10 @@ public class PokemonStat implements Serializable{
 	public void setHP(double HP){
 		this.HP=(HP>maxHP)?maxHP:HP;
 		this.HP=(HP<0)?0:HP;
+	}
+
+	public void setMaxHP(double maxHP) {
+		this.maxHP = maxHP;
 	}
 	
 }
