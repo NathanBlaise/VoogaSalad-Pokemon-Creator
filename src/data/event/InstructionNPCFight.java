@@ -4,12 +4,11 @@ import data.model.NPC;
 import data.model.Pokemon;
 
 /**
- * 
+ * this is a instruction for fighting with NPC, it holds a private NPC member and an array of Pokemon
  * @see Instruction
  * 
  * @author cy122
- * 
- * this is a instruction for fighting with NPC, it holds a private NPC member and an array of Pokemon
+ *
  *
  */
 
