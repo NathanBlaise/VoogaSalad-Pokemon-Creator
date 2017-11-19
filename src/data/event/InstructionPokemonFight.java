@@ -3,12 +3,11 @@ package data.event;
 import data.model.Pokemon;
 
 /**
- * 
+ * this is a instruction for fighting with wild pokemon, it holds a private Pokemon member 
  * @see Instruction
  * 
  * @author cy122
- * 
- * this is a instruction for fighting with wild pokemon, it holds a private Pokemon member 
+ *
  *
  */
 public class InstructionPokemonFight implements Instruction{

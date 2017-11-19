@@ -5,14 +5,13 @@ import java.util.ArrayList;
 import data.model.NPC;
 
 /**
- * 
+ * this is a instruction for talking with NPC, 
+ * it holds a private ArrayList of String for dialogue,
+ * and a private NPC for the npc who is talking with.
  * @see Instruction
  * 
  * @author cy122
  * 
- * this is a instruction for talking with NPC, 
- * it holds a private ArrayList of String for dialogue,
- * and a private NPC for the npc who is talking with.
  *
  */
 public class InstructionNPCDialogue implements Instruction{
