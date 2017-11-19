@@ -30,6 +30,10 @@ public class PokemonStat implements Serializable{
 		this.HP = maxHP;
 	}
 	
+	public PokemonStat() {
+		
+	}
+	
 	public PokemonStat(PokemonStat origin){
 		this.maxHP=origin.maxHP;
 		this.normalAttack=origin.normalAttack;
