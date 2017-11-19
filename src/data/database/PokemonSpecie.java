@@ -14,6 +14,7 @@ import data.database.moves.Move;
 
 public class PokemonSpecie implements Serializable{
 	private static final long serialVersionUID = -7134194712571483657L; //needed for serialization
+	
 	private String specieName; //the name of race
 	private String elemental; //such as Fire, Water
 	private int maxLevel; //the max level of the pokemon race, when the pokemon goes to this level, 
