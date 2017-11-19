@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.Vector;
 
-import data.database.moves.Move;
+import data.model.moves.Move;
 
 /**
  * 
