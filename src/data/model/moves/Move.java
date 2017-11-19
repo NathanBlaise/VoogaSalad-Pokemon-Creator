@@ -1,4 +1,4 @@
-package data.database.moves;
+package data.model.moves;
 
 import java.io.Serializable;
 

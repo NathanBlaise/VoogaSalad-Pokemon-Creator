@@ -2,7 +2,7 @@ package data.model;
 
 import java.io.Serializable;
 
-import data.database.moves.Move;
+import data.model.moves.Move;
 
 /**
  * 

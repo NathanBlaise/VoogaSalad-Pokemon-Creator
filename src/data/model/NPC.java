@@ -1,8 +1,6 @@
 package data.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 // the same meaning to trainer in Pokemon, the NPC don't need to stay in the Map:
 // they are just a part of database, 
@@ -11,22 +9,21 @@ import java.util.Set;
 public class NPC implements Serializable{
 	private static final long serialVersionUID = -5722924115188028268L;
 	private String imagePath;
-	private Set<String> availableInstructions;
+	private String name;
 	
-	NPC(){
-		this.imagePath = new String();
-		this.availableInstructions = new HashSet<String>();
-		addInstructions();
+	public NPC(){
+		this.imagePath = new String("");
+		this.name = new String("");
 	}
 
-	NPC(String imagePath){
+	NPC(String imagePath, String name){
 		this.imagePath = new String(imagePath);
-		addInstructions();
+		this.name = new String(name);
 	}
 	
-	private void addInstructions(){
-		availableInstructions.add("BeginDialogueInstruction");
-		availableInstructions.add("BeginNPCBattleInstruction");
+	public NPC(NPC npc){
+		this.imagePath = new String(npc.imagePath);
+		this.name = new String(npc.name);
 	}
 	
 	public String getImagePath() {
@@ -34,16 +31,15 @@ public class NPC implements Serializable{
 	}
 
 	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
+		this.imagePath = new String(imagePath);
 	}
 
-	public Set<String> getAvailableInstructions() {
-		return availableInstructions;
+	public String getName() {
+		return new String(name);
 	}
 
-	public void setAvailableInstructions(Set<String> availableInstructions) {
-		this.availableInstructions = availableInstructions;
+	public void setName(String name) {
+		this.imagePath = new String(imagePath);
 	}
-	
 	
 }
