@@ -17,6 +17,10 @@ public class Move implements Serializable{
 	private String moveName = "";
 	private int PP; //the times that the move can be used
 	private int maxPP;
+	
+	/*
+	Things with Action are commented out for now, not sure how to serialize them or if it is necessary for Move
+	*/
 	//private Action action;
 	
 	public Move(Move move) {
