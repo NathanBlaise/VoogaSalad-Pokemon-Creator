@@ -20,7 +20,14 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	
 	public Pokemon(PokemonSpecie origin, int targetLevel){
 		super(origin);
+		//something needs to be added to add a name to the pokemon
+		name = "temporary name";
+		//currently, there is nothing setting the moves of the pokemon(needed for serialization)
 		setField(targetLevel);
+	}
+	
+	public Pokemon(){
+		
 	}
 	
 	public Pokemon(PokemonSpecie origin){
@@ -82,13 +89,25 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	public int getCurrentLevel() {
 		return currentLevel;
 	}
+	
+	public void setCurrentLevel(int level) {
+		this.currentLevel = level;
+	}
 
 	public Move[] getMoves() {
 		return moves;
 	}
+	
+	public void setMoves(Move[] moves) {
+		this.moves = moves;
+	}
 
 	public double getCurrentExperience() {
 		return currentExperience;
+	}
+	
+	public void setCurrentExperience(double exp) {
+		this.currentExperience = exp;
 	}
 	
 	public PokemonStat getCurrentStat(){
@@ -121,6 +140,15 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	}
 	
 	public void setName(String name){
-		this.name = new String(name);
+		this.name = name;
 	}
+	
+	public double getCurrentHP() {
+		return currentHP;
+	}
+	
+	public void setCurrentHP(double hp) {
+		this.currentHP = hp;
+	}
+
 }
