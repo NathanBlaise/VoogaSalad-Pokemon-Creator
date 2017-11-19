@@ -14,7 +14,8 @@ public class Player implements Serializable{
 	private static final long serialVersionUID = 556462866183029469L;
 	//only holds these attributes for now
 	private int posX, posY;
-	private Pokemon[] pokemons; //the pokemons for battle
+	private Pokemon[] pokemons; //the pokemons for battle, no pokemon in the warehouse for now
+	//private Map<Item,Integer> Bag;  // a map from the item to the number of item
 	
 	public Player(){
 		posX=0;
