@@ -21,27 +21,31 @@ public class Move implements Serializable{
 	/*
 	Things with Action are commented out for now, not sure how to serialize them or if it is necessary for Move
 	*/
-	//private Action action;
+	private Action action;
 	
 	public Move(Move move) {
 		PP = move.maxPP;
 		maxPP = move.maxPP;
 		moveName = move.getMoveName();
-		//action = move.action;
+		action = move.action;
 	}
 	
+	/**
+	 * WARNING!
+	 * This is only used for serialization.
+	 */
 	public Move() {
 		
 	}
 
 
-	public Move(String moveName, int maxPP) {
+	public Move(String moveName, int maxPP, Action action) {
 		super();
 		System.out.println("in the move class");
 		this.moveName = moveName;
 		this.PP = maxPP;
 		this.maxPP = maxPP;
-		//this.action = action;
+		this.action = action;
 	}
 	
 	@Override
@@ -71,7 +75,7 @@ public class Move implements Serializable{
 	public int getPP(){
 		return PP;
 	}
-	/*
+
 	public Action getaction() {
 		return action;
 	}
@@ -79,11 +83,11 @@ public class Move implements Serializable{
 	public void setaction(Action action) {
 		this.action = action;
 	}
-	*/
+
 	public boolean available(){
 		return PP>0;
 	}
-/*
+
 	public PokemonStat[] move(PokemonStat friend, PokemonStat enermy){
 		PokemonStat[] result;
 		if(available()){
@@ -96,7 +100,7 @@ public class Move implements Serializable{
 		}
 		return result;
 	}
-	*/
+
 	public void setPP(int PP){
 		this.PP = (PP>=maxPP)?maxPP:PP;
 		this.PP = (this.PP< 0)?0:this.PP;

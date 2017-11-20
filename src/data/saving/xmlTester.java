@@ -16,6 +16,7 @@ import data.model.Pokemon;
 import data.model.PokemonSpecie;
 import data.model.PokemonStat;
 import data.model.moves.Action;
+import data.model.moves.ActionExample;
 import data.model.moves.Move;
 
 public class xmlTester {
@@ -31,7 +32,7 @@ public class xmlTester {
 		Map<Integer, PokemonStat> pStatMap = new HashMap<>();
 		 
 		pStatMap.put(1, pStat);
-		Move move = new Move("name", 1);
+		Move move = new Move("name", 1, new ActionExample());
 		Map<Integer, Move> moveMap = new HashMap<>();
 		moveMap.put(1, move);
 		moveMap.put(2, move);
