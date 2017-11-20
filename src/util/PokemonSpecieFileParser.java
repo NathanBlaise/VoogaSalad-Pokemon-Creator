@@ -20,9 +20,10 @@ import org.xml.sax.SAXException;
 import data.model.PokemonSpecie;
 import data.model.PokemonStat;
 import data.model.moves.Move;
-import util.pokemonSpecieDataParser.ElementalParser;
-import util.pokemonSpecieDataParser.MaxLevelParser;
-import util.pokemonSpecieDataParser.NameParser;
+import util.pokemonSpecieDataParser.PokemonLevelMovesParser;
+import util.pokemonSpecieDataParser.LeafElementParser.ElementalParser;
+import util.pokemonSpecieDataParser.LeafElementParser.MaxLevelParser;
+import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
 
 /**
  * This class is able to parse a pokemon specie xml file
@@ -43,6 +44,15 @@ public class PokemonSpecieFileParser {
     private File xmlFile;
     //root node of the xml file
     private Element rootNode;
+    private PokemonLevelMovesParser levelMovesParser;
+    /**
+     * Gets the level moves specified in the xml file
+     * @param file The xml file specifying a pokemon specie 
+     * @return The Pokemon Specie Class described by the file
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     public PokemonSpecie parseFile(File file) 
 	    throws ParserConfigurationException, 
 	    SAXException, IOException {
@@ -64,6 +74,7 @@ public class PokemonSpecieFileParser {
 	specieName = NameParser.parse(rootNode);
 	elemental = ElementalParser.parse(rootNode);
 	maxLevel = MaxLevelParser.parse(rootNode);
+	levelMoves = levelMovesParser.parse(rootNode);
 	
     }
 

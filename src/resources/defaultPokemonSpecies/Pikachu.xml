@@ -9,6 +9,16 @@
 		</move>
 	</levelMoves>
 	<levelStats>
+		<stat>
+			<level>1</level>
+			<speed>10</speed>
+			<specialAttack>20</specialAttack>
+			<specialDefense>30</specialDefense>
+			<normalAttack>40</normalAttack>
+			<normalDefense>50</normalDefense>
+			<maxHP>100</maxHP>
+			<HP>100</HP> <!--HP equals maxHP for specie description-->
+		</stat>
 	</levelStats>
 	<levelExp>
 		<level>

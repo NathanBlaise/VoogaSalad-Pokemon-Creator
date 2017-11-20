@@ -12,15 +12,15 @@ import util.PokemonMovesFactory;
 import util.pokemonSpecieDataParser.LeafElementParser.LevelParser;
 import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
 
-public class PokemonLevelMovesParser {
-    private static String levelMovesTag = "levelMoves";
+public class PokemonLevelStatsParser {
+    private static String levelStatsTag = "levelStats";
     private static String moveTag = "move";
     private static String defaultLookupPath = "";
     
     private String lookupPath;
     private PokemonMovesFactory movesFactory;
     
-    public PokemonLevelMovesParser() {
+    public PokemonLevelStatsParser() {
 	this(defaultLookupPath);
     }
     
@@ -29,7 +29,7 @@ public class PokemonLevelMovesParser {
      * @param path The path to use for the file to
      * look up for reflection
      */
-    public PokemonLevelMovesParser(String path) {
+    public PokemonLevelStatsParser(String path) {
 	lookupPath = path;
 	movesFactory = new PokemonMovesFactory(lookupPath);
 	
@@ -74,7 +74,7 @@ public class PokemonLevelMovesParser {
     }
 
     private Element getLevelMovesElement(Element rootNode) {
-	NodeList levelMoves = rootNode.getElementsByTagName(levelMovesTag);
+	NodeList levelMoves = rootNode.getElementsByTagName(levelStatsTag);
 	Element levelMovesElement = (Element)levelMoves.item(0);
 	return levelMovesElement;
     }

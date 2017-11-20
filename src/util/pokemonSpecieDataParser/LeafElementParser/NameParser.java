@@ -1,4 +1,4 @@
-package util.pokemonSpecieDataParser;
+package util.pokemonSpecieDataParser.LeafElementParser;
 
 import org.w3c.dom.Element;
 /**
