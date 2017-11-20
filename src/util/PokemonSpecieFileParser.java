@@ -17,9 +17,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import data.database.PokemonSpecie;
-import data.database.PokemonStat;
-import data.database.moves.Move;
+import data.model.PokemonSpecie;
+import data.model.PokemonStat;
+import data.model.moves.Move;
 import util.pokemonSpecieDataParser.ElementalParser;
 import util.pokemonSpecieDataParser.MaxLevelParser;
 import util.pokemonSpecieDataParser.NameParser;

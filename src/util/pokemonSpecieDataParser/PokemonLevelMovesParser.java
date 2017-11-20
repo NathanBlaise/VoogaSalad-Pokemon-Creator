@@ -8,7 +8,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import data.database.moves.Move;
+import data.model.moves.Move;
 import util.PokemonMovesFactory;
 
 public class PokemonLevelMovesParser {

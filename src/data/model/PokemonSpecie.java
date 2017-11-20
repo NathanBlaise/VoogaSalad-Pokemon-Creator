@@ -1,22 +1,21 @@
-package data.database;
+package data.model;
 
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Vector;
 
-import data.database.moves.Move;
+import data.model.moves.Move;
 
 /**
- * 
- * @author cy122
+ * This holds all the data needed for create a specie of Pokemon
+ * @author cy122 ko72
  *
  */
 
 public class PokemonSpecie implements Serializable{
 	private static final long serialVersionUID = -7134194712571483657L; //needed for serialization
-	
-	private String specieName; //the name of race
-	private String elemental; //such as Fire, Water
+	private String specieName = ""; //the name of race
+	private String elemental = ""; //such as Fire, Water
 	private int maxLevel; //the max level of the pokemon race, when the pokemon goes to this level, 
 							//it cannot get more experience or go higher level. Example: maxLevel = 100
 	private Map<Integer,Move> levelMoves; //the key here is the lowest level for the pokemon to learn the related move
@@ -40,6 +39,14 @@ public class PokemonSpecie implements Serializable{
 		this.levelEvolutionImagePath = levelEvolutionImagePath;
 	}
 	
+	/**
+	 * WARNING!
+	 * This constructor is only used for serialization, it shouldn't be used for any intention else.
+	 */
+	public PokemonSpecie() {
+		
+	}
+	
 	public PokemonSpecie(PokemonSpecie origin){
 		this.specieName = origin.specieName;
 		this.elemental = origin.elemental;
@@ -47,19 +54,87 @@ public class PokemonSpecie implements Serializable{
 		this.levelMoves = origin.levelMoves;
 		this.levelStats = origin.levelStats;
 		this.levelExp = origin.levelExp;
-		this.levelEvolutionImagePath = origin.levelEvolutionImagePath;		
+		this.levelEvolutionImagePath = origin.levelEvolutionImagePath;	
 	}
 	
-	public String getRaceName(){
+	/**
+	 * 
+	 * @return - such as Pikachu
+	 */
+	public String getSpecieName(){
 		return new String(specieName);
 	}
 	
-	public String getAbility(){
+	/**
+	 * 
+	 * @param raceName - such as Pikachu
+	 */
+	public void setSpecieName(String raceName) {
+		this.specieName = raceName;
+	}
+	
+	/**
+	 * 
+	 * @return- such as Fire, Water
+	 */
+	public String getElemental(){
 		return new String(elemental);
 	}
 	
+	/**
+	 * 
+	 * @param ability - such as Fire, Water
+	 */
+	public void setElemental(String ability) {
+		this.elemental = ability;
+	}
+	
+	/**
+	 * 
+	 * @return - the highest level that Pokemon can be
+	 */
 	public int getMaxLevel(){
 		return maxLevel;
+	}
+	
+	/**
+	 * 
+	 * @param maxLevel - the highest level that Pokemon can be
+	 */
+	public void setMaxLevel(int maxLevel) {
+		this.maxLevel = maxLevel;
+	}
+	
+	public Map<Integer, Move> getLevelMoves(){
+		return levelMoves;
+	}
+	
+	public void setLevelMoves(Map<Integer, Move> moveMap) {
+		this.levelMoves = moveMap;
+	}
+	
+	public Map<Integer, PokemonStat> getLevelStats(){
+		return levelStats;
+	}
+	
+	public void setLevelStats(Map<Integer, PokemonStat> statMap) {
+		this.levelStats = statMap;
+	}
+	
+	public Map<Integer, Double> getLevelExp(){
+		return levelExp;
+	}
+	
+	public void setLevelExp(Map<Integer, Double> expMap) {
+		this.levelExp = expMap;
+	}
+	
+	public Map<Integer, String> getLevelEvolutionImagePath(){
+		return levelEvolutionImagePath;
+	}
+	
+	public void setLevelEvolutionImagePath(Map<Integer, String> stringMap) {
+		this.levelEvolutionImagePath = stringMap;
 	}
 	
 	protected Iterable<Move> getAvailableMoves(int currentLevel){
@@ -80,7 +155,7 @@ public class PokemonSpecie implements Serializable{
 		return new Double(levelExp.get(currentLevel));
 	}
 	
-	protected String levelEvolutionImagePath(int currentLevel){
+	protected String getCurrentImagePath(int currentLevel){
 		String currentImagePath = "";
 		for(int i:levelMoves.keySet()){
 			if(i<=currentLevel){

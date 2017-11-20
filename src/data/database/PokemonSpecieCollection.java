@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+import data.model.PokemonSpecie;
+
 /**
  * This class stores pokemon species that are avialable in a game
  * including species that are provided and species created by the user

@@ -1,8 +1,8 @@
-package data.database.moves;
+package data.model.moves;
 
 import java.io.Serializable;
 
-import data.database.PokemonStat;
+import data.model.PokemonStat;
 
 /**
  * 
@@ -14,25 +14,34 @@ import data.database.PokemonStat;
 public class Move implements Serializable{
 	
 	private static final long serialVersionUID = -9188380778013480995L; //used for serialization
-	private String moveName;
+	private String moveName = "";
 	private int PP; //the times that the move can be used
 	private int maxPP;
-	private Action action;
+	
+	/*
+	Things with Action are commented out for now, not sure how to serialize them or if it is necessary for Move
+	*/
+	//private Action action;
 	
 	public Move(Move move) {
 		PP = move.maxPP;
 		maxPP = move.maxPP;
 		moveName = move.getMoveName();
-		action = move.action;
+		//action = move.action;
+	}
+	
+	public Move() {
+		
 	}
 
 
-	public Move(String moveName, int maxPP, Action action) {
+	public Move(String moveName, int maxPP) {
 		super();
+		System.out.println("in the move class");
 		this.moveName = moveName;
 		this.PP = maxPP;
 		this.maxPP = maxPP;
-		this.action = action;
+		//this.action = action;
 	}
 	
 	@Override
@@ -44,21 +53,37 @@ public class Move implements Serializable{
 	}
 	
 	public String getMoveName(){
-		return new String(moveName);
+		return moveName;
+	}
+	
+	public void setMoveName(String moveName) {
+		this.moveName = moveName;
 	}
 	
 	public int getMaxPP(){
 		return maxPP;
 	}
 	
+	public void setMaxPP(int maxPP) {
+		this.maxPP = maxPP;
+	}
+	
 	public int getPP(){
 		return PP;
 	}
+	/*
+	public Action getaction() {
+		return action;
+	}
 	
+	public void setaction(Action action) {
+		this.action = action;
+	}
+	*/
 	public boolean available(){
 		return PP>0;
 	}
-
+/*
 	public PokemonStat[] move(PokemonStat friend, PokemonStat enermy){
 		PokemonStat[] result;
 		if(available()){
@@ -71,7 +96,7 @@ public class Move implements Serializable{
 		}
 		return result;
 	}
-	
+	*/
 	public void setPP(int PP){
 		this.PP = (PP>=maxPP)?maxPP:PP;
 		this.PP = (this.PP< 0)?0:this.PP;

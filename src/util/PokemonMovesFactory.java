@@ -3,7 +3,8 @@ package util;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-import data.database.moves.Move;
+import data.model.moves.Move;
+
 
 /**
  * This class gets the move class for pokemon
