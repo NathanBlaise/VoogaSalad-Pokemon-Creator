@@ -7,75 +7,58 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import data.model.moves.Move;
-import util.PokemonMovesFactory;
+import data.model.PokemonStat;
 import util.pokemonSpecieDataParser.LeafElementParser.LevelParser;
-import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
+import util.pokemonSpecieDataParser.LeafElementParser.MaxHpParser;
+import util.pokemonSpecieDataParser.LeafElementParser.NormalAttackParser;
+import util.pokemonSpecieDataParser.LeafElementParser.NormalDefenseParser;
+import util.pokemonSpecieDataParser.LeafElementParser.SpecialAttackParser;
+import util.pokemonSpecieDataParser.LeafElementParser.SpeedParser;
+import util.pokemonSpecieDataParser.LeafElementParser.specialDefenseParser;
 
 public class PokemonLevelStatsParser {
     private static String levelStatsTag = "levelStats";
-    private static String moveTag = "move";
-    private static String defaultLookupPath = "";
+    private static String statTag = "stat";
     
-    private String lookupPath;
-    private PokemonMovesFactory movesFactory;
     
-    public PokemonLevelStatsParser() {
-	this(defaultLookupPath);
-    }
-    
-    /**
-     * 
-     * @param path The path to use for the file to
-     * look up for reflection
-     */
-    public PokemonLevelStatsParser(String path) {
-	lookupPath = path;
-	movesFactory = new PokemonMovesFactory(lookupPath);
-	
-    }
-    
-    public Map<Integer,Move> parse(Element rootNode){
-	Map<Integer, Move> movesMap = new HashMap<>();
-	Element levelMoves = getLevelMovesElement(rootNode);
-	NodeList allMoves = getAllMoves(levelMoves);
-	addAllMovesToMap(allMoves,movesMap);
+    public static Map<Integer,PokemonStat> parse(Element rootNode){
+	Map<Integer, PokemonStat> movesMap = new HashMap<>();
+	Element levelStats = getLevelStatsElement(rootNode);
+	NodeList allStats = getAllStats(levelStats);
+	addAllStatsToMap(allStats,movesMap);
 	return movesMap;
     }
     
-    private void addAllMovesToMap(NodeList allMoves, Map<Integer, Move> movesMap) {
+    private static void addAllStatsToMap(NodeList allMoves, Map<Integer, PokemonStat> statsMap) {
 	for(int i = 0; i < allMoves.getLength(); i++) {
 	    Node currentMoveNode = allMoves.item(i);
 	    assert(currentMoveNode.getNodeType() == Node.ELEMENT_NODE);
-	    Element currentMoveElement = (Element)currentMoveNode;
-	    parseAndAddMoveElementToMap(currentMoveElement,movesMap);
+	    Element currentStatElement = (Element)currentMoveNode;
+	    parseAndAddStatElementToMap(currentStatElement,statsMap);
 	}
 	
     }
 
-    private void parseAndAddMoveElementToMap(Element currentMoveElement, Map<Integer, Move> movesMap) {
-	Integer level = LevelParser.parse(currentMoveElement);
-	String moveName = NameParser.parse(currentMoveElement);
-	Move move = null;
-	try {
-	    move = movesFactory.getMove(moveName);
-	} catch (Exception e) {
-	    // TODO add additional steps to handle exception
-	    System.out.println("Failed to get the correct move!");
-	    e.printStackTrace();
-	    java.lang.System.exit(1);
-	}
-	assert(move != null);
-	movesMap.put(level, move);	
+    private static void parseAndAddStatElementToMap(Element currentStatElement, Map<Integer, PokemonStat> StatsMap) {
+	Integer level = LevelParser.parse(currentStatElement);
+	double speed = SpeedParser.parse(currentStatElement);
+	double specialAttack = SpecialAttackParser.parse(currentStatElement);
+	double specialDefense = specialDefenseParser.parse(currentStatElement);
+	double normalAttack = NormalAttackParser.parse(currentStatElement);
+	double normalDefense = NormalDefenseParser.parse(currentStatElement);
+	double maxHp = MaxHpParser.parse(currentStatElement);
+	PokemonStat pokemonStat = new PokemonStat(maxHp,normalAttack,
+		normalDefense,specialAttack,specialDefense, speed);
+	StatsMap.put(level, pokemonStat);	
     }
 
-    private NodeList getAllMoves(Element levelMoves) {
-	return levelMoves.getElementsByTagName(moveTag);
+    private static NodeList getAllStats(Element levelMoves) {
+	return levelMoves.getElementsByTagName(statTag);
     }
 
-    private Element getLevelMovesElement(Element rootNode) {
-	NodeList levelMoves = rootNode.getElementsByTagName(levelStatsTag);
-	Element levelMovesElement = (Element)levelMoves.item(0);
+    private static Element getLevelStatsElement(Element rootNode) {
+	NodeList levelStats = rootNode.getElementsByTagName(levelStatsTag);
+	Element levelMovesElement = (Element)levelStats.item(0);
 	return levelMovesElement;
     }
 }
