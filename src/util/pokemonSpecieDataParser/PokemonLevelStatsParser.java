@@ -14,7 +14,7 @@ import util.pokemonSpecieDataParser.LeafElementParser.NormalAttackParser;
 import util.pokemonSpecieDataParser.LeafElementParser.NormalDefenseParser;
 import util.pokemonSpecieDataParser.LeafElementParser.SpecialAttackParser;
 import util.pokemonSpecieDataParser.LeafElementParser.SpeedParser;
-import util.pokemonSpecieDataParser.LeafElementParser.specialDefenseParser;
+import util.pokemonSpecieDataParser.LeafElementParser.SpecialDefenseParser;
 
 public class PokemonLevelStatsParser {
     private static String levelStatsTag = "levelStats";
@@ -43,7 +43,7 @@ public class PokemonLevelStatsParser {
 	Integer level = LevelParser.parse(currentStatElement);
 	double speed = SpeedParser.parse(currentStatElement);
 	double specialAttack = SpecialAttackParser.parse(currentStatElement);
-	double specialDefense = specialDefenseParser.parse(currentStatElement);
+	double specialDefense = SpecialDefenseParser.parse(currentStatElement);
 	double normalAttack = NormalAttackParser.parse(currentStatElement);
 	double normalDefense = NormalDefenseParser.parse(currentStatElement);
 	double maxHp = MaxHpParser.parse(currentStatElement);

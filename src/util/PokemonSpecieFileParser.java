@@ -21,6 +21,7 @@ import data.model.PokemonSpecie;
 import data.model.PokemonStat;
 import data.model.moves.Move;
 import util.pokemonSpecieDataParser.PokemonLevelMovesParser;
+import util.pokemonSpecieDataParser.PokemonLevelStatsParser;
 import util.pokemonSpecieDataParser.LeafElementParser.ElementalParser;
 import util.pokemonSpecieDataParser.LeafElementParser.MaxLevelParser;
 import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
@@ -75,6 +76,8 @@ public class PokemonSpecieFileParser {
 	elemental = ElementalParser.parse(rootNode);
 	maxLevel = MaxLevelParser.parse(rootNode);
 	levelMoves = levelMovesParser.parse(rootNode);
+	levelStats = PokemonLevelStatsParser.parse(rootNode);
+
 	
     }
 
