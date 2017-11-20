@@ -1,0 +1,33 @@
+<defaultPokemonSpecie>
+	<name>Pikachu</name>
+	<elemental>Lightning</elemental>
+	<maxLevel>100</maxLevel>
+	<levelMoves>
+		<move>
+			<level>1</level>
+			<name>strike</name>
+		</move>
+	</levelMoves>
+	<levelStats>
+	</levelStats>
+	<levelExp>
+		<level>
+			<number>1</number>
+			<exp>100</exp>
+		</level>
+		<level>
+			<number>2</number>
+			<exp>200</exp>
+		</level>
+		<level>
+			<number>3</number>
+			<exp>300</exp>
+		</level>
+	</levelExp>
+	<levelEvolutionImage>
+		<level>
+			<number>1</number>
+			<path>src/resrouces/splashImage.png</path>
+		</level>
+	</levelEvolutionImage>
+</defaultPokemonSpecie>

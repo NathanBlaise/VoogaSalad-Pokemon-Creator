@@ -12,11 +12,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import data.database.Pokemon;
-import data.database.PokemonSpecie;
-import data.database.PokemonStat;
-import data.database.moves.Action;
-import data.database.moves.Move;
+import data.model.Pokemon;
+import data.model.PokemonSpecie;
+import data.model.PokemonStat;
+import data.model.moves.Action;
+import data.model.moves.Move;
 
 public class xmlTester {
 
