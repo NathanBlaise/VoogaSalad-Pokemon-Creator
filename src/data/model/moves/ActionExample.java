@@ -11,7 +11,7 @@ import data.model.PokemonStat;
 public class ActionExample implements Action{
 	private static final long serialVersionUID = -333059440502600274L;//needed for serialization
 	
-	ActionExample(){
+	public ActionExample(){
 		
 	}
 
