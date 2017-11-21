@@ -12,11 +12,12 @@ import data.model.moves.Move;
 
 public class Pokemon extends PokemonSpecie implements Serializable{
 	private static final long serialVersionUID = -5135270377217672583L; //for serialization
+	private static int moveNum = 4;
 	private int currentLevel;
-	private Move[] moves = new Move[4];// the moves
+	private Move[] moves = new Move[moveNum];// the moves
 	private String name = new String(""); //the name of Pokemon
 	private double currentExperience; //the current experience got, it should greater or equal to 0, and smaller to the super.getUpNeededExp(currentLevel)
-	private double currentHP;
+	private int currentHP;
 	
 	public Pokemon(PokemonSpecie origin, String name, int targetLevel){
 		super(origin);
@@ -43,8 +44,8 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	public Pokemon(Pokemon pokemon){
 		super(pokemon);
 		this.name = pokemon.name;
-		this.moves = new Move[4];
-		for(int i=0;i<4;i++){
+		this.moves = new Move[moveNum];
+		for(int i=0;i<moveNum;i++){
 			if(pokemon.moves[i]!=null){
 				this.moves[i] = new Move(pokemon.moves[i]);
 			}
@@ -88,9 +89,9 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 		outerloop:
 		for(Move i: super.getAvailableMoves(currentLevel)){
 			if(i.equals(newMove)){
-				for(int j=0;j<4;j++){
+				for(int j=0;j<moveNum;j++){
 					if((moves[j]!=null) && moves[j].equals(originMove)){
-						for(int k=0;k<4;k++){
+						for(int k=0;k<moveNum;k++){
 							if((moves[k]!=null) && moves[k].equals(newMove)){
 								break outerloop;
 							}
@@ -154,7 +155,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 		PokemonStat result = new PokemonStat(super.getCurrentStat(currentLevel)){
 			private static final long serialVersionUID = 1637221041100808975L;
 			@Override
-			public void setHP(double HP){
+			public void setHP(int HP){
 				this.setHP(HP);
 				currentHP=this.getHP(); //let currentHP be the same as the HP of battle
 			}
@@ -182,8 +183,8 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	/**
 	 * get the current image path
 	 */
-	public String getCurrentImagePath(int currentLevel){
-		return super.getCurrentImagePath(currentLevel);
+	public String getCurrentImagePath(){
+		return super.getImagePath(currentLevel);
 	}
 	
 	/**
@@ -205,7 +206,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	/**
 	 * @return - the current HP
 	 */
-	public double getCurrentHP() {
+	public int getCurrentHP() {
 		return currentHP;
 	}
 	
@@ -213,8 +214,12 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 * WARNING! this method do not ensure that the current HP will be lower or equal to the maxHP after setting.
 	 * @param hp - the current HP
 	 */
-	public void setCurrentHP(double hp) {
+	public void setCurrentHP(int hp) {
 		this.currentHP = hp;
+	}
+	
+	public static int getMoveNum(){
+		return moveNum;
 	}
 
 }

@@ -15,6 +15,7 @@ public class Move implements Serializable{
 	
 	private static final long serialVersionUID = -9188380778013480995L; //used for serialization
 	private String moveName = "";
+	private String elemental = ""; //such as Water, Fire
 	private int PP; //the times that the move can be used
 	private int maxPP;
 	
@@ -27,6 +28,7 @@ public class Move implements Serializable{
 		PP = move.maxPP;
 		maxPP = move.maxPP;
 		moveName = move.getMoveName();
+		elemental = move.elemental;
 		action = move.action;
 	}
 	
@@ -34,15 +36,17 @@ public class Move implements Serializable{
 	 * WARNING!
 	 * This is only used for serialization.
 	 */
+	@Deprecated
 	public Move() {
 		
 	}
 
 
-	public Move(String moveName, int maxPP, Action action) {
+	public Move(String moveName, String elemental, int maxPP, Action action) {
 		super();
 		System.out.println("in the move class");
 		this.moveName = moveName;
+		this.elemental = elemental;
 		this.PP = maxPP;
 		this.maxPP = maxPP;
 		this.action = action;
@@ -76,12 +80,20 @@ public class Move implements Serializable{
 		return PP;
 	}
 
-	public Action getaction() {
+	public Action getAction() {
 		return action;
 	}
 	
-	public void setaction(Action action) {
+	public void setAction(Action action) {
 		this.action = action;
+	}
+	
+	public String getElemental() {
+		return elemental;
+	}
+
+	public void setElemental(String elemental) {
+		this.elemental = elemental;
 	}
 
 	public boolean available(){

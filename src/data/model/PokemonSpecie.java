@@ -155,7 +155,7 @@ public class PokemonSpecie implements Serializable{
 		return new Double(levelExp.get(currentLevel));
 	}
 	
-	protected String getCurrentImagePath(int currentLevel){
+	protected String getImagePath(int currentLevel){
 		String currentImagePath = "";
 		for(int i:levelMoves.keySet()){
 			if(i<=currentLevel){
