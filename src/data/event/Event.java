@@ -26,10 +26,16 @@ public abstract class Event implements Serializable{
 	
 	/**
 	 * set imagePath and instructions to be default empty value
+	 * ONLY USED FOR Serialization!
 	 */
+	@Deprecated
 	public Event(){
 		instructions = new ArrayList<Instruction>();
 		imagePath = new String("");
+	}
+	
+	public Event(String imagePath){
+		this.imagePath = new String(imagePath);
 	}
 	
 	/**

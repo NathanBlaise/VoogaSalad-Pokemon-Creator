@@ -27,12 +27,12 @@ public class xmlTester {
 
 	public static void main(String args[]) throws IOException{
 
-		PokemonStat pStat = new PokemonStat(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
+		PokemonStat pStat = new PokemonStat(1, 2, 3, 4, 5, 6);
 		
 		Map<Integer, PokemonStat> pStatMap = new HashMap<>();
 		 
 		pStatMap.put(1, pStat);
-		Move move = new Move("name", 1, new ActionExample());
+		Move move = new Move("name", "Water", 1, new ActionExample());
 		Map<Integer, Move> moveMap = new HashMap<>();
 		moveMap.put(1, move);
 		moveMap.put(2, move);
@@ -45,7 +45,7 @@ public class xmlTester {
 		
 		PokemonSpecie ps = new PokemonSpecie("race", "abil", 2, moveMap, pStatMap, doubleMap, stringMap);
 
-		Pokemon pok = new Pokemon(ps, 1);
+		Pokemon pok = new Pokemon(ps, "Jake", 1);
 		//System.out.println(pok.getMoves()[3]);
 		
 		

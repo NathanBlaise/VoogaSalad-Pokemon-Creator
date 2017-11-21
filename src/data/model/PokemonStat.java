@@ -1,6 +1,8 @@
 package data.model;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class holds a set of stat that the race of pokemon holds
@@ -11,13 +13,13 @@ import java.io.Serializable;
 
 public class PokemonStat implements Serializable{
 	private static final long serialVersionUID = -7738935652284851234L; //needed for serialization
-	private double speed;
-	private double specialAttack;
-	private double specialDefense;
-	private double normalDefense;
-	private double normalAttack;
-	private double maxHP;
-	private double HP; // the HP the pokemon has during battle
+	private int speed;
+	private int specialAttack;
+	private int specialDefense;
+	private int normalDefense;
+	private int normalAttack;
+	private int maxHP;
+	private int HP; // the HP the pokemon has during battle
 
 	/**
 	 * The formula of damage should be similar to the formula in https://bulbapedia.bulbagarden.net/wiki/Damage
@@ -28,7 +30,7 @@ public class PokemonStat implements Serializable{
 	 * @param specialDefense
 	 * @param speed
 	 */
-	public PokemonStat(double maxHP, double normalAttack, double normalDefense, double specialAttack, double specialDefense, double speed){
+	public PokemonStat(int maxHP, int normalAttack, int normalDefense, int specialAttack, int specialDefense, int speed){
 		this.maxHP=maxHP;
 		this.normalAttack=normalAttack;
 		this.normalDefense=normalDefense;
@@ -56,61 +58,72 @@ public class PokemonStat implements Serializable{
 		this.HP = origin.maxHP;
 	}
 	
-	public void setSpeed(double speed) {
+	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 
-	public void setSpecialAttack(double specialAttack) {
+	public void setSpecialAttack(int specialAttack) {
 		this.specialAttack = specialAttack;
 	}
 
-	public void setSpecialDefense(double specialDefense) {
+	public void setSpecialDefense(int specialDefense) {
 		this.specialDefense = specialDefense;
 	}
 
-	public void setNormalDefense(double normalDefense) {
+	public void setNormalDefense(int normalDefense) {
 		this.normalDefense = normalDefense;
 	}
 
-	public void setNormalAttack(double normalAttack) {
+	public void setNormalAttack(int normalAttack) {
 		this.normalAttack = normalAttack;
 	}
 	
-	public double getSpeed() {
+	public int getSpeed() {
 		return speed;
 	}
 
-	public double getSpecialAttack() {
+	public int getSpecialAttack() {
 		return specialAttack;
 	}
 
-	public double getSpecialDefense() {
+	public int getSpecialDefense() {
 		return specialDefense;
 	}
 
-	public double getNormalDefense() {
+	public int getNormalDefense() {
 		return normalDefense;
 	}
 
-	public double getNormalAttack() {
+	public int getNormalAttack() {
 		return normalAttack;
 	}
 
-	public double getMaxHP() {
+	public int getMaxHP() {
 		return maxHP;
 	}
 	
-	public double getHP(){
+	public int getHP(){
 		return HP;
 	}
 	
-	public void setHP(double HP){
+	public void setHP(int HP){
 		this.HP=(HP>maxHP)?maxHP:HP;
 		this.HP=(HP<0)?0:HP;
 	}
 
-	public void setMaxHP(double maxHP) {
+	public void setMaxHP(int maxHP) {
 		this.maxHP = maxHP;
+	}
+	
+	public Map<String, Integer> getStatMap(){
+		Map<String, Integer> result = new HashMap<String, Integer>();
+		result.put("maxHP", maxHP);
+		result.put("speed", speed);
+		result.put("normalAttack", normalAttack);
+		result.put("normalDefense", normalDefense);
+		result.put("specialAttack", specialAttack);
+		result.put("specialDefense", specialDefense);
+		return result;
 	}
 	
 }

@@ -29,6 +29,7 @@ public class EventPokemon extends Event{
 	/**
 	 * this constructor is only for serialization, it shouldn't be called for any intention else.
 	 */
+	@Deprecated
 	public EventPokemon(){
 		super();
 	}
@@ -38,9 +39,8 @@ public class EventPokemon extends Event{
 	 * @param imagePath - the path of event image
 	 * @param pokemon - the pokemon for fighting
 	 */
-	public EventPokemon(String imagePath, Pokemon pokemon){
-		super();
-		super.setImagePath(imagePath);
+	public EventPokemon(Pokemon pokemon){
+		super(pokemon.getCurrentImagePath());
 		this.pokemon=pokemon;
 		ArrayList<Instruction> instructions = new ArrayList<Instruction>();
 		instructions.add(new InstructionPokemonFight(pokemon));

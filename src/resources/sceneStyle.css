@@ -14,3 +14,13 @@
     -fx-border-style: solid;
     -fx-border-width: 5;
 }
+
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+}
