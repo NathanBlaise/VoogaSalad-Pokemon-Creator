@@ -40,6 +40,20 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 		setField(1);
 	}
 	
+	public Pokemon(Pokemon pokemon){
+		super(pokemon);
+		this.name = pokemon.name;
+		this.moves = new Move[4];
+		for(int i=0;i<4;i++){
+			if(pokemon.moves[i]!=null){
+				this.moves[i] = new Move(pokemon.moves[i]);
+			}
+		}
+		this.currentLevel = pokemon.currentLevel;
+		this.currentHP = pokemon.currentHP;
+		this.currentExperience = pokemon.currentExperience;
+	}
+	
 	private void setField(int targetLevel){
 		currentLevel = (targetLevel <= super.getMaxLevel())?targetLevel:super.getMaxLevel();
 		currentHP = super.getCurrentStat(currentLevel).getMaxHP();
