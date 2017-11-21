@@ -18,10 +18,10 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	private double currentExperience; //the current experience got, it should greater or equal to 0, and smaller to the super.getUpNeededExp(currentLevel)
 	private double currentHP;
 	
-	public Pokemon(PokemonSpecie origin, int targetLevel){
+	public Pokemon(PokemonSpecie origin, String name, int targetLevel){
 		super(origin);
 		//something needs to be added to add a name to the pokemon
-		name = "temporary name";
+		this.name = new String(name);
 		//currently, there is nothing setting the moves of the pokemon(needed for serialization)
 		setField(targetLevel);
 	}
@@ -34,9 +34,24 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 		
 	}
 	
-	public Pokemon(PokemonSpecie origin){
+	public Pokemon(PokemonSpecie origin, String name){
 		super(origin);
+		this.name = new String(name);
 		setField(1);
+	}
+	
+	public Pokemon(Pokemon pokemon){
+		super(pokemon);
+		this.name = pokemon.name;
+		this.moves = new Move[4];
+		for(int i=0;i<4;i++){
+			if(pokemon.moves[i]!=null){
+				this.moves[i] = new Move(pokemon.moves[i]);
+			}
+		}
+		this.currentLevel = pokemon.currentLevel;
+		this.currentHP = pokemon.currentHP;
+		this.currentExperience = pokemon.currentExperience;
 	}
 	
 	private void setField(int targetLevel){
