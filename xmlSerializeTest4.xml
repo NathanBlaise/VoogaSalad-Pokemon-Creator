@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_101" class="java.beans.XMLDecoder">
- <object class="data.database.Pokemon">
-  <void property="currentHP">
-   <double>1.0</double>
-  </void>
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
+ <object class="data.model.Pokemon">
   <void property="currentLevel">
    <int>1</int>
+  </void>
+  <void property="currentStat">
+   <object class="data.model.PokemonStat">
+    <void property="HP">
+     <int>1</int>
+    </void>
+    <void property="maxHP">
+     <int>1</int>
+    </void>
+    <void property="normalAttack">
+     <int>2</int>
+    </void>
+    <void property="normalDefense">
+     <int>3</int>
+    </void>
+    <void property="specialAttack">
+     <int>4</int>
+    </void>
+    <void property="specialDefense">
+     <int>5</int>
+    </void>
+    <void property="speed">
+     <int>6</int>
+    </void>
+   </object>
   </void>
   <void property="elemental">
    <string>abil</string>
@@ -30,9 +52,15 @@
    <object class="java.util.HashMap">
     <void method="put">
      <int>1</int>
-     <object class="data.database.moves.Move" id="Move0">
+     <object class="data.model.moves.Move" id="Move0">
       <void property="PP">
        <int>1</int>
+      </void>
+      <void property="action">
+       <object class="data.model.moves.ActionExample"/>
+      </void>
+      <void property="elemental">
+       <string>Water</string>
       </void>
       <void property="maxPP">
        <int>1</int>
@@ -60,24 +88,27 @@
    <object class="java.util.HashMap">
     <void method="put">
      <int>1</int>
-     <object class="data.database.PokemonStat">
+     <object class="data.model.PokemonStat">
       <void property="HP">
-       <double>1.0</double>
+       <int>1</int>
+      </void>
+      <void property="maxHP">
+       <int>1</int>
       </void>
       <void property="normalAttack">
-       <double>2.0</double>
+       <int>2</int>
       </void>
       <void property="normalDefense">
-       <double>3.0</double>
+       <int>3</int>
       </void>
       <void property="specialAttack">
-       <double>4.0</double>
+       <int>4</int>
       </void>
       <void property="specialDefense">
-       <double>5.0</double>
+       <int>5</int>
       </void>
       <void property="speed">
-       <double>6.0</double>
+       <int>6</int>
       </void>
      </object>
     </void>
@@ -87,7 +118,7 @@
    <int>2</int>
   </void>
   <void property="name">
-   <string>temporary name</string>
+   <string>Jake</string>
   </void>
   <void property="specieName">
    <string>race</string>

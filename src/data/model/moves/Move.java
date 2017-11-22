@@ -2,7 +2,7 @@ package data.model.moves;
 
 import java.io.Serializable;
 
-import data.model.PokemonStat;
+import data.model.Pokemon;
 
 /**
  * 
@@ -22,7 +22,11 @@ public class Move implements Serializable{
 	/*
 	Things with Action are commented out for now, not sure how to serialize them or if it is necessary for Move
 	*/
-	private Action action;
+	/**
+	 * @see Action
+	 * action is used for the actual attack/defense action of move, please check Action and ActionExample for further information.
+	 */
+	private Action<Pokemon, Pokemon> action;
 	
 	public Move(Move move) {
 		PP = move.maxPP;
@@ -41,9 +45,14 @@ public class Move implements Serializable{
 		
 	}
 
-
-	public Move(String moveName, String elemental, int maxPP, Action action) {
-		super();
+	/**
+	 * 
+	 * @param moveName - the name of move
+	 * @param elemental - like Fire, Water
+	 * @param maxPP - the maximum PP of Move, like 40
+	 * @param action - @see Action
+	 */
+	public Move(String moveName, String elemental, int maxPP, Action<Pokemon, Pokemon> action) {
 		System.out.println("in the move class");
 		this.moveName = moveName;
 		this.elemental = elemental;
@@ -80,11 +89,11 @@ public class Move implements Serializable{
 		return PP;
 	}
 
-	public Action getAction() {
+	public Action<Pokemon, Pokemon> getAction() {
 		return action;
 	}
 	
-	public void setAction(Action action) {
+	public void setAction(Action<Pokemon, Pokemon> action) {
 		this.action = action;
 	}
 	
@@ -100,16 +109,14 @@ public class Move implements Serializable{
 		return PP>0;
 	}
 
-	public PokemonStat[] move(PokemonStat friend, PokemonStat enermy){
-		PokemonStat[] result;
+	public Pokemon[] move(Pokemon friend, Pokemon enermy){
+		Pokemon[] result = new Pokemon[2];
 		if(available()){
 			PP--;
-			result = action.move(friend, enermy);
-		}else{
-			result = new PokemonStat[2];
-			result[0]=friend;
-			result[1]=enermy;
+			action.move(friend, enermy);
 		}
+		result[0]=friend;
+		result[1]=enermy;
 		return result;
 	}
 

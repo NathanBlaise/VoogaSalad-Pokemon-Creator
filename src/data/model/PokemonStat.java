@@ -44,6 +44,7 @@ public class PokemonStat implements Serializable{
 	 * WARNING!
 	 * This constructor is only for serialization, it shouldn't be used for any intention else.
 	 */
+	@Deprecated
 	public PokemonStat() {
 		
 	}
@@ -111,6 +112,11 @@ public class PokemonStat implements Serializable{
 		this.HP=(HP<0)?0:HP;
 	}
 
+	/**
+	 * please use constructor to create a new PokemonStat instead
+	 * @param maxHP
+	 */
+	@Deprecated
 	public void setMaxHP(int maxHP) {
 		this.maxHP = maxHP;
 	}
