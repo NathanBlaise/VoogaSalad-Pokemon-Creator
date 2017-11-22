@@ -43,6 +43,7 @@ public class PokemonSpecie implements Serializable{
 	 * WARNING!
 	 * This constructor is only used for serialization, it shouldn't be used for any intention else.
 	 */
+	@Deprecated
 	public PokemonSpecie() {
 		
 	}

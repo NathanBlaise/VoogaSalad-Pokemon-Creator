@@ -24,7 +24,7 @@ public class Move implements Serializable{
 	*/
 	/**
 	 * @see Action
-	 * action is used for the actual attack/defense action of move, please check Action and ActionExample for further information.
+	 * action is used for the actual attack/defense action of move, please check this.move() for further information.
 	 */
 	private Action<Pokemon, Pokemon> action;
 	
@@ -109,14 +109,21 @@ public class Move implements Serializable{
 		return PP>0;
 	}
 
-	public Pokemon[] move(Pokemon friend, Pokemon enermy){
+	/**
+	 * this is the most important part of move
+	 * It should be used repetitively during the battle
+	 * @param friend - the Pokemon who is going to use the current move
+	 * @param enemy - the Pokemon who is NOT going to use the current move
+	 * @return an array. The first element is friend, the second element is enemy.
+	 */
+	public Pokemon[] move(Pokemon friend, Pokemon enemy){
 		Pokemon[] result = new Pokemon[2];
 		if(available()){
 			PP--;
-			action.move(friend, enermy);
+			action.move(friend, enemy);
 		}
 		result[0]=friend;
-		result[1]=enermy;
+		result[1]=enemy;
 		return result;
 	}
 
