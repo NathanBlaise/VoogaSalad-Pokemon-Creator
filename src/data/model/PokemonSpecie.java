@@ -109,6 +109,11 @@ public class PokemonSpecie implements Serializable{
 		return levelMoves;
 	}
 	
+	/**
+	 * only for serialization,
+	 * please use constructor instead
+	 */
+	@Deprecated
 	public void setLevelMoves(Map<Integer, Move> moveMap) {
 		this.levelMoves = moveMap;
 	}

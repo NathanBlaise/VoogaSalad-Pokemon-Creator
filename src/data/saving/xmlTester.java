@@ -83,6 +83,5 @@ public class xmlTester {
 		Pokemon pokemon = (Pokemon) decoder.readObject();
 		System.out.println(pokemon);
 		System.out.println(pokemon.getElemental());
-		
 	}
 }

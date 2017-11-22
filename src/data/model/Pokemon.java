@@ -17,7 +17,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	private Move[] moves = new Move[moveNum];// the moves
 	private String name = new String(""); //the name of Pokemon
 	private double currentExperience; //the current experience got, it should greater or equal to 0, and smaller to the super.getUpNeededExp(currentLevel)
-	private int currentHP;
+	private PokemonStat currentStat; // the stat of current pokemon
 	
 	public Pokemon(PokemonSpecie origin, String name, int targetLevel){
 		super(origin);
@@ -31,6 +31,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 * WARNING!
 	 * This is only used for serialization, please use other constructor for any other intention
 	 */
+	@Deprecated
 	public Pokemon(){
 		
 	}
@@ -50,15 +51,13 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 				this.moves[i] = new Move(pokemon.moves[i]);
 			}
 		}
-		this.currentLevel = pokemon.currentLevel;
-		this.currentHP = pokemon.currentHP;
-		this.currentExperience = pokemon.currentExperience;
+		setField(pokemon.currentLevel);
 	}
 	
 	private void setField(int targetLevel){
 		currentLevel = (targetLevel <= super.getMaxLevel())?targetLevel:super.getMaxLevel();
-		currentHP = super.getCurrentStat(currentLevel).getMaxHP();
 		currentExperience = 0;
+		currentStat = new PokemonStat(super.getCurrentStat(currentLevel));
 	}
 
 	/**
@@ -79,7 +78,17 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 				restExp = 0.0;
 			}
 		}
+		resetCurrentStat();
 		return (currentLevel > originLevel);
+	}
+	
+	/**
+	 * this should be called after every battle to reset the currentStat
+	 */
+	public void resetCurrentStat(){
+		int currentHP = currentStat.getHP();
+		currentStat = new PokemonStat(super.getCurrentStat(currentLevel));
+		currentStat.setHP(currentHP);
 	}
 	
 	/**
@@ -108,16 +117,20 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 * fill up the HP to the max HP
 	 */
 	public void fillCurrentHP(){
-		currentHP = super.getCurrentStat(currentLevel).getMaxHP();
+		currentStat.setHP(currentStat.getMaxHP());
 	}
 	
 	public int getCurrentLevel() {
 		return currentLevel;
 	}
 	
+	/**
+	 * 
+	 * @param level
+	 */
+	@Deprecated
 	public void setCurrentLevel(int level) {
 		this.currentLevel = level;
-		setField(level);
 	}
 
 	/**
@@ -152,18 +165,17 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 * @return - the stats of current level
 	 */
 	public PokemonStat getCurrentStat(){
-		PokemonStat result = new PokemonStat(super.getCurrentStat(currentLevel)){
-			private static final long serialVersionUID = 1637221041100808975L;
-			@Override
-			public void setHP(int HP){
-				this.setHP(HP);
-				currentHP=this.getHP(); //let currentHP be the same as the HP of battle
-			}
-		};
-		result.setHP(currentHP);
-		return result;
+		return currentStat;
 	}
 	
+	/**
+	 * set the current status of Pokemon
+	 * @param currentStat - the current status of Pokemon
+	 */
+	public void setCurrentStat(PokemonStat currentStat) {
+		this.currentStat = new PokemonStat(currentStat);
+	}
+
 	/**
 	 * 
 	 * @return - all the moves that can be learned in or below the current level
@@ -201,21 +213,6 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 */
 	public void setName(String name){
 		this.name = name;
-	}
-	
-	/**
-	 * @return - the current HP
-	 */
-	public int getCurrentHP() {
-		return currentHP;
-	}
-	
-	/**
-	 * WARNING! this method do not ensure that the current HP will be lower or equal to the maxHP after setting.
-	 * @param hp - the current HP
-	 */
-	public void setCurrentHP(int hp) {
-		this.currentHP = hp;
 	}
 	
 	public static int getMoveNum(){
