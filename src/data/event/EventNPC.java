@@ -16,7 +16,9 @@ import data.model.NPC;
 public class EventNPC extends Event{
 	private static final long serialVersionUID = -904353089393505949L;
 	private static final ArrayList<String> availableInstructions = new ArrayList<String>() {
-	    {
+		private static final long serialVersionUID = 4770817977589641060L;
+
+		{
 			add("InstructionNPCFight");
 			add("InstructionNPCDialogue");
 	    }

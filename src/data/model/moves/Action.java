@@ -4,13 +4,11 @@ import java.io.Serializable;
 
 /**
  * 
- * @author cy122
  * 
  * This is an interface that holds a lambda that actually takes a action from a friend Pokemon to enermy Pokemon
- * it gives back the statuses of both pokemons, where Pokemon[0] should be friend Pokemon, Pokemon[1] should be enermy Pokemon
  * 
- * Every battle should not call resetCurrentStat in the middle of battling!
- *
+ * Every battle should not call pokemon.resetCurrentStat in the middle of battling!
+ * @author cy122
  */
 
 @FunctionalInterface

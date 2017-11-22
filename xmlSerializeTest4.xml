@@ -52,35 +52,19 @@
    <object class="java.util.HashMap">
     <void method="put">
      <int>1</int>
-     <object class="data.model.moves.Move" id="Move0">
-      <void property="PP">
-       <int>1</int>
-      </void>
-      <void property="action">
-       <object class="data.model.moves.ActionExample"/>
-      </void>
-      <void property="elemental">
-       <string>Water</string>
-      </void>
-      <void property="maxPP">
-       <int>1</int>
-      </void>
-      <void property="moveName">
-       <string>name</string>
-      </void>
-     </object>
+     <object class="data.model.moves.MoveDatabase.MoveTailWhip" id="MoveTailWhip0"/>
     </void>
     <void method="put">
      <int>2</int>
-     <object idref="Move0"/>
+     <object idref="MoveTailWhip0"/>
     </void>
     <void method="put">
      <int>3</int>
-     <object idref="Move0"/>
+     <object idref="MoveTailWhip0"/>
     </void>
     <void method="put">
      <int>4</int>
-     <object idref="Move0"/>
+     <object idref="MoveTailWhip0"/>
     </void>
    </object>
   </void>
