@@ -23,8 +23,5 @@ public class MoveTailWhip extends MoveStatChange{
 			}
 		});
 	}
-	
-	public MoveTailWhip(String temp){
-		this();
-	}
+
 }

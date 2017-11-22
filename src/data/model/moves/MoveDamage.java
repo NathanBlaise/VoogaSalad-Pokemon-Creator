@@ -11,11 +11,26 @@ import data.model.PokemonStat;
 public class MoveDamage extends Move{
 	private static final long serialVersionUID = 2692337947083408494L;
 	
+	/**
+	 * 
+	 * @param moveName - the name of move
+	 * @param elemental - such as Fire, Water
+	 * @param maxPP - the maximum PP number
+	 * @param power - the power of move, related to the actual damage to the opponent, 
+	 * where the damage is debuffed or buffed power according to the elemental
+	 */
 	public MoveDamage(String moveName, String elemental, int maxPP, int power){
 		super(moveName, elemental, maxPP, (friend, enemy)->damage(friend, enemy, elemental, power));
 	}
 
-
+	/**
+	 * a function that will used during the battle and is encapsulated as Action
+	 * @param friend - the friend Pokemon
+	 * @param enemy - the enemy Pokemon
+	 * @param moveElemental - the elemental of move
+	 * @param power - the power of move, related to the actual damage to the opponent, 
+	 * where the damage is debuffed or buffed power according to the elemental
+	 */
 	private static void damage(Pokemon friend, Pokemon enemy, String moveElemental, int power) {
 		int damage = DamageCalculator.getDamage(friend, enemy, moveElemental, power);
 		PokemonStat newEnemyCurrentStat = enemy.getCurrentStat();
