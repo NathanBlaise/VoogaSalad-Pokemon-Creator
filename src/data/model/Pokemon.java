@@ -6,7 +6,7 @@ import data.model.moves.Move;
 
 /**
  * responsible for all the data needed for individual Pokemon
- * @author cy122 ko72
+ * @author cy122 ko72 nathanlewis
  *
  */
 
@@ -192,6 +192,17 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 */
 	public double getCurrentHP() {
 		return currentHP;
+	}
+	
+	/**
+	 * 
+	 * @param hp - the HP you wish to update the Pokemon by
+	 */
+	public void updateHP(double hp) {
+		if(this.currentHP + hp >= super.getCurrentStat(currentLevel).getMaxHP()) {
+			this.fillCurrentHP();
+		}
+		else this.currentHP = this.currentHP + hp;
 	}
 	
 	/**
