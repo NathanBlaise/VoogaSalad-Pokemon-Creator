@@ -23,7 +23,6 @@ public class Specie2 extends PokemonSpecie{
 			this.put(1, new MoveGrowl());
 			this.put(2, new MoveQuickAttack());
 			this.put(3, new MoveTailWhip());
-			this.put(2, new MoveThunderShock());
 		}
 	};
 	private static Map<Integer, PokemonStat> levelStats = new HashMap<Integer, PokemonStat>(){

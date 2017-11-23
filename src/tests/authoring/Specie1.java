@@ -15,7 +15,7 @@ public class Specie1 extends PokemonSpecie{
 	private static final long serialVersionUID = -2300245113671553925L;
 	private static String raceName = "Pikachu";
 	private static String elemental = "Electric";
-	private static int maxLevel = 3;
+	private static int maxLevel = 4;
 	private static Map<Integer, Move> levelMoves = new HashMap<Integer, Move>(){
 		private static final long serialVersionUID = -4489971927210436840L;
 
@@ -23,7 +23,7 @@ public class Specie1 extends PokemonSpecie{
 			this.put(1, new MoveGrowl());
 			this.put(2, new MoveQuickAttack());
 			this.put(3, new MoveTailWhip());
-			this.put(2, new MoveThunderShock());
+			this.put(4, new MoveThunderShock());
 		}
 	};
 	private static Map<Integer, PokemonStat> levelStats = new HashMap<Integer, PokemonStat>(){
@@ -33,6 +33,7 @@ public class Specie1 extends PokemonSpecie{
 			this.put(1, new PokemonStat(1,2,3,4,5,6));
 			this.put(2, new PokemonStat(2,3,4,5,6,7));
 			this.put(3, new PokemonStat(3,4,5,6,7,8));
+			this.put(4, new PokemonStat(4,5,6,7,8,9));
 		}
 	};
 	private static Map<Integer, Double> levelExp = new HashMap<Integer, Double>(){
@@ -42,6 +43,7 @@ public class Specie1 extends PokemonSpecie{
 			this.put(1, 1.0);
 			this.put(2, 2.0);
 			this.put(3, 3.0);
+			this.put(4, 4.0);
 		}
 	};
 	private static Map<Integer, String> levelEvolutionImagePath = new HashMap<Integer, String>(){

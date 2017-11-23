@@ -65,24 +65,17 @@ public class PokemonTab {
 		ColumnConstraints cons1 = new ColumnConstraints();
         cons1.setHgrow(Priority.ALWAYS);
         root.getColumnConstraints().add(cons1);
-
         ColumnConstraints cons2 = new ColumnConstraints();
         cons2.setHgrow(Priority.ALWAYS);
-        
         ColumnConstraints cons3 = new ColumnConstraints();
         cons3.setHgrow(Priority.ALWAYS);
-        
         root.getColumnConstraints().addAll(cons1, cons2, cons3);
-        
         RowConstraints rcons1 = new RowConstraints();
         rcons1.setVgrow(Priority.NEVER);
-        
         RowConstraints rcons2 = new RowConstraints();
         rcons2.setVgrow(Priority.NEVER);  
-        
         RowConstraints rcons3 = new RowConstraints();
         rcons2.setVgrow(Priority.SOMETIMES); 
-        
         root.getRowConstraints().addAll(rcons1, rcons2, rcons3);
 		
 		root.add(showStatList(localPokemon.getCurrentStat().getStatMap()),2,1,2,2);
@@ -220,6 +213,9 @@ public class PokemonTab {
 		Label nickNameLabel = new Label("Nick Name:");
 		result.getChildren().add(nickNameLabel);
 		TextField nickNameField = new TextField(initialName);
+		nickNameField.textProperty().addListener((observable, oldValue, newValue) -> {
+		    localPokemon.setName(newValue);
+		});
 		result.getChildren().add(nickNameField);
 		return result;
 	}
@@ -239,7 +235,6 @@ public class PokemonTab {
 	 */
 	@SuppressWarnings("unchecked")
 	public TableView<List<String>> showStatList(Map<String, Integer> stat){
-		System.out.printf("stat_size: %s\n", stat.toString());
 		TableView<List<String>> table = new TableView<List<String>>();
 		table.setEditable(false); 
         TableColumn<List<String>, String> abilityCol = new TableColumn<List<String>, String>(LanguageReader.convertLanguage("English", "ability"));
