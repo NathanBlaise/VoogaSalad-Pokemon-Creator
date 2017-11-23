@@ -24,7 +24,7 @@ public class ActionExample implements Action<Pokemon, Pokemon>{
 	 * @param enemy - the enermy Pokemon
 	 */
 	public void move(Pokemon friend, Pokemon enemy){
-		int currentLevelMinusOne = (friend.getCurrentLevel()>=1)?(friend.getCurrentLevel()-1):0;
+		int currentLevelMinusOne = (friend.getCurrentLevel()>=2)?(friend.getCurrentLevel()-1):1;
 		PokemonStat lowerStat = friend.getLevelStats().get(currentLevelMinusOne);
 		PokemonStat currentStat = new PokemonStat(friend.getCurrentStat());
 		currentStat.setNormalDefense(lowerStat.getNormalDefense());

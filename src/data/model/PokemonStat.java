@@ -124,11 +124,11 @@ public class PokemonStat implements Serializable{
 	public Map<String, Integer> getStatMap(){
 		Map<String, Integer> result = new HashMap<String, Integer>();
 		result.put("maxHP", maxHP);
-		result.put("speed", speed);
 		result.put("normalAttack", normalAttack);
 		result.put("normalDefense", normalDefense);
 		result.put("specialAttack", specialAttack);
 		result.put("specialDefense", specialDefense);
+		result.put("speed", speed);
 		return result;
 	}
 	

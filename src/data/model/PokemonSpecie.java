@@ -1,8 +1,9 @@
 package data.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 import data.model.moves.Move;
 
@@ -25,13 +26,13 @@ public class PokemonSpecie implements Serializable{
 	private Map<Integer,String> levelEvolutionImagePath; // the value here is the path of Image of pokemon for the related level.
 													// if there is no image for the current level, 
 													//then choose the image of the biggest level which is lower than or equal to the current level
-	public PokemonSpecie(String raceName, String ability, int maxLevel,
+	public PokemonSpecie(String raceName, String elemental, int maxLevel,
 			Map<Integer, Move> levelMoves,
 			Map<Integer, PokemonStat> levelStats,
 			Map<Integer, Double> levelExp,
 			Map<Integer, String> levelEvolutionImagePath) {
 		this.specieName = raceName;
-		this.elemental = ability;
+		this.elemental = elemental;
 		this.maxLevel = maxLevel;
 		this.levelMoves = levelMoves;
 		this.levelStats = levelStats;
@@ -84,10 +85,10 @@ public class PokemonSpecie implements Serializable{
 	
 	/**
 	 * 
-	 * @param ability - such as Fire, Water
+	 * @param elemental - such as Fire, Water
 	 */
-	public void setElemental(String ability) {
-		this.elemental = ability;
+	public void setElemental(String elemental) {
+		this.elemental = elemental;
 	}
 	
 	/**
@@ -143,8 +144,8 @@ public class PokemonSpecie implements Serializable{
 		this.levelEvolutionImagePath = stringMap;
 	}
 	
-	protected Iterable<Move> getAvailableMoves(int currentLevel){
-		Vector<Move> availableMoves = new Vector<Move>();
+	protected List<Move> getAvailableMoves(int currentLevel){
+		List<Move> availableMoves = new ArrayList<Move>();
 		for(int i:levelMoves.keySet()){
 			if(i<=currentLevel){
 				availableMoves.add(new Move(levelMoves.get(i)));
@@ -163,7 +164,7 @@ public class PokemonSpecie implements Serializable{
 	
 	protected String getImagePath(int currentLevel){
 		String currentImagePath = "";
-		for(int i:levelMoves.keySet()){
+		for(int i:levelEvolutionImagePath.keySet()){
 			if(i<=currentLevel){
 				currentImagePath = new String(levelEvolutionImagePath.get(i));
 			}
