@@ -16,7 +16,9 @@ import data.model.NPC;
 public class EventNPC extends Event{
 	private static final long serialVersionUID = -904353089393505949L;
 	private static final ArrayList<String> availableInstructions = new ArrayList<String>() {
-	    {
+		private static final long serialVersionUID = 4770817977589641060L;
+
+		{
 			add("InstructionNPCFight");
 			add("InstructionNPCDialogue");
 	    }
@@ -25,7 +27,9 @@ public class EventNPC extends Event{
 	
 	/**
 	 * set NPC in default empty value
+	 * This is only used for serialization!
 	 */
+	@Deprecated
 	public EventNPC(){
 		npc = new NPC();
 	}
@@ -34,6 +38,7 @@ public class EventNPC extends Event{
 	 * @param npc - the NPC that the npc included in that event will copy based on
 	 */
 	public EventNPC(NPC npc){
+		super(npc.getImagePath());
 		this.npc = new NPC(npc);
 	}
 
