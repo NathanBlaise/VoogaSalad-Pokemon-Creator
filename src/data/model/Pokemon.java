@@ -1,6 +1,7 @@
 package data.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import data.model.moves.Move;
 
@@ -57,6 +58,11 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	private void setField(int targetLevel){
 		currentLevel = (targetLevel <= super.getMaxLevel())?targetLevel:super.getMaxLevel();
 		currentExperience = 0;
+		for(int i=0;i<moveNum;i++){
+			if(!super.getAvailableMoves(currentLevel).contains(moves[i])){
+				moves[i]=null;
+			}
+		}
 		currentStat = new PokemonStat(super.getCurrentStat(currentLevel));
 	}
 
@@ -93,24 +99,32 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	
 	/**
 	 *  change the move in moves from originMove to newMove
+	 *  @return - whether the change succeeds
 	 */
-	public void changeMove(Move originMove, Move newMove){
-		outerloop:
+	public boolean changeMove(Move originMove, Move newMove){
+		for(int k=0;k<moveNum;k++){
+			if((moves[k]!=null) && moves[k].equals(newMove)){
+				return true;
+			}
+		}
 		for(Move i: super.getAvailableMoves(currentLevel)){
 			if(i.equals(newMove)){
 				for(int j=0;j<moveNum;j++){
 					if((moves[j]!=null) && moves[j].equals(originMove)){
-						for(int k=0;k<moveNum;k++){
-							if((moves[k]!=null) && moves[k].equals(newMove)){
-								break outerloop;
-							}
-						}
-						moves[j] = newMove;
-						break outerloop;
+						moves[j] = new Move(newMove);
+						return true;
 					}
 				}
+				for(int j=0;j<moveNum;j++){
+					if(moves[j]==null){
+						moves[j] = new Move(newMove);
+						return true;
+					}
+				}
+				return false;
 			}
 		}
+		return false;
 	}
 	
 	/**
@@ -125,7 +139,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	}
 	
 	/**
-	 * 
+	 * use changeCurrentLevel instead, because this function is used for serialization already
 	 * @param level
 	 */
 	@Deprecated
@@ -133,6 +147,15 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 		this.currentLevel = level;
 	}
 
+	/**
+	 * the substitute of setCurrentLevel
+	 */
+	public void changeCurrentLevel(int level) {
+		currentLevel = level>=super.getMaxLevel()?super.getMaxLevel():level;
+		currentLevel = currentLevel>=1?currentLevel:1;
+		setField(currentLevel);
+	}
+	
 	/**
 	 * 
 	 * @return - an array of current Moves
@@ -180,7 +203,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 * 
 	 * @return - all the moves that can be learned in or below the current level
 	 */
-	public Iterable<Move> getAvailableMoves(){
+	public List<Move> getAvailableMoves(){
 		return super.getAvailableMoves(currentLevel);
 	}
 	
@@ -203,7 +226,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 * 
 	 * @return - the nick name of Pokemon
 	 */
-	public String getName(){
+	public String getNickName(){
 		return new String(name);
 	}
 	

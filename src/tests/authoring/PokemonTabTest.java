@@ -1,12 +1,11 @@
 package tests.authoring;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
+import data.model.PokemonSpecie;
 import authoring.databaseEditor.PokemonTab;
 import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class PokemonTabTest extends Application{
@@ -17,17 +16,9 @@ public class PokemonTabTest extends Application{
 
 	@Override
 	public void start(Stage primaryStage){
-		Map<String, Integer> tempMap = new HashMap<String, Integer>();
-		tempMap.put("speed", 1);
-		tempMap.put("maxHP", 1);
-		tempMap.put("specialAttack", 1);
-		tempMap.put("specialDefense", 1);
-		tempMap.put("normalAttack", 1);
-		tempMap.put("normalDefense", 1);
-		Scene scene = new Scene(new Group());
-        ((Group) scene.getRoot()).getChildren().addAll(new PokemonTab(null, null).createStatList(tempMap));
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        scene.getStylesheets().add("resources/sceneStyle.css");
+		List<PokemonSpecie> pokemonSpecies = new ArrayList<PokemonSpecie>();
+		pokemonSpecies.add(new Specie1());
+		pokemonSpecies.add(new Specie2());
+		new PokemonTab(pokemonSpecies, new Specie1());
 	}
 }

@@ -48,7 +48,7 @@ public class MoveStatChange extends Move{
 		}
 		try {
 			int targetLevel = (targetPokemon.getCurrentLevel()+level<=targetPokemon.getMaxLevel())?(targetPokemon.getCurrentLevel()+level):targetPokemon.getMaxLevel();
-			targetLevel = (targetLevel>=0)?targetLevel:0;
+			targetLevel = (targetLevel>=1)?targetLevel:1;
 			PokemonStat targetStat = targetPokemon.getLevelStats().get(targetLevel);
 			PokemonStat currentStat = new PokemonStat(targetPokemon.getCurrentStat());
 			for(String property: properties){

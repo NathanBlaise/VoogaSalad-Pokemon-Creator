@@ -1,19 +1,41 @@
 package authoring.databaseEditor;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import data.LanguageReader;
 import data.model.Pokemon;
@@ -21,24 +43,189 @@ import data.model.PokemonSpecie;
 import data.model.moves.Move;
 
 public class PokemonTab {
-	public PokemonTab(List<PokemonSpecie> pokemonSpecies, PokemonSpecie selectedPokemon){
-		
-	}
-
-	private void createPokemonText(PokemonSpecie currentPokemonSpecie, String name, int currentLevel){
-		Pokemon currentPokemon = new Pokemon(currentPokemonSpecie, name, currentLevel);
+	private Pokemon localPokemon;
+	private List<PokemonSpecie> pokemonSpecies;
+	private Stage stage;
+	GridPane root;
+	
+	public PokemonTab(List<PokemonSpecie> pokemonSpecies, PokemonSpecie selectedPokemonSpecie){
+		String defaultName = new String(selectedPokemonSpecie.getSpecieName());
+		localPokemon = new Pokemon(selectedPokemonSpecie, defaultName);
+		this.pokemonSpecies = pokemonSpecies;
+		showPokemon();
 	}
 	
-	public GridPane createMoveList(Move[] moves){
-		GridPane movePane = new GridPane();
+	private void showPokemon(){
+		if(stage!=null){
+			stage.close();
+		}
+		stage = new Stage();
+		GridPane root = new GridPane();
+		
+		ColumnConstraints cons1 = new ColumnConstraints();
+        cons1.setHgrow(Priority.ALWAYS);
+        root.getColumnConstraints().add(cons1);
+        ColumnConstraints cons2 = new ColumnConstraints();
+        cons2.setHgrow(Priority.ALWAYS);
+        ColumnConstraints cons3 = new ColumnConstraints();
+        cons3.setHgrow(Priority.ALWAYS);
+        root.getColumnConstraints().addAll(cons1, cons2, cons3);
+        RowConstraints rcons1 = new RowConstraints();
+        rcons1.setVgrow(Priority.NEVER);
+        RowConstraints rcons2 = new RowConstraints();
+        rcons2.setVgrow(Priority.NEVER);  
+        RowConstraints rcons3 = new RowConstraints();
+        rcons2.setVgrow(Priority.SOMETIMES); 
+        root.getRowConstraints().addAll(rcons1, rcons2, rcons3);
+		
+		root.add(showStatList(localPokemon.getCurrentStat().getStatMap()),2,1,2,2);
+		root.add(saveButton(),3,0,1,1);
+        root.add(showMoveList(localPokemon.getMoves()), 1, 2,1,1);
+        root.add(showImage(localPokemon.getCurrentImagePath()), 1, 1, 1, 1);
+        root.add(showNickName(localPokemon.getNickName()), 1, 0, 1, 1);
+        root.add(showLevelPicker(localPokemon.getMaxLevel()), 2, 0, 1, 1);
+        root.add(showSpecieList(pokemonSpecies),0,0,1,3);
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        root.setPrefSize(660, 230);
+        stage.show();
+        scene.getStylesheets().add("resources/sceneStyle.css");
+	}
+
+	public Pokemon getPokemon(){
+		return new Pokemon(localPokemon);
+	}
+	
+	public Button saveButton(){
+		Button result = new Button("save");
+		result.setOnMouseClicked(e->{showPokemon();});
+		return result;
+	}
+	
+	public TilePane showMoveList(Move[] moves){
+		List<Move> availableMoves = localPokemon.getAvailableMoves();
+        Map<String, Move> name2move =
+        		availableMoves.stream().collect(Collectors.toMap(Move::getMoveName,
+        	                                              Function.identity()));
+		TilePane movePane = new TilePane();
 		int gridWidth = (int)Math.round(Math.sqrt(Pokemon.getMoveNum()));
-		int gridHeight = (int)Math.round(Pokemon.getMoveNum()/new Double(gridWidth));
+		movePane.setPrefColumns(gridWidth);
 		for(int i=0;i<Pokemon.getMoveNum();i++){
+			ComboBox<String> comboBox;
 			if(moves[i]!=null){
-				movePane.add(new Label(moves[i].getMoveName()), i%gridWidth, i%gridHeight);
+				System.out.printf("%d: %s\n", i, moves[i].getMoveName());
+				comboBox = createMoveComboBox(availableMoves,
+						name2move);
+				comboBox.getSelectionModel().select(moves[i].getMoveName());
+			}else{
+				comboBox = createMoveComboBox(availableMoves,
+						name2move);
+				comboBox.getSelectionModel().select(null);
 			}
+			movePane.getChildren().add(comboBox);
 		}
 		return movePane;
+	}
+
+	private ComboBox<String> createMoveComboBox(List<Move> availableMoves,
+			Map<String, Move> name2move) {
+		ComboBox<String> comboBox = new ComboBox<String>();
+        Iterator<Move> availableMovesIterator = availableMoves.iterator();
+        while(availableMovesIterator.hasNext()){
+        	comboBox.getItems().add(availableMovesIterator.next().getMoveName());
+        	comboBox.valueProperty().addListener(new ChangeListener<String>() {
+                @Override 
+                public void changed(ObservableValue<? extends String> ov, String oldMoveName, String newMoveName) {
+                	localPokemon.changeMove(name2move.get(oldMoveName), name2move.get(newMoveName));
+                }    
+              });
+        }
+        comboBox.setPrefSize(100, 50);
+		return comboBox;
+	}
+	
+	public ListView<PokemonSpecie> showSpecieList(List<PokemonSpecie> pokemonSpecies){ 
+		ListView<PokemonSpecie> list = new ListView<PokemonSpecie>();
+		ObservableList<PokemonSpecie> items =FXCollections.observableArrayList(pokemonSpecies);
+		list.setItems(items);
+        list.setCellFactory(new Callback<ListView<PokemonSpecie>, 
+                ListCell<PokemonSpecie>>() {
+                    @Override 
+                    public ListCell<PokemonSpecie> call(ListView<PokemonSpecie> list) {
+                        return new ListCell<PokemonSpecie>(){
+                        	@Override
+                            public void updateItem(PokemonSpecie item, boolean empty) {
+                                super.updateItem(item, empty);
+                                if (item != null) {
+                                    setText(item.getSpecieName());
+                                }
+                            }
+                        };
+                    }
+                }
+            );
+        list.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<PokemonSpecie>() {
+                    public void changed(ObservableValue<? extends PokemonSpecie> ov, 
+                    		PokemonSpecie old_val, PokemonSpecie new_val) {
+                            refresh(new_val, localPokemon.getNickName(), localPokemon.getCurrentLevel());
+                }
+        });
+        list.setPrefWidth(100);
+		return list;
+	}
+	
+	protected void refresh(PokemonSpecie pokemonSpecie, String name, int currentLevel) {
+		localPokemon = new Pokemon(pokemonSpecie, name, currentLevel);
+		showPokemon();
+	}
+	
+	public HBox showLevelPicker(int maxLevel){
+		HBox result =new HBox();
+		Label levelLabel = new Label("Lv: " + String.valueOf(localPokemon.getCurrentLevel()));
+		Slider slider = new Slider();
+        levelLabel.textProperty().bind(
+                Bindings.format(
+                    "Lv: %.0f",
+                    slider.valueProperty()
+                )
+         );
+		slider.setMin(1);
+		slider.setMax(maxLevel);
+		slider.setValue(localPokemon.getCurrentLevel());
+		slider.setShowTickLabels(true);
+		slider.setShowTickMarks(true);
+		slider.setMajorTickUnit(maxLevel/2+1);
+		slider.setMinorTickCount(5);
+		slider.setBlockIncrement(1);
+        slider.valueProperty().addListener(new ChangeListener<Number>() {
+            public void changed(ObservableValue<? extends Number> ov,
+                Number old_val, Number new_val) {
+                    localPokemon.changeCurrentLevel(new_val.intValue());
+            }
+        });
+		result.getChildren().addAll(slider, levelLabel);
+		return result;
+	}
+	
+	public VBox showNickName(String initialName){
+		VBox result = new VBox();
+		Label nickNameLabel = new Label("Nick Name:");
+		result.getChildren().add(nickNameLabel);
+		TextField nickNameField = new TextField(initialName);
+		nickNameField.textProperty().addListener((observable, oldValue, newValue) -> {
+		    localPokemon.setName(newValue);
+		});
+		result.getChildren().add(nickNameField);
+		return result;
+	}
+	
+	public ImageView showImage(String imgPath){
+		ImageView imageView = new ImageView();
+		File file = new File(imgPath);
+        Image image = new Image(file.toURI().toString());
+        imageView.setImage(image);
+        return imageView;
 	}
 	
 	/**
@@ -47,7 +234,7 @@ public class PokemonTab {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public TableView<List<String>> createStatList(Map<String, Integer> stat){
+	public TableView<List<String>> showStatList(Map<String, Integer> stat){
 		TableView<List<String>> table = new TableView<List<String>>();
 		table.setEditable(false); 
         TableColumn<List<String>, String> abilityCol = new TableColumn<List<String>, String>(LanguageReader.convertLanguage("English", "ability"));
