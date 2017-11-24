@@ -65,10 +65,12 @@ public class NPCEventEditor{
 			Map<String, Function<Callback<Instruction, Integer>, Integer>> result = new HashMap<String, Function<Callback<Instruction, Integer>, Integer>>();
 			result.put("InstructionNPCDialogue", e->{
 				instructionPane.setRight(new InstructionNPCDialogueEditor(eventNPC.getNpc(), e).showEditor());
+				stage.sizeToScene();
 				return null;
 			});
 			result.put("InstructionNPCFight", e->{
 				instructionPane.setRight(new InstructionNPCFightEditor(eventNPC.getNpc(), pokemonSpecies, e).showEditor());
+				stage.sizeToScene();
 				return null;
 			});
 			return result;

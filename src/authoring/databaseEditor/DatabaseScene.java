@@ -14,9 +14,7 @@ public class DatabaseScene extends BasicAuthorScreen {
 
 	public DatabaseScene(Color white, StageDelegate app) {
 		super(white,app);
-		Tab tabMonster = new Tab("Edit Monster");
-		Tab tabNPC = new Tab("Edit NPC");
-		tabPane = new TabPane(tabMonster, tabNPC, new PlayerTab().getTab());
+		tabPane = new TabPane(new PlayerTab().getTab());
 		tabPane.setSide(Side.TOP);
 		tabPane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
 		tabPane.setPrefSize(getWidth(), getButtonY());
