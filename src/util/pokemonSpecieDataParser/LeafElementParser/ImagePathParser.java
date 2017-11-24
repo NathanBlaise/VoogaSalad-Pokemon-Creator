@@ -7,7 +7,7 @@ import org.w3c.dom.Element;
  *
  */
 public class ImagePathParser extends LeafElementParser{
-    private static String iamgePathTag = "iamgePath";
+    private static String iamgePathTag = "imagePath";
     /**
      * Gets the evolution image path as a string
      * @param rootNode the imagePath element
