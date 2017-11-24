@@ -1,7 +1,6 @@
 package authoring.eventManage;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 
 import engine.UI.UIComponentFactory.ListViewFactory;
@@ -11,8 +10,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.ComboBoxListCell;
 
 public class EventInstructions {
@@ -20,7 +17,7 @@ public class EventInstructions {
 	private ListView listView;
 	
 	public EventInstructions(Map<String,String> instructions){
-		ObservableList names = FXCollections.observableArrayList();
+		ObservableList<String> names = FXCollections.observableArrayList();
 		names.addAll(instructions.values());
 		listView = ListViewFactory.createListView(new ContextMenu(), ComboBoxListCell.forListView(names),
 				new ChangeListener<String>(){

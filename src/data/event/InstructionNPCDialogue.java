@@ -35,6 +35,7 @@ public class InstructionNPCDialogue implements Instruction{
 	 * 
 	 * this is only for serialization, it shouldn't be called for any intention else.
 	 */
+	@Deprecated
 	public InstructionNPCDialogue(){
 	}
 	

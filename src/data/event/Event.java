@@ -77,4 +77,9 @@ public abstract class Event implements Serializable{
 	 */
 	public abstract ArrayList<String> getAvailableInstructions();
 	
+	/**
+	 * 
+	 * @return - whether the length of instruction array list can be flexible
+	 */
+	public abstract boolean instructionAddable();
 }
