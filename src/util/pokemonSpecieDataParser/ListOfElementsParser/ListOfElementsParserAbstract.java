@@ -1,5 +1,7 @@
 package util.pokemonSpecieDataParser.ListOfElementsParser;
 
+import java.util.Map;
+
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -37,7 +39,7 @@ public abstract class ListOfElementsParserAbstract {
     protected static Element getListRootElement(Element rootNode, String tag) {
 	return (Element) rootNode.getElementsByTagName(tag).item(0);
     }
-    
+
     /**
      * Return all elements contained in the list as a node list.
      * Essentially, this return a node list of <element> as given in the documentation 
@@ -49,7 +51,7 @@ public abstract class ListOfElementsParserAbstract {
     protected static NodeList getAllElementsInList(Element listRoot,String elementTag) {
 	return listRoot.getElementsByTagName(elementTag);
     }
-    
+
     /**
      * This method checks the node given to see if it is an element node.
      * If so, return it as an element node.
@@ -59,5 +61,5 @@ public abstract class ListOfElementsParserAbstract {
     protected static Element checkAndConvertNodeToElement(Node node) {
 	assert(node.getNodeType() == Node.ELEMENT_NODE);
 	return (Element) node;
-    }
+    }  
 }
