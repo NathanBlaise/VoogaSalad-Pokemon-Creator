@@ -11,19 +11,20 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.util.Callback;
+import data.event.Instruction;
 import data.event.InstructionNPCFight;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
 
 public class InstructionNPCFightEditor implements InstructionEditor{
-	private Callback<InstructionNPCFight, Integer> saver;
+	private Callback<Instruction, Integer> saver;
 	private NPC npc;
 	private Map<Button, Pokemon> buttonMap = new HashMap<Button, Pokemon>();
 	private List<PokemonSpecie> pokemonSpecies;
 	BorderPane pokemonList = new BorderPane();
 	
-	public InstructionNPCFightEditor(NPC npc, List<PokemonSpecie> pokemonSpecies, Callback<InstructionNPCFight, Integer> saver){
+	public InstructionNPCFightEditor(NPC npc, List<PokemonSpecie> pokemonSpecies, Callback<Instruction, Integer> saver){
 		this.npc = npc;
 		this.pokemonSpecies = pokemonSpecies;
 		this.saver = saver;

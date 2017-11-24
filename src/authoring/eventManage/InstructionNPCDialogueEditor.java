@@ -2,6 +2,7 @@ package authoring.eventManage;
 
 import java.util.ArrayList;
 
+import data.event.Instruction;
 import data.event.InstructionNPCDialogue;
 import data.model.NPC;
 import engine.UI.UIComponentFactory.ListViewFactory;
@@ -19,14 +20,15 @@ import javafx.util.Callback;
 
 public class InstructionNPCDialogueEditor implements InstructionEditor{
 	private ListView<String> dialogueList;
-	private Callback<InstructionNPCDialogue, Integer> saver;
+	private Callback<Instruction, Integer> saver;
 	private NPC npc;
 	
-	public InstructionNPCDialogueEditor(NPC npc, Callback<InstructionNPCDialogue, Integer> saver){
+	public InstructionNPCDialogueEditor(NPC npc, Callback<Instruction, Integer> saver){
 		this.npc = npc;
 		this.saver = saver;
 	}
 	
+	@SuppressWarnings("unchecked")
 	private ListView<String> createDialogueList(){
 		ObservableList<String> names = FXCollections.observableArrayList();
 		dialogueList = new ListView<>(names);
