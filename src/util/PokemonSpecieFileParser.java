@@ -48,7 +48,7 @@ public class PokemonSpecieFileParser {
     private Element rootNode;
     private PokemonLevelMovesParser levelMovesParser;
     /**
-     * Gets the level moves specified in the xml file
+     * Gets the PokemonSpecie from the File given
      * @param file The xml file specifying a pokemon specie 
      * @return The Pokemon Specie Class described by the file
      * @throws ParserConfigurationException
@@ -72,6 +72,15 @@ public class PokemonSpecieFileParser {
 		levelMoves,levelStats,levelExps,levelEvolutionImagePaths);
     }
     
+    public PokemonSpecie parseFile(String filePath) throws ParserConfigurationException, SAXException, IOException {
+	File file = new File(filePath);
+	//TODO: do this later to check for file not existing and throw an exception
+	//if (!file.exists()) throws Exception;
+	return this.parseFile(file);
+    }
+    
+    
+    
     private void parsePokemonData() {
 	specieName = NameParser.parse(rootNode);
 	elemental = ElementalParser.parse(rootNode);
@@ -90,6 +99,7 @@ public class PokemonSpecieFileParser {
 	levelStats = new HashMap<>();
 	levelExps = new HashMap<>();
 	levelEvolutionImagePaths = new HashMap<>();
+	levelMovesParser = new PokemonLevelMovesParser();
     }
 
 ////////////////////////////////obosleted methods copied from testing
