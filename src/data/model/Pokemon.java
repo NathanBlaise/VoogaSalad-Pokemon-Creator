@@ -7,7 +7,7 @@ import data.model.moves.Move;
 
 /**
  * responsible for all the data needed for individual Pokemon
- * @author cy122 ko72
+ * @author cy122 ko72 nathanlewis
  *
  */
 
@@ -238,8 +238,10 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 		this.name = name;
 	}
 	
+
 	public static int getMoveNum(){
 		return moveNum;
+
 	}
 
 }
