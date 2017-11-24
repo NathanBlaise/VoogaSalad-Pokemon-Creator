@@ -28,6 +28,7 @@ public class InstructionNPCDialogueEditor implements InstructionEditor{
 		this.saver = saver;
 	}
 	
+	@SuppressWarnings("unchecked")
 	private ListView<String> createDialogueList(){
 		ObservableList<String> names = FXCollections.observableArrayList();
 		dialogueList = new ListView<>(names);
