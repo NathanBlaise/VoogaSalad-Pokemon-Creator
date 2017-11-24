@@ -20,11 +20,11 @@ import org.xml.sax.SAXException;
 import data.model.PokemonSpecie;
 import data.model.PokemonStat;
 import data.model.moves.Move;
-import util.pokemonSpecieDataParser.PokemonLevelMovesParser;
-import util.pokemonSpecieDataParser.PokemonLevelStatsParser;
 import util.pokemonSpecieDataParser.LeafElementParser.ElementalParser;
 import util.pokemonSpecieDataParser.LeafElementParser.MaxLevelParser;
 import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
+import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelMovesParser;
+import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelStatsParser;
 
 /**
  * This class is able to parse a pokemon specie xml file

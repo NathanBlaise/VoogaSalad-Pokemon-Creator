@@ -5,7 +5,19 @@
 	<levelMoves>
 		<move>
 			<level>1</level>
-			<name>strike</name>
+			<name>Growl</name>
+		</move>
+		<move>
+			<level>5</level>
+			<name>QuickAttack</name>
+		</move>
+		<move>
+			<level>10</level>
+			<name>TailWhip</name>
+		</move>
+		<move>
+			<level>15</level>
+			<name>ThunderShock</name>
 		</move>
 	</levelMoves>
 	<levelStats>

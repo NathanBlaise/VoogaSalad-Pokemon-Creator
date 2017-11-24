@@ -1,21 +1,25 @@
-package util.pokemonSpecieDataParser;
+package util.pokemonSpecieDataParser.ListOfElementsParser;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import data.model.moves.Move;
+import util.FilePathConverter;
 import util.PokemonMovesFactory;
 import util.pokemonSpecieDataParser.LeafElementParser.LevelParser;
 import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
-
-public class PokemonLevelMovesParser {
+/**
+ * This class parses pokemon level moves specified 
+ * @author Dan Sun
+ *
+ */
+public class PokemonLevelMovesParser extends ListOfElementsParserAbstract{
     private static String levelMovesTag = "levelMoves";
     private static String moveTag = "move";
-    private static String defaultLookupPath = "";
+    private static String defaultLookupPath = "src/resources/MovesLookup.properties";
     
     private String lookupPath;
     private PokemonMovesFactory movesFactory;
@@ -30,25 +34,27 @@ public class PokemonLevelMovesParser {
      * look up for reflection
      */
     public PokemonLevelMovesParser(String path) {
-	lookupPath = path;
+	lookupPath = FilePathConverter.getAbsolutePath(path);
 	movesFactory = new PokemonMovesFactory(lookupPath);
 	
     }
-    
+    /**
+     * This method parses the document element and gets all the moves for this pokemon
+     * @param rootNode the document element of the pokemon species xml file 
+     * @return A Map<Integer,Move> that specifies the moves of this pokemon
+     */
     public Map<Integer,Move> parse(Element rootNode){
 	Map<Integer, Move> movesMap = new HashMap<>();
-	Element levelMoves = getLevelMovesElement(rootNode);
-	NodeList allMoves = getAllMoves(levelMoves);
+	Element levelMoves = getListRootElement(rootNode,levelMovesTag);//getLevelMovesElement(rootNode);
+	NodeList allMoves = getAllElementsInList(levelMoves,moveTag);//getAllMoves(levelMoves);
 	addAllMovesToMap(allMoves,movesMap);
 	return movesMap;
     }
     
     private void addAllMovesToMap(NodeList allMoves, Map<Integer, Move> movesMap) {
 	for(int i = 0; i < allMoves.getLength(); i++) {
-	    Node currentMoveNode = allMoves.item(i);
-	    assert(currentMoveNode.getNodeType() == Node.ELEMENT_NODE);
-	    Element currentMoveElement = (Element)currentMoveNode;
-	    parseAndAddMoveElementToMap(currentMoveElement,movesMap);
+	    parseAndAddMoveElementToMap(checkAndConvertNodeToElement(allMoves.item(i)),
+		    movesMap);
 	}
 	
     }
@@ -68,14 +74,14 @@ public class PokemonLevelMovesParser {
 	assert(move != null);
 	movesMap.put(level, move);	
     }
-
-    private NodeList getAllMoves(Element levelMoves) {
-	return levelMoves.getElementsByTagName(moveTag);
-    }
-
-    private Element getLevelMovesElement(Element rootNode) {
-	NodeList levelMoves = rootNode.getElementsByTagName(levelMovesTag);
-	Element levelMovesElement = (Element)levelMoves.item(0);
-	return levelMovesElement;
-    }
+//moved into abstract super class
+//    private NodeList getAllMoves(Element levelMoves) {
+//	return levelMoves.getElementsByTagName(moveTag);
+//    }
+//
+//    private Element getLevelMovesElement(Element rootNode) {
+//	NodeList levelMoves = rootNode.getElementsByTagName(levelMovesTag);
+//	Element levelMovesElement = (Element)levelMoves.item(0);
+//	return levelMovesElement;
+//    }
 }
