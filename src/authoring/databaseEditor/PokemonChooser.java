@@ -15,7 +15,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Scene;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -28,6 +28,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -35,33 +37,32 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Callback;
 import data.LanguageReader;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
 import data.model.moves.Move;
 
-public class PokemonTab {
+public class PokemonChooser {
 	private Pokemon localPokemon;
 	private List<PokemonSpecie> pokemonSpecies;
-	private Stage stage;
-	GridPane root;
+	private Callback<Pokemon, Integer> saver;
+	GridPane root = new GridPane();
 	
-	public PokemonTab(List<PokemonSpecie> pokemonSpecies, PokemonSpecie selectedPokemonSpecie){
-		String defaultName = new String(selectedPokemonSpecie.getSpecieName());
-		localPokemon = new Pokemon(selectedPokemonSpecie, defaultName);
+	public PokemonChooser(List<PokemonSpecie> pokemonSpecies, Pokemon selectedPokemon, Callback<Pokemon, Integer> saver){
+		if(selectedPokemon!=null){
+			localPokemon = new Pokemon(selectedPokemon);
+		}else{
+			localPokemon = new Pokemon(pokemonSpecies.get(0), "");
+		}
 		this.pokemonSpecies = pokemonSpecies;
+		this.saver = saver;
 		showPokemon();
 	}
 	
-	private void showPokemon(){
-		if(stage!=null){
-			stage.close();
-		}
-		stage = new Stage();
-		GridPane root = new GridPane();
-		
+	public GridPane showPokemon(){
+		root.getChildren().clear();
+		//set the constraints
 		ColumnConstraints cons1 = new ColumnConstraints();
         cons1.setHgrow(Priority.ALWAYS);
         root.getColumnConstraints().add(cons1);
@@ -77,7 +78,7 @@ public class PokemonTab {
         RowConstraints rcons3 = new RowConstraints();
         rcons2.setVgrow(Priority.SOMETIMES); 
         root.getRowConstraints().addAll(rcons1, rcons2, rcons3);
-		
+		//add components
 		root.add(showStatList(localPokemon.getCurrentStat().getStatMap()),2,1,2,2);
 		root.add(saveButton(),3,0,1,1);
         root.add(showMoveList(localPokemon.getMoves()), 1, 2,1,1);
@@ -85,11 +86,10 @@ public class PokemonTab {
         root.add(showNickName(localPokemon.getNickName()), 1, 0, 1, 1);
         root.add(showLevelPicker(localPokemon.getMaxLevel()), 2, 0, 1, 1);
         root.add(showSpecieList(pokemonSpecies),0,0,1,3);
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
         root.setPrefSize(660, 230);
-        stage.show();
-        scene.getStylesheets().add("resources/sceneStyle.css");
+        root.getStylesheets().add("resources/sceneStyle.css");
+        saver.call(localPokemon);
+        return root;
 	}
 
 	public Pokemon getPokemon(){
@@ -213,9 +213,18 @@ public class PokemonTab {
 		Label nickNameLabel = new Label("Nick Name:");
 		result.getChildren().add(nickNameLabel);
 		TextField nickNameField = new TextField(initialName);
-		nickNameField.textProperty().addListener((observable, oldValue, newValue) -> {
-		    localPokemon.setName(newValue);
-		});
+		nickNameField.setOnKeyPressed(new EventHandler<KeyEvent>()
+			    {
+			        @Override
+			        public void handle(KeyEvent ke)
+			        {
+			            if (ke.getCode().equals(KeyCode.ENTER))
+			            {
+			            	localPokemon.setName(nickNameField.getText());
+			    		    showPokemon();
+			            }
+			        }
+			   });
 		result.getChildren().add(nickNameField);
 		return result;
 	}

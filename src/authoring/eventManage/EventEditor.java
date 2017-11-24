@@ -1,37 +1,24 @@
 package authoring.eventManage;
 
+import java.util.List;
 
-import data.PropertyReader;
+import data.event.Instruction;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
-/**
- * 
- * @author cy122
- * 
- * This provides a UI to let user edit the event
- *
- */
-
-public class EventEditor {
-	private Stage stage =  new Stage();
-	private EventRegister eventRegister = new EventRegister();
-	private BorderPane root = new BorderPane();
-	private EventImage eventImage;
-	//TODO: load the actual data into this
-	private EventInstructions eventInstructions = new EventInstructions(new PropertyReader("../resources/English.properties").getMap("Instructions"));
-	private Scene scene = new Scene(root);
-	
-	public EventEditor(EventImage eventImage){
-		this.eventImage = eventImage;
-		this.eventImage.addFileChooser(root);
-		//TODO: add the whole components to event editor
-		root.setLeft(eventImage);
-		root.setCenter(eventInstructions.getListView());
-		stage.setTitle("Event Editor");
-		stage.setScene(scene);
-		stage.show();
+public abstract class EventEditor {
+	EventEditor(){
+		
 	}
 	
+	protected abstract void editObject();
+	
+	private void editInstructions(Callback<List<Instruction>, Integer> saver){
+		Stage stage = new Stage();
+		BorderPane borderPane = new BorderPane();
+		stage.setScene(new Scene(borderPane));
+		stage.show();
+	}
 }

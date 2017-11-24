@@ -2,6 +2,8 @@ package data.event;
 
 import java.util.ArrayList;
 
+import data.PathReader;
+import data.PropertyReader;
 import data.model.Pokemon;
 
 /**
@@ -19,11 +21,14 @@ import data.model.Pokemon;
 public class EventPokemon extends Event{
 	private static final long serialVersionUID = 1562499630824551623L;
 	private static final ArrayList<String> availableInstructions = new ArrayList<String>() {
-	    {
+		private static final long serialVersionUID = 234132179505405455L;
+
+		{
 	        add("InstructionPokemonFight");
 	    }
 	};
 	private Pokemon pokemon;
+	private static final boolean instructionAddable = false; //whether the length of instruction array list can be flexible
 	
 	
 	/**
@@ -40,11 +45,8 @@ public class EventPokemon extends Event{
 	 * @param pokemon - the pokemon for fighting
 	 */
 	public EventPokemon(Pokemon pokemon){
-		super(pokemon.getCurrentImagePath());
+		super(new PathReader().getString("DefaultImage"));
 		this.pokemon=pokemon;
-		ArrayList<Instruction> instructions = new ArrayList<Instruction>();
-		instructions.add(new InstructionPokemonFight(pokemon));
-		super.setInstructions(instructions);
 	}
 	
 	/**
@@ -69,5 +71,10 @@ public class EventPokemon extends Event{
 	 */
 	public ArrayList<String> getAvailableInstructions() {
 		return new ArrayList<String>(availableInstructions);
+	}
+
+	@Override
+	public boolean instructionAddable() {
+		return instructionAddable;
 	}
 }

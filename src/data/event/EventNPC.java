@@ -24,6 +24,7 @@ public class EventNPC extends Event{
 	    }
 	};
 	private NPC npc;
+	private static final boolean instructionAddable = true; //whether the length of instruction array list can be flexible
 	
 	/**
 	 * set NPC in default empty value
@@ -64,5 +65,10 @@ public class EventNPC extends Event{
 	 */
 	public ArrayList<String> getAvailableInstructions() {
 		return new ArrayList<String>(availableInstructions);
+	}
+
+	@Override
+	public boolean instructionAddable() {
+		return instructionAddable;
 	}
 }

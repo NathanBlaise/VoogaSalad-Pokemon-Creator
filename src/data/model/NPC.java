@@ -18,6 +18,7 @@ public class NPC implements Serializable{
 	/**
 	 * set the imagePath and name to be empty value
 	 */
+	@Deprecated
 	public NPC(){
 		this.imagePath = new String("");
 		this.name = new String("");
@@ -28,7 +29,7 @@ public class NPC implements Serializable{
 	 * @param imagePath - the path of image of NPC shown on the screen
 	 * @param name - name of NPC
 	 */
-	NPC(String imagePath, String name){
+	public NPC(String imagePath, String name){
 		this.imagePath = new String(imagePath);
 		this.name = new String(name);
 	}
