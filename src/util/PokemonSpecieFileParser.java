@@ -1,6 +1,5 @@
 package util;
 
-import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +22,8 @@ import data.model.moves.Move;
 import util.pokemonSpecieDataParser.LeafElementParser.ElementalParser;
 import util.pokemonSpecieDataParser.LeafElementParser.MaxLevelParser;
 import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
+import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelExpsParser;
+import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelImagesParser;
 import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelMovesParser;
 import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelStatsParser;
 
@@ -39,8 +40,8 @@ public class PokemonSpecieFileParser {
     private int maxLevel;
     private Map<Integer,Move> levelMoves; 
     private Map<Integer,PokemonStat> levelStats; 
-    private Map<Integer,Double> levelExp; 
-    private Map<Integer,String> levelEvolutionImagePath; 
+    private Map<Integer,Double> levelExps; 
+    private Map<Integer,String> levelEvolutionImagePaths; 
     //file for this parser
     private File xmlFile;
     //root node of the xml file
@@ -68,7 +69,7 @@ public class PokemonSpecieFileParser {
 	//read from the xml file and fill in the necessary fields 
 	//needed by the constructor of pokemonSpecies
 	return new PokemonSpecie(specieName,elemental,maxLevel,
-		levelMoves,levelStats,levelExp,levelEvolutionImagePath);
+		levelMoves,levelStats,levelExps,levelEvolutionImagePaths);
     }
     
     private void parsePokemonData() {
@@ -77,8 +78,8 @@ public class PokemonSpecieFileParser {
 	maxLevel = MaxLevelParser.parse(rootNode);
 	levelMoves = levelMovesParser.parse(rootNode);
 	levelStats = PokemonLevelStatsParser.parse(rootNode);
-
-	
+	levelExps = PokemonLevelExpsParser.parse(rootNode);
+	levelEvolutionImagePaths = PokemonLevelImagesParser.parse(rootNode);
     }
 
     private void reinitializePokemonData() {
@@ -87,18 +88,12 @@ public class PokemonSpecieFileParser {
 	maxLevel = -1;
 	levelMoves = new HashMap<>();
 	levelStats = new HashMap<>();
-	levelExp = new HashMap<>();
-	levelEvolutionImagePath = new HashMap<>();
+	levelExps = new HashMap<>();
+	levelEvolutionImagePaths = new HashMap<>();
     }
 
-    //    private void parseRoot(Element rootNode) {
-    //	Node currentChild = rootNode.getFirstChild();
-    //	while(currentChild.getNodeType() != Node.ELEMENT_NODE)
-    //	    currentChild = currentChild.getNextSibling();
-    //	System.out.println(currentChild.getNodeName());
-    //	Element e = rootNode.get
-    //
-    //    }
+////////////////////////////////obosleted methods copied from testing
+    //TODO: remove these methods after modifying 
     private void parseAndPrintElement(Element element, int numberOfTabs) {
 	NodeList children = element.getChildNodes();
 	if(!hasChildElements(element)) {

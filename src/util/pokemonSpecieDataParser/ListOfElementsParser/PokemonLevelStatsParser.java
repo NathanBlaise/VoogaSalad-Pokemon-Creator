@@ -36,16 +36,9 @@ public class PokemonLevelStatsParser extends ListOfElementsParserAbstract{
 	return movesMap;
     }
     
-    private static void addAllStatsToMap(NodeList allStats, Map<Integer, PokemonStat> statsMap) {
-	for(int i = 0; i < allStats.getLength(); i++) {
-	    parseAndAddStatElementToMap(
-		    checkAndConvertNodeToElement(allStats.item(i)),
-		    statsMap);
-	}
-	
-    }
 
-    private static void parseAndAddStatElementToMap(Element currentStatElement, Map<Integer, PokemonStat> StatsMap) {
+
+    private static void parseAndAddStatElementToMap(Element currentStatElement, Map<Integer, PokemonStat> statsMap) {
 	Integer level = (int)LevelParser.parse(currentStatElement);
 	int speed = (int) SpeedParser.parse(currentStatElement);
 	int specialAttack = (int)SpecialAttackParser.parse(currentStatElement);
@@ -55,7 +48,7 @@ public class PokemonLevelStatsParser extends ListOfElementsParserAbstract{
 	int maxHp = (int)MaxHpParser.parse(currentStatElement);
 	PokemonStat pokemonStat = new PokemonStat(maxHp,normalAttack,
 		normalDefense,specialAttack,specialDefense, speed);
-	StatsMap.put(level, pokemonStat);	
+	statsMap.put(level, pokemonStat);	
     }
 //implemented in abstract superclass
 //    private static NodeList getAllStats(Element levelMoves) {
@@ -67,4 +60,13 @@ public class PokemonLevelStatsParser extends ListOfElementsParserAbstract{
 //	Element levelMovesElement = (Element)levelStats.item(0);
 //	return levelMovesElement;
 //    }
+    
+    private static void addAllStatsToMap(NodeList allStats, Map<Integer, PokemonStat> statsMap) {
+	for(int i = 0; i < allStats.getLength(); i++) {
+	    parseAndAddStatElementToMap(
+		    checkAndConvertNodeToElement(allStats.item(i)),
+		    statsMap);
+	}
+	
+    }
 }
