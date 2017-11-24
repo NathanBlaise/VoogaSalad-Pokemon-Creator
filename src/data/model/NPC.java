@@ -72,7 +72,7 @@ public class NPC implements Serializable{
 	 * @param name - name of NPC
 	 */
 	public void setName(String name) {
-		this.imagePath = new String(imagePath);
+		this.name = new String(name);
 	}
 	
 }

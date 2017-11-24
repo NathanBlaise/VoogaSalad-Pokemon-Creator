@@ -47,6 +47,9 @@ public class EventPokemon extends Event{
 	public EventPokemon(Pokemon pokemon){
 		super(new PathReader().getString("DefaultImage"));
 		this.pokemon=pokemon;
+		ArrayList<Instruction> instructions = new ArrayList<Instruction>();
+		instructions.add(new InstructionPokemonFight());
+		super.setInstructions(instructions);
 	}
 	
 	/**
