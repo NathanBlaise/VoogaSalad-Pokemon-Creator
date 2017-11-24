@@ -5,29 +5,51 @@
 	<levelMoves>
 		<move>
 			<level>1</level>
-			<name>strike</name>
+			<name>Growl</name>
+		</move>
+		<move>
+			<level>5</level>
+			<name>QuickAttack</name>
+		</move>
+		<move>
+			<level>10</level>
+			<name>TailWhip</name>
+		</move>
+		<move>
+			<level>15</level>
+			<name>ThunderShock</name>
 		</move>
 	</levelMoves>
 	<levelStats>
+		<stat>
+			<level>1</level>
+			<speed>10</speed>
+			<specialAttack>20</specialAttack>
+			<specialDefense>30</specialDefense>
+			<normalAttack>40</normalAttack>
+			<normalDefense>50</normalDefense>
+			<maxHP>100</maxHP>
+			<HP>100</HP> <!--HP equals maxHP for specie description-->
+		</stat>
 	</levelStats>
-	<levelExp>
-		<level>
-			<number>1</number>
-			<exp>100</exp>
-		</level>
-		<level>
-			<number>2</number>
-			<exp>200</exp>
-		</level>
-		<level>
-			<number>3</number>
-			<exp>300</exp>
-		</level>
-	</levelExp>
-	<levelEvolutionImage>
-		<level>
-			<number>1</number>
-			<path>src/resrouces/splashImage.png</path>
-		</level>
-	</levelEvolutionImage>
+	<levelExps>
+		<exp>
+			<level>1</level>
+			<neededExp>100</neededExp>
+		</exp>
+		<exp>
+			<level>2</level>
+			<neededExp>200</neededExp>
+		</exp>
+		<exp>
+			<level>3</level>
+			<neededExp>300</neededExp>
+		</exp>
+	</levelExps>
+	<levelEvolutionImages>
+		<evolutionImage>
+			<level>1</level>
+			<imagePath>src/resrouces/splashImage.png</imagePath>
+		</evolutionImage>
+	</levelEvolutionImages>
 </defaultPokemonSpecie>
