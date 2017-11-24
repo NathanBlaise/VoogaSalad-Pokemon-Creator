@@ -22,6 +22,8 @@ public class PropertyReader{
 	private Properties property = new Properties();
 
 	private class NullReader extends Properties{
+		private static final long serialVersionUID = 7546893500824357729L;
+
 		@Override
 		public String getProperty(String key){
 			return new String("");
