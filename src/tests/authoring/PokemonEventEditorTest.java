@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import data.event.EventPokemon;
-import data.model.Pokemon;
 import data.model.PokemonSpecie;
-import authoring.databaseEditor.PokemonChooser;
 import authoring.eventManage.PokemonEventEditor;
 import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 

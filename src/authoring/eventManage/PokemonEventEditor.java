@@ -18,9 +18,9 @@ public class PokemonEventEditor implements Callback<Pokemon, Integer>{
 	private Callback<EventPokemon, Integer> saver;
 	
 	public PokemonEventEditor(List<PokemonSpecie> pokemonSpecies, PokemonSpecie selectedPokemonSpecie, Callback<EventPokemon, Integer> saver){
+		this.saver=saver;
 		stage = new Stage();
 		editPokemon(pokemonSpecies, selectedPokemonSpecie);
-		this.saver=saver;
 		stage.show();
 	}
 	
