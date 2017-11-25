@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,7 +15,10 @@ import data.LanguageReader;
 import data.event.Event;
 import data.event.EventNPC;
 import data.event.Instruction;
+import data.event.InstructionNPCDialogue;
+import data.event.InstructionNPCFight;
 import data.model.NPC;
+import data.model.Pokemon;
 import data.model.PokemonSpecie;
 
 public class NPCEventEditor{
@@ -25,13 +27,13 @@ public class NPCEventEditor{
 		private Callback<Event, Integer> saver;
 		private List<PokemonSpecie> pokemonSpecies;
 		
-		public NPCEventEditor(NPC selectedNPC, List<PokemonSpecie> pokemonSpecies, Callback<Event, Integer> saver){
+		public NPCEventEditor(EventNPC selectedEventNPC, List<PokemonSpecie> pokemonSpecies, Callback<Event, Integer> saver){
 			stage = new Stage();
 			stage.show();
-			eventNPC = new EventNPC(new NPC(selectedNPC));
+			eventNPC = selectedEventNPC;
 			this.pokemonSpecies = new ArrayList<PokemonSpecie>(pokemonSpecies);
 			this.saver = saver;
-			editNPC(selectedNPC);
+			editNPC(selectedEventNPC.getNpc());
 		}
 		
 		private void editNPC(NPC selectedNPC){
@@ -56,20 +58,26 @@ public class NPCEventEditor{
 			for(String s: eventNPC.getAvailableInstructions()){
 				name2instruction.put(new String(LanguageReader.convertLanguage("English", s)), new String(s));
 			}
-			Map<String, Function<Callback<Instruction, Integer>, Integer>> reactions = createReaction(result);
-			result.setCenter(new EventInstructions(name2instruction, reactions, new InstructionListEditor(eventNPC, saver)).getList());
+			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions = createReaction(result);
+			result.setCenter(new EventInstructions(eventNPC, name2instruction, reactions, new InstructionListEditor(eventNPC, saver)).getList());
 			return result;
 		}
 		
-		private Map<String, Function<Callback<Instruction, Integer>, Integer>> createReaction(BorderPane instructionPane){
-			Map<String, Function<Callback<Instruction, Integer>, Integer>> result = new HashMap<String, Function<Callback<Instruction, Integer>, Integer>>();
-			result.put("InstructionNPCDialogue", e->{
-				instructionPane.setRight(new InstructionNPCDialogueEditor(eventNPC.getNpc(), e).showEditor());
+		private Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> createReaction(BorderPane instructionPane){
+			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> result = new HashMap<String, Function<Instruction, Callback<Instruction, Integer>, Integer>>();
+			result.put("InstructionNPCDialogue", (instruction, e)->{
+				if(!(instruction instanceof InstructionNPCDialogue)){
+					instruction = new InstructionNPCDialogue(new ArrayList<String>(), eventNPC.getNpc());
+				}
+				instructionPane.setRight(new InstructionNPCDialogueEditor((InstructionNPCDialogue) instruction, e).showEditor());
 				stage.sizeToScene();
 				return null;
 			});
-			result.put("InstructionNPCFight", e->{
-				instructionPane.setRight(new InstructionNPCFightEditor(eventNPC.getNpc(), pokemonSpecies, e).showEditor());
+			result.put("InstructionNPCFight", (instruction, e)->{
+				if(!(instruction instanceof InstructionNPCFight)){
+					instruction = new InstructionNPCFight(eventNPC.getNpc(), new Pokemon[InstructionNPCFight.getPokemonNum()]);
+				}
+				instructionPane.setRight(new InstructionNPCFightEditor((InstructionNPCFight) instruction, pokemonSpecies, e).showEditor());
 				stage.sizeToScene();
 				return null;
 			});
@@ -88,7 +96,8 @@ public class NPCEventEditor{
 
 			@Override
 			public Integer call(NPC param) {
-				event.setNpc(param);;
+				event.getNpc().setName(param.getName());
+				event.getNpc().setImagePath(param.getImagePath());
 				saver.call(event);
 				return null;
 			}	
