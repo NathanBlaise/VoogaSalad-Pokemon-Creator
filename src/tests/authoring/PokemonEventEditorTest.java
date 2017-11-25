@@ -3,12 +3,14 @@ package tests.authoring;
 import java.util.ArrayList;
 import java.util.List;
 
+import data.event.EventPokemon;
 import data.model.PokemonSpecie;
-import authoring.databaseEditor.PokemonTab;
+import authoring.eventManage.PokemonEventEditor;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
-public class PokemonTabTest extends Application{
+public class PokemonEventEditorTest extends Application implements Callback<EventPokemon, Integer>{
 	public static void main(String[] args) {
 		launch(args);
 
@@ -19,6 +21,12 @@ public class PokemonTabTest extends Application{
 		List<PokemonSpecie> pokemonSpecies = new ArrayList<PokemonSpecie>();
 		pokemonSpecies.add(new Specie1());
 		pokemonSpecies.add(new Specie2());
-		new PokemonTab(pokemonSpecies, new Specie1());
+		new PokemonEventEditor(pokemonSpecies, new Specie1(), this);
+	}
+
+	@Override
+	public Integer call(EventPokemon param) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

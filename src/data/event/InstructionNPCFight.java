@@ -14,14 +14,16 @@ import data.model.Pokemon;
 
 public class InstructionNPCFight  implements Instruction{
 	private static final long serialVersionUID = -7111511237505842406L;
-	private NPC npc = new NPC(); //the NPC himself/herself
-	private Pokemon[] pokemons = new Pokemon[6]; //the pokemons belong to NPC
+	private static final int pokemonNum = 6; //the number of available Pokemon
+	private NPC npc; //the NPC himself/herself
+	private Pokemon[] pokemons = new Pokemon[pokemonNum]; //the pokemons belong to NPC
 
 	/**
 	 * WARNING!
 	 * 
 	 * this is only for serialization, it shouldn't be called for any intention else.
 	 */
+	@Deprecated
 	public InstructionNPCFight(){
 	}
 	
@@ -69,6 +71,10 @@ public class InstructionNPCFight  implements Instruction{
 	public void execute(Object... parameters) {
 		// TODO call the API in Engine to begin a battle with npc
 		
+	}
+	
+	public static int getPokemonNum(){
+		return pokemonNum;
 	}
 
 }

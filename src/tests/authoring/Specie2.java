@@ -9,7 +9,6 @@ import data.model.moves.Move;
 import data.model.moves.MoveDatabase.MoveGrowl;
 import data.model.moves.MoveDatabase.MoveQuickAttack;
 import data.model.moves.MoveDatabase.MoveTailWhip;
-import data.model.moves.MoveDatabase.MoveThunderShock;
 
 public class Specie2 extends PokemonSpecie{
 	private static final long serialVersionUID = -2300245113671553925L;

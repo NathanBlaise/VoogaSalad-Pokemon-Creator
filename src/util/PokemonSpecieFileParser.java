@@ -1,6 +1,5 @@
 package util;
 
-import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,9 +19,13 @@ import org.xml.sax.SAXException;
 import data.model.PokemonSpecie;
 import data.model.PokemonStat;
 import data.model.moves.Move;
-import util.pokemonSpecieDataParser.ElementalParser;
-import util.pokemonSpecieDataParser.MaxLevelParser;
-import util.pokemonSpecieDataParser.NameParser;
+import util.pokemonSpecieDataParser.LeafElementParser.ElementalParser;
+import util.pokemonSpecieDataParser.LeafElementParser.MaxLevelParser;
+import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
+import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelExpsParser;
+import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelImagesParser;
+import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelMovesParser;
+import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelStatsParser;
 
 /**
  * This class is able to parse a pokemon specie xml file
@@ -37,12 +40,21 @@ public class PokemonSpecieFileParser {
     private int maxLevel;
     private Map<Integer,Move> levelMoves; 
     private Map<Integer,PokemonStat> levelStats; 
-    private Map<Integer,Double> levelExp; 
-    private Map<Integer,String> levelEvolutionImagePath; 
+    private Map<Integer,Double> levelExps; 
+    private Map<Integer,String> levelEvolutionImagePaths; 
     //file for this parser
     private File xmlFile;
     //root node of the xml file
     private Element rootNode;
+    private PokemonLevelMovesParser levelMovesParser;
+    /**
+     * Gets the PokemonSpecie from the File given
+     * @param file The xml file specifying a pokemon specie 
+     * @return The Pokemon Specie Class described by the file
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     public PokemonSpecie parseFile(File file) 
 	    throws ParserConfigurationException, 
 	    SAXException, IOException {
@@ -57,14 +69,26 @@ public class PokemonSpecieFileParser {
 	//read from the xml file and fill in the necessary fields 
 	//needed by the constructor of pokemonSpecies
 	return new PokemonSpecie(specieName,elemental,maxLevel,
-		levelMoves,levelStats,levelExp,levelEvolutionImagePath);
+		levelMoves,levelStats,levelExps,levelEvolutionImagePaths);
     }
+    
+    public PokemonSpecie parseFile(String filePath) throws ParserConfigurationException, SAXException, IOException {
+	File file = new File(filePath);
+	//TODO: do this later to check for file not existing and throw an exception
+	//if (!file.exists()) throws Exception;
+	return this.parseFile(file);
+    }
+    
+    
     
     private void parsePokemonData() {
 	specieName = NameParser.parse(rootNode);
 	elemental = ElementalParser.parse(rootNode);
 	maxLevel = MaxLevelParser.parse(rootNode);
-	
+	levelMoves = levelMovesParser.parse(rootNode);
+	levelStats = PokemonLevelStatsParser.parse(rootNode);
+	levelExps = PokemonLevelExpsParser.parse(rootNode);
+	levelEvolutionImagePaths = PokemonLevelImagesParser.parse(rootNode);
     }
 
     private void reinitializePokemonData() {
@@ -73,18 +97,13 @@ public class PokemonSpecieFileParser {
 	maxLevel = -1;
 	levelMoves = new HashMap<>();
 	levelStats = new HashMap<>();
-	levelExp = new HashMap<>();
-	levelEvolutionImagePath = new HashMap<>();
+	levelExps = new HashMap<>();
+	levelEvolutionImagePaths = new HashMap<>();
+	levelMovesParser = new PokemonLevelMovesParser();
     }
 
-    //    private void parseRoot(Element rootNode) {
-    //	Node currentChild = rootNode.getFirstChild();
-    //	while(currentChild.getNodeType() != Node.ELEMENT_NODE)
-    //	    currentChild = currentChild.getNextSibling();
-    //	System.out.println(currentChild.getNodeName());
-    //	Element e = rootNode.get
-    //
-    //    }
+////////////////////////////////obosleted methods copied from testing
+    //TODO: remove these methods after modifying 
     private void parseAndPrintElement(Element element, int numberOfTabs) {
 	NodeList children = element.getChildNodes();
 	if(!hasChildElements(element)) {
