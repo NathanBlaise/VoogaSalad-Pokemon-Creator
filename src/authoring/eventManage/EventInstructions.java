@@ -7,7 +7,6 @@ import java.util.Map;
 
 import data.event.EventNPC;
 import data.event.Instruction;
-import data.event.InstructionNPCDialogue;
 import engine.UI.UIComponentFactory.ListViewFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -30,21 +29,7 @@ public final class EventInstructions{
 	private Callback<List<Instruction>, Integer> saver;
 	private Map<Integer, Instruction> instructionMap = new HashMap<Integer, Instruction>();
 	
-	
-//	@SuppressWarnings("unchecked")
-//	public EventInstructions(Map<String,String> instructions, Map<String, Function<Callback<Instruction, Integer>, Integer>> reactions, Callback<List<Instruction>, Integer> saver){
-//		ObservableList<String> names = FXCollections.observableArrayList();
-//		this.saver = saver;
-//		names.addAll(instructions.keySet());
-//		listView = ListViewFactory.createListView(new ContextMenu(), forListView(names, instructions, reactions),
-//				new ChangeListener<String>() {
-//			@Override
-//			public void changed(ObservableValue<? extends String> observable,String oldValue, String newValue) {
-//				// DO NOTHING
-//			}   
-//	    });		
-//	}
-	
+	@SuppressWarnings("unchecked")
 	public EventInstructions(EventNPC eventNPC, Map<String, String> instructions, Map<String, authoring.eventManage.Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions,Callback<List<Instruction>, Integer> saver) {
 		ObservableList<String> names = FXCollections.observableArrayList();
 		this.saver = saver;
