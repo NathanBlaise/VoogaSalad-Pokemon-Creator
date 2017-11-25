@@ -37,7 +37,7 @@ public class InstructionNPCFight  implements Instruction{
 	 * @return - a copy of holding NPC
 	 */
 	public NPC getNpc() {
-		return new NPC(npc);
+		return npc;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class InstructionNPCFight  implements Instruction{
 	 * @param npc - the holding NPC will be a copy based on the param npc
 	 */
 	public void setNpc(NPC npc) {
-		this.npc = new NPC(npc);
+		this.npc = npc;
 	}
 
 	/**

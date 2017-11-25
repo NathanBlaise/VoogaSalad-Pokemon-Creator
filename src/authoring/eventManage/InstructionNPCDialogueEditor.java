@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import data.event.Instruction;
 import data.event.InstructionNPCDialogue;
-import data.model.NPC;
 import engine.UI.UIComponentFactory.ListViewFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,16 +20,17 @@ import javafx.util.Callback;
 public class InstructionNPCDialogueEditor implements InstructionEditor{
 	private ListView<String> dialogueList;
 	private Callback<Instruction, Integer> saver;
-	private NPC npc;
+	private InstructionNPCDialogue npcDialogue;
 	
-	public InstructionNPCDialogueEditor(NPC npc, Callback<Instruction, Integer> saver){
-		this.npc = npc;
+	public InstructionNPCDialogueEditor(InstructionNPCDialogue npcDialogue, Callback<Instruction, Integer> saver){
+		this.npcDialogue = npcDialogue;
 		this.saver = saver;
 	}
 	
 	@SuppressWarnings("unchecked")
 	private ListView<String> createDialogueList(){
-		ObservableList<String> names = FXCollections.observableArrayList();
+		ObservableList<String> names = FXCollections.observableArrayList(npcDialogue.getDialogues());
+		System.out.printf("dialogue size: %s\n" ,npcDialogue.getDialogues());
 		dialogueList = new ListView<>(names);
 
 		dialogueList = ListViewFactory.createListView(new ContextMenu(), ComboBoxListCell.forListView(names),
@@ -38,7 +38,8 @@ public class InstructionNPCDialogueEditor implements InstructionEditor{
 					@Override
 					public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 						// TODO save a list of instructions, open a user interface
-						saver.call(new InstructionNPCDialogue(new ArrayList<String>(dialogueList.getItems()), npc));
+						npcDialogue.setDialogues(new ArrayList<String>(dialogueList.getItems()));
+						saver.call(npcDialogue);
 					}
 				});
 		dialogueList.setEditable(true);
@@ -52,6 +53,8 @@ public class InstructionNPCDialogueEditor implements InstructionEditor{
 				System.out.println("setOnEditCommit");
 			}			
 		});
+		
+		dialogueList.getItems().addAll(names);
 		
 		return dialogueList;
 	}
