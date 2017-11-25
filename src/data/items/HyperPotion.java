@@ -20,6 +20,6 @@ public class HyperPotion extends Item{
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		mine.updateHP(200);
+		mine.getCurrentStat().setHP(200);
 	}
 }

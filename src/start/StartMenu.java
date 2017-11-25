@@ -106,4 +106,8 @@ public class StartMenu {
 		editor.toFirstAuthorScene();
 	}
 	
+	private void goPlay() {
+		Stage gameStage = new Stage();
+		gameStage.show();
+	}
 }
