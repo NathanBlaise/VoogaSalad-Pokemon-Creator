@@ -16,7 +16,7 @@ public class ScreenDisplay {
 		public double SECOND_DELAY = 100.0 / FRAMES_PER_SECOND;
 		
 		//Private Variable
-		private Timeline animation = new Timeline();
+		protected Timeline animation = new Timeline();
 		private Scene myScene;
 		private Group root = new Group();
 
