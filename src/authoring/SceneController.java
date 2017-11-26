@@ -19,7 +19,7 @@ public class SceneController {
 	/*final variables*/
 	
 	/*instance variables*/
-	private ArrayList <Scene> sceneList;
+	private ArrayList<Scene> sceneList;
 	public int currentIndex = 0;
 	private EditMapScene bsc;
 	private EditEventImageScene  eeis;
@@ -62,6 +62,10 @@ public class SceneController {
 	
 	public void passMapBackward() {
 		bsc.setMyMap(eeis.passMyMap());
+	}
+	
+	private class SceneList extends ArrayList<String>{
+		
 	}
 	
 }

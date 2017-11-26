@@ -1,13 +1,17 @@
 package start;
 
+import data.Database;
 import engine.UI.Fade;
 import engine.battle.BattleScene;
 import authoring.Author;
 import authoring.StageDelegate;
+import authoring.eventManage.Function;
+import javafx.animation.FadeTransition;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -53,6 +57,9 @@ public class StartMenu {
 			}
 		});
 		
+		
+		FadeTransition fade = Fade.fadeIn(root, e->{System.out.printf("fade in!\n");});
+		
 		scene.setOnMouseClicked(e -> {
 			double x = e.getSceneX();
 			double y = e.getSceneY();
@@ -64,16 +71,15 @@ public class StartMenu {
 				}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
 					goPlay();
 					//TODO go to player
+					goPlay();
 				}
 			}
 		});
 		
-		
-		Fade.fadeIn(root, null).play();
-		
 		stage.setScene(scene);
-		stage.show();
 		stage.centerOnScreen();
+		stage.show();
+		fade.play();
 	}
 
 	private ImageView createLogo() {
@@ -104,9 +110,17 @@ public class StartMenu {
 	
 	private void goEdit(){
 		Stage editorStage = new Stage();
-		StageDelegate editor = new Author(editorStage);
+		BorderPane pathSetter = new DatabasePathConfig(editorStage, new Function<Database, String, Integer>(){
+			@Override
+			public Integer apply(Database one, String two) {
+				StageDelegate editor = new Author(one, two, editorStage);
+				editor.toFirstAuthorScene();
+				return null;
+			}
+		});
+		editorStage.setScene(new Scene(pathSetter));
 		editorStage.show();
-		editor.toFirstAuthorScene();
+		System.out.printf("This is editor!\n");
 	}
 	
 	// Used currently to test battle screen

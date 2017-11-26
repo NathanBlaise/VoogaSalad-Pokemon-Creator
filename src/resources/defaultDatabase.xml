@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
+ <object class="data.map.GameMap">
+  <void property="cells">
+   <array class="[Ldata.map.Cell;" length="2">
+    <void index="0">
+     <array class="data.map.Cell" length="3"/>
+    </void>
+    <void index="1">
+     <array class="data.map.Cell" length="3"/>
+    </void>
+   </array>
+  </void>
+  <void property="xlength">
+   <int>2</int>
+  </void>
+  <void property="ylength">
+   <int>3</int>
+  </void>
+ </object>
+</java>

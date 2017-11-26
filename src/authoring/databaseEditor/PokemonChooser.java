@@ -50,8 +50,8 @@ public class PokemonChooser {
 	GridPane root = new GridPane();
 	
 	public PokemonChooser(List<PokemonSpecie> pokemonSpecies, Pokemon selectedPokemon, Callback<Pokemon, Integer> saver){
-		if(selectedPokemon!=null){
-			localPokemon = new Pokemon(selectedPokemon);
+		if(selectedPokemon instanceof Pokemon){
+			localPokemon = selectedPokemon;
 		}else{
 			localPokemon = new Pokemon(pokemonSpecies.get(0), "");
 		}
@@ -113,7 +113,6 @@ public class PokemonChooser {
 		for(int i=0;i<Pokemon.getMoveNum();i++){
 			ComboBox<String> comboBox;
 			if(moves[i]!=null){
-				System.out.printf("%d: %s\n", i, moves[i].getMoveName());
 				comboBox = createMoveComboBox(availableMoves,
 						name2move);
 				comboBox.getSelectionModel().select(moves[i].getMoveName());

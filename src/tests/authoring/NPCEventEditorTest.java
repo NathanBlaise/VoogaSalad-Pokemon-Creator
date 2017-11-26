@@ -24,7 +24,7 @@ public class NPCEventEditorTest  extends Application implements Callback<Event, 
 		List<PokemonSpecie> pokemonSpecies = new ArrayList<PokemonSpecie>();
 		pokemonSpecies.add(new Specie1());
 		pokemonSpecies.add(new Specie2());
-		new NPCEventEditor(new NPC("images/CaptainMap.png","Jason"), pokemonSpecies, this);
+		new NPCEventEditor(new EventNPC(new NPC("images/CaptainMap.png","Jason")), pokemonSpecies, this);
 	}
 
 	@Override

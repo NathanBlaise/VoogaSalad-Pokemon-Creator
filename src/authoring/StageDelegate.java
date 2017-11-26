@@ -1,5 +1,7 @@
 package authoring;
 
+import data.Database;
+
 
 public interface StageDelegate {
 
@@ -15,5 +17,15 @@ public interface StageDelegate {
 	 * Type the Space to go to first author scene;
 	 */
 	void toFirstAuthorScene();
+	
+	/**
+	 * get the database
+	 */
+	Database getDatabase();
+	
+	/**
+	 * save the database to the related XML file
+	 */
+	void saveDatabase();
 	
 }
