@@ -112,8 +112,8 @@ public class StartMenu {
 	// Used currently to test battle screen
 	private void goPlay() {
 		Stage gameStage = new Stage();
-		BattleScene btsc = new BattleScene(720,480,Color.WHITE,null,null,null);
-		gameStage.setScene(btsc.getScene());
+//		BattleScene btsc = new BattleScene(720,480,Color.WHITE,null,null,null);
+//		gameStage.setScene(btsc.getScene());
 		gameStage.show();
 	}
 }
