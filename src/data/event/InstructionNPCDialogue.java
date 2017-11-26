@@ -46,7 +46,7 @@ public class InstructionNPCDialogue implements Instruction{
 	 */
 	public InstructionNPCDialogue(ArrayList<String> dialogues, NPC npc){
 		this.dialogues = new ArrayList<String>(dialogues);
-		this.npc = new NPC(npc);
+		this.npc = npc;
 	}
 	
 	/**
@@ -70,7 +70,7 @@ public class InstructionNPCDialogue implements Instruction{
 	 * @return - a copy of the npc who is tallking
 	 */
 	public NPC getNpc() {
-		return new NPC(npc);
+		return npc;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class InstructionNPCDialogue implements Instruction{
 	 * @param npc - the npc who is talking. The private NPC will copy based on it.
 	 */
 	public void setNpc(NPC npc) {
-		this.npc = new NPC(npc);
+		this.npc = npc;
 	}
 
 	@Override

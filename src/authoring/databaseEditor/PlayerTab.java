@@ -1,60 +1,91 @@
 package authoring.databaseEditor;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
-import tests.authoring.Specie1;
-import tests.authoring.Specie2;
 import authoring.eventManage.InstructionNPCFightEditor;
 import data.PropertyReader;
 import data.event.Instruction;
+import data.event.InstructionNPCFight;
 import data.model.NPC;
+import data.model.Pokemon;
 import data.model.PokemonSpecie;
+import data.player.Player;
+import engine.UI.UIComponentFactory.UIComponentFactory;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
-public class PlayerTab implements Callback<Instruction, Integer>{
+public class PlayerTab{
 	private BorderPane root;
 	private Tab tab;
 	private String path = "../resources/PathMap.properties";
+	private Callback<Player, Integer> saver;
+	private Player player;
 	
-	public PlayerTab(){
+	public PlayerTab(Player player, List<PokemonSpecie> pokemonSpecies, int XLength, int YLength, Callback<Player, Integer> saver){
+		this.player = player;
+		this.saver = saver;
 		root = new BorderPane();
 		tab = new Tab(new PropertyReader("../resources/English.properties").getString("PlayerTabName"), root);
 		VBox vbox = new VBox();
-		vbox.getChildren().add(placeChooser());
-		vbox.getChildren().add(imageChooser());
+		vbox.getChildren().add(placeChooser(player.getPosX(), player.getPosY(), XLength, YLength));
+		vbox.getChildren().add(imageChooser(new PropertyReader(path).getString("UserImage")));
 		root.setLeft(vbox);
-		root.setCenter(choosePokemon());
+		root.setCenter(choosePokemon(player.getPokemons(), pokemonSpecies));
+		root.setPrefSize(1000, 600);
 	}
 	
-	private GridPane placeChooser(){
+	private GridPane placeChooser(int posX, int posY, int XLength, int YLength){
 		GridPane grid = new GridPane();
 		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("changeX")), 0, 0);
-		grid.add(new TextField(), 0, 1);
+		HBox Xchanger = UIComponentFactory.intSlider(player.getPosX(), 0, XLength, new Callback<Integer, Integer>(){
+			@Override
+			public Integer call(Integer param) {
+				player.setPosX(param);
+				refresh(player);
+				return null;
+			}			
+		});
+		grid.add(Xchanger, 0, 1);
 		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("changeY")), 0, 2);
-		grid.add(new TextField(), 0, 3);
+		HBox Ychanger = UIComponentFactory.intSlider(player.getPosY(), 0, YLength, new Callback<Integer, Integer>(){
+			@Override
+			public Integer call(Integer param) {
+				player.setPosY(param);
+				refresh(player);
+				return null;
+			}			
+		});
+		grid.add(Ychanger, 0, 3);
 		return grid;
 	}
 	
-	private Node choosePokemon(){
-		List<PokemonSpecie> species = new ArrayList<PokemonSpecie>();
-		species.add(new Specie1());
-		species.add(new Specie2());
-		return new InstructionNPCFightEditor(new NPC(new PropertyReader(path).getString("UserImage"), "Jason"), species, this).showEditor();
+	private Node choosePokemon(Pokemon[] pokemons, List<PokemonSpecie> pokemonSpecies){
+		return new InstructionNPCFightEditor(new InstructionNPCFight(new NPC(new PropertyReader(path).getString("UserImage"), "Jason"), pokemons), 
+												pokemonSpecies, 
+												new Callback<Instruction, Integer>(){
+														@Override
+														public Integer call(Instruction param) {
+															if(param instanceof InstructionNPCFight){
+																player.setPokemons(((InstructionNPCFight)param).getPokemons());
+																refresh(player);
+															}
+															return null;
+														}		
+												}
+				).showEditor();
 	}
 	
-	public ImageView imageChooser(){
-		Image image = new Image(new File(new PropertyReader(path).getString("UserImage")).toURI().toString());
+	public ImageView imageChooser(String path){
+		Image image = new Image(new File(path).toURI().toString());
 		ImageView eventImage = new ImageView(image);
 		return eventImage;
 	}
@@ -62,10 +93,11 @@ public class PlayerTab implements Callback<Instruction, Integer>{
 	public Tab getTab(){
 		return tab;
 	}
-
-	@Override
-	public Integer call(Instruction param) {
-		root.setPrefSize(1000, 600);
+	
+	private Integer refresh(Player player){
+		saver.call(player);
 		return null;
 	}
+	
+	
 }

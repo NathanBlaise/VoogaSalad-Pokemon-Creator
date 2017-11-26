@@ -48,7 +48,7 @@ public class EventNPC extends Event{
 	 * @return - a copy of the npc included in that event
 	 */
 	public NPC getNpc() {
-		return new NPC(npc);
+		return npc;
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class EventNPC extends Event{
 	 * @param npc - the NPC that the npc included in that event will copy based on
 	 */
 	public void setNpc(NPC npc) {
-		this.npc = new NPC(npc);
+		this.npc = npc;
 	}
 
 	@Override
