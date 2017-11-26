@@ -8,19 +8,22 @@ import tests.authoring.Specie2;
 import data.model.PokemonSpecie;
 import data.player.Player;
 import javafx.geometry.Side;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TabPane.TabClosingPolicy;
-import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.util.Callback;
 import authoring.BasicAuthorScreen;
 import authoring.StageDelegate;
-
+/**
+ * This scene is going to edit the player for now
+ * @author cy122
+ *
+ */
 public class DatabaseScene extends BasicAuthorScreen {
 	private TabPane tabPane;
 //	AnchorPane anchorPaneContent = new AnchorPane();
 
-	public DatabaseScene(Color white, StageDelegate app) {
+	public DatabaseScene(Paint white, StageDelegate app) {
 		super(white,app);
 		List<PokemonSpecie> species = new ArrayList<PokemonSpecie>();
 		species.add(new Specie1());

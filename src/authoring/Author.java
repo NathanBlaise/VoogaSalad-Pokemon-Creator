@@ -1,10 +1,8 @@
 package authoring;
 
-import java.util.ArrayList;
 
 import data.Database;
 import data.saving.DatabaseSaver;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -21,7 +19,7 @@ public class Author implements StageDelegate{
 	final static int EDITEVENTIMAGESCENE = 1;
 	/*Instance Variable*/
 	private Stage myStage;
-	private ArrayList <Scene> myList;
+	private SceneList myList;
 	private SceneController scControl;
 	private String savePath;
 	private Database database;
@@ -50,7 +48,8 @@ public class Author implements StageDelegate{
 		
 		
 		if (scControl.currentIndex ==  EDITEVENTIMAGESCENE) {
-			scControl.passMapForward();
+			//scControl.passMapForward();
+			//do nothing for now
 		}
 		
 	}
@@ -63,7 +62,8 @@ public class Author implements StageDelegate{
 			System.out.println("I am currently at scene " + scControl.currentIndex );
 		
 		if (scControl.currentIndex == EDITMAPSCENE) {
-			scControl.passMapBackward();
+			//scControl.passMapBackward();
+			//do nothing for now
 		}
 	}
 
@@ -71,6 +71,7 @@ public class Author implements StageDelegate{
 	public void toFirstAuthorScene() {
 
 		myStage.setScene(myList.get(scControl.currentIndex));
+		myStage.centerOnScreen();
 		//System.out.println("0");
 		
 	}

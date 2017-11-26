@@ -53,7 +53,6 @@ public class Move implements Serializable{
 	 * @param action - @see Action
 	 */
 	public Move(String moveName, String elemental, int maxPP, Action<Pokemon, Pokemon> action) {
-		System.out.println("in the move class");
 		this.moveName = moveName;
 		this.elemental = elemental;
 		this.PP = maxPP;

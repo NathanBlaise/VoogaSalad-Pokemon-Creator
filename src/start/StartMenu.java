@@ -56,7 +56,7 @@ public class StartMenu {
 		});
 		
 		
-		FadeTransition fade = Fade.fadeIn(root, e->{System.out.printf("fade in!\n");});
+		FadeTransition fade = Fade.fadeIn(root, null);
 		
 		scene.setOnMouseClicked(e -> {
 			double x = e.getSceneX();
@@ -117,7 +117,7 @@ public class StartMenu {
 		});
 		editorStage.setScene(new Scene(pathSetter));
 		editorStage.show();
-		System.out.printf("This is editor!\n");
+		editorStage.centerOnScreen();
 	}
 	
 	private void goPlay() {
