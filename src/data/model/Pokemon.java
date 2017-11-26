@@ -239,7 +239,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	}
 	
 
-	public static int getMoveNum(){
+	public int getMoveNum(){
 		return moveNum;
 
 	}

@@ -19,5 +19,9 @@ public abstract class Item implements Serializable {
 	private String imagePath;
 	
 	public abstract void useItem(Player player, Pokemon mine, Pokemon Enemy);
+	
+	public String getItemName() {
+		return itemName;
+	}
 		
 }

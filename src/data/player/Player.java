@@ -1,6 +1,7 @@
 package data.player;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import data.items.Item;
 import data.model.Pokemon;
@@ -17,7 +18,7 @@ public class Player implements Serializable{
 	//only holds these attributes for now
 	private int posX, posY;
 	private Pokemon[] pokemons; //the pokemons for battle, no pokemon in the warehouse for now
-	private Item[] items; //Items held by the player
+	private ArrayList<Item> items; //Items held by the player
 	//private Map<Item,Integer> Bag;  // a map from the item to the number of item
 	
 	public Player(){
@@ -44,6 +45,10 @@ public class Player implements Serializable{
 
 	public Pokemon[] getPokemons() {
 		return pokemons;
+	}
+	
+	public ArrayList<Item> getItems() {
+		return items;
 	}
 	
 
