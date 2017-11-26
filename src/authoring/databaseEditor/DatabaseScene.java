@@ -15,7 +15,7 @@ import javafx.util.Callback;
 import authoring.BasicAuthorScreen;
 import authoring.StageDelegate;
 /**
- * This scene is going to edit the player for now
+ * This scene is going to only edit the player for now
  * @author cy122
  *
  */
