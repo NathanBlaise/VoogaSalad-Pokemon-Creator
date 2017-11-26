@@ -14,7 +14,7 @@ public abstract class LevelSpecificStatsGenerator {
     protected static final String ELEMENT_TAG_PREFIX = "\t\t";
     protected static final String LEAF_TAG_PREFIX = "\t\t\t";
     protected static String levelTag = "level";
-    
+
     /**
      * This method return a string that describes
      * a property of the pokemon needed
@@ -27,7 +27,7 @@ public abstract class LevelSpecificStatsGenerator {
      * in accordance with the xml file format
      */
     protected String generateLevelSpecificContent(int maxLevel, 
-	     String propertyTag, String elementTag) {
+	    String propertyTag, String elementTag) {
 	StringBuilder stringBuilder = new StringBuilder();
 	createPropertyTag(stringBuilder,false, propertyTag);
 	for(int level = 1; level <= maxLevel; level++) {
@@ -37,7 +37,7 @@ public abstract class LevelSpecificStatsGenerator {
 	createPropertyTag(stringBuilder,true,propertyTag);
 	return stringBuilder.toString();
     }
-    
+
     /**
      * This method specifies how each different class
      * should create their element. It must be overriden
@@ -47,7 +47,39 @@ public abstract class LevelSpecificStatsGenerator {
      */
     abstract protected void createElementSpecificContent(
 	    StringBuilder stringBuilder, int level);
-    
+
+    /**
+     * This method adds the level tag to the 
+     * StringBuilder provided
+     * @param stringBuilder Where text to be added to
+     * @param level The level within tags
+     */
+    protected void createLevelWithinElement(
+	    StringBuilder stringBuilder, int level) {
+	createLeafWithinElement(stringBuilder, levelTag,
+		Integer.toString(level));
+    }
+
+    /**
+     * This method creates text for 
+     * a leaf within a second-level 
+     * element
+     * @param stringBuilder Place to append text to
+     * @param tag The tag of the leaf element
+     * @param content The text content of the leaf element
+     */
+    protected void createLeafWithinElement(
+	    StringBuilder stringBuilder, String tag,
+	    String content) {
+	stringBuilder.append(LEAF_TAG_PREFIX);
+	stringBuilder.append(convertTextToTag(
+		tag,false));
+	stringBuilder.append(content);
+	stringBuilder.append(convertTextToTag(
+		tag,true));
+	stringBuilder.append("\n");
+    }
+
     private void createTextForElement(StringBuilder stringBuilder, int level, String elementTag) {
 	createElementTagText(stringBuilder,false, elementTag);
 	createElementSpecificContent(stringBuilder, level);
@@ -62,21 +94,7 @@ public abstract class LevelSpecificStatsGenerator {
 		convertTextToTag(elementTag,ending));
 	stringBuilder.append("\n");
     }
-    /**
-     * This method adds the level tag to the 
-     * StringBuilder provided
-     * @param stringBuilder Where text to be added to
-     * @param level The level within tags
-     */
-    protected void createLevelWithinElement(StringBuilder stringBuilder, int level) {
-	stringBuilder.append(LEAF_TAG_PREFIX);
-	stringBuilder.append(convertTextToTag(
-		levelTag,false));
-	stringBuilder.append(level);
-	stringBuilder.append(convertTextToTag(
-		levelTag,true));
-	stringBuilder.append("\n");
-    }
+
 
     private void createPropertyTag(
 	    StringBuilder stringBuilder,boolean ending, 
@@ -90,5 +108,5 @@ public abstract class LevelSpecificStatsGenerator {
 	return "<" + (ending? "/" : "") + str + ">";
     }
 
-    
+
 }
