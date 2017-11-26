@@ -1,6 +1,7 @@
 package start;
 
 import engine.UI.Fade;
+import engine.battle.BattleScene;
 import authoring.Author;
 import authoring.StageDelegate;
 import javafx.scene.Cursor;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -60,6 +62,7 @@ public class StartMenu {
 				}else if((x>=EditX)&&(x<=EditX+AreaWidth)){
 					goEdit();
 				}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
+					goPlay();
 					//TODO go to player
 				}
 			}
@@ -106,8 +109,11 @@ public class StartMenu {
 		editor.toFirstAuthorScene();
 	}
 	
+	// Used currently to test battle screen
 	private void goPlay() {
 		Stage gameStage = new Stage();
+		BattleScene btsc = new BattleScene(720,480,Color.WHITE,null,null,null);
+		gameStage.setScene(btsc.getScene());
 		gameStage.show();
 	}
 }
