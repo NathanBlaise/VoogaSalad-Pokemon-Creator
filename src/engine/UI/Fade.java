@@ -17,7 +17,7 @@ import javafx.util.Duration;
 public class Fade {
 	
 	public static FadeTransition fadeIn(Node node, EventHandler<ActionEvent> endAction){
-		FadeTransition ft = new FadeTransition(Duration.millis(3000), node);
+		FadeTransition ft = new FadeTransition(Duration.millis(500), node);
 	    ft.setFromValue(0);
 	    ft.setToValue(1.0);
 	    ft.setCycleCount(1);
@@ -27,7 +27,7 @@ public class Fade {
 	}
 	
 	public static FadeTransition fadeOut(Node node, EventHandler<ActionEvent> endAction){
-		FadeTransition ft = new FadeTransition(Duration.millis(3000), node);
+		FadeTransition ft = new FadeTransition(Duration.millis(500), node);
 	    ft.setFromValue(1.0);
 	    ft.setToValue(0);
 	    ft.setCycleCount(1);

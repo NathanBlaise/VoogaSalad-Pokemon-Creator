@@ -2,6 +2,8 @@ package authoring;
 
 import java.util.ArrayList;
 
+import data.Database;
+import data.saving.DatabaseSaver;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -21,10 +23,19 @@ public class Author implements StageDelegate{
 	private Stage myStage;
 	private ArrayList <Scene> myList;
 	private SceneController scControl;
+	private String savePath;
+	private Database database;
 	
-	
-	public Author(Stage primaryStage){
+	/**
+	 * 
+	 * @param database - the database
+	 * @param savePath - the path to save the Database
+	 * @param primaryStage - the stage to show the data
+	 */
+	public Author(Database database, String savePath, Stage primaryStage){
 		myStage = primaryStage;
+		this.database = database;
+		this.savePath = savePath;
 		scControl = new SceneController(this);
 		myList = scControl.getScList();
 	}
@@ -62,6 +73,18 @@ public class Author implements StageDelegate{
 		myStage.setScene(myList.get(scControl.currentIndex));
 		//System.out.println("0");
 		
+	}
+
+
+	@Override
+	public Database getDatabase() {
+		return database;
+	}
+
+
+	@Override
+	public void saveDatabase() {
+		DatabaseSaver.save(database, savePath);
 	}
 
 }

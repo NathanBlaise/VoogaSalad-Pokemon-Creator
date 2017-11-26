@@ -7,6 +7,7 @@ import javafx.animation.Timeline;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -23,6 +24,7 @@ public class SplashScreen {
 	private Stage mainStage;
 	private Scene scene;
 	private VBox root = new VBox();
+	private RotateTransition rt;
 	
 	public SplashScreen(Stage stage) {
 		mainStage=stage;
@@ -31,6 +33,12 @@ public class SplashScreen {
 		
 		scene = new Scene(root,320,180);
 		scene.getStylesheets().add("resources/sceneStyle.css");
+		scene.setOnKeyPressed(e->{
+			if(e.getCode() == KeyCode.SPACE){
+				rt.setOnFinished((a)->{});
+				new StartMenu(mainStage);
+			}
+		});
 		
 		stage.setScene(scene);
 		stage.show();
@@ -41,7 +49,7 @@ public class SplashScreen {
 		ImageView imageView = new ImageView(new Image("resources/splashImage.png"));
 		imageView.setPreserveRatio(true);
 		imageView.setFitWidth(300);
-		RotateTransition rt = new RotateTransition(Duration.millis(600), imageView);
+		rt = new RotateTransition(Duration.millis(600), imageView);
 		rt.setByAngle(360);
 		rt.setCycleCount(2);
 		rt.setAutoReverse(true);
