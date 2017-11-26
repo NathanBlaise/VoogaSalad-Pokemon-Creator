@@ -1,7 +1,10 @@
 <defaultPokemonSpecie>
 	<name>Pikachu</name>
+	
 	<elemental>Lightning</elemental>
+	
 	<maxLevel>100</maxLevel>
+	
 	<levelMoves>
 		<move>
 			<level>1</level>
@@ -20,6 +23,7 @@
 			<name>ThunderShock</name>
 		</move>
 	</levelMoves>
+	
 	<levelStats>
 		<stat>
 			<level>1</level>
@@ -32,6 +36,7 @@
 			<HP>100</HP> <!--HP equals maxHP for specie description-->
 		</stat>
 	</levelStats>
+	
 	<levelExps>
 		<exp>
 			<level>1</level>
@@ -45,7 +50,296 @@
 			<level>3</level>
 			<neededExp>300</neededExp>
 		</exp>
+		<exp>
+			<level>4</level>
+			<neededExp>400</neededExp>
+		</exp>
+		<exp>
+			<level>5</level>
+			<neededExp>500</neededExp>
+		</exp>
+		<exp>
+			<level>6</level>
+			<neededExp>600</neededExp>
+		</exp>
+		<exp>
+			<level>7</level>
+			<neededExp>700</neededExp>
+		</exp>
+		<exp>
+			<level>8</level>
+			<neededExp>800</neededExp>
+		</exp>
+		<exp>
+			<level>9</level>
+			<neededExp>900</neededExp>
+		</exp>
+		<exp>
+			<level>10</level>
+			<neededExp>1000</neededExp>
+		</exp>
+		<exp>
+			<level>11</level>
+			<neededExp>1100</neededExp>
+		</exp>
+		<exp>
+			<level>12</level>
+			<neededExp>1200</neededExp>
+		</exp>
+		<exp>
+			<level>13</level>
+			<neededExp>1300</neededExp>
+		</exp>
+		<exp>
+			<level>14</level>
+			<neededExp>1400</neededExp>
+		</exp>
+		<exp>
+			<level>15</level>
+			<neededExp>1500</neededExp>
+		</exp>
+		<exp>
+			<level>16</level>
+			<neededExp>1600</neededExp>
+		</exp>
+		<exp>
+			<level>17</level>
+			<neededExp>1700</neededExp>
+		</exp>
+		<exp>
+			<level>18</level>
+			<neededExp>1800</neededExp>
+		</exp>
+		<exp>
+			<level>19</level>
+			<neededExp>1900</neededExp>
+		</exp>
+		<exp>
+			<level>20</level>
+			<neededExp>2000</neededExp>
+		</exp>
+		<exp>
+			<level>21</level>
+			<neededExp>2100</neededExp>
+		</exp>
+		<exp>
+			<level>22</level>
+			<neededExp>2200</neededExp>
+		</exp>
+		<exp>
+			<level>23</level>
+			<neededExp>2300</neededExp>
+		</exp>
+		<exp>
+			<level>24</level>
+			<neededExp>2400</neededExp>
+		</exp>
+		<exp>
+			<level>25</level>
+			<neededExp>2500</neededExp>
+		</exp>
+		<exp>
+			<level>26</level>
+			<neededExp>2600</neededExp>
+		</exp>
+		<exp>
+			<level>27</level>
+			<neededExp>2700</neededExp>
+		</exp>
+		<exp>
+			<level>28</level>
+			<neededExp>2800</neededExp>
+		</exp>
+		<exp>
+			<level>29</level>
+			<neededExp>2900</neededExp>
+		</exp>
+		<exp>
+			<level>30</level>
+			<neededExp>3000</neededExp>
+		</exp>
+		<exp>
+			<level>31</level>
+			<neededExp>3100</neededExp>
+		</exp>
+		<exp>
+			<level>32</level>
+			<neededExp>3200</neededExp>
+		</exp>
+		<exp>
+			<level>33</level>
+			<neededExp>3300</neededExp>
+		</exp>
+		<exp>
+			<level>34</level>
+			<neededExp>3400</neededExp>
+		</exp>
+		<exp>
+			<level>35</level>
+			<neededExp>3500</neededExp>
+		</exp>
+		<exp>
+			<level>36</level>
+			<neededExp>3600</neededExp>
+		</exp>
+		<exp>
+			<level>37</level>
+			<neededExp>3700</neededExp>
+		</exp>
+		<exp>
+			<level>38</level>
+			<neededExp>3800</neededExp>
+		</exp>
+		<exp>
+			<level>39</level>
+			<neededExp>3900</neededExp>
+		</exp>
+		<exp>
+			<level>40</level>
+			<neededExp>4000</neededExp>
+		</exp>
+		<exp>
+			<level>41</level>
+			<neededExp>4100</neededExp>
+		</exp>
+		<exp>
+			<level>42</level>
+			<neededExp>4200</neededExp>
+		</exp>
+		<exp>
+			<level>43</level>
+			<neededExp>4300</neededExp>
+		</exp>
+		<exp>
+			<level>44</level>
+			<neededExp>4400</neededExp>
+		</exp>
+		<exp>
+			<level>45</level>
+			<neededExp>4500</neededExp>
+		</exp>
+		<exp>
+			<level>46</level>
+			<neededExp>4600</neededExp>
+		</exp>
+		<exp>
+			<level>47</level>
+			<neededExp>4700</neededExp>
+		</exp>
+		<exp>
+			<level>48</level>
+			<neededExp>4800</neededExp>
+		</exp>
+		<exp>
+			<level>49</level>
+			<neededExp>4900</neededExp>
+		</exp>
+		<exp>
+			<level>50</level>
+			<neededExp>5000</neededExp>
+		</exp>
+		<exp>
+			<level>51</level>
+			<neededExp>5100</neededExp>
+		</exp>
+		<exp>
+			<level>52</level>
+			<neededExp>5200</neededExp>
+		</exp>
+		<exp>
+			<level>53</level>
+			<neededExp>5300</neededExp>
+		</exp>
+		<exp>
+			<level>54</level>
+			<neededExp>5400</neededExp>
+		</exp>
+		<exp>
+			<level>55</level>
+			<neededExp>5500</neededExp>
+		</exp>
+		<exp>
+			<level>56</level>
+			<neededExp>5600</neededExp>
+		</exp>
+		<exp>
+			<level>57</level>
+			<neededExp>5700</neededExp>
+		</exp>
+		<exp>
+			<level>58</level>
+			<neededExp>5800</neededExp>
+		</exp>
+		<exp>
+			<level>59</level>
+			<neededExp>5900</neededExp>
+		</exp>
+		<exp>
+			<level>60</level>
+			<neededExp>6000</neededExp>
+		</exp>
+		<exp>
+			<level>61</level>
+			<neededExp>6100</neededExp>
+		</exp>
+		<exp>
+			<level>62</level>
+			<neededExp>6200</neededExp>
+		</exp>
+		<exp>
+			<level>63</level>
+			<neededExp>6300</neededExp>
+		</exp>
+		<exp>
+			<level>64</level>
+			<neededExp>6400</neededExp>
+		</exp>
+		<exp>
+			<level>65</level>
+			<neededExp>6500</neededExp>
+		</exp>
+		<exp>
+			<level>66</level>
+			<neededExp>6600</neededExp>
+		</exp>
+		<exp>
+			<level>67</level>
+			<neededExp>6700</neededExp>
+		</exp>
+		<exp>
+			<level>68</level>
+			<neededExp>6800</neededExp>
+		</exp>
+		<exp>
+			<level>69</level>
+			<neededExp>6900</neededExp>
+		</exp>
+		<exp>
+			<level>70</level>
+			<neededExp>7000</neededExp>
+		</exp>
+		<exp>
+			<level>71</level>
+			<neededExp>7100</neededExp>
+		</exp>
+		<exp>
+			<level>72</level>
+			<neededExp>7200</neededExp>
+		</exp>
+		<exp>
+			<level>73</level>
+			<neededExp>7300</neededExp>
+		</exp>
+		<exp>
+			<level>74</level>
+			<neededExp>7400</neededExp>
+		</exp>
+		<exp>
+			<level>75</level>
+			<neededExp>7500</neededExp>
+		</exp>
 	</levelExps>
+
 	<levelEvolutionImages>
 		<evolutionImage>
 			<level>1</level>
