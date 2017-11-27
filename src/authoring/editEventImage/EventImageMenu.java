@@ -1,7 +1,10 @@
 package authoring.editEventImage;
 
-import java.util.Map.Entry;
-import java.util.TreeMap;
+import java.util.List;
+
+import data.model.NPC;
+import data.model.PokemonSpecie;
+import engine.UI.Path2Image;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -10,17 +13,14 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TitledPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DragEvent;
+import javafx.scene.input.DataFormat;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 
@@ -31,23 +31,10 @@ import javafx.scene.text.Font;
  */
 public class EventImageMenu extends TitledPane{
 
-	/*final variable*/
-	final static String CAPTAIN_MAP_IMAGE = "file:images/CaptainMap.png";
-	final static String CAPTAIN_BATTLE_IMAGE = "file:images/CaptainNPC.png";
-	final static String POKE_1_GIF = "file:images/pokemon_sprites/1.gif";
-	final static String POKE_10_GIF = "file:images/pokemon_sprites/10.gif";
-
-
 	/*instance variable*/
-	//private ListView<HBox> paneListView = new ListView<>();
-	private TreeMap<String, Image> PokeMap = new TreeMap<String, Image>();
-	private TreeMap<String, Image> NPCMap = new TreeMap<String, Image>();
 	private TabPane tabMenu = new TabPane();
 
-	public EventImageMenu() {
-
-		// init image
-		initImageMap();
+	public EventImageMenu(List<PokemonSpecie> pokemonSpecies, List<NPC> NPCs) {
 
 
 		// set style
@@ -66,8 +53,8 @@ public class EventImageMenu extends TitledPane{
 		this.setContent(tabMenu);
 		
 		
-		this.addTab("Pokemon", createListView(PokeMap));
-		this.addTab("Trainer", createListView(NPCMap));
+		this.addTab("Pokemon", createPokemonListView(pokemonSpecies));
+		this.addTab("Trainer", createNPCListView(pokemonSpecies, NPCs));
 		
 
 
@@ -77,51 +64,29 @@ public class EventImageMenu extends TitledPane{
 
 
 
-	private void initImageMap() {
-		//Image captainMenu = new Image(CAPTAIN_MAP_IMAGE,48,48,false,false);
-		Image captainMap = new Image(CAPTAIN_BATTLE_IMAGE,48,48,false,false);
-		Image poke1 = new Image(POKE_1_GIF);
-		Image poke2 = new Image(POKE_10_GIF);
-
-		PokeMap.put("Bulbasaur", poke1);
-		PokeMap.put("Caterpie",poke2 );
-		//NPCMap.put("captain", captainMenu);
-		NPCMap.put("captain", captainMap);
-	}
-
-
-
 	/**
 	 * private method to create a list view as the content of the titled pane
 	 * @return a list view
 	 */
-	private Node createListView(TreeMap<String, Image> myMap) {
+	private Node createNPCListView(List<PokemonSpecie> pokemons, List<NPC> NPCs){
 		//create a subPane
 		ListView<HBox> paneListView = new ListView<>();
 
-		for(Entry<String, Image> entry : myMap.entrySet()) {
+		for(NPC npc : NPCs) {
 			HBox finalPane = new HBox();
 			VBox totalPane = new VBox();
 			HBox subPane = new HBox();
 
-			Label  name = new Label(entry.getKey());
+			Label  name = new Label(npc.getName());
 			name.setFont(new Font(11));
 			subPane.getChildren().add(name);
-
-
-			Label gitControl = new Label(" [GUI master]");
-			gitControl.setTextFill(Color.GOLDENROD);
-			gitControl.setFont(new Font(11));
-			subPane.getChildren().add(gitControl);
-			gitControl.setAlignment(Pos.BASELINE_CENTER);
-
+			
 			subPane.setAlignment(Pos.BOTTOM_LEFT); 
 
 			totalPane.getChildren().add(subPane);
-			ImageView sourceImage = new ImageView(entry.getValue());
+			ImageView sourceImage = new ImageView(Path2Image.showImage(npc.getImagePath()));
 
 			totalPane.getChildren().add(sourceImage);
-			//totalPane.getChildren().add()
 			finalPane.getChildren().add(totalPane);
 			paneListView.getItems().add(finalPane);
 
@@ -138,39 +103,70 @@ public class EventImageMenu extends TitledPane{
 					/* put a string on dragboard */
 					ClipboardContent content = new ClipboardContent();
 					// if you want to add a shop tile, it needs to resize to the original one
-					if (entry.getKey().equals("captain")) {
-						Image source = new Image(CAPTAIN_MAP_IMAGE,48,48,false,false);
-						content.putImage(source);
-						content.putString(entry.getKey());
-					} 
-					else {
-						content.putImage(sourceImage.getImage());
-					}
+					content.putImage(sourceImage.getImage());
+					content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "NPC");
+		            content.put(DataFormat.lookupMimeType("NPC")==null?new DataFormat("NPC"):DataFormat.lookupMimeType("NPC"), npc);
+		            content.put(DataFormat.lookupMimeType("PokemonList")==null?new DataFormat("PokemonList"):DataFormat.lookupMimeType("PokemonList"), pokemons);
+		            db.setContent(content);
+
+					event.consume();
+				}
+			});
+		}
+		return paneListView;
+	}
+	
+	
+	
+	/**
+	 * private method to create a list view as the content of the titled pane
+	 * @return a list view
+	 */
+	private Node createPokemonListView(List<PokemonSpecie> pokemons) {
+		//create a subPane
+		ListView<HBox> paneListView = new ListView<>();
+		for(PokemonSpecie pokemon: pokemons) {
+			HBox finalPane = new HBox();
+			VBox totalPane = new VBox();
+			HBox subPane = new HBox();
+
+			Label  name = new Label(pokemon.getSpecieName());
+			name.setFont(new Font(11));
+			subPane.getChildren().add(name);
+
+			subPane.setAlignment(Pos.BOTTOM_LEFT); 
+
+			totalPane.getChildren().add(subPane);
+			ImageView sourceImage = new ImageView(Path2Image.showImage(pokemon.getLevelEvolutionImagePath().get(1)));
+
+			totalPane.getChildren().add(sourceImage);
+			finalPane.getChildren().add(totalPane);
+			paneListView.getItems().add(finalPane);
+
+
+			//add drag event handler
+			sourceImage.setOnDragDetected(new EventHandler <MouseEvent>() {
+				public void handle(MouseEvent event) {
+					/* drag was detected, start drag-and-drop gesture*/
+					System.out.println("onDragDetected");
+
+					/* allow any transfer mode */
+					Dragboard db = sourceImage.startDragAndDrop(TransferMode.ANY);
+
+					/* put a string on dragboard */
+					ClipboardContent content = new ClipboardContent();
+					// if you want to add a shop tile, it needs to resize to the original one
+					content.putImage(sourceImage.getImage());
+					content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "Pokemon");
+		            content.put(DataFormat.lookupMimeType("PokemonSpecie")==null?new DataFormat("PokemonSpecie"):DataFormat.lookupMimeType("PokemonSpecie"), pokemon);
+		            content.put(DataFormat.lookupMimeType("PokemonList")==null?new DataFormat("PokemonList"):DataFormat.lookupMimeType("PokemonList"), pokemons);
+		            
 					db.setContent(content);
 
 					event.consume();
 				}
 			});
-
-			//set drop down
-			sourceImage.setOnDragDone(new EventHandler <DragEvent>() {
-				public void handle(DragEvent event) {
-					/* the drag-and-drop gesture ended */
-					System.out.println("onDragDone");
-					/* if the data was successfully moved, clear it */
-					if (event.getTransferMode() == TransferMode.MOVE) {
-						//TO-DO
-					}
-
-					event.consume();
-				}
-			});
-
-
-
-
 		}
-
 		return paneListView;
 	}
 
@@ -184,11 +180,6 @@ public class EventImageMenu extends TitledPane{
 		tabSize.setContent(tabContext);
 		tabMenu.getTabs().addAll(tabSize);
 	}
-
-
-
-
-
 }
 
 

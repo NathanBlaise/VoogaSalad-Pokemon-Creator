@@ -15,16 +15,14 @@ import data.model.NPC;
 
 public class EventNPC extends Event{
 	private static final long serialVersionUID = -904353089393505949L;
-	private static final ArrayList<String> availableInstructions = new ArrayList<String>() {
-		private static final long serialVersionUID = 4770817977589641060L;
-
-		{
-			add("InstructionNPCFight");
-			add("InstructionNPCDialogue");
-	    }
-	};
+	private static final ArrayList<String> availableInstructions = new ArrayList<String>();
 	private NPC npc;
 	private static final boolean instructionAddable = true; //whether the length of instruction array list can be flexible
+	
+	{
+		availableInstructions.add("InstructionNPCFight");
+		availableInstructions.add("InstructionNPCDialogue");
+	}
 	
 	/**
 	 * set NPC in default empty value
@@ -32,7 +30,6 @@ public class EventNPC extends Event{
 	 */
 	@Deprecated
 	public EventNPC(){
-		npc = new NPC();
 	}
 	
 	/**
@@ -40,7 +37,7 @@ public class EventNPC extends Event{
 	 */
 	public EventNPC(NPC npc){
 		super(npc.getImagePath());
-		this.npc = new NPC(npc);
+		this.npc = npc;
 	}
 
 	/**

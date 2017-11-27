@@ -17,15 +17,15 @@ public class PokemonEventEditor implements Callback<Pokemon, Integer>{
 	private Pokemon pokemon;
 	private Callback<EventPokemon, Integer> saver;
 	
-	public PokemonEventEditor(List<PokemonSpecie> pokemonSpecies, PokemonSpecie selectedPokemonSpecie, Callback<EventPokemon, Integer> saver){
+	public PokemonEventEditor(List<PokemonSpecie> pokemonSpecies, Pokemon selectedPokemon, Callback<EventPokemon, Integer> saver){
 		this.saver=saver;
 		stage = new Stage();
-		editPokemon(pokemonSpecies, selectedPokemonSpecie);
+		editPokemon(pokemonSpecies, selectedPokemon);
 		stage.show();
 	}
 	
-	private void editPokemon(List<PokemonSpecie> pokemonSpecies, PokemonSpecie selectedPokemonSpecie){
-		GridPane gridPane = new PokemonChooser(pokemonSpecies, new Pokemon(selectedPokemonSpecie, ""), this).showPokemon();
+	private void editPokemon(List<PokemonSpecie> pokemonSpecies, Pokemon selectedPokemon){
+		GridPane gridPane = new PokemonChooser(pokemonSpecies, selectedPokemon, this).showPokemon();
 		BorderPane borderPane = new BorderPane();
 		borderPane.setCenter(gridPane);	
 		stage.setScene(new Scene(borderPane));

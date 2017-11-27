@@ -108,9 +108,9 @@ public class PokemonChooser {
         		availableMoves.stream().collect(Collectors.toMap(Move::getMoveName,
         	                                              Function.identity()));
 		TilePane movePane = new TilePane();
-		int gridWidth = (int)Math.round(Math.sqrt(Pokemon.getMoveNum()));
+		int gridWidth = (int)Math.round(Math.sqrt(localPokemon.getMoveNum()));
 		movePane.setPrefColumns(gridWidth);
-		for(int i=0;i<Pokemon.getMoveNum();i++){
+		for(int i=0;i<localPokemon.getMoveNum();i++){
 			ComboBox<String> comboBox;
 			if(moves[i]!=null){
 				comboBox = createMoveComboBox(availableMoves,

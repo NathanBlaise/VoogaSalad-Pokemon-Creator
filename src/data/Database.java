@@ -19,8 +19,15 @@ public class Database implements Serializable{
 	private Model model;
 	private Player player;
 	
+	/**
+	 * only used for serialization
+	 */
+	@Deprecated
+	public Database(){
+		
+	}
+	
 	public Database(GameMap map, Model model, Player player) {
-		super();
 		this.map = map;
 		this.model = model;
 		this.player = player;

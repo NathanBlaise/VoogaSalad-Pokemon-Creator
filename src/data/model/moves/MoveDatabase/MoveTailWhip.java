@@ -1,6 +1,7 @@
 package data.model.moves.MoveDatabase;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+
 import data.model.moves.MoveStatChange;
 
 /**
@@ -15,13 +16,7 @@ public class MoveTailWhip extends MoveStatChange{
 	 * see @data.model.moves.MoveStatChange#MoveStatChange()
 	 */
 	public MoveTailWhip(){
-		super("Tail Whip", "Electric", 30, false, -1, new ArrayList<String>(){
-			private static final long serialVersionUID = 1676726288407767303L;
-			{
-				this.add("SpecialDefense");
-				this.add("NormalDefense");
-			}
-		});
+		super("Tail Whip", "Electric", 30, false, -1, Arrays.asList("SpecialDefense", "NormalDefense"));
 	}
 
 }

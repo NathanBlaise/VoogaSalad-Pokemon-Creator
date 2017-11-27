@@ -12,6 +12,14 @@ public class MoveDamage extends Move{
 	private static final long serialVersionUID = 2692337947083408494L;
 	
 	/**
+	 * only for serialization
+	 */
+	@Deprecated
+	public MoveDamage(){
+		
+	}
+	
+	/**
 	 * 
 	 * @param moveName - the name of move
 	 * @param elemental - such as Fire, Water
@@ -20,7 +28,13 @@ public class MoveDamage extends Move{
 	 * where the damage is debuffed or buffed power according to the elemental
 	 */
 	public MoveDamage(String moveName, String elemental, int maxPP, int power){
-		super(moveName, elemental, maxPP, (friend, enemy)->damage(friend, enemy, elemental, power));
+		super(moveName, elemental, maxPP, new Action<Pokemon, Pokemon>(){
+			private static final long serialVersionUID = -1569968083239145204L;
+			@Override
+			public void move(Pokemon friend, Pokemon enemy) {
+				damage(friend, enemy, elemental, power);
+			}
+		});
 	}
 
 	/**

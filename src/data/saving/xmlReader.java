@@ -5,13 +5,14 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class xmlReader {
+public class xmlReader <K>{
 
 	public xmlReader() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void readXML(String file) {
+	@SuppressWarnings({ "resource", "unchecked" })
+	public K readXML(String file) {
 		
 		XMLDecoder decoder=null;
 		try {
@@ -19,8 +20,9 @@ public class xmlReader {
 		} catch (FileNotFoundException e) {
 			System.out.println("ERROR: File " + file + " not found");
 		}
-		Object obj = (Object) decoder.readObject();
+		K obj = (K) decoder.readObject();
 		//this should return the exact object passed to the xml file to be stored in the first place
+		return obj;
 	}
 
 }

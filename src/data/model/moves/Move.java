@@ -33,7 +33,7 @@ public class Move implements Serializable{
 		maxPP = move.maxPP;
 		moveName = move.getMoveName();
 		elemental = move.elemental;
-		action = move.action;
+		action = (Serializable & Action<Pokemon, Pokemon>) move.action;
 	}
 	
 	/**
@@ -53,12 +53,11 @@ public class Move implements Serializable{
 	 * @param action - @see Action
 	 */
 	public Move(String moveName, String elemental, int maxPP, Action<Pokemon, Pokemon> action) {
-		System.out.println("in the move class");
 		this.moveName = moveName;
 		this.elemental = elemental;
 		this.PP = maxPP;
 		this.maxPP = maxPP;
-		this.action = action;
+		this.action = (Serializable & Action<Pokemon, Pokemon>) action;
 	}
 	
 	@Override
@@ -90,11 +89,11 @@ public class Move implements Serializable{
 	}
 
 	public Action<Pokemon, Pokemon> getAction() {
-		return action;
+		return (Serializable & Action<Pokemon, Pokemon>) action;
 	}
 	
 	public void setAction(Action<Pokemon, Pokemon> action) {
-		this.action = action;
+		this.action = (Serializable & Action<Pokemon, Pokemon>) action;
 	}
 	
 	public String getElemental() {

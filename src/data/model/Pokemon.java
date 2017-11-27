@@ -230,6 +230,12 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 		return new String(name);
 	}
 	
+	
+	
+	public String getName() {
+		return name;
+	}
+
 	/**
 	 * 
 	 * @param name - the nick name of Pokemon

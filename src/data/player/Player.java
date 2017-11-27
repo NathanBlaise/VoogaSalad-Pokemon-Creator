@@ -50,7 +50,10 @@ public class Player implements Serializable{
 	public ArrayList<Item> getItems() {
 		return items;
 	}
-	
+
+	public void setItems(ArrayList<Item> items) {
+		this.items = items;
+	}
 
 	public void setPokemons(Pokemon[] pokemons) {
 		for(int i=0;i<6 && i<pokemons.length;i++){
