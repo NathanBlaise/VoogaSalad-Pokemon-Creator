@@ -22,7 +22,8 @@ public class LevelExpGenerator extends LevelSpecificStatsGenerator {
 	createNeededExpWithinElement(stringBuilder, level);
     }
 
-    private void createNeededExpWithinElement(StringBuilder stringBuilder, int level) {
+    private void createNeededExpWithinElement(
+	    StringBuilder stringBuilder, int level) {
 	int exp = getExpForLevel(level);
 	createLeafWithinElement(stringBuilder,neededExpTag,
 		Integer.toString(exp));
