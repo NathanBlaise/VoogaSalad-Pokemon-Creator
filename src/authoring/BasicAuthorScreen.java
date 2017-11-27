@@ -1,9 +1,5 @@
 package authoring;
 
-
-
-import com.sun.prism.paint.Color;
-
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;

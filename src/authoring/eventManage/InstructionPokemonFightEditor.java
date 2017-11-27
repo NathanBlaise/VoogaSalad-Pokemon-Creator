@@ -3,7 +3,6 @@ package authoring.eventManage;
 import javafx.scene.Node;
 import javafx.util.Callback;
 import data.event.InstructionPokemonFight;
-import data.model.Pokemon;
 
 public class InstructionPokemonFightEditor implements InstructionEditor{
 

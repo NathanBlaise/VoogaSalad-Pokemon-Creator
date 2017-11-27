@@ -45,7 +45,7 @@ public class PlayerTab{
 	
 	private GridPane placeChooser(int posX, int posY, int XLength, int YLength){
 		GridPane grid = new GridPane();
-		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("changeX")), 0, 0);
+		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change Y coordinates")), 0, 0);
 		HBox Xchanger = UIComponentFactory.intSlider(player.getPosX(), 0, XLength, new Callback<Integer, Integer>(){
 			@Override
 			public Integer call(Integer param) {
@@ -55,7 +55,7 @@ public class PlayerTab{
 			}			
 		});
 		grid.add(Xchanger, 0, 1);
-		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("changeY")), 0, 2);
+		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change X coordinates")), 0, 2);
 		HBox Ychanger = UIComponentFactory.intSlider(player.getPosY(), 0, YLength, new Callback<Integer, Integer>(){
 			@Override
 			public Integer call(Integer param) {
