@@ -15,8 +15,9 @@ public class RunPokemonExpGenerator {
 
     @Test
     public void test() {
+	final int maxLevel = 75;
 	LevelExpGenerator gen = new LevelExpGenerator();
-	String text = gen.generateLevelSpecificContent(75);
+	String text = gen.generateLevelSpecificContent(maxLevel);
 	System.out.println(text);
 	assertTrue(true);
     }

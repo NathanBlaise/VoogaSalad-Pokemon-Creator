@@ -12,8 +12,6 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import data.model.PokemonSpecie;
@@ -72,6 +70,14 @@ public class PokemonSpecieFileParser {
 		levelMoves,levelStats,levelExps,levelEvolutionImagePaths);
     }
     
+    /**
+     * Gets the PokemonSpecie from the File path given
+     * @param filePath the absolute path of the file
+     * @return The pokemon specie described by the file
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     public PokemonSpecie parseFile(String filePath) throws ParserConfigurationException, SAXException, IOException {
 	File file = new File(filePath);
 	//TODO: do this later to check for file not existing and throw an exception
@@ -100,49 +106,5 @@ public class PokemonSpecieFileParser {
 	levelExps = new HashMap<>();
 	levelEvolutionImagePaths = new HashMap<>();
 	levelMovesParser = new PokemonLevelMovesParser();
-    }
-
-////////////////////////////////obosleted methods copied from testing
-    //TODO: remove these methods after modifying 
-    private void parseAndPrintElement(Element element, int numberOfTabs) {
-	NodeList children = element.getChildNodes();
-	if(!hasChildElements(element)) {
-	    String nodeName = element.getNodeName();
-	    String content = element.getTextContent();
-	    String printed = nodeName + " : " + content + "\n";
-	    addTabAndPrint(numberOfTabs, printed);
-	    return;
-	}
-	addTabAndPrint(numberOfTabs, element.getNodeName() + " :\n");
-	int nextLevelTabs = numberOfTabs+1;
-	for(int i = 0; i < children.getLength(); i++) {
-	    Node currentNode = children.item(i);
-	    if(currentNode.getNodeType() == Node.ELEMENT_NODE) {
-		Element childElement = (Element) currentNode;
-		parseAndPrintElement(childElement,nextLevelTabs);
-	    }
-
-	}
-
-    }
-
-
-
-
-    private void addTabAndPrint(int numberOfTabs, String content) {
-	for(int i = 0; i < numberOfTabs; i++) {
-	    System.out.print("\t");
-	}
-	System.out.print(content);
-
-    }
-
-    public static boolean hasChildElements(Node el) {
-	NodeList children = el.getChildNodes();
-	for (int i = 0;i < children.getLength();i++) {
-	    if (children.item(i).getNodeType() == Node.ELEMENT_NODE) 
-		return true;
-	}
-	return false;
     }
 }
