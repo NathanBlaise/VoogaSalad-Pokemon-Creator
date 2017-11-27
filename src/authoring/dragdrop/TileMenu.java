@@ -3,6 +3,8 @@ package authoring.dragdrop;
 
 import java.util.Map.Entry;
 import java.util.TreeMap;
+
+import engine.UI.Path2Image;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -12,6 +14,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
@@ -30,10 +33,10 @@ import javafx.scene.text.Font;
 	public class TileMenu extends TitledPane{
 		
 		/*final variable*/
-		final static String REGTILE_PATH = "file:images/reg_tile_scaled.png";
-		final static String GRASS_PATH = "file:images/grass_tile.png";
-		final static String FLOWER_PATH = "file:images/flower_tile.png";
-		final static String SHOP_PATH = "file:images/pokemonCenter.png";
+		final static String REGTILE_PATH = "images/reg_tile_scaled.png";
+		final static String GRASS_PATH = "images/grass_tile.png";
+		final static String FLOWER_PATH = "images/flower_tile.png";
+		final static String SHOP_PATH = "images/pokemonCenter.png";
 		
 		
 		/*instance variable*/
@@ -67,16 +70,11 @@ import javafx.scene.text.Font;
 
 
 
-		private void initImageMap() {
-			Image regTile = new Image(REGTILE_PATH);
-			Image grassTile = new Image(GRASS_PATH);
-			Image flowerTile = new Image(FLOWER_PATH);
-			Image shopTile = new Image(SHOP_PATH,48,48,false,false);
-			
-			imageMap.put("Default Tile", regTile);
-			imageMap.put("grass Tile", grassTile);
-			imageMap.put("Flower Tile", flowerTile);
-			imageMap.put("Shop Tile", shopTile);
+		private void initImageMap() {			
+			imageMap.put(REGTILE_PATH, Path2Image.showImage(REGTILE_PATH));
+			imageMap.put(GRASS_PATH, Path2Image.showImage(GRASS_PATH));
+			imageMap.put(FLOWER_PATH, Path2Image.showImage(FLOWER_PATH));
+			imageMap.put(SHOP_PATH, Path2Image.showImage(SHOP_PATH));//,48,48,false,false));
 		}
 		
 		
@@ -97,7 +95,7 @@ import javafx.scene.text.Font;
 			name.setFont(new Font(11));
 			subPane.getChildren().add(name);
 
-
+			//though Chenning thinks this label is redundant
 			Label gitControl = new Label(" [GUI master]");
 			gitControl.setTextFill(Color.GOLDENROD);
 			gitControl.setFont(new Font(11));
@@ -130,10 +128,11 @@ import javafx.scene.text.Font;
 		            	 	Image source = new Image(SHOP_PATH);
 		            	 	content.putImage(source);
 		            	 	content.putString(entry.getKey());
-		             } 
-		             else {
-		             content.putImage(sourceImage.getImage());
+		             } else {
+		            	 content.putImage(sourceImage.getImage());
 		             }
+		             content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "Tile");
+		             content.put(DataFormat.lookupMimeType("Path")==null?new DataFormat("Path"):DataFormat.lookupMimeType("Path"), entry.getKey());
 		             db.setContent(content);
 		             
 		             event.consume();

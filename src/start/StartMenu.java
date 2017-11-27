@@ -58,7 +58,7 @@ public class StartMenu {
 		});
 		
 		
-		FadeTransition fade = Fade.fadeIn(root, e->{System.out.printf("fade in!\n");});
+		FadeTransition fade = Fade.fadeIn(root, null);
 		
 		scene.setOnMouseClicked(e -> {
 			double x = e.getSceneX();
@@ -69,7 +69,6 @@ public class StartMenu {
 				}else if((x>=EditX)&&(x<=EditX+AreaWidth)){
 					goEdit();
 				}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
-					goPlay();
 					//TODO go to player
 					goPlay();
 				}
@@ -120,7 +119,7 @@ public class StartMenu {
 		});
 		editorStage.setScene(new Scene(pathSetter));
 		editorStage.show();
-		System.out.printf("This is editor!\n");
+		editorStage.centerOnScreen();
 	}
 	
 	// Used currently to test battle screen

@@ -17,6 +17,14 @@ public class MoveStatChange extends Move{
 	private static final long serialVersionUID = 6971424179721908962L;
 
 	/**
+	 * only for serialization
+	 */
+	@Deprecated
+	public MoveStatChange(){
+		
+	}
+	
+	/**
 	 * 
 	 * @param moveName - the name of move
 	 * @param elemental - like Water, Fire
@@ -27,7 +35,13 @@ public class MoveStatChange extends Move{
 	 * @param properties - the properties which is going to be changed, like ["SpecialDefense", "NormalDefense"]
 	 */
 	public MoveStatChange(String moveName, String elemental, int maxPP, Boolean changeFriendStat, int level, List<String> properties){
-		super(moveName, elemental, maxPP, (friend, enemy)->changeStat(friend, enemy, changeFriendStat, level, properties));
+		super(moveName, elemental, maxPP, new Action<Pokemon, Pokemon>(){
+			private static final long serialVersionUID = -2791697233159877468L;
+			@Override
+			public void move(Pokemon friend, Pokemon enemy) {
+				changeStat(friend, enemy, changeFriendStat, level, properties);	
+			}		
+		});
 	}
 	
 	/**

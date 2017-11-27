@@ -1,6 +1,6 @@
 package authoring.dragdrop;
 
-import javafx.scene.image.Image;
+import data.map.GameMap;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -16,34 +16,34 @@ import javafx.scene.layout.RowConstraints;
  */
 public class DBMap implements cellDelegate {
 	/*final variable*/
-	final private static int   PANE_WIDTH_NUMBER = 15;
-	final private static int  PANE_HEIGHT_NUMBER = 10;
+	private int   PANE_WIDTH_NUMBER;
+	private int  PANE_HEIGHT_NUMBER;
 	final private static int PANE_CELL_SIZE = 48;
 	/*instance variable*/
 	private GridPane myPane;
-	private DBCell [][] myCell;
+	private DBCell [][] myCell;	
+	private GameMap gameMap;
 	
-	public DBMap() {
-		// deal with Grid Pane
+	
+	public DBMap(GameMap map) {
+		this.gameMap = map;
+		PANE_HEIGHT_NUMBER = map.getXlength();
+		PANE_WIDTH_NUMBER = map.getYlength();
 		drawGridPane();
 		
 		// deal with myCell
 		myCell = new DBCell[PANE_HEIGHT_NUMBER][PANE_WIDTH_NUMBER];
 		for (int i = 0; i < PANE_HEIGHT_NUMBER; i++) {
 			for (int j = 0; j < PANE_WIDTH_NUMBER; j++) {
-				myCell[i][j] = new DBCell(i,j,myPane,this);
+				myCell[i][j] = new DBCell(i,j, map.getCells()[i][j], myPane, this);
 				
 			}
 		}
-		
-		// deal with my Event
-		
-		
 	}
 
-	
-	
-	
+
+
+
 	/*the method to draw the grid pane*/
 	private void drawGridPane() {
 		//initialize the grid pane
@@ -75,6 +75,7 @@ public class DBMap implements cellDelegate {
 	public void updateCellList(DBCell dbCell) {
 		//update my Cell
 		myCell[dbCell.getCellRow()][dbCell.getCellCol()] = dbCell;
+		gameMap.setCell(dbCell.getCellRow(), dbCell.getCellCol(), dbCell.getCell());
 	}
 
 
@@ -131,11 +132,6 @@ public class DBMap implements cellDelegate {
 		}
 		
 	}
-	
-	
 
 	
-	
-	
-
 }

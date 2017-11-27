@@ -1,10 +1,6 @@
 package data.saving;
 
-import java.beans.XMLDecoder;
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,14 +47,7 @@ public class DatabaseLoader {
 		Database result; 
 		File f = new File(pathName);
 		if(f.exists()) { 
-			XMLDecoder decoder=null;
-			try {
-				decoder=new XMLDecoder(new BufferedInputStream(new FileInputStream(pathName)));
-			} catch (FileNotFoundException e) {
-				System.out.println("ERROR: File " + pathName + " not found");
-			}
-			result = (Database) decoder.readObject();
-			decoder.close();
+			result = (Database) new xmlReader<Database>().readXML(pathName);
 			return result;
 		}else{
 			result = getDefaultDatabase();
@@ -67,7 +56,7 @@ public class DatabaseLoader {
 	}
 	
 	private static Database getDefaultDatabase() {
-		// TODO Auto-generated method stub
-		return null;
+		Database databaseResult = new xmlReader<Database>().readXML("src"+File.separator+"resources"+File.separator+"defaultDatabase.xml");
+		return databaseResult;
 	}
 }
