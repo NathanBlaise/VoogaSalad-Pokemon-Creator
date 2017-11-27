@@ -23,7 +23,7 @@ public class InstructionNPCDialogue implements Instruction{
 	 * 
 	 * Generally, the even element is said by NPC, the odd element is said by Player
 	 */
-	private ArrayList<String> dialogues;
+	private ArrayList<String> dialogues = new ArrayList<String>();
 	/**
 	 * the NPC who is talking
 	 */
@@ -44,7 +44,7 @@ public class InstructionNPCDialogue implements Instruction{
 	 * @param dialogues - the sentence of even order is said by NPC, the odd sentence is said by Player. Start with the 0th element.
 	 * @param npc - the npc who is talking
 	 */
-	public InstructionNPCDialogue(ArrayList<String> dialogues, NPC npc){
+	public InstructionNPCDialogue(NPC npc, ArrayList<String> dialogues){
 		this.dialogues = new ArrayList<String>(dialogues);
 		this.npc = npc;
 	}

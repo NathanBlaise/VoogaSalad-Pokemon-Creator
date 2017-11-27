@@ -1,6 +1,6 @@
 package data.model.moves.MoveDatabase;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 import data.model.moves.MoveStatChange;
 
@@ -18,13 +18,6 @@ public class MoveGrowl extends MoveStatChange{
 	 * see @data.model.moves.MoveStatChange#MoveStatChange()
 	 */
 	public MoveGrowl(){
-		super("Growl", "Normal", 40, false, -1, new ArrayList<String>(){
-			private static final long serialVersionUID = 8985260821678617400L; // for serialization
-
-			{
-				this.add("SpecialAttack");
-				this.add("NormalAttack");
-			}
-		});
+		super("Growl", "Normal", 40, false, -1, Arrays.asList("NormalAttack", "SpecialAttack"));
 	}
 }

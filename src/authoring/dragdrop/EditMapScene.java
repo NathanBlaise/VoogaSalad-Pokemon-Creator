@@ -36,7 +36,7 @@ public class EditMapScene extends BasicAuthorScreen {
 		// set up the t-menu
 		tMenu = new TileMenu();
 		this.rootAdd(tMenu);
-		myMap = new DBMap();
+		myMap = new DBMap(stageHelper.getDatabase().getMap());
 		
 	 
 	    
@@ -61,16 +61,5 @@ public class EditMapScene extends BasicAuthorScreen {
 	*/
 	
 	}
-	
-	/**
-	 * @param map: pass in the map from the scene before
-	 * 
-	 */
-	public void setMyMap(DBMap map) {
-		myMap = map;
-		this.rootRemove(myMap.getGrid());
-		this.rootAdd(myMap.getGrid(),200,0);
-	}
-	
 
 }

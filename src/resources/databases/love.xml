@@ -163,6 +163,23 @@
        <array class="data.map.Cell" length="15">
         <void index="0">
          <object class="data.map.Cell">
+          <void property="event">
+           <object class="data.event.EventNPC">
+            <void property="imagePath">
+             <string>images/CaptainMap.png</string>
+            </void>
+            <void property="npc">
+             <object class="data.model.NPC">
+              <void property="imagePath">
+               <string>images/CaptainMap.png</string>
+              </void>
+              <void property="name">
+               <string>Caption Kirk</string>
+              </void>
+             </object>
+            </void>
+           </object>
+          </void>
           <void property="openState">
            <boolean>true</boolean>
           </void>

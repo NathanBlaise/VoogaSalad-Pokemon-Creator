@@ -67,7 +67,7 @@ public class NPCEventEditor{
 			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> result = new HashMap<String, Function<Instruction, Callback<Instruction, Integer>, Integer>>();
 			result.put("InstructionNPCDialogue", (instruction, e)->{
 				if(!(instruction instanceof InstructionNPCDialogue)){
-					instruction = new InstructionNPCDialogue(new ArrayList<String>(), eventNPC.getNpc());
+					instruction = new InstructionNPCDialogue(eventNPC.getNpc(), new ArrayList<String>());
 				}
 				instructionPane.setRight(new InstructionNPCDialogueEditor((InstructionNPCDialogue) instruction, e).showEditor());
 				stage.sizeToScene();

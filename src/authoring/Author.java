@@ -41,6 +41,7 @@ public class Author implements StageDelegate{
 	
 	@Override
 	public void GoButtonPressed() {
+		saveDatabase();
 		if (scControl.currentIndex < myList.size() - 1)
 		scControl.currentIndex +=1;
 		myStage.setScene(myList.get(scControl.currentIndex));
@@ -56,6 +57,7 @@ public class Author implements StageDelegate{
 
 	@Override
 	public void BackButtonPressed() {
+		saveDatabase();
 		if (scControl.currentIndex > 0)
 			scControl.currentIndex -=1;
 			myStage.setScene(myList.get(scControl.currentIndex));

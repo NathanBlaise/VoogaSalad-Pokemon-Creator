@@ -69,7 +69,6 @@ public class StartMenu {
 				}else if((x>=EditX)&&(x<=EditX+AreaWidth)){
 					goEdit();
 				}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
-					goPlay();
 					//TODO go to player
 					goPlay();
 				}

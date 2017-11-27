@@ -2,8 +2,6 @@ package data.event;
 
 import java.util.ArrayList;
 
-import data.PathReader;
-import data.PropertyReader;
 import data.model.Pokemon;
 
 /**
@@ -20,16 +18,14 @@ import data.model.Pokemon;
  */
 public class EventPokemon extends Event{
 	private static final long serialVersionUID = 1562499630824551623L;
-	private static final ArrayList<String> availableInstructions = new ArrayList<String>() {
-		private static final long serialVersionUID = 234132179505405455L;
-
-		{
-	        add("InstructionPokemonFight");
-	    }
-	};
+	private static final ArrayList<String> availableInstructions = new ArrayList<String>();
 	private Pokemon pokemon;
 	private static final boolean instructionAddable = false; //whether the length of instruction array list can be flexible
 	
+	
+	{
+		availableInstructions.add("InstructionPokemonFight");
+	}
 	
 	/**
 	 * this constructor is only for serialization, it shouldn't be called for any intention else.
@@ -45,10 +41,11 @@ public class EventPokemon extends Event{
 	 * @param pokemon - the pokemon for fighting
 	 */
 	public EventPokemon(Pokemon pokemon){
-		super(new PathReader().getString("DefaultImage"));
+		//super(new PathReader().getString("DefaultImage"));
+		super(pokemon.getCurrentImagePath());
 		this.pokemon=pokemon;
 		ArrayList<Instruction> instructions = new ArrayList<Instruction>();
-		instructions.add(new InstructionPokemonFight());
+		instructions.add(new InstructionPokemonFight(pokemon));
 		super.setInstructions(instructions);
 	}
 	
@@ -57,7 +54,7 @@ public class EventPokemon extends Event{
 	 * @return - a copy of the holding pokemon
 	 */
 	public Pokemon getPokemon() {
-		return new Pokemon(pokemon);
+		return pokemon;
 	}
 
 	/**
@@ -65,7 +62,7 @@ public class EventPokemon extends Event{
 	 * @param pokemon - a pokemon that the holding pokemon will copy based on 
 	 */
 	public void setPokemon(Pokemon pokemon) {
-		this.pokemon = new Pokemon(pokemon);
+		this.pokemon = pokemon;
 	}
 
 	@Override
