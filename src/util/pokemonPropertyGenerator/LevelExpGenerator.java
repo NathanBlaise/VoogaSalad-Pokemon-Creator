@@ -7,7 +7,6 @@ package util.pokemonPropertyGenerator;
  */
 public class LevelExpGenerator extends LevelSpecificStatsGenerator {
     
-    
     private static String propertyTag = "levelExps";
     private static String elementTag = "exp";
     private static String neededExpTag = "neededExp";
@@ -24,13 +23,9 @@ public class LevelExpGenerator extends LevelSpecificStatsGenerator {
     }
 
     private void createNeededExpWithinElement(StringBuilder stringBuilder, int level) {
-	stringBuilder.append(LEAF_TAG_PREFIX);
-	stringBuilder.append(convertTextToTag(
-	    neededExpTag,false));
-	stringBuilder.append(getExpForLevel(level));
-	stringBuilder.append(convertTextToTag(
-	    neededExpTag,true));
-	stringBuilder.append("\n");
+	int exp = getExpForLevel(level);
+	createLeafWithinElement(stringBuilder,neededExpTag,
+		Integer.toString(exp));
     }
 
     private int getExpForLevel(int level) {
