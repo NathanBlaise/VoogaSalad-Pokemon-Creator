@@ -1,12 +1,10 @@
 package authoring;
 
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 public class ScreenDisplay {

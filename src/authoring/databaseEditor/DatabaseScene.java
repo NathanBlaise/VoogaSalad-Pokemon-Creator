@@ -1,10 +1,7 @@
 package authoring.databaseEditor;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import tests.authoring.Specie1;
-import tests.authoring.Specie2;
 import data.model.PokemonSpecie;
 import data.player.Player;
 import javafx.geometry.Side;
@@ -21,17 +18,17 @@ import authoring.StageDelegate;
  */
 public class DatabaseScene extends BasicAuthorScreen {
 	private TabPane tabPane;
-//	AnchorPane anchorPaneContent = new AnchorPane();
 
 	public DatabaseScene(Paint white, StageDelegate app) {
 		super(white,app);
-		List<PokemonSpecie> species = new ArrayList<PokemonSpecie>();
-		species.add(new Specie1());
-		species.add(new Specie2());
-		tabPane = new TabPane(new PlayerTab(new Player(), species, 6, 4, new Callback<Player, Integer>(){
+		List<PokemonSpecie> species = app.getDatabase().getModel().getPokemonSpecies();
+		Player player = app.getDatabase().getPlayer();
+		int XLength = app.getDatabase().getMap().getXlength();
+		int YLength = app.getDatabase().getMap().getYlength();
+		tabPane = new TabPane(new PlayerTab(player, species, XLength, YLength, new Callback<Player, Integer>(){
 			@Override
 			public Integer call(Player param) {
-				
+				app.getDatabase().setPlayer(param);
 				return null;
 			}		
 		}).getTab());

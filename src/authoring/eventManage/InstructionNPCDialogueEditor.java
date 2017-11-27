@@ -30,7 +30,6 @@ public class InstructionNPCDialogueEditor implements InstructionEditor{
 	@SuppressWarnings("unchecked")
 	private ListView<String> createDialogueList(){
 		ObservableList<String> names = FXCollections.observableArrayList(npcDialogue.getDialogues());
-		System.out.printf("dialogue size: %s\n" ,npcDialogue.getDialogues());
 		dialogueList = new ListView<>(names);
 
 		dialogueList = ListViewFactory.createListView(new ContextMenu(), ComboBoxListCell.forListView(names),
@@ -50,7 +49,6 @@ public class InstructionNPCDialogueEditor implements InstructionEditor{
 			@Override
 			public void handle(ListView.EditEvent<String> t) {
 				dialogueList.getItems().set(t.getIndex(), t.getNewValue());
-				System.out.println("setOnEditCommit");
 			}			
 		});
 		
