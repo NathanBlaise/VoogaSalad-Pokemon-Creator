@@ -1,22 +1,8 @@
 package authoring.dragdrop;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 import authoring.BasicAuthorScreen;
 import authoring.StageDelegate;
-import javafx.event.EventHandler;
-import javafx.scene.control.Label;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
 /**
  * This class is to build a class extending basic author screen to make a map for the pokemon game
@@ -36,7 +22,7 @@ public class EditMapScene extends BasicAuthorScreen {
 		// set up the t-menu
 		tMenu = new TileMenu();
 		this.rootAdd(tMenu);
-		myMap = new DBMap(stageHelper.getDatabase().getMap());
+		myMap = new DBMap(stageHelper.getDatabase());
 		
 	 
 	    

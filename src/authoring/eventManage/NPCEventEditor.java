@@ -29,11 +29,11 @@ public class NPCEventEditor{
 		
 		public NPCEventEditor(EventNPC selectedEventNPC, List<PokemonSpecie> pokemonSpecies, Callback<Event, Integer> saver){
 			stage = new Stage();
-			stage.show();
 			eventNPC = selectedEventNPC;
 			this.pokemonSpecies = new ArrayList<PokemonSpecie>(pokemonSpecies);
 			this.saver = saver;
 			editNPC(selectedEventNPC.getNpc());
+			stage.show();
 		}
 		
 		private void editNPC(NPC selectedNPC){

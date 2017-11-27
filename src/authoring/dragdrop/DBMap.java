@@ -1,5 +1,6 @@
 package authoring.dragdrop;
 
+import data.Database;
 import data.map.GameMap;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
@@ -23,19 +24,21 @@ public class DBMap implements cellDelegate {
 	private GridPane myPane;
 	private DBCell [][] myCell;	
 	private GameMap gameMap;
+	private Database database;
 	
 	
-	public DBMap(GameMap map) {
-		this.gameMap = map;
-		PANE_HEIGHT_NUMBER = map.getXlength();
-		PANE_WIDTH_NUMBER = map.getYlength();
+	public DBMap(Database database) {
+		this.database = database;
+		this.gameMap = database.getMap();
+		PANE_HEIGHT_NUMBER = gameMap.getXlength();
+		PANE_WIDTH_NUMBER = gameMap.getYlength();
 		drawGridPane();
 		
 		// deal with myCell
 		myCell = new DBCell[PANE_HEIGHT_NUMBER][PANE_WIDTH_NUMBER];
 		for (int i = 0; i < PANE_HEIGHT_NUMBER; i++) {
 			for (int j = 0; j < PANE_WIDTH_NUMBER; j++) {
-				myCell[i][j] = new DBCell(i,j, map.getCells()[i][j], myPane, this);
+				myCell[i][j] = new DBCell(i,j, gameMap.getCells()[i][j], myPane, this);
 				
 			}
 		}
@@ -131,6 +134,14 @@ public class DBMap implements cellDelegate {
 			}
 		}
 		
+	}
+
+
+
+
+	@Override
+	public Database getDatabase() {
+		return database;
 	}
 
 	

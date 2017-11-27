@@ -22,7 +22,7 @@ public class EditEventImageScene extends BasicAuthorScreen {
 		super(background, stageHelper);
 		// TODO Auto-generated constructor stub
 		this.rootAdd(new EventImageMenu(stageHelper.getDatabase().getModel().getPokemonSpecies(), stageHelper.getDatabase().getModel().getNPCs()));
-		myMap = new DBMap(stageHelper.getDatabase().getMap());
+		myMap = new DBMap(stageHelper.getDatabase());
 		this.rootAdd(myMap.getGrid(),200,0);
 		
 	}

@@ -33,7 +33,6 @@ public class ListViewFactory {
 	
 	public static ContextMenu createClickMenu(ListView<String> result, ContextMenu clickContextMenu){
 		ContextMenu contextMenu = new ContextMenu();
-		new UIComponentFactory();
 		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem("add to the last", h -> {add(result);}));
 		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem("remove the last one", h -> {remove(result);}));
 		contextMenu.getItems().addAll(clickContextMenu.getItems());
