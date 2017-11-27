@@ -49,11 +49,7 @@ public class BattleScene extends ScreenDisplay{
 	private GraphicsContext gc;
 	private Canvas canvas;
 	private Font f;
-	private Button button1;
-	private Button button2;
-	private Button button3;
-	private Button button4;
-	private Button[] buttonArr; //Contains all buttons
+	private Button[] buttonArr; //Contains all starter buttons (Fight, Bag, Pokemon & Run)
 	
 	private Player mainPlayer;
 	private Pokemon activePokemon;
@@ -66,6 +62,9 @@ public class BattleScene extends ScreenDisplay{
 	private final int INFO_BOX_YPOS = 336;
 	private final int ENEMY_HOME_XPOS = 330;
 	private final int ENEMY_HOME_YPOS = 145;
+	
+	private final int BUTTONS_XPOS = 60;
+	private final int BUTTONS_YPOS = 370;
 	
 	/**
 	 * 
@@ -105,61 +104,67 @@ public class BattleScene extends ScreenDisplay{
 	 * Set up four initial buttons to be used in battle and sets them to default.
 	 */
 	private void buttonInitialSetUp(){
-		button1 = new Button(initialButtons[0]);
-		button2 = new Button(initialButtons[1]);
-		button3 = new Button(initialButtons[2]);
-		button4 = new Button(initialButtons[3]);
+		//Create Fight,Bag, Pokemon and Run buttons, 
+		Button button1 = new Button(initialButtons[0]);
+		Button button2 = new Button(initialButtons[1]);
+		Button button3 = new Button(initialButtons[2]);
+		Button button4 = new Button(initialButtons[3]);
 		buttonArr = new Button[] {button1, button2, button3, button4};
-		VBox vbox1 = new VBox(15);
-		vbox1.getChildren().addAll(button1,button3);
-		VBox vbox2 = new VBox(15);
-		vbox2.getChildren().addAll(button2,button4);
-		HBox hbox = new HBox(15);
-		hbox.getChildren().addAll(vbox1,vbox2);
-		hbox.setLayoutX(60);
-		hbox.setLayoutY(INFO_BOX_YPOS+30);
-		fightButtonPressed();
-		bagButtonPressed();
-		this.rootAdd(hbox);
+		this.rootAdd(fourButtonLayout(buttonArr));
+		//Sets action for fight button
+		fightButtonPressed(button1);
 	}
 	
 	/*
-	 * What to do when fight button is pressed
+	 * //When fight button pressed, remove current buttons and replace with current pokemon's moves
 	 */
-	private void fightButtonPressed() {
-		button1.setOnAction((event) -> {
-			int i = 0;
-			for(Button button: buttonArr) {
-				if(i < activePokemon.getMoveNum()) {
-					button.setText(activePokemon.getMoves()[i].getMoveName());
-//					button.setOnAction((e) -> {
-//						activePokemon.getMoves()[i].move(activePokemon, enemyPokemon);
-//						//Move to next scene, enemies move
-//					});
-				} else {
-					button.setText("");
-				}
-				i++;
+	private void fightButtonPressed(Button button) {
+		button.setOnAction((event) -> { 
+			BattleFightOptions bfo = new BattleFightOptions(activePokemon,enemyPokemon);
+			for(Button b: buttonArr) {
+				this.rootRemove(b);
 			}
+			this.rootAdd(fourButtonLayout(bfo.getButtons()));
 		});
 	}
 	
-	private void bagButtonPressed() {
-		button2.setOnAction((event) -> {
-			//Load list of items
-		}); 
-	}
-	
-	private void pokemonButtonPressed() {
-		button3.setOnAction((event) -> {
+	/*
+	 * When bag button pressed remove current buttons and load new screen with items
+	 */
+	private void bagButtonPressed(Button button) {
+		button.setOnAction((event) -> {
 			//load list of pokemon
 		});
 	}
 	
-	private void runButtonPressed() {
-		button4.setOnAction((event) -> {
+	/*
+	 * When pokemon button pressed remove current buttons and load new screen with pokemon
+	 */
+	private void pokemonButtonPressed(Button button) {
+		button.setOnAction((event) -> {
+			//load list of pokemon
+		});
+	}
+	
+	/*
+	 * When run button pressed, exit the battle scene back to main game engine
+	 */
+	private void runButtonPressed(Button button) {
+		button.setOnAction((event) -> {
 			//exit battle scene
 		});
+	}
+	
+	private HBox fourButtonLayout(Button[] buttons) {
+		VBox vbox1 = new VBox(15);
+		vbox1.getChildren().addAll(buttons[0],buttons[2]);
+		VBox vbox2 = new VBox(15);
+		vbox2.getChildren().addAll(buttons[1],buttons[3]);
+		HBox hbox = new HBox(15);
+		hbox.getChildren().addAll(vbox1,vbox2);
+		hbox.setLayoutX(BUTTONS_XPOS);
+		hbox.setLayoutY(BUTTONS_YPOS);
+		return hbox;
 	}
 	
 	/*
