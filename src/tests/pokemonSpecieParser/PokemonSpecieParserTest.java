@@ -15,7 +15,7 @@ import util.PokemonSpecieFileParser;
 
 public class PokemonSpecieParserTest {
 
-    private String testSpecieFilePath = "src/resources/defaultPokemonSpecies/Pikachu.xml";
+    private String testSpecieFilePath = "src/resources/defaultPokemonSpecies/Charmander.xml";
     @Test
     public void test() throws ParserConfigurationException, SAXException, IOException {
 	//create new parser for testing
