@@ -39,7 +39,7 @@ public class BattleScene extends ScreenDisplay{
 
 	Image battleBox = new Image("file:images/battle_box.png");
 
-//	Image emeraldBattle1 = new Image("file:images/emerald_battle_1.png");
+	Image emeraldBattle1 = new Image("file:images/emerald_battle_1.png");
 //	Image emeraldBattle2 = new Image("file:images/emerald_battle_2.png");
 //	Image emeraldBattle3 = new Image("file:images/emerald_battle_3.png");
 //	Image emeraldBattle4 = new Image("file:images/emerald_battle_4.png");
@@ -175,6 +175,7 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
+		gc.drawImage(emeraldBattle1, 190, 180);
 	}
 	
 }
