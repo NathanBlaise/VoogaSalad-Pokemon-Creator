@@ -142,7 +142,6 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 * use changeCurrentLevel instead, because this function is used for serialization already
 	 * @param level
 	 */
-	@Deprecated
 	public void setCurrentLevel(int level) {
 		this.currentLevel = level;
 	}

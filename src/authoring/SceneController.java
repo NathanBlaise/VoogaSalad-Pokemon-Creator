@@ -27,6 +27,8 @@ public class SceneController {
 			//create Database Screen
 			sceneList.add("authoring.databaseEditor.DatabaseScene");
 			
+		     
+		
 	}
 	
 	
