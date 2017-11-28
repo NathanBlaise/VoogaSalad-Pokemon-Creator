@@ -2,7 +2,6 @@ package authoring.dragdrop;
 
 import authoring.BasicAuthorScreen;
 import authoring.StageDelegate;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 /**
@@ -15,7 +14,7 @@ public class EditMapScene extends BasicAuthorScreen {
 
 	private TileMenu tMenu;
 	private DBMap myMap;
-	public EditMapScene(Color background, StageDelegate stageHelper) {
+	public EditMapScene(Paint background, StageDelegate stageHelper) {
 		super(background, stageHelper);
 		
 		

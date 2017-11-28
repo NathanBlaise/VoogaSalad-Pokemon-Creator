@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import authoring.ScreenDisplay;
-import data.event.InstructionNPCFight;
 import data.items.Item;
 import data.model.NPC;
 import data.model.Pokemon;
@@ -29,7 +28,6 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -69,7 +67,7 @@ public class BattleScene extends ScreenDisplay{
 	
 	private Player mainPlayer;
 	private Pokemon activePokemon;
-	private InstructionNPCFight enemyTrainer;
+	private NPC enemyTrainer;
 	private Pokemon enemyPokemon;
 	private ListView<String> listOfItems;
 	private ListView<String> listOfPokemons;
@@ -90,14 +88,14 @@ public class BattleScene extends ScreenDisplay{
 	 * @param height - height of scene
 	 * @param background - background color
 	 * @param player - the main player object from the game
-	 * @param testNPC - the encountered trainer from the game (null if pokemon is encountered)
+	 * @param trainer - the encountered trainer from the game (null if pokemon is encountered)
 	 * @param enemyPokemon - the encountered enemy pokemon (null if trainer is encountered)
 	 */
-	public BattleScene(int width, int height, Color background, Player player, InstructionNPCFight testNPC, Pokemon pokemon) {
+	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon) {
 		super(width, height, background);
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
-		enemyTrainer = testNPC;
+		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
 		canvas = new Canvas(width,height);
 		gc = canvas.getGraphicsContext2D();
@@ -162,28 +160,20 @@ public class BattleScene extends ScreenDisplay{
 			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
 			
 			//load list of pokemon
-			
-			//Pokemon[] bags= mainPlayer.getPokemons();
-			ArrayList<String> itemNames=new ArrayList<>();
-//			for (Pokemon each:bags) {
-//				itemNames.add(each.getName());
-//			}
-			
-			
-			
-			
-			
-			
-			//put itemNames in real code, but will hard code for now
-			itemNames.add("bag1");
-			itemNames.add("bag2");
-			itemNames.add("bag3");
-			itemNames.add("bag4");
-			addListView(listOfItems,itemNames);
-	
-			
 		
 			
+//			ArrayList<Item> bags= mainPlayer.getItems();
+			ArrayList<String> itemNames=new ArrayList<>();
+//			for (Item each:bags) {
+//				itemNames.add(each.getItemName());
+//			}
+			
+			//put itemNames in real code, but will hard code for now
+			itemNames.add("item1");
+			itemNames.add("item2");
+			itemNames.add("item3");
+			
+			addListView(listOfItems,itemNames);
 			
 		});
 	}
@@ -214,24 +204,18 @@ public class BattleScene extends ScreenDisplay{
 			if (listOfItems!=null) {
 			    this.rootRemove(listOfItems);
 			}
-			
-			
-			
-
 			ArrayList<String> itemNames=new ArrayList<>();
-//			ArrayList<Item> bags= mainPlayer.getItems();
 //			for (Item each:bags) {
 //				itemNames.add(each.getItemName());
-//		}
-//			
+//			}
+			
 			//put itemNames in real code, but will hard code for now
-			itemNames.add("item1");
-			itemNames.add("item2");
-			itemNames.add("item3");
+			itemNames.add("pokemon1");
+			itemNames.add("pokemon2");
+			itemNames.add("pokemon3");
+			itemNames.add("pokemon4");
 			
-			addListView(listOfItems,itemNames);
-			
-			
+			addListView(listOfPokemons,itemNames);
 		
 			
 			
