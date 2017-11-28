@@ -18,12 +18,12 @@ public class RunPokemonStatsGenerator {
     @Test
     public void test() {
 	
-	final int baseSpeed = 65;
-	final int baseSpecialAttack = 60;
-	final int baseSpecialDefense = 50;
-	final int baseNormalAttack = 52;
-	final int baseNormalDefense = 43;
-	final int baseMaxHp = 39;
+	final int baseSpeed = 43;
+	final int baseSpecialAttack = 50;
+	final int baseSpecialDefense = 64;
+	final int baseNormalAttack = 48;
+	final int baseNormalDefense = 65;
+	final int baseMaxHp = 44;
 	
 	LevelStatsGenerator gen = new LevelStatsGenerator(baseSpeed,
 		baseSpecialAttack, baseSpecialDefense,
