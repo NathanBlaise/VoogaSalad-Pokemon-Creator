@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_144" class="java.beans.XMLDecoder">
+
+
+<java version="1.8.0_102" class="java.beans.XMLDecoder">
+
+
+
+
+src/resources/databases/hi.xml
+
  <object class="data.Database">
   <void property="map">
    <object class="data.map.GameMap">
@@ -550,7 +558,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
+           <string>images/grass_tile.png</string>
           </void>
          </object>
         </void>
@@ -934,6 +942,23 @@
         </void>
         <void index="6">
          <object class="data.map.Cell">
+          <void property="event">
+           <object class="data.event.EventNPC">
+            <void property="imagePath">
+             <string>images/CaptainMap.png</string>
+            </void>
+            <void property="npc">
+             <object class="data.model.NPC">
+              <void property="imagePath">
+               <string>images/CaptainMap.png</string>
+              </void>
+              <void property="name">
+               <string>Caption Kirk</string>
+              </void>
+             </object>
+            </void>
+           </object>
+          </void>
           <void property="openState">
            <boolean>true</boolean>
           </void>
@@ -1226,7 +1251,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
+           <string>images/grass_tile.png</string>
           </void>
          </object>
         </void>
@@ -1246,7 +1271,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
+           <string>images/pokemonCenter.png</string>
           </void>
          </object>
         </void>
@@ -2002,10 +2027,13 @@
       </object>
      </void>
      <void method="add">
-      <object class="tests.authoring.Specie2">
+      <object class="tests.authoring.Specie2" id="Specie20">
        <void property="levelStats">
         <object idref="HashMap0"/>
        </void>
+       <void id="HashMap5" property="levelEvolutionImagePath"/>
+       <void id="HashMap6" property="levelExp"/>
+       <void id="HashMap7" property="levelMoves"/>
       </object>
      </void>
     </void>
@@ -2048,25 +2076,28 @@
         </object>
        </void>
        <void property="elemental">
-        <string>Electric</string>
+        <string>Ghost</string>
        </void>
        <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
+        <object idref="HashMap5"/>
        </void>
        <void property="levelExp">
-        <object idref="HashMap2"/>
+        <object idref="HashMap6"/>
        </void>
        <void property="levelMoves">
-        <object idref="HashMap3"/>
+        <object idref="HashMap7"/>
        </void>
        <void property="levelStats">
-        <object idref="HashMap4"/>
+        <object idref="HashMap0"/>
        </void>
        <void property="maxLevel">
-        <int>4</int>
+        <int>3</int>
+       </void>
+       <void property="name">
+        <string>wellson</string>
        </void>
        <void property="specieName">
-        <string>Pikachu</string>
+        <string>Golumn</string>
        </void>
       </object>
      </void>
@@ -2343,7 +2374,7 @@
      <int>9</int>
     </void>
     <void property="posY">
-     <int>15</int>
+     <int>9</int>
     </void>
    </object>
   </void>

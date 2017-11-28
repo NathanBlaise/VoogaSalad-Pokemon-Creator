@@ -1,7 +1,11 @@
 package start;
 
 import data.Database;
+
+import data.model.NPC;
+import data.player.Player;
 import engine.Engine;
+
 import engine.UI.Fade;
 import engine.battle.BattleScene;
 import authoring.Author;
@@ -126,6 +130,7 @@ public class StartMenu {
 	// Used currently to test battle screen
 	private void goPlay() {
 		Stage gameStage = new Stage();
+
 		BorderPane pathSetter = new DatabasePathConfig(gameStage, new Function<Database, String, Integer>() {
 			@Override
 			public Integer apply(Database one, String two) {
@@ -134,7 +139,9 @@ public class StartMenu {
 				return null;
 			}
 		});
-		gameStage.setScene(new Scene(pathSetter));
+		//gameStage.setScene(new Scene(pathSetter));
+		BattleScene test=new BattleScene(1000,1000,Color.AQUA,new Player(),new NPC(),null);
+		gameStage.setScene(test.getScene());
 		gameStage.show();
 		gameStage.centerOnScreen();
 	}
