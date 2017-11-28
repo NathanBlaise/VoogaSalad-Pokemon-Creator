@@ -1,6 +1,8 @@
 package start;
 
 import data.Database;
+import data.model.NPC;
+import data.player.Player;
 import engine.UI.Fade;
 import engine.battle.BattleScene;
 import authoring.Author;
@@ -125,8 +127,11 @@ public class StartMenu {
 	// Used currently to test battle screen
 	private void goPlay() {
 		Stage gameStage = new Stage();
-//		BattleScene btsc = new BattleScene(720,480,Color.WHITE,null,null,null);
-//		gameStage.setScene(btsc.getScene());
+		Player test= new Player();
+		NPC trainer=new NPC();
+		BattleScene btsc = new BattleScene(720,480,Color.WHITE,test,trainer,null);
+		
+      	gameStage.setScene(btsc.getScene());
 		gameStage.show();
 	}
 }

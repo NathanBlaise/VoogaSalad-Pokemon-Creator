@@ -177,4 +177,6 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
 	}
 	
+	
+	
 }
