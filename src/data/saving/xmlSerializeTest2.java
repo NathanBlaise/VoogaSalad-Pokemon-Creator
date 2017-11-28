@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import tests.authoring.Specie1;
 import tests.authoring.Specie2;
 import data.Database;
+import data.database.PokemonSpecieCollection;
 import data.event.EventNPC;
 import data.event.EventPokemon;
 import data.event.Instruction;
@@ -78,10 +79,9 @@ public class xmlSerializeTest2 {
 			ArrayList<NPC> NPCs = new ArrayList<NPC>();
 			NPC npc = new NPC("images/CaptainMap.png", "Caption Kirk");
 			NPCs.add(npc);
-			ArrayList<PokemonSpecie> pokemons = new ArrayList<PokemonSpecie>();
-			pokemons.add(new Specie1());
-			pokemons.add(new Specie2());
-			Model model = new Model(NPCs, pokemons);
+			Model model = new Model(NPCs, new ArrayList<PokemonSpecie>());
+			PokemonSpecieCollection species = new PokemonSpecieCollection();
+			species.passSpeciesToModel(model);
 			return model;
 		}
 
