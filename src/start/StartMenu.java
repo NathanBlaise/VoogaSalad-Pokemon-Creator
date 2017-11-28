@@ -146,6 +146,7 @@ public class StartMenu {
 			}
 		});
 		gameStage.setScene(new Scene(pathSetter));
+
 		
 //		NPC npc=new NPC("file:images/emerald_battle_1.png","testC");
 //		Pokemon[] list=new Pokemon[2];
@@ -156,6 +157,7 @@ public class StartMenu {
 //		System.out.println(testIns.get(0).toString());
 //		BattleScene test=new BattleScene(1000,1000,Color.AQUA,new Player(),new InstructionNPCFight(),null);
 		//gameStage.setScene(test.getScene());
+
 		gameStage.show();
 		gameStage.centerOnScreen();
 	}

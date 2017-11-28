@@ -5,22 +5,22 @@ import data.player.Player;
 
 /**
  * 
- * @author nathanlewis
- * Potion to increase HP by 200
+ * @author Mason Taylor
+ * Item that does 5 points of damage that can't be defended against.
  */
 
-public class HyperPotion extends Item{
+public class Claw extends Item{
 	
 	//Specifies name, price and image in the constructor
-	public HyperPotion(){
-		itemName = "Hyper Potion";
+	public Claw(){
+		itemName = "Claw";
 		itemPrice = 1200;
 	}
 	
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		int newHP = mine.getCurrentStat().getHP() + 200;
-		mine.getCurrentStat().setHP(newHP);
+		int newHP = Enemy.getCurrentStat().getHP() - 5;
+		Enemy.getCurrentStat().setHP(newHP);
 	}
 }

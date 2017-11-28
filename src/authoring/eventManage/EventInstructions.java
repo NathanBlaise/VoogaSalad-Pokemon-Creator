@@ -43,7 +43,13 @@ public final class EventInstructions{
 	    });
 		for(int i=0; i<eventNPC.getInstructions().size();i++){
 			Instruction temp = eventNPC.getInstructions().get(i);
-			listView.getItems().add(temp.getClass().getSimpleName());
+			String name = temp.getClass().getSimpleName();
+			for(String key: instructions.keySet()){
+				if(instructions.get(key).equals(name)){
+					listView.getItems().add(key);
+					break;
+				}
+			}
 			instructionMap.put(i, temp);
 		}
 		ContextMenu contextMenu = ListViewFactory.createClickMenu(listView, new ContextMenu()); 
