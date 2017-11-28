@@ -5,8 +5,6 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-import data.database.Pokemon;
-
 public class xmlReader {
 
 	public xmlReader() {

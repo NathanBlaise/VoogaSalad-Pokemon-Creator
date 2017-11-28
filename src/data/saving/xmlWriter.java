@@ -17,7 +17,7 @@ public class xmlWriter {
 	public void writeXML(Object obj, String file) {
 		XMLEncoder encoder=null;
 		try{
-		encoder=new XMLEncoder(new BufferedOutputStream(new FileOutputStream("xmlSerializeTest4.xml")));
+		encoder=new XMLEncoder(new BufferedOutputStream(new FileOutputStream(file)));
 		}catch(FileNotFoundException fileNotFound){
 			System.out.println("ERROR: While Creating or Opening the File");
 		}

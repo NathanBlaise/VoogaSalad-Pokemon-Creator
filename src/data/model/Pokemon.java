@@ -101,6 +101,10 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	
 	public void setCurrentLevel(int level) {
 		this.currentLevel = level;
+	}
+	
+	public void changeCurrentLevel(int level) {
+		this.currentLevel = level;
 		setField(level);
 	}
 

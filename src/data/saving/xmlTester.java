@@ -45,7 +45,14 @@ public class xmlTester {
 		PokemonSpecie ps = new PokemonSpecie("race", "abil", 2, moveMap, pStatMap, doubleMap, stringMap);
 
 		Pokemon pok = new Pokemon(ps, 1);
-		//System.out.println(pok.getMoves()[3]);
+		
+	    xmlWriter xw = new xmlWriter();
+	    xw.writeXML(pok, "xmlSerializeTest5.xml");
+	    
+	    xmlReader xr = new xmlReader();
+	    Pokemon returnedPokemon = (Pokemon) xr.readXML("xmlSerializeTest5.xml");
+		
+		System.out.println(returnedPokemon.getCurrentHP());
 		
 		
 		/*
@@ -63,7 +70,7 @@ public class xmlTester {
 		
 		
 		
-	    
+	    /*
 		XMLEncoder encoder=null;
 		try{
 		encoder=new XMLEncoder(new BufferedOutputStream(new FileOutputStream("xmlSerializeTest4.xml")));
@@ -82,6 +89,6 @@ public class xmlTester {
 		Pokemon pokemon = (Pokemon) decoder.readObject();
 		System.out.println(pokemon);
 		System.out.println(pokemon.getElemental());
-		
+		*/
 	}
 }
