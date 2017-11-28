@@ -8,14 +8,14 @@ import java.io.Serializable;
  * @author cy122
  *
  */
-public class Map implements Serializable{
+public class GameMap implements Serializable{
 
 	private static final long serialVersionUID = -2420508422654879735L;
 	private int Xlength, Ylength; //Cell[0~(Xlength-1)][0~(Ylength-1)] is the legal Cell.
 	private Cell[][] cells;
 	
 	// this constructor is only for serialization, it shouldn't be used for any intention else
-	public Map(){
+	public GameMap(){
 		
 	}
 	
@@ -24,7 +24,7 @@ public class Map implements Serializable{
 	 * @param Xlength - the length in the first dimension
 	 * @param Ylength - the length in the second dimension.
 	 */
-	public Map(int Xlength, int Ylength){
+	public GameMap(int Xlength, int Ylength){
 		this.Xlength = Xlength;
 		this.Ylength = Ylength;
 		cells = new Cell[Xlength][Ylength];
@@ -34,7 +34,7 @@ public class Map implements Serializable{
 	 * Cell[0~(Xlength-1)][0~(Ylength-1)] is the legal Cell.
 	 * @param cells - the whole map
 	 */
-	public Map(Cell[][] cells){
+	public GameMap(Cell[][] cells){
 		this.cells = cells;
 		Xlength = cells.length;
 		Ylength = cells[0].length;

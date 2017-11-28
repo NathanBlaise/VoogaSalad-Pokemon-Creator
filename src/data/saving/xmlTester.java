@@ -16,6 +16,7 @@ import data.model.Pokemon;
 import data.model.PokemonSpecie;
 import data.model.PokemonStat;
 import data.model.moves.Action;
+import data.model.moves.ActionExample;
 import data.model.moves.Move;
 
 public class xmlTester {
@@ -26,12 +27,12 @@ public class xmlTester {
 
 	public static void main(String args[]) throws IOException{
 
-		PokemonStat pStat = new PokemonStat(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
+		PokemonStat pStat = new PokemonStat(1, 2, 3, 4, 5, 6);
 		
 		Map<Integer, PokemonStat> pStatMap = new HashMap<>();
 		 
 		pStatMap.put(1, pStat);
-		Move move = new Move("name", 1);
+		Move move = new Move("name", "Water", 1, new ActionExample());
 		Map<Integer, Move> moveMap = new HashMap<>();
 		moveMap.put(1, move);
 		moveMap.put(2, move);
@@ -44,51 +45,15 @@ public class xmlTester {
 		
 		PokemonSpecie ps = new PokemonSpecie("race", "abil", 2, moveMap, pStatMap, doubleMap, stringMap);
 
-		Pokemon pok = new Pokemon(ps, 1);
 		
 	    xmlWriter xw = new xmlWriter();
-	    xw.writeXML(pok, "xmlSerializeTest5.xml");
 	    
 	    xmlReader xr = new xmlReader();
+		
+		Pokemon pok = new Pokemon(ps, "Jake", 1);
+
+	    xw.writeXML(pok, "xmlSerializeTest5.xml");
 	    Pokemon returnedPokemon = (Pokemon) xr.readXML("xmlSerializeTest5.xml");
-		
-		System.out.println(returnedPokemon.getCurrentHP());
-		
-		
-		/*
-	    FileOutputStream fos = new FileOutputStream("xmlSerializeTest1.xml");
-	    XMLEncoder encoder = new XMLEncoder(fos);
-	    encoder.setExceptionListener(new ExceptionListener() {
-	            public void exceptionThrown(Exception e) {
-	                System.out.println("Exception! :"+e.toString());
-	            }
-	    });
-	    encoder.writeObject(doubleMap);
-	    encoder.close();
-	    fos.close();
-	    */
-		
-		
-		
-	    /*
-		XMLEncoder encoder=null;
-		try{
-		encoder=new XMLEncoder(new BufferedOutputStream(new FileOutputStream("xmlSerializeTest4.xml")));
-		}catch(FileNotFoundException fileNotFound){
-			System.out.println("ERROR: While Creating or Opening the File");
-		}
-		encoder.writeObject(pok);
-		encoder.close();
-		
-		XMLDecoder decoder=null;
-		try {
-			decoder=new XMLDecoder(new BufferedInputStream(new FileInputStream("xmlSerializeTest4.xml")));
-		} catch (FileNotFoundException e) {
-			System.out.println("ERROR: File " + "xmlSerializeTest4.xml" + " not found");
-		}
-		Pokemon pokemon = (Pokemon) decoder.readObject();
-		System.out.println(pokemon);
-		System.out.println(pokemon.getElemental());
-		*/
+
 	}
 }

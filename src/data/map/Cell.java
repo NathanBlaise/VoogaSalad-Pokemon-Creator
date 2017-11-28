@@ -16,7 +16,7 @@ public class Cell implements Serializable{
 
 	private static final long serialVersionUID = -2980246764307592878L;
 	private String tilePath; /* the path of stile*/
-	private boolean openState; 
+	private boolean openState; /* whether the user can edit the event on the cell*/
 	private boolean obstacle; /* if the obstacle is true, the user cannot go through the tile  */
 	/** the event included in the cell. 
 	 * @link data.event.Event
@@ -26,6 +26,7 @@ public class Cell implements Serializable{
 	/**
 	 * this is only used for serialization, it should not be used for any other intention
 	 */
+	@Deprecated
 	public Cell(){
 		
 	}
@@ -43,27 +44,34 @@ public class Cell implements Serializable{
 		this.obstacle = obstacle;
 		this.event = event;
 	}
-
+	
 	/**
 	 * 
 	 * @return - an array presents the bottom
 	 */
 	public String getTilePath() {
-		return new String(tilePath);
+		return tilePath;
 	}
-
 	/**
 	 * 
-	 * @param tilePaths
+	 * @param tilePath
 	 */
-	public void setTilePaths(String tilePath) {
-		this.tilePath = new String(tilePath);
+	public void setTilePath(String tilePath) {
+		this.tilePath = tilePath;
 	}
-
+	
+	/**
+	 * 
+	 * @return - true if the user can edit the event on the cell
+	 */
 	public boolean isOpenState() {
 		return openState;
 	}
-
+	
+	/**
+	 * 
+	 * @param openState - true if the user can edit the event on the cell
+	 */
 	public void setOpenState(boolean openState) {
 		this.openState = openState;
 	}
@@ -75,7 +83,7 @@ public class Cell implements Serializable{
 	public boolean isObstacle() {
 		return obstacle;
 	}
-
+	
 	/**
 	 * 
 	 * @param obstacle - if the obstacle is true, the user cannot go through the tile
@@ -83,7 +91,7 @@ public class Cell implements Serializable{
 	public void setObstacle(boolean obstacle) {
 		this.obstacle = obstacle;
 	}
-
+	
 	/**
 	 * 
 	 * @return - the event included in the cell.

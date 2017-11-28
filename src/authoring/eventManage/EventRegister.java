@@ -2,8 +2,6 @@ package authoring.eventManage;
 
 import java.util.Vector;
 
-import javafx.scene.image.Image;
-
 /**
  * 
  * @author cy122

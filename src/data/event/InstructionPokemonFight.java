@@ -24,7 +24,7 @@ public class InstructionPokemonFight implements Instruction{
 	}
 	
 	public InstructionPokemonFight(Pokemon pokemon){
-		this.pokemon = new Pokemon(pokemon);
+		this.pokemon = pokemon;
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class InstructionPokemonFight implements Instruction{
 	 * @return a copy of the holding pokemon, containing the same value, different reference
 	 */
 	public Pokemon getPokemon() {
-		return new Pokemon(pokemon);
+		return pokemon;
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class InstructionPokemonFight implements Instruction{
 	 * @param pokemon - the pokemon which the private pokemon in class will copy from
 	 */
 	public void setPokemon(Pokemon pokemon) {
-		this.pokemon = new Pokemon(pokemon);
+		this.pokemon = pokemon;
 	}
 
 	@Override

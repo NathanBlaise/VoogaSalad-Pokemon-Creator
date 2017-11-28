@@ -1,6 +1,8 @@
 package authoring.dragdrop;
 
-import javafx.scene.image.Image;
+import data.Database;
+import data.map.DrawPane;
+import data.map.GameMap;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -16,70 +18,50 @@ import javafx.scene.layout.RowConstraints;
  */
 public class DBMap implements cellDelegate {
 	/*final variable*/
-	final private static int   PANE_WIDTH_NUMBER = 15;
-	final private static int  PANE_HEIGHT_NUMBER = 10;
+	private int   PANE_WIDTH_NUMBER;
+	private int  PANE_HEIGHT_NUMBER;
 	final private static int PANE_CELL_SIZE = 48;
 	/*instance variable*/
 	private GridPane myPane;
-	private DBCell [][] myCell;
+	private DBCell [][] myCell;	
+	private GameMap gameMap;
+	private Database database;
 	
-	public DBMap() {
-		// deal with Grid Pane
-		drawGridPane();
-		
+	
+	public DBMap(Database database) {
+		this.database = database;
+		this.gameMap = database.getMap();
+		PANE_HEIGHT_NUMBER = gameMap.getXlength();
+		PANE_WIDTH_NUMBER = gameMap.getYlength();
+		DrawPane drawPane = new DrawPane(database.getMap()); //Class used to draw pane (refactoring)
+		myPane = drawPane.getPane();
+		myPane.setStyle("-fx-grid-lines-visible: true");
 		// deal with myCell
 		myCell = new DBCell[PANE_HEIGHT_NUMBER][PANE_WIDTH_NUMBER];
 		for (int i = 0; i < PANE_HEIGHT_NUMBER; i++) {
 			for (int j = 0; j < PANE_WIDTH_NUMBER; j++) {
-				myCell[i][j] = new DBCell(i,j,myPane,this);
+				myCell[i][j] = new DBCell(i,j, gameMap.getCells()[i][j], myPane, this);
 				
 			}
 		}
-		
-		// deal with my Event
-		
-		
 	}
 
-	
-	
-	
-	/*the method to draw the grid pane*/
-	private void drawGridPane() {
-		//initialize the grid pane
-		myPane = new GridPane();
-		
-		for(int i = 0; i < PANE_WIDTH_NUMBER ; i++) {
-			ColumnConstraints column = new ColumnConstraints(PANE_CELL_SIZE);
-			myPane.getColumnConstraints().add(column);
-		}
 
-	    for(int i = 0; i < PANE_HEIGHT_NUMBER ; i++) {
-	        RowConstraints row = new RowConstraints(PANE_CELL_SIZE);
-	        myPane.getRowConstraints().add(row);
-	    }
-	    
-	    myPane.setStyle("-fx-grid-lines-visible: true");
-	}
 	
 	/*the method to access the grid pane*/
 	public GridPane getGrid() {
 		return myPane;
 	}
 
-
-
-
 	
 	@Override
 	public void updateCellList(DBCell dbCell) {
 		//update my Cell
 		myCell[dbCell.getCellRow()][dbCell.getCellCol()] = dbCell;
+		gameMap.setCell(dbCell.getCellRow(), dbCell.getCellCol(), dbCell.getCell());
 	}
 
-
-
-
+	
 	@Override
 	public boolean checkSurroundingCells(int col, int row) {
 		
@@ -131,11 +113,14 @@ public class DBMap implements cellDelegate {
 		}
 		
 	}
-	
-	
+
+
+
+
+	@Override
+	public Database getDatabase() {
+		return database;
+	}
 
 	
-	
-	
-
 }

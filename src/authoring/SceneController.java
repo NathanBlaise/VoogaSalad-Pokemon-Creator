@@ -1,12 +1,5 @@
 package authoring;
 
-import java.util.ArrayList;
-
-import authoring.databaseEditor.DatabaseScene;
-import authoring.dragdrop.DBMap;
-import authoring.dragdrop.EditMapScene;
-import authoring.editEventImage.EditEventImageScene;
-import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 
 
@@ -19,28 +12,20 @@ public class SceneController {
 	/*final variables*/
 	
 	/*instance variables*/
-	private ArrayList <Scene> sceneList;
+	private SceneList sceneList;
 	public int currentIndex = 0;
-	private EditMapScene bsc;
-	private EditEventImageScene  eeis;
-	private DatabaseScene dbs;
 	
 	public SceneController(StageDelegate app){
-		sceneList = new ArrayList<Scene>();
-		
+		sceneList = new SceneList(Color.WHITE,app);	
 		
 			// create an Editing Map Screen
-			bsc = new EditMapScene(Color.WHITE,app);
-			sceneList.add(bsc.getScene());
-			
+			sceneList.add("authoring.dragdrop.EditMapScene");
 			
 			// create a Event Picture Screen
-			eeis = new EditEventImageScene(Color.WHITE,app);
-			sceneList.add(eeis.getScene());
+			sceneList.add("authoring.editEventImage.EditEventImageScene");
 			
 			//create Database Screen
-			dbs = new DatabaseScene(Color.WHITE,app);
-			sceneList.add(dbs.getScene());
+			sceneList.add("authoring.databaseEditor.DatabaseScene");
 			
 	}
 	
@@ -48,7 +33,7 @@ public class SceneController {
 	/**
 	 * @return The Scene List which stores all the scenes
 	 */
-	public ArrayList <Scene> getScList() {
+	public SceneList getScList() {
 		return sceneList;
 	}
 	
@@ -57,11 +42,13 @@ public class SceneController {
 	 * Pass the map from the first scene to the second one
 	 */
 	public void passMapForward() {
-		eeis.setMyMap(bsc.passMyMap());
+		//eeis.setMyMap(bsc.passMyMap());
+		//do nothing for now
 	}
 	
 	public void passMapBackward() {
-		bsc.setMyMap(eeis.passMyMap());
+		//bsc.setMyMap(eeis.passMyMap());
+		//do nothing for now
 	}
 	
 }

@@ -20,16 +20,22 @@ import java.util.ArrayList;
 
 public abstract class Event implements Serializable{
 	private static final long serialVersionUID = -1088455784075495760L;
-	private ArrayList<Instruction> instructions; // a series of instructions that will be triggered by the event
+	private ArrayList<Instruction> instructions = new ArrayList<Instruction>();; // a series of instructions that will be triggered by the event
 	//since javafx's image cannot be serialized, here it stores the path (prefer absolute path) of the image
 	private String imagePath;
 	
 	/**
 	 * set imagePath and instructions to be default empty value
+	 * ONLY USED FOR Serialization!
 	 */
+	@Deprecated
 	public Event(){
 		instructions = new ArrayList<Instruction>();
 		imagePath = new String("");
+	}
+	
+	public Event(String imagePath){
+		this.imagePath = new String(imagePath);
 	}
 	
 	/**
@@ -71,4 +77,9 @@ public abstract class Event implements Serializable{
 	 */
 	public abstract ArrayList<String> getAvailableInstructions();
 	
+	/**
+	 * 
+	 * @return - whether the length of instruction array list can be flexible
+	 */
+	public abstract boolean instructionAddable();
 }

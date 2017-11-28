@@ -1,8 +1,8 @@
 package authoring;
 
-import java.util.ArrayList;
 
-import javafx.scene.Scene;
+import data.Database;
+import data.saving.DatabaseSaver;
 import javafx.stage.Stage;
 
 /**
@@ -19,12 +19,21 @@ public class Author implements StageDelegate{
 	final static int EDITEVENTIMAGESCENE = 1;
 	/*Instance Variable*/
 	private Stage myStage;
-	private ArrayList <Scene> myList;
+	private SceneList myList;
 	private SceneController scControl;
+	private String savePath;
+	private Database database;
 	
-	
-	public Author(Stage primaryStage){
+	/**
+	 * 
+	 * @param database - the database
+	 * @param savePath - the path to save the Database
+	 * @param primaryStage - the stage to show the data
+	 */
+	public Author(Database database, String savePath, Stage primaryStage){
 		myStage = primaryStage;
+		this.database = database;
+		this.savePath = savePath;
 		scControl = new SceneController(this);
 		myList = scControl.getScList();
 	}
@@ -32,6 +41,7 @@ public class Author implements StageDelegate{
 	
 	@Override
 	public void GoButtonPressed() {
+		saveDatabase();
 		if (scControl.currentIndex < myList.size() - 1)
 		scControl.currentIndex +=1;
 		myStage.setScene(myList.get(scControl.currentIndex));
@@ -39,20 +49,23 @@ public class Author implements StageDelegate{
 		
 		
 		if (scControl.currentIndex ==  EDITEVENTIMAGESCENE) {
-			scControl.passMapForward();
+			//scControl.passMapForward();
+			//do nothing for now
 		}
 		
 	}
 
 	@Override
 	public void BackButtonPressed() {
+		saveDatabase();
 		if (scControl.currentIndex > 0)
 			scControl.currentIndex -=1;
 			myStage.setScene(myList.get(scControl.currentIndex));
 			System.out.println("I am currently at scene " + scControl.currentIndex );
 		
 		if (scControl.currentIndex == EDITMAPSCENE) {
-			scControl.passMapBackward();
+			//scControl.passMapBackward();
+			//do nothing for now
 		}
 	}
 
@@ -60,8 +73,21 @@ public class Author implements StageDelegate{
 	public void toFirstAuthorScene() {
 
 		myStage.setScene(myList.get(scControl.currentIndex));
+		myStage.centerOnScreen();
 		//System.out.println("0");
 		
+	}
+
+
+	@Override
+	public Database getDatabase() {
+		return database;
+	}
+
+
+	@Override
+	public void saveDatabase() {
+		DatabaseSaver.save(database, savePath);
 	}
 
 }

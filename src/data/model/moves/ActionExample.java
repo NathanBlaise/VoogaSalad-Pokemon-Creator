@@ -1,5 +1,6 @@
 package data.model.moves;
 
+import data.model.Pokemon;
 import data.model.PokemonStat;
 
 /**
@@ -8,23 +9,27 @@ import data.model.PokemonStat;
  * This is an example of how to use Action
  * 
  */
-public class ActionExample implements Action{
+public class ActionExample implements Action<Pokemon, Pokemon>{
 	private static final long serialVersionUID = -333059440502600274L;//needed for serialization
 	
-	ActionExample(){
+	public ActionExample(){
 		
 	}
 
 	@Override
 	/**
-	 * for this move, the friend Pokemon attack the enemy Pokemon by reducing 5 in the HP of enemy
+	 * this function is static because the change procedure of Pokemon friend and enemy for the same name of Move is the same.
+	 * This move reduce the defense of enemy to the one level lower than the current level
+	 * @param friend - the friend Pokemon
+	 * @param enemy - the enermy Pokemon
 	 */
-	public PokemonStat[] move(PokemonStat friend, PokemonStat enermy) {
-		PokemonStat[] result = new PokemonStat[2];
-		enermy.setHP(enermy.getHP()-5);
-		result[0]=friend;
-		result[1]=enermy;
-		return result;
+	public void move(Pokemon friend, Pokemon enemy){
+		int currentLevelMinusOne = (friend.getCurrentLevel()>=2)?(friend.getCurrentLevel()-1):1;
+		PokemonStat lowerStat = friend.getLevelStats().get(currentLevelMinusOne);
+		PokemonStat currentStat = new PokemonStat(friend.getCurrentStat());
+		currentStat.setNormalDefense(lowerStat.getNormalDefense());
+		currentStat.setSpecialDefense(lowerStat.getSpecialDefense());
+		friend.setCurrentStat(currentStat);
 	}
 	
 }

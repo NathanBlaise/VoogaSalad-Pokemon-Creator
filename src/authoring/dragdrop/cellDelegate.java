@@ -1,5 +1,7 @@
 package authoring.dragdrop;
 
+import data.Database;
+
 
 /**
  * The interface used to pass the GridPane to its each individual cell
@@ -32,4 +34,10 @@ public interface cellDelegate {
 	 */
 	
 	public void UpdateSurroundingCells(int col, int row);
+	
+	/**
+	 * 
+	 * @return - the database
+	 */
+	public Database getDatabase();
 }
