@@ -37,7 +37,7 @@ public class PlayerTab{
 		tab = new Tab(new PropertyReader("../resources/English.properties").getString("PlayerTabName"), root);
 		VBox vbox = new VBox();
 		vbox.getChildren().add(placeChooser(player.getPosX(), player.getPosY(), XLength, YLength));
-		vbox.getChildren().add(imageChooser(new PropertyReader(path).getString("UserImage")));
+		vbox.getChildren().add(imageChooser(new PropertyReader(path).getString("PlayerImageDown")));
 		root.setLeft(vbox);
 		root.setCenter(choosePokemon(player.getPokemons(), pokemonSpecies));
 		root.setPrefSize(1000, 600);
@@ -69,7 +69,7 @@ public class PlayerTab{
 	}
 	
 	private Node choosePokemon(Pokemon[] pokemons, List<PokemonSpecie> pokemonSpecies){
-		return new InstructionNPCFightEditor(new InstructionNPCFight(new NPC(new PropertyReader(path).getString("UserImage"), "Jason"), pokemons), 
+		return new InstructionNPCFightEditor(new InstructionNPCFight(new NPC(new PropertyReader(path).getString("PlayerImageDown"), "Jason"), pokemons), 
 												pokemonSpecies, 
 												new Callback<Instruction, Integer>(){
 														@Override
