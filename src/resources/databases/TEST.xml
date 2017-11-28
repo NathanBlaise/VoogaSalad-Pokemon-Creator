@@ -1,0 +1,1592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_101" class="java.beans.XMLDecoder">
+ <object class="data.Database">
+  <void property="map">
+   <object class="data.map.GameMap">
+    <void property="cells">
+     <array class="[Ldata.map.Cell;" length="10">
+      <void index="0">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="1">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="2">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="3">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="4">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/grass_tile.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="5">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="6">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="7">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="8">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="9">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+     </array>
+    </void>
+    <void property="xlength">
+     <int>10</int>
+    </void>
+    <void property="ylength">
+     <int>15</int>
+    </void>
+   </object>
+  </void>
+  <void property="model">
+   <object class="data.model.Model" id="Model0">
+    <void id="ArrayList0" property="NPCs">
+     <void method="add">
+      <object class="data.model.NPC">
+       <void property="imagePath">
+        <string>images/CaptainMap.png</string>
+       </void>
+       <void property="name">
+        <string>Caption Kirk</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="NPCs">
+     <object idref="ArrayList0"/>
+    </void>
+    <void id="ArrayList1" property="pokemonSpecies">
+     <void method="add">
+      <object class="tests.authoring.Specie1"/>
+     </void>
+     <void method="add">
+      <object class="tests.authoring.Specie2"/>
+     </void>
+    </void>
+    <void property="pokemonSpecies">
+     <object idref="ArrayList1"/>
+    </void>
+   </object>
+  </void>
+  <void property="player">
+   <object class="data.player.Player"/>
+  </void>
+ </object>
+</java>
