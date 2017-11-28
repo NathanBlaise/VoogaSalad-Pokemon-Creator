@@ -139,9 +139,7 @@ public class StartMenu {
 				return null;
 			}
 		});
-		//gameStage.setScene(new Scene(pathSetter));
-		BattleScene test=new BattleScene(1000,1000,Color.AQUA,new Player(),new NPC(),null);
-		gameStage.setScene(test.getScene());
+		gameStage.setScene(new Scene(pathSetter));
 		gameStage.show();
 		gameStage.centerOnScreen();
 	}
