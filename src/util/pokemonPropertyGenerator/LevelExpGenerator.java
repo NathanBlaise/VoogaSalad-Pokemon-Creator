@@ -5,7 +5,7 @@ package util.pokemonPropertyGenerator;
  * @author Dan Sun
  *
  */
-public class LevelExpGenerator extends LevelSpecificStatsGenerator {
+public class LevelExpGenerator extends LevelSpecificStatsGeneratorAbstract {
     
     private static String propertyTag = "levelExps";
     private static String elementTag = "exp";
