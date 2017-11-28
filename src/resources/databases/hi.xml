@@ -327,188 +327,6 @@
         </void>
         <void index="1">
          <object class="data.map.Cell">
-          <void property="event">
-           <object class="data.event.EventPokemon" id="EventPokemon0">
-            <void property="imagePath">
-             <string>images/pokemon_sprites/2.gif</string>
-            </void>
-            <void id="ArrayList0" property="instructions">
-             <void method="add">
-              <object class="data.event.InstructionPokemonFight">
-               <void property="pokemon">
-                <object class="data.model.Pokemon" id="Pokemon0">
-                 <void property="currentLevel">
-                  <int>1</int>
-                 </void>
-                 <void property="currentStat">
-                  <object class="data.model.PokemonStat">
-                   <void property="HP">
-                    <int>1</int>
-                   </void>
-                   <void property="maxHP">
-                    <int>1</int>
-                   </void>
-                   <void property="normalAttack">
-                    <int>2</int>
-                   </void>
-                   <void property="normalDefense">
-                    <int>3</int>
-                   </void>
-                   <void property="specialAttack">
-                    <int>4</int>
-                   </void>
-                   <void property="specialDefense">
-                    <int>5</int>
-                   </void>
-                   <void property="speed">
-                    <int>6</int>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="elemental">
-                  <string>Ghost</string>
-                 </void>
-                 <void property="levelEvolutionImagePath">
-                  <object class="java.util.HashMap">
-                   <void method="put">
-                    <int>1</int>
-                    <string>images/pokemon_sprites/2.gif</string>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="levelExp">
-                  <object class="java.util.HashMap">
-                   <void method="put">
-                    <int>1</int>
-                    <double>1.0</double>
-                   </void>
-                   <void method="put">
-                    <int>2</int>
-                    <double>2.0</double>
-                   </void>
-                   <void method="put">
-                    <int>3</int>
-                    <double>3.0</double>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="levelMoves">
-                  <object class="java.util.HashMap">
-                   <void method="put">
-                    <int>1</int>
-                    <object class="data.model.moves.MoveDatabase.MoveGrowl"/>
-                   </void>
-                   <void method="put">
-                    <int>2</int>
-                    <object class="data.model.moves.MoveDatabase.MoveQuickAttack"/>
-                   </void>
-                   <void method="put">
-                    <int>3</int>
-                    <object class="data.model.moves.MoveDatabase.MoveTailWhip"/>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="levelStats">
-                  <object class="java.util.HashMap" id="HashMap0">
-                   <void method="put">
-                    <int>1</int>
-                    <object class="data.model.PokemonStat">
-                     <void property="HP">
-                      <int>1</int>
-                     </void>
-                     <void property="maxHP">
-                      <int>1</int>
-                     </void>
-                     <void property="normalAttack">
-                      <int>2</int>
-                     </void>
-                     <void property="normalDefense">
-                      <int>3</int>
-                     </void>
-                     <void property="specialAttack">
-                      <int>4</int>
-                     </void>
-                     <void property="specialDefense">
-                      <int>5</int>
-                     </void>
-                     <void property="speed">
-                      <int>6</int>
-                     </void>
-                    </object>
-                   </void>
-                   <void method="put">
-                    <int>2</int>
-                    <object class="data.model.PokemonStat">
-                     <void property="HP">
-                      <int>2</int>
-                     </void>
-                     <void property="maxHP">
-                      <int>2</int>
-                     </void>
-                     <void property="normalAttack">
-                      <int>3</int>
-                     </void>
-                     <void property="normalDefense">
-                      <int>4</int>
-                     </void>
-                     <void property="specialAttack">
-                      <int>5</int>
-                     </void>
-                     <void property="specialDefense">
-                      <int>6</int>
-                     </void>
-                     <void property="speed">
-                      <int>7</int>
-                     </void>
-                    </object>
-                   </void>
-                   <void method="put">
-                    <int>3</int>
-                    <object class="data.model.PokemonStat">
-                     <void property="HP">
-                      <int>3</int>
-                     </void>
-                     <void property="maxHP">
-                      <int>3</int>
-                     </void>
-                     <void property="normalAttack">
-                      <int>4</int>
-                     </void>
-                     <void property="normalDefense">
-                      <int>5</int>
-                     </void>
-                     <void property="specialAttack">
-                      <int>6</int>
-                     </void>
-                     <void property="specialDefense">
-                      <int>7</int>
-                     </void>
-                     <void property="speed">
-                      <int>8</int>
-                     </void>
-                    </object>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="maxLevel">
-                  <int>3</int>
-                 </void>
-                 <void property="specieName">
-                  <string>Golumn</string>
-                 </void>
-                </object>
-               </void>
-              </object>
-             </void>
-            </void>
-            <void property="instructions">
-             <object idref="ArrayList0"/>
-            </void>
-            <void property="pokemon">
-             <object idref="Pokemon0"/>
-            </void>
-           </object>
-          </void>
           <void property="openState">
            <boolean>true</boolean>
           </void>
@@ -519,23 +337,6 @@
         </void>
         <void index="2">
          <object class="data.map.Cell">
-          <void property="event">
-           <object class="data.event.EventNPC">
-            <void property="imagePath">
-             <string>images/CaptainMap.png</string>
-            </void>
-            <void property="npc">
-             <object class="data.model.NPC">
-              <void property="imagePath">
-               <string>images/CaptainMap.png</string>
-              </void>
-              <void property="name">
-               <string>Caption Kirk</string>
-              </void>
-             </object>
-            </void>
-           </object>
-          </void>
           <void property="openState">
            <boolean>true</boolean>
           </void>
@@ -714,7 +515,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -848,7 +649,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -992,7 +793,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -1012,7 +813,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -1310,7 +1111,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -1756,7 +1557,7 @@
   </void>
   <void property="model">
    <object class="data.model.Model" id="Model0">
-    <void id="ArrayList1" property="NPCs">
+    <void id="ArrayList0" property="NPCs">
      <void method="add">
       <object class="data.model.NPC">
        <void property="imagePath">
@@ -1769,27 +1570,23 @@
      </void>
     </void>
     <void property="NPCs">
-     <object idref="ArrayList1"/>
+     <object idref="ArrayList0"/>
     </void>
-    <void id="ArrayList2" property="pokemonSpecies">
+    <void id="ArrayList1" property="pokemonSpecies">
      <void method="add">
       <object class="tests.authoring.Specie1" id="Specie10">
-       <void id="HashMap1" property="levelEvolutionImagePath"/>
-       <void id="HashMap2" property="levelExp"/>
-       <void id="HashMap3" property="levelMoves"/>
-       <void id="HashMap4" property="levelStats"/>
+       <void id="HashMap0" property="levelEvolutionImagePath"/>
+       <void id="HashMap1" property="levelExp"/>
+       <void id="HashMap2" property="levelMoves"/>
+       <void id="HashMap3" property="levelStats"/>
       </object>
      </void>
      <void method="add">
-      <object class="tests.authoring.Specie2">
-       <void property="levelStats">
-        <object idref="HashMap0"/>
-       </void>
-      </object>
+      <object class="tests.authoring.Specie2"/>
      </void>
     </void>
     <void property="pokemonSpecies">
-     <object idref="ArrayList2"/>
+     <object idref="ArrayList1"/>
     </void>
    </object>
   </void>
@@ -1830,16 +1627,16 @@
         <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
+        <object idref="HashMap0"/>
        </void>
        <void property="levelExp">
-        <object idref="HashMap2"/>
+        <object idref="HashMap1"/>
        </void>
        <void property="levelMoves">
-        <object idref="HashMap3"/>
+        <object idref="HashMap2"/>
        </void>
        <void property="levelStats">
-        <object idref="HashMap4"/>
+        <object idref="HashMap3"/>
        </void>
        <void property="maxLevel">
         <int>4</int>
@@ -1883,16 +1680,16 @@
         <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
+        <object idref="HashMap0"/>
        </void>
        <void property="levelExp">
-        <object idref="HashMap2"/>
+        <object idref="HashMap1"/>
        </void>
        <void property="levelMoves">
-        <object idref="HashMap3"/>
+        <object idref="HashMap2"/>
        </void>
        <void property="levelStats">
-        <object idref="HashMap4"/>
+        <object idref="HashMap3"/>
        </void>
        <void property="maxLevel">
         <int>4</int>
@@ -1936,16 +1733,16 @@
         <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
+        <object idref="HashMap0"/>
        </void>
        <void property="levelExp">
-        <object idref="HashMap2"/>
+        <object idref="HashMap1"/>
        </void>
        <void property="levelMoves">
-        <object idref="HashMap3"/>
+        <object idref="HashMap2"/>
        </void>
        <void property="levelStats">
-        <object idref="HashMap4"/>
+        <object idref="HashMap3"/>
        </void>
        <void property="maxLevel">
         <int>4</int>
@@ -1989,16 +1786,16 @@
         <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
+        <object idref="HashMap0"/>
        </void>
        <void property="levelExp">
-        <object idref="HashMap2"/>
+        <object idref="HashMap1"/>
        </void>
        <void property="levelMoves">
-        <object idref="HashMap3"/>
+        <object idref="HashMap2"/>
        </void>
        <void property="levelStats">
-        <object idref="HashMap4"/>
+        <object idref="HashMap3"/>
        </void>
        <void property="maxLevel">
         <int>4</int>
@@ -2042,16 +1839,16 @@
         <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
+        <object idref="HashMap0"/>
        </void>
        <void property="levelExp">
-        <object idref="HashMap2"/>
+        <object idref="HashMap1"/>
        </void>
        <void property="levelMoves">
-        <object idref="HashMap3"/>
+        <object idref="HashMap2"/>
        </void>
        <void property="levelStats">
-        <object idref="HashMap4"/>
+        <object idref="HashMap3"/>
        </void>
        <void property="maxLevel">
         <int>4</int>
@@ -2098,16 +1895,16 @@
         <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
+        <object idref="HashMap0"/>
        </void>
        <void property="levelExp">
-        <object idref="HashMap2"/>
+        <object idref="HashMap1"/>
        </void>
        <void property="levelMoves">
-        <object idref="HashMap3"/>
+        <object idref="HashMap2"/>
        </void>
        <void property="levelStats">
-        <object idref="HashMap4"/>
+        <object idref="HashMap3"/>
        </void>
        <void property="maxLevel">
         <int>4</int>
