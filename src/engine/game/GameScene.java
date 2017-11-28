@@ -1,12 +1,21 @@
 package engine.game;
 
+import java.util.ArrayList;
+
 import authoring.ScreenDisplay;
+import data.event.Instruction;
+import data.event.InstructionNPCFight;
 import data.map.DrawMap;
 import data.map.GameMap;
 import data.model.Model;
+import data.model.NPC;
+import data.model.Pokemon;
 import data.player.Player;
 import engine.Engine;
+import engine.battle.BattleScene;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.stage.Stage;
 
 
 public class GameScene extends ScreenDisplay {
@@ -15,13 +24,32 @@ public class GameScene extends ScreenDisplay {
 	private Player mainPlayer;
 	private Model gameModel;
 
-	public GameScene(int width, int height, Paint background, Engine engine) {
+	public GameScene(int width, int height, Color background, Engine engine, Stage gameStage) {
 		super(width, height, background);
 		mainMap = engine.getDatabase().getMap();
 		mainPlayer = engine.getDatabase().getPlayer();
 		gameModel = engine.getDatabase().getModel();
 		DrawMap drawMap = new DrawMap(mainMap);
-		this.rootAdd(drawMap.getPane());
+		
+		NPC npc=new NPC("file:images/emerald_battle_1.png","testC");
+		Pokemon[] list=new Pokemon[2];
+		Player testPlayer=engine.getDatabase().getPlayer();
+		InstructionNPCFight testNPC=new InstructionNPCFight(npc,list);
+		ArrayList<Instruction> testIns=engine.getDatabase().getMap().getCells()[0][0].getEvent().getInstructions();
+		System.out.println(testIns.get(0).toString());
+		//BattleScene test=new BattleScene(1000,1000,Color.AQUA,new Player(),new InstructionNPCFight(),null);
+		BattleScene test=new BattleScene(width,height,Color.AQUA,testPlayer,testNPC,null);
+		
+		//gameStage.setScene(test.getScene());
+		//gameStage.show();
+		//gameStage.centerOnScreen();
+		super.myScene=test.getScene();
+		
+		//this.rootAdd(drawMap.getPane());
+	}
+	
+	public Player getPlayer() {
+		return mainPlayer;
 	}
 	
 

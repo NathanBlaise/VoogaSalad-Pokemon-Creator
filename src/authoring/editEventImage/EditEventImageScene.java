@@ -3,6 +3,7 @@ package authoring.editEventImage;
 import authoring.BasicAuthorScreen;
 import authoring.StageDelegate;
 import authoring.dragdrop.DBMap;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 /**
@@ -18,7 +19,7 @@ public class EditEventImageScene extends BasicAuthorScreen {
 	/*instance variable*/
 	private DBMap myMap;
 
-	public EditEventImageScene(Paint background, StageDelegate stageHelper) {
+	public EditEventImageScene(Color background, StageDelegate stageHelper) {
 		super(background, stageHelper);
 		// TODO Auto-generated constructor stub
 		this.rootAdd(new EventImageMenu(stageHelper.getDatabase().getModel().getPokemonSpecies(), stageHelper.getDatabase().getModel().getNPCs()));
