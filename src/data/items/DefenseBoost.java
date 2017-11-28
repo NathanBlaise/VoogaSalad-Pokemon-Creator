@@ -5,22 +5,22 @@ import data.player.Player;
 
 /**
  * 
- * @author nathanlewis
- * Potion to increase HP by 200
+ * @author Mason Taylor
+ * Item that increases pokemon's Defense.
  */
 
-public class HyperPotion extends Item{
+public class DefenseBoost extends Item{
 	
 	//Specifies name, price and image in the constructor
-	public HyperPotion(){
-		itemName = "Hyper Potion";
+	public DefenseBoost(){
+		itemName = "Defense Boost";
 		itemPrice = 1200;
 	}
 	
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		int newHP = mine.getCurrentStat().getHP() + 200;
-		mine.getCurrentStat().setHP(newHP);
+		int newDefense = mine.getCurrentStat().getNormalDefense() + 5;
+		mine.getCurrentStat().setNormalDefense(newDefense);
 	}
 }
