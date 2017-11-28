@@ -8,9 +8,10 @@ import java.io.FileNotFoundException;
 public class xmlReader <K>{
 
 	public xmlReader() {
-		// TODO Auto-generated constructor stub
+		//empty for now, not sure if this will change
 	}
 	
+
 	@SuppressWarnings({ "resource", "unchecked" })
 	public K readXML(String file) {
 		

@@ -8,19 +8,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import authoring.ScreenDisplay;
+import data.items.Item;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.player.Player;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 /**
  * 
@@ -32,10 +42,14 @@ import javafx.scene.text.Font;
 public class BattleScene extends ScreenDisplay{
 	
 	
+	private static final int LIST_OF_BAG_ITEMS_HEIGHT = 200;
+	private static final int LIST_OF_BAG_ITEMS_WIDTH = 150;
 	Image grassBattle = new Image("file:images/grass_battle.png");
 	Image grassBattleBackground = new Image("file:images/grass_battle_background.png");
 	Image grassBattleGrass1 = new Image("file:images/grass_battle_grass_1.png");
 	Image grassBattleGrass2 = new Image("file:images/grass_battle_grass_2.png");
+	Image itemList = new Image("file:images/item_list_background.jpg");
+	String backgroundImage="file:images/item_list_background.jpg";
 
 	Image battleBox = new Image("file:images/battle_box.png");
 
@@ -55,6 +69,8 @@ public class BattleScene extends ScreenDisplay{
 	private Pokemon activePokemon;
 	private NPC enemyTrainer;
 	private Pokemon enemyPokemon;
+	private ListView<String> listOfItems;
+	private ListView<String> listOfPokemons;
 	
 	
 	private final int PLAYER_HOME_XPOS = 15;
@@ -113,6 +129,9 @@ public class BattleScene extends ScreenDisplay{
 		this.rootAdd(fourButtonLayout(buttonArr));
 		//Sets action for fight button
 		fightButtonPressed(button1);
+		bagButtonPressed(button2);
+		pokemonButtonPressed(button3);
+		runButtonPressed(button4);
 	}
 	
 	/*
@@ -133,8 +152,47 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void bagButtonPressed(Button button) {
 		button.setOnAction((event) -> {
+			//remove button is not working...
+			for(Button b: buttonArr) {
+				System.out.println(b.getText());
+				this.rootRemove(b);
+			}
+			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
+			
 			//load list of pokemon
+		
+			
+//			ArrayList<Item> bags= mainPlayer.getItems();
+			ArrayList<String> itemNames=new ArrayList<>();
+//			for (Item each:bags) {
+//				itemNames.add(each.getItemName());
+//			}
+			
+			//put itemNames in real code, but will hard code for now
+			itemNames.add("item1");
+			itemNames.add("item2");
+			itemNames.add("item3");
+			
+			addListView(listOfItems,itemNames);
+			
 		});
+	}
+
+	public void addListView(ListView<String> list,ArrayList<String> content) {
+		ObservableList<String> items =FXCollections.observableArrayList (content
+		    );
+		
+		list=new ListView<String>(); 
+		list.setItems(items);
+		list.setTranslateX(500);
+		list.setTranslateY(200);
+		list.setPrefWidth(LIST_OF_BAG_ITEMS_WIDTH);
+		list.setPrefHeight(LIST_OF_BAG_ITEMS_HEIGHT);
+		list.setStyle("-fx-control-inner-background: #61a2b1;");
+		
+
+
+		this.rootAdd(list);
 	}
 	
 	/*
@@ -143,6 +201,25 @@ public class BattleScene extends ScreenDisplay{
 	private void pokemonButtonPressed(Button button) {
 		button.setOnAction((event) -> {
 			//load list of pokemon
+			if (listOfItems!=null) {
+			    this.rootRemove(listOfItems);
+			}
+			ArrayList<String> itemNames=new ArrayList<>();
+//			for (Item each:bags) {
+//				itemNames.add(each.getItemName());
+//			}
+			
+			//put itemNames in real code, but will hard code for now
+			itemNames.add("pokemon1");
+			itemNames.add("pokemon2");
+			itemNames.add("pokemon3");
+			itemNames.add("pokemon4");
+			
+			addListView(listOfPokemons,itemNames);
+		
+			
+			
+			
 		});
 	}
 	
@@ -152,6 +229,8 @@ public class BattleScene extends ScreenDisplay{
 	private void runButtonPressed(Button button) {
 		button.setOnAction((event) -> {
 			//exit battle scene
+			Stage stage = (Stage) button.getScene().getWindow();
+		    stage.hide();
 		});
 	}
 	
@@ -175,7 +254,11 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
-		gc.drawImage(emeraldBattle1, 190, 180);
+		gc.drawImage(emeraldBattle1, 190, 300);
+		
+		
 	}
+	
+	
 	
 }

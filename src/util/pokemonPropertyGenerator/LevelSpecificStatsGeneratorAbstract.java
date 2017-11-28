@@ -9,7 +9,7 @@ package util.pokemonPropertyGenerator;
  * @author DanSun
  *
  */
-public abstract class LevelSpecificStatsGenerator {
+public abstract class LevelSpecificStatsGeneratorAbstract {
     protected static final String PROPERTY_PREFIX = "\t";    
     protected static final String ELEMENT_TAG_PREFIX = "\t\t";
     protected static final String LEAF_TAG_PREFIX = "\t\t\t";

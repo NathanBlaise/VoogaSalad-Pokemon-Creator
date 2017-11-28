@@ -45,43 +45,15 @@ public class xmlTester {
 		
 		PokemonSpecie ps = new PokemonSpecie("race", "abil", 2, moveMap, pStatMap, doubleMap, stringMap);
 
-		Pokemon pok = new Pokemon(ps, "Jake", 1);
-		//System.out.println(pok.getMoves()[3]);
 		
-		
-		/*
-	    FileOutputStream fos = new FileOutputStream("xmlSerializeTest1.xml");
-	    XMLEncoder encoder = new XMLEncoder(fos);
-	    encoder.setExceptionListener(new ExceptionListener() {
-	            public void exceptionThrown(Exception e) {
-	                System.out.println("Exception! :"+e.toString());
-	            }
-	    });
-	    encoder.writeObject(doubleMap);
-	    encoder.close();
-	    fos.close();
-	    */
-		
-		
-		
+	    xmlWriter xw = new xmlWriter();
 	    
-		XMLEncoder encoder=null;
-		try{
-		encoder=new XMLEncoder(new BufferedOutputStream(new FileOutputStream("xmlSerializeTest4.xml")));
-		}catch(FileNotFoundException fileNotFound){
-			System.out.println("ERROR: While Creating or Opening the File");
-		}
-		encoder.writeObject(pok);
-		encoder.close();
+	    xmlReader xr = new xmlReader();
 		
-		XMLDecoder decoder=null;
-		try {
-			decoder=new XMLDecoder(new BufferedInputStream(new FileInputStream("xmlSerializeTest4.xml")));
-		} catch (FileNotFoundException e) {
-			System.out.println("ERROR: File " + "xmlSerializeTest4.xml" + " not found");
-		}
-		Pokemon pokemon = (Pokemon) decoder.readObject();
-		System.out.println(pokemon);
-		System.out.println(pokemon.getElemental());
+		Pokemon pok = new Pokemon(ps, "Jake", 1);
+
+	    xw.writeXML(pok, "xmlSerializeTest5.xml");
+	    Pokemon returnedPokemon = (Pokemon) xr.readXML("xmlSerializeTest5.xml");
+
 	}
 }

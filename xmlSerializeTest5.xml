@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_144" class="java.beans.XMLDecoder">
+<java version="1.8.0_101" class="java.beans.XMLDecoder">
  <object class="data.model.Pokemon">
+  <void property="currentHP">
+   <double>1.0</double>
+  </void>
   <void property="currentLevel">
    <int>1</int>
-  </void>
-  <void property="currentStat">
-   <object class="data.model.PokemonStat">
-    <void property="HP">
-     <int>1</int>
-    </void>
-    <void property="maxHP">
-     <int>1</int>
-    </void>
-    <void property="normalAttack">
-     <int>2</int>
-    </void>
-    <void property="normalDefense">
-     <int>3</int>
-    </void>
-    <void property="specialAttack">
-     <int>4</int>
-    </void>
-    <void property="specialDefense">
-     <int>5</int>
-    </void>
-    <void property="speed">
-     <int>6</int>
-    </void>
-   </object>
   </void>
   <void property="elemental">
    <string>abil</string>
@@ -55,12 +33,6 @@
      <object class="data.model.moves.Move" id="Move0">
       <void property="PP">
        <int>1</int>
-      </void>
-      <void property="action">
-       <object class="data.model.moves.ActionExample"/>
-      </void>
-      <void property="elemental">
-       <string>Water</string>
       </void>
       <void property="maxPP">
        <int>1</int>
@@ -90,28 +62,25 @@
      <int>1</int>
      <object class="data.model.PokemonStat">
       <void property="HP">
-       <int>1</int>
-      </void>
-      <void property="maxHP">
-       <int>1</int>
+       <double>1.0</double>
       </void>
       <void property="maxHP">
        <double>1.0</double>
       </void>
       <void property="normalAttack">
-       <int>2</int>
+       <double>2.0</double>
       </void>
       <void property="normalDefense">
-       <int>3</int>
+       <double>3.0</double>
       </void>
       <void property="specialAttack">
-       <int>4</int>
+       <double>4.0</double>
       </void>
       <void property="specialDefense">
-       <int>5</int>
+       <double>5.0</double>
       </void>
       <void property="speed">
-       <int>6</int>
+       <double>6.0</double>
       </void>
      </object>
     </void>
@@ -119,6 +88,9 @@
   </void>
   <void property="maxLevel">
    <int>2</int>
+  </void>
+  <void property="name">
+   <string>temporary name</string>
   </void>
   <void property="specieName">
    <string>race</string>
