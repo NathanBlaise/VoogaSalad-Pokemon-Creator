@@ -21,7 +21,6 @@ public class Engine {
 	private Stage myStage;
 	private String savePath;
 	private Database database;
-	private GameScene gameScene;
 	
 	/**
 	 * 
@@ -39,7 +38,7 @@ public class Engine {
 	 * Launches main gameScene
 	 */
 	public void toMainGameScene() {
-		gameScene = new GameScene(GAME_SCREEN_WIDTH, GAME_SCREEN_HEIGHT, Color.WHITE, this, myStage);
+		GameScene gameScene = new GameScene(GAME_SCREEN_WIDTH, GAME_SCREEN_HEIGHT, Color.WHITE, this);
 		myStage.setScene(gameScene.getScene());
 		myStage.centerOnScreen();
 
@@ -52,10 +51,6 @@ public class Engine {
 
 	public void saveDatabase() {
 		DatabaseSaver.save(database, savePath);
-	}
-	
-	public GameScene getGameScene() {
-		return gameScene;
 	}
 	
 }
