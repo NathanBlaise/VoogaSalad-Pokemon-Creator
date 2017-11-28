@@ -6,21 +6,21 @@ import data.player.Player;
 /**
  * 
  * @author Mason Taylor
- * Item that increases pokemon's base normal attack stat.
+ * Item that increases pokemon's base special defense stat.
  */
 
-public class AttackBoost extends Item{
+public class SpecialDefenseBoost extends Item{
 	
 	//Specifies name, price and image in the constructor
-	public AttackBoost(){
-		itemName = "Attack Boost";
+	public SpecialDefenseBoost(){
+		itemName = "Special Defense Boost";
 		itemPrice = 1200;
 	}
 	
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		int newAttack = mine.getCurrentStat().getNormalAttack() + 1;
-		mine.getCurrentStat().setNormalAttack(newAttack);
+		int newDefense = mine.getCurrentStat().getSpecialDefense() + 1;
+		mine.getCurrentStat().setSpecialDefense(newDefense);
 	}
 }

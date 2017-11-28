@@ -6,7 +6,7 @@ import data.player.Player;
 /**
  * 
  * @author Mason Taylor
- * Item that increases pokemon's Defense.
+ * Item that increases pokemon's base Defense stat.
  */
 
 public class DefenseBoost extends Item{
@@ -20,7 +20,7 @@ public class DefenseBoost extends Item{
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		int newDefense = mine.getCurrentStat().getNormalDefense() + 5;
+		int newDefense = mine.getCurrentStat().getNormalDefense() + 1;
 		mine.getCurrentStat().setNormalDefense(newDefense);
 	}
 }

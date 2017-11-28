@@ -6,21 +6,21 @@ import data.player.Player;
 /**
  * 
  * @author Mason Taylor
- * Item that increases pokemon's base normal attack stat.
+ * Item that does 5 points of damage that can't be defended against.
  */
 
-public class AttackBoost extends Item{
+public class Claw extends Item{
 	
 	//Specifies name, price and image in the constructor
-	public AttackBoost(){
-		itemName = "Attack Boost";
+	public Claw(){
+		itemName = "Claw";
 		itemPrice = 1200;
 	}
 	
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		int newAttack = mine.getCurrentStat().getNormalAttack() + 1;
-		mine.getCurrentStat().setNormalAttack(newAttack);
+		int newHP = Enemy.getCurrentStat().getHP() - 5;
+		Enemy.getCurrentStat().setHP(newHP);
 	}
 }
