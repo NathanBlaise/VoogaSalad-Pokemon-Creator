@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 public class ScreenDisplay {
@@ -15,14 +16,14 @@ public class ScreenDisplay {
 		
 		//Private Variable
 		protected Timeline animation = new Timeline();
-		private Scene myScene;
+		protected Scene myScene;
 		private Group root = new Group();
 
 		/**
 		 * Constructor: Screen Display class
 		 */
 
-		public ScreenDisplay(int width, int height, Paint background) {
+		public ScreenDisplay(int width, int height, Color background) {
 			init();
 			myScene = new Scene(root, width, height, background);
 

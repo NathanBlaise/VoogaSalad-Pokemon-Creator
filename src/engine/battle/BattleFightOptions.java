@@ -21,6 +21,8 @@ public class BattleFightOptions {
 	private Button moveButton3;
 	private Button moveButton4;
 	private Button[] buttonArr;
+	
+	
 
 	
 	public BattleFightOptions(Pokemon ap, Pokemon ep) {

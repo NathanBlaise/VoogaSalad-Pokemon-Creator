@@ -1,13 +1,18 @@
 package start;
 
 import data.Database;
-
+import data.event.Instruction;
+import data.event.InstructionNPCFight;
 import data.model.NPC;
+import data.model.Pokemon;
 import data.player.Player;
 import engine.Engine;
 
 import engine.UI.Fade;
 import engine.battle.BattleScene;
+
+import java.util.ArrayList;
+
 import authoring.Author;
 import authoring.StageDelegate;
 import authoring.eventManage.Function;
@@ -32,6 +37,7 @@ import javafx.stage.Stage;
 public class StartMenu {
 	private Scene scene;
 	private Pane root = new Pane();
+    private Engine engine;
 	
 	private final static double NewX = 593.0;
 	private final static double EditX = 831.0;
@@ -134,12 +140,24 @@ public class StartMenu {
 		BorderPane pathSetter = new DatabasePathConfig(gameStage, new Function<Database, String, Integer>() {
 			@Override
 			public Integer apply(Database one, String two) {
-				Engine engine = new Engine(one, two, gameStage);
+				engine = new Engine(one, two, gameStage);
 				engine.toMainGameScene();
 				return null;
 			}
 		});
 		gameStage.setScene(new Scene(pathSetter));
+
+		
+//		NPC npc=new NPC("file:images/emerald_battle_1.png","testC");
+//		Pokemon[] list=new Pokemon[2];
+//		Player testPlayer=engine.getGameScene().getPlayer();
+//		
+//		InstructionNPCFight testNPC=new InstructionNPCFight(npc,list);
+//		ArrayList<Instruction> testIns=engine.getDatabase().getMap().getCells()[0][0].getEvent().getInstructions();
+//		System.out.println(testIns.get(0).toString());
+//		BattleScene test=new BattleScene(1000,1000,Color.AQUA,new Player(),new InstructionNPCFight(),null);
+		//gameStage.setScene(test.getScene());
+
 		gameStage.show();
 		gameStage.centerOnScreen();
 	}
