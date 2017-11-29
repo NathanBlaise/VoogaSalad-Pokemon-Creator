@@ -45,18 +45,18 @@ public class ScreenDisplay {
 			//animation.getKeyFrames().add(frame);
 		}
 
-		protected void rootAdd(Node object) {
+		public void rootAdd(Node object) {
 			root.getChildren().add(object);
 		}
 		
-		protected void rootAdd(Node object, int row, int col) {
+		public void rootAdd(Node object, int row, int col) {
 			root.getChildren().add(object);
 			object.setLayoutX(row);
 			object.setLayoutY(col);
 			
 		}
 
-		protected void rootRemove(Node object) {
+		public void rootRemove(Node object) {
 			root.getChildren().remove(object);
 		}
 		
