@@ -1,5 +1,6 @@
 package authoring;
 
+import javafx.stage.Stage;
 import data.Database;
 
 
@@ -27,5 +28,11 @@ public interface StageDelegate {
 	 * save the database to the related XML file
 	 */
 	void saveDatabase();
+	
+	/**
+	 * 
+	 * @return - the stage
+	 */
+	Stage getStage();
 	
 }

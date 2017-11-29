@@ -7,6 +7,7 @@ import data.player.Player;
 import javafx.geometry.Side;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TabPane.TabClosingPolicy;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.util.Callback;
 import authoring.BasicAuthorScreen;
@@ -21,6 +22,9 @@ public class DatabaseScene extends BasicAuthorScreen {
 
 	public DatabaseScene(Paint white, StageDelegate app) {
 		super(white,app);
+		super.getGoSceneButton().setText("Finish");
+		super.getGoSceneButton().addEventHandler(MouseEvent.MOUSE_CLICKED, e->{app.GoButtonPressed(); app.getStage().close();});
+//		app.GoButtonPressed());
 		List<PokemonSpecie> species = app.getDatabase().getModel().getPokemonSpecies();
 		Player player = app.getDatabase().getPlayer();
 		int XLength = app.getDatabase().getMap().getXlength();

@@ -49,7 +49,8 @@ public class NPCEventEditor{
 		}
 		
 		private void editInstructions(Callback<List<Instruction>, Integer> saver){
-			stage.setScene(new Scene(showEvent(eventNPC)));
+			Scene scene = new Scene(showEvent(eventNPC));
+			stage.setScene(scene);
 		}
 		
 		private BorderPane showEvent(EventNPC eventNPC){
@@ -59,7 +60,7 @@ public class NPCEventEditor{
 				name2instruction.put(new String(LanguageReader.convertLanguage("English", s)), new String(s));
 			}
 			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions = createReaction(result);
-			result.setCenter(new EventInstructions(eventNPC, name2instruction, reactions, new InstructionListEditor(eventNPC, saver)).getList());
+			result.setLeft(new EventInstructions(eventNPC, name2instruction, reactions, new InstructionListEditor(eventNPC, saver)).getList());
 			return result;
 		}
 		
@@ -69,7 +70,8 @@ public class NPCEventEditor{
 				if(!(instruction instanceof InstructionNPCDialogue)){
 					instruction = new InstructionNPCDialogue(eventNPC.getNpc(), new ArrayList<String>());
 				}
-				instructionPane.setRight(new InstructionNPCDialogueEditor((InstructionNPCDialogue) instruction, e).showEditor());
+				instructionPane.setCenter(new InstructionNPCDialogueEditor((InstructionNPCDialogue) instruction, e).showEditor());
+				instructionPane.autosize();
 				stage.sizeToScene();
 				return null;
 			});
@@ -77,7 +79,7 @@ public class NPCEventEditor{
 				if(!(instruction instanceof InstructionNPCFight)){
 					instruction = new InstructionNPCFight(eventNPC.getNpc(), new Pokemon[InstructionNPCFight.getPokemonNum()]);
 				}
-				instructionPane.setRight(new InstructionNPCFightEditor((InstructionNPCFight) instruction, pokemonSpecies, e).showEditor());
+				instructionPane.setCenter(new InstructionNPCFightEditor((InstructionNPCFight) instruction, pokemonSpecies, e).showEditor());
 				stage.sizeToScene();
 				return null;
 			});
