@@ -11,7 +11,7 @@ import data.map.Cell;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
-import engine.UI.UIComponentFactory.Map2GridPane;
+import engine.UI.Map2GridPane;
 import engine.UI.UIComponentFactory.UIComponentFactory;
 import javafx.event.EventHandler;
 import javafx.scene.control.ContextMenu;
