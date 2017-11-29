@@ -45,13 +45,7 @@ public class Author implements StageDelegate{
 		if (scControl.currentIndex < myList.size() - 1)
 		scControl.currentIndex +=1;
 		myStage.setScene(myList.get(scControl.currentIndex));
-		System.out.println("I am currently at scene " + scControl.currentIndex );
-		
-		
-		if (scControl.currentIndex ==  EDITEVENTIMAGESCENE) {
-			//scControl.passMapForward();
-			//do nothing for now
-		}
+		//System.out.println("I am currently at scene " + scControl.currentIndex );
 		
 	}
 
@@ -61,12 +55,7 @@ public class Author implements StageDelegate{
 		if (scControl.currentIndex > 0)
 			scControl.currentIndex -=1;
 			myStage.setScene(myList.get(scControl.currentIndex));
-			System.out.println("I am currently at scene " + scControl.currentIndex );
-		
-		if (scControl.currentIndex == EDITMAPSCENE) {
-			//scControl.passMapBackward();
-			//do nothing for now
-		}
+			//System.out.println("I am currently at scene " + scControl.currentIndex );
 	}
 
 	@Override

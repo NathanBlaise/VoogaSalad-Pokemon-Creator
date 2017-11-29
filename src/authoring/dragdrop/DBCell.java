@@ -144,12 +144,12 @@ public class DBCell {
 	    image.setOnDragDropped(new EventHandler <DragEvent>() {
 	         public void handle(DragEvent event) {
 	             /* data dropped */
-	             System.out.println("onDragDropped");
+	             //System.out.println("onDragDropped");
 	             /* if there is an image data on dragboard, read it and use it */
 	             Dragboard db = event.getDragboard();
 	             boolean success = false;
 	             if (db.hasImage()) {
-	            	 	System.out.println(app.checkSurroundingCells(col, row) == true );
+	            	 	//System.out.println(app.checkSurroundingCells(col, row) == true );
 	                if (db.hasString()&& db.getString()=="Shop Tile"){
 	                		if (app.checkSurroundingCells(col, row) == true) {
 	                			myGrid.add(new ImageView(db.getImage()), col-1,row);

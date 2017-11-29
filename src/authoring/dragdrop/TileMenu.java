@@ -36,7 +36,8 @@ import javafx.scene.text.Font;
 		final static String REGTILE_PATH = "images/reg_tile_scaled.png";
 		final static String GRASS_PATH = "images/grass_tile.png";
 		final static String FLOWER_PATH = "images/flower_tile.png";
-		final static String SHOP_PATH = "images/pokemonCenter.png";
+		final static String SHOP_PATH = "images/pokemonCenterScaled.png";
+		final static String SPACE_PATH = "images/space.png";
 		
 		
 		/*instance variable*/
@@ -74,7 +75,8 @@ import javafx.scene.text.Font;
 			imageMap.put(REGTILE_PATH, Path2Image.showImage(REGTILE_PATH));
 			imageMap.put(GRASS_PATH, Path2Image.showImage(GRASS_PATH));
 			imageMap.put(FLOWER_PATH, Path2Image.showImage(FLOWER_PATH));
-			imageMap.put(SHOP_PATH, Path2Image.showImage(SHOP_PATH));//,48,48,false,false));
+			imageMap.put(SHOP_PATH, Path2Image.scale(Path2Image.showImage(SHOP_PATH), 48,48, true).snapshot(null, null));
+			imageMap.put(SPACE_PATH, Path2Image.scale(Path2Image.showImage(SPACE_PATH), 48,48, true).snapshot(null, null));
 		}
 		
 		
@@ -116,7 +118,7 @@ import javafx.scene.text.Font;
 			sourceImage.setOnDragDetected(new EventHandler <MouseEvent>() {
 		         public void handle(MouseEvent event) {
 		             /* drag was detected, start drag-and-drop gesture*/
-		             System.out.println("onDragDetected");
+		             //System.out.println("onDragDetected");
 		             
 		             /* allow any transfer mode */
 		             Dragboard db = sourceImage.startDragAndDrop(TransferMode.ANY);
@@ -143,7 +145,7 @@ import javafx.scene.text.Font;
 			 sourceImage.setOnDragDone(new EventHandler <DragEvent>() {
 		         public void handle(DragEvent event) {
 		             /* the drag-and-drop gesture ended */
-		             System.out.println("onDragDone");
+		             //System.out.println("onDragDone");
 		             /* if the data was successfully moved, clear it */
 		             if (event.getTransferMode() == TransferMode.MOVE) {
 		               //TO-DO
@@ -164,15 +166,15 @@ import javafx.scene.text.Font;
 		
 
 		
-		public void printIndex() {
-			paneListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-				@Override
-				public void handle(MouseEvent event) {
-					System.out.println("clicked on " + ((Label) paneListView.getSelectionModel().getSelectedItem().getChildren().get(2)).getText());
-				}
-			});
-		}
+//		public void printIndex() {
+//			paneListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//
+//				@Override
+//				public void handle(MouseEvent event) {
+//					System.out.println("clicked on " + ((Label) paneListView.getSelectionModel().getSelectedItem().getChildren().get(2)).getText());
+//				}
+//			});
+//		}
 
 
 
