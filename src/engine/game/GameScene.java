@@ -10,6 +10,8 @@ import engine.movement.Collisions;
 import engine.movement.Direction;
 import engine.movement.Input;
 import javafx.animation.AnimationTimer;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Paint;
@@ -43,8 +45,10 @@ public class GameScene extends ScreenDisplay {
 	private Player mainPlayer;
 	private Model gameModel;
 	private Input input;
-	private ArrayList inputList;
+	private ArrayList<String> inputList;
 	private ImageView playerImage;
+	private Canvas tileCanvas;
+	private GraphicsContext gc;
 
 	
 	public GameScene(int width, int height, Paint background, Engine engine) {
@@ -53,13 +57,26 @@ public class GameScene extends ScreenDisplay {
 		mainMap = engine.getDatabase().getMap();
 		mainPlayer = engine.getDatabase().getPlayer();
 		gameModel = engine.getDatabase().getModel();
-		DrawMap drawMap = new DrawMap(mainMap);
+		
+		
+		//Initialize variables; Deal with map
+		tileCanvas = new Canvas (720,480);
+		gc = tileCanvas.getGraphicsContext2D();
+		DrawMap drawMap = new DrawMap(mainMap,gc);
+		
+		//Deal with player
 		playerImage = new ImageView(image);
 		playerImage.setFitHeight(PLAYER_HEIGHT);
 		playerImage.setFitWidth(PLAYER_WIDTH);
+		
+		//Add tile pics into root
+		this.rootAdd(tileCanvas);
 		this.rootAdd(drawMap.getPane());
 		this.rootAdd(playerImage);
-		inputList = new ArrayList();
+		inputList = new ArrayList<String>();
+		
+		
+		
 		this.getScene().setOnKeyPressed(mainPlayer -> {
 			String code = mainPlayer.getCode().toString();
 			if (!inputList.contains(code)) // only add once... prevent duplicates
