@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -21,7 +20,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
@@ -42,7 +40,14 @@ import data.LanguageReader;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
 import data.model.moves.Move;
+import engine.UI.UIComponentFactory.UIComponentFactory;
 
+/**
+ * 
+ * @author cy122
+ * This class is used to choose the pokemon
+ *
+ */
 public class PokemonChooser {
 	private Pokemon localPokemon;
 	private List<PokemonSpecie> pokemonSpecies;
@@ -180,30 +185,13 @@ public class PokemonChooser {
 	}
 	
 	public HBox showLevelPicker(int maxLevel){
-		HBox result =new HBox();
-		Label levelLabel = new Label("Lv: " + String.valueOf(localPokemon.getCurrentLevel()));
-		Slider slider = new Slider();
-        levelLabel.textProperty().bind(
-                Bindings.format(
-                    "Lv: %.0f",
-                    slider.valueProperty()
-                )
-         );
-		slider.setMin(1);
-		slider.setMax(maxLevel);
-		slider.setValue(localPokemon.getCurrentLevel());
-		slider.setShowTickLabels(true);
-		slider.setShowTickMarks(true);
-		slider.setMajorTickUnit(maxLevel/2+1);
-		slider.setMinorTickCount(5);
-		slider.setBlockIncrement(1);
-        slider.valueProperty().addListener(new ChangeListener<Number>() {
-            public void changed(ObservableValue<? extends Number> ov,
-                Number old_val, Number new_val) {
-                    localPokemon.changeCurrentLevel(new_val.intValue());
-            }
-        });
-		result.getChildren().addAll(slider, levelLabel);
+		HBox result = UIComponentFactory.intSlider(localPokemon.getCurrentLevel(), 1, maxLevel, new Callback<Integer, Integer>(){
+				@Override
+				public Integer call(Integer param) {
+					localPokemon.changeCurrentLevel(param.intValue());
+					return null;
+				}
+		}, "Lv");
 		return result;
 	}
 	

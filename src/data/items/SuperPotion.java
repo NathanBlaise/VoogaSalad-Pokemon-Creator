@@ -5,22 +5,21 @@ import data.player.Player;
 
 /**
  * 
- * @author nathanlewis
- * Potion to increase HP by 200
+ * @author Mason Taylor
+ * Item that increases pokemon's max HP (and fills HP).
  */
 
-public class HyperPotion extends Item{
+public class SuperPotion extends Item{
 	
 	//Specifies name, price and image in the constructor
-	public HyperPotion(){
-		itemName = "Hyper Potion";
+	public SuperPotion(){
+		itemName = "Super Potion";
 		itemPrice = 1200;
 	}
 	
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		int newHP = mine.getCurrentStat().getHP() + 200;
-		mine.getCurrentStat().setHP(newHP);
+		int newMaxHP = mine.getCurrentStat().getMaxHP() + 10;
 	}
 }

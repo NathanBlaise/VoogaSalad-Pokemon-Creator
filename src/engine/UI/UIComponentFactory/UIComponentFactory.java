@@ -25,13 +25,13 @@ public class UIComponentFactory {
 		return result;
 	}
 	
-	static public HBox intSlider(int initialValue, int left, int right, Callback<Integer, Integer> saver){
+	static public HBox intSlider(int initialValue, int left, int right, Callback<Integer, Integer> saver, String label){
 		HBox result =new HBox();
-		Label levelLabel = new Label("Lv: " + String.valueOf(initialValue));
+		Label levelLabel = new Label(label + String.valueOf(initialValue));
 		Slider slider = new Slider();
         levelLabel.textProperty().bind(
                 Bindings.format(
-                    "Lv: %.0f",
+                    label+": %.0f",
                     slider.valueProperty()
                 )
          );

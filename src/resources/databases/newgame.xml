@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_101" class="java.beans.XMLDecoder">
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
  <object class="data.Database">
   <void property="map">
    <object class="data.map.GameMap">
@@ -919,9 +919,6 @@
                   <void property="moves">
                    <void index="0">
                     <object class="data.model.moves.Move">
-                     <void property="PP">
-                      <int>40</int>
-                     </void>
                      <void property="action">
                       <object idref="MoveStatChange$10"/>
                      </void>
@@ -1254,9 +1251,6 @@
                  <void property="moves">
                   <void index="0">
                    <object class="data.model.moves.Move">
-                    <void property="PP">
-                     <int>40</int>
-                    </void>
                     <void property="action">
                      <object idref="MoveStatChange$11"/>
                     </void>

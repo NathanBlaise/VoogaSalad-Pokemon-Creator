@@ -45,12 +45,14 @@ public class InstructionNPCFightEditor implements InstructionEditor{
 			tempButton.setOnMouseClicked(e->{
 				Pokemon selectedPokemon = buttonMap.get(tempButton);
 				pokemonList.setRight(new PokemonChooser(pokemonSpecies, selectedPokemon, tempButton).showPokemon());
+				pokemonList.autosize();
 				tempButton.call(buttonMap.get(tempButton));
 			});
 			buttonPane.getChildren().add(tempButton);
 		}
-		
-		pokemonList.setCenter(buttonPane);
+		BorderPane buttonList = new BorderPane();
+		buttonList.setCenter(buttonPane);
+		pokemonList.setCenter(buttonList);
 		return pokemonList;
 	}
 	
