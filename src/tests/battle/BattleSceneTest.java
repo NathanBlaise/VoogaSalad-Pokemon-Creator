@@ -33,7 +33,6 @@ public class BattleSceneTest extends Application {
 	    }
 	});
 	gameStage.setScene(new Scene(pathSetter));
-
 	gameStage.show();
 	gameStage.centerOnScreen();
 

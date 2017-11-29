@@ -311,8 +311,6 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
 		gc.drawImage(enemyImage, 400, 100);
 		gc.drawImage(pokemonImage,190 ,250);
-		
-		
 	}
 	
 	
