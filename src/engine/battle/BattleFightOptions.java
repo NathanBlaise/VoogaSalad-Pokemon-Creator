@@ -5,6 +5,8 @@ import data.model.moves.Move;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 /**
  * Class to create the buttons and set actions for when fight button is chosen
@@ -29,6 +31,14 @@ public class BattleFightOptions {
 		activePokemon = ap;
 		enemyPokemon = ep;
 		setButtonText();
+		
+	}
+	
+	public Text getText() {
+		Text message=new Text("Choose my attack!");
+		message.setFont(new Font(30));
+		return message;
+		
 	}
 	
 	private void setButtonText() {
@@ -43,6 +53,7 @@ public class BattleFightOptions {
 			buttonArr[i].setOnAction((event) -> {
 				move.move(activePokemon, enemyPokemon);
 				//Load hit animation, then change scene to enemy's move
+				System.out.println("action played");
 			});
 		}
 	}
