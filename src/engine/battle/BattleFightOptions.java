@@ -17,27 +17,60 @@ public class BattleFightOptions {
 	
 	private Pokemon activePokemon;
 	private Pokemon enemyPokemon;
+	protected BattleScene battleScene;
+	private EnemyBattleFightOptions ebfo;
 	
 	private Button moveButton1;
 	private Button moveButton2;
 	private Button moveButton3;
 	private Button moveButton4;
-	private Button[] buttonArr;
+	protected Button[] buttonArr;
+	
+	
+	protected Text message=new Text("");
+	protected HBox hbox=new HBox(5);
 	
 	
 
 	
-	public BattleFightOptions(Pokemon ap, Pokemon ep) {
+	public BattleFightOptions(Pokemon ap, Pokemon ep,BattleScene bs) {
 		activePokemon = ap;
 		enemyPokemon = ep;
+		battleScene = bs;
+		
 		setButtonText();
 		
 	}
 	
 	public Text getText() {
-		Text message=new Text("Choose my attack!");
+		message.setText("Select my attack");;
 		message.setFont(new Font(30));
 		return message;
+		
+	}
+	
+	public void setUpScene() {
+		ebfo=battleScene.getEnemyBattleScene();
+		if (!ebfo.getText().equals(null) && battleScene.getRootChildren().contains(ebfo.getText())) {
+		    battleScene.rootRemove(ebfo.getText());
+		}
+		
+		if (ebfo.getHBox()!=null && battleScene.getRootChildren().contains(ebfo.getHBox())) {
+		    battleScene.rootRemove(ebfo.getHBox());
+		}
+		
+		
+		hbox=battleScene.fourButtonLayout(buttonArr);
+		
+		battleScene.rootAdd(hbox);
+		battleScene.rootAdd(this.getText(),400,400);
+		
+
+		
+	}
+	
+	protected HBox getHBox() {
+		return hbox;
 		
 	}
 	
@@ -51,11 +84,19 @@ public class BattleFightOptions {
 		for(Move move: activePokemon.getAvailableMoves()) {
 			buttonArr[i].setText(move.getMoveName());
 			buttonArr[i].setOnAction((event) -> {
-				move.move(activePokemon, enemyPokemon);
+				//move.move(activePokemon, enemyPokemon);
 				//Load hit animation, then change scene to enemy's move
-				System.out.println("action played");
+				changeScene();
+				
+				
+				
 			});
 		}
+	}
+
+	public void changeScene() {
+		
+		ebfo.setUpScene();
 	}
 	
 	protected Button[] getButtons() {

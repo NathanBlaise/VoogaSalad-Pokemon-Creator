@@ -54,9 +54,10 @@ public class BattleScene extends ScreenDisplay{
 	String backgroundImage="file:images/item_list_background.jpg";
 
 	Image battleBox = new Image("file:images/battle_box.png");
-
+    
+	Image pokemonImage;
 	Image enemyImage;
-	Image player;
+	
 	Image emeraldBattle2 = new Image("file:images/emerald_battle_2.png");
 //	Image emeraldBattle3 = new Image("file:images/emerald_battle_3.png");
 //	Image emeraldBattle4 = new Image("file:images/emerald_battle_4.png");
@@ -65,13 +66,15 @@ public class BattleScene extends ScreenDisplay{
 	
 	private VBox vbox1;
 	private VBox vbox2;
-	private HBox hbox;
+	public HBox hbox;
 	
-	private GraphicsContext gc;
+	GraphicsContext gc;
 	private Canvas canvas;
 	private Font f;
 	private Button[] buttonArr; //Contains all starter buttons (Fight, Bag, Pokemon & Run)
 	
+	private BattleFightOptions bfo;
+	private EnemyBattleFightOptions ebfo;
 	private Player mainPlayer;
 	private Pokemon activePokemon;
 	private InstructionNPCFight enemyTrainer;
@@ -79,7 +82,7 @@ public class BattleScene extends ScreenDisplay{
 	private ListView<String> listOfItems;
 	private ListView<String> listOfPokemons;
 	//an instance variable to show whose turn it is, 0 means player's turn to attack, 1 means NPC's turn.
-	private int current=0;
+
 	
 	
 	private final int PLAYER_HOME_XPOS = 15;
@@ -120,10 +123,14 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	
 	private void characterSetUp() {
-		String imagePathForNPC=enemyTrainer.getNpc().getImagePath();
-		enemyImage=new Image(imagePathForNPC);
+//		String imagePathForEP=enemyPokemon.getCurrentImagePath();
+//		enemyImage=new Image(imagePathForEP);
+//		pokemonImage=new Image(activePokemon.getCurrentImagePath());
+		
+		
 		//hard code for now
-		player=emeraldBattle2;
+		enemyImage=new Image("file:images/pokemons/pikachu.png");
+		pokemonImage=new Image("file:images/pokemons/raichu.png");
 		
 		
 	}
@@ -167,17 +174,25 @@ public class BattleScene extends ScreenDisplay{
 	private void fightButtonPressed(Button button) {
 		button.setOnAction((event) -> { 
 		
-	
-			BattleFightOptions bfo = new BattleFightOptions(activePokemon,enemyPokemon);
 			this.rootRemove(hbox);
-			this.rootAdd(fourButtonLayout(bfo.getButtons()));
-			this.rootAdd(bfo.getText(),400,400);
-
+			bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
+			ebfo=new EnemyBattleFightOptions(activePokemon,enemyPokemon,this);
+	
+			bfo.setUpScene();
+			
 			
 		});
 		
 		
 		
+	}
+	
+	public BattleFightOptions getMyBattleScene() {
+		return bfo;
+	}
+	
+	public EnemyBattleFightOptions getEnemyBattleScene() {
+		return ebfo;
 	}
 	
 	/*
@@ -274,7 +289,7 @@ public class BattleScene extends ScreenDisplay{
 		});
 	}
 	
-	private HBox fourButtonLayout(Button[] buttons) {
+	public HBox fourButtonLayout(Button[] buttons) {
 		vbox1 = new VBox(15);
 		vbox1.getChildren().addAll(buttons[0],buttons[2]);
 		vbox2 = new VBox(15);
@@ -294,8 +309,8 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
-		gc.drawImage(enemyImage, 400, 50);
-		gc.drawImage(player,190 ,250);
+		gc.drawImage(enemyImage, 400, 100);
+		gc.drawImage(pokemonImage,190 ,250);
 		
 		
 	}
