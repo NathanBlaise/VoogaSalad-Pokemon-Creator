@@ -1,4 +1,4 @@
-package engine.movement;
+/*package engine.movement;
 
 
 import data.event.Event;
@@ -8,20 +8,29 @@ import data.event.Instruction;
 import data.map.Cell;
 import data.map.GameMap;
 import data.player.Player;
+import engine.battle.BattleScene;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
 import static engine.movement.Direction.DOWN;
 import static engine.movement.Direction.UP;
+
+
+
 import static engine.movement.Direction.LEFT;
 import static engine.movement.Direction.RIGHT;
 
 /**
  * Handles collisions between the player and the environment
+ * CURRENTLY NOT USED
  * @author nathanlewis
  *
  */
-
+/*
 public class Collisions {
 	
 	private ImageView mainPlayerImage;
@@ -29,13 +38,17 @@ public class Collisions {
 	private Player mainPlayer;
 	private GridPane mapPane;
 	private Direction collisionDir;
+	private Stage myStage;
+	private Scene myScene;
 	
-	public Collisions (Player player, ImageView playerImage, GameMap map, GridPane pane) {
+	public Collisions (Player player, ImageView playerImage, GameMap map, GridPane pane, Stage stage, Scene scene) {
 		mainPlayerImage = playerImage;
 		mainMap = map;
 		mapPane = pane;
 		mainPlayer = player;
 		collisionDir = null;
+		myStage = stage;
+		myScene = scene;
 	}
 	
 	public void checkCollisions(Direction dir) {
@@ -43,11 +56,7 @@ public class Collisions {
 		for (Node node: mapPane.getChildren()) {
 			int i = GridPane.getRowIndex(node);
 			int j = GridPane.getColumnIndex(node);
-//			boolean eventCheck = false;
-//			if(mainMap.getCells()[i][j].getEvent() == null) eventCheck = true;
-//			System.out.println("Row = "+i+" Column = "+j+" Event = "+eventCheck + " Obstacle = "+mainMap.getCells()[i][j].isObstacle());
 			if(mainPlayerImage.intersects(node.getBoundsInParent()) && collisionDir == null) {
-				System.out.println("Row = "+i+" Column = "+j);
 				Cell cell = mainMap.getCells()[i][j];
 				if(cell.isObstacle()) {
 					collisionDir = dir;
@@ -56,9 +65,8 @@ public class Collisions {
 				if(event != null) {
 					if(event instanceof EventPokemon) {
 						System.out.println("Pokemon encountered ");
-						for(Instruction instruction: event.getInstructions()) {
-							//execute instructions
-						}
+						BattleScene battle = new BattleScene(720,480,Color.WHITE,mainPlayer,null,((EventPokemon) event).getPokemon(),myScene);
+						myStage.setScene(battle.getScene());
 					}
 					else if(event instanceof EventNPC) {
 						System.out.println("NPC encountered");
@@ -90,7 +98,9 @@ public class Collisions {
 		if (count == 0) {
 			collisionDir = null;
 		}
-
 	}
+
+	
 	
 }
+*/

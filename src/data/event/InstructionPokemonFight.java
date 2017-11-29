@@ -48,7 +48,8 @@ public class InstructionPokemonFight implements Instruction{
 	 * @see Instruction#execute
 	 */
 	public void execute(Object... parameters) {
-		// TODO call the API in Engine to begin a battle with pokemon
+		
+		
 		
 	}
 
