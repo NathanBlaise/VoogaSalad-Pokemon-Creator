@@ -1,20 +1,30 @@
 package engine.game;
 
 import authoring.ScreenDisplay;
+import data.event.Event;
+import data.event.EventNPC;
+import data.event.EventPokemon;
+import data.event.Instruction;
+import data.map.Cell;
 import data.map.DrawMap;
 import data.map.GameMap;
 import data.model.Model;
 import data.player.Player;
 import engine.Engine;
-import engine.movement.Collisions;
+import engine.battle.BattleScene;
+//import engine.movement.Collisions;
 import engine.movement.Direction;
 import engine.movement.Input;
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.stage.Stage;
 
 import static engine.movement.Direction.DOWN;
 import static engine.movement.Direction.UP;
@@ -41,17 +51,22 @@ public class GameScene extends ScreenDisplay {
 	private long t2, diff;
 	private long interval = 200000000;
 	
+	AnimationTimer gameLoop;
 	private GameMap mainMap;
+	private GridPane mapPane;
 	private Player mainPlayer;
 	private Model gameModel;
+	private Direction collisionDir;
 	private Input input;
+	//private Input input;
 	private ArrayList<String> inputList;
 	private ImageView playerImage;
 	private Canvas tileCanvas;
+	private boolean detectCollisions;
 	private GraphicsContext gc;
 
 	
-	public GameScene(int width, int height, Paint background, Engine engine) {
+	public GameScene(int width, int height, Paint background, Engine engine, Stage stage) {
 		super(width, height, background);
 		// Grabs map, player and all data in model from chosen database, saves in variables
 		mainMap = engine.getDatabase().getMap();
@@ -73,29 +88,29 @@ public class GameScene extends ScreenDisplay {
 		this.rootAdd(tileCanvas);
 		this.rootAdd(drawMap.getPane());
 		this.rootAdd(playerImage);
+		detectCollisions = true;
 		inputList = new ArrayList<String>();
-		
-		
-		
 		this.getScene().setOnKeyPressed(mainPlayer -> {
 			String code = mainPlayer.getCode().toString();
 			if (!inputList.contains(code)) // only add once... prevent duplicates
 				inputList.add(code);
 		});
-
+		
 		this.getScene().setOnKeyReleased(mainPlayer -> {
 			String code = mainPlayer.getCode().toString();
 			inputList.remove(code);
 		});
+		
+		collisionDir = null;
 
 //		input = new Input(this.getScene());
 //		input.addListeners();
-		Collisions collision = new Collisions(mainPlayer,playerImage,mainMap,drawMap.getPane());
+		//Collisions collision = new Collisions(mainPlayer,playerImage,mainMap,drawMap.getPane(),stage,this.getScene());
 		
 		/*
 		 * Animation Timer to handle player movement
 		 */
-		AnimationTimer gameLoop = new AnimationTimer() {
+		gameLoop = new AnimationTimer() {
 			@Override
 			public void handle(long now) {
 				of(Direction.cachedValues).filter(v -> inputList.contains(v.name())).findFirst().ifPresent(dir -> {
@@ -106,8 +121,7 @@ public class GameScene extends ScreenDisplay {
 					
 					t2 = System.nanoTime();
 					diff = t2 - t1; //check time elapsed, reset t1 if gets too late
-					
-					collision.checkCollisions(dir);
+					if(detectCollisions) checkCollisions(dir);
 					
 					if (diff < interval) {
 						playerImage.setImage(dir.image1.apply(mainPlayer));
@@ -141,13 +155,67 @@ public class GameScene extends ScreenDisplay {
 				//drawPlayer();
 			}	
 		};
-		gameLoop.start();
 		
+		startGameLoop();
 	}
 	
-	private void drawPlayer() {
-		playerImage.setX(mainPlayer.getPosX());
-		playerImage.setY(mainPlayer.getPosY());
+	public void startGameLoop() {
+		inputList.clear();
+		gameLoop.start();
+	}
+	
+	public void detectCollisions() {
+		detectCollisions = true;
+	}
+	
+	private void checkCollisions(Direction dir) {
+		//Cycle through cells on the map
+		for (Node node: mapPane.getChildren()) {
+			int i = GridPane.getRowIndex(node);
+			int j = GridPane.getColumnIndex(node);
+			if(playerImage.intersects(node.getBoundsInParent()) && collisionDir == null) {
+				Cell cell = mainMap.getCells()[i][j];
+				if(cell.isObstacle()) {
+					collisionDir = dir;
+				}
+				Event event = cell.getEvent();
+				if(event != null) {
+					if(event instanceof EventPokemon) {
+						System.out.println("Pokemon encountered ");
+						detectCollisions = false;
+						BattleScene battle = new BattleScene(720,480,Color.WHITE,mainPlayer,null,((EventPokemon) event).getPokemon(),this);
+						((Stage) this.getScene().getWindow()).setScene(battle.getScene());
+					}
+					else if(event instanceof EventNPC) {
+						System.out.println("NPC encountered");
+						for(Instruction instruction: event.getInstructions()) {
+							//execute instructions
+						}
+					}
+				}
+			}	
+		}
+		if(collisionDir != null) {
+			System.out.println(collisionDir);
+			if (collisionDir == DOWN) mainPlayer.downspeed = 0; 
+			if (collisionDir == UP ) mainPlayer.upspeed = 0;
+			if (collisionDir == LEFT) mainPlayer.leftspeed = 0;
+			if (collisionDir == RIGHT) mainPlayer.rightspeed = 0;
+		}
+		int count = 0;
+		for (Node node: mapPane.getChildren()) {
+			int i = GridPane.getRowIndex(node);
+			int j = GridPane.getColumnIndex(node);
+			if (playerImage.intersects(node.getBoundsInParent())) {
+				Cell cell = mainMap.getCells()[i][j];
+				if(cell.isObstacle()) {
+					count = 1;
+				}
+			}
+		}
+		if (count == 0) {
+			collisionDir = null;
+		}
 	}
 	
 

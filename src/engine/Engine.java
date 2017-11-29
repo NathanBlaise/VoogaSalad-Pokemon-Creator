@@ -38,11 +38,12 @@ public class Engine {
 	 * Launches main gameScene
 	 */
 	public void toMainGameScene() {
-		GameScene gameScene = new GameScene(GAME_SCREEN_WIDTH, GAME_SCREEN_HEIGHT, Color.WHITE, this);
+		GameScene gameScene = new GameScene(GAME_SCREEN_WIDTH, GAME_SCREEN_HEIGHT, Color.WHITE, this, myStage);
 		myStage.setScene(gameScene.getScene());
 		myStage.centerOnScreen();
 
 	}
+	
 
 	public Database getDatabase() {
 		return database;
