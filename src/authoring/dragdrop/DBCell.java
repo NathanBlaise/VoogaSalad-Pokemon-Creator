@@ -73,6 +73,9 @@ public class DBCell {
 	
 	public DBCell UpdatEvent(Event event){
 		cell.setEvent(event);
+		if(event instanceof EventNPC) {
+			cell.setObstacle(true);
+		}
 		app.updateCellList(this);
 		myGrid.add(setDragTarget(cell), col, row);
 		return this;
