@@ -52,25 +52,35 @@ public class BattleScene extends ScreenDisplay{
 	String backgroundImage="file:images/item_list_background.jpg";
 
 	Image battleBox = new Image("file:images/battle_box.png");
-
-	Image emeraldBattle1 = new Image("file:images/emerald_battle_1.png");
-//	Image emeraldBattle2 = new Image("file:images/emerald_battle_2.png");
+    
+	Image pokemonImage;
+	Image enemyImage;
+	
+	Image emeraldBattle2 = new Image("file:images/emerald_battle_2.png");
 //	Image emeraldBattle3 = new Image("file:images/emerald_battle_3.png");
 //	Image emeraldBattle4 = new Image("file:images/emerald_battle_4.png");
 	
 	String[] initialButtons = {"FIGHT","BAG","POKEMON","RUN"};
 	
-	private GraphicsContext gc;
+	private VBox vbox1;
+	private VBox vbox2;
+	public HBox hbox;
+	
+	GraphicsContext gc;
 	private Canvas canvas;
 	private Font f;
 	private Button[] buttonArr; //Contains all starter buttons (Fight, Bag, Pokemon & Run)
 	
+	private BattleFightOptions bfo;
+	private EnemyBattleFightOptions ebfo;
 	private Player mainPlayer;
 	private Pokemon activePokemon;
 	private NPC enemyTrainer;
 	private Pokemon enemyPokemon;
 	private ListView<String> listOfItems;
 	private ListView<String> listOfPokemons;
+	//an instance variable to show whose turn it is, 0 means player's turn to attack, 1 means NPC's turn.
+
 	
 	
 	private final int PLAYER_HOME_XPOS = 15;
@@ -101,13 +111,32 @@ public class BattleScene extends ScreenDisplay{
 		gc = canvas.getGraphicsContext2D();
 		this.rootAdd(canvas);
 		loadFont();
-		setUpScreen();
 		buttonInitialSetUp();
+		characterSetUp();
+		setUpScreen();
+	}
+	
+	/*
+	 * Set up images for player and NPC
+	 */
+	
+	private void characterSetUp() {
+//		String imagePathForEP=enemyPokemon.getCurrentImagePath();
+//		enemyImage=new Image(imagePathForEP);
+//		pokemonImage=new Image(activePokemon.getCurrentImagePath());
+		
+		
+		//hard code for now
+		enemyImage=new Image("file:images/pokemons/pikachu.png");
+		pokemonImage=new Image("file:images/pokemons/raichu.png");
+		
+		
 	}
 	
 	/*
 	 * May be used to utilize pokemon specific font
 	 */
+	
 	private void loadFont() {
 		try {
 			f = Font.loadFont(new FileInputStream(new File("./src/resources/pkmnem.ttf")), 30);
@@ -134,17 +163,34 @@ public class BattleScene extends ScreenDisplay{
 		runButtonPressed(button4);
 	}
 	
+	
+
+	
 	/*
 	 * //When fight button pressed, remove current buttons and replace with current pokemon's moves
 	 */
 	private void fightButtonPressed(Button button) {
 		button.setOnAction((event) -> { 
-			BattleFightOptions bfo = new BattleFightOptions(activePokemon,enemyPokemon);
-			for(Button b: buttonArr) {
-				this.rootRemove(b);
-			}
-			this.rootAdd(fourButtonLayout(bfo.getButtons()));
+		
+			this.rootRemove(hbox);
+			bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
+			ebfo=new EnemyBattleFightOptions(activePokemon,enemyPokemon,this);
+	
+			bfo.setUpScene();
+			
+			
 		});
+		
+		
+		
+	}
+	
+	public BattleFightOptions getMyBattleScene() {
+		return bfo;
+	}
+	
+	public EnemyBattleFightOptions getEnemyBattleScene() {
+		return ebfo;
 	}
 	
 	/*
@@ -152,11 +198,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void bagButtonPressed(Button button) {
 		button.setOnAction((event) -> {
-			//remove button is not working...
-			for(Button b: buttonArr) {
-				System.out.println(b.getText());
-				this.rootRemove(b);
-			}
+			
 			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
 			
 			//load list of pokemon
@@ -167,6 +209,8 @@ public class BattleScene extends ScreenDisplay{
 //			for (Item each:bags) {
 //				itemNames.add(each.getItemName());
 //			}
+			
+	
 			
 			//put itemNames in real code, but will hard code for now
 			itemNames.add("item1");
@@ -234,12 +278,12 @@ public class BattleScene extends ScreenDisplay{
 		});
 	}
 	
-	private HBox fourButtonLayout(Button[] buttons) {
-		VBox vbox1 = new VBox(15);
+	public HBox fourButtonLayout(Button[] buttons) {
+		vbox1 = new VBox(15);
 		vbox1.getChildren().addAll(buttons[0],buttons[2]);
-		VBox vbox2 = new VBox(15);
+		vbox2 = new VBox(15);
 		vbox2.getChildren().addAll(buttons[1],buttons[3]);
-		HBox hbox = new HBox(15);
+		hbox = new HBox(15);
 		hbox.getChildren().addAll(vbox1,vbox2);
 		hbox.setLayoutX(BUTTONS_XPOS);
 		hbox.setLayoutY(BUTTONS_YPOS);
@@ -254,9 +298,8 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
-		gc.drawImage(emeraldBattle1, 190, 300);
-		
-		
+		gc.drawImage(enemyImage, 400, 100);
+		gc.drawImage(pokemonImage,190 ,250);
 	}
 	
 	

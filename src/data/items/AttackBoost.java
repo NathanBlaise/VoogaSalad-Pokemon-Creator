@@ -5,22 +5,22 @@ import data.player.Player;
 
 /**
  * 
- * @author nathanlewis
- * Potion to increase HP by 200
+ * @author Mason Taylor
+ * Item that increases pokemon's base normal attack stat.
  */
 
-public class HyperPotion extends Item{
+public class AttackBoost extends Item{
 	
 	//Specifies name, price and image in the constructor
-	public HyperPotion(){
-		itemName = "Hyper Potion";
+	public AttackBoost(){
+		itemName = "Attack Boost";
 		itemPrice = 1200;
 	}
 	
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		int newHP = mine.getCurrentStat().getHP() + 200;
-		mine.getCurrentStat().setHP(newHP);
+		int newAttack = mine.getCurrentStat().getNormalAttack() + 1;
+		mine.getCurrentStat().setNormalAttack(newAttack);
 	}
 }

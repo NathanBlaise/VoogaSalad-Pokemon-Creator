@@ -87,6 +87,7 @@ DerivedData
 .gradle
 bin/
 tmp/
+src/resources/databases/
 *.tmp
 *.bak
 *.swp
