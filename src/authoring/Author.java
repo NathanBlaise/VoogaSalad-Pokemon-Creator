@@ -89,5 +89,10 @@ public class Author implements StageDelegate{
 	public void saveDatabase() {
 		DatabaseSaver.save(database, savePath);
 	}
+	
+	@Override
+	public Stage getStage(){
+		return myStage;
+	}
 
 }

@@ -80,4 +80,12 @@ public class BasicAuthorScreen extends ScreenDisplay{
 		return BUTTONY;
 	}
 	
+	protected Button getBackSceneButton(){
+		return BackScene;
+	}
+	
+	protected Button getGoSceneButton(){
+		return NextScene;
+	}
+	
 }

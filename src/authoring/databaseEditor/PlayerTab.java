@@ -53,7 +53,7 @@ public class PlayerTab{
 				refresh(player);
 				return null;
 			}			
-		});
+		}, "x coord");
 		grid.add(Xchanger, 0, 1);
 		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change X coordinates")), 0, 2);
 		HBox Ychanger = UIComponentFactory.intSlider(player.getPosY(), 0, YLength, new Callback<Integer, Integer>(){
@@ -63,7 +63,7 @@ public class PlayerTab{
 				refresh(player);
 				return null;
 			}			
-		});
+		}, "y coord");
 		grid.add(Ychanger, 0, 3);
 		return grid;
 	}

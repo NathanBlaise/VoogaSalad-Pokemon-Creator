@@ -23,6 +23,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 
+/**
+ * For editing the event
+ * @author cy122
+ *
+ */
 public final class EventInstructions{
 	
 	private ListView<String> listView;
@@ -40,7 +45,7 @@ public final class EventInstructions{
 			public void changed(ObservableValue<? extends String> observable,String oldValue, String newValue) {
 				// DO NOTHING
 			}   
-	    });
+	    }, "add new instruction", "remove the last instruction");
 		for(int i=0; i<eventNPC.getInstructions().size();i++){
 			Instruction temp = eventNPC.getInstructions().get(i);
 			String name = temp.getClass().getSimpleName();
@@ -52,7 +57,7 @@ public final class EventInstructions{
 			}
 			instructionMap.put(i, temp);
 		}
-		ContextMenu contextMenu = ListViewFactory.createClickMenu(listView, new ContextMenu()); 
+		ContextMenu contextMenu = ListViewFactory.createClickMenu(listView, new ContextMenu(), "add new instruction", "remove the last instruction"); 
 		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 	        @Override
 	        public void handle(MouseEvent event) {
