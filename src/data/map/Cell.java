@@ -3,6 +3,7 @@ package data.map;
 import java.io.Serializable;
 
 import data.event.Event;
+import javafx.geometry.Rectangle2D;
 
 /**
  * The Cell is the unit that forms that forms a map.
@@ -15,6 +16,7 @@ import data.event.Event;
 public class Cell implements Serializable{
 
 	private static final long serialVersionUID = -2980246764307592878L;
+	private final int CELL_SIZE = 48;
 	private String tilePath; /* the path of stile*/
 	private boolean openState; /* whether the user can edit the event on the cell*/
 	private boolean obstacle; /* if the obstacle is true, the user cannot go through the tile  */
@@ -92,6 +94,7 @@ public class Cell implements Serializable{
 		this.obstacle = obstacle;
 	}
 	
+	
 	/**
 	 * 
 	 * @return - the event included in the cell.
@@ -107,5 +110,10 @@ public class Cell implements Serializable{
 	public void setEvent(Event event) {
 		this.event = event;
 	}
+	
+//	public Rectangle2D getCellBoundary() {
+//		Rectangle2D boundary = new Rectangle2D(row*CELL_SIZE, col*CELL_SIZE,CELL_SIZE,CELL_SIZE);
+//		return boundary;
+//	}
 	
 }
