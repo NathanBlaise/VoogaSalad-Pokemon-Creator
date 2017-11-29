@@ -12,10 +12,12 @@ import data.items.Item;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.player.Player;
+import engine.game.GameScene;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
@@ -77,6 +79,7 @@ public class BattleScene extends ScreenDisplay{
 	private Pokemon activePokemon;
 	private NPC enemyTrainer;
 	private Pokemon enemyPokemon;
+	private GameScene gameScene;
 	private ListView<String> listOfItems;
 	private ListView<String> listOfPokemons;
 	//an instance variable to show whose turn it is, 0 means player's turn to attack, 1 means NPC's turn.
@@ -101,7 +104,7 @@ public class BattleScene extends ScreenDisplay{
 	 * @param trainer - the encountered trainer from the game (null if pokemon is encountered)
 	 * @param enemyPokemon - the encountered enemy pokemon (null if trainer is encountered)
 	 */
-	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon) {
+	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene) {
 		super(width, height, background);
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
@@ -109,6 +112,7 @@ public class BattleScene extends ScreenDisplay{
 		enemyPokemon = pokemon;
 		canvas = new Canvas(width,height);
 		gc = canvas.getGraphicsContext2D();
+		gameScene = scene;
 		this.rootAdd(canvas);
 		loadFont();
 		buttonInitialSetUp();
@@ -127,8 +131,8 @@ public class BattleScene extends ScreenDisplay{
 		
 		
 		//hard code for now
-		enemyImage=new Image("file:images/pokemons/pikachu.png");
-		pokemonImage=new Image("file:images/pokemons/raichu.png");
+		enemyImage=new Image("file:images/pokemon_sprites/2.gif_.gif");
+		pokemonImage=new Image("file:images/pokemon_back_sprites/1.png");
 		
 		
 	}
@@ -148,7 +152,7 @@ public class BattleScene extends ScreenDisplay{
 	/*
 	 * Set up four initial buttons to be used in battle and sets them to default.
 	 */
-	private void buttonInitialSetUp(){
+	protected void buttonInitialSetUp(){
 		//Create Fight,Bag, Pokemon and Run buttons, 
 		Button button1 = new Button(initialButtons[0]);
 		Button button2 = new Button(initialButtons[1]);
@@ -274,7 +278,9 @@ public class BattleScene extends ScreenDisplay{
 		button.setOnAction((event) -> {
 			//exit battle scene
 			Stage stage = (Stage) button.getScene().getWindow();
-		    stage.hide();
+		    stage.setScene(gameScene.getScene());
+		    gameScene.detectCollisions();
+		    gameScene.startGameLoop();
 		});
 	}
 	
@@ -298,8 +304,8 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
-		gc.drawImage(enemyImage, 400, 100);
-		gc.drawImage(pokemonImage,190 ,250);
+		gc.drawImage(enemyImage, 500, 60);
+		gc.drawImage(pokemonImage,100 ,193);
 	}
 	
 	

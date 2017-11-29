@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_144" class="java.beans.XMLDecoder">
+<java version="1.8.0_101" class="java.beans.XMLDecoder">
  <object class="data.Database">
   <void property="map">
    <object class="data.map.GameMap">
@@ -868,9 +868,6 @@
                  <void property="moves">
                   <void index="0">
                    <object class="data.model.moves.Move">
-                    <void property="PP">
-                     <int>40</int>
-                    </void>
                     <void property="action">
                      <object idref="MoveStatChange$10"/>
                     </void>
@@ -1824,7 +1821,12 @@
     </void>
     <void id="ArrayList2" property="pokemonSpecies">
      <void method="add">
-      <object class="tests.authoring.Specie1"/>
+      <object class="tests.authoring.Specie1" id="Specie10">
+       <void id="HashMap0" property="levelEvolutionImagePath"/>
+       <void id="HashMap1" property="levelExp"/>
+       <void id="HashMap2" property="levelMoves"/>
+       <void id="HashMap3" property="levelStats"/>
+      </object>
      </void>
      <void method="add">
       <object class="tests.authoring.Specie2"/>
@@ -1836,7 +1838,94 @@
    </object>
   </void>
   <void property="player">
-   <object class="data.player.Player"/>
+   <object class="data.player.Player" id="Player0">
+    <void property="pokemons">
+     <void index="0">
+      <object class="data.model.Pokemon" id="Pokemon1">
+       <void property="currentLevel">
+        <int>2</int>
+       </void>
+       <void property="currentStat">
+        <object class="data.model.PokemonStat">
+         <void property="HP">
+          <int>2</int>
+         </void>
+         <void property="maxHP">
+          <int>2</int>
+         </void>
+         <void property="normalAttack">
+          <int>3</int>
+         </void>
+         <void property="normalDefense">
+          <int>4</int>
+         </void>
+         <void property="specialAttack">
+          <int>5</int>
+         </void>
+         <void property="specialDefense">
+          <int>6</int>
+         </void>
+         <void property="speed">
+          <int>7</int>
+         </void>
+        </object>
+       </void>
+       <void property="elemental">
+        <string>Electric</string>
+       </void>
+       <void property="levelEvolutionImagePath">
+        <object idref="HashMap0"/>
+       </void>
+       <void property="levelExp">
+        <object idref="HashMap1"/>
+       </void>
+       <void property="levelMoves">
+        <object idref="HashMap2"/>
+       </void>
+       <void property="levelStats">
+        <object idref="HashMap3"/>
+       </void>
+       <void property="maxLevel">
+        <int>4</int>
+       </void>
+       <void property="moves">
+        <void index="0">
+         <object class="data.model.moves.Move">
+          <void property="elemental">
+           <string>Normal</string>
+          </void>
+          <void property="maxPP">
+           <int>40</int>
+          </void>
+          <void property="moveName">
+           <string>Growl</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.model.moves.Move">
+          <void property="elemental">
+           <string>Normal</string>
+          </void>
+          <void property="maxPP">
+           <int>30</int>
+          </void>
+          <void property="moveName">
+           <string>Quick Attack</string>
+          </void>
+         </object>
+        </void>
+       </void>
+       <void property="name">
+        <string>Don</string>
+       </void>
+       <void property="specieName">
+        <string>Pikachu</string>
+       </void>
+      </object>
+     </void>
+    </void>
+   </object>
   </void>
  </object>
 </java>
