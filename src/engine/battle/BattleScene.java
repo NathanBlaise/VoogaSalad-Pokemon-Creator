@@ -271,8 +271,6 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
 		gc.drawImage(emeraldBattle1, 190, 300);
-		
-		
 	}
 	
 	
