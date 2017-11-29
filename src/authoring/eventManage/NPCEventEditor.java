@@ -79,7 +79,16 @@ public class NPCEventEditor{
 				if(!(instruction instanceof InstructionNPCFight)){
 					instruction = new InstructionNPCFight(eventNPC.getNpc(), new Pokemon[InstructionNPCFight.getPokemonNum()]);
 				}
-				instructionPane.setCenter(new InstructionNPCFightEditor((InstructionNPCFight) instruction, pokemonSpecies, e).showEditor());
+				instructionPane.setCenter(new InstructionNPCFightEditor((InstructionNPCFight) instruction, pokemonSpecies, new Callback<Instruction, Integer>(){
+					@Override
+					public Integer call(Instruction param) {
+						instructionPane.autosize();
+						stage.sizeToScene();
+						return e.call(param);
+					}
+					
+				}).showEditor());
+				instructionPane.autosize();
 				stage.sizeToScene();
 				return null;
 			});

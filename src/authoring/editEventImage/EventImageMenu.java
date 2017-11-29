@@ -95,7 +95,7 @@ public class EventImageMenu extends TitledPane{
 			sourceImage.setOnDragDetected(new EventHandler <MouseEvent>() {
 				public void handle(MouseEvent event) {
 					/* drag was detected, start drag-and-drop gesture*/
-					System.out.println("onDragDetected");
+					//System.out.println("onDragDetected");
 
 					/* allow any transfer mode */
 					Dragboard db = sourceImage.startDragAndDrop(TransferMode.ANY);
@@ -137,7 +137,7 @@ public class EventImageMenu extends TitledPane{
 			subPane.setAlignment(Pos.BOTTOM_LEFT); 
 
 			totalPane.getChildren().add(subPane);
-			ImageView sourceImage = new ImageView(Path2Image.showImage(pokemon.getLevelEvolutionImagePath().get(1)));
+			ImageView sourceImage = Path2Image.scale(Path2Image.showImage(pokemon.getLevelEvolutionImagePath().get(1)),48,48,true);
 
 			totalPane.getChildren().add(sourceImage);
 			finalPane.getChildren().add(totalPane);
@@ -148,7 +148,7 @@ public class EventImageMenu extends TitledPane{
 			sourceImage.setOnDragDetected(new EventHandler <MouseEvent>() {
 				public void handle(MouseEvent event) {
 					/* drag was detected, start drag-and-drop gesture*/
-					System.out.println("onDragDetected");
+					//System.out.println("onDragDetected");
 
 					/* allow any transfer mode */
 					Dragboard db = sourceImage.startDragAndDrop(TransferMode.ANY);

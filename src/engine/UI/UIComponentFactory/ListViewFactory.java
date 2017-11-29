@@ -1,6 +1,8 @@
 package engine.UI.UIComponentFactory;
 
 import javafx.beans.value.ChangeListener;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.control.ContextMenu;
@@ -11,7 +13,7 @@ public class ListViewFactory {
 		ListView result = new ListView();
 		result.setEditable(true);
 		result.setCellFactory(choices); 
-		ContextMenu contextMenu = createClickMenu(result, rightClickContextMenu, add, remove);
+		ContextMenu contextMenu = createClickMenu(result, rightClickContextMenu, add, remove, h->{}, h->{});
 		result.setOnMouseClicked(e->{
 			if(e.getButton() == MouseButton.SECONDARY){
 				contextMenu.show(result, e.getScreenX(), e.getScreenY());
@@ -31,10 +33,10 @@ public class ListViewFactory {
 		}
 	}
 	
-	public static ContextMenu createClickMenu(ListView<String> result, ContextMenu clickContextMenu, String add, String remove){
+	public static ContextMenu createClickMenu(ListView<String> result, ContextMenu clickContextMenu, String add, String remove, EventHandler<ActionEvent> addHandler, EventHandler<ActionEvent> removeHandler){
 		ContextMenu contextMenu = new ContextMenu();
-		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(add, h -> {add(result);}));
-		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(remove, h -> {remove(result);}));
+		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(add, h -> {add(result); addHandler.handle(h);}));
+		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(remove, h -> {remove(result);removeHandler.handle(h);}));
 		contextMenu.getItems().addAll(clickContextMenu.getItems());
 		return contextMenu;
 	}
