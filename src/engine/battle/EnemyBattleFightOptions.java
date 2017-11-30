@@ -2,6 +2,7 @@ package engine.battle;
 
 import data.model.Pokemon;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -10,6 +11,7 @@ import javafx.scene.text.Text;
 public class EnemyBattleFightOptions extends BattleFightOptions {
 	private BattleFightOptions bfo;
 	private Button cancel=new Button("Got it, my turn");
+	private ImageView box;
 	
 	public EnemyBattleFightOptions(
 			Pokemon ap, Pokemon ep, BattleScene bs) {
@@ -47,7 +49,11 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 		
 		battleScene.rootAdd(hbox);
 		battleScene.rootAdd(this.getText(),400,100);
-		battleScene.gc.drawImage(battleScene.battleBox,0,0);
+		box=new ImageView(battleScene.battleBox);
+		battleScene.rootAdd(box);
+		box.setTranslateX(0);
+		box.setTranslateY(0);
+		
 		cancel.setOnAction((event) -> {
 			//move.move(activePokemon, enemyPokemon);
 			//Load hit animation, then change scene to enemy's move

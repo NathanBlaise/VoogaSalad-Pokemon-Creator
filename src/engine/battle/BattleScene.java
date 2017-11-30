@@ -66,7 +66,7 @@ public class BattleScene extends ScreenDisplay{
 	
 	private VBox vbox1;
 	private VBox vbox2;
-	public HBox hbox;
+	private HBox hbox;
 	
 	GraphicsContext gc;
 	private Canvas canvas;
@@ -179,11 +179,29 @@ public class BattleScene extends ScreenDisplay{
 			ebfo=new EnemyBattleFightOptions(activePokemon,enemyPokemon,this);
 	
 			bfo.setUpScene();
+			createEndButton();
+			
+			
 			
 			
 		});
 		
 		
+		
+	}
+	
+	private void createEndButton() {
+		Button end=new Button("End");
+		end.setTranslateX(100);
+		end.setTranslateY(200);
+		this.rootAdd(end);
+		end.setOnAction((event) -> {
+			this.rootRemove(bfo.getHBox());
+			this.rootRemove(bfo.getText());
+			this.rootRemove(ebfo.getText());	
+			this.rootRemove(ebfo.getHBox());
+			//this.rootAdd(hbox);
+		});
 		
 	}
 	
