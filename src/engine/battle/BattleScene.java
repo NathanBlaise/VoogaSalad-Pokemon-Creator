@@ -8,15 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import authoring.ScreenDisplay;
-import data.event.InstructionNPCFight;
 import data.items.Item;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.player.Player;
+import engine.game.GameScene;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
@@ -29,7 +30,6 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -77,8 +77,9 @@ public class BattleScene extends ScreenDisplay{
 	private EnemyBattleFightOptions ebfo;
 	private Player mainPlayer;
 	private Pokemon activePokemon;
-	private InstructionNPCFight enemyTrainer;
+	private NPC enemyTrainer;
 	private Pokemon enemyPokemon;
+	private GameScene gameScene;
 	private ListView<String> listOfItems;
 	private ListView<String> listOfPokemons;
 	//an instance variable to show whose turn it is, 0 means player's turn to attack, 1 means NPC's turn.
@@ -100,17 +101,18 @@ public class BattleScene extends ScreenDisplay{
 	 * @param height - height of scene
 	 * @param background - background color
 	 * @param player - the main player object from the game
-	 * @param testNPC - the encountered trainer from the game (null if pokemon is encountered)
+	 * @param trainer - the encountered trainer from the game (null if pokemon is encountered)
 	 * @param enemyPokemon - the encountered enemy pokemon (null if trainer is encountered)
 	 */
-	public BattleScene(int width, int height, Color background, Player player, InstructionNPCFight testNPC, Pokemon pokemon) {
+	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene) {
 		super(width, height, background);
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
-		enemyTrainer = testNPC;
+		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
 		canvas = new Canvas(width,height);
 		gc = canvas.getGraphicsContext2D();
+		gameScene = scene;
 		this.rootAdd(canvas);
 		loadFont();
 		buttonInitialSetUp();
@@ -129,8 +131,8 @@ public class BattleScene extends ScreenDisplay{
 		
 		
 		//hard code for now
-		enemyImage=new Image("file:images/pokemons/pikachu.png");
-		pokemonImage=new Image("file:images/pokemons/raichu.png");
+		enemyImage=new Image("file:images/pokemon_sprites/2.gif_.gif");
+		pokemonImage=new Image("file:images/pokemon_back_sprites/1.png");
 		
 		
 	}
@@ -150,7 +152,7 @@ public class BattleScene extends ScreenDisplay{
 	/*
 	 * Set up four initial buttons to be used in battle and sets them to default.
 	 */
-	private void buttonInitialSetUp(){
+	protected void buttonInitialSetUp(){
 		//Create Fight,Bag, Pokemon and Run buttons, 
 		Button button1 = new Button(initialButtons[0]);
 		Button button2 = new Button(initialButtons[1]);
@@ -222,25 +224,22 @@ public class BattleScene extends ScreenDisplay{
 			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
 			
 			//load list of pokemon
+		
 			
-			//Pokemon[] bags= mainPlayer.getPokemons();
+//			ArrayList<Item> bags= mainPlayer.getItems();
 			ArrayList<String> itemNames=new ArrayList<>();
-//			for (Pokemon each:bags) {
-//				itemNames.add(each.getName());
+//			for (Item each:bags) {
+//				itemNames.add(each.getItemName());
 //			}
 			
 	
 			
 			//put itemNames in real code, but will hard code for now
-			itemNames.add("bag1");
-			itemNames.add("bag2");
-			itemNames.add("bag3");
-			itemNames.add("bag4");
+			itemNames.add("item1");
+			itemNames.add("item2");
+			itemNames.add("item3");
+			
 			addListView(listOfItems,itemNames);
-	
-			
-		
-			
 			
 		});
 	}
@@ -271,24 +270,18 @@ public class BattleScene extends ScreenDisplay{
 			if (listOfItems!=null) {
 			    this.rootRemove(listOfItems);
 			}
-			
-			
-			
-
 			ArrayList<String> itemNames=new ArrayList<>();
-//			ArrayList<Item> bags= mainPlayer.getItems();
 //			for (Item each:bags) {
 //				itemNames.add(each.getItemName());
-//		}
-//			
+//			}
+			
 			//put itemNames in real code, but will hard code for now
-			itemNames.add("item1");
-			itemNames.add("item2");
-			itemNames.add("item3");
+			itemNames.add("pokemon1");
+			itemNames.add("pokemon2");
+			itemNames.add("pokemon3");
+			itemNames.add("pokemon4");
 			
-			addListView(listOfItems,itemNames);
-			
-			
+			addListView(listOfPokemons,itemNames);
 		
 			
 			
@@ -303,7 +296,9 @@ public class BattleScene extends ScreenDisplay{
 		button.setOnAction((event) -> {
 			//exit battle scene
 			Stage stage = (Stage) button.getScene().getWindow();
-		    stage.hide();
+		    stage.setScene(gameScene.getScene());
+		    gameScene.detectCollisions();
+		    gameScene.startGameLoop();
 		});
 	}
 	
@@ -327,10 +322,8 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
-		gc.drawImage(enemyImage, 400, 100);
-		gc.drawImage(pokemonImage,190 ,250);
-		
-		
+		gc.drawImage(enemyImage, 500, 60);
+		gc.drawImage(pokemonImage,100 ,193);
 	}
 	
 	

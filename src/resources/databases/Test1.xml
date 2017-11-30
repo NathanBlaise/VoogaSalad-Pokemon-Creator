@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_102" class="java.beans.XMLDecoder">
+<java version="1.8.0_101" class="java.beans.XMLDecoder">
  <object class="data.Database">
   <void property="map">
    <object class="data.map.GameMap">
@@ -327,188 +327,6 @@
         </void>
         <void index="1">
          <object class="data.map.Cell">
-          <void property="event">
-           <object class="data.event.EventPokemon" id="EventPokemon0">
-            <void property="imagePath">
-             <string>images/pokemon_sprites/2.gif</string>
-            </void>
-            <void id="ArrayList0" property="instructions">
-             <void method="add">
-              <object class="data.event.InstructionPokemonFight">
-               <void property="pokemon">
-                <object class="data.model.Pokemon" id="Pokemon0">
-                 <void property="currentLevel">
-                  <int>1</int>
-                 </void>
-                 <void property="currentStat">
-                  <object class="data.model.PokemonStat">
-                   <void property="HP">
-                    <int>1</int>
-                   </void>
-                   <void property="maxHP">
-                    <int>1</int>
-                   </void>
-                   <void property="normalAttack">
-                    <int>2</int>
-                   </void>
-                   <void property="normalDefense">
-                    <int>3</int>
-                   </void>
-                   <void property="specialAttack">
-                    <int>4</int>
-                   </void>
-                   <void property="specialDefense">
-                    <int>5</int>
-                   </void>
-                   <void property="speed">
-                    <int>6</int>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="elemental">
-                  <string>Ghost</string>
-                 </void>
-                 <void property="levelEvolutionImagePath">
-                  <object class="java.util.HashMap">
-                   <void method="put">
-                    <int>1</int>
-                    <string>images/pokemon_sprites/2.gif</string>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="levelExp">
-                  <object class="java.util.HashMap">
-                   <void method="put">
-                    <int>1</int>
-                    <double>1.0</double>
-                   </void>
-                   <void method="put">
-                    <int>2</int>
-                    <double>2.0</double>
-                   </void>
-                   <void method="put">
-                    <int>3</int>
-                    <double>3.0</double>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="levelMoves">
-                  <object class="java.util.HashMap">
-                   <void method="put">
-                    <int>1</int>
-                    <object class="data.model.moves.MoveDatabase.MoveGrowl"/>
-                   </void>
-                   <void method="put">
-                    <int>2</int>
-                    <object class="data.model.moves.MoveDatabase.MoveQuickAttack"/>
-                   </void>
-                   <void method="put">
-                    <int>3</int>
-                    <object class="data.model.moves.MoveDatabase.MoveTailWhip"/>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="levelStats">
-                  <object class="java.util.HashMap" id="HashMap0">
-                   <void method="put">
-                    <int>1</int>
-                    <object class="data.model.PokemonStat">
-                     <void property="HP">
-                      <int>1</int>
-                     </void>
-                     <void property="maxHP">
-                      <int>1</int>
-                     </void>
-                     <void property="normalAttack">
-                      <int>2</int>
-                     </void>
-                     <void property="normalDefense">
-                      <int>3</int>
-                     </void>
-                     <void property="specialAttack">
-                      <int>4</int>
-                     </void>
-                     <void property="specialDefense">
-                      <int>5</int>
-                     </void>
-                     <void property="speed">
-                      <int>6</int>
-                     </void>
-                    </object>
-                   </void>
-                   <void method="put">
-                    <int>2</int>
-                    <object class="data.model.PokemonStat">
-                     <void property="HP">
-                      <int>2</int>
-                     </void>
-                     <void property="maxHP">
-                      <int>2</int>
-                     </void>
-                     <void property="normalAttack">
-                      <int>3</int>
-                     </void>
-                     <void property="normalDefense">
-                      <int>4</int>
-                     </void>
-                     <void property="specialAttack">
-                      <int>5</int>
-                     </void>
-                     <void property="specialDefense">
-                      <int>6</int>
-                     </void>
-                     <void property="speed">
-                      <int>7</int>
-                     </void>
-                    </object>
-                   </void>
-                   <void method="put">
-                    <int>3</int>
-                    <object class="data.model.PokemonStat">
-                     <void property="HP">
-                      <int>3</int>
-                     </void>
-                     <void property="maxHP">
-                      <int>3</int>
-                     </void>
-                     <void property="normalAttack">
-                      <int>4</int>
-                     </void>
-                     <void property="normalDefense">
-                      <int>5</int>
-                     </void>
-                     <void property="specialAttack">
-                      <int>6</int>
-                     </void>
-                     <void property="specialDefense">
-                      <int>7</int>
-                     </void>
-                     <void property="speed">
-                      <int>8</int>
-                     </void>
-                    </object>
-                   </void>
-                  </object>
-                 </void>
-                 <void property="maxLevel">
-                  <int>3</int>
-                 </void>
-                 <void property="specieName">
-                  <string>Golumn</string>
-                 </void>
-                </object>
-               </void>
-              </object>
-             </void>
-            </void>
-            <void property="instructions">
-             <object idref="ArrayList0"/>
-            </void>
-            <void property="pokemon">
-             <object idref="Pokemon0"/>
-            </void>
-           </object>
-          </void>
           <void property="openState">
            <boolean>true</boolean>
           </void>
@@ -518,6 +336,16 @@
          </object>
         </void>
         <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
          <object class="data.map.Cell">
           <void property="event">
            <object class="data.event.EventNPC">
@@ -536,21 +364,14 @@
             </void>
            </object>
           </void>
+          <void property="obstacle">
+           <boolean>true</boolean>
+          </void>
           <void property="openState">
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
            <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="3">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/grass_tile.png</string>
           </void>
          </object>
         </void>
@@ -680,16 +501,190 @@
         </void>
         <void index="1">
          <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="4">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="5">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="6">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/grass_tile.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="7">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="8">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="9">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="10">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="11">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="12">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="13">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="14">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+       </array>
+      </void>
+      <void index="4">
+       <array class="data.map.Cell" length="15">
+        <void index="0">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="2">
+         <object class="data.map.Cell">
+          <void property="openState">
+           <boolean>true</boolean>
+          </void>
+          <void property="tilePath">
+           <string>images/reg_tile_scaled.png</string>
+          </void>
+         </object>
+        </void>
+        <void index="3">
+         <object class="data.map.Cell">
           <void property="event">
-           <object class="data.event.EventPokemon" id="EventPokemon1">
+           <object class="data.event.EventPokemon" id="EventPokemon0">
             <void property="imagePath">
              <string>images/pokemon_sprites/1.gif</string>
             </void>
-            <void id="ArrayList1" property="instructions">
+            <void id="ArrayList0" property="instructions">
              <void method="add">
               <object class="data.event.InstructionPokemonFight">
                <void property="pokemon">
-                <object class="data.model.Pokemon" id="Pokemon1">
+                <object class="data.model.Pokemon" id="Pokemon0">
                  <void property="currentLevel">
                   <int>1</int>
                  </void>
@@ -741,7 +736,9 @@
                   <object class="java.util.HashMap">
                    <void method="put">
                     <int>1</int>
-                    <object class="data.model.moves.MoveDatabase.MoveGrowl"/>
+                    <object class="data.model.moves.MoveDatabase.MoveGrowl" id="MoveGrowl0">
+                     <void id="MoveStatChange$10" property="action"/>
+                    </object>
                    </void>
                    <void method="put">
                     <int>2</int>
@@ -868,6 +865,27 @@
                  <void property="maxLevel">
                   <int>4</int>
                  </void>
+                 <void property="moves">
+                  <void index="0">
+                   <object class="data.model.moves.Move">
+                    <void property="action">
+                     <object idref="MoveStatChange$10"/>
+                    </void>
+                    <void property="elemental">
+                     <string>Normal</string>
+                    </void>
+                    <void property="maxPP">
+                     <int>40</int>
+                    </void>
+                    <void property="moveName">
+                     <string>Growl</string>
+                    </void>
+                   </object>
+                  </void>
+                 </void>
+                 <void property="name">
+                  <string>1</string>
+                 </void>
                  <void property="specieName">
                   <string>Pikachu</string>
                  </void>
@@ -877,10 +895,10 @@
              </void>
             </void>
             <void property="instructions">
-             <object idref="ArrayList1"/>
+             <object idref="ArrayList0"/>
             </void>
             <void property="pokemon">
-             <object idref="Pokemon1"/>
+             <object idref="Pokemon0"/>
             </void>
            </object>
           </void>
@@ -888,198 +906,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="2">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="3">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="4">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="5">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="6">
-         <object class="data.map.Cell">
-          <void property="event">
-           <object class="data.event.EventNPC">
-            <void property="imagePath">
-             <string>images/CaptainMap.png</string>
-            </void>
-            <void property="npc">
-             <object class="data.model.NPC">
-              <void property="imagePath">
-               <string>images/CaptainMap.png</string>
-              </void>
-              <void property="name">
-               <string>Caption Kirk</string>
-              </void>
-             </object>
-            </void>
-           </object>
-          </void>
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="7">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="8">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="9">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="10">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="11">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="12">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="13">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="14">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-       </array>
-      </void>
-      <void index="4">
-       <array class="data.map.Cell" length="15">
-        <void index="0">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="1">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="2">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
-          </void>
-         </object>
-        </void>
-        <void index="3">
-         <object class="data.map.Cell">
-          <void property="openState">
-           <boolean>true</boolean>
-          </void>
-          <void property="tilePath">
-           <string>images/grass_tile.png</string>
+           <string>images/flower_tile.png</string>
           </void>
          </object>
         </void>
@@ -1213,7 +1040,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/grass_tile.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -1233,7 +1060,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -1243,7 +1070,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/grass_tile.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -1263,29 +1090,12 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
         <void index="7">
          <object class="data.map.Cell">
-          <void property="event">
-           <object class="data.event.EventNPC">
-            <void property="imagePath">
-             <string>images/CaptainMap.png</string>
-            </void>
-            <void property="npc">
-             <object class="data.model.NPC">
-              <void property="imagePath">
-               <string>images/CaptainMap.png</string>
-              </void>
-              <void property="name">
-               <string>Caption Kirk</string>
-              </void>
-             </object>
-            </void>
-           </object>
-          </void>
           <void property="openState">
            <boolean>true</boolean>
           </void>
@@ -1394,7 +1204,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/pokemonCenter.png</string>
+           <string>images/reg_tile_scaled.png</string>
           </void>
          </object>
         </void>
@@ -1994,7 +1804,7 @@
   </void>
   <void property="model">
    <object class="data.model.Model" id="Model0">
-    <void id="ArrayList2" property="NPCs">
+    <void id="ArrayList1" property="NPCs">
      <void method="add">
       <object class="data.model.NPC">
        <void property="imagePath">
@@ -2007,30 +1817,23 @@
      </void>
     </void>
     <void property="NPCs">
-     <object idref="ArrayList2"/>
+     <object idref="ArrayList1"/>
     </void>
-    <void id="ArrayList3" property="pokemonSpecies">
+    <void id="ArrayList2" property="pokemonSpecies">
      <void method="add">
       <object class="tests.authoring.Specie1" id="Specie10">
-       <void id="HashMap1" property="levelEvolutionImagePath"/>
-       <void id="HashMap2" property="levelExp"/>
-       <void id="HashMap3" property="levelMoves"/>
-       <void id="HashMap4" property="levelStats"/>
+       <void id="HashMap0" property="levelEvolutionImagePath"/>
+       <void id="HashMap1" property="levelExp"/>
+       <void id="HashMap2" property="levelMoves"/>
+       <void id="HashMap3" property="levelStats"/>
       </object>
      </void>
      <void method="add">
-      <object class="tests.authoring.Specie2" id="Specie20">
-       <void property="levelStats">
-        <object idref="HashMap0"/>
-       </void>
-       <void id="HashMap5" property="levelEvolutionImagePath"/>
-       <void id="HashMap6" property="levelExp"/>
-       <void id="HashMap7" property="levelMoves"/>
-      </object>
+      <object class="tests.authoring.Specie2"/>
      </void>
     </void>
     <void property="pokemonSpecies">
-     <object idref="ArrayList3"/>
+     <object idref="ArrayList2"/>
     </void>
    </object>
   </void>
@@ -2038,335 +1841,89 @@
    <object class="data.player.Player" id="Player0">
     <void property="pokemons">
      <void index="0">
-      <object class="data.model.Pokemon">
+      <object class="data.model.Pokemon" id="Pokemon1">
        <void property="currentLevel">
-        <int>1</int>
+        <int>2</int>
        </void>
        <void property="currentStat">
         <object class="data.model.PokemonStat">
          <void property="HP">
-          <int>1</int>
-         </void>
-         <void property="maxHP">
-          <int>1</int>
-         </void>
-         <void property="normalAttack">
           <int>2</int>
          </void>
-         <void property="normalDefense">
+         <void property="maxHP">
+          <int>2</int>
+         </void>
+         <void property="normalAttack">
           <int>3</int>
          </void>
-         <void property="specialAttack">
+         <void property="normalDefense">
           <int>4</int>
          </void>
-         <void property="specialDefense">
+         <void property="specialAttack">
           <int>5</int>
          </void>
-         <void property="speed">
+         <void property="specialDefense">
           <int>6</int>
+         </void>
+         <void property="speed">
+          <int>7</int>
          </void>
         </object>
        </void>
        <void property="elemental">
-        <string>Ghost</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
-        <object idref="HashMap5"/>
-       </void>
-       <void property="levelExp">
-        <object idref="HashMap6"/>
-       </void>
-       <void property="levelMoves">
-        <object idref="HashMap7"/>
-       </void>
-       <void property="levelStats">
         <object idref="HashMap0"/>
        </void>
+       <void property="levelExp">
+        <object idref="HashMap1"/>
+       </void>
+       <void property="levelMoves">
+        <object idref="HashMap2"/>
+       </void>
+       <void property="levelStats">
+        <object idref="HashMap3"/>
+       </void>
        <void property="maxLevel">
-        <int>3</int>
+        <int>4</int>
+       </void>
+       <void property="moves">
+        <void index="0">
+         <object class="data.model.moves.Move">
+          <void property="elemental">
+           <string>Normal</string>
+          </void>
+          <void property="maxPP">
+           <int>40</int>
+          </void>
+          <void property="moveName">
+           <string>Growl</string>
+          </void>
+         </object>
+        </void>
+        <void index="1">
+         <object class="data.model.moves.Move">
+          <void property="elemental">
+           <string>Normal</string>
+          </void>
+          <void property="maxPP">
+           <int>30</int>
+          </void>
+          <void property="moveName">
+           <string>Quick Attack</string>
+          </void>
+         </object>
+        </void>
        </void>
        <void property="name">
-        <string>wellson</string>
-       </void>
-       <void property="specieName">
-        <string>Golumn</string>
-       </void>
-      </object>
-     </void>
-     <void index="1">
-      <object class="data.model.Pokemon">
-       <void property="currentLevel">
-        <int>1</int>
-       </void>
-       <void property="currentStat">
-        <object class="data.model.PokemonStat">
-         <void property="HP">
-          <int>1</int>
-         </void>
-         <void property="maxHP">
-          <int>1</int>
-         </void>
-         <void property="normalAttack">
-          <int>2</int>
-         </void>
-         <void property="normalDefense">
-          <int>3</int>
-         </void>
-         <void property="specialAttack">
-          <int>4</int>
-         </void>
-         <void property="specialDefense">
-          <int>5</int>
-         </void>
-         <void property="speed">
-          <int>6</int>
-         </void>
-        </object>
-       </void>
-       <void property="elemental">
-        <string>Electric</string>
-       </void>
-       <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
-       </void>
-       <void property="levelExp">
-        <object idref="HashMap2"/>
-       </void>
-       <void property="levelMoves">
-        <object idref="HashMap3"/>
-       </void>
-       <void property="levelStats">
-        <object idref="HashMap4"/>
-       </void>
-       <void property="maxLevel">
-        <int>4</int>
+        <string>Don</string>
        </void>
        <void property="specieName">
         <string>Pikachu</string>
        </void>
       </object>
      </void>
-     <void index="2">
-      <object class="data.model.Pokemon">
-       <void property="currentLevel">
-        <int>1</int>
-       </void>
-       <void property="currentStat">
-        <object class="data.model.PokemonStat">
-         <void property="HP">
-          <int>1</int>
-         </void>
-         <void property="maxHP">
-          <int>1</int>
-         </void>
-         <void property="normalAttack">
-          <int>2</int>
-         </void>
-         <void property="normalDefense">
-          <int>3</int>
-         </void>
-         <void property="specialAttack">
-          <int>4</int>
-         </void>
-         <void property="specialDefense">
-          <int>5</int>
-         </void>
-         <void property="speed">
-          <int>6</int>
-         </void>
-        </object>
-       </void>
-       <void property="elemental">
-        <string>Electric</string>
-       </void>
-       <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
-       </void>
-       <void property="levelExp">
-        <object idref="HashMap2"/>
-       </void>
-       <void property="levelMoves">
-        <object idref="HashMap3"/>
-       </void>
-       <void property="levelStats">
-        <object idref="HashMap4"/>
-       </void>
-       <void property="maxLevel">
-        <int>4</int>
-       </void>
-       <void property="specieName">
-        <string>Pikachu</string>
-       </void>
-      </object>
-     </void>
-     <void index="3">
-      <object class="data.model.Pokemon">
-       <void property="currentLevel">
-        <int>1</int>
-       </void>
-       <void property="currentStat">
-        <object class="data.model.PokemonStat">
-         <void property="HP">
-          <int>1</int>
-         </void>
-         <void property="maxHP">
-          <int>1</int>
-         </void>
-         <void property="normalAttack">
-          <int>2</int>
-         </void>
-         <void property="normalDefense">
-          <int>3</int>
-         </void>
-         <void property="specialAttack">
-          <int>4</int>
-         </void>
-         <void property="specialDefense">
-          <int>5</int>
-         </void>
-         <void property="speed">
-          <int>6</int>
-         </void>
-        </object>
-       </void>
-       <void property="elemental">
-        <string>Electric</string>
-       </void>
-       <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
-       </void>
-       <void property="levelExp">
-        <object idref="HashMap2"/>
-       </void>
-       <void property="levelMoves">
-        <object idref="HashMap3"/>
-       </void>
-       <void property="levelStats">
-        <object idref="HashMap4"/>
-       </void>
-       <void property="maxLevel">
-        <int>4</int>
-       </void>
-       <void property="specieName">
-        <string>Pikachu</string>
-       </void>
-      </object>
-     </void>
-     <void index="4">
-      <object class="data.model.Pokemon">
-       <void property="currentLevel">
-        <int>1</int>
-       </void>
-       <void property="currentStat">
-        <object class="data.model.PokemonStat">
-         <void property="HP">
-          <int>1</int>
-         </void>
-         <void property="maxHP">
-          <int>1</int>
-         </void>
-         <void property="normalAttack">
-          <int>2</int>
-         </void>
-         <void property="normalDefense">
-          <int>3</int>
-         </void>
-         <void property="specialAttack">
-          <int>4</int>
-         </void>
-         <void property="specialDefense">
-          <int>5</int>
-         </void>
-         <void property="speed">
-          <int>6</int>
-         </void>
-        </object>
-       </void>
-       <void property="elemental">
-        <string>Electric</string>
-       </void>
-       <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
-       </void>
-       <void property="levelExp">
-        <object idref="HashMap2"/>
-       </void>
-       <void property="levelMoves">
-        <object idref="HashMap3"/>
-       </void>
-       <void property="levelStats">
-        <object idref="HashMap4"/>
-       </void>
-       <void property="maxLevel">
-        <int>4</int>
-       </void>
-       <void property="specieName">
-        <string>Pikachu</string>
-       </void>
-      </object>
-     </void>
-     <void index="5">
-      <object class="data.model.Pokemon">
-       <void property="currentLevel">
-        <int>1</int>
-       </void>
-       <void property="currentStat">
-        <object class="data.model.PokemonStat">
-         <void property="HP">
-          <int>1</int>
-         </void>
-         <void property="maxHP">
-          <int>1</int>
-         </void>
-         <void property="normalAttack">
-          <int>2</int>
-         </void>
-         <void property="normalDefense">
-          <int>3</int>
-         </void>
-         <void property="specialAttack">
-          <int>4</int>
-         </void>
-         <void property="specialDefense">
-          <int>5</int>
-         </void>
-         <void property="speed">
-          <int>6</int>
-         </void>
-        </object>
-       </void>
-       <void property="elemental">
-        <string>Electric</string>
-       </void>
-       <void property="levelEvolutionImagePath">
-        <object idref="HashMap1"/>
-       </void>
-       <void property="levelExp">
-        <object idref="HashMap2"/>
-       </void>
-       <void property="levelMoves">
-        <object idref="HashMap3"/>
-       </void>
-       <void property="levelStats">
-        <object idref="HashMap4"/>
-       </void>
-       <void property="maxLevel">
-        <int>4</int>
-       </void>
-       <void property="name">
-        <string>wellson</string>
-       </void>
-       <void property="specieName">
-        <string>Pikachu</string>
-       </void>
-      </object>
-     </void>
-    </void>
-    <void property="posX">
-     <int>9</int>
-    </void>
-    <void property="posY">
-     <int>9</int>
     </void>
    </object>
   </void>

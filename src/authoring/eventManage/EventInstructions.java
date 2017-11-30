@@ -23,6 +23,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 
+/**
+ * For editing the event
+ * @author cy122
+ *
+ */
 public final class EventInstructions{
 	
 	private ListView<String> listView;
@@ -40,28 +45,41 @@ public final class EventInstructions{
 			public void changed(ObservableValue<? extends String> observable,String oldValue, String newValue) {
 				// DO NOTHING
 			}   
-	    });
+	    }, "add new instruction", "remove the last instruction");
 		for(int i=0; i<eventNPC.getInstructions().size();i++){
 			Instruction temp = eventNPC.getInstructions().get(i);
-			listView.getItems().add(temp.getClass().getSimpleName());
+			String name = temp.getClass().getSimpleName();
+			for(String key: instructions.keySet()){
+				if(instructions.get(key).equals(name)){
+					listView.getItems().add(key);
+					break;
+				}
+			}
 			instructionMap.put(i, temp);
 		}
-		ContextMenu contextMenu = ListViewFactory.createClickMenu(listView, new ContextMenu()); 
+		ContextMenu contextMenu = ListViewFactory.createClickMenu(listView, new ContextMenu(), "add new instruction", "remove the last instruction", h->{showSelectedInstruction(instructions, reactions);}, h->{}); 
+		
 		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 	        @Override
 	        public void handle(MouseEvent event) {
 				if(event.getButton() == MouseButton.SECONDARY){
 					contextMenu.show(listView, event.getScreenX(), event.getScreenY());
 				}else{
-					int index = listView.getSelectionModel().getSelectedIndex()<0?0:listView.getSelectionModel().getSelectedIndex();
-					if((index<listView.getItems().size())&&(instructionMap.keySet().contains(index))&&(instructionMap.get(index)!=null)){
-						String newItem = new String(listView.getItems().get(index));
-						if(instructions.containsKey(newItem))
-							reactions.get(instructions.get(newItem)).apply(instructionMap.get(index), new InstructionCell(instructionMap, index));
-					}
+					showSelectedInstruction(instructions, reactions);
 				}
 	        }
 	    });
+	}
+	
+	private void showSelectedInstruction(
+			Map<String, String> instructions,
+			Map<String, authoring.eventManage.Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions) {
+		int index = listView.getSelectionModel().getSelectedIndex()<0?0:listView.getSelectionModel().getSelectedIndex();
+		if((index<listView.getItems().size())&&(instructionMap.keySet().contains(index))&&(instructionMap.get(index)!=null)&&(!instructionMap.get(index).equals(""))){
+			String newItem = new String(listView.getItems().get(index));
+			if(instructions.containsKey(newItem))
+				reactions.get(instructions.get(newItem)).apply(instructionMap.get(index), new InstructionCell(instructionMap, index));
+		}
 	}
 
 	private Callback<ListView<String>, ListCell<String>> forListView(ObservableList<String> items, Map<String,String> instructions, Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions) {
@@ -69,8 +87,8 @@ public final class EventInstructions{
 			ComboBoxListCell<String> result = new ComboBoxListCell<String>(null, items);
 			instructionMap.put(listView.getItems().size(), null);
 			result.itemProperty().addListener((obs, oldItem, newItem) -> {
-				if (newItem != null) {
-					if((newItem!=null)&&(instructions.containsKey(newItem))){
+				if ((newItem != null)&&(!newItem.equals(""))) {
+					if((newItem!=null)&&(!newItem.equals(""))&&(instructions.containsKey(newItem))){
 						int index = listView.getSelectionModel().getSelectedIndex()<0?0:listView.getSelectionModel().getSelectedIndex();
 							reactions.get(instructions.get(newItem)).apply(instructionMap.get(index), new InstructionCell(instructionMap, index));
 					}
@@ -80,7 +98,7 @@ public final class EventInstructions{
 		        @Override
 		        public void handle(MouseEvent event) {
 					int index = listView.getSelectionModel().getSelectedIndex()<0?0:listView.getSelectionModel().getSelectedIndex();
-					if((index<listView.getItems().size())&&(instructionMap.keySet().contains(index))&&(instructionMap.get(index)!=null)){
+					if((index<listView.getItems().size())&&(instructionMap.keySet().contains(index))&&(instructionMap.get(index)!=null)&&(!instructionMap.get(index).equals(""))){
 						String newItem = new String(listView.getItems().get(index));
 						if(instructions.containsKey(newItem)){
 							reactions.get(instructions.get(newItem)).apply(instructionMap.get(index), new InstructionCell(instructionMap, index));
@@ -103,15 +121,19 @@ public final class EventInstructions{
 	private Button saveButton(){
 		Button result = new Button("save");
 		result.setOnMouseClicked(e->{
-			List<Instruction> instructionArray = new ArrayList<Instruction>();
-			for(int i=0;i<listView.getItems().size();i++){
-				if(instructionMap.containsKey(i)){
-					instructionArray.add(instructionMap.get(i));
-				}
-			}
-			saver.call(instructionArray);
+			save();
 		});
 		return result;
+	}
+
+	private void save() {
+		List<Instruction> instructionArray = new ArrayList<Instruction>();
+		for(int i=0;i<listView.getItems().size();i++){
+			if(instructionMap.containsKey(i)){
+				instructionArray.add(instructionMap.get(i));
+			}
+		}
+		saver.call(instructionArray);
 	}
 	
 	private class InstructionCell implements Callback<Instruction, Integer>{

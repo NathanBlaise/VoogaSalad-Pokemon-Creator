@@ -17,6 +17,11 @@ import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.Callback;
 
+/**
+ * For edit the dialogue instruction
+ * @author cy122
+ *
+ */
 public class InstructionNPCDialogueEditor implements InstructionEditor{
 	private ListView<String> dialogueList;
 	private Callback<Instruction, Integer> saver;
@@ -40,7 +45,7 @@ public class InstructionNPCDialogueEditor implements InstructionEditor{
 						npcDialogue.setDialogues(new ArrayList<String>(dialogueList.getItems()));
 						saver.call(npcDialogue);
 					}
-				});
+				}, "add new sentence", "delete the last sentence");
 		dialogueList.setEditable(true);
 		
 		dialogueList.setCellFactory(TextFieldListCell.forListView());		

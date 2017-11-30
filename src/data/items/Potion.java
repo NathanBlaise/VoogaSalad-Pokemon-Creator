@@ -5,22 +5,22 @@ import data.player.Player;
 
 /**
  * 
- * @author nathanlewis
- * Potion to increase HP by 200
+ * @author Mason Taylor
+ * Potion to increase HP by 50
  */
 
-public class HyperPotion extends Item{
+public class Potion extends Item{
 	
 	//Specifies name, price and image in the constructor
-	public HyperPotion(){
-		itemName = "Hyper Potion";
+	public Potion(){
+		itemName = "Potion";
 		itemPrice = 1200;
 	}
 	
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
-		int newHP = mine.getCurrentStat().getHP() + 200;
+		int newHP = mine.getCurrentStat().getHP() + 50;
 		mine.getCurrentStat().setHP(newHP);
 	}
 }

@@ -37,7 +37,7 @@ public class PlayerTab{
 		tab = new Tab(new PropertyReader("../resources/English.properties").getString("PlayerTabName"), root);
 		VBox vbox = new VBox();
 		vbox.getChildren().add(placeChooser(player.getPosX(), player.getPosY(), XLength, YLength));
-		vbox.getChildren().add(imageChooser(new PropertyReader(path).getString("UserImage")));
+		vbox.getChildren().add(imageChooser(new PropertyReader(path).getString("PlayerImageDown")));
 		root.setLeft(vbox);
 		root.setCenter(choosePokemon(player.getPokemons(), pokemonSpecies));
 		root.setPrefSize(1000, 600);
@@ -53,7 +53,7 @@ public class PlayerTab{
 				refresh(player);
 				return null;
 			}			
-		});
+		}, "x coord");
 		grid.add(Xchanger, 0, 1);
 		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change X coordinates")), 0, 2);
 		HBox Ychanger = UIComponentFactory.intSlider(player.getPosY(), 0, YLength, new Callback<Integer, Integer>(){
@@ -63,13 +63,13 @@ public class PlayerTab{
 				refresh(player);
 				return null;
 			}			
-		});
+		}, "y coord");
 		grid.add(Ychanger, 0, 3);
 		return grid;
 	}
 	
 	private Node choosePokemon(Pokemon[] pokemons, List<PokemonSpecie> pokemonSpecies){
-		return new InstructionNPCFightEditor(new InstructionNPCFight(new NPC(new PropertyReader(path).getString("UserImage"), "Jason"), pokemons), 
+		return new InstructionNPCFightEditor(new InstructionNPCFight(new NPC(new PropertyReader(path).getString("PlayerImageDown"), "Jason"), pokemons), 
 												pokemonSpecies, 
 												new Callback<Instruction, Integer>(){
 														@Override

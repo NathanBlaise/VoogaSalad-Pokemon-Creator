@@ -1,13 +1,6 @@
 package authoring.dragdrop;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-
-import javax.imageio.ImageIO;
 
 import authoring.eventManage.NPCEventEditor;
 import authoring.eventManage.PokemonEventEditor;
@@ -18,11 +11,10 @@ import data.map.Cell;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
+import engine.UI.Map2GridPane;
 import engine.UI.UIComponentFactory.UIComponentFactory;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.EventHandler;
 import javafx.scene.control.ContextMenu;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DataFormat;
 import javafx.scene.input.DragEvent;
@@ -73,6 +65,9 @@ public class DBCell {
 	
 	public DBCell UpdatEvent(Event event){
 		cell.setEvent(event);
+		if(event instanceof EventNPC) {
+			cell.setObstacle(true);
+		}
 		app.updateCellList(this);
 		myGrid.add(setDragTarget(cell), col, row);
 		return this;
@@ -108,7 +103,7 @@ public class DBCell {
 			overlap = cell.getEvent().getImagePath();
 		}
 		base = cell.getTilePath();
-		ImageView image = new ImageView(overlapImage(base, overlap));
+		ImageView image = new ImageView(new Map2GridPane().overlapImage(base, overlap));
 		//ImageView image = new ImageView(Path2Image.showImage(cell.getTilePath()));
 		image.setOnDragOver(new EventHandler <DragEvent>() {
 	         public void handle(DragEvent event) {
@@ -152,12 +147,12 @@ public class DBCell {
 	    image.setOnDragDropped(new EventHandler <DragEvent>() {
 	         public void handle(DragEvent event) {
 	             /* data dropped */
-	             System.out.println("onDragDropped");
+	             //System.out.println("onDragDropped");
 	             /* if there is an image data on dragboard, read it and use it */
 	             Dragboard db = event.getDragboard();
 	             boolean success = false;
 	             if (db.hasImage()) {
-	            	 	System.out.println(app.checkSurroundingCells(col, row) == true );
+	            	 	//System.out.println(app.checkSurroundingCells(col, row) == true );
 	                if (db.hasString()&& db.getString()=="Shop Tile"){
 	                		if (app.checkSurroundingCells(col, row) == true) {
 	                			myGrid.add(new ImageView(db.getImage()), col-1,row);
@@ -210,7 +205,8 @@ public class DBCell {
 
 
 	private void dealWithDrag(Dragboard db) {
-		if((db.getContent(DataFormat.lookupMimeType("Type"))!=null)&&(db.getContent(DataFormat.lookupMimeType("Type")).equals("Tile"))){
+		if((db.getContent(DataFormat.lookupMimeType("Type"))!=null)&&
+				(db.getContent(DataFormat.lookupMimeType("Type")).equals("Tile"))){
 			String tilePath = (String)db.getContent(DataFormat.lookupMimeType("Path"));
 			UpdateTileImage(tilePath);
 		}else if(db.getContent(DataFormat.lookupMimeType("Type")).equals("NPC")){
@@ -227,58 +223,7 @@ public class DBCell {
 	}
 
 
-	/**
-	 * https://stackoverflow.com/questions/2318020/merging-two-images
-	 * http://java-buddy.blogspot.com/2013/01/convert-javaawtimagebufferedimage-to.html
-	 * overlap one image on another image
-	 * @param base
-	 * @param overlap
-	 * @return
-	 */
-	private Image overlapImage(String base, String overlap){
-		if(overlap==null){
-			overlap = new String(base);
-		}
-		try {
-			BufferedImage image = ImageIO.read(new File(base));
-			BufferedImage overlay = ImageIO.read(new File(overlap));
-			image = resize(image,48,48);
-			overlay = resize(overlay,48,48);
-
-			// create the new image, canvas size is the max. of both image sizes
-			int w = Math.max(image.getWidth(), overlay.getWidth());
-			int h = Math.max(image.getHeight(), overlay.getHeight());
-			BufferedImage combined = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-
-			// paint both images, preserving the alpha channels
-			Graphics g = combined.getGraphics();
-			g.drawImage(image, 0, 0, null);
-			g.drawImage(overlay, 0, 0, null);
-
-			// Save as new image
-			Image result = SwingFXUtils.toFXImage(combined, null);
-			return result;
-		} catch (IOException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	/**
-	 * to resize the image
-	 * https://stackoverflow.com/questions/16497853/scale-a-bufferedimage-the-fastest-and-easiest-way
-	 * @param img - the orginal image
-	 * @param newW - target width
-	 * @param newH - target height
-	 * @return
-	 */
-	private static BufferedImage resize(BufferedImage img, int newW, int newH) { 
-	    BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
-	    Graphics2D g2d = dimg.createGraphics();
-	    g2d.drawImage(img, 0, 0, newW, newH, null);
-	    g2d.dispose();
-	    return dimg;
-	}  
+ 
 
 	public Cell getCell() {
 		return cell;
