@@ -78,8 +78,7 @@ public class DBMap implements cellDelegate {
 		for (int i = col-1; i <= col+1; i++) {
 			for (int j = row-1; j <= row+1; j++) {
 				if (i>=0 && j>= 0 && i < PANE_WIDTH_NUMBER && j < PANE_HEIGHT_NUMBER ) {
-					System.out.println("col: " + col +" row: " + row);
-					System.out.println("x cor: " + i +" y cor: " + j);
+				
 					if (myCell[j][i].getState() == false) {
 						System.out.println("x cor: " + i +" y cor: " + j + " openState: "+ myCell[j][i].getState());
 						return false;
@@ -120,6 +119,14 @@ public class DBMap implements cellDelegate {
 	@Override
 	public Database getDatabase() {
 		return database;
+	}
+
+
+
+	@Override
+	public DBCell[][] getCellList() {
+		return myCell;
+		
 	}
 
 	

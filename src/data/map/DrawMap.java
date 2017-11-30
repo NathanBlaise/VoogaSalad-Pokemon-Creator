@@ -8,6 +8,8 @@ import javax.imageio.ImageIO;
 
 import data.event.Event;
 import data.event.EventNPC;
+import data.event.EventPokemon;
+import engine.UI.Path2Image;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -48,7 +50,11 @@ public class DrawMap extends DrawPane{
 		for (int i = 0; i < myMap.getXlength(); i++) {
 			for (int j = 0; j < myMap.getYlength(); j++) {
 				if (myMap.getCells()[i][j].getEvent() instanceof EventNPC) {
-				myPane.add(getCellEventImage(myMap.getCells()[i][j]), j, i);
+					ImageView target = getCellEventImage(myMap.getCells()[i][j]);
+					target.setFitWidth(48);
+					myPane.add(target, j, i);
+				}else if(myMap.getCells()[i][j].getEvent() instanceof EventPokemon) {
+					myPane.add(new ImageView(Path2Image.showImage("images/default.png")), j, i);
 				}
 			}
 		}
@@ -95,11 +101,19 @@ public class DrawMap extends DrawPane{
 		for (int i = 0; i < myMap.getXlength(); i++) {
 			for (int j = 0; j < myMap.getYlength(); j++) {
 
-				gc.drawImage(createImageView(myMap.getCells()[i][j].getTilePath()).getImage(),  j * TILE_SIZE, i * TILE_SIZE);
-					
+				gc.drawImage(Path2Image.scale(Path2Image.showImage(myMap.getCells()[i][j].getTilePath()), 48,48, false).snapshot(null, null),  j * TILE_SIZE, i * TILE_SIZE);
+				String imagePath = myMap.getCells()[i][j].getTilePath();
+				
+					if (imagePath.toLowerCase().contains( "center" ) || imagePath.toLowerCase().contains("tree") ||  imagePath.toLowerCase().contains("house") ) {
+						
+						myMap.getCells()[i][j].setObstacle(true);
+						// add empty imageView
+						myPane.add(new ImageView(Path2Image.showImage("images/default.png")), j, i);
+			
 				}
 			}
 		}
+	}
 	
 	
 	

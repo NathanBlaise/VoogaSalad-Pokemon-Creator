@@ -36,8 +36,11 @@ import javafx.scene.text.Font;
 		final static String REGTILE_PATH = "images/reg_tile_scaled.png";
 		final static String GRASS_PATH = "images/grass_tile.png";
 		final static String FLOWER_PATH = "images/flower_tile.png";
-		final static String SHOP_PATH = "images/pokemonCenterScaled.png";
+		final static String SHOP_PATH = "images/shopCenterSplitedWithBackground/Center.jpg";
+		final static String HOUSE_PATH = "images/houseSplitedWithBackground/House.jpg";
 		final static String SPACE_PATH = "images/space.png";
+		final static String TREE_PATH = "images/tree.png";
+		final static String SPECIALTILEPATH = "images/grass_battle.png";
 		
 		
 		/*instance variable*/
@@ -77,6 +80,9 @@ import javafx.scene.text.Font;
 			imageMap.put(FLOWER_PATH, Path2Image.showImage(FLOWER_PATH));
 			imageMap.put(SHOP_PATH, Path2Image.scale(Path2Image.showImage(SHOP_PATH), 48,48, true).snapshot(null, null));
 			imageMap.put(SPACE_PATH, Path2Image.scale(Path2Image.showImage(SPACE_PATH), 48,48, true).snapshot(null, null));
+			imageMap.put(TREE_PATH, Path2Image.scale(Path2Image.showImage(TREE_PATH), 48,48, false).snapshot(null, null));
+			imageMap.put(HOUSE_PATH, Path2Image.scale(Path2Image.showImage(HOUSE_PATH), 48,48, true).snapshot(null, null));
+			//imageMap.put(SPECIALTILEPATH ,Path2Image.showImage(SPECIALTILEPATH));
 		}
 		
 		
@@ -125,15 +131,30 @@ import javafx.scene.text.Font;
 		             
 		             /* put a string on dragboard */
 		             ClipboardContent content = new ClipboardContent();
+		             
 		             // if you want to add a shop tile, it needs to resize to the original one
-		             if (entry.getKey().equals("Shop Tile")) {
-		            	 	Image source = new Image(SHOP_PATH);
+		             if (entry.getKey().equals(SHOP_PATH)) {
+		            	 	Image source = Path2Image.showImage(SHOP_PATH);
 		            	 	content.putImage(source);
 		            	 	content.putString(entry.getKey());
-		             } else {
+		            	 	content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "Shop Tile");
+		             } 
+		             
+		             else if (entry.getKey().equals(HOUSE_PATH)) {
+		            	 	Image source = Path2Image.showImage(HOUSE_PATH);
+		            	 	content.putImage(source);
+		            	 	content.putString(entry.getKey());
+		            	 	content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "Shop Tile");
+		             } 
+		             
+		             
+		             else {
 		            	 content.putImage(sourceImage.getImage());
+		            	 content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "Tile");
 		             }
-		             content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "Tile");
+		             
+		             
+	
 		             content.put(DataFormat.lookupMimeType("Path")==null?new DataFormat("Path"):DataFormat.lookupMimeType("Path"), entry.getKey());
 		             db.setContent(content);
 		             
