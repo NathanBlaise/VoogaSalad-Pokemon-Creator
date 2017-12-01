@@ -47,8 +47,8 @@ import java.util.ArrayList;
 
 public class GameScene extends ScreenDisplay {
 
-	private final int PLAYER_WIDTH = 40;
-	private final int PLAYER_HEIGHT = 60;
+	private final int PLAYER_WIDTH = 30;
+	private final int PLAYER_HEIGHT = 45;
 	private final Image image = new Image("file:images/emerald_down_rest.png");
 
 	private long t1 = System.nanoTime();
@@ -131,7 +131,7 @@ public class GameScene extends ScreenDisplay {
 
 
 
-
+	
 
 		gameLoop = new AnimationTimer() {
 			@Override
@@ -140,7 +140,7 @@ public class GameScene extends ScreenDisplay {
 				if (beginDialogue)  NPCDialogue.DialogueExecution();
 				
 				if (NPCDialogue.getBattleFlag() == true) 	{
-					System.out.println("yes");
+					
 					if (!npcHelper.isBattleStart) {
 					
 					myStage.setScene(npcHelper.getScene());
@@ -238,6 +238,7 @@ public class GameScene extends ScreenDisplay {
 				
 				if(event != null) {
 					Scene resultScene = null;
+					
 					if(event instanceof EventPokemon) {
 						System.out.println("Pokemon encountered ");
 						detectCollisions = false;

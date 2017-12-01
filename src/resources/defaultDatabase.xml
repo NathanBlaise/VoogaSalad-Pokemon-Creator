@@ -10778,7 +10778,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/1.gif</string>
+          <string>images/pokemon_sprites/1.gif</string>
          </void>
         </object>
        </void>
@@ -10808,7 +10808,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/2.gif</string>
+          <string>images/pokemon_sprites/2.gif</string>
          </void>
         </object>
        </void>
@@ -10838,7 +10838,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/3.gif</string>
+          <string>images/pokemon_sprites/3.gif</string>
          </void>
         </object>
        </void>
@@ -10868,7 +10868,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/4.gif</string>
+          <string>images/pokemon_sprites/4.gif</string>
          </void>
         </object>
        </void>
@@ -10898,7 +10898,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/5.gif</string>
+          <string>images/pokemon_sprites/5.gif</string>
          </void>
         </object>
        </void>
@@ -10928,7 +10928,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/6.gif</string>
+          <string>images/pokemon_sprites/6.gif</string>
          </void>
         </object>
        </void>
@@ -10958,7 +10958,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/7.gif</string>
+          <string>images/pokemon_sprites/7.gif</string>
          </void>
         </object>
        </void>
@@ -10988,7 +10988,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/8.gif</string>
+          <string>images/pokemon_sprites/8.gif</string>
          </void>
         </object>
        </void>
@@ -11018,7 +11018,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/9.gif</string>
+          <string>images/pokemon_sprites/9.gif</string>
          </void>
         </object>
        </void>
@@ -11048,7 +11048,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/10.gif</string>
+          <string>images/pokemon_sprites/10.gif</string>
          </void>
         </object>
        </void>
@@ -11078,7 +11078,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/11.gif</string>
+          <string>images/pokemon_sprites/11.gif</string>
          </void>
         </object>
        </void>
@@ -11108,7 +11108,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/12.gif</string>
+          <string>images/pokemon_sprites/12.gif</string>
          </void>
         </object>
        </void>
@@ -11138,7 +11138,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/13.gif</string>
+          <string>images/pokemon_sprites/13.gif</string>
          </void>
         </object>
        </void>
@@ -11168,7 +11168,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/14.gif</string>
+          <string>images/pokemon_sprites/14.gif</string>
          </void>
         </object>
        </void>
@@ -11198,7 +11198,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/15.gif</string>
+          <string>images/pokemon_sprites/15.gif</string>
          </void>
         </object>
        </void>
@@ -11228,7 +11228,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/16.gif</string>
+          <string>images/pokemon_sprites/16.gif</string>
          </void>
         </object>
        </void>
@@ -11258,7 +11258,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/17.gif</string>
+          <string>images/pokemon_sprites/17.gif</string>
          </void>
         </object>
        </void>
@@ -11288,7 +11288,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/18.gif</string>
+          <string>images/pokemon_sprites/18.gif</string>
          </void>
         </object>
        </void>
@@ -11318,7 +11318,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/19.gif</string>
+          <string>images/pokemon_sprites/19.gif</string>
          </void>
         </object>
        </void>
@@ -11348,7 +11348,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/20.gif</string>
+          <string>images/pokemon_sprites/20.gif</string>
          </void>
         </object>
        </void>
@@ -11378,7 +11378,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/21.gif</string>
+          <string>images/pokemon_sprites/21.gif</string>
          </void>
         </object>
        </void>
@@ -11408,7 +11408,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/22.gif</string>
+          <string>images/pokemon_sprites/22.gif</string>
          </void>
         </object>
        </void>
@@ -11438,7 +11438,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/23.gif</string>
+          <string>images/pokemon_sprites/23.gif</string>
          </void>
         </object>
        </void>
@@ -11468,7 +11468,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/24.gif</string>
+          <string>images/pokemon_sprites/24.gif</string>
          </void>
         </object>
        </void>
@@ -11498,7 +11498,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/25.gif</string>
+          <string>images/pokemon_sprites/25.gif</string>
          </void>
         </object>
        </void>
@@ -11528,7 +11528,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/26.gif</string>
+          <string>images/pokemon_sprites/26.gif</string>
          </void>
         </object>
        </void>
@@ -11558,7 +11558,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/27.gif</string>
+          <string>images/pokemon_sprites/27.gif</string>
          </void>
         </object>
        </void>
@@ -11588,7 +11588,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/28.gif</string>
+          <string>images/pokemon_sprites/28.gif</string>
          </void>
         </object>
        </void>
@@ -11618,7 +11618,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/29.gif</string>
+          <string>images/pokemon_sprites/29.gif</string>
          </void>
         </object>
        </void>
@@ -11648,7 +11648,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/30.gif</string>
+          <string>images/pokemon_sprites/30.gif</string>
          </void>
         </object>
        </void>
@@ -11678,7 +11678,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/31.gif</string>
+          <string>images/pokemon_sprites/31.gif</string>
          </void>
         </object>
        </void>
@@ -11708,7 +11708,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/32.gif</string>
+          <string>images/pokemon_sprites/32.gif</string>
          </void>
         </object>
        </void>
@@ -11738,7 +11738,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/33.gif</string>
+          <string>images/pokemon_sprites/33.gif</string>
          </void>
         </object>
        </void>
@@ -11768,7 +11768,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/34.gif</string>
+          <string>images/pokemon_sprites/34.gif</string>
          </void>
         </object>
        </void>
@@ -11798,7 +11798,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/35.gif</string>
+          <string>images/pokemon_sprites/35.gif</string>
          </void>
         </object>
        </void>
@@ -11828,7 +11828,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/36.gif</string>
+          <string>images/pokemon_sprites/36.gif</string>
          </void>
         </object>
        </void>
@@ -11858,7 +11858,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/37.gif</string>
+          <string>images/pokemon_sprites/37.gif</string>
          </void>
         </object>
        </void>
@@ -11888,7 +11888,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/38.gif</string>
+          <string>images/pokemon_sprites/38.gif</string>
          </void>
         </object>
        </void>
@@ -11918,7 +11918,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/39.gif</string>
+          <string>images/pokemon_sprites/39.gif</string>
          </void>
         </object>
        </void>
@@ -11948,7 +11948,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/40.gif</string>
+          <string>images/pokemon_sprites/40.gif</string>
          </void>
         </object>
        </void>
@@ -11978,7 +11978,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/41.gif</string>
+          <string>images/pokemon_sprites/41.gif</string>
          </void>
         </object>
        </void>
@@ -12008,7 +12008,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/42.gif</string>
+          <string>images/pokemon_sprites/42.gif</string>
          </void>
         </object>
        </void>
@@ -12038,7 +12038,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/43.gif</string>
+          <string>images/pokemon_sprites/43.gif</string>
          </void>
         </object>
        </void>
@@ -12068,7 +12068,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/44.gif</string>
+          <string>images/pokemon_sprites/44.gif</string>
          </void>
         </object>
        </void>
@@ -12098,7 +12098,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/45.gif</string>
+          <string>images/pokemon_sprites/45.gif</string>
          </void>
         </object>
        </void>
@@ -12128,7 +12128,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/46.gif</string>
+          <string>images/pokemon_sprites/46.gif</string>
          </void>
         </object>
        </void>
@@ -12158,7 +12158,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/47.gif</string>
+          <string>images/pokemon_sprites/47.gif</string>
          </void>
         </object>
        </void>
@@ -12188,7 +12188,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/48.gif</string>
+          <string>images/pokemon_sprites/48.gif</string>
          </void>
         </object>
        </void>
@@ -12218,7 +12218,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/49.gif</string>
+          <string>images/pokemon_sprites/49.gif</string>
          </void>
         </object>
        </void>
@@ -12248,7 +12248,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/50.gif</string>
+          <string>images/pokemon_sprites/50.gif</string>
          </void>
         </object>
        </void>
@@ -12278,7 +12278,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/51.gif</string>
+          <string>images/pokemon_sprites/51.gif</string>
          </void>
         </object>
        </void>
@@ -12308,7 +12308,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/52.gif</string>
+          <string>images/pokemon_sprites/52.gif</string>
          </void>
         </object>
        </void>
@@ -12338,7 +12338,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/53.gif</string>
+          <string>images/pokemon_sprites/53.gif</string>
          </void>
         </object>
        </void>
@@ -12368,7 +12368,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/54.gif</string>
+          <string>images/pokemon_sprites/54.gif</string>
          </void>
         </object>
        </void>
@@ -12398,7 +12398,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/55.gif</string>
+          <string>images/pokemon_sprites/55.gif</string>
          </void>
         </object>
        </void>
@@ -12428,7 +12428,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/56.gif</string>
+          <string>images/pokemon_sprites/56.gif</string>
          </void>
         </object>
        </void>
@@ -12458,7 +12458,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/57.gif</string>
+          <string>images/pokemon_sprites/57.gif</string>
          </void>
         </object>
        </void>
@@ -12488,7 +12488,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/58.gif</string>
+          <string>images/pokemon_sprites/58.gif</string>
          </void>
         </object>
        </void>
@@ -12518,7 +12518,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/59.gif</string>
+          <string>images/pokemon_sprites/59.gif</string>
          </void>
         </object>
        </void>
@@ -12548,7 +12548,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/60.gif</string>
+          <string>images/pokemon_sprites/60.gif</string>
          </void>
         </object>
        </void>
@@ -12578,7 +12578,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/61.gif</string>
+          <string>images/pokemon_sprites/61.gif</string>
          </void>
         </object>
        </void>
@@ -12608,7 +12608,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/62.gif</string>
+          <string>images/pokemon_sprites/62.gif</string>
          </void>
         </object>
        </void>
@@ -12638,7 +12638,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/63.gif</string>
+          <string>images/pokemon_sprites/63.gif</string>
          </void>
         </object>
        </void>
@@ -12668,7 +12668,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/64.gif</string>
+          <string>images/pokemon_sprites/64.gif</string>
          </void>
         </object>
        </void>
@@ -12698,7 +12698,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/65.gif</string>
+          <string>images/pokemon_sprites/65.gif</string>
          </void>
         </object>
        </void>
@@ -12728,7 +12728,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/66.gif</string>
+          <string>images/pokemon_sprites/66.gif</string>
          </void>
         </object>
        </void>
@@ -12758,7 +12758,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/67.gif</string>
+          <string>images/pokemon_sprites/67.gif</string>
          </void>
         </object>
        </void>
@@ -12788,7 +12788,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/68.gif</string>
+          <string>images/pokemon_sprites/68.gif</string>
          </void>
         </object>
        </void>
@@ -12818,7 +12818,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/69.gif</string>
+          <string>images/pokemon_sprites/69.gif</string>
          </void>
         </object>
        </void>
@@ -12848,7 +12848,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/70.gif</string>
+          <string>images/pokemon_sprites/70.gif</string>
          </void>
         </object>
        </void>
@@ -12878,7 +12878,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/71.gif</string>
+          <string>images/pokemon_sprites/71.gif</string>
          </void>
         </object>
        </void>
@@ -12908,7 +12908,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/72.gif</string>
+          <string>images/pokemon_sprites/72.gif</string>
          </void>
         </object>
        </void>
@@ -12938,7 +12938,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/73.gif</string>
+          <string>images/pokemon_sprites/73.gif</string>
          </void>
         </object>
        </void>
@@ -12968,7 +12968,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/74.gif</string>
+          <string>images/pokemon_sprites/74.gif</string>
          </void>
         </object>
        </void>
@@ -12998,7 +12998,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/75.gif</string>
+          <string>images/pokemon_sprites/75.gif</string>
          </void>
         </object>
        </void>
@@ -13028,7 +13028,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/76.gif</string>
+          <string>images/pokemon_sprites/76.gif</string>
          </void>
         </object>
        </void>
@@ -13058,7 +13058,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/77.gif</string>
+          <string>images/pokemon_sprites/77.gif</string>
          </void>
         </object>
        </void>
@@ -13088,7 +13088,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/78.gif</string>
+          <string>images/pokemon_sprites/78.gif</string>
          </void>
         </object>
        </void>
@@ -13118,7 +13118,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/79.gif</string>
+          <string>images/pokemon_sprites/79.gif</string>
          </void>
         </object>
        </void>
@@ -13148,7 +13148,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/80.gif</string>
+          <string>images/pokemon_sprites/80.gif</string>
          </void>
         </object>
        </void>
@@ -13178,7 +13178,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/81.gif</string>
+          <string>images/pokemon_sprites/81.gif</string>
          </void>
         </object>
        </void>
@@ -13208,7 +13208,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/82.gif</string>
+          <string>images/pokemon_sprites/82.gif</string>
          </void>
         </object>
        </void>
@@ -13238,7 +13238,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/83.gif</string>
+          <string>images/pokemon_sprites/83.gif</string>
          </void>
         </object>
        </void>
@@ -13268,7 +13268,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/84.gif</string>
+          <string>images/pokemon_sprites/84.gif</string>
          </void>
         </object>
        </void>
@@ -13298,7 +13298,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/85.gif</string>
+          <string>images/pokemon_sprites/85.gif</string>
          </void>
         </object>
        </void>
@@ -13328,7 +13328,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/86.gif</string>
+          <string>images/pokemon_sprites/86.gif</string>
          </void>
         </object>
        </void>
@@ -13358,7 +13358,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/87.gif</string>
+          <string>images/pokemon_sprites/87.gif</string>
          </void>
         </object>
        </void>
@@ -13388,7 +13388,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/88.gif</string>
+          <string>images/pokemon_sprites/88.gif</string>
          </void>
         </object>
        </void>
@@ -13418,7 +13418,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/89.gif</string>
+          <string>images/pokemon_sprites/89.gif</string>
          </void>
         </object>
        </void>
@@ -13448,7 +13448,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/90.gif</string>
+          <string>images/pokemon_sprites/90.gif</string>
          </void>
         </object>
        </void>
@@ -13478,7 +13478,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/91.gif</string>
+          <string>images/pokemon_sprites/91.gif</string>
          </void>
         </object>
        </void>
@@ -13508,7 +13508,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/92.gif</string>
+          <string>images/pokemon_sprites/92.gif</string>
          </void>
         </object>
        </void>
@@ -13538,7 +13538,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/93.gif</string>
+          <string>images/pokemon_sprites/93.gif</string>
          </void>
         </object>
        </void>
@@ -13568,7 +13568,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/94.gif</string>
+          <string>images/pokemon_sprites/94.gif</string>
          </void>
         </object>
        </void>
@@ -13598,7 +13598,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/95.gif</string>
+          <string>images/pokemon_sprites/95.gif</string>
          </void>
         </object>
        </void>
@@ -13628,7 +13628,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/96.gif</string>
+          <string>images/pokemon_sprites/96.gif</string>
          </void>
         </object>
        </void>
@@ -13658,7 +13658,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/97.gif</string>
+          <string>images/pokemon_sprites/97.gif</string>
          </void>
         </object>
        </void>
@@ -13688,7 +13688,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/98.gif</string>
+          <string>images/pokemon_sprites/98.gif</string>
          </void>
         </object>
        </void>
@@ -13718,7 +13718,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/99.gif</string>
+          <string>images/pokemon_sprites/99.gif</string>
          </void>
         </object>
        </void>
@@ -13748,7 +13748,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/100.gif</string>
+          <string>images/pokemon_sprites/100.gif</string>
          </void>
         </object>
        </void>
@@ -13778,7 +13778,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/101.gif</string>
+          <string>images/pokemon_sprites/101.gif</string>
          </void>
         </object>
        </void>
@@ -13808,7 +13808,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/102.gif</string>
+          <string>images/pokemon_sprites/102.gif</string>
          </void>
         </object>
        </void>
@@ -13838,7 +13838,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/103.gif</string>
+          <string>images/pokemon_sprites/103.gif</string>
          </void>
         </object>
        </void>
@@ -13868,7 +13868,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/104.gif</string>
+          <string>images/pokemon_sprites/104.gif</string>
          </void>
         </object>
        </void>
@@ -13898,7 +13898,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/105.gif</string>
+          <string>images/pokemon_sprites/105.gif</string>
          </void>
         </object>
        </void>
@@ -13928,7 +13928,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/106.gif</string>
+          <string>images/pokemon_sprites/106.gif</string>
          </void>
         </object>
        </void>
@@ -13958,7 +13958,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/107.gif</string>
+          <string>images/pokemon_sprites/107.gif</string>
          </void>
         </object>
        </void>
@@ -13988,7 +13988,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/108.gif</string>
+          <string>images/pokemon_sprites/108.gif</string>
          </void>
         </object>
        </void>
@@ -14018,7 +14018,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/109.gif</string>
+          <string>images/pokemon_sprites/109.gif</string>
          </void>
         </object>
        </void>
@@ -14048,7 +14048,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/110.gif</string>
+          <string>images/pokemon_sprites/110.gif</string>
          </void>
         </object>
        </void>
@@ -14078,7 +14078,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/111.gif</string>
+          <string>images/pokemon_sprites/111.gif</string>
          </void>
         </object>
        </void>
@@ -14108,7 +14108,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/112.gif</string>
+          <string>images/pokemon_sprites/112.gif</string>
          </void>
         </object>
        </void>
@@ -14138,7 +14138,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/113.gif</string>
+          <string>images/pokemon_sprites/113.gif</string>
          </void>
         </object>
        </void>
@@ -14168,7 +14168,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/114.gif</string>
+          <string>images/pokemon_sprites/114.gif</string>
          </void>
         </object>
        </void>
@@ -14198,7 +14198,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/115.gif</string>
+          <string>images/pokemon_sprites/115.gif</string>
          </void>
         </object>
        </void>
@@ -14228,7 +14228,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/116.gif</string>
+          <string>images/pokemon_sprites/116.gif</string>
          </void>
         </object>
        </void>
@@ -14258,7 +14258,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/117.gif</string>
+          <string>images/pokemon_sprites/117.gif</string>
          </void>
         </object>
        </void>
@@ -14288,7 +14288,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/118.gif</string>
+          <string>images/pokemon_sprites/118.gif</string>
          </void>
         </object>
        </void>
@@ -14318,7 +14318,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/119.gif</string>
+          <string>images/pokemon_sprites/119.gif</string>
          </void>
         </object>
        </void>
@@ -14348,7 +14348,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/120.gif</string>
+          <string>images/pokemon_sprites/120.gif</string>
          </void>
         </object>
        </void>
@@ -14378,7 +14378,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/121.gif</string>
+          <string>images/pokemon_sprites/121.gif</string>
          </void>
         </object>
        </void>
@@ -14408,7 +14408,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/122.gif</string>
+          <string>images/pokemon_sprites/122.gif</string>
          </void>
         </object>
        </void>
@@ -14438,7 +14438,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/123.gif</string>
+          <string>images/pokemon_sprites/123.gif</string>
          </void>
         </object>
        </void>
@@ -14468,7 +14468,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/124.gif</string>
+          <string>images/pokemon_sprites/124.gif</string>
          </void>
         </object>
        </void>
@@ -14498,7 +14498,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/125.gif</string>
+          <string>images/pokemon_sprites/125.gif</string>
          </void>
         </object>
        </void>
@@ -14528,7 +14528,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/126.gif</string>
+          <string>images/pokemon_sprites/126.gif</string>
          </void>
         </object>
        </void>
@@ -14558,7 +14558,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/127.gif</string>
+          <string>images/pokemon_sprites/127.gif</string>
          </void>
         </object>
        </void>
@@ -14588,7 +14588,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/128.gif</string>
+          <string>images/pokemon_sprites/128.gif</string>
          </void>
         </object>
        </void>
@@ -14618,7 +14618,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/129.gif</string>
+          <string>images/pokemon_sprites/129.gif</string>
          </void>
         </object>
        </void>
@@ -14648,7 +14648,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/130.gif</string>
+          <string>images/pokemon_sprites/130.gif</string>
          </void>
         </object>
        </void>
@@ -14678,7 +14678,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/131.gif</string>
+          <string>images/pokemon_sprites/131.gif</string>
          </void>
         </object>
        </void>
@@ -14708,7 +14708,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/132.gif</string>
+          <string>images/pokemon_sprites/132.gif</string>
          </void>
         </object>
        </void>
@@ -14738,7 +14738,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/133.gif</string>
+          <string>images/pokemon_sprites/133.gif</string>
          </void>
         </object>
        </void>
@@ -14768,7 +14768,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/134.gif</string>
+          <string>images/pokemon_sprites/134.gif</string>
          </void>
         </object>
        </void>
@@ -14798,7 +14798,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/135.gif</string>
+          <string>images/pokemon_sprites/135.gif</string>
          </void>
         </object>
        </void>
@@ -14828,7 +14828,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/136.gif</string>
+          <string>images/pokemon_sprites/136.gif</string>
          </void>
         </object>
        </void>
@@ -14858,7 +14858,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/137.gif</string>
+          <string>images/pokemon_sprites/137.gif</string>
          </void>
         </object>
        </void>
@@ -14888,7 +14888,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/138.gif</string>
+          <string>images/pokemon_sprites/138.gif</string>
          </void>
         </object>
        </void>
@@ -14918,7 +14918,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/139.gif</string>
+          <string>images/pokemon_sprites/139.gif</string>
          </void>
         </object>
        </void>
@@ -14948,7 +14948,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/140.gif</string>
+          <string>images/pokemon_sprites/140.gif</string>
          </void>
         </object>
        </void>
@@ -14978,7 +14978,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/141.gif</string>
+          <string>images/pokemon_sprites/141.gif</string>
          </void>
         </object>
        </void>
@@ -15008,7 +15008,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/142.gif</string>
+          <string>images/pokemon_sprites/142.gif</string>
          </void>
         </object>
        </void>
@@ -15038,7 +15038,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/143.gif</string>
+          <string>images/pokemon_sprites/143.gif</string>
          </void>
         </object>
        </void>
@@ -15068,7 +15068,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/144.gif</string>
+          <string>images/pokemon_sprites/144.gif</string>
          </void>
         </object>
        </void>
@@ -15098,7 +15098,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/145.gif</string>
+          <string>images/pokemon_sprites/145.gif</string>
          </void>
         </object>
        </void>
@@ -15128,7 +15128,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/146.gif</string>
+          <string>images/pokemon_sprites/146.gif</string>
          </void>
         </object>
        </void>
@@ -15158,7 +15158,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/147.gif</string>
+          <string>images/pokemon_sprites/147.gif</string>
          </void>
         </object>
        </void>
@@ -15188,7 +15188,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/148.gif</string>
+          <string>images/pokemon_sprites/148.gif</string>
          </void>
         </object>
        </void>
@@ -15218,7 +15218,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/149.gif</string>
+          <string>images/pokemon_sprites/149.gif</string>
          </void>
         </object>
        </void>
@@ -15248,7 +15248,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/150.gif</string>
+          <string>images/pokemon_sprites/150.gif</string>
          </void>
         </object>
        </void>
@@ -15278,7 +15278,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/151.gif</string>
+          <string>images/pokemon_sprites/151.gif</string>
          </void>
         </object>
        </void>
@@ -15308,7 +15308,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/152.gif</string>
+          <string>images/pokemon_sprites/152.gif</string>
          </void>
         </object>
        </void>
@@ -15338,7 +15338,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/153.gif</string>
+          <string>images/pokemon_sprites/153.gif</string>
          </void>
         </object>
        </void>
@@ -15368,7 +15368,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/154.gif</string>
+          <string>images/pokemon_sprites/154.gif</string>
          </void>
         </object>
        </void>
@@ -15398,7 +15398,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/155.gif</string>
+          <string>images/pokemon_sprites/155.gif</string>
          </void>
         </object>
        </void>
@@ -15428,7 +15428,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/156.gif</string>
+          <string>images/pokemon_sprites/156.gif</string>
          </void>
         </object>
        </void>
@@ -15458,7 +15458,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/157.gif</string>
+          <string>images/pokemon_sprites/157.gif</string>
          </void>
         </object>
        </void>
@@ -15488,7 +15488,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/158.gif</string>
+          <string>images/pokemon_sprites/158.gif</string>
          </void>
         </object>
        </void>
@@ -15518,7 +15518,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/159.gif</string>
+          <string>images/pokemon_sprites/159.gif</string>
          </void>
         </object>
        </void>
@@ -15548,7 +15548,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/160.gif</string>
+          <string>images/pokemon_sprites/160.gif</string>
          </void>
         </object>
        </void>
@@ -15578,7 +15578,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/161.gif</string>
+          <string>images/pokemon_sprites/161.gif</string>
          </void>
         </object>
        </void>
@@ -15608,7 +15608,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/162.gif</string>
+          <string>images/pokemon_sprites/162.gif</string>
          </void>
         </object>
        </void>
@@ -15638,7 +15638,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/163.gif</string>
+          <string>images/pokemon_sprites/163.gif</string>
          </void>
         </object>
        </void>
@@ -15668,7 +15668,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/164.gif</string>
+          <string>images/pokemon_sprites/164.gif</string>
          </void>
         </object>
        </void>
@@ -15698,7 +15698,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/165.gif</string>
+          <string>images/pokemon_sprites/165.gif</string>
          </void>
         </object>
        </void>
@@ -15728,7 +15728,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/166.gif</string>
+          <string>images/pokemon_sprites/166.gif</string>
          </void>
         </object>
        </void>
@@ -15758,7 +15758,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/167.gif</string>
+          <string>images/pokemon_sprites/167.gif</string>
          </void>
         </object>
        </void>
@@ -15788,7 +15788,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/168.gif</string>
+          <string>images/pokemon_sprites/168.gif</string>
          </void>
         </object>
        </void>
@@ -15818,7 +15818,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/169.gif</string>
+          <string>images/pokemon_sprites/169.gif</string>
          </void>
         </object>
        </void>
@@ -15848,7 +15848,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/170.gif</string>
+          <string>images/pokemon_sprites/170.gif</string>
          </void>
         </object>
        </void>
@@ -15878,7 +15878,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/171.gif</string>
+          <string>images/pokemon_sprites/171.gif</string>
          </void>
         </object>
        </void>
@@ -15908,7 +15908,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/172.gif</string>
+          <string>images/pokemon_sprites/172.gif</string>
          </void>
         </object>
        </void>
@@ -15938,7 +15938,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/173.gif</string>
+          <string>images/pokemon_sprites/173.gif</string>
          </void>
         </object>
        </void>
@@ -15968,7 +15968,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/174.gif</string>
+          <string>images/pokemon_sprites/174.gif</string>
          </void>
         </object>
        </void>
@@ -15998,7 +15998,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/175.gif</string>
+          <string>images/pokemon_sprites/175.gif</string>
          </void>
         </object>
        </void>
@@ -16028,7 +16028,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/176.gif</string>
+          <string>images/pokemon_sprites/176.gif</string>
          </void>
         </object>
        </void>
@@ -16058,7 +16058,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/177.gif</string>
+          <string>images/pokemon_sprites/177.gif</string>
          </void>
         </object>
        </void>
@@ -16088,7 +16088,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/178.gif</string>
+          <string>images/pokemon_sprites/178.gif</string>
          </void>
         </object>
        </void>
@@ -16118,7 +16118,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/179.gif</string>
+          <string>images/pokemon_sprites/179.gif</string>
          </void>
         </object>
        </void>
@@ -16148,7 +16148,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/180.gif</string>
+          <string>images/pokemon_sprites/180.gif</string>
          </void>
         </object>
        </void>
@@ -16178,7 +16178,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/181.gif</string>
+          <string>images/pokemon_sprites/181.gif</string>
          </void>
         </object>
        </void>
@@ -16208,7 +16208,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/182.gif</string>
+          <string>images/pokemon_sprites/182.gif</string>
          </void>
         </object>
        </void>
@@ -16238,7 +16238,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/183.gif</string>
+          <string>images/pokemon_sprites/183.gif</string>
          </void>
         </object>
        </void>
@@ -16268,7 +16268,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/184.gif</string>
+          <string>images/pokemon_sprites/184.gif</string>
          </void>
         </object>
        </void>
@@ -16298,7 +16298,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/185.gif</string>
+          <string>images/pokemon_sprites/185.gif</string>
          </void>
         </object>
        </void>
@@ -16328,7 +16328,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/186.gif</string>
+          <string>images/pokemon_sprites/186.gif</string>
          </void>
         </object>
        </void>
@@ -16358,7 +16358,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/187.gif</string>
+          <string>images/pokemon_sprites/187.gif</string>
          </void>
         </object>
        </void>
@@ -16388,7 +16388,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/188.gif</string>
+          <string>images/pokemon_sprites/188.gif</string>
          </void>
         </object>
        </void>
@@ -16418,7 +16418,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/189.gif</string>
+          <string>images/pokemon_sprites/189.gif</string>
          </void>
         </object>
        </void>
@@ -16448,7 +16448,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/190.gif</string>
+          <string>images/pokemon_sprites/190.gif</string>
          </void>
         </object>
        </void>
@@ -16478,7 +16478,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/191.gif</string>
+          <string>images/pokemon_sprites/191.gif</string>
          </void>
         </object>
        </void>
@@ -16508,7 +16508,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/192.gif</string>
+          <string>images/pokemon_sprites/192.gif</string>
          </void>
         </object>
        </void>
@@ -16538,7 +16538,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/193.gif</string>
+          <string>images/pokemon_sprites/193.gif</string>
          </void>
         </object>
        </void>
@@ -16568,7 +16568,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/194.gif</string>
+          <string>images/pokemon_sprites/194.gif</string>
          </void>
         </object>
        </void>
@@ -16598,7 +16598,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/195.gif</string>
+          <string>images/pokemon_sprites/195.gif</string>
          </void>
         </object>
        </void>
@@ -16628,7 +16628,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/196.gif</string>
+          <string>images/pokemon_sprites/196.gif</string>
          </void>
         </object>
        </void>
@@ -16658,7 +16658,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/197.gif</string>
+          <string>images/pokemon_sprites/197.gif</string>
          </void>
         </object>
        </void>
@@ -16688,7 +16688,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/198.gif</string>
+          <string>images/pokemon_sprites/198.gif</string>
          </void>
         </object>
        </void>
@@ -16718,7 +16718,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/199.gif</string>
+          <string>images/pokemon_sprites/199.gif</string>
          </void>
         </object>
        </void>
@@ -16748,7 +16748,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/200.gif</string>
+          <string>images/pokemon_sprites/200.gif</string>
          </void>
         </object>
        </void>
@@ -16778,7 +16778,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/201.gif</string>
+          <string>images/pokemon_sprites/201.gif</string>
          </void>
         </object>
        </void>
@@ -16808,7 +16808,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/202.gif</string>
+          <string>images/pokemon_sprites/202.gif</string>
          </void>
         </object>
        </void>
@@ -16838,7 +16838,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/203.gif</string>
+          <string>images/pokemon_sprites/203.gif</string>
          </void>
         </object>
        </void>
@@ -16868,7 +16868,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/204.gif</string>
+          <string>images/pokemon_sprites/204.gif</string>
          </void>
         </object>
        </void>
@@ -16898,7 +16898,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/205.gif</string>
+          <string>images/pokemon_sprites/205.gif</string>
          </void>
         </object>
        </void>
@@ -16928,7 +16928,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/206.gif</string>
+          <string>images/pokemon_sprites/206.gif</string>
          </void>
         </object>
        </void>
@@ -16958,7 +16958,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/207.gif</string>
+          <string>images/pokemon_sprites/207.gif</string>
          </void>
         </object>
        </void>
@@ -16988,7 +16988,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/208.gif</string>
+          <string>images/pokemon_sprites/208.gif</string>
          </void>
         </object>
        </void>
@@ -17018,7 +17018,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/209.gif</string>
+          <string>images/pokemon_sprites/209.gif</string>
          </void>
         </object>
        </void>
@@ -17048,7 +17048,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/210.gif</string>
+          <string>images/pokemon_sprites/210.gif</string>
          </void>
         </object>
        </void>
@@ -17078,7 +17078,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/211.gif</string>
+          <string>images/pokemon_sprites/211.gif</string>
          </void>
         </object>
        </void>
@@ -17108,7 +17108,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/212.gif</string>
+          <string>images/pokemon_sprites/212.gif</string>
          </void>
         </object>
        </void>
@@ -17138,7 +17138,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/213.gif</string>
+          <string>images/pokemon_sprites/213.gif</string>
          </void>
         </object>
        </void>
@@ -17168,7 +17168,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/214.gif</string>
+          <string>images/pokemon_sprites/214.gif</string>
          </void>
         </object>
        </void>
@@ -17198,7 +17198,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/215.gif</string>
+          <string>images/pokemon_sprites/215.gif</string>
          </void>
         </object>
        </void>
@@ -17228,7 +17228,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/216.gif</string>
+          <string>images/pokemon_sprites/216.gif</string>
          </void>
         </object>
        </void>
@@ -17258,7 +17258,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/217.gif</string>
+          <string>images/pokemon_sprites/217.gif</string>
          </void>
         </object>
        </void>
@@ -17288,7 +17288,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/218.gif</string>
+          <string>images/pokemon_sprites/218.gif</string>
          </void>
         </object>
        </void>
@@ -17318,7 +17318,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/219.gif</string>
+          <string>images/pokemon_sprites/219.gif</string>
          </void>
         </object>
        </void>
@@ -17348,7 +17348,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/220.gif</string>
+          <string>images/pokemon_sprites/220.gif</string>
          </void>
         </object>
        </void>
@@ -17378,7 +17378,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/221.gif</string>
+          <string>images/pokemon_sprites/221.gif</string>
          </void>
         </object>
        </void>
@@ -17408,7 +17408,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/222.gif</string>
+          <string>images/pokemon_sprites/222.gif</string>
          </void>
         </object>
        </void>
@@ -17438,7 +17438,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/223.gif</string>
+          <string>images/pokemon_sprites/223.gif</string>
          </void>
         </object>
        </void>
@@ -17468,7 +17468,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/224.gif</string>
+          <string>images/pokemon_sprites/224.gif</string>
          </void>
         </object>
        </void>
@@ -17498,7 +17498,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/225.gif</string>
+          <string>images/pokemon_sprites/225.gif</string>
          </void>
         </object>
        </void>
@@ -17528,7 +17528,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/226.gif</string>
+          <string>images/pokemon_sprites/226.gif</string>
          </void>
         </object>
        </void>
@@ -17558,7 +17558,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/227.gif</string>
+          <string>images/pokemon_sprites/227.gif</string>
          </void>
         </object>
        </void>
@@ -17588,7 +17588,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/228.gif</string>
+          <string>images/pokemon_sprites/228.gif</string>
          </void>
         </object>
        </void>
@@ -17618,7 +17618,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/229.gif</string>
+          <string>images/pokemon_sprites/229.gif</string>
          </void>
         </object>
        </void>
@@ -17648,7 +17648,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/230.gif</string>
+          <string>images/pokemon_sprites/230.gif</string>
          </void>
         </object>
        </void>
@@ -17678,7 +17678,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/231.gif</string>
+          <string>images/pokemon_sprites/231.gif</string>
          </void>
         </object>
        </void>
@@ -17708,7 +17708,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/232.gif</string>
+          <string>images/pokemon_sprites/232.gif</string>
          </void>
         </object>
        </void>
@@ -17738,7 +17738,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/233.gif</string>
+          <string>images/pokemon_sprites/233.gif</string>
          </void>
         </object>
        </void>
@@ -17768,7 +17768,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/234.gif</string>
+          <string>images/pokemon_sprites/234.gif</string>
          </void>
         </object>
        </void>
@@ -17798,7 +17798,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/235.gif</string>
+          <string>images/pokemon_sprites/235.gif</string>
          </void>
         </object>
        </void>
@@ -17828,7 +17828,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/236.gif</string>
+          <string>images/pokemon_sprites/236.gif</string>
          </void>
         </object>
        </void>
@@ -17858,7 +17858,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/237.gif</string>
+          <string>images/pokemon_sprites/237.gif</string>
          </void>
         </object>
        </void>
@@ -17888,7 +17888,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/238.gif</string>
+          <string>images/pokemon_sprites/238.gif</string>
          </void>
         </object>
        </void>
@@ -17918,7 +17918,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/239.gif</string>
+          <string>images/pokemon_sprites/239.gif</string>
          </void>
         </object>
        </void>
@@ -17948,7 +17948,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/240.gif</string>
+          <string>images/pokemon_sprites/240.gif</string>
          </void>
         </object>
        </void>
@@ -17978,7 +17978,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/241.gif</string>
+          <string>images/pokemon_sprites/241.gif</string>
          </void>
         </object>
        </void>
@@ -18008,7 +18008,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/242.gif</string>
+          <string>images/pokemon_sprites/242.gif</string>
          </void>
         </object>
        </void>
@@ -18038,7 +18038,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/243.gif</string>
+          <string>images/pokemon_sprites/243.gif</string>
          </void>
         </object>
        </void>
@@ -18068,7 +18068,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/244.gif</string>
+          <string>images/pokemon_sprites/244.gif</string>
          </void>
         </object>
        </void>
@@ -18098,7 +18098,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/245.gif</string>
+          <string>images/pokemon_sprites/245.gif</string>
          </void>
         </object>
        </void>
@@ -18128,7 +18128,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/246.gif</string>
+          <string>images/pokemon_sprites/246.gif</string>
          </void>
         </object>
        </void>
@@ -18158,7 +18158,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/247.gif</string>
+          <string>images/pokemon_sprites/247.gif</string>
          </void>
         </object>
        </void>
@@ -18188,7 +18188,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/248.gif</string>
+          <string>images/pokemon_sprites/248.gif</string>
          </void>
         </object>
        </void>
@@ -18218,7 +18218,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/249.gif</string>
+          <string>images/pokemon_sprites/249.gif</string>
          </void>
         </object>
        </void>
@@ -18248,7 +18248,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/250.gif</string>
+          <string>images/pokemon_sprites/250.gif</string>
          </void>
         </object>
        </void>
@@ -18278,7 +18278,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/251.gif</string>
+          <string>images/pokemon_sprites/251.gif</string>
          </void>
         </object>
        </void>
@@ -18308,7 +18308,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/252.gif</string>
+          <string>images/pokemon_sprites/252.gif</string>
          </void>
         </object>
        </void>
@@ -18338,7 +18338,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/253.gif</string>
+          <string>images/pokemon_sprites/253.gif</string>
          </void>
         </object>
        </void>
@@ -18368,7 +18368,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/254.gif</string>
+          <string>images/pokemon_sprites/254.gif</string>
          </void>
         </object>
        </void>
@@ -18398,7 +18398,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/255.gif</string>
+          <string>images/pokemon_sprites/255.gif</string>
          </void>
         </object>
        </void>
@@ -18428,7 +18428,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/256.gif</string>
+          <string>images/pokemon_sprites/256.gif</string>
          </void>
         </object>
        </void>
@@ -18458,7 +18458,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/257.gif</string>
+          <string>images/pokemon_sprites/257.gif</string>
          </void>
         </object>
        </void>
@@ -18488,7 +18488,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/258.gif</string>
+          <string>images/pokemon_sprites/258.gif</string>
          </void>
         </object>
        </void>
@@ -18518,7 +18518,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/259.gif</string>
+          <string>images/pokemon_sprites/259.gif</string>
          </void>
         </object>
        </void>
@@ -18548,7 +18548,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/260.gif</string>
+          <string>images/pokemon_sprites/260.gif</string>
          </void>
         </object>
        </void>
@@ -18578,7 +18578,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/261.gif</string>
+          <string>images/pokemon_sprites/261.gif</string>
          </void>
         </object>
        </void>
@@ -18608,7 +18608,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/262.gif</string>
+          <string>images/pokemon_sprites/262.gif</string>
          </void>
         </object>
        </void>
@@ -18638,7 +18638,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/263.gif</string>
+          <string>images/pokemon_sprites/263.gif</string>
          </void>
         </object>
        </void>
@@ -18668,7 +18668,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/264.gif</string>
+          <string>images/pokemon_sprites/264.gif</string>
          </void>
         </object>
        </void>
@@ -18698,7 +18698,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/265.gif</string>
+          <string>images/pokemon_sprites/265.gif</string>
          </void>
         </object>
        </void>
@@ -18728,7 +18728,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/266.gif</string>
+          <string>images/pokemon_sprites/266.gif</string>
          </void>
         </object>
        </void>
@@ -18758,7 +18758,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/267.gif</string>
+          <string>images/pokemon_sprites/267.gif</string>
          </void>
         </object>
        </void>
@@ -18788,7 +18788,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/268.gif</string>
+          <string>images/pokemon_sprites/268.gif</string>
          </void>
         </object>
        </void>
@@ -18818,7 +18818,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/269.gif</string>
+          <string>images/pokemon_sprites/269.gif</string>
          </void>
         </object>
        </void>
@@ -18848,7 +18848,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/270.gif</string>
+          <string>images/pokemon_sprites/270.gif</string>
          </void>
         </object>
        </void>
@@ -18878,7 +18878,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/271.gif</string>
+          <string>images/pokemon_sprites/271.gif</string>
          </void>
         </object>
        </void>
@@ -18908,7 +18908,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/272.gif</string>
+          <string>images/pokemon_sprites/272.gif</string>
          </void>
         </object>
        </void>
@@ -18938,7 +18938,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/273.gif</string>
+          <string>images/pokemon_sprites/273.gif</string>
          </void>
         </object>
        </void>
@@ -18968,7 +18968,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/274.gif</string>
+          <string>images/pokemon_sprites/274.gif</string>
          </void>
         </object>
        </void>
@@ -18998,7 +18998,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/275.gif</string>
+          <string>images/pokemon_sprites/275.gif</string>
          </void>
         </object>
        </void>
@@ -19028,7 +19028,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/276.gif</string>
+          <string>images/pokemon_sprites/276.gif</string>
          </void>
         </object>
        </void>
@@ -19058,7 +19058,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/277.gif</string>
+          <string>images/pokemon_sprites/277.gif</string>
          </void>
         </object>
        </void>
@@ -19088,7 +19088,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/278.gif</string>
+          <string>images/pokemon_sprites/278.gif</string>
          </void>
         </object>
        </void>
@@ -19118,7 +19118,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/279.gif</string>
+          <string>images/pokemon_sprites/279.gif</string>
          </void>
         </object>
        </void>
@@ -19148,7 +19148,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/280.gif</string>
+          <string>images/pokemon_sprites/280.gif</string>
          </void>
         </object>
        </void>
@@ -19178,7 +19178,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/281.gif</string>
+          <string>images/pokemon_sprites/281.gif</string>
          </void>
         </object>
        </void>
@@ -19208,7 +19208,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/282.gif</string>
+          <string>images/pokemon_sprites/282.gif</string>
          </void>
         </object>
        </void>
@@ -19238,7 +19238,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/283.gif</string>
+          <string>images/pokemon_sprites/283.gif</string>
          </void>
         </object>
        </void>
@@ -19268,7 +19268,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/284.gif</string>
+          <string>images/pokemon_sprites/284.gif</string>
          </void>
         </object>
        </void>
@@ -19298,7 +19298,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/285.gif</string>
+          <string>images/pokemon_sprites/285.gif</string>
          </void>
         </object>
        </void>
@@ -19328,7 +19328,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/286.gif</string>
+          <string>images/pokemon_sprites/286.gif</string>
          </void>
         </object>
        </void>
@@ -19358,7 +19358,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/287.gif</string>
+          <string>images/pokemon_sprites/287.gif</string>
          </void>
         </object>
        </void>
@@ -19388,7 +19388,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/288.gif</string>
+          <string>images/pokemon_sprites/288.gif</string>
          </void>
         </object>
        </void>
@@ -19418,7 +19418,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/289.gif</string>
+          <string>images/pokemon_sprites/289.gif</string>
          </void>
         </object>
        </void>
@@ -19448,7 +19448,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/290.gif</string>
+          <string>images/pokemon_sprites/290.gif</string>
          </void>
         </object>
        </void>
@@ -19478,7 +19478,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/291.gif</string>
+          <string>images/pokemon_sprites/291.gif</string>
          </void>
         </object>
        </void>
@@ -19508,7 +19508,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/292.gif</string>
+          <string>images/pokemon_sprites/292.gif</string>
          </void>
         </object>
        </void>
@@ -19538,7 +19538,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/293.gif</string>
+          <string>images/pokemon_sprites/293.gif</string>
          </void>
         </object>
        </void>
@@ -19568,7 +19568,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/294.gif</string>
+          <string>images/pokemon_sprites/294.gif</string>
          </void>
         </object>
        </void>
@@ -19598,7 +19598,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/295.gif</string>
+          <string>images/pokemon_sprites/295.gif</string>
          </void>
         </object>
        </void>
@@ -19628,7 +19628,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/296.gif</string>
+          <string>images/pokemon_sprites/296.gif</string>
          </void>
         </object>
        </void>
@@ -19658,7 +19658,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/297.gif</string>
+          <string>images/pokemon_sprites/297.gif</string>
          </void>
         </object>
        </void>
@@ -19688,7 +19688,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/298.gif</string>
+          <string>images/pokemon_sprites/298.gif</string>
          </void>
         </object>
        </void>
@@ -19718,7 +19718,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/299.gif</string>
+          <string>images/pokemon_sprites/299.gif</string>
          </void>
         </object>
        </void>
@@ -19748,7 +19748,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/300.gif</string>
+          <string>images/pokemon_sprites/300.gif</string>
          </void>
         </object>
        </void>
@@ -19778,7 +19778,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/301.gif</string>
+          <string>images/pokemon_sprites/301.gif</string>
          </void>
         </object>
        </void>
@@ -19808,7 +19808,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/302.gif</string>
+          <string>images/pokemon_sprites/302.gif</string>
          </void>
         </object>
        </void>
@@ -19838,7 +19838,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/303.gif</string>
+          <string>images/pokemon_sprites/303.gif</string>
          </void>
         </object>
        </void>
@@ -19868,7 +19868,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/304.gif</string>
+          <string>images/pokemon_sprites/304.gif</string>
          </void>
         </object>
        </void>
@@ -19898,7 +19898,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/305.gif</string>
+          <string>images/pokemon_sprites/305.gif</string>
          </void>
         </object>
        </void>
@@ -19928,7 +19928,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/306.gif</string>
+          <string>images/pokemon_sprites/306.gif</string>
          </void>
         </object>
        </void>
@@ -19958,7 +19958,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/307.gif</string>
+          <string>images/pokemon_sprites/307.gif</string>
          </void>
         </object>
        </void>
@@ -19988,7 +19988,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/308.gif</string>
+          <string>images/pokemon_sprites/308.gif</string>
          </void>
         </object>
        </void>
@@ -20018,7 +20018,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/309.gif</string>
+          <string>images/pokemon_sprites/309.gif</string>
          </void>
         </object>
        </void>
@@ -20048,7 +20048,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/310.gif</string>
+          <string>images/pokemon_sprites/310.gif</string>
          </void>
         </object>
        </void>
@@ -20078,7 +20078,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/311.gif</string>
+          <string>images/pokemon_sprites/311.gif</string>
          </void>
         </object>
        </void>
@@ -20108,7 +20108,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/312.gif</string>
+          <string>images/pokemon_sprites/312.gif</string>
          </void>
         </object>
        </void>
@@ -20138,7 +20138,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/313.gif</string>
+          <string>images/pokemon_sprites/313.gif</string>
          </void>
         </object>
        </void>
@@ -20168,7 +20168,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/314.gif</string>
+          <string>images/pokemon_sprites/314.gif</string>
          </void>
         </object>
        </void>
@@ -20198,7 +20198,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/315.gif</string>
+          <string>images/pokemon_sprites/315.gif</string>
          </void>
         </object>
        </void>
@@ -20228,7 +20228,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/316.gif</string>
+          <string>images/pokemon_sprites/316.gif</string>
          </void>
         </object>
        </void>
@@ -20258,7 +20258,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/317.gif</string>
+          <string>images/pokemon_sprites/317.gif</string>
          </void>
         </object>
        </void>
@@ -20288,7 +20288,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/318.gif</string>
+          <string>images/pokemon_sprites/318.gif</string>
          </void>
         </object>
        </void>
@@ -20318,7 +20318,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/319.gif</string>
+          <string>images/pokemon_sprites/319.gif</string>
          </void>
         </object>
        </void>
@@ -20348,7 +20348,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/320.gif</string>
+          <string>images/pokemon_sprites/320.gif</string>
          </void>
         </object>
        </void>
@@ -20378,7 +20378,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/321.gif</string>
+          <string>images/pokemon_sprites/321.gif</string>
          </void>
         </object>
        </void>
@@ -20408,7 +20408,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/322.gif</string>
+          <string>images/pokemon_sprites/322.gif</string>
          </void>
         </object>
        </void>
@@ -20438,7 +20438,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/323.gif</string>
+          <string>images/pokemon_sprites/323.gif</string>
          </void>
         </object>
        </void>
@@ -20468,7 +20468,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/324.gif</string>
+          <string>images/pokemon_sprites/324.gif</string>
          </void>
         </object>
        </void>
@@ -20498,7 +20498,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/325.gif</string>
+          <string>images/pokemon_sprites/325.gif</string>
          </void>
         </object>
        </void>
@@ -20528,7 +20528,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/326.gif</string>
+          <string>images/pokemon_sprites/326.gif</string>
          </void>
         </object>
        </void>
@@ -20558,7 +20558,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/327.gif</string>
+          <string>images/pokemon_sprites/327.gif</string>
          </void>
         </object>
        </void>
@@ -20588,7 +20588,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/328.gif</string>
+          <string>images/pokemon_sprites/328.gif</string>
          </void>
         </object>
        </void>
@@ -20618,7 +20618,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/329.gif</string>
+          <string>images/pokemon_sprites/329.gif</string>
          </void>
         </object>
        </void>
@@ -20648,7 +20648,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/330.gif</string>
+          <string>images/pokemon_sprites/330.gif</string>
          </void>
         </object>
        </void>
@@ -20678,7 +20678,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/331.gif</string>
+          <string>images/pokemon_sprites/331.gif</string>
          </void>
         </object>
        </void>
@@ -20708,7 +20708,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/332.gif</string>
+          <string>images/pokemon_sprites/332.gif</string>
          </void>
         </object>
        </void>
@@ -20738,7 +20738,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/333.gif</string>
+          <string>images/pokemon_sprites/333.gif</string>
          </void>
         </object>
        </void>
@@ -20768,7 +20768,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/334.gif</string>
+          <string>images/pokemon_sprites/334.gif</string>
          </void>
         </object>
        </void>
@@ -20798,7 +20798,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/335.gif</string>
+          <string>images/pokemon_sprites/335.gif</string>
          </void>
         </object>
        </void>
@@ -20828,7 +20828,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/336.gif</string>
+          <string>images/pokemon_sprites/336.gif</string>
          </void>
         </object>
        </void>
@@ -20858,7 +20858,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/337.gif</string>
+          <string>images/pokemon_sprites/337.gif</string>
          </void>
         </object>
        </void>
@@ -20888,7 +20888,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/338.gif</string>
+          <string>images/pokemon_sprites/338.gif</string>
          </void>
         </object>
        </void>
@@ -20918,7 +20918,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/339.gif</string>
+          <string>images/pokemon_sprites/339.gif</string>
          </void>
         </object>
        </void>
@@ -20948,7 +20948,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/340.gif</string>
+          <string>images/pokemon_sprites/340.gif</string>
          </void>
         </object>
        </void>
@@ -20978,7 +20978,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/341.gif</string>
+          <string>images/pokemon_sprites/341.gif</string>
          </void>
         </object>
        </void>
@@ -21008,7 +21008,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/342.gif</string>
+          <string>images/pokemon_sprites/342.gif</string>
          </void>
         </object>
        </void>
@@ -21038,7 +21038,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/343.gif</string>
+          <string>images/pokemon_sprites/343.gif</string>
          </void>
         </object>
        </void>
@@ -21068,7 +21068,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/344.gif</string>
+          <string>images/pokemon_sprites/344.gif</string>
          </void>
         </object>
        </void>
@@ -21098,7 +21098,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/345.gif</string>
+          <string>images/pokemon_sprites/345.gif</string>
          </void>
         </object>
        </void>
@@ -21128,7 +21128,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/346.gif</string>
+          <string>images/pokemon_sprites/346.gif</string>
          </void>
         </object>
        </void>
@@ -21158,7 +21158,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/347.gif</string>
+          <string>images/pokemon_sprites/347.gif</string>
          </void>
         </object>
        </void>
@@ -21188,7 +21188,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/348.gif</string>
+          <string>images/pokemon_sprites/348.gif</string>
          </void>
         </object>
        </void>
@@ -21218,7 +21218,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/349.gif</string>
+          <string>images/pokemon_sprites/349.gif</string>
          </void>
         </object>
        </void>
@@ -21248,7 +21248,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/350.gif</string>
+          <string>images/pokemon_sprites/350.gif</string>
          </void>
         </object>
        </void>
@@ -21278,7 +21278,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/351.gif</string>
+          <string>images/pokemon_sprites/351.gif</string>
          </void>
         </object>
        </void>
@@ -21308,7 +21308,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/352.gif</string>
+          <string>images/pokemon_sprites/352.gif</string>
          </void>
         </object>
        </void>
@@ -21338,7 +21338,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/353.gif</string>
+          <string>images/pokemon_sprites/353.gif</string>
          </void>
         </object>
        </void>
@@ -21368,7 +21368,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/354.gif</string>
+          <string>images/pokemon_sprites/354.gif</string>
          </void>
         </object>
        </void>
@@ -21398,7 +21398,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/355.gif</string>
+          <string>images/pokemon_sprites/355.gif</string>
          </void>
         </object>
        </void>
@@ -21428,7 +21428,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/356.gif</string>
+          <string>images/pokemon_sprites/356.gif</string>
          </void>
         </object>
        </void>
@@ -21458,7 +21458,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/357.gif</string>
+          <string>images/pokemon_sprites/357.gif</string>
          </void>
         </object>
        </void>
@@ -21488,7 +21488,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/358.gif</string>
+          <string>images/pokemon_sprites/358.gif</string>
          </void>
         </object>
        </void>
@@ -21518,7 +21518,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/359.gif</string>
+          <string>images/pokemon_sprites/359.gif</string>
          </void>
         </object>
        </void>
@@ -21548,7 +21548,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/360.gif</string>
+          <string>images/pokemon_sprites/360.gif</string>
          </void>
         </object>
        </void>
@@ -21578,7 +21578,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/361.gif</string>
+          <string>images/pokemon_sprites/361.gif</string>
          </void>
         </object>
        </void>
@@ -21608,7 +21608,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/362.gif</string>
+          <string>images/pokemon_sprites/362.gif</string>
          </void>
         </object>
        </void>
@@ -21638,7 +21638,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/363.gif</string>
+          <string>images/pokemon_sprites/363.gif</string>
          </void>
         </object>
        </void>
@@ -21668,7 +21668,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/364.gif</string>
+          <string>images/pokemon_sprites/364.gif</string>
          </void>
         </object>
        </void>
@@ -21698,7 +21698,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/365.gif</string>
+          <string>images/pokemon_sprites/365.gif</string>
          </void>
         </object>
        </void>
@@ -21728,7 +21728,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/366.gif</string>
+          <string>images/pokemon_sprites/366.gif</string>
          </void>
         </object>
        </void>
@@ -21758,7 +21758,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/367.gif</string>
+          <string>images/pokemon_sprites/367.gif</string>
          </void>
         </object>
        </void>
@@ -21788,7 +21788,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/368.gif</string>
+          <string>images/pokemon_sprites/368.gif</string>
          </void>
         </object>
        </void>
@@ -21818,7 +21818,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/369.gif</string>
+          <string>images/pokemon_sprites/369.gif</string>
          </void>
         </object>
        </void>
@@ -21848,7 +21848,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/370.gif</string>
+          <string>images/pokemon_sprites/370.gif</string>
          </void>
         </object>
        </void>
@@ -21878,7 +21878,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/371.gif</string>
+          <string>images/pokemon_sprites/371.gif</string>
          </void>
         </object>
        </void>
@@ -21908,7 +21908,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/372.gif</string>
+          <string>images/pokemon_sprites/372.gif</string>
          </void>
         </object>
        </void>
@@ -21938,7 +21938,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/373.gif</string>
+          <string>images/pokemon_sprites/373.gif</string>
          </void>
         </object>
        </void>
@@ -21968,7 +21968,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/374.gif</string>
+          <string>images/pokemon_sprites/374.gif</string>
          </void>
         </object>
        </void>
@@ -21998,7 +21998,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/375.gif</string>
+          <string>images/pokemon_sprites/375.gif</string>
          </void>
         </object>
        </void>
@@ -22028,7 +22028,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/376.gif</string>
+          <string>images/pokemon_sprites/376.gif</string>
          </void>
         </object>
        </void>
@@ -22058,7 +22058,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/377.gif</string>
+          <string>images/pokemon_sprites/377.gif</string>
          </void>
         </object>
        </void>
@@ -22088,7 +22088,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/378.gif</string>
+          <string>images/pokemon_sprites/378.gif</string>
          </void>
         </object>
        </void>
@@ -22118,7 +22118,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/379.gif</string>
+          <string>images/pokemon_sprites/379.gif</string>
          </void>
         </object>
        </void>
@@ -22148,7 +22148,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/380.gif</string>
+          <string>images/pokemon_sprites/380.gif</string>
          </void>
         </object>
        </void>
@@ -22178,7 +22178,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/381.gif</string>
+          <string>images/pokemon_sprites/381.gif</string>
          </void>
         </object>
        </void>
@@ -22208,7 +22208,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/382.gif</string>
+          <string>images/pokemon_sprites/382.gif</string>
          </void>
         </object>
        </void>
@@ -22238,7 +22238,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/383.gif</string>
+          <string>images/pokemon_sprites/383.gif</string>
          </void>
         </object>
        </void>
@@ -22268,7 +22268,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/384.gif</string>
+          <string>images/pokemon_sprites/384.gif</string>
          </void>
         </object>
        </void>
@@ -22298,7 +22298,7 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/385.gif</string>
+          <string>images/pokemon_sprites/385.gif</string>
          </void>
         </object>
        </void>

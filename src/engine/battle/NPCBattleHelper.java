@@ -113,7 +113,7 @@ public class NPCBattleHelper extends ScreenDisplay { //Really messy class, needs
 
 		//System.out.println("VALUE DIFF OF BATTLE" + (t2-t1));
 
-		if ((t2 - t1) > 15000000000L) {
+		if ((t2 - t1) > 15000000000L && isBattleStart == true) {
 			isBattleStart = false;
 			gameSce.changeBackScene();
 		}

@@ -121,7 +121,6 @@ public class BattleScene extends ScreenDisplay{
 		characterSetUp();
 		setUpScreen();
 		
-		
 
 	}
 	
@@ -138,8 +137,9 @@ public class BattleScene extends ScreenDisplay{
 		//hard code for now
 		//System.out.println("Current Path: "+activePokemon.getCurrentImagePath());
 		//System.out.println("Enemy path: " + enemyPokemon.getCurrentImagePath());
+		System.out.println(backSpriteURL(activePokemon));
 		System.out.println(gifSpriteURL(enemyPokemon));
-		System.out.println("file:images/pokemon_sprites/1.gif_.gif");
+		
 		enemyImage=new Image(gifSpriteURL(enemyPokemon));
 		pokemonImage=new Image(backSpriteURL(activePokemon));
 		
@@ -313,7 +313,7 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
-		gc.drawImage(enemyImage, 450, 60);
+		gc.drawImage(enemyImage,400, 60);
 		gc.drawImage(pokemonImage,100 ,193);
 	}
 	
@@ -322,7 +322,7 @@ public class BattleScene extends ScreenDisplay{
 	 * Passed in the pictures of the front; return the pokemon pictures from the back
 	 */
 	private String backSpriteURL(Pokemon myPokemon) {
-		return "file:"+myPokemon.getCurrentImagePath().substring(0, 14) + "_back" + myPokemon.getCurrentImagePath().substring(14, 25) + "png";
+		return "file:"+myPokemon.getCurrentImagePath().substring(0, 14) + "_back" + myPokemon.getCurrentImagePath().substring(14, 25) + ".png";
 	}
 	
 	/*

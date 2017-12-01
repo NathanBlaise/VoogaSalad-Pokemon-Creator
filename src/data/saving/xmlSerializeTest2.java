@@ -61,7 +61,7 @@ public class xmlSerializeTest2 extends Application{
 				PokemonSpecie specie1 = new PokemonSpecie(newSpecies.get(0));
 				specie1.setSpecieName("Tony " + num);
 				Map<Integer, String> evoMap = new HashMap<Integer,String>();
-				evoMap.put(1, "/Users/supertony/eclipse-workspace/voogasalad_gottacatchemall/images/pokemon_sprites/"+num+".gif" ); 
+				evoMap.put(1, "images/pokemon_sprites/"+num+".gif" ); 
 				specie1.setLevelEvolutionImagePath(evoMap);
 				newSpecies.add(specie1);
 				model.setPokemonSpecies(newSpecies);
