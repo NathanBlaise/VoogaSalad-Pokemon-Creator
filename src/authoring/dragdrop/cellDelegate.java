@@ -40,4 +40,9 @@ public interface cellDelegate {
 	 * @return - the database
 	 */
 	public Database getDatabase();
+
+	/**
+	 * Get the cell list from the DBMap
+	 */
+	public DBCell[][] getCellList();
 }

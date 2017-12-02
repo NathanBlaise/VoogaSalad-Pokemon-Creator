@@ -33,6 +33,9 @@ import javafx.scene.layout.GridPane;
  *
  */
 public class DBCell {
+	/*final variables*/
+
+	
 	/*instance variables*/
 	private Cell cell;
 	
@@ -56,11 +59,37 @@ public class DBCell {
 	 * @param newImage: the path of image you want to change 
 	 * add a imageView into a specific cell given by the coordinate of int row, int col
 	 */
-	public DBCell UpdateTileImage(String newImagePath) {
+	public void UpdateTileImage(String newImagePath) {
 		cell.setTilePath(newImagePath);
 		app.updateCellList(this);
 		myGrid.add(setDragTarget(cell), col, row);
-		return this;
+	
+	}
+	
+	
+	/**
+	 * This is only for shop tile
+	 * @param newImage: the path of image you want to change 
+	 * add a imageView into a specific cell given by the coordinate of int row, int col
+	 */
+	public void UpdateShopTileImage(String newImagePath) {
+		app.updateCellList(this);
+		app.UpdateSurroundingCells(col,row);
+		myGrid.add(setDragTarget(cell), col-1, row);
+		// retrieve the cell list from the dbMap
+		DBCell[][] cellList = app.getCellList();
+		
+		int num = 1;
+		for (int i = row-1; i <= row+1; i++) {
+			for (int j = col-1; j <= col+1; j++) {
+				Cell targetCell = cellList[i][j].getCell();
+				targetCell.setTilePath(newImagePath.substring(0,newImagePath.length()-4) + num + ".jpg");
+				myGrid.add(setDragTarget(targetCell), j, i);
+				
+				num++;
+			}
+		}
+	
 	}
 	
 	public DBCell UpdatEvent(Event event){
@@ -104,17 +133,15 @@ public class DBCell {
 		}
 		base = cell.getTilePath();
 		ImageView image = new ImageView(new Map2GridPane().overlapImage(base, overlap));
+	
+		
 		//ImageView image = new ImageView(Path2Image.showImage(cell.getTilePath()));
 		image.setOnDragOver(new EventHandler <DragEvent>() {
 	         public void handle(DragEvent event) {
-	             /* data is dragged over the target */
-	             //System.out.println("onDragOver");
-	             
-	             /* accept it only if it is  not dragged from the same node 
-	              * and if it has a string data */
+	            
 	             if (event.getGestureSource() != image &&
 	                     event.getDragboard().hasImage()) {
-	                 /* allow for both copying and moving, whatever user chooses */
+	              
 	                 event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
 	             }
 	             
@@ -154,6 +181,7 @@ public class DBCell {
 	             if (db.hasImage()) {
 	            	 	//System.out.println(app.checkSurroundingCells(col, row) == true );
 	                if (db.hasString()&& db.getString()=="Shop Tile"){
+	                		
 	                		if (app.checkSurroundingCells(col, row) == true) {
 	                			myGrid.add(new ImageView(db.getImage()), col-1,row);
 	                			app.UpdateSurroundingCells(col,row);
@@ -209,7 +237,19 @@ public class DBCell {
 				(db.getContent(DataFormat.lookupMimeType("Type")).equals("Tile"))){
 			String tilePath = (String)db.getContent(DataFormat.lookupMimeType("Path"));
 			UpdateTileImage(tilePath);
-		}else if(db.getContent(DataFormat.lookupMimeType("Type")).equals("NPC")){
+		}
+		
+		// add a new stuff just for the shop
+		if((db.getContent(DataFormat.lookupMimeType("Type"))!=null)&&
+				(db.getContent(DataFormat.lookupMimeType("Type")).equals("Shop Tile"))){
+			String tilePath = (String)db.getContent(DataFormat.lookupMimeType("Path"));
+			
+			if (app.checkSurroundingCells(col, row) == true)  UpdateShopTileImage(tilePath);
+		
+		}
+		
+		
+		else if(db.getContent(DataFormat.lookupMimeType("Type")).equals("NPC")){
 			NPC npc = (NPC)db.getContent(DataFormat.lookupMimeType("NPC"));
 			@SuppressWarnings("unchecked")
 			List<PokemonSpecie> pokemons = (List<PokemonSpecie>)db.getContent(DataFormat.lookupMimeType("PokemonList"));
