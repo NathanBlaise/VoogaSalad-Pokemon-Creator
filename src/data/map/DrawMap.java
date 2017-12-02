@@ -39,6 +39,7 @@ public class DrawMap extends DrawPane{
 	 * Used in game scene to retrieve the grid pane for drawing
 	 */
 	public GridPane getPane() {
+		
 		return myPane;
 	}
 	
@@ -58,6 +59,7 @@ public class DrawMap extends DrawPane{
 				}
 			}
 		}
+		
 	}
 	
 	/*
@@ -109,7 +111,7 @@ public class DrawMap extends DrawPane{
 						myMap.getCells()[i][j].setObstacle(true);
 						// add empty imageView
 						myPane.add(new ImageView(Path2Image.showImage("images/default.png")), j, i);
-			
+						
 				}
 			}
 		}

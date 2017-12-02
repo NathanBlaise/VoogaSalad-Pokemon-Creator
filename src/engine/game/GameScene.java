@@ -47,7 +47,7 @@ import java.util.ArrayList;
 
 public class GameScene extends ScreenDisplay {
 
-	private final int PLAYER_WIDTH = 30;
+	private final int PLAYER_WIDTH = 45;
 	private final int PLAYER_HEIGHT = 45;
 	private final Image image = new Image("file:images/emerald_down_rest.png");
 
@@ -159,8 +159,8 @@ public class GameScene extends ScreenDisplay {
 				of(Direction.cachedValues).filter(v -> inputList.contains(v.name())).findFirst().ifPresent(dir -> {
 
 					//change speed when you press X
-					if (inputList.contains("X")) runSpeed = 8; 
-					if (!inputList.contains("X")) runSpeed = 5; 
+					if (inputList.contains("X")) runSpeed = 5; 
+					if (!inputList.contains("X")) runSpeed = 3; 
 
 					mainPlayer.downspeed = runSpeed;
 					mainPlayer.upspeed = runSpeed;
@@ -220,7 +220,7 @@ public class GameScene extends ScreenDisplay {
 
 	private void checkCollisions(Direction dir) {
 		//Cycle through cells on the map
-		for (Node node: mapPane.getChildren()) {
+		for (Node node: mapPane.getChildren() ) {
 
 			int i = GridPane.getRowIndex(node);
 			int j = GridPane.getColumnIndex(node);
