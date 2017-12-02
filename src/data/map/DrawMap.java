@@ -39,7 +39,6 @@ public class DrawMap extends DrawPane{
 	 * Used in game scene to retrieve the grid pane for drawing
 	 */
 	public GridPane getPane() {
-		
 		return myPane;
 	}
 	
@@ -52,6 +51,7 @@ public class DrawMap extends DrawPane{
 			for (int j = 0; j < myMap.getYlength(); j++) {
 				if (myMap.getCells()[i][j].getEvent() instanceof EventNPC) {
 					ImageView target = getCellEventImage(myMap.getCells()[i][j]);
+					target.setFitHeight(48);
 					target.setFitWidth(48);
 					myPane.add(target, j, i);
 				}else if(myMap.getCells()[i][j].getEvent() instanceof EventPokemon) {
@@ -110,7 +110,12 @@ public class DrawMap extends DrawPane{
 						
 						myMap.getCells()[i][j].setObstacle(true);
 						// add empty imageView
-						myPane.add(new ImageView(Path2Image.showImage("images/default.png")), j, i);
+						ImageView defaultPicture = new ImageView(Path2Image.showImage("images/default.png"));
+						
+						String style_outter = "-fx-border-color: black;"
+					              + "-fx-border-width: 10;";
+						defaultPicture.setStyle(style_outter);
+						myPane.add(defaultPicture, j, i);
 						
 				}
 			}

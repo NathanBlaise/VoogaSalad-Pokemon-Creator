@@ -104,4 +104,20 @@ public class GameMap implements Serializable{
 		}
 	}
 	
+	/**
+	 * set the cell in Cell[coordX][coordY]
+	 * @param coordX - the index in the first dimension
+	 * @param coordY - the index in the second dimension
+	 * @param cell - the new cell
+	 */
+	public Cell getCell(int coordX, int coordY){
+		try {
+			return cells[coordX][coordY];
+		} catch (Exception e) {
+			System.out.print("Dimension over range!");
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 }
