@@ -13,6 +13,7 @@ public class Model implements Serializable{
 	private static final long serialVersionUID = -3434227257089326223L; //used for serialization
 	private ArrayList<NPC> NPCs= new ArrayList<NPC>(); // the NPC models
 	private ArrayList<PokemonSpecie> PokemonSpecies= new ArrayList<PokemonSpecie>(); // the pokemon models
+	private ArrayList<Tile> tiles = new ArrayList<Tile>();
 	
 	/**
 	 * WARNING!
@@ -26,9 +27,10 @@ public class Model implements Serializable{
 	 * @param NPCs - the NPC models
 	 * @param PokemonSpecies- the pokemon models
 	 */
-	public Model(ArrayList<NPC> NPCs, ArrayList<PokemonSpecie> PokemonSpecies){
+	public Model(ArrayList<NPC> NPCs, ArrayList<PokemonSpecie> PokemonSpecies, ArrayList<Tile> tiles){
 		this.NPCs = new ArrayList<NPC>(NPCs);
 		this.PokemonSpecies = new ArrayList<PokemonSpecie>(PokemonSpecies);
+		this.tiles = new ArrayList<Tile>(tiles);
 	}
 	
 	public ArrayList<NPC> getNPCs() {
@@ -46,4 +48,14 @@ public class Model implements Serializable{
 	public void setPokemonSpecies(ArrayList<PokemonSpecie> pokemonSpecies) {
 		PokemonSpecies = new ArrayList<PokemonSpecie>(pokemonSpecies);
 	}
+
+	public ArrayList<Tile> getTiles() {
+		return tiles;
+	}
+
+	public void setTiles(ArrayList<Tile> tiles) {
+		this.tiles = tiles;
+	}
+	
+	
 }
