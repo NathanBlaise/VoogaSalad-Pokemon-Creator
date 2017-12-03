@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_121" class="java.beans.XMLDecoder">
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
  <object class="data.Database">
   <void property="map">
    <object class="data.map.GameMap">
@@ -1561,10 +1561,10 @@
      <void method="add">
       <object class="data.model.NPC">
        <void property="imagePath">
-        <string>images/CaptainMap.png</string>
+        <string>images/NPC/CaptainMap.png</string>
        </void>
        <void property="name">
-        <string>Caption Kirk</string>
+        <string>Captain Kirk</string>
        </void>
       </object>
      </void>
@@ -22322,6 +22322,379 @@
     </void>
     <void property="pokemonSpecies">
      <object idref="ArrayList1"/>
+    </void>
+    <void property="tiles">
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/watercenter.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>pond</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/watercenter.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/flower_tile.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Flower</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/flower_tile.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/edgecenter.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Edge of water</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/edgecenter.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/stonecenter.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>stone in water</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/stonecenter.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/bridge2.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>bridge2</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/bridge2.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/tree.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>tree</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/tree.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>3</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House1.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House2.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House3.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House4.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House5.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House6.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House7.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House8.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House9.jpg</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>House</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/houseSplitedWithBackground/House.jpg</string>
+       </void>
+       <void property="width">
+        <int>3</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/purewatercenter.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>water</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/purewatercenter.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/space.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>space</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/space.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/reg_tile.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>barren ground</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/reg_tile.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/grass_tile.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>grass</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/grass_tile.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/bridge.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>bridge</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/bridge.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>3</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center1.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center2.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center3.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center4.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center5.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center6.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center7.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center8.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/shopCenterSplitedWithBackground/Center9.jpg</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>PokemonCenter</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/shopCenterSplitedWithBackground/Center.jpg</string>
+       </void>
+       <void property="width">
+        <int>3</int>
+       </void>
+      </object>
+     </void>
     </void>
    </object>
   </void>

@@ -3,6 +3,7 @@ package start;
 import java.util.Map;
 
 import data.Database;
+import data.saving.CreateDefaultDatabase;
 import data.saving.DatabaseLoader;
 import authoring.eventManage.Function;
 import javafx.geometry.Pos;
@@ -22,6 +23,7 @@ import javafx.stage.Stage;import javafx.util.Callback;
  */
 public class DatabasePathConfig extends BorderPane{
 	public DatabasePathConfig(Stage stage, Function<Database, String, Integer> reaction){
+		new CreateDefaultDatabase();
 		Label title = new Label("Choose the database please :)");
 		title.setMaxWidth(Double.MAX_VALUE);
 		AnchorPane.setLeftAnchor(title, 0.0);

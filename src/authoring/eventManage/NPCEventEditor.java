@@ -20,7 +20,11 @@ import data.event.InstructionNPCFight;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
-
+/**
+ * 
+ * @author cy122
+ * edit the event of NPC
+ */
 public class NPCEventEditor{
 		private Stage stage;
 		private EventNPC eventNPC;

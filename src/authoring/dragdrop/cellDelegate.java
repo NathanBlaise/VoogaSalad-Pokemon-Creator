@@ -23,7 +23,7 @@ public interface cellDelegate {
 	 * The method checks if the other cells are open to insert a new Image View
 	 */
 	
-	public boolean checkSurroundingCells(int col, int row);
+	public boolean checkSurroundingCells(int col, int row, int width, int height);
 	
 	
 	

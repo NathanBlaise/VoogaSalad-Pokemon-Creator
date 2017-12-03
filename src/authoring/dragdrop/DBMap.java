@@ -4,16 +4,14 @@ import data.Database;
 import data.map.DrawPane;
 import data.map.GameMap;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
 
 /**
  * Using drag board to drag and drop the each tile to the map
  * Contains two levels
  * The first level below: Pane
  * The second level above: Events
- * @author supertony
+ * @author supertony cy122
  *
  */
 public class DBMap implements cellDelegate {
@@ -63,20 +61,11 @@ public class DBMap implements cellDelegate {
 
 	
 	@Override
-	public boolean checkSurroundingCells(int col, int row) {
-		
-			/*myGrid.add(new ImageView(db.getImage()), row-1,col);
-	    	myGrid.add(new ImageView(), row-1, col+1);
-	    	myGrid.add(new ImageView(), row-1, col-1);
-	    	myGrid.add(new ImageView(), row, col-1);
-	    	myGrid.add(new ImageView(), row, col+1);
-	    	myGrid.add(new ImageView(), row, col);
-	    	myGrid.add(new ImageView(), row-2, col+1);
-	    	myGrid.add(new ImageView(), row-2, col-1);
-	    	myGrid.add(new ImageView(), row-2, col);*/
-		
-		for (int i = col-1; i <= col+1; i++) {
-			for (int j = row-1; j <= row+1; j++) {
+	public boolean checkSurroundingCells(int col, int row, int width, int height) {
+		int left = col - width/2;
+		int up = row - height/2;
+		for (int i = left; i < left + width; i++) {
+			for (int j = up; j < up + height; j++) {
 				if (i>=0 && j>= 0 && i < PANE_WIDTH_NUMBER && j < PANE_HEIGHT_NUMBER ) {
 				
 					if (myCell[j][i].getState() == false) {
