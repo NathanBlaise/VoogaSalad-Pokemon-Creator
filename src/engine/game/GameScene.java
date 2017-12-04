@@ -3,15 +3,10 @@ package engine.game;
 import authoring.ScreenDisplay;
 import data.event.Event;
 import data.event.Instruction;
-import data.event.InstructionNPCDialogue;
-import data.event.InstructionNPCFight;
-import data.event.InstructionPokemonFight;
 import data.map.DrawMap;
 import data.map.GameMap;
 import data.player.Player;
 import engine.Engine;
-import engine.battle.BattleScene;
-import engine.battle.NPCBattleHelper;
 //import engine.movement.Collisions;
 import engine.movement.Direction;
 import javafx.animation.KeyFrame;
@@ -23,7 +18,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -81,7 +75,6 @@ public class GameScene extends ScreenDisplay {
 	private GraphicsContext gc;
 	// add a runSpeed here to allow players to run
 	private int runSpeed = 1;
-	private ScreenDisplay myself;
 	private int frame = 0;
 	private static final Map<String, Pair<Integer, Integer>> direction2grid = new HashMap<String, Pair<Integer, Integer>>();
 
@@ -157,7 +150,6 @@ public class GameScene extends ScreenDisplay {
 		this.rootAdd(playerImage);
 
 		myStage = stage;
-		myself = this;
 	}
 
 	/**
@@ -221,26 +213,7 @@ public class GameScene extends ScreenDisplay {
 			}
 			Instruction instruction = event.getInstructions().get(i);
 			if (instruction.isGoNextInstruction()==false) {
-//				instruction.execute(SCREEN_WIDTH,SCREEN_HEIGHT,mainPlayer,mainMap,event,instruction,this);
-				if (instruction instanceof InstructionNPCDialogue) {
-					
-					new Dialogue((InstructionNPCDialogue) instruction, this, inputHandler);
-				
-				} else if(instruction instanceof InstructionPokemonFight){
-					
-					BattleScene battle = new BattleScene(SCREEN_WIDTH,SCREEN_HEIGHT,Color.WHITE,mainPlayer,null,((InstructionPokemonFight)instruction).getPokemon(), this);
-					// Change the battle scene here
-					((Stage) this.getScene().getWindow()).setScene(battle.getScene());					
-					ArrayList<Instruction> newInstructions = event.getInstructions();
-					newInstructions.remove(instruction);
-					event.setInstructions(newInstructions);
-//					cell.setEvent(null);
-				
-				} else if(instruction instanceof InstructionNPCFight){
-					NPCBattleHelper npcHelper = new NPCBattleHelper(SCREEN_WIDTH, SCREEN_HEIGHT, Color.WHITE, (GameScene)myself, inputList);
-					myStage.setScene(npcHelper.getScene());
-					npcHelper.startTimer();
-				}
+				instruction.execute(SCREEN_WIDTH,SCREEN_HEIGHT,mainPlayer,mainMap,event,this);
 				break;
 			} else {
 				i++;
@@ -328,6 +301,14 @@ public class GameScene extends ScreenDisplay {
 	 */
 	public void changeBackScene() {
 		myStage.setScene(this.getScene());
+	}
+
+	public ArrayList<String> getInputList() {
+		return inputList;
+	}
+
+	public Map<String, ArrayList<Function<String, Integer>>> getInputHandler() {
+		return inputHandler;
 	}
 
 }

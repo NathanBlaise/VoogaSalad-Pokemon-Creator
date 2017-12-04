@@ -2,6 +2,10 @@ package data.event;
 
 import java.io.Serializable;
 
+import data.map.GameMap;
+import data.player.Player;
+import engine.game.GameScene;
+
 /**
  * instruction is a small segment of a whole event, i.e.:
  * a event include: 1. talk with the NPC 2. battle with the NPC
@@ -29,9 +33,14 @@ public abstract class Instruction implements Serializable{
 	 * the execute instruction should call the related API in engine.
 	 *	For example, if an instruction is to begin a battle, 
 	 *	it should call the API of Engine related with beginning the battle in execute(Object...) 
-	 * @param parameters - will be discussed later
+	 * @param gameScene
+	 * @param event 
+	 * @param mainMap 
+	 * @param mainPlayer 
+	 * @param SCREEN_HEIGHT 
+	 * @param SCREEN_WIDTH 
 	 */
-	public abstract void execute(Object... parameters);
+	public abstract void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer, GameMap mainMap, Event event, GameScene gameScene);
 
 	public boolean isGoNextInstruction() {
 		return goNextInstruction;

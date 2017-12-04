@@ -1,7 +1,13 @@
 package data.event;
 
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import data.map.GameMap;
 import data.model.NPC;
 import data.model.Pokemon;
+import data.player.Player;
+import engine.battle.NPCBattleHelper;
+import engine.game.GameScene;
 
 /**
  * this is a instruction for fighting with NPC, it holds a private NPC member and an array of Pokemon
@@ -63,18 +69,20 @@ public class InstructionNPCFight  extends Instruction{
 	public void setPokemons(Pokemon[] pokemons) {
 		this.pokemons = pokemons;
 	}
+	
+	public static int getPokemonNum(){
+		return pokemonNum;
+	}
 
 	@Override
 	/**
 	 * @see Instruction#execute
 	 */
-	public void execute(Object... parameters) {
-		// TODO call the API in Engine to begin a battle with npc
-		
-	}
-	
-	public static int getPokemonNum(){
-		return pokemonNum;
+	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
+			GameMap mainMap, Event event, GameScene gameScene) {
+		NPCBattleHelper npcHelper = new NPCBattleHelper(SCREEN_WIDTH, SCREEN_HEIGHT, Color.WHITE, gameScene, gameScene.getInputList());
+		((Stage)gameScene.getScene().getWindow()).setScene(npcHelper.getScene());
+		npcHelper.startTimer();
 	}
 
 }
