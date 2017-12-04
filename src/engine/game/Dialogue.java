@@ -4,7 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.concurrent.locks.Lock;
+import java.util.function.Function;
 
+import data.event.InstructionNPCDialogue;
 import authoring.ScreenDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -21,7 +26,7 @@ public class Dialogue {
 	/*final variable*/
 	private final static int XPOS = 0;
 	private final static int YPOS = 336;
-	private final static ImageView CHATBOX = new ImageView(new Image("file:images/battle_box.png"));
+	private ImageView CHATBOX = new ImageView(new Image("file:images/battle_box.png"));
 	private final int TEXT_XPOS = 30;
 	private final int TEXT_YPOS = 380;
 	private final int FONTSIZE = 36;
@@ -30,20 +35,30 @@ public class Dialogue {
 	/*instance variable*/
 	private ScreenDisplay oriDisplay;
 	private ArrayList<String> sentenceList;
-	private ArrayList<String> myInput;
+	private InstructionNPCDialogue instruction;
 	private Label textDisplay;
-	private Boolean beginBattle = false;
+	
+	private Function<String, Integer> handleF = new Function<String, Integer>(){
+		@Override
+		public Integer apply(String t) {
+			DialogueExecution(); 
+			return null;
+		}
+	};
+	private Map<String, ArrayList<Function<String, Integer>>> inputHandler;
 
 	//default Dialogue constructor
-	public Dialogue () {
-		
-	}
+//	public Dialogue () {
+//		
+//	}
 	
 	
-	public Dialogue (ArrayList<String> senList, ScreenDisplay sDisplay,ArrayList<String> keyInput ) {
-		sentenceList = senList;
+	public Dialogue (InstructionNPCDialogue instruction, ScreenDisplay sDisplay, Map<String, ArrayList<Function<String, Integer>>> inputHandler) {
+		sentenceList = instruction.getDialogues();
+		this.instruction = instruction;
 		oriDisplay = sDisplay;
-		myInput = keyInput;
+		this.inputHandler = inputHandler;
+		inputHandler.get("F").add(handleF);
 
 		//deal with specific pokemon font
 		textDisplay = new Label("");
@@ -66,22 +81,25 @@ public class Dialogue {
 	 */
 	public void DialogueExecution() {
 
-		if ((myInput.contains("F"))) {
-			
 			int currentIndex = sentenceList.indexOf(textDisplay.getText());
 			if (currentIndex < sentenceList.size() -1 ) {
 				textDisplay.setText(sentenceList.get(currentIndex + 1)); 
-				myInput.remove("F");
 			}
 			else {
 				
 				System.out.println(1);
 				oriDisplay.rootRemove(CHATBOX); 
 				oriDisplay.rootRemove(textDisplay);
-				beginBattle = true;
-
-		}
-		}
+				Iterator<Function<String, Integer>> iter = inputHandler.get("F").iterator();
+				while(iter.hasNext()){
+				    Function<String, Integer> func = iter.next();
+				      if( func.equals(handleF) )
+				      {
+				        iter.remove();
+				      }
+				}
+				instruction.setGoNextInstruction(true);
+			}
 	}
 	
 	
@@ -96,9 +114,7 @@ public class Dialogue {
 		}
 		//set up the position of textDisplay
 		if (!oriDisplay.getRootChildren().contains(textDisplay)) {
-			oriDisplay.rootAdd(textDisplay);
-			textDisplay.setLayoutX(TEXT_XPOS);
-			textDisplay.setLayoutY(TEXT_YPOS);
+			oriDisplay.rootAdd(textDisplay,TEXT_XPOS,TEXT_YPOS);
 		}
 	
 	}
@@ -122,24 +138,24 @@ public class Dialogue {
 		}
 		return f;
 	}
-	
-	/**
-	 * Getter of the boolean value beginBattle
-	 * Help notify the NPC battle begins
-	 * @return the boolean value
-	 */
-	
-	public boolean getBattleFlag() {
-		return beginBattle;
-	}
-	
-	/**
-	 * Setter of the boolean value beginBattle
-	 * Set the BeginBattle a new Boolean value
-	 */
-	public void setBattleFlag(boolean BattleFlag) {
-		beginBattle = BattleFlag;
-	}
+//	
+//	/**
+//	 * Getter of the boolean value beginBattle
+//	 * Help notify the NPC battle begins
+//	 * @return the boolean value
+//	 */
+//	
+//	public boolean getBattleFlag() {
+//		return beginBattle;
+//	}
+//	
+//	/**
+//	 * Setter of the boolean value beginBattle
+//	 * Set the BeginBattle a new Boolean value
+//	 */
+//	public void setBattleFlag(boolean BattleFlag) {
+//		beginBattle = BattleFlag;
+//	}
 	
 
 }

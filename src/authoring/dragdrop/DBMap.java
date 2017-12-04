@@ -1,8 +1,11 @@
 package authoring.dragdrop;
 
+import java.util.ArrayList;
+
 import data.Database;
 import data.map.DrawPane;
 import data.map.GameMap;
+import data.model.Tile;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
@@ -18,12 +21,12 @@ public class DBMap implements cellDelegate {
 	/*final variable*/
 	private int   PANE_WIDTH_NUMBER;
 	private int  PANE_HEIGHT_NUMBER;
-	final private static int PANE_CELL_SIZE = 48;
 	/*instance variable*/
 	private GridPane myPane;
 	private DBCell [][] myCell;	
 	private GameMap gameMap;
 	private Database database;
+	private Tile currentSelectedTile;
 	
 	
 	public DBMap(Database database) {
@@ -116,6 +119,18 @@ public class DBMap implements cellDelegate {
 	public DBCell[][] getCellList() {
 		return myCell;
 		
+	}
+	
+	@Override
+	public Tile getCurrentSelectedTile(){
+		return currentSelectedTile;
+	}
+
+
+
+	@Override
+	public void setCurrentSelectedTile(String imagePath, boolean obstacle) {
+		currentSelectedTile = new Tile(null, obstacle, 1, 1, imagePath, new ArrayList<String>());
 	}
 
 	

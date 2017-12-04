@@ -10,7 +10,7 @@ import data.model.Pokemon;
  *
  *
  */
-public class InstructionPokemonFight implements Instruction{
+public class InstructionPokemonFight extends Instruction{
 	
 	private static final long serialVersionUID = -7387342417939089291L;
 	private Pokemon pokemon;

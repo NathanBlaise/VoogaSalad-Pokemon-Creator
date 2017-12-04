@@ -14,7 +14,7 @@ import data.model.NPC;
  * 
  *
  */
-public class InstructionNPCDialogue implements Instruction{
+public class InstructionNPCDialogue extends Instruction{
 	private static final long serialVersionUID = 3057407796442711712L;
 	/**
 	 * the 0 element of dialogues is the sentence of the NPC

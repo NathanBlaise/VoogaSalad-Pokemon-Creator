@@ -13,8 +13,18 @@ import java.io.Serializable;
  *
  *
  */
-public interface Instruction extends Serializable{
+public abstract class Instruction implements Serializable{
+	
+	private static final long serialVersionUID = 3405957759448205372L;
+	private boolean goNextInstruction = false;
 
+	/**
+	 * for serialization
+	 */
+	public Instruction(){
+		
+	}
+	
 	/**
 	 * the execute instruction should call the related API in engine.
 	 *	For example, if an instruction is to begin a battle, 
@@ -22,4 +32,12 @@ public interface Instruction extends Serializable{
 	 * @param parameters - will be discussed later
 	 */
 	public abstract void execute(Object... parameters);
+
+	public boolean isGoNextInstruction() {
+		return goNextInstruction;
+	}
+
+	public void setGoNextInstruction(boolean goNextInstruction) {
+		this.goNextInstruction = goNextInstruction;
+	}
 }

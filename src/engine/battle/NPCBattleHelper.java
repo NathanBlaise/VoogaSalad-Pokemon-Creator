@@ -1,10 +1,13 @@
 package engine.battle;
 
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Paint;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -18,13 +21,24 @@ public class NPCBattleHelper extends ScreenDisplay { //Really messy class, needs
 	private GraphicsContext gc;
 	
 	
-	public NPCBattleHelper(int width, int height, Paint background) {
+	public NPCBattleHelper(int width, int height, Paint background, GameScene myself, ArrayList<String> inputList) {
 		super(width, height, background);
 		// TODO Auto-generated constructor stub
 
 		battleCanvas = new Canvas(720,480);
 		gc = battleCanvas.getGraphicsContext2D();
 		this.rootAdd(battleCanvas);
+		KeyFrame frame = new KeyFrame(Duration.millis(MILLISECOND_DELAY*0.0025),
+				e -> step(myself, inputList, SECOND_DELAY*0.01));
+		Timeline animation = new Timeline();
+		animation.setCycleCount(Timeline.INDEFINITE);
+		animation.getKeyFrames().add(frame);
+		animation.play();
+	}
+
+	private Object step(GameScene myself, ArrayList<String> inputList, double d) {
+		updateBattle(myself, inputList);
+		return null;
 	}
 
 	Image grassBattle = new Image("file:images/grass_battle.png");

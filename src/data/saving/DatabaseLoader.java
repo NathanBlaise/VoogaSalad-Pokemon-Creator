@@ -9,12 +9,40 @@ import data.Database;
 
 public class DatabaseLoader {
 
+	private final static String path = "src"+File.separator+"resources"+File.separator+"databases";
+	private final static String databasePath = "src"+File.separator+"resources"+File.separator+"Databases";
+	private final static String databaseTypeName = "Databases_";
+	
+	
+	/**
+	 * 
+	 * @return - key is the simple name, value is the map
+	 */
+	public static Map<String, String> getAvailableGameTypes(){
+		File f = new File(path);
+		File[] matchingFiles = f.listFiles(new FilenameFilter() {
+		    public boolean accept(File dir, String name) {
+		        return name.contains(databaseTypeName)&&(!name.contains("default"));
+		    }
+		});
+		Map<String, String> name2path =  new HashMap<String, String>();
+		for(File file: matchingFiles){
+			String name = file.getName();
+			int pos = name.lastIndexOf("_");
+			if (pos > 0) {
+			    name = name.substring(pos+1);
+			}
+			name2path.put(name, file.getAbsolutePath());
+		}
+		return name2path;
+	}
+	
 	/**
 	 * 
 	 * @return - key is the simple name, value is the map.
 	 */
-	public static Map<String, String> getAvailableDatabase() {
-		File f = new File("src"+File.separator+"resources"+File.separator+"databases");
+	public static Map<String, String> getAvailableDatabase(String path) {
+		File f = new File(path);
 		File[] matchingFiles = f.listFiles(new FilenameFilter() {
 		    public boolean accept(File dir, String name) {
 		        return name.endsWith("xml");
@@ -37,26 +65,26 @@ public class DatabaseLoader {
 	 * @param name - a simple name
 	 * @return
 	 */
-	public static String getDatabasePath(String name) {
+	public static String getDatabasePath(String type, String name) {
 		// TODO Auto-generated method stub
-		return "src"+File.separator+"resources"+File.separator+"databases"+File.separator+name+".xml";
+		return databasePath+File.separator+databaseTypeName+type+File.separator+name+".xml";
 	}
 	
 
-	public static Database loadDatabase(String pathName) {
+	public static Database loadDatabase(String type, String pathName) {
 		Database result; 
 		File f = new File(pathName);
 		if(f.exists()) { 
 			result = (Database) new xmlReader<Database>().readXML(pathName);
 			return result;
 		}else{
-			result = getDefaultDatabase();
+			result = getDefaultDatabase(type);
 			return result;
 		}
 	}
 	
-	private static Database getDefaultDatabase() {
-		Database databaseResult = new xmlReader<Database>().readXML("src"+File.separator+"resources"+File.separator+"defaultDatabase.xml");
+	private static Database getDefaultDatabase(String type) {
+		Database databaseResult = new xmlReader<Database>().readXML(databasePath+File.separator+"default"+databaseTypeName+type+".xml");
 		return databaseResult;
 	}
 }

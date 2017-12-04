@@ -1,5 +1,6 @@
 package authoring.dragdrop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import authoring.eventManage.NPCEventEditor;
@@ -17,6 +18,7 @@ import engine.UI.UIComponentFactory.UIComponentFactory;
 import javafx.event.EventHandler;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
@@ -141,6 +143,40 @@ public class DBCell {
 	              
 	                 event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
 	             }
+	             Dragboard db = event.getDragboard();
+	             if(DataFormat.lookupMimeType("Type")==null){
+	            	 new DataFormat("Type");
+	             }
+	             if(DataFormat.lookupMimeType("Tile")==null){
+					new DataFormat("Tile");
+				 }
+	             if((db.getContent(DataFormat.lookupMimeType("Type"))!=null)&&
+	     				(db.getContent(DataFormat.lookupMimeType("Type")).equals("TileFromMap"))){	
+	            	 Tile tile = (Tile)db.getContent(DataFormat.lookupMimeType("Tile"));	
+		             if(tile!=null){
+			        	UpdateTile(tile.getWholePic(), tile.isObstacle());
+			         }
+	             }
+	             
+	             event.consume();
+	         }
+	     });
+		
+		//add drag event handler
+		image.setOnDragDetected(new EventHandler <MouseEvent>() {
+	         public void handle(MouseEvent event) {
+	             /* drag was detected, start drag-and-drop gesture*/
+	             //System.out.println("onDragDetected");
+	             
+	             /* allow any transfer mode */
+	             Dragboard db = image.startDragAndDrop(TransferMode.ANY);
+	             
+	             /* put a string on dragboard */
+	             ClipboardContent content = new ClipboardContent();
+            	 content.putImage(image.getImage());
+            	 content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "TileFromMap");
+            	 content.put(DataFormat.lookupMimeType("Tile")==null?new DataFormat("Tile"):DataFormat.lookupMimeType("Tile"), new Tile(null, cell.isObstacle(), 1, 1, cell.getTilePath(), new ArrayList<String>(){{this.add(cell.getTilePath());}}));
+	             db.setContent(content);
 	             
 	             event.consume();
 	         }
@@ -220,6 +256,9 @@ public class DBCell {
 
 
 	private void dealWithDrag(Dragboard db) {
+        if(DataFormat.lookupMimeType("Type")==null){
+       	 	new DataFormat("Type");
+        }
 		// add a new stuff just for the shop
 		if((db.getContent(DataFormat.lookupMimeType("Type"))!=null)&&
 				(db.getContent(DataFormat.lookupMimeType("Type")).equals("Tile"))){

@@ -12,7 +12,7 @@ import data.model.Pokemon;
  *
  */
 
-public class InstructionNPCFight  implements Instruction{
+public class InstructionNPCFight  extends Instruction{
 	private static final long serialVersionUID = -7111511237505842406L;
 	private static final int pokemonNum = 6; //the number of available Pokemon
 	private NPC npc; //the NPC himself/herself

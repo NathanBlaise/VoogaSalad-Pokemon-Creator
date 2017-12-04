@@ -65,7 +65,7 @@ public class CreateDefaultDatabase{
 		}
 
 		public CreateDefaultDatabase(){
-			String path = "src/resources/defaultDatabase.xml";
+			String path = "src/resources/Databases/defaultDatabases_Pokemon.xml";
 			GameMap map = createMap();
 			Model model = createModel();
 			Player player = new Player();
