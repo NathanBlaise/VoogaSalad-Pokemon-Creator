@@ -10,6 +10,7 @@ import javafx.scene.paint.Paint;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.concurrent.ThreadLocalRandom;
 
 import authoring.ScreenDisplay;
@@ -21,7 +22,7 @@ public class NPCBattleHelper extends ScreenDisplay { //Really messy class, needs
 	private GraphicsContext gc;
 	
 	
-	public NPCBattleHelper(int width, int height, Paint background, GameScene myself, ArrayList<String> inputList) {
+	public NPCBattleHelper(int width, int height, Paint background, GameScene myself, Collection<String> inputList) {
 		super(width, height, background);
 		// TODO Auto-generated constructor stub
 
@@ -36,7 +37,7 @@ public class NPCBattleHelper extends ScreenDisplay { //Really messy class, needs
 		animation.play();
 	}
 
-	private Object step(GameScene myself, ArrayList<String> inputList, double d) {
+	private Object step(GameScene myself, Collection<String> inputList, double d) {
 		updateBattle(myself, inputList);
 		return null;
 	}
@@ -107,7 +108,7 @@ public class NPCBattleHelper extends ScreenDisplay { //Really messy class, needs
 		
 	}
 
-	public void updateBattle(GameScene gameSce, ArrayList<String> inputList) {
+	public void updateBattle(GameScene gameSce, Collection<String> inputList) {
 		
 		if (inputList.contains("Z")) this.setIsReadyForTG2(true);
 		

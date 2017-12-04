@@ -137,7 +137,7 @@ public class StartMenu {
 				gameStage.centerOnScreen();
 				splashGame.setOnKeyPressed(e->{
 					if(e.getCode()==KeyCode.SPACE) {
-						Engine engine = new Engine(one, two, gameStage);
+						Engine engine = new Engine(one, two, gameType, gameStage);
 						engine.toMainGameScene();
 					}
 				});
