@@ -9,24 +9,8 @@ import java.util.ArrayList;
  *
  */
 public class Direction {
-	public enum pictures{
-		UP(emerald_up_rest, emerald_up_1, emerald_up_2),
-		DOWN(emerald_down_rest, emerald_down_1, emerald_down_2),
-		LEFT(emerald_left_rest, emerald_left_1, emerald_left_2),
-		RIGHT(emerald_right_rest, emerald_right_1, emerald_right_2);
-		
-		private ArrayList<Image> images = new ArrayList<Image>();
-		
-		pictures(Image image1, Image image2, Image image3) {
-			images.add(image1);
-			images.add(image2);
-			images.add(image3);
-		}
-		
-		public ArrayList<Image> getImages() {
-			return images;
-		}
-	}
+	
+	private final pictures up, down, left, right;
 
 	static {
 		emerald_down_rest = new Image("file:images/emerald_down_rest.png");
@@ -43,10 +27,6 @@ public class Direction {
 		emerald_up_2 = new Image("file:images/emerald_up_2.png");
 	}
 	
-	
-	/*
-	 * NEEDS REFACTORING!
-	 */
 	public static final transient Image emerald_down_rest; //Don't need all of these
 	public static final transient Image emerald_down_1;
 	public static final transient Image emerald_down_2;
@@ -61,17 +41,35 @@ public class Direction {
 	public static final transient Image emerald_up_2;
 
 
-//	public static final Direction[] cachedValues = values();
+	public Direction(ArrayList<Image> up, ArrayList<Image> down, ArrayList<Image> left, ArrayList<Image> right){
+		this.up = new pictures(up);
+		this.down = new pictures(down);
+		this.left = new pictures(left);
+		this.right = new pictures(right);
+	}
 	
-	public static pictures getPictures(String key){
+	public final pictures getPictures(String key){
 		if(key.equals(KeyCode.LEFT.toString())){
-			return pictures.LEFT;
+			return left;
 		}else if(key.equals(KeyCode.RIGHT.toString())){
-			return pictures.RIGHT;
+			return right;
 		}else if(key.equals(KeyCode.UP.toString())){
-			return pictures.UP;
+			return up;
 		}else{
-			return pictures.DOWN;
+			return down;
+		}
+	}
+	
+	public class pictures{
+		
+		private ArrayList<Image> images = new ArrayList<Image>();
+		
+		pictures(ArrayList<Image> images) {
+			this.images = new ArrayList<Image>(images);
+		}
+		
+		public ArrayList<Image> getImages() {
+			return images;
 		}
 	}
 
