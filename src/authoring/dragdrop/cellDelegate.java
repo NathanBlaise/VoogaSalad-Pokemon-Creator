@@ -1,6 +1,7 @@
 package authoring.dragdrop;
 
 import data.Database;
+import data.model.Tile;
 
 
 /**
@@ -45,4 +46,16 @@ public interface cellDelegate {
 	 * Get the cell list from the DBMap
 	 */
 	public DBCell[][] getCellList();
+
+	/**
+	 * get the current selected tile
+	 * @return
+	 */
+	public Tile getCurrentSelectedTile();
+	
+	/**
+	 * set the current selected tile
+	 * @return
+	 */
+	public void setCurrentSelectedTile(String imagePath, boolean obstacle);
 }

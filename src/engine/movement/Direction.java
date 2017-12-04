@@ -1,5 +1,6 @@
 package engine.movement;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 
 import java.util.ArrayList;
 /**
@@ -61,5 +62,17 @@ public class Direction {
 
 
 //	public static final Direction[] cachedValues = values();
+	
+	public static pictures getPictures(String key){
+		if(key.equals(KeyCode.LEFT.toString())){
+			return pictures.LEFT;
+		}else if(key.equals(KeyCode.RIGHT.toString())){
+			return pictures.RIGHT;
+		}else if(key.equals(KeyCode.UP.toString())){
+			return pictures.UP;
+		}else{
+			return pictures.DOWN;
+		}
+	}
 
 }
