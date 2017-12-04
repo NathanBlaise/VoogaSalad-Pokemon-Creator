@@ -1,0 +1,5 @@
+<defaultNPC>
+	<name>barren ground</name>
+	<wholePic>images/tiles/reg_tile.png</wholePic>
+	<obstacle>false</obstacle>
+</defaultNPC>

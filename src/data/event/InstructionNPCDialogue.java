@@ -2,7 +2,11 @@ package data.event;
 
 import java.util.ArrayList;
 
+import data.map.GameMap;
 import data.model.NPC;
+import data.player.Player;
+import engine.game.Dialogue;
+import engine.game.GameScene;
 
 /**
  * this is a instruction for talking with NPC, 
@@ -14,7 +18,7 @@ import data.model.NPC;
  * 
  *
  */
-public class InstructionNPCDialogue implements Instruction{
+public class InstructionNPCDialogue extends Instruction{
 	private static final long serialVersionUID = 3057407796442711712L;
 	/**
 	 * the 0 element of dialogues is the sentence of the NPC
@@ -82,11 +86,9 @@ public class InstructionNPCDialogue implements Instruction{
 	}
 
 	@Override
-	/**
-	 * @see Instruction#execute
-	 */
-	public void execute(Object... parameters) {
-		// TODO call the API in Engine to begin a Dialogue
-		
+	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
+			GameMap mainMap, Event event, GameScene gameScene) {
+		new Dialogue(this, gameScene, gameScene.getInputHandler());
 	}
+
 }

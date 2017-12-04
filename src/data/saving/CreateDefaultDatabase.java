@@ -1,32 +1,27 @@
 package data.saving;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
 
 import data.Database;
+import data.database.NPCCollection;
 import data.database.PokemonSpecieCollection;
+import data.database.TileCollection;
 import data.map.Cell;
 import data.map.GameMap;
 import data.model.Model;
 import data.model.NPC;
+import data.model.Tile;
 import data.model.PokemonSpecie;
 import data.player.Player;
-import javafx.application.Application;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
 
-public class xmlSerializeTest2 extends Application{
-
-		public xmlSerializeTest2() {
-			// TODO Auto-generated constructor stub
-		}
-
-		public static void main(String args[]) throws IOException{
-			launch(args);
-		}
+/**
+ * for creating the xml file of default pokemon
+ * @author cy122
+ *
+ */
+public class CreateDefaultDatabase{
 		
 		private static GameMap createMap(){
 			GameMap map = new GameMap(10, 15);
@@ -38,13 +33,10 @@ public class xmlSerializeTest2 extends Application{
 			return map;
 		}
 		
-		private static Model createModel(){
-			ArrayList<NPC> NPCs = new ArrayList<NPC>();
-			//add new NPC
-			NPC npc = new NPC("images/CaptainMap.png", "Caption Kirk");
-			NPCs.add(npc);
-			
-			Model model = new Model(NPCs, new ArrayList<PokemonSpecie>());
+		private static Model createModel(){		
+			Model model = new Model(new ArrayList<NPC>(), new ArrayList<PokemonSpecie>(), new ArrayList<Tile>());
+			new NPCCollection().passNPCToModel(model);
+			new TileCollection().passTileToModel(model);
 			
 			
 			PokemonSpecieCollection species = new PokemonSpecieCollection();
@@ -72,31 +64,30 @@ public class xmlSerializeTest2 extends Application{
 			return model;
 		}
 
-		@Override
-		public void start(Stage primaryStage) throws Exception {
-			String path = "src/resources/defaultDatabase.xml";
+		public CreateDefaultDatabase(){
+			String path = "src/resources/Databases/defaultDatabases_Pokemon.xml";
 			GameMap map = createMap();
 			Model model = createModel();
 			Player player = new Player();
 			Database database = new Database(map, model, player);
-			
-			
-			new xmlWriter().writeXML(model, path);
-			Model modelResult = new xmlReader<Model>().readXML(path);
-			System.out.println(modelResult);
-			
-			
-			new xmlWriter().writeXML(map, path);
-			GameMap mapResult = new xmlReader<GameMap>().readXML(path);
-			System.out.println(mapResult);
-			
-			new xmlWriter().writeXML(player, path);
-			Player playerResult = new xmlReader<Player>().readXML(path);
-			System.out.println(playerResult);
+//			
+//			
+//			new xmlWriter().writeXML(model, path);
+//			Model modelResult = new xmlReader<Model>().readXML(path);
+//			System.out.println(modelResult);
+//			
+//			
+//			new xmlWriter().writeXML(map, path);
+//			GameMap mapResult = new xmlReader<GameMap>().readXML(path);
+//			System.out.println(mapResult);
+//			
+//			new xmlWriter().writeXML(player, path);
+//			Player playerResult = new xmlReader<Player>().readXML(path);
+//			System.out.println(playerResult);
 			
 			new xmlWriter().writeXML(database, path);
-			Database databaseResult = new xmlReader<Database>().readXML(path);
-			System.out.println(databaseResult);
+//			Database databaseResult = new xmlReader<Database>().readXML(path);
+//			System.out.println(databaseResult);
 		}
 
 }

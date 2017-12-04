@@ -26,7 +26,7 @@ import javafx.scene.text.Font;
 
 /**
  * The EventImageMenu which displays all the event images you can choose over 
- * @author supertony
+ * @author supertony cy122
  *
  */
 public class EventImageMenu extends TitledPane{

@@ -285,11 +285,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void runButtonPressed(Button button) {
 		button.setOnAction((event) -> {
-			//exit battle scene
-			Stage stage = (Stage) button.getScene().getWindow();
-		    stage.setScene(gameScene.getScene());
-		    gameScene.detectCollisions();
-		    gameScene.startGameLoop();
+			gameScene.changeBackScene();
 		});
 	}
 	
@@ -322,7 +318,7 @@ public class BattleScene extends ScreenDisplay{
 	 * Passed in the pictures of the front; return the pokemon pictures from the back
 	 */
 	private String backSpriteURL(Pokemon myPokemon) {
-		return "file:"+myPokemon.getCurrentImagePath().substring(0, 14) + "_back" + myPokemon.getCurrentImagePath().substring(14, 25) + ".png";
+		return "file:"+myPokemon.getCurrentImagePath().substring(0, 14) + "_back" + myPokemon.getCurrentImagePath().substring(14, 25) + "png";
 	}
 	
 	/*

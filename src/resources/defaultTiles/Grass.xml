@@ -1,0 +1,5 @@
+<defaultNPC>
+	<name>grass</name>
+	<wholePic>images/tiles/grass_tile.png</wholePic>
+	<obstacle>false</obstacle>
+</defaultNPC>
