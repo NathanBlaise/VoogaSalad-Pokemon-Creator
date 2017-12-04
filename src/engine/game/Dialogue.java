@@ -33,7 +33,7 @@ public class Dialogue {
 	
 	
 	/*instance variable*/
-	private ScreenDisplay oriDisplay;
+	private GameScene oriDisplay;
 	private ArrayList<String> sentenceList;
 	private InstructionNPCDialogue instruction;
 	private Label textDisplay;
@@ -53,10 +53,10 @@ public class Dialogue {
 //	}
 	
 	
-	public Dialogue (InstructionNPCDialogue instruction, ScreenDisplay sDisplay, Map<String, ArrayList<Function<String, Integer>>> inputHandler) {
+	public Dialogue (InstructionNPCDialogue instruction, GameScene gameScene, Map<String, ArrayList<Function<String, Integer>>> inputHandler) {
 		sentenceList = instruction.getDialogues();
 		this.instruction = instruction;
-		oriDisplay = sDisplay;
+		oriDisplay = gameScene;
 		this.inputHandler = inputHandler;
 		inputHandler.get("F").add(handleF);
 
@@ -99,6 +99,7 @@ public class Dialogue {
 				      }
 				}
 				instruction.setGoNextInstruction(true);
+				oriDisplay.changeBackScene();
 			}
 	}
 	
