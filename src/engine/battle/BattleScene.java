@@ -285,11 +285,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void runButtonPressed(Button button) {
 		button.setOnAction((event) -> {
-			//exit battle scene
-			Stage stage = (Stage) button.getScene().getWindow();
-		    stage.setScene(gameScene.getScene());
-//		    gameScene.detectCollisions();
-//		    gameScene.startGameLoop();
+			gameScene.changeBackScene();
 		});
 	}
 	

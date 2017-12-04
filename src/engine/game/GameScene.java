@@ -72,6 +72,7 @@ public class GameScene extends ScreenDisplay {
 	
 	private ImageView playerImage;
 	private Canvas tileCanvas;
+	private Timeline animation;
 	private GraphicsContext gc;
 	// add a runSpeed here to allow players to run
 	private int runSpeed = 1;
@@ -138,7 +139,7 @@ public class GameScene extends ScreenDisplay {
 		
 		KeyFrame frame = new KeyFrame(Duration.millis(MILLISECOND_DELAY*0.0025),
 				e -> step());
-		Timeline animation = new Timeline();
+		animation = new Timeline();
 		animation.setCycleCount(Timeline.INDEFINITE);
 		animation.getKeyFrames().add(frame);
 		animation.play();
@@ -213,6 +214,7 @@ public class GameScene extends ScreenDisplay {
 			}
 			Instruction instruction = event.getInstructions().get(i);
 			if (instruction.isGoNextInstruction()==false) {
+				animation.pause();
 				instruction.execute(SCREEN_WIDTH,SCREEN_HEIGHT,mainPlayer,mainMap,event,this);
 				break;
 			} else {
@@ -300,6 +302,7 @@ public class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
+		animation.play();
 		myStage.setScene(this.getScene());
 	}
 
