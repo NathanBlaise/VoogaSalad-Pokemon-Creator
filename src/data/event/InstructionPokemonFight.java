@@ -60,9 +60,9 @@ public class InstructionPokemonFight extends Instruction{
 		BattleScene battle = new BattleScene(SCREEN_WIDTH,SCREEN_HEIGHT,Color.WHITE,mainPlayer,null,pokemon, gameScene);
 		// Change the battle scene here
 		((Stage) gameScene.getScene().getWindow()).setScene(battle.getScene());					
-		ArrayList<Instruction> newInstructions = event.getInstructions();
-		newInstructions.remove(this);
-		event.setInstructions(newInstructions);
+//		ArrayList<Instruction> newInstructions = event.getInstructions();
+//		newInstructions.remove(this);
+//		event.setInstructions(newInstructions);
 	}
 
 }

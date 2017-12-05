@@ -225,7 +225,10 @@ public class BattleScene extends ScreenDisplay{
 			
 			ArrayList<String> pokemonNames=new ArrayList<>();
 			for (Pokemon each:mainPlayer.getPokemons()) {
-				pokemonNames.add(each.getNickName());
+				//check if the pokemon has nick name, if they has nick name, then the pokemon exists
+				if(each.getNickName()!=null){
+					pokemonNames.add(each.getNickName());
+				}
 				System.out.println(each.getNickName());
 			}
 			addListView(listOfPokemons, pokemonNames);
