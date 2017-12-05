@@ -84,9 +84,20 @@ public class BattleFightOptions {
 		for(Move move: activePokemon.getAvailableMoves()) {
 			buttonArr[i].setText(move.getMoveName());
 			buttonArr[i].setOnAction((event) -> {
-				//move.move(activePokemon, enemyPokemon);
+				move.move(activePokemon, enemyPokemon);
 				//Load hit animation, then change scene to enemy's move
 				changeScene();
+				activePokemon.printCurrentInfo();
+				enemyPokemon.printCurrentInfo();
+				int newActiveHP=activePokemon.getCurrentStat().getHP();
+				int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
+				battleScene.getActivePokemonHP().setText("Current Hp: "+newActiveHP);
+				battleScene.getEnemyPokemonHP().setText("Current Hp: "+newEnemyHP);
+				
+				if(activePokemon.isDead() || enemyPokemon.isDead()) {
+				    battleScene.getGameScene().changeBackScene();
+				}
+
 				
 				
 				
@@ -102,4 +113,6 @@ public class BattleFightOptions {
 	protected Button[] getButtons() {
 		return buttonArr;
 	}
+	
+	
 }

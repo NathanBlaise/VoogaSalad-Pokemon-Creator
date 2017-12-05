@@ -248,5 +248,26 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 		return moveNum;
 
 	}
+	
+	public boolean isDead() {
+	    return currentStat.getHP() <= 0;
+	}
+	/**
+	 * This method prints the current Hp of the pokemon 
+	 * It exists to facilitate testing
+	 */
+	public void printCurrentInfo() {
+	    System.out.println("Pokemon: " + getName() + "\n" +
+		    "\tHp: " + getCurrentStat().getHP() + "\n" +
+		    "\tAttack: " + getCurrentStat().getNormalAttack() + "\n" +
+		    "\tDefense: " + getCurrentStat().getNormalDefense() + "\n" +
+		    "\tSpeAttk: " + getCurrentStat().getSpecialAttack() + "\n" +
+		    "\tSpeDef: " + getCurrentStat().getSpecialDefense() + "\n" + 
+		    "\tMaxHp: " + getCurrentStat().getMaxHP() + "\n" +
+		    "\tSpeed: " + getCurrentStat().getSpeed());
+	    		
+
+	}
+
 
 }
