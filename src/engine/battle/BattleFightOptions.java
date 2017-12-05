@@ -99,8 +99,8 @@ public class BattleFightOptions {
 				enemyPokemon.printCurrentInfo();
 				int newActiveHP=activePokemon.getCurrentStat().getHP();
 				int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
-				battleScene.getActivePokemonHP().setText("Hp: "+newActiveHP);
-				battleScene.getEnemyPokemonHP().setText("Hp: "+newEnemyHP);
+				battleScene.getActivePokemonHP().setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newActiveHP);
+				battleScene.getEnemyPokemonHP().setText(enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newEnemyHP);
 				//battleScene.printHPInfo();
 				
 				if(activePokemon.isDead()) {

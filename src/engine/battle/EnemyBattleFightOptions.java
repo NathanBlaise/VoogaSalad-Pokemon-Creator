@@ -82,8 +82,8 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 			int newActiveHP=activePokemon.getCurrentStat().getHP();
 			int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
 			//reverse because now it is reversed
-			battleScene.getActivePokemonHP().setText("Hp: "+newEnemyHP);
-			battleScene.getEnemyPokemonHP().setText("Hp: "+newActiveHP);
+			battleScene.getActivePokemonHP().setText(enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newEnemyHP);
+			battleScene.getEnemyPokemonHP().setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newActiveHP);
 			changeScene();
 			
 			
