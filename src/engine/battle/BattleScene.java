@@ -18,6 +18,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -38,6 +39,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
 
 /**
  * 
@@ -284,6 +286,11 @@ public class BattleScene extends ScreenDisplay{
 		list.setPrefWidth(LIST_OF_BAG_ITEMS_WIDTH);
 		list.setPrefHeight(LIST_OF_BAG_ITEMS_HEIGHT);
 		list.setStyle("-fx-control-inner-background: #61a2b1;");
+	
+
+	      
+	      
+	    
 		
      
 
@@ -314,12 +321,44 @@ public class BattleScene extends ScreenDisplay{
 			}
 			
 			listOfPokemons=addListView(pokemonNames,500,200);
+			pokemonListAction();
 		
 			
 			
 			
 		});
 	}
+	
+	
+	
+	private void pokemonListAction() {
+		listOfPokemons.setOnMouseClicked(new EventHandler<MouseEvent>(){
+
+	          @Override
+	          public void handle(MouseEvent arg0) {
+	            
+	              
+	                 String item=listOfPokemons.getSelectionModel().getSelectedItems().get(0);
+	                 for (Pokemon each: mainPlayer.getPokemons()) {
+	                	     if (each.getNickName().equals(item)) {
+	                	    	     activePokemon=each;
+	                	    	     break;
+	                	     }
+	                 }
+	                 
+	                 activePokemonHP.setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+activePokemon.getCurrentStat().getHP());
+	                 
+	                 
+	                 
+	                 
+	          }
+	          
+	          
+
+	      });
+		
+	}
+	
 	
 	/*
 	 * When run button pressed, exit the battle scene back to main game engine
@@ -384,9 +423,9 @@ public class BattleScene extends ScreenDisplay{
 	}
 	
 	public void printHPInfo() {
-		activePokemonHP=new Text( "Hp: " + activePokemon.getCurrentStat().getHP());
-		setTextEffects(activePokemonHP,300,300,Color.RED);
-		enemyPokemonHP=new Text( "Hp: " + enemyPokemon.getCurrentStat().getHP());
+		activePokemonHP=new Text( activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: " + activePokemon.getCurrentStat().getHP());
+		setTextEffects(activePokemonHP,300,260,Color.RED);
+		enemyPokemonHP=new Text( enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: " + enemyPokemon.getCurrentStat().getHP());
 	
 		
 		setTextEffects(enemyPokemonHP,200,150,Color.RED);
