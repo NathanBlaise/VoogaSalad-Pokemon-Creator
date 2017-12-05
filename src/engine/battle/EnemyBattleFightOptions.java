@@ -1,7 +1,9 @@
 package engine.battle;
 
 import data.model.Pokemon;
+import data.model.moves.Move;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -10,7 +12,10 @@ import javafx.scene.text.Text;
 public class EnemyBattleFightOptions extends BattleFightOptions {
 	private BattleScene mainScene;
 	private BattleFightOptions bfo;
+
+
 	private Button cancel=new Button("Enemy Pokemon's move");
+
 	
 	public EnemyBattleFightOptions(
 			Pokemon ap, Pokemon ep, BattleScene bs) {
@@ -29,6 +34,9 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	
   @Override
    public void setUpScene() {
+	  //perform move 
+	  performMove();
+	  
 	  bfo=super.battleScene.getMyBattleScene();
 	  
 	  if (battleScene.getRootChildren().contains(bfo.getText())) {
@@ -50,8 +58,10 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 		super.hbox=ButtonLayout(super.buttonArr);
 		
 		battleScene.rootAdd(hbox);
+
 		battleScene.rootAdd(this.getText(),400,420);
 		//battleScene.gc.drawImage(battleScene.battleBox,0,0);
+
 		cancel.setOnAction((event) -> {
 			//move.move(activePokemon, enemyPokemon);
 			//Load hit animation, then change scene to enemy's move
@@ -63,6 +73,14 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 
 		
 	}
+  
+  private void performMove() {
+	  
+	  //hard code move for now coz some moves are not working????
+	  Move move=super.activePokemon.getAvailableMoves().get(1);
+	  move.move(super.activePokemon, super.enemyPokemon);
+	  System.out.println(move.getMoveName());
+  }
   
   
   private HBox ButtonLayout(Button[] buttons) {
