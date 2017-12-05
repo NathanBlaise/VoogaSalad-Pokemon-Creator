@@ -159,6 +159,7 @@ public class BattleFightOptions {
 	public void changeScene() {
 		
 		ebfo.setUpScene();
+		
 	}
 	
 	protected Button[] getButtons() {

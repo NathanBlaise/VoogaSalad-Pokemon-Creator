@@ -1,17 +1,24 @@
 package engine.battle;
 
+import java.util.Random;
+
 import data.model.Pokemon;
 import data.model.moves.Move;
 import javafx.scene.control.Button;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+
 
 public class EnemyBattleFightOptions extends BattleFightOptions {
 	private BattleScene mainScene;
 	private BattleFightOptions bfo;
+	
 
 
 	private Button cancel=new Button("Enemy Pokemon's move");
@@ -22,13 +29,19 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 		super(ap, ep,bs);
 		mainScene = bs;
 		// TODO Auto-generated constructor stub
+		
+		
 	}
+	
+	
 	
 	@Override
 	public void changeScene() {
 		mainScene.buttonInitialSetUp();
 		mainScene.rootRemove(super.hbox);
 		mainScene.rootRemove(this.getText());
+		
+		
 		//bfo.setUpScene();
 	}
 	
@@ -75,17 +88,44 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 			
 			
 			
+			
 		});
+		
+		
+		//battleScene.setTextEffects(actionMessage, 20, 20);
+		
+		
 
 		
 	}
   
+  private void styleText(Text t) {
+	  t.setTranslateX(20);
+	  t.setTranslateY(40);
+	  InnerShadow is = new InnerShadow();
+		is.setOffsetX(4.0f);
+		is.setOffsetY(4.0f);
+		t.setEffect(is);
+		t.setFill(Color.BLACK);
+		
+		t.setFont(Font.font("Helvetica", FontWeight.BOLD, 30));
+	  
+  }
+  
   private void performMove() {
 	  
-	  //hard code move for now coz some moves are not working????
-	  Move move=super.activePokemon.getAvailableMoves().get(1);
+	
+	  
+	  int numberOfMoves=super.activePokemon.getAvailableMoves().size();
+	  Random rand=new Random();
+	  int thisMove=rand.nextInt(numberOfMoves);
+	  
+	  Move move=super.activePokemon.getAvailableMoves().get(thisMove);
 	  move.move(super.activePokemon, super.enemyPokemon);
 	  System.out.println(move.getMoveName());
+	  String currentMessage="Oh no! It performs "+move.getMoveName()+" to you!";
+	  super.battleScene.getActionMessage().setText(currentMessage);
+		 
   }
   
   
