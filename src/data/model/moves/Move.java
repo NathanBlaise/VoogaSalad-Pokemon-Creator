@@ -123,6 +123,7 @@ public class Move implements Serializable{
 		}
 		result[0]=friend;
 		result[1]=enemy;
+	
 		return result;
 	}
 

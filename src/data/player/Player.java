@@ -14,16 +14,15 @@ import data.model.Pokemon;
  */
 public class Player implements Serializable{
 	private static final long serialVersionUID = 556462866183029469L;
-
-	//only holds these attributes for now
 	private int posX, posY;
-	private Pokemon[] pokemons; //the pokemons for battle, no pokemon in the warehouse for now
-	private ArrayList<Item> items; //Items held by the player
+	private Pokemon[] pokemons;
+	private ArrayList<Item> items;
+//	public transient Direction direction;
 	//private Map<Item,Integer> Bag;  // a map from the item to the number of item
 	
 	public Player(){
-		posX=0;
-		posY=0;
+		posX=50;
+		posY=50;
 		pokemons = new Pokemon[6];
 	}
 	
@@ -53,6 +52,10 @@ public class Player implements Serializable{
 
 	public void setItems(ArrayList<Item> items) {
 		this.items = items;
+	}
+	
+	public void addItem(Item item) {
+		items.add(item);
 	}
 
 	public void setPokemons(Pokemon[] pokemons) {

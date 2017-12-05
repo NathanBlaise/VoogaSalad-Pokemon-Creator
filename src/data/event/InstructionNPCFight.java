@@ -75,9 +75,6 @@ public class InstructionNPCFight  extends Instruction{
 	}
 
 	@Override
-	/**
-	 * @see Instruction#execute
-	 */
 	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
 			GameMap mainMap, Event event, GameScene gameScene) {
 		NPCBattleHelper npcHelper = new NPCBattleHelper(SCREEN_WIDTH, SCREEN_HEIGHT, Color.WHITE, gameScene, gameScene.getInputList());
