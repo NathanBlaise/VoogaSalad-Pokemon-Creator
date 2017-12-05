@@ -51,6 +51,7 @@ public class BattleScene extends ScreenDisplay{
 	
 	private static final int LIST_OF_BAG_ITEMS_HEIGHT = 200;
 	private static final int LIST_OF_BAG_ITEMS_WIDTH = 150;
+	private Text actionMessage=new Text("");
 	
 	Image grassBattle = new Image("file:images/grass_battle.png");
 	Image grassBattleBackground = new Image("file:images/grass_battle_background.png");
@@ -130,6 +131,8 @@ public class BattleScene extends ScreenDisplay{
 		characterSetUp();
 		setUpScreen();
 		printHPInfo();
+		rootAdd(actionMessage);
+		setTextEffects(actionMessage,20,40,Color.BLACK);
 	
 		
 
@@ -199,7 +202,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void fightButtonPressed(Button button) {
 		button.setOnAction((event) -> { 
-		
+		    actionMessage.setText("");
 			this.rootRemove(hbox);
 			bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
 			ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this);
@@ -218,7 +221,9 @@ public class BattleScene extends ScreenDisplay{
 	
 
 	
-	
+	public Text getActionMessage() {
+		return actionMessage;
+	}
 	
 	public BattleFightOptions getMyBattleScene() {
 		return bfo;
@@ -233,6 +238,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void bagButtonPressed(Button button) {
 		button.setOnAction((event) -> {
+			actionMessage.setText("");
 			
 			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
 			
@@ -279,6 +285,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void pokemonButtonPressed(Button button) {
 		button.setOnAction((event) -> {
+			actionMessage.setText("");
 			//load list of pokemon
 			if (listOfItems!=null) {
 			    this.rootRemove(listOfItems);
@@ -364,23 +371,23 @@ public class BattleScene extends ScreenDisplay{
 	
 	public void printHPInfo() {
 		activePokemonHP=new Text( "Hp: " + activePokemon.getCurrentStat().getHP());
-		setTextEffects(activePokemonHP,300,300);
+		setTextEffects(activePokemonHP,300,300,Color.RED);
 		enemyPokemonHP=new Text( "Hp: " + enemyPokemon.getCurrentStat().getHP());
 	
 		
-		setTextEffects(enemyPokemonHP,200,150);
+		setTextEffects(enemyPokemonHP,200,150,Color.RED);
 		this.rootAdd(activePokemonHP);
 		this.rootAdd(enemyPokemonHP);
 	    
 	}
 	
 	
-	private void setTextEffects(Text t,int x, int y) {
+	public void setTextEffects(Text t,int x, int y, Color c) {
 		InnerShadow is = new InnerShadow();
 		is.setOffsetX(4.0f);
 		is.setOffsetY(4.0f);
 		t.setEffect(is);
-		t.setFill(Color.RED);
+		t.setFill(c);
 		t.setTranslateX(x);
 		t.setTranslateY(y);
 		t.setFont(Font.font("Helvetica", FontWeight.BOLD, 30));
