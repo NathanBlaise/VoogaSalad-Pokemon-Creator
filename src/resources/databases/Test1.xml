@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_101" class="java.beans.XMLDecoder">
+<java version="1.8.0_102" class="java.beans.XMLDecoder">
  <object class="data.Database">
   <void property="map">
    <object class="data.map.GameMap">
@@ -217,7 +217,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
+           <string>images/pokemonCenterScaled.png</string>
           </void>
          </object>
         </void>
@@ -1080,7 +1080,7 @@
            <boolean>true</boolean>
           </void>
           <void property="tilePath">
-           <string>images/reg_tile_scaled.png</string>
+           <string>images/grass_tile.png</string>
           </void>
          </object>
         </void>
