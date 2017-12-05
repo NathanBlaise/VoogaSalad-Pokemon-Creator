@@ -194,8 +194,8 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 * set the current status of Pokemon
 	 * @param currentStat - the current status of Pokemon
 	 */
-	public void setCurrentStat(PokemonStat currentStat) {
-		this.currentStat = new PokemonStat(currentStat);
+	public void setCurrentStat(PokemonStat newStat) {
+		this.currentStat = new PokemonStat(newStat);
 	}
 
 	/**

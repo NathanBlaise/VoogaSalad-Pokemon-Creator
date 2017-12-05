@@ -15,8 +15,8 @@ import javafx.scene.text.Text;
  */
 public class BattleFightOptions {
 	
-	private Pokemon activePokemon;
-	private Pokemon enemyPokemon;
+	protected Pokemon activePokemon;
+	protected Pokemon enemyPokemon;
 	protected BattleScene battleScene;
 	private EnemyBattleFightOptions ebfo;
 	
@@ -91,8 +91,8 @@ public class BattleFightOptions {
 				enemyPokemon.printCurrentInfo();
 				int newActiveHP=activePokemon.getCurrentStat().getHP();
 				int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
-				battleScene.getActivePokemonHP().setText("Current Hp: "+newActiveHP);
-				battleScene.getEnemyPokemonHP().setText("Current Hp: "+newEnemyHP);
+				battleScene.getActivePokemonHP().setText("Hp: "+newActiveHP);
+				battleScene.getEnemyPokemonHP().setText("Hp: "+newEnemyHP);
 				
 				if(activePokemon.isDead() || enemyPokemon.isDead()) {
 				    battleScene.getGameScene().changeBackScene();

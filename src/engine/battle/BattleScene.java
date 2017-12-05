@@ -11,6 +11,7 @@ import authoring.ScreenDisplay;
 import data.items.Item;
 import data.model.NPC;
 import data.model.Pokemon;
+import data.model.moves.Move;
 import data.player.Player;
 import engine.game.GameScene;
 import javafx.animation.KeyFrame;
@@ -117,6 +118,7 @@ public class BattleScene extends ScreenDisplay{
 		super(width, height, background);
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
+		System.out.println(mainPlayer.getPokemons().length);
 		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
 		canvas = new Canvas(width,height);
@@ -128,6 +130,7 @@ public class BattleScene extends ScreenDisplay{
 		characterSetUp();
 		setUpScreen();
 		printHPInfo();
+	
 		
 
 	}
@@ -138,8 +141,8 @@ public class BattleScene extends ScreenDisplay{
 	
 	private void characterSetUp() {
 //		String imagePathForEP=enemyPokemon.getCurrentImagePath();
-	enemyImage=new Image("file:images/pokemons/pikachu.png");
-	pokemonImage=new Image("file:images/pokemons/raichu.png");
+	enemyImage=new Image("file:images/pokemon_back_sprites/1.png");
+	pokemonImage=new Image("file:images/pokemon_back_sprites/10.png");
 		
 		
 		//hard code for now
@@ -175,13 +178,18 @@ public class BattleScene extends ScreenDisplay{
 		Button button2 = new Button(initialButtons[1]);
 		Button button3 = new Button(initialButtons[2]);
 		Button button4 = new Button(initialButtons[3]);
+		Button button5 = new Button("Change my Pokemon");
 		buttonArr = new Button[] {button1, button2, button3, button4};
 		this.rootAdd(fourButtonLayout(buttonArr));
+		this.rootAdd(button5);
+		button5.setTranslateX(20);
+		button5.setTranslateY(20);
 		//Sets action for fight button
 		fightButtonPressed(button1);
 		bagButtonPressed(button2);
 		pokemonButtonPressed(button3);
 		runButtonPressed(button4);
+		changePokemonButtonPressed(button5);
 	}
 	
 	
@@ -195,10 +203,32 @@ public class BattleScene extends ScreenDisplay{
 		
 			this.rootRemove(hbox);
 			bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
-			ebfo=new EnemyBattleFightOptions(activePokemon,enemyPokemon,this);
+			ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this);
 	
 			bfo.setUpScene();
 			
+			
+			
+			
+			
+		});
+		
+		
+		
+	}
+	
+	//player changes activePokemon
+	private void changePokemonButtonPressed(Button button) {
+		button.setOnAction((event) -> { 
+		
+			
+			
+			ArrayList<String> pokemonNames=new ArrayList<>();
+			for (Pokemon each:mainPlayer.getPokemons()) {
+				pokemonNames.add(each.getNickName());
+				System.out.println(each.getNickName());
+			}
+			addListView(listOfPokemons, pokemonNames);
 			
 			
 			
@@ -357,9 +387,11 @@ public class BattleScene extends ScreenDisplay{
 	
 	private void printHPInfo() {
 		activePokemonHP=new Text( "Hp: " + activePokemon.getCurrentStat().getHP());
-		setTextEffects(activePokemonHP,200,150);
+		setTextEffects(activePokemonHP,300,300);
 		enemyPokemonHP=new Text( "Hp: " + enemyPokemon.getCurrentStat().getHP());
-		setTextEffects(enemyPokemonHP,400,300);
+	
+		
+		setTextEffects(enemyPokemonHP,200,150);
 		this.rootAdd(activePokemonHP);
 		this.rootAdd(enemyPokemonHP);
 	    
