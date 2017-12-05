@@ -119,7 +119,7 @@ public class BattleScene extends ScreenDisplay{
 		super(width, height, background);
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
-		System.out.println(mainPlayer.getPokemons().length);
+		
 		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
 		canvas = new Canvas(width,height);
@@ -202,6 +202,13 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void fightButtonPressed(Button button) {
 		button.setOnAction((event) -> { 
+	
+			
+				rootRemove(listOfItems);
+				rootRemove(listOfPokemons);
+		
+			
+			
 		    actionMessage.setText("");
 			this.rootRemove(hbox);
 			bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
@@ -239,6 +246,8 @@ public class BattleScene extends ScreenDisplay{
 	private void bagButtonPressed(Button button) {
 		button.setOnAction((event) -> {
 			actionMessage.setText("");
+			this.rootRemove(listOfPokemons);
+			this.rootRemove(listOfItems);
 			
 			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
 			
@@ -258,16 +267,17 @@ public class BattleScene extends ScreenDisplay{
 			itemNames.add("item2");
 			itemNames.add("item3");
 			
-			addListView(listOfItems,itemNames,500,200);
+			listOfItems=addListView(itemNames,500,200);
+			System.out.println(listOfItems==null);
 			
 		});
 	}
 
-	public void addListView(ListView<String> list,ArrayList<String> content, int x, int y) {
+	public ListView<String> addListView(ArrayList<String> content, int x, int y) {
 		ObservableList<String> items =FXCollections.observableArrayList (content
 		    );
 		
-		list=new ListView<String>(); 
+		ListView<String> list=new ListView<String>(); 
 		list.setItems(items);
 		list.setTranslateX(x);
 		list.setTranslateY(y);
@@ -275,9 +285,10 @@ public class BattleScene extends ScreenDisplay{
 		list.setPrefHeight(LIST_OF_BAG_ITEMS_HEIGHT);
 		list.setStyle("-fx-control-inner-background: #61a2b1;");
 		
-
+     
 
 		this.rootAdd(list);
+		return list;
 	}
 	
 	/*
@@ -287,19 +298,22 @@ public class BattleScene extends ScreenDisplay{
 		button.setOnAction((event) -> {
 			actionMessage.setText("");
 			//load list of pokemon
-			if (listOfItems!=null) {
+	
 			    this.rootRemove(listOfItems);
-			}
+			    this.rootRemove(listOfPokemons);
+	
 
 			ArrayList<String> pokemonNames=new ArrayList<>();
 			for (Pokemon each:mainPlayer.getPokemons()) {
 				//check if the pokemon has nick name, if they has nick name, then the pokemon exists
 				if((each!=null) &&each.getNickName()!=null){
+					System.out.println(each.getNickName());
 					pokemonNames.add(each.getNickName());
 				}
 				//System.out.println(each.getNickName());
 			}
-			addListView(listOfPokemons, pokemonNames,500,200);
+			
+			listOfPokemons=addListView(pokemonNames,500,200);
 		
 			
 			
