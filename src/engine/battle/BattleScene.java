@@ -46,6 +46,7 @@ public class BattleScene extends ScreenDisplay{
 	
 	private static final int LIST_OF_BAG_ITEMS_HEIGHT = 200;
 	private static final int LIST_OF_BAG_ITEMS_WIDTH = 150;
+	
 	Image grassBattle = new Image("file:images/grass_battle.png");
 	Image grassBattleBackground = new Image("file:images/grass_battle_background.png");
 	Image grassBattleGrass1 = new Image("file:images/grass_battle_grass_1.png");
@@ -102,6 +103,7 @@ public class BattleScene extends ScreenDisplay{
 	 * @param background - background color
 	 * @param player - the main player object from the game
 	 * @param trainer - the encountered trainer from the game (null if pokemon is encountered)
+	 * @param inputList 
 	 * @param enemyPokemon - the encountered enemy pokemon (null if trainer is encountered)
 	 */
 	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene) {
@@ -118,6 +120,8 @@ public class BattleScene extends ScreenDisplay{
 		buttonInitialSetUp();
 		characterSetUp();
 		setUpScreen();
+		
+
 	}
 	
 	/*
@@ -131,10 +135,15 @@ public class BattleScene extends ScreenDisplay{
 		
 		
 		//hard code for now
-		enemyImage=new Image("file:images/pokemon_sprites/2.gif_.gif");
-		pokemonImage=new Image("file:images/pokemon_back_sprites/1.png");
+		//System.out.println("Current Path: "+activePokemon.getCurrentImagePath());
+		//System.out.println("Enemy path: " + enemyPokemon.getCurrentImagePath());
+		System.out.println(backSpriteURL(activePokemon));
+		System.out.println(gifSpriteURL(enemyPokemon));
 		
+		enemyImage=new Image(gifSpriteURL(enemyPokemon));
+		pokemonImage=new Image(backSpriteURL(activePokemon));
 		
+		//System.out.println(activePokemon.getCurrentImagePath().substring(0, 14) + "_back" + activePokemon.getCurrentImagePath().substring(14, 25) + "png");
 	}
 	
 	/*
@@ -281,11 +290,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void runButtonPressed(Button button) {
 		button.setOnAction((event) -> {
-			//exit battle scene
-			Stage stage = (Stage) button.getScene().getWindow();
-		    stage.setScene(gameScene.getScene());
-		    gameScene.detectCollisions();
-		    gameScene.startGameLoop();
+			gameScene.changeBackScene();
 		});
 	}
 	
@@ -309,10 +314,24 @@ public class BattleScene extends ScreenDisplay{
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
-		gc.drawImage(enemyImage, 500, 60);
+		gc.drawImage(enemyImage,400, 60);
 		gc.drawImage(pokemonImage,100 ,193);
 	}
 	
+	
+	/*
+	 * Passed in the pictures of the front; return the pokemon pictures from the back
+	 */
+	private String backSpriteURL(Pokemon myPokemon) {
+		return "file:"+myPokemon.getCurrentImagePath().substring(0, 14) + "_back" + myPokemon.getCurrentImagePath().substring(14, 25) + "png";
+	}
+	
+	/*
+	 * Passed in the pictures of the enemy; return the gif version of the picture
+	 */
+	private String gifSpriteURL(Pokemon enemyPokemon) {
+		return "file:"+enemyPokemon.getCurrentImagePath() +  "_.gif";
+	}
 	
 	
 }

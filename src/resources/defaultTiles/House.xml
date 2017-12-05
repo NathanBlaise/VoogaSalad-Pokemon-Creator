@@ -1,0 +1,16 @@
+<defaultNPC>
+	<name>House</name>
+	<wholePic>images/houseSplitedWithBackground/House.jpg</wholePic>
+	<obstacle>true</obstacle>
+	<height>3</height>
+	<width>3</width>
+	<imagePaths>images/houseSplitedWithBackground/House1.jpg</imagePaths>
+	<imagePaths>images/houseSplitedWithBackground/House2.jpg</imagePaths>
+	<imagePaths>images/houseSplitedWithBackground/House3.jpg</imagePaths>
+	<imagePaths>images/houseSplitedWithBackground/House4.jpg</imagePaths>
+	<imagePaths>images/houseSplitedWithBackground/House5.jpg</imagePaths>
+	<imagePaths>images/houseSplitedWithBackground/House6.jpg</imagePaths>
+	<imagePaths>images/houseSplitedWithBackground/House7.jpg</imagePaths>
+	<imagePaths>images/houseSplitedWithBackground/House8.jpg</imagePaths>
+	<imagePaths>images/houseSplitedWithBackground/House9.jpg</imagePaths>
+</defaultNPC>

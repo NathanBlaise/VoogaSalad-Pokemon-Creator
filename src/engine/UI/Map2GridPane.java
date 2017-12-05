@@ -26,15 +26,26 @@ public class Map2GridPane {
 	 * @param overlap
 	 * @return
 	 */
+	
+	/*Final Variable*/
+	final static String SHOP_PATH = "images/pokemonCenter.png";
+	
 	public Image overlapImage(String base, String overlap){
 		if(overlap==null){
 			overlap = new String(base);
 		}
 		try {
 			BufferedImage image = ImageIO.read(new File(base));
+
 			BufferedImage overlay = ImageIO.read(new File(overlap));
+			
+			//check if it is the shop_path
+		    
 			image = resize(image,48,48);
 			overlay = resize(overlay,48,48);
+		
+			
+			
 
 			// create the new image, canvas size is the max. of both image sizes
 			int w = Math.max(image.getWidth(), overlay.getWidth());

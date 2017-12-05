@@ -3,12 +3,11 @@ package tests.authoring;
 
 import start.DatabasePathConfig;
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import authoring.eventManage.Function;
+import authoring.eventManage.Function3;
 import data.Database;
 
-public class DatabasePathConfigTest extends Application implements Function<Database, String, Integer>{
+public class DatabasePathConfigTest extends Application implements Function3<String, Database, String, Integer>{
 			public static void main(String[] args) {
 				launch(args);
 
@@ -16,12 +15,11 @@ public class DatabasePathConfigTest extends Application implements Function<Data
 
 			@Override
 			public void start(Stage primaryStage){
-				primaryStage.setScene(new Scene(new DatabasePathConfig(primaryStage ,this)));
-				primaryStage.show();
+				new DatabasePathConfig(primaryStage ,this);
 			}
 
 			@Override
-			public Integer apply(Database one, String two) {
+			public Integer apply(String gameType, Database one, String two) {
 				// TODO Auto-generated method stub
 				return null;
 			}

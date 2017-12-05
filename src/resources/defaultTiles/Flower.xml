@@ -1,0 +1,5 @@
+<defaultNPC>
+	<name>Flower</name>
+	<wholePic>images/tiles/flower_tile.png</wholePic>
+	<obstacle>false</obstacle>
+</defaultNPC>

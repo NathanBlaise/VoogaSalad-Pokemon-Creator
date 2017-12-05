@@ -1,24 +1,20 @@
 package start;
 
 import data.Database;
-
-import data.model.NPC;
-import data.player.Player;
 import engine.Engine;
-
 import engine.UI.Fade;
-import engine.battle.BattleScene;
+import engine.UI.Path2Image;
 import authoring.Author;
 import authoring.StageDelegate;
-import authoring.eventManage.Function;
+import authoring.eventManage.Function3;
 import javafx.animation.FadeTransition;
 import javafx.scene.Cursor;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -114,33 +110,39 @@ public class StartMenu {
 	
 	private void goEdit(){
 		Stage editorStage = new Stage();
-		BorderPane pathSetter = new DatabasePathConfig(editorStage, new Function<Database, String, Integer>(){
+		new DatabasePathConfig(editorStage, new Function3<String, Database, String, Integer>(){
 			@Override
-			public Integer apply(Database one, String two) {
+			public Integer apply(String gameType, Database one, String two) {
 				StageDelegate editor = new Author(one, two, editorStage);
 				editor.toFirstAuthorScene();
 				return null;
 			}
 		});
-		editorStage.setScene(new Scene(pathSetter));
-		editorStage.show();
-		editorStage.centerOnScreen();
 	}
 	
 	// Used currently to test battle screen
 	private void goPlay() {
 		Stage gameStage = new Stage();
 
-		BorderPane pathSetter = new DatabasePathConfig(gameStage, new Function<Database, String, Integer>() {
+		new DatabasePathConfig(gameStage, new Function3<String, Database, String, Integer>() {
 			@Override
-			public Integer apply(Database one, String two) {
-				Engine engine = new Engine(one, two, gameStage);
-				engine.toMainGameScene();
+			public Integer apply(String gameType, Database one, String two) {
+				ImageView background = new ImageView(Path2Image.showImage("images/BattleBegin.gif"));
+				background.setFitWidth(720);
+				background.setFitHeight(480);
+				Group root = new Group();
+				root.getChildren().add(background);
+				Scene splashGame = new Scene(root);
+				gameStage.setScene(splashGame);
+				gameStage.centerOnScreen();
+				splashGame.setOnKeyPressed(e->{
+					if(e.getCode()==KeyCode.SPACE) {
+						Engine engine = new Engine(one, two, gameType, gameStage);
+						engine.toMainGameScene();
+					}
+				});
 				return null;
 			}
 		});
-		gameStage.setScene(new Scene(pathSetter));
-		gameStage.show();
-		gameStage.centerOnScreen();
 	}
 }
