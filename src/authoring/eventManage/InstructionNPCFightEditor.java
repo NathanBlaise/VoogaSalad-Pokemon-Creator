@@ -66,8 +66,10 @@ public class InstructionNPCFightEditor implements InstructionEditor{
 			int i=0;
 			for(Button button: buttonMap.keySet()){
 				Pokemon tempPokemon = buttonMap.get(button);
-				pokemons[i] = tempPokemon;
-				i++;
+				if((tempPokemon.getName()!=null)&&(!tempPokemon.getName().equals(""))){
+					pokemons[i] = tempPokemon;
+					i++;
+				}
 			}
 			npcFight.setPokemons(pokemons);
 			saver.call(npcFight);
