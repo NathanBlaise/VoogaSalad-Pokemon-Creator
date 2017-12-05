@@ -42,15 +42,28 @@ public class Direction {
 	private static Image sprite_up_2 = new Image("file:images/emerald_up_2.png");
 
 	
-	public static pictures getPictures(String key){
+	public final pictures getPictures(String key){
 		if(key.equals(KeyCode.LEFT.toString())){
-			return pictures.LEFT;
+			return left;
 		}else if(key.equals(KeyCode.RIGHT.toString())){
-			return pictures.RIGHT;
+			return right;
 		}else if(key.equals(KeyCode.UP.toString())){
-			return pictures.UP;
+			return up;
 		}else{
-			return pictures.DOWN;
+			return down;
+		}
+	}
+	
+	public class pictures{
+		
+		private ArrayList<Image> images = new ArrayList<Image>();
+		
+		pictures(ArrayList<Image> images) {
+			this.images = new ArrayList<Image>(images);
+		}
+		
+		public ArrayList<Image> getImages() {
+			return images;
 		}
 	}
 

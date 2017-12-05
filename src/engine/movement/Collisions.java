@@ -1,106 +1,84 @@
-/*package engine.movement;
+package engine.movement;
 
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import data.event.Event;
-import data.event.EventNPC;
-import data.event.EventPokemon;
-import data.event.Instruction;
-import data.map.Cell;
 import data.map.GameMap;
-import data.player.Player;
-import engine.battle.BattleScene;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-
-import static engine.movement.Direction.DOWN;
-import static engine.movement.Direction.UP;
-
-
-
-import static engine.movement.Direction.LEFT;
-import static engine.movement.Direction.RIGHT;
+import javafx.util.Pair;
 
 /**
  * Handles collisions between the player and the environment
- * CURRENTLY NOT USED
- * @author nathanlewis
+ * @author nathanlewis cy122
  *
  */
-/*
+
 public class Collisions {
 	
-	private ImageView mainPlayerImage;
-	private GameMap mainMap;
-	private Player mainPlayer;
-	private GridPane mapPane;
-	private Direction collisionDir;
-	private Stage myStage;
-	private Scene myScene;
-	
-	public Collisions (Player player, ImageView playerImage, GameMap map, GridPane pane, Stage stage, Scene scene) {
-		mainPlayerImage = playerImage;
-		mainMap = map;
-		mapPane = pane;
-		mainPlayer = player;
-		collisionDir = null;
-		myStage = stage;
-		myScene = scene;
-	}
-	
-	public void checkCollisions(Direction dir) {
-		//Cycle through cells on the map
-		for (Node node: mapPane.getChildren()) {
-			int i = GridPane.getRowIndex(node);
-			int j = GridPane.getColumnIndex(node);
-			if(mainPlayerImage.intersects(node.getBoundsInParent()) && collisionDir == null) {
-				Cell cell = mainMap.getCells()[i][j];
-				if(cell.isObstacle()) {
-					collisionDir = dir;
-				}
-				Event event = cell.getEvent();
-				if(event != null) {
-					if(event instanceof EventPokemon) {
-						System.out.println("Pokemon encountered ");
-						BattleScene battle = new BattleScene(720,480,Color.WHITE,mainPlayer,null,((EventPokemon) event).getPokemon(),myScene);
-						myStage.setScene(battle.getScene());
-					}
-					else if(event instanceof EventNPC) {
-						System.out.println("NPC encountered");
-						for(Instruction instruction: event.getInstructions()) {
-							//execute instructions
-						}
-					}
-				}
-			}	
-		}
-		if(collisionDir != null) {
-			System.out.println(collisionDir);
-			if (collisionDir == DOWN) mainPlayer.downspeed = 0; 
-			if (collisionDir == UP ) mainPlayer.upspeed = 0;
-			if (collisionDir == LEFT) mainPlayer.leftspeed = 0;
-			if (collisionDir == RIGHT) mainPlayer.rightspeed = 0;
-		}
-		int count = 0;
-		for (Node node: mapPane.getChildren()) {
-			int i = GridPane.getRowIndex(node);
-			int j = GridPane.getColumnIndex(node);
-			if (mainPlayerImage.intersects(node.getBoundsInParent())) {
-				Cell cell = mainMap.getCells()[i][j];
-				if(cell.isObstacle()) {
-					count = 1;
+	/**
+	 * check whether the player has collided with other obstacles and events
+	 * @param posX - the x coordinate of the left-up point of player's detection block
+	 * @param posY - the y coordinate of the left-up point of player's detection block
+	 * @param blockWidth - the width of detection block of player
+	 * @param blockHeight - the height of detection block of player
+	 * @return true if the player has collided with other nodes
+	 */
+	public static boolean checkCollision(double posX, double posY, double blockWidth, double blockHeight, GridPane mapPane) {
+		for (Node node: mapPane.getChildren() ) {
+			if (GridPane.getRowIndex(node)!= null && GridPane.getColumnIndex(node)!= null){
+				if(node.getBoundsInParent().intersects(posX, posY, blockWidth, blockHeight)) {
+					return true;
 				}
 			}
 		}
-		if (count == 0) {
-			collisionDir = null;
-		}
+		return false;
 	}
-
+	
+	/**
+	 * search the event that the player collides with
+	 * @param posX - the x coordinate of the left-up point of player's detection block
+	 * @param posY - the y coordinate of the left-up point of player's detection block
+	 * @param blockWidth - the width of detection block of player
+	 * @param blockHeight - the height of detection block of player
+	 * @param direction - an array of the offset of future position
+	 * @return
+	 */
+	public static Event searchEvent(Pair<Integer, Integer> playerFuturePos, ArrayList<Pair<Integer, Integer>> direction, Map<Pair<Integer, Integer>, Event> collideEvents) {
+		for(Pair<Integer, Integer> offset : direction){
+				Pair<Integer, Integer> tempIndex = new Pair<Integer, Integer>(playerFuturePos.getKey()+offset.getKey(), playerFuturePos.getValue()+offset.getValue());
+				if(collideEvents.keySet().contains(tempIndex)){
+					Event tempEvent = collideEvents.get(tempIndex);
+					return tempEvent;
+				}
+		}
+		return null;
+	}
+	
+	/**
+	 * 
+	 * @param posX - the x coordinate of the left-up point of player's detection block
+	 * @param posY - the y coordinate of the left-up point of player's detection block
+	 * @param blockWidth - the width of detection block of player
+	 * @param blockHeight - the height of detection block of player
+	 * @return a map from the colliding event's coordinates to the event
+	 */
+	public static Map<Pair<Integer, Integer>, Event> getCollideEvents(double posX, double posY, double blockWidth, double blockHeight, GridPane mapPane, GameMap mainMap){
+		Map<Pair<Integer, Integer>, Event> result = new HashMap<Pair<Integer, Integer>, Event>();
+		for (Node node: mapPane.getChildren() ) {
+			if (GridPane.getRowIndex(node)!= null && GridPane.getColumnIndex(node)!= null){
+				int i = GridPane.getRowIndex(node);
+				int j = GridPane.getColumnIndex(node);
+				if(node.getBoundsInParent().intersects(posX, posY, blockWidth, blockHeight) && mainMap.getCell(i, j).getEvent()!=null) {
+					result.put(new Pair<Integer, Integer>(i, j), mainMap.getCell(i, j).getEvent());
+				}
+			}
+		}
+		return result;
+	}
 	
 	
 }
-*/

@@ -63,5 +63,9 @@ public class ScreenDisplay {
 			return root.getChildren().contains(object);
 		}
 		
+		protected void rootClear(){
+			root.getChildren().clear();
+		}
+		
 }
 

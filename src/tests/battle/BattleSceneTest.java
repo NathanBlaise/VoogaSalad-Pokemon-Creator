@@ -21,7 +21,7 @@ public class BattleSceneTest extends Application {
 	new DatabasePathConfig(gameStage, new Function3<String, Database, String, Integer>() {
 	    @Override
 	    public Integer apply(String gameType, Database one, String two) {
-		engine = new Engine(one, two, gameStage);
+		engine = new Engine(one, two, gameType, gameStage);
 		engine.toMainGameScene();
 		return null;
 	    }

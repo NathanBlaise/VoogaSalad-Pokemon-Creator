@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import data.items.Item;
 import data.model.Pokemon;
-import engine.movement.Direction;
 
 /**
  * The main character which the user plays the role of
