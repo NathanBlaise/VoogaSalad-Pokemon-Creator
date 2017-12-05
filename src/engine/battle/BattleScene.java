@@ -178,18 +178,17 @@ public class BattleScene extends ScreenDisplay{
 		Button button2 = new Button(initialButtons[1]);
 		Button button3 = new Button(initialButtons[2]);
 		Button button4 = new Button(initialButtons[3]);
-		Button button5 = new Button("Change my Pokemon");
+	
 		buttonArr = new Button[] {button1, button2, button3, button4};
 		this.rootAdd(fourButtonLayout(buttonArr));
-		this.rootAdd(button5);
-		button5.setTranslateX(20);
-		button5.setTranslateY(20);
+	
+	
 		//Sets action for fight button
 		fightButtonPressed(button1);
 		bagButtonPressed(button2);
 		pokemonButtonPressed(button3);
 		runButtonPressed(button4);
-		changePokemonButtonPressed(button5);
+	
 	}
 	
 	
@@ -217,30 +216,7 @@ public class BattleScene extends ScreenDisplay{
 		
 	}
 	
-	//player changes activePokemon
-	private void changePokemonButtonPressed(Button button) {
-		button.setOnAction((event) -> { 
-		
-			
-			
-			ArrayList<String> pokemonNames=new ArrayList<>();
-			for (Pokemon each:mainPlayer.getPokemons()) {
-				//check if the pokemon has nick name, if they has nick name, then the pokemon exists
-				if((each!=null) &&each.getNickName()!=null){
-					pokemonNames.add(each.getNickName());
-				}
-				//System.out.println(each.getNickName());
-			}
-			addListView(listOfPokemons, pokemonNames);
-			
-			
-			
-			
-		});
-		
-		
-		
-	}
+
 	
 	
 	
@@ -276,19 +252,19 @@ public class BattleScene extends ScreenDisplay{
 			itemNames.add("item2");
 			itemNames.add("item3");
 			
-			addListView(listOfItems,itemNames);
+			addListView(listOfItems,itemNames,500,200);
 			
 		});
 	}
 
-	public void addListView(ListView<String> list,ArrayList<String> content) {
+	public void addListView(ListView<String> list,ArrayList<String> content, int x, int y) {
 		ObservableList<String> items =FXCollections.observableArrayList (content
 		    );
 		
 		list=new ListView<String>(); 
 		list.setItems(items);
-		list.setTranslateX(500);
-		list.setTranslateY(200);
+		list.setTranslateX(x);
+		list.setTranslateY(y);
 		list.setPrefWidth(LIST_OF_BAG_ITEMS_WIDTH);
 		list.setPrefHeight(LIST_OF_BAG_ITEMS_HEIGHT);
 		list.setStyle("-fx-control-inner-background: #61a2b1;");
@@ -307,18 +283,16 @@ public class BattleScene extends ScreenDisplay{
 			if (listOfItems!=null) {
 			    this.rootRemove(listOfItems);
 			}
-			ArrayList<String> itemNames=new ArrayList<>();
-//			for (Item each:bags) {
-//				itemNames.add(each.getItemName());
-//			}
-			
-			//put itemNames in real code, but will hard code for now
-			itemNames.add("pokemon1");
-			itemNames.add("pokemon2");
-			itemNames.add("pokemon3");
-			itemNames.add("pokemon4");
-			
-			addListView(listOfPokemons,itemNames);
+
+			ArrayList<String> pokemonNames=new ArrayList<>();
+			for (Pokemon each:mainPlayer.getPokemons()) {
+				//check if the pokemon has nick name, if they has nick name, then the pokemon exists
+				if((each!=null) &&each.getNickName()!=null){
+					pokemonNames.add(each.getNickName());
+				}
+				//System.out.println(each.getNickName());
+			}
+			addListView(listOfPokemons, pokemonNames,500,200);
 		
 			
 			

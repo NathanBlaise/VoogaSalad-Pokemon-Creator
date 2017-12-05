@@ -84,6 +84,7 @@ public class BattleFightOptions {
 		moveButton2 = new Button("-");
 		moveButton3 = new Button("-");
 		moveButton4 = new Button("-");
+		
 		buttonArr = new Button[] {moveButton1,moveButton2,moveButton3,moveButton4};
 		int i=0;
 		for(Move move: activePokemon.getAvailableMoves()) {
@@ -117,8 +118,11 @@ public class BattleFightOptions {
 				
 				
 			});
+			
 			i++;
 		}
+		
+		
 	}
 	
 	//show the game end message

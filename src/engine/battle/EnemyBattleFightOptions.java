@@ -35,7 +35,7 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
   @Override
    public void setUpScene() {
 	  //perform move 
-	  performMove();
+	  
 	  
 	  bfo=super.battleScene.getMyBattleScene();
 	  
@@ -65,6 +65,12 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 		cancel.setOnAction((event) -> {
 			//move.move(activePokemon, enemyPokemon);
 			//Load hit animation, then change scene to enemy's move
+			performMove();
+			int newActiveHP=activePokemon.getCurrentStat().getHP();
+			int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
+			//reverse because now it is reversed
+			battleScene.getActivePokemonHP().setText("Hp: "+newEnemyHP);
+			battleScene.getEnemyPokemonHP().setText("Hp: "+newActiveHP);
 			changeScene();
 			
 			
