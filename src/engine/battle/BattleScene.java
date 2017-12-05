@@ -385,7 +385,7 @@ public class BattleScene extends ScreenDisplay{
 		return enemyPokemonHP;
 	}
 	
-	private void printHPInfo() {
+	public void printHPInfo() {
 		activePokemonHP=new Text( "Hp: " + activePokemon.getCurrentStat().getHP());
 		setTextEffects(activePokemonHP,300,300);
 		enemyPokemonHP=new Text( "Hp: " + enemyPokemon.getCurrentStat().getHP());

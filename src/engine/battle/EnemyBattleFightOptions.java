@@ -75,6 +75,8 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	}
   
   private void performMove() {
+	  
+	  //hard code move for now coz some moves are not working????
 	  Move move=super.activePokemon.getAvailableMoves().get(1);
 	  move.move(super.activePokemon, super.enemyPokemon);
 	  System.out.println(move.getMoveName());
