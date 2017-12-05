@@ -25,6 +25,7 @@ import javafx.scene.Node;
  *
  */
 public class DatabasePathConfig{
+	
 	public DatabasePathConfig(Stage stage, Function3<String, Database, String, Integer> reaction){
 		BorderPane gameTypeChooser = chooseGameType((type, databasesPath)->{
 			BorderPane databasesChooser = chooseDatabase(stage, type, databasesPath, (database, path)-> reaction.apply(type, database, path));
@@ -34,7 +35,7 @@ public class DatabasePathConfig{
 		customizeStage(stage, gameTypeChooser);
 	}
 
-	private void customizeStage(Stage stage, BorderPane gameTypeChooser) {
+	private static void customizeStage(Stage stage, BorderPane gameTypeChooser) {
 		stage.setScene(new Scene(gameTypeChooser));
 		stage.show();
 		stage.centerOnScreen();
@@ -45,7 +46,7 @@ public class DatabasePathConfig{
 	 * @param saver
 	 * @return
 	 */
-	private BorderPane chooseGameType(Function<String, String, Integer> saver){
+	public BorderPane chooseGameType(Function<String, String, Integer> saver){
 		Label title = new Label("Choose the Game Type Please :>)");
 		Map<String, String> availableGameTypes = DatabaseLoader.getAvailableGameTypes();
 		TilePane types = new TilePane();
@@ -62,7 +63,7 @@ public class DatabasePathConfig{
 		return result;
 	}
 
-	private BorderPane chooseDatabase(Stage stage, String type, String databasesPath, Function<Database, String, Integer> reaction) {
+	public static BorderPane chooseDatabase(Stage stage, String type, String databasesPath, Function<Database, String, Integer> reaction) {
 		BorderPane result = new BorderPane();
 		new CreateDefaultDatabase();
 		Label title = new Label("Choose the database please :)");
@@ -93,26 +94,26 @@ public class DatabasePathConfig{
 					return null;
 				}		 
 			});
-			this.customizeStage(stage, databaseNameCreator);
+			customizeStage(stage, databaseNameCreator);
 		});
 		databases.getChildren().add(button);
 		databases.setAlignment(Pos.CENTER);
-		this.customizeBorderPane(title, databases, result);
+		customizeBorderPane(title, databases, result);
 		return result;
 	}
 	
-	private BorderPane createDatabaseName(Callback<String, Integer> saver){
+	public static BorderPane createDatabaseName(Callback<String, Integer> saver){
 		BorderPane result = new BorderPane();
 		TextField databaseName = new TextField("input your database name please");
 		Button saveButton = new Button("save");
 		saveButton.setOnMouseClicked(e->{
 			saver.call(databaseName.getText());
 		});
-		this.customizeBorderPane(databaseName, saveButton, result);
+		customizeBorderPane(databaseName, saveButton, result);
 		return result;
 	}
 	
-	private BorderPane customizeBorderPane(Node top, Node bottom, BorderPane borderPane){
+	private static BorderPane customizeBorderPane(Node top, Node bottom, BorderPane borderPane){
 		borderPane.setPrefSize(400, 200);
 		borderPane.setTop(top);
 		borderPane.setCenter(bottom);
