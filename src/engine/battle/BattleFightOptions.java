@@ -87,6 +87,8 @@ public class BattleFightOptions {
 		buttonArr = new Button[] {moveButton1,moveButton2,moveButton3,moveButton4};
 		int i=0;
 		for(Move move: activePokemon.getAvailableMoves()) {
+			//System.out.println(move.getMoveName());
+			//System.out.println(i);
 			buttonArr[i].setText(move.getMoveName());
 			buttonArr[i].setOnAction((event) -> {
 				move.move(activePokemon, enemyPokemon);
@@ -98,7 +100,7 @@ public class BattleFightOptions {
 				int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
 				battleScene.getActivePokemonHP().setText("Hp: "+newActiveHP);
 				battleScene.getEnemyPokemonHP().setText("Hp: "+newEnemyHP);
-				battleScene.printHPInfo();
+				//battleScene.printHPInfo();
 				
 				if(activePokemon.isDead()) {
 					showEnding("Game end. Your pokemon is dead.");
@@ -110,11 +112,12 @@ public class BattleFightOptions {
 					showEnding("Game end. Enemy pokemon is dead.");
 				
 				}
-
+               
 				
 				
 				
 			});
+			i++;
 		}
 	}
 	
