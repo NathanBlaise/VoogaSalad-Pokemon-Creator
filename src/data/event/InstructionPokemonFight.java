@@ -63,7 +63,6 @@ public class InstructionPokemonFight extends Instruction{
 		ArrayList<Instruction> newInstructions = event.getInstructions();
 		newInstructions.remove(this);
 		event.setInstructions(newInstructions);
-//		cell.setEvent(null);
 	}
 
 }
