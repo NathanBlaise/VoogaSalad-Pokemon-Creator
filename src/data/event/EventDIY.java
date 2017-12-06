@@ -11,6 +11,13 @@ public class EventDIY extends Event{
 		availableInstructions.add("InstructionGoMap");
 	}
 	
+	/**
+	 * for serialization
+	 */
+	@Deprecated
+	public EventDIY(){
+		
+	}
 	
 	public EventDIY(String pathName){
 		super(pathName);

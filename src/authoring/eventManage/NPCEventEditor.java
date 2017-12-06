@@ -59,13 +59,18 @@ public class NPCEventEditor{
 		
 		private BorderPane showEvent(EventNPC eventNPC){
 			BorderPane result =new BorderPane();
-			Map<String, String> name2instruction = new HashMap<String, String>();
-			for(String s: eventNPC.getAvailableInstructions()){
-				name2instruction.put(new String(LanguageReader.convertLanguage("English", s)), new String(s));
-			}
+			Map<String, String> name2instruction = createName2Instruction(eventNPC);
 			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions = createReaction(result);
 			result.setLeft(new EventInstructions(eventNPC, name2instruction, reactions, new InstructionListEditor(eventNPC, saver)).getList());
 			return result;
+		}
+
+		public static Map<String, String> createName2Instruction(Event event) {
+			Map<String, String> name2instruction = new HashMap<String, String>();
+			for(String s: event.getAvailableInstructions()){
+				name2instruction.put(new String(LanguageReader.convertLanguage("English", s)), new String(s));
+			}
+			return name2instruction;
 		}
 		
 		private Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> createReaction(BorderPane instructionPane){
@@ -113,24 +118,6 @@ public class NPCEventEditor{
 			public Integer call(NPC param) {
 				event.getNpc().setName(param.getName());
 				event.getNpc().setImagePath(param.getImagePath());
-				saver.call(event);
-				return null;
-			}	
-		}
-		
-		private class InstructionListEditor implements Callback<List<Instruction>, Integer>{
-
-			private Event event;
-			private Callback<Event, Integer> saver;
-			
-			public InstructionListEditor(Event event, Callback<Event, Integer> saver){
-				this.event = event;
-				this.saver = saver;
-			}
-			
-			@Override
-			public Integer call(List<Instruction> param) {
-				event.setInstructions(new ArrayList<Instruction>(param));
 				saver.call(event);
 				return null;
 			}	

@@ -38,13 +38,13 @@ import java.util.function.Function;
 public abstract class GameScene extends ScreenDisplay {
 
 	protected static final int pixelSize = 48;
-	private final int SCREEN_HEIGHT;
-	private final int SCREEN_WIDTH;
+	private int screen_height;
+	private int screen_width;
 	private int instructionIndex = 0;
 	private final Image image = new Image("file:images/emerald_down_rest.png");
 
 	protected GameMap mainMap;
-	private Player mainPlayer;
+	protected Player mainPlayer;
 	protected Stage myStage;
 	protected GridPane mapPane;
 	private Engine engine;
@@ -69,8 +69,8 @@ public abstract class GameScene extends ScreenDisplay {
 	public GameScene(int PLAYER_WIDTH, int PLAYER_HEIGHT, int width, int height, Paint background, Engine engine, Stage stage) {
 		super(width, height, background);
 		
-		SCREEN_HEIGHT = height;
-		SCREEN_WIDTH = width;
+		screen_height = height;
+		screen_width = width;
 		
 		// Grabs map, player and all data in model from chosen database, saves in variables
 		mainMap = engine.getDatabase().getMap();
@@ -83,7 +83,7 @@ public abstract class GameScene extends ScreenDisplay {
 		playerImage.setFitHeight(PLAYER_HEIGHT);
 		playerImage.setFitWidth(PLAYER_WIDTH);
 		//Initialize variables; Deal with map
-		tileCanvas = new Canvas (SCREEN_WIDTH,SCREEN_HEIGHT);
+		tileCanvas = new Canvas (screen_width,screen_height);
 		GraphicsContext gc = tileCanvas.getGraphicsContext2D();
 		DrawMap drawMap = new DrawMap(mainMap,gc);
 		//Add tile pics into root
@@ -96,9 +96,10 @@ public abstract class GameScene extends ScreenDisplay {
 
 		KeyFrame frame = new KeyFrame(Duration.millis(MILLISECOND_DELAY*0.0025), e -> {
 			if(hasNextInstruction()&&(currentEvent!=null)) {
-				executeEvent(currentEvent);
+				executeEvent(currentEvent, instructionIndex);
+			}else{
+				step();
 			}
-			step();
 		});
 		animation = new Timeline();
 		animation.setCycleCount(Timeline.INDEFINITE);
@@ -117,18 +118,23 @@ public abstract class GameScene extends ScreenDisplay {
 	 */
 	protected int executeEvent(Event event){
 		currentEvent = event;
-		int i=instructionIndex;
-		//execute instructions
-		if(i >= event.getInstructions().size()){
+		instructionIndex = 0;
+		executeEvent(event, instructionIndex);
+		return 1;
+	}
+	
+	private int executeEvent(Event event, int index){
+		if(index >= event.getInstructions().size()){
 			instructionIndex = 0;
+			event = null;
 			return 0;
 		}
-		Instruction instruction = event.getInstructions().get(i);
+		Instruction instruction = event.getInstructions().get(index);
 //		if (instruction.isGoNextInstruction()==false) {
 			pause();
-			instruction.execute(SCREEN_WIDTH,SCREEN_HEIGHT,mainPlayer,mainMap,event,this);
+			instruction.execute(screen_width,screen_height,mainPlayer,mainMap,event,this);
 //		} else {
-//			i++;
+//			index++;
 //		}	
 		return -1;
 	}
@@ -144,11 +150,16 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
-		System.out.printf("I'm called!\n");
+		instructionIndex++;
+		myStage.setScene(this.getScene());
+		myStage.sizeToScene();
+		myStage.setHeight(mapPane.getHeight()+10);
+		screen_height = new Double(mapPane.getHeight()).intValue();
+		myStage.setWidth(mapPane.getWidth());
+		screen_width = new Double(mapPane.getWidth()).intValue();
+		input.releaseAllKeys();
 		input.addListeners();
 		animation.play();
-		myStage.setScene(this.getScene());
-		instructionIndex++;
 	}
 	
 	public boolean hasNextInstruction() {
@@ -167,18 +178,19 @@ public abstract class GameScene extends ScreenDisplay {
 		return myStage;
 	}
 	
-	public void refreshMap(int SCREEN_WIDTH, int SCREEN_HEIGHT, GameMap mainMap){
+	public void refreshMap(int futureX, int futureY, GameMap mainMap){
+		currentEvent = null;
 		this.mainMap = mainMap;
 		this.rootClear();
-		Canvas tileCanvas = new Canvas (SCREEN_WIDTH,SCREEN_HEIGHT);
+		Canvas tileCanvas = new Canvas (mainMap.getYlength()*pixelSize, mainMap.getXlength()*pixelSize);
 		GraphicsContext gc = tileCanvas.getGraphicsContext2D();
 		DrawMap drawMap = new DrawMap(mainMap,gc);
 		//Add tile pics into root
 		this.rootAdd(tileCanvas);
-		GridPane mapPane = drawMap.getPane();
+		mapPane = drawMap.getPane();
 		this.rootAdd(mapPane);
-		playerImage.setX(0);
-		playerImage.setY(0);
+		playerImage.setX(pixelSize*futureX);
+		playerImage.setY(pixelSize*futureY);
 		this.rootAdd(playerImage);
 	}
 	

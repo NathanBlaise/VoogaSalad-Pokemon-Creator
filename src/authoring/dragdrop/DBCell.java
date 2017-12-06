@@ -95,7 +95,7 @@ public class DBCell {
 	
 	public DBCell UpdatEvent(Event event){
 		cell.setEvent(event);
-		if(event instanceof EventNPC) {
+		if((!(event instanceof EventPokemon))&&(event!=null)) {
 			cell.setObstacle(true);
 		}
 		app.updateCellList(this);
@@ -246,7 +246,7 @@ public class DBCell {
 				}else if(cell.getEvent() instanceof EventNPC){
 					new NPCEventEditor((EventNPC)cell.getEvent(), app.getDatabase().getModel().getPokemonSpecies(), (m)->{UpdatEvent(m); return null;});
 				}else if(cell.getEvent() instanceof EventDIY){
-					new DIYEventEditor(cell.getEvent(), app.getDatabase(), (m)->{UpdatEvent(m); return null;});
+					new DIYEventEditor((EventDIY)cell.getEvent(), app.getDatabase(), (m)->{UpdatEvent(m); return null;});
 				}
 			}else{
 				new DIYEventEditor(new EventDIY(cell.getTilePath()), app.getDatabase(), (m)->{UpdatEvent(m); return null;});

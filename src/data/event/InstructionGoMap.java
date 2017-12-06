@@ -10,6 +10,7 @@ public class InstructionGoMap extends Instruction{
 	
 	private static final long serialVersionUID = 3425297418577947868L; //for serialization
 	private String mapName = "";
+	private int futureX, futureY;
 	
 	/**
 	 * just for serialization
@@ -17,10 +18,14 @@ public class InstructionGoMap extends Instruction{
 	@Deprecated
 	public InstructionGoMap(){
 		mapName = new String("");
+		futureX = 0;
+		futureY = 0;
 	}
 	
-	public InstructionGoMap(String mapName){
+	public InstructionGoMap(String mapName, int futureX, int futureY){
 		this.mapName = mapName;
+		this.futureX = futureX;
+		this.futureY = futureY;
 	}
 
 	@Override
@@ -28,11 +33,13 @@ public class InstructionGoMap extends Instruction{
 		Collection<GameMap> gameMaps = gameScene.getDatabase().getMaps();
 		for(GameMap map: gameMaps){
 			if(map.getName().equals(mapName)){
-				gameScene.refreshMap(SCREEN_WIDTH, SCREEN_HEIGHT, mainMap);
+				mainPlayer.setPosX(futureX);
+				mainPlayer.setPosY(futureY);
+				gameScene.refreshMap(futureX, futureY, map);
 				break;
 			}
 		}
-		
+		gameScene.changeBackScene();
 	}
 
 	public String getMapName() {
@@ -42,5 +49,23 @@ public class InstructionGoMap extends Instruction{
 	public void setMapName(String mapName) {
 		this.mapName = mapName;
 	}
+
+	public int getFutureX() {
+		return futureX;
+	}
+
+	public void setFutureX(int futureX) {
+		this.futureX = futureX;
+	}
+
+	public int getFutureY() {
+		return futureY;
+	}
+
+	public void setFutureY(int futureY) {
+		this.futureY = futureY;
+	}
+	
+	
 
 }

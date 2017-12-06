@@ -24,7 +24,6 @@ public class PokemonGameScene extends GameScene{
 	private static final int sizeBlockX = PLAYER_WIDTH - 2*offsetX;
 	private static final int sizeBlockY = PLAYER_HEIGHT - 2*offsetY;
 	private PlayerMovement playerMoves;
-	private Engine engine;
 	
 	{
 		Image emerald_down_rest = new Image("file:images/emerald_down_rest.png");
@@ -50,10 +49,7 @@ public class PokemonGameScene extends GameScene{
 	public PokemonGameScene(int width, int height, Paint background,
 			Engine engine, Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, width, height, background, engine, stage);
-		this.engine = engine;
-		input.addListeners();
-		animation.play();
-		myStage.setScene(this.getScene());
+		changeBackScene();
 	}
 
 	@Override
@@ -63,7 +59,7 @@ public class PokemonGameScene extends GameScene{
 	    double nextPosX = nextPos.getKey();
 	    double nextPosY = nextPos.getValue();
 	    if(!Collisions.checkCollision(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane)){
-	    	PlayerMovement.changePos(playerImage, nextPosX, nextPosY, engine.getDatabase().getMap().getYlength()*pixelSize, engine.getDatabase().getMap().getXlength()*pixelSize);
+	    	PlayerMovement.changePos(mainPlayer, pixelSize, playerImage, nextPosX, nextPosY, mapPane.getWidth(), mapPane.getHeight());
 	    }else{
 			Pair<Integer, Integer> playerIndex = PlayerMovement.playerIndexOnGrid(nextPosX+offsetX+sizeBlockX/2, nextPosY+offsetY+sizeBlockY/2, pixelSize, pixelSize);
 			Map<Pair<Integer, Integer>, Event> collideEvents = Collisions.getCollideEvents(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane, mainMap);
@@ -74,7 +70,7 @@ public class PokemonGameScene extends GameScene{
 				}
 			}
 			Event encounterEvent = Collisions.searchEvent(playerIndex, directions, collideEvents);
-		    	if(encounterEvent!=null){
+		    	if((encounterEvent!=null)&&(directions.size()!=0)){
 		    		executeEvent(encounterEvent);
 		    	}
 	    }

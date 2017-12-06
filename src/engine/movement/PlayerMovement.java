@@ -3,6 +3,7 @@ package engine.movement;
 import java.util.List;
 import java.util.Map;
 
+import data.player.Player;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Pair;
@@ -43,10 +44,12 @@ public class PlayerMovement {
 	 * @param mapWidth - the width of map
 	 * @param mapHeight - the height of map
 	 */
-	public static void changePos(ImageView playerImage, double nextX, double nextY, double mapWidth, double mapHeight){
+	public static void changePos(Player player, double pixelSize, ImageView playerImage, double nextX, double nextY, double mapWidth, double mapHeight){
 		if (nextX >= 0 && nextY >= 0 && (nextX + playerImage.getFitWidth()<= mapWidth)&&(nextY + playerImage.getFitHeight()<= mapHeight)) {
 			playerImage.setX(nextX);
 			playerImage.setY(nextY);
+			player.setPosX(new Double(nextX/pixelSize).intValue());
+			player.setPosY(new Double(nextY/pixelSize).intValue());
 		}
 	}
 	

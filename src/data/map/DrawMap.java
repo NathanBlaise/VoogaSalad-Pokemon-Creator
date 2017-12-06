@@ -49,13 +49,15 @@ public class DrawMap extends DrawPane{
 		
 		for (int i = 0; i < myMap.getXlength(); i++) {
 			for (int j = 0; j < myMap.getYlength(); j++) {
-				if (myMap.getCells()[i][j].getEvent() instanceof EventNPC) {
-					ImageView target = getCellEventImage(myMap.getCells()[i][j]);
-					target.setFitHeight(48);
-					target.setFitWidth(48);
-					myPane.add(target, j, i);
-				}else if(myMap.getCells()[i][j].getEvent() instanceof EventPokemon) {
-					myPane.add(new ImageView(Path2Image.showImage("images/default.png")), j, i);
+				if(myMap.getCells()[i][j].getEvent()!=null){
+					if(myMap.getCells()[i][j].getEvent() instanceof EventPokemon) {
+						myPane.add(new ImageView(Path2Image.showImage("images/default.png")), j, i);
+					}else{
+						ImageView target = getCellEventImage(myMap.getCells()[i][j]);
+						target.setFitHeight(TILE_SIZE);
+						target.setFitWidth(TILE_SIZE);
+						myPane.add(target, j, i);
+					}
 				}
 			}
 		}
@@ -67,9 +69,7 @@ public class DrawMap extends DrawPane{
 	 */
 	private ImageView getCellEventImage(Cell cell) {
 		ImageView image = new ImageView();
-		if (cell.getEvent() instanceof EventNPC) {
-			image = createImageView(cell.getEvent().getImagePath());
-		}
+		image = createImageView(cell.getEvent().getImagePath());
 		return image;
 	}
 	
@@ -103,12 +103,9 @@ public class DrawMap extends DrawPane{
 		for (int i = 0; i < myMap.getXlength(); i++) {
 			for (int j = 0; j < myMap.getYlength(); j++) {
 
-				gc.drawImage(Path2Image.scale(Path2Image.showImage(myMap.getCells()[i][j].getTilePath()), 48,48, false).snapshot(null, null),  j * TILE_SIZE, i * TILE_SIZE);
-				String imagePath = myMap.getCells()[i][j].getTilePath();
+				gc.drawImage(Path2Image.scale(Path2Image.showImage(myMap.getCells()[i][j].getTilePath()), TILE_SIZE, TILE_SIZE, false).snapshot(null, null),  j * TILE_SIZE, i * TILE_SIZE);
 				
-					if (imagePath.toLowerCase().contains( "center" ) || imagePath.toLowerCase().contains("tree") ||  imagePath.toLowerCase().contains("house") ) {
-						
-						myMap.getCells()[i][j].setObstacle(true);
+					if (myMap.getCells()[i][j].isObstacle()) {
 						// add empty imageView
 						ImageView defaultPicture = new ImageView(Path2Image.showImage("images/default.png"));
 						

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import data.event.Event;
 import data.event.EventNPC;
 import data.event.Instruction;
 import engine.UI.UIComponentFactory.ListViewFactory;
@@ -35,7 +36,7 @@ public final class EventInstructions{
 	private Map<Integer, Instruction> instructionMap = new HashMap<Integer, Instruction>();
 	
 	@SuppressWarnings("unchecked")
-	public EventInstructions(EventNPC eventNPC, Map<String, String> instructions, Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions,Callback<List<Instruction>, Integer> saver) {
+	public EventInstructions(Event eventNPC, Map<String, String> instructions, Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions,Callback<List<Instruction>, Integer> saver) {
 		ObservableList<String> names = FXCollections.observableArrayList();
 		this.saver = saver;
 		names.addAll(instructions.keySet());
