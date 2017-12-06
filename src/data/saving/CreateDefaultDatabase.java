@@ -17,14 +17,14 @@ import data.model.PokemonSpecie;
 import data.player.Player;
 
 /**
- * for creating the xml file of default pokemon
+ * for creating the xml file of default database
  * @author cy122
  *
  */
 public class CreateDefaultDatabase{
 		
 		private static GameMap createMap(){
-			GameMap map = new GameMap(10, 15);
+			GameMap map = new GameMap("default map", 10, 15);
 			for(int i=0; i<10; i++){
 				for(int j=0; j<15; j++){
 					map.setCell(i,j,new Cell("images/reg_tile_scaled.png",true,false,null));
@@ -69,7 +69,9 @@ public class CreateDefaultDatabase{
 			GameMap map = createMap();
 			Model model = createModel();
 			Player player = new Player();
-			Database database = new Database(map, model, player);
+			ArrayList<GameMap> maps = new ArrayList<GameMap>();
+			maps.add(map);
+			Database database = new Database(maps, model, player);
 //			
 //			
 //			new xmlWriter().writeXML(model, path);

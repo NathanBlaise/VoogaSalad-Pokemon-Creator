@@ -1,5 +1,8 @@
 package authoring.dragdrop;
 
+import java.util.ArrayList;
+
+import data.model.Tile;
 import authoring.BasicAuthorScreen;
 import authoring.StageDelegate;
 import javafx.scene.paint.Paint;
@@ -13,7 +16,6 @@ import javafx.scene.paint.Paint;
 public class EditMapScene extends BasicAuthorScreen {
 
 	private TileMenu tMenu;
-	private DBMap myMap;
 	public EditMapScene(Paint background, StageDelegate stageHelper) {
 		super(background, stageHelper);
 		
@@ -22,14 +24,17 @@ public class EditMapScene extends BasicAuthorScreen {
 		// set up the t-menu
 		tMenu = new TileMenu(stageHelper.getDatabase().getModel().getTiles());
 		this.rootAdd(tMenu);
-		myMap = new DBMap(stageHelper.getDatabase());
+		this.rootAdd(new MapManager(stageHelper.getDatabase(), e->{
+			return null;
+		}, new Tile("grass", false, 1, 1, "images/reg_tile_scaled.png", new ArrayList<String>())),200,0);
+//		DBMap(stageHelper.getDatabase());
 		
 	 
 	    
 		
 		//testFont.setLayoutX(700);
 		//testFont.setLayoutY(300);
-		this.rootAdd(myMap.getGrid(),200,0);
+//		this.rootAdd(myMap.getGrid(),200,0);
 		
 	
 	}

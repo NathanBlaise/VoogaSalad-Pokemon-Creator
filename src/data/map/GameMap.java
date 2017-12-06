@@ -13,6 +13,7 @@ public class GameMap implements Serializable{
 	private static final long serialVersionUID = -2420508422654879735L;
 	private int Xlength, Ylength; //Cell[0~(Xlength-1)][0~(Ylength-1)] is the legal Cell.
 	private Cell[][] cells;
+	private String name; //the name of map
 	
 	// this constructor is only for serialization, it shouldn't be used for any intention else
 	public GameMap(){
@@ -24,7 +25,8 @@ public class GameMap implements Serializable{
 	 * @param Xlength - the length in the first dimension
 	 * @param Ylength - the length in the second dimension.
 	 */
-	public GameMap(int Xlength, int Ylength){
+	public GameMap(String name, int Xlength, int Ylength){
+		this.name = name;
 		this.Xlength = Xlength;
 		this.Ylength = Ylength;
 		cells = new Cell[Xlength][Ylength];
@@ -34,7 +36,8 @@ public class GameMap implements Serializable{
 	 * Cell[0~(Xlength-1)][0~(Ylength-1)] is the legal Cell.
 	 * @param cells - the whole map
 	 */
-	public GameMap(Cell[][] cells){
+	public GameMap(String name, Cell[][] cells){
+		this.name = name;
 		this.cells = cells;
 		Xlength = cells.length;
 		Ylength = cells[0].length;
@@ -89,6 +92,16 @@ public class GameMap implements Serializable{
 		this.cells = cells;
 	}
 	
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	/**
 	 * set the cell in Cell[coordX][coordY]
 	 * @param coordX - the index in the first dimension
