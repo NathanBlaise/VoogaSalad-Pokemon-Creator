@@ -39,18 +39,20 @@ public abstract class GameScene extends ScreenDisplay {
 	protected static final int pixelSize = 48;
 	private final int SCREEN_HEIGHT;
 	private final int SCREEN_WIDTH;
+	private int instructionIndex = 0;
 	private final Image image = new Image("file:images/emerald_down_rest.png");
 
 	protected GameMap mainMap;
 	private Player mainPlayer;
-	private Stage myStage;
+	protected Stage myStage;
 	protected GridPane mapPane;
 
 	protected Input input;
 	
 	protected ImageView playerImage;
 	private Canvas tileCanvas;
-	private Timeline animation;
+	protected Timeline animation;
+	protected Event currentEvent;
 
 	protected static final Map<String, Pair<Integer, Integer>> input2direction = new HashMap<String, Pair<Integer, Integer>>();
 
@@ -89,7 +91,12 @@ public abstract class GameScene extends ScreenDisplay {
 
 		input = new Input(this.getScene());
 
-		KeyFrame frame = new KeyFrame(Duration.millis(MILLISECOND_DELAY*0.0025), e -> step());
+		KeyFrame frame = new KeyFrame(Duration.millis(MILLISECOND_DELAY*0.0025), e -> {
+			if(hasNextInstruction()&&(currentEvent!=null)) {
+				executeEvent(currentEvent);
+			}
+			step();
+		});
 		animation = new Timeline();
 		animation.setCycleCount(Timeline.INDEFINITE);
 		animation.getKeyFrames().add(frame);
@@ -105,21 +112,22 @@ public abstract class GameScene extends ScreenDisplay {
 	 * 
 	 * @param event - the event to be executed
 	 */
-	protected void executeEvent(Event event){
-		for(int i=0;;) {
-			//execute instructions
-			if(i >= event.getInstructions().size()){
-				break;
-			}
-			Instruction instruction = event.getInstructions().get(i);
-			if (instruction.isGoNextInstruction()==false) {
-				pause();
-				instruction.execute(SCREEN_WIDTH,SCREEN_HEIGHT,mainPlayer,mainMap,event,this);
-				break;
-			} else {
-				i++;
-			}
-		}	
+	protected int executeEvent(Event event){
+		currentEvent = event;
+		int i=instructionIndex;
+		//execute instructions
+		if(i >= event.getInstructions().size()){
+			instructionIndex = 0;
+			return 0;
+		}
+		Instruction instruction = event.getInstructions().get(i);
+//		if (instruction.isGoNextInstruction()==false) {
+			pause();
+			instruction.execute(SCREEN_WIDTH,SCREEN_HEIGHT,mainPlayer,mainMap,event,this);
+//		} else {
+//			i++;
+//		}	
+		return -1;
 	}
 
 	protected void pause() {
@@ -133,9 +141,15 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
+		System.out.printf("I'm called!\n");
 		input.addListeners();
 		animation.play();
 		myStage.setScene(this.getScene());
+		instructionIndex++;
+	}
+	
+	public boolean hasNextInstruction() {
+		return instructionIndex!=0;
 	}
 
 	public Set<String> getInputList() {
@@ -147,6 +161,7 @@ public abstract class GameScene extends ScreenDisplay {
 	}
 	
 	public void refreshMap(int SCREEN_WIDTH, int SCREEN_HEIGHT, GameMap mainMap){
+		this.mainMap = mainMap;
 		this.rootClear();
 		Canvas tileCanvas = new Canvas (SCREEN_WIDTH,SCREEN_HEIGHT);
 		GraphicsContext gc = tileCanvas.getGraphicsContext2D();

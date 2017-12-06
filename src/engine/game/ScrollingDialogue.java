@@ -63,8 +63,9 @@ public class ScrollingDialogue extends Application {
 	private String DisplayStr = new String();
 	private Scene myScene;
 	private Rectangle myTopBlock;
+	private double barLength = 200;
 	private int count = 0;
-	
+	private Rectangle r = new Rectangle();
 
 	
 	
@@ -102,11 +103,21 @@ public class ScrollingDialogue extends Application {
 		DisplayText = new Text(DisplayStr);
 		
 		DisplayText.setLayoutX(100);
-		DisplayText.setLayoutY(200);
+		DisplayText.setLayoutY(barLength);
 		root.getChildren().add(DisplayText);
 		Font f = getFont();
 		DisplayText.setFont(f);
 
+		
+		r.setX(50);
+		r.setY(50);
+		r.setWidth(200);
+		r.setHeight(15);
+		r.setArcWidth(10);
+		r.setArcHeight(10);
+		r.setFill(Color.LIGHTGREEN);
+		
+		root.getChildren().add(r);
 		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 	
 		return myScene;
@@ -129,18 +140,31 @@ public class ScrollingDialogue extends Application {
 		}
 		
 		
+		
+		
 		count +=1;
 		
 		
 		
 
-	
+		
+		updateHealthBar();
 		
 		
 	
 
 	}
 
+
+	private void updateHealthBar() {
+		if (barLength > 20) {
+		barLength = barLength - 5;
+		r.setWidth(barLength);
+		
+		if (barLength < 50)  r.setFill(Color.RED);
+		else if (barLength < 100) r.setFill(Color.ORANGE);
+		}
+	}
 
 	// What to do each time a key is pressed
 	private void handleKeyInput (KeyCode code) {
