@@ -17,7 +17,7 @@ public class Player implements Serializable{
 	private int posX, posY;
 	private Pokemon[] pokemons;
 	private ArrayList<Item> items;
-	public transient Direction direction;
+//	public transient Direction direction;
 	//private Map<Item,Integer> Bag;  // a map from the item to the number of item
 	
 	public Player(){

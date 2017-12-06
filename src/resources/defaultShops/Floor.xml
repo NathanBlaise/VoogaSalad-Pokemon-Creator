@@ -1,0 +1,5 @@
+<defaultNPC>
+	<name>Floor</name>
+	<wholePic>images/tiles/tiles4shop/floor.png</wholePic>
+	<obstacle>false</obstacle>
+</defaultNPC>

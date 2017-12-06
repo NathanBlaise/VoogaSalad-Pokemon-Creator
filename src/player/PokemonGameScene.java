@@ -51,7 +51,9 @@ public class PokemonGameScene extends GameScene{
 			Engine engine, Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, width, height, background, engine, stage);
 		this.engine = engine;
-		changeBackScene();
+		input.addListeners();
+		animation.play();
+		myStage.setScene(this.getScene());
 	}
 
 	@Override
@@ -72,9 +74,9 @@ public class PokemonGameScene extends GameScene{
 				}
 			}
 			Event encounterEvent = Collisions.searchEvent(playerIndex, directions, collideEvents);
-	    	if(encounterEvent!=null){
-	    		executeEvent(encounterEvent);
-	    	}
+		    	if(encounterEvent!=null){
+		    		executeEvent(encounterEvent);
+		    	}
 	    }
 	}
 

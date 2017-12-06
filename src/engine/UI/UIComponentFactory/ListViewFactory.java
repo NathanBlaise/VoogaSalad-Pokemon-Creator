@@ -13,12 +13,14 @@ public class ListViewFactory {
 		ListView result = new ListView();
 		result.setEditable(true);
 		result.setCellFactory(choices); 
-		ContextMenu contextMenu = createClickMenu(result, rightClickContextMenu, add, remove, h->{}, h->{});
-		result.setOnMouseClicked(e->{
-			if(e.getButton() == MouseButton.SECONDARY){
-				contextMenu.show(result, e.getScreenX(), e.getScreenY());
-			}
-		});
+		if((add!=null)&&(remove!=null)){
+			ContextMenu contextMenu = createClickMenu(result, rightClickContextMenu, add, remove, h->{}, h->{});
+			result.setOnMouseClicked(e->{
+				if(e.getButton() == MouseButton.SECONDARY){
+					contextMenu.show(result, e.getScreenX(), e.getScreenY());
+				}
+			});
+		}
 		result.getSelectionModel().selectedItemProperty().addListener(changeAction);
 		return result;
 	}
@@ -35,8 +37,17 @@ public class ListViewFactory {
 	
 	public static ContextMenu createClickMenu(ListView<String> result, ContextMenu clickContextMenu, String add, String remove, EventHandler<ActionEvent> addHandler, EventHandler<ActionEvent> removeHandler){
 		ContextMenu contextMenu = new ContextMenu();
-		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(add, h -> {add(result); addHandler.handle(h);}));
-		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(remove, h -> {remove(result);removeHandler.handle(h);}));
+		if(result!=null){
+			if(add!=null)
+				contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(add, h -> {add(result); addHandler.handle(h);}));
+			if(remove!=null)
+				contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(remove, h -> {remove(result);removeHandler.handle(h);}));
+		}else{
+			if(add!=null)
+				contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(add, h -> {addHandler.handle(h);}));
+			if(remove!=null)
+				contextMenu.getItems().addAll(UIComponentFactory.createMenuItem(remove, h -> {removeHandler.handle(h);}));
+		}
 		contextMenu.getItems().addAll(clickContextMenu.getItems());
 		return contextMenu;
 	}
