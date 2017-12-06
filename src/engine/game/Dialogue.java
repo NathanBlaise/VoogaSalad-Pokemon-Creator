@@ -86,18 +86,19 @@ public class Dialogue {
 				textDisplay.setText(sentenceList.get(currentIndex + 1)); 
 			}
 			else {
-				
 				System.out.println(1);
 				oriDisplay.rootRemove(CHATBOX); 
 				oriDisplay.rootRemove(textDisplay);
-				Iterator<Function<String, Integer>> iter = inputHandler.get("F").iterator();
-				while(iter.hasNext()){
-				    Function<String, Integer> func = iter.next();
-				      if( func.equals(handleF) )
-				      {
-				        iter.remove();
-				      }
-				}
+				ArrayList<Function<String, Integer>> handlers = inputHandler.get("F");
+				handlers.remove(handleF);
+//				while(iter.hasNext()){
+//				    Function<String, Integer> func = iter.next();
+//				      if( func.equals(handleF) )
+//				      {
+//				    	inputHandler.remove(handleF);
+//				    	break;
+//				      }
+//				}
 				instruction.setGoNextInstruction(true);
 				oriDisplay.changeBackScene();
 			}

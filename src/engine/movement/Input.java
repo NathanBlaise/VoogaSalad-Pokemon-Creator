@@ -29,8 +29,7 @@ public class Input {
 		@Override
 		public boolean add(String element){
 			boolean flag = false;
-			flag = super.add(element);
-			if(pressHandler.keySet().contains(element)){
+			if((pressHandler.keySet().contains(element))&&(!inputList.contains(element))){
 				for(int i=0;;i++){
 					if(i>=pressHandler.get(element).size()){
 						break;
@@ -39,14 +38,14 @@ public class Input {
 					}
 				}
 			}
+			flag = super.add(element);
 			return flag;
 		}
 		
 		@Override
 		public boolean remove(Object element){
 			boolean flag = false;
-			flag = super.remove(element);
-			if(releaseHandler.keySet().contains(element)){
+			if((releaseHandler.keySet().contains(element))&&(inputList.contains(element))){
 				for(int i=0;;i++){
 					if(i>=releaseHandler.get(element).size()){
 						break;
@@ -55,6 +54,7 @@ public class Input {
 					}
 				}
 			}
+			flag = super.remove(element);
 			return flag;
 		}
 	};
@@ -121,7 +121,17 @@ public class Input {
 		@Override
 		public ArrayList<Function<String, Integer>> get(Object key){
 			if(!this.keySet().contains(key)){
-				this.put((String)key, new ArrayList<Function<String, Integer>>());
+				this.put((String)key, new ArrayList<Function<String, Integer>>(){
+					private static final long serialVersionUID = -4253313903226658332L;
+					@Override
+					public boolean add(Function<String, Integer> element){
+						if(this.contains(element)){
+							return false;
+						}else{
+							return super.add(element);
+						}
+					}
+				});
 			}
 			return super.get(key);
 		}	

@@ -19,8 +19,7 @@ import javafx.stage.Stage;
 
 public class Engine {
 	
-	private final int GAME_SCREEN_HEIGHT = 480;
-	private final int GAME_SCREEN_WIDTH = 720;
+	private final int Pixel_Size = 48;
 	
 	private Stage myStage;
 	private String savePath;
@@ -48,7 +47,7 @@ public class Engine {
 		try {
 			Class<?> gameSceneClass = Class.forName("player."+gameType+"GameScene");
 			Constructor<?> constructor = gameSceneClass.getConstructor(new Class[]{int.class, int.class, Paint.class, Engine.class, Stage.class});
-			GameScene gameScene = (GameScene) constructor.newInstance(GAME_SCREEN_WIDTH, GAME_SCREEN_HEIGHT, Color.WHITE, this, myStage);
+			GameScene gameScene = (GameScene) constructor.newInstance(Pixel_Size*database.getMap().getYlength(), Pixel_Size*database.getMap().getXlength(), Color.WHITE, this, myStage);
 			myStage.setScene(gameScene.getScene());
 			myStage.centerOnScreen();
 		} catch (ClassNotFoundException | NoSuchMethodException

@@ -5,7 +5,9 @@ import java.util.List;
 
 import authoring.eventManage.NPCEventEditor;
 import authoring.eventManage.PokemonEventEditor;
+import authoring.eventManage.DIYEventEditor;
 import data.event.Event;
+import data.event.EventDIY;
 import data.event.EventNPC;
 import data.event.EventPokemon;
 import data.map.Cell;
@@ -93,7 +95,7 @@ public class DBCell {
 	
 	public DBCell UpdatEvent(Event event){
 		cell.setEvent(event);
-		if(event instanceof EventNPC) {
+		if((!(event instanceof EventPokemon))&&(event!=null)) {
 			cell.setObstacle(true);
 		}
 		app.updateCellList(this);
@@ -237,18 +239,22 @@ public class DBCell {
 	    
 	private void showContentMenu(MouseEvent e, ImageView image) {
 		ContextMenu contextMenu = new ContextMenu();
-		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem("remove the event", h -> {
-			if(cell.getEvent()!=null){
-				UpdatEvent(null);
-			}
-		}));
 		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem("edit the event", h -> {
 			if(cell.getEvent()!=null){
 				if(cell.getEvent() instanceof EventPokemon){
 					new PokemonEventEditor(app.getDatabase().getModel().getPokemonSpecies(), ((EventPokemon)cell.getEvent()).getPokemon(), (m)->{UpdatEvent(m); return null;});
 				}else if(cell.getEvent() instanceof EventNPC){
 					new NPCEventEditor((EventNPC)cell.getEvent(), app.getDatabase().getModel().getPokemonSpecies(), (m)->{UpdatEvent(m); return null;});
+				}else if(cell.getEvent() instanceof EventDIY){
+					new DIYEventEditor((EventDIY)cell.getEvent(), app.getDatabase(), (m)->{UpdatEvent(m); return null;});
 				}
+			}else{
+				new DIYEventEditor(new EventDIY(cell.getTilePath()), app.getDatabase(), (m)->{UpdatEvent(m); return null;});
+			}
+		}));
+		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem("remove the event", h -> {
+			if(cell.getEvent()!=null){
+				UpdatEvent(null);
 			}
 		}));
 		contextMenu.show(image, e.getScreenX(), e.getScreenY());
