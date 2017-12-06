@@ -84,6 +84,7 @@ public class BattleFightOptions {
 		moveButton2 = new Button("-");
 		moveButton3 = new Button("-");
 		moveButton4 = new Button("-");
+		
 		buttonArr = new Button[] {moveButton1,moveButton2,moveButton3,moveButton4};
 		int i=0;
 		for(Move move: activePokemon.getAvailableMoves()) {
@@ -98,8 +99,8 @@ public class BattleFightOptions {
 				enemyPokemon.printCurrentInfo();
 				int newActiveHP=activePokemon.getCurrentStat().getHP();
 				int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
-				battleScene.getActivePokemonHP().setText("Hp: "+newActiveHP);
-				battleScene.getEnemyPokemonHP().setText("Hp: "+newEnemyHP);
+				battleScene.getActivePokemonHP().setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newActiveHP);
+				battleScene.getEnemyPokemonHP().setText(enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newEnemyHP);
 				//battleScene.printHPInfo();
 				
 				if(activePokemon.isDead()) {
@@ -117,8 +118,11 @@ public class BattleFightOptions {
 				
 				
 			});
+			
 			i++;
 		}
+		
+		
 	}
 	
 	//show the game end message
@@ -155,6 +159,7 @@ public class BattleFightOptions {
 	public void changeScene() {
 		
 		ebfo.setUpScene();
+		
 	}
 	
 	protected Button[] getButtons() {

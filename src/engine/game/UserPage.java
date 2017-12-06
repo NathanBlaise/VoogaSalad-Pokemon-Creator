@@ -31,7 +31,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
@@ -135,8 +137,7 @@ public class UserPage extends Application {
 		myTopBlock = new Rectangle(width / 2 - 25, height / 2 - 100, 50, 50);
 	
 		
-		Font f = getFont(FONTSIZE);
-		makeGrid(root);
+		
 		
 		//set up arrowList
 		
@@ -279,13 +280,13 @@ public class UserPage extends Application {
 	// What to do each time a key is pressed
 	private void handleKeyInput (KeyCode code) {
 		if  (code == KeyCode.ENTER) {
-//			if(UserInterfaceEntered) {
-//				setUpBasicItemGrid();
-//			 	UserInterfaceEntered = false;
-//			}
-			
+			if(UserInterfaceEntered) {
+			makeGrid(root);
 			setUpBasicItemGrid();
-		 	//UserInterfaceEntered = false;
+		 	UserInterfaceEntered = false;
+	}
+			
+			
 		}
 		if (code == KeyCode.RIGHT) {
 			
@@ -295,6 +296,11 @@ public class UserPage extends Application {
 		}
 		else if (code == KeyCode.UP) {
 			
+		}
+		else if (code == KeyCode.X) {
+		if (UserInterfaceEntered) {
+			
+		}
 		}
 		else if (code == KeyCode.DOWN) {
 			updateItemGrid(root,tarRow);
