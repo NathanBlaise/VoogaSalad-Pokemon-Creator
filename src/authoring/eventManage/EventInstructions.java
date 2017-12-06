@@ -35,7 +35,7 @@ public final class EventInstructions{
 	private Map<Integer, Instruction> instructionMap = new HashMap<Integer, Instruction>();
 	
 	@SuppressWarnings("unchecked")
-	public EventInstructions(EventNPC eventNPC, Map<String, String> instructions, Map<String, authoring.eventManage.Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions,Callback<List<Instruction>, Integer> saver) {
+	public EventInstructions(EventNPC eventNPC, Map<String, String> instructions, Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions,Callback<List<Instruction>, Integer> saver) {
 		ObservableList<String> names = FXCollections.observableArrayList();
 		this.saver = saver;
 		names.addAll(instructions.keySet());
@@ -73,7 +73,7 @@ public final class EventInstructions{
 	
 	private void showSelectedInstruction(
 			Map<String, String> instructions,
-			Map<String, authoring.eventManage.Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions) {
+			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions) {
 		int index = listView.getSelectionModel().getSelectedIndex()<0?0:listView.getSelectionModel().getSelectedIndex();
 		if((index<listView.getItems().size())&&(instructionMap.keySet().contains(index))&&(instructionMap.get(index)!=null)&&(!instructionMap.get(index).equals(""))){
 			String newItem = new String(listView.getItems().get(index));

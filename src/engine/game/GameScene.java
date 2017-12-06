@@ -1,6 +1,7 @@
 package engine.game;
 
 import authoring.ScreenDisplay;
+import data.Database;
 import data.event.Event;
 import data.event.Instruction;
 import data.map.DrawMap;
@@ -45,6 +46,7 @@ public abstract class GameScene extends ScreenDisplay {
 	private Player mainPlayer;
 	private Stage myStage;
 	protected GridPane mapPane;
+	private Engine engine;
 
 	protected Input input;
 	
@@ -72,6 +74,7 @@ public abstract class GameScene extends ScreenDisplay {
 		mainMap = engine.getDatabase().getMap();
 		mainPlayer = engine.getDatabase().getPlayer();
 		myStage = stage;
+		this.engine = engine;
 		
 		//Deal with player
 		playerImage = new ImageView(image);
@@ -162,6 +165,14 @@ public abstract class GameScene extends ScreenDisplay {
 		playerImage.setX(0);
 		playerImage.setY(0);
 		this.rootAdd(playerImage);
+	}
+	
+	/**
+	 * 
+	 * @return - the database
+	 */
+	public Database getDatabase(){
+		return engine.getDatabase();
 	}
 
 }
