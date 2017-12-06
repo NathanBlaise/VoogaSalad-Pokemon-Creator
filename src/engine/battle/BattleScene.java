@@ -11,17 +11,20 @@ import authoring.ScreenDisplay;
 import data.items.Item;
 import data.model.NPC;
 import data.model.Pokemon;
+import data.model.moves.Move;
 import data.player.Player;
 import engine.game.GameScene;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -30,9 +33,13 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
 
 /**
  * 
@@ -46,6 +53,7 @@ public class BattleScene extends ScreenDisplay{
 	
 	private static final int LIST_OF_BAG_ITEMS_HEIGHT = 200;
 	private static final int LIST_OF_BAG_ITEMS_WIDTH = 150;
+	private Text actionMessage=new Text("");
 	
 	Image grassBattle = new Image("file:images/grass_battle.png");
 	Image grassBattleBackground = new Image("file:images/grass_battle_background.png");
@@ -67,7 +75,7 @@ public class BattleScene extends ScreenDisplay{
 	
 	private VBox vbox1;
 	private VBox vbox2;
-	public HBox hbox;
+	private HBox hbox;
 	
 	GraphicsContext gc;
 	private Canvas canvas;
@@ -84,6 +92,9 @@ public class BattleScene extends ScreenDisplay{
 	private ListView<String> listOfItems;
 	private ListView<String> listOfPokemons;
 	//an instance variable to show whose turn it is, 0 means player's turn to attack, 1 means NPC's turn.
+	
+	private Text activePokemonHP;
+	private Text enemyPokemonHP;
 
 	
 	
@@ -110,6 +121,7 @@ public class BattleScene extends ScreenDisplay{
 		super(width, height, background);
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
+		
 		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
 		canvas = new Canvas(width,height);
@@ -120,6 +132,10 @@ public class BattleScene extends ScreenDisplay{
 		buttonInitialSetUp();
 		characterSetUp();
 		setUpScreen();
+		printHPInfo();
+		rootAdd(actionMessage);
+		setTextEffects(actionMessage,20,40,Color.BLACK);
+	
 		
 
 	}
@@ -130,18 +146,18 @@ public class BattleScene extends ScreenDisplay{
 	
 	private void characterSetUp() {
 //		String imagePathForEP=enemyPokemon.getCurrentImagePath();
-//		enemyImage=new Image(imagePathForEP);
-//		pokemonImage=new Image(activePokemon.getCurrentImagePath());
+	enemyImage=new Image("file:images/pokemon_back_sprites/1.png");
+	pokemonImage=new Image("file:images/pokemon_back_sprites/10.png");
 		
 		
 		//hard code for now
-		//System.out.println("Current Path: "+activePokemon.getCurrentImagePath());
-		//System.out.println("Enemy path: " + enemyPokemon.getCurrentImagePath());
-		System.out.println(backSpriteURL(activePokemon));
-		System.out.println(gifSpriteURL(enemyPokemon));
+//		System.out.println("Current Path: "+activePokemon.getCurrentImagePath());
+//		System.out.println("Enemy path: " + enemyPokemon.getCurrentImagePath());
+//		System.out.println(backSpriteURL(activePokemon));
+//		System.out.println(gifSpriteURL(enemyPokemon));
 		
-		enemyImage=new Image(gifSpriteURL(enemyPokemon));
-		pokemonImage=new Image(backSpriteURL(activePokemon));
+		//enemyImage=new Image(backSpriteURL(enemyPokemon));
+		//pokemonImage=new Image(gifSpriteURL(activePokemon));
 		
 		//System.out.println(activePokemon.getCurrentImagePath().substring(0, 14) + "_back" + activePokemon.getCurrentImagePath().substring(14, 25) + "png");
 	}
@@ -167,13 +183,17 @@ public class BattleScene extends ScreenDisplay{
 		Button button2 = new Button(initialButtons[1]);
 		Button button3 = new Button(initialButtons[2]);
 		Button button4 = new Button(initialButtons[3]);
+	
 		buttonArr = new Button[] {button1, button2, button3, button4};
 		this.rootAdd(fourButtonLayout(buttonArr));
+	
+	
 		//Sets action for fight button
 		fightButtonPressed(button1);
 		bagButtonPressed(button2);
 		pokemonButtonPressed(button3);
 		runButtonPressed(button4);
+	
 	}
 	
 	
@@ -184,18 +204,34 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void fightButtonPressed(Button button) {
 		button.setOnAction((event) -> { 
+	
+			
+				rootRemove(listOfItems);
+				rootRemove(listOfPokemons);
 		
+			
+			
+		    actionMessage.setText("");
 			this.rootRemove(hbox);
 			bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
-			ebfo=new EnemyBattleFightOptions(activePokemon,enemyPokemon,this);
+			ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this);
 	
 			bfo.setUpScene();
+			
+			
+			
 			
 			
 		});
 		
 		
 		
+	}
+	
+
+	
+	public Text getActionMessage() {
+		return actionMessage;
 	}
 	
 	public BattleFightOptions getMyBattleScene() {
@@ -211,6 +247,9 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void bagButtonPressed(Button button) {
 		button.setOnAction((event) -> {
+			actionMessage.setText("");
+			this.rootRemove(listOfPokemons);
+			this.rootRemove(listOfItems);
 			
 			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
 			
@@ -230,26 +269,33 @@ public class BattleScene extends ScreenDisplay{
 			itemNames.add("item2");
 			itemNames.add("item3");
 			
-			addListView(listOfItems,itemNames);
+			listOfItems=addListView(itemNames,500,200);
+			System.out.println(listOfItems==null);
 			
 		});
 	}
 
-	public void addListView(ListView<String> list,ArrayList<String> content) {
+	public ListView<String> addListView(ArrayList<String> content, int x, int y) {
 		ObservableList<String> items =FXCollections.observableArrayList (content
 		    );
 		
-		list=new ListView<String>(); 
+		ListView<String> list=new ListView<String>(); 
 		list.setItems(items);
-		list.setTranslateX(500);
-		list.setTranslateY(200);
+		list.setTranslateX(x);
+		list.setTranslateY(y);
 		list.setPrefWidth(LIST_OF_BAG_ITEMS_WIDTH);
 		list.setPrefHeight(LIST_OF_BAG_ITEMS_HEIGHT);
 		list.setStyle("-fx-control-inner-background: #61a2b1;");
-		
+	
 
+	      
+	      
+	    
+		
+     
 
 		this.rootAdd(list);
+		return list;
 	}
 	
 	/*
@@ -257,28 +303,62 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	private void pokemonButtonPressed(Button button) {
 		button.setOnAction((event) -> {
+			actionMessage.setText("");
 			//load list of pokemon
-			if (listOfItems!=null) {
+	
 			    this.rootRemove(listOfItems);
+			    this.rootRemove(listOfPokemons);
+	
+
+			ArrayList<String> pokemonNames=new ArrayList<>();
+			for (Pokemon each:mainPlayer.getPokemons()) {
+				//check if the pokemon has nick name, if they has nick name, then the pokemon exists
+				if((each!=null) &&each.getNickName()!=null){
+					System.out.println(each.getNickName());
+					pokemonNames.add(each.getNickName());
+				}
+				//System.out.println(each.getNickName());
 			}
-			ArrayList<String> itemNames=new ArrayList<>();
-//			for (Item each:bags) {
-//				itemNames.add(each.getItemName());
-//			}
 			
-			//put itemNames in real code, but will hard code for now
-			itemNames.add("pokemon1");
-			itemNames.add("pokemon2");
-			itemNames.add("pokemon3");
-			itemNames.add("pokemon4");
-			
-			addListView(listOfPokemons,itemNames);
+			listOfPokemons=addListView(pokemonNames,500,200);
+			pokemonListAction();
 		
 			
 			
 			
 		});
 	}
+	
+	
+	
+	private void pokemonListAction() {
+		listOfPokemons.setOnMouseClicked(new EventHandler<MouseEvent>(){
+
+	          @Override
+	          public void handle(MouseEvent arg0) {
+	            
+	              
+	                 String item=listOfPokemons.getSelectionModel().getSelectedItems().get(0);
+	                 for (Pokemon each: mainPlayer.getPokemons()) {
+	                	     if (each.getNickName().equals(item)) {
+	                	    	     activePokemon=each;
+	                	    	     break;
+	                	     }
+	                 }
+	                 
+	                 activePokemonHP.setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+activePokemon.getCurrentStat().getHP());
+	                 
+	                 
+	                 
+	                 
+	          }
+	          
+	          
+
+	      });
+		
+	}
+	
 	
 	/*
 	 * When run button pressed, exit the battle scene back to main game engine
@@ -318,15 +398,59 @@ public class BattleScene extends ScreenDisplay{
 	 * Passed in the pictures of the front; return the pokemon pictures from the back
 	 */
 	private String backSpriteURL(Pokemon myPokemon) {
-		return "file:"+myPokemon.getCurrentImagePath().substring(0, 14) + "_back" + myPokemon.getCurrentImagePath().substring(14, 25) + "png";
+		String path=myPokemon.getCurrentImagePath();
+		return "file:"+path.substring(0, 14) + "_back_sprites" + path.substring(15, path.length());
 	}
 	
 	/*
 	 * Passed in the pictures of the enemy; return the gif version of the picture
 	 */
 	private String gifSpriteURL(Pokemon enemyPokemon) {
-		return "file:"+enemyPokemon.getCurrentImagePath() +  "_.gif";
+		String path=enemyPokemon.getCurrentImagePath();
+		return "file:"+path.substring(0, 14) +"_sprites"+ path.substring(15,path.length());
 	}
+	
+
+	public GameScene getGameScene() {
+		return gameScene;
+	}
+	public Text getActivePokemonHP() {
+		return activePokemonHP;
+	}
+	
+	public Text getEnemyPokemonHP() {
+		return enemyPokemonHP;
+	}
+	
+	public void printHPInfo() {
+		activePokemonHP=new Text( activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: " + activePokemon.getCurrentStat().getHP());
+		setTextEffects(activePokemonHP,300,260,Color.RED);
+		enemyPokemonHP=new Text( enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: " + enemyPokemon.getCurrentStat().getHP());
+	
+		
+		setTextEffects(enemyPokemonHP,200,150,Color.RED);
+		this.rootAdd(activePokemonHP);
+		this.rootAdd(enemyPokemonHP);
+	    
+	}
+	
+	
+	public void setTextEffects(Text t,int x, int y, Color c) {
+		InnerShadow is = new InnerShadow();
+		is.setOffsetX(4.0f);
+		is.setOffsetY(4.0f);
+		t.setEffect(is);
+		t.setFill(c);
+		t.setTranslateX(x);
+		t.setTranslateY(y);
+		t.setFont(Font.font("Helvetica", FontWeight.BOLD, 30));
+		 
+	
+		
+	}
+	
+
+
 	
 	
 }

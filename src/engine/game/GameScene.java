@@ -160,6 +160,10 @@ public abstract class GameScene extends ScreenDisplay {
 		return input.getInputHandler();
 	}
 	
+	public Stage getStage() {
+		return myStage;
+	}
+	
 	public void refreshMap(int SCREEN_WIDTH, int SCREEN_HEIGHT, GameMap mainMap){
 		this.mainMap = mainMap;
 		this.rootClear();

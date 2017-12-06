@@ -1,6 +1,7 @@
 package data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import data.map.GameMap;
 import data.model.Model;
@@ -15,7 +16,7 @@ public class Database implements Serializable{
 	private static final long serialVersionUID = -7248010162820532176L;
 	// because image in JavaFX cannot be serialized, so it's preferred to use String Array to store maps, 
 	// where the String presents as the absolute path of the image
-	private GameMap map;
+	private ArrayList<GameMap> maps = new ArrayList<GameMap>();
 	private Model model;
 	private Player player;
 	
@@ -27,17 +28,20 @@ public class Database implements Serializable{
 		
 	}
 	
-	public Database(GameMap map, Model model, Player player) {
-		this.map = map;
+	public Database(ArrayList<GameMap> maps, Model model, Player player) {
+		this.maps = maps;
 		this.model = model;
 		this.player = player;
 	}
-	public GameMap getMap() {
-		return map;
+	
+	public ArrayList<GameMap> getMaps() {
+		return maps;
 	}
-	public void setMap(GameMap map) {
-		this.map = map;
+
+	public void setMaps(ArrayList<GameMap> maps) {
+		this.maps = maps;
 	}
+
 	public Model getModel() {
 		return model;
 	}
@@ -50,6 +54,8 @@ public class Database implements Serializable{
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
-	
+	public GameMap getMap(){
+		return maps.get(0);
+	}
 	
 }
