@@ -29,12 +29,12 @@ public class DBMap implements cellDelegate {
 	private Tile currentSelectedTile;
 	
 	
-	public DBMap(Database database) {
+	public DBMap(Database database, GameMap map) {
 		this.database = database;
-		this.gameMap = database.getMap();
+		this.gameMap = map;
 		PANE_HEIGHT_NUMBER = gameMap.getXlength();
 		PANE_WIDTH_NUMBER = gameMap.getYlength();
-		DrawPane drawPane = new DrawPane(database.getMap()); //Class used to draw pane (refactoring)
+		DrawPane drawPane = new DrawPane(gameMap); //Class used to draw pane (refactoring)
 		myPane = drawPane.getPane();
 		myPane.setStyle("-fx-grid-lines-visible: true");
 		// deal with myCell
