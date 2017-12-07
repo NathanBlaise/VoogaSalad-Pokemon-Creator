@@ -11,6 +11,8 @@ import data.player.Player;
 
 public class DefenseBoost extends Item{
 	
+	private static final long serialVersionUID = -7113219972405967861L;
+
 	//Specifies name, price and image in the constructor
 	public DefenseBoost(){
 		itemName = "Defense Boost";

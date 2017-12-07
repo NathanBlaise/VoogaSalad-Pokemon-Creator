@@ -17,14 +17,16 @@ public class Player implements Serializable{
 	private int posX, posY;
 	private Pokemon[] pokemons;
 	private ArrayList<Item> items;
-	private int currency;
-//	public transient Direction direction;
+	private double currency;
 	//private Map<Item,Integer> Bag;  // a map from the item to the number of item
+	private ArrayList<Pokemon> warehouse;
 	
 	public Player(){
 		posX=50;
 		posY=50;
 		pokemons = new Pokemon[6];
+		currency = 0;
+		warehouse = new ArrayList<Pokemon>();
 	}
 	
 	public int getPosX() {
@@ -66,13 +68,26 @@ public class Player implements Serializable{
 			}
 		}
 	}
-	
-	public int getCurrency() {
+
+	public double getCurrency() {
 		return currency;
 	}
-	
-	public void setCurrency(int amount) {
-		currency = amount;
+
+	public void setCurrency(double currency) {
+		this.currency = currency;
+		if(this.currency<0){
+			this.currency = 0;
+		}
 	}
+
+	public ArrayList<Pokemon> getWarehouse() {
+		return warehouse;
+	}
+
+	public void setWarehouse(ArrayList<Pokemon> warehouse) {
+		this.warehouse = warehouse;
+	}
+	
+	
 	
 }
