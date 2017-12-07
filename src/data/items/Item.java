@@ -18,10 +18,42 @@ public abstract class Item implements Serializable {
 	protected String itemName;
 	private String imagePath;
 	
-	public abstract void useItem(Player player, Pokemon mine, Pokemon Enemy);
+	public Item(){
+		
+	}
 	
+	public Item(String itemName, int itemPrice, String imagePath){
+		this.itemName = new String(itemName);
+		this.itemPrice = itemPrice;
+		this.imagePath = new String(imagePath);
+	}
+	
+	public abstract void useItem(Player player, Pokemon mine, Pokemon Enemy);
+
+	public int getItemPrice() {
+		return itemPrice;
+	}
+
+	public void setItemPrice(int itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+
 	public String getItemName() {
 		return itemName;
 	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+	
+	
 		
 }
