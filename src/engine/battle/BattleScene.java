@@ -53,35 +53,15 @@ public class BattleScene extends ScreenDisplay{
 	
 	private static final int LIST_OF_BAG_ITEMS_HEIGHT = 200;
 	private static final int LIST_OF_BAG_ITEMS_WIDTH = 150;
+	private final int BUTTONS_XPOS = 60;
+	private final int BUTTONS_YPOS = 370;
 	private Text actionMessage=new Text("");
 	
-	Image grassBattle = new Image("file:images/grass_battle.png");
-	Image grassBattleBackground = new Image("file:images/grass_battle_background.png");
-	Image grassBattleGrass1 = new Image("file:images/grass_battle_grass_1.png");
-	Image grassBattleGrass2 = new Image("file:images/grass_battle_grass_2.png");
-	Image itemList = new Image("file:images/item_list_background.jpg");
 	String backgroundImage="file:images/item_list_background.jpg";
 
-	Image battleBox = new Image("file:images/battle_box.png");
-    
-	Image pokemonImage;
-	Image enemyImage;
-	
-	Image emeraldBattle2 = new Image("file:images/emerald_battle_2.png");
-//	Image emeraldBattle3 = new Image("file:images/emerald_battle_3.png");
-//	Image emeraldBattle4 = new Image("file:images/emerald_battle_4.png");
-	
-	String[] initialButtons = {"FIGHT","BAG","POKEMON","RUN"};
-	
-	private VBox vbox1;
-	private VBox vbox2;
-	private HBox hbox;
-	
-	GraphicsContext gc;
 	private Canvas canvas;
-	private Font f;
-	private Button[] buttonArr; //Contains all starter buttons (Fight, Bag, Pokemon & Run)
-	
+	private HBox	buttonBox;
+	private BattleGUI gui;
 	private BattleFightOptions bfo;
 	private EnemyBattleFightOptions ebfo;
 	private Player mainPlayer;
@@ -95,17 +75,6 @@ public class BattleScene extends ScreenDisplay{
 	
 	private Text activePokemonHP;
 	private Text enemyPokemonHP;
-
-	
-	
-	private final int PLAYER_HOME_XPOS = 15;
-	private final int PLAYER_HOME_YPOS = 303;
-	private final int INFO_BOX_YPOS = 336;
-	private final int ENEMY_HOME_XPOS = 330;
-	private final int ENEMY_HOME_YPOS = 145;
-	
-	private final int BUTTONS_XPOS = 60;
-	private final int BUTTONS_YPOS = 370;
 	
 	/**
 	 * 
@@ -119,113 +88,49 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene) {
 		super(width, height, background);
+		canvas = new Canvas(width,height);
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
-		
 		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
-		canvas = new Canvas(width,height);
-		gc = canvas.getGraphicsContext2D();
 		gameScene = scene;
+		gui = new BattleGUI(canvas.getGraphicsContext2D(),width,height,activePokemon,enemyPokemon);
 		this.rootAdd(canvas);
-		loadFont();
-		buttonInitialSetUp();
-		characterSetUp();
-		setUpScreen();
+		resetButtons();
 		printHPInfo();
 		rootAdd(actionMessage);
 		setTextEffects(actionMessage,20,40,Color.BLACK);
-	
-		
-
 	}
 	
-	/*
-	 * Set up images for player and NPC
-	 */
-	
-	private void characterSetUp() {
-//		String imagePathForEP=enemyPokemon.getCurrentImagePath();
-	enemyImage=new Image("file:images/pokemon_back_sprites/1.png");
-	pokemonImage=new Image("file:images/pokemon_back_sprites/10.png");
-		
-		
-		//hard code for now
-//		System.out.println("Current Path: "+activePokemon.getCurrentImagePath());
-//		System.out.println("Enemy path: " + enemyPokemon.getCurrentImagePath());
-//		System.out.println(backSpriteURL(activePokemon));
-//		System.out.println(gifSpriteURL(enemyPokemon));
-		
-		//enemyImage=new Image(backSpriteURL(enemyPokemon));
-		//pokemonImage=new Image(gifSpriteURL(activePokemon));
-		
-		//System.out.println(activePokemon.getCurrentImagePath().substring(0, 14) + "_back" + activePokemon.getCurrentImagePath().substring(14, 25) + "png");
-	}
-	
-	/*
-	 * May be used to utilize pokemon specific font
-	 */
-	
-	private void loadFont() {
-		try {
-			f = Font.loadFont(new FileInputStream(new File("./src/resources/pkmnem.ttf")), 30);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	/*
 	 * Set up four initial buttons to be used in battle and sets them to default.
 	 */
-	protected void buttonInitialSetUp(){
-		//Create Fight,Bag, Pokemon and Run buttons, 
-		Button button1 = new Button(initialButtons[0]);
-		Button button2 = new Button(initialButtons[1]);
-		Button button3 = new Button(initialButtons[2]);
-		Button button4 = new Button(initialButtons[3]);
-	
-		buttonArr = new Button[] {button1, button2, button3, button4};
-		this.rootAdd(fourButtonLayout(buttonArr));
 	
 	
-		//Sets action for fight button
-		fightButtonPressed(button1);
-		bagButtonPressed(button2);
-		pokemonButtonPressed(button3);
-		runButtonPressed(button4);
-	
+	protected void resetButtons() {
+		gui.resetButtons();
+		fightButtonPressed(gui.buttonArr[0]);
+		bagButtonPressed(gui.buttonArr[1]);
+		pokemonButtonPressed(gui.buttonArr[2]);
+		runButtonPressed(gui.buttonArr[3]);
+		buttonBox = fourButtonLayout(gui.buttonArr);
+		this.rootAdd(buttonBox);
 	}
-	
-	
-
 	
 	/*
 	 * //When fight button pressed, remove current buttons and replace with current pokemon's moves
 	 */
 	private void fightButtonPressed(Button button) {
 		button.setOnAction((event) -> { 
-	
-			
-				rootRemove(listOfItems);
-				rootRemove(listOfPokemons);
-		
-			
-			
+			rootRemove(listOfItems);
+			rootRemove(listOfPokemons);
 		    actionMessage.setText("");
-			this.rootRemove(hbox);
+			this.rootRemove(buttonBox);
 			bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
 			ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this);
-	
-			bfo.setUpScene();
-			
-			
-			
-			
-			
-		});
-		
-		
-		
+			bfo.setUpScene();				
+		});	
 	}
 	
 
@@ -250,20 +155,13 @@ public class BattleScene extends ScreenDisplay{
 			actionMessage.setText("");
 			this.rootRemove(listOfPokemons);
 			this.rootRemove(listOfItems);
-			
 			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
-			
-			//load list of pokemon
-		
-			
 //			ArrayList<Item> bags= mainPlayer.getItems();
 			ArrayList<String> itemNames=new ArrayList<>();
 //			for (Item each:bags) {
 //				itemNames.add(each.getItemName());
 //			}
-			
-	
-			
+
 			//put itemNames in real code, but will hard code for now
 			itemNames.add("item1");
 			itemNames.add("item2");
@@ -276,8 +174,7 @@ public class BattleScene extends ScreenDisplay{
 	}
 
 	public ListView<String> addListView(ArrayList<String> content, int x, int y) {
-		ObservableList<String> items =FXCollections.observableArrayList (content
-		    );
+		ObservableList<String> items =FXCollections.observableArrayList (content);
 		
 		ListView<String> list=new ListView<String>(); 
 		list.setItems(items);
@@ -286,14 +183,6 @@ public class BattleScene extends ScreenDisplay{
 		list.setPrefWidth(LIST_OF_BAG_ITEMS_WIDTH);
 		list.setPrefHeight(LIST_OF_BAG_ITEMS_HEIGHT);
 		list.setStyle("-fx-control-inner-background: #61a2b1;");
-	
-
-	      
-	      
-	    
-		
-     
-
 		this.rootAdd(list);
 		return list;
 	}
@@ -305,11 +194,8 @@ public class BattleScene extends ScreenDisplay{
 		button.setOnAction((event) -> {
 			actionMessage.setText("");
 			//load list of pokemon
-	
-			    this.rootRemove(listOfItems);
-			    this.rootRemove(listOfPokemons);
-	
-
+			this.rootRemove(listOfItems);
+			this.rootRemove(listOfPokemons);
 			ArrayList<String> pokemonNames=new ArrayList<>();
 			for (Pokemon each:mainPlayer.getPokemons()) {
 				//check if the pokemon has nick name, if they has nick name, then the pokemon exists
@@ -318,14 +204,9 @@ public class BattleScene extends ScreenDisplay{
 					pokemonNames.add(each.getNickName());
 				}
 				//System.out.println(each.getNickName());
-			}
-			
+			}	
 			listOfPokemons=addListView(pokemonNames,500,200);
-			pokemonListAction();
-		
-			
-			
-			
+			pokemonListAction();			
 		});
 	}
 	
@@ -333,11 +214,9 @@ public class BattleScene extends ScreenDisplay{
 	
 	private void pokemonListAction() {
 		listOfPokemons.setOnMouseClicked(new EventHandler<MouseEvent>(){
-
 	          @Override
 	          public void handle(MouseEvent arg0) {
-	            
-	              
+
 	                 String item=listOfPokemons.getSelectionModel().getSelectedItems().get(0);
 	                 for (Pokemon each: mainPlayer.getPokemons()) {
 	                	     if (each.getNickName().equals(item)) {
@@ -345,18 +224,9 @@ public class BattleScene extends ScreenDisplay{
 	                	    	     break;
 	                	     }
 	                 }
-	                 
-	                 activePokemonHP.setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+activePokemon.getCurrentStat().getHP());
-	                 
-	                 
-	                 
-	                 
+	                 activePokemonHP.setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+activePokemon.getCurrentStat().getHP());     
 	          }
-	          
-	          
-
-	      });
-		
+	      });	
 	}
 	
 	
@@ -367,47 +237,6 @@ public class BattleScene extends ScreenDisplay{
 		button.setOnAction((event) -> {
 			gameScene.changeBackScene();
 		});
-	}
-	
-	public HBox fourButtonLayout(Button[] buttons) {
-		vbox1 = new VBox(15);
-		vbox1.getChildren().addAll(buttons[0],buttons[2]);
-		vbox2 = new VBox(15);
-		vbox2.getChildren().addAll(buttons[1],buttons[3]);
-		hbox = new HBox(15);
-		hbox.getChildren().addAll(vbox1,vbox2);
-		hbox.setLayoutX(BUTTONS_XPOS);
-		hbox.setLayoutY(BUTTONS_YPOS);
-		return hbox;
-	}
-	
-	/*
-	 * Used to display and animate all objects initially when battle loaded
-	 */
-	private void setUpScreen() {
-		gc.drawImage(grassBattleBackground, 0, 0);
-		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
-		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
-		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
-		gc.drawImage(enemyImage,400, 60);
-		gc.drawImage(pokemonImage,100 ,193);
-	}
-	
-	
-	/*
-	 * Passed in the pictures of the front; return the pokemon pictures from the back
-	 */
-	private String backSpriteURL(Pokemon myPokemon) {
-		String path=myPokemon.getCurrentImagePath();
-		return "file:"+path.substring(0, 14) + "_back_sprites" + path.substring(15, path.length());
-	}
-	
-	/*
-	 * Passed in the pictures of the enemy; return the gif version of the picture
-	 */
-	private String gifSpriteURL(Pokemon enemyPokemon) {
-		String path=enemyPokemon.getCurrentImagePath();
-		return "file:"+path.substring(0, 14) +"_sprites"+ path.substring(15,path.length());
 	}
 	
 
@@ -435,7 +264,7 @@ public class BattleScene extends ScreenDisplay{
 	}
 	
 	
-	public void setTextEffects(Text t,int x, int y, Color c) {
+	private void setTextEffects(Text t,int x, int y, Color c) {
 		InnerShadow is = new InnerShadow();
 		is.setOffsetX(4.0f);
 		is.setOffsetY(4.0f);
@@ -444,13 +273,22 @@ public class BattleScene extends ScreenDisplay{
 		t.setTranslateX(x);
 		t.setTranslateY(y);
 		t.setFont(Font.font("Helvetica", FontWeight.BOLD, 30));
-		 
-	
 		
 	}
 	
-
-
-	
+	/*
+	 * Draws buttons in 4 place format correctly on screen
+	 */
+	protected HBox fourButtonLayout(Button[] buttons) {
+		VBox vbox1 = new VBox(15);
+		vbox1.getChildren().addAll(buttons[0],buttons[2]);
+		VBox vbox2 = new VBox(15);
+		vbox2.getChildren().addAll(buttons[1],buttons[3]);
+		HBox hbox = new HBox(15);
+		hbox.getChildren().addAll(vbox1,vbox2);
+		hbox.setLayoutX(BUTTONS_XPOS);
+		hbox.setLayoutY(BUTTONS_YPOS);
+		return hbox;
+	}
 	
 }
