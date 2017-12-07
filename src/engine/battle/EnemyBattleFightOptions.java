@@ -37,7 +37,7 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	
 	@Override
 	public void changeScene() {
-		mainScene.buttonInitialSetUp();
+		mainScene.resetButtons();
 		mainScene.rootRemove(super.hbox);
 		mainScene.rootRemove(this.getText());
 		

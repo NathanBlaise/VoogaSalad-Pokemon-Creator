@@ -9,8 +9,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 
 /**
@@ -32,11 +34,13 @@ public class ShopScene extends ScreenDisplay{
 			"Potion","SpecialAttackBoost","SpecialDefenseBoost","SpeedBoost","SuperPotion","XPBoost");
 	
 	private Player mainPlayer;
+	private Label currencyDisplay;
 
 	public ShopScene(int width, int height, Paint background, Player player) {
 		super(width, height, background);
 		mainPlayer = player;
-		
+		currencyDisplay = new Label("" + mainPlayer.getCurrency());
+		HBox hbox = new HBox();
 		canvas = new Canvas(width,height);
 		gc = canvas.getGraphicsContext2D();
 		gc.drawImage(shopBackground, 0, 0);
