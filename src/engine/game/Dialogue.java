@@ -70,6 +70,8 @@ public class Dialogue {
 		
 		textDisplay.setFont(f); 
 		
+		
+		
 		//Put textDisplay and ChatBox on the screen
 		putOnScreen();
 	}
