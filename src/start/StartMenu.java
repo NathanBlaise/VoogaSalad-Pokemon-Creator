@@ -28,7 +28,7 @@ import javafx.stage.Stage;
 public class StartMenu {
 	private Scene scene;
 	private Pane root = new Pane();
-	
+	//coordinates for different buttons
 	private final static double NewX = 593.0;
 	private final static double EditX = 831.0;
 	private final static double PlayX = 1063.0;
