@@ -6,8 +6,6 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import data.event.Event;
-import data.event.EventNPC;
 import data.event.EventPokemon;
 import engine.UI.Path2Image;
 import javafx.embed.swing.SwingFXUtils;

@@ -11,6 +11,8 @@ import data.player.Player;
 
 public class Claw extends Item{
 	
+	private static final long serialVersionUID = -5516124310392605466L;
+
 	//Specifies name, price and image in the constructor
 	public Claw(){
 		itemName = "Claw";

@@ -11,6 +11,8 @@ import data.player.Player;
 
 public class SpecialAttackBoost extends Item{
 	
+	private static final long serialVersionUID = 2623191051935709345L;
+
 	//Specifies name, price and image in the constructor
 	public SpecialAttackBoost(){
 		itemName = "Special Attack Boost";

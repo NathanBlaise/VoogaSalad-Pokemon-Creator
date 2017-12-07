@@ -65,6 +65,16 @@ public class PlayerTab{
 			}			
 		}, "y coord");
 		grid.add(Ychanger, 0, 3);
+		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change currency")), 0, 4);
+		HBox currencyChanger = UIComponentFactory.doubleSlider(player.getCurrency(), 0.0, 480, new Callback<Double, Integer>(){
+			@Override
+			public Integer call(Double param) {
+				player.setCurrency(param);
+				refresh(player);
+				return null;
+			}			
+		}, "currency");
+		grid.add(currencyChanger, 0, 5);
 		return grid;
 	}
 	

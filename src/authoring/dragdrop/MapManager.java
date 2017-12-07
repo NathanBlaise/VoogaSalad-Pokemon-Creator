@@ -111,7 +111,7 @@ public final class MapManager extends BorderPane{
 	
 	private void deleteSelectedMap(){
 		int index = listView.getSelectionModel().getSelectedIndex()<0?0:listView.getSelectionModel().getSelectedIndex();
-		if(index<listView.getItems().size()){
+		if((index<listView.getItems().size())&&(listView.getItems().size()>1)){
 			listView.getItems().remove(index);
 		}
 	}

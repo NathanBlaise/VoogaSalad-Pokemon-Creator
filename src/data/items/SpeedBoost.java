@@ -11,6 +11,8 @@ import data.player.Player;
 
 public class SpeedBoost extends Item{
 	
+	private static final long serialVersionUID = -5438630976235840138L;
+
 	//Specifies name, price and image in the constructor
 	public SpeedBoost(){
 		itemName = "Speed Boost";

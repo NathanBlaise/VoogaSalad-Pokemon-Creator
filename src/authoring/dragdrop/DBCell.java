@@ -177,7 +177,13 @@ public class DBCell {
 	             ClipboardContent content = new ClipboardContent();
             	 content.putImage(image.getImage());
             	 content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "TileFromMap");
-            	 content.put(DataFormat.lookupMimeType("Tile")==null?new DataFormat("Tile"):DataFormat.lookupMimeType("Tile"), new Tile(null, cell.isObstacle(), 1, 1, cell.getTilePath(), new ArrayList<String>(){{this.add(cell.getTilePath());}}));
+            	 content.put(DataFormat.lookupMimeType("Tile")==null?new DataFormat("Tile"):DataFormat.lookupMimeType("Tile"), new Tile(null, cell.isObstacle(), 1, 1, cell.getTilePath(), new ArrayList<String>(){
+            		 
+					private static final long serialVersionUID = -8210445998841861129L;
+
+					{
+						this.add(cell.getTilePath());
+					}}));
 	             db.setContent(content);
 	             
 	             event.consume();
