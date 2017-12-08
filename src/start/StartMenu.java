@@ -13,7 +13,6 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -136,10 +135,8 @@ public class StartMenu {
 				gameStage.setScene(splashGame);
 				gameStage.centerOnScreen();
 				splashGame.setOnKeyPressed(e->{
-					if(e.getCode()==KeyCode.SPACE) {
-						Engine engine = new Engine(one, two, gameType, gameStage);
-						engine.toMainGameScene();
-					}
+					Engine engine = new Engine(one, two, gameType, gameStage);
+					engine.toMainGameScene();
 				});
 				return null;
 			}

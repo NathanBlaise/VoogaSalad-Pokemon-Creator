@@ -61,7 +61,7 @@ public class NPCEventEditor{
 			BorderPane result =new BorderPane();
 			Map<String, String> name2instruction = createName2Instruction(eventNPC);
 			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions = createReaction(result);
-			result.setLeft(new EventInstructions(eventNPC, name2instruction, reactions, new InstructionListEditor(eventNPC, saver)).getList());
+			result.setLeft(new EventInstructions(eventNPC, name2instruction, reactions, new InstructionListEditor(eventNPC, e->{saver.call(e);stage.close();return null;})).getList());
 			return result;
 		}
 
