@@ -70,9 +70,9 @@ public class PokemonGameScene extends GameScene{
 				}
 			}
 			Event encounterEvent = Collisions.searchEvent(playerIndex, directions, collideEvents);
-		    	if((encounterEvent!=null)&&(directions.size()!=0)){
-		    		executeEvent(encounterEvent);
-		    	}
+		    if((encounterEvent!=null)&&(directions.size()!=0)){
+		    	executeEvent(encounterEvent);
+		    }
 	    }
 	}
 

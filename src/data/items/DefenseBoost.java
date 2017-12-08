@@ -15,8 +15,8 @@ public class DefenseBoost extends Item{
 
 	//Specifies name, price and image in the constructor
 	public DefenseBoost(){
-		itemName = "Defense Boost";
-		itemPrice = 1200;
+		itemName = "DefenseBoost";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

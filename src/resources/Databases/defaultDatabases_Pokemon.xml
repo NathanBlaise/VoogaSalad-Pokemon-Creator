@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_101" class="java.beans.XMLDecoder">
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
  <object class="data.Database" id="Database0">
   <void property="maps">
    <void method="add">
@@ -22470,6 +22470,29 @@
        </void>
        <void property="wholePic">
         <string>images/tiles/stonecenter.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/cornerdirt.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Dirt</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/cornerdirt.png</string>
        </void>
        <void property="width">
         <int>1</int>

@@ -15,8 +15,8 @@ public class LevelBoost extends Item{
 
 	//Specifies name, price and image in the constructor
 	public LevelBoost(){
-		itemName = "Level Boost";
-		itemPrice = 1200;
+		itemName = "LevelBoost";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

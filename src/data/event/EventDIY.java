@@ -9,6 +9,7 @@ public class EventDIY extends Event{
 	
 	{
 		availableInstructions.add("InstructionGoMap");
+		availableInstructions.add("InstructionGoShop");
 	}
 	
 	/**

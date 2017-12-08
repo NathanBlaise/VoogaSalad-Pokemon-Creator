@@ -1,20 +1,31 @@
 package engine.shop;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import authoring.ScreenDisplay;
+import data.items.Item;
 import data.player.Player;
+import engine.game.GameScene;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
-
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.util.Callback;
+ 
 /**
  * 
  * @author nathanlewis
@@ -23,46 +34,103 @@ import javafx.scene.paint.Paint;
 
 public class ShopScene extends ScreenDisplay{
 	
-	protected Canvas canvas;
-	private GraphicsContext gc;
-	
-	private Image shopBackground = new Image("file:images/bag_game_background.png");
-	private Image bagImage = new Image("file:images/shop_bag.png");
-	
-	private ObservableList<String> allItemsList = FXCollections.observableArrayList(
-			"AttackBoost","Claw","DefenseBoost","HiPotion","HPDrain","HyperPotion","LevelBoost",
-			"Potion","SpecialAttackBoost","SpecialDefenseBoost","SpeedBoost","SuperPotion","XPBoost");
+//	private Image shopBackground = new Image("file:images/bag_game_background.png");
+//	private Image bagImage = new Image("file:images/shop_bag.png");
 	
 	private Player mainPlayer;
-	private Label currencyDisplay;
+	private StackPane currencyDisplay = new StackPane();
 
-	public ShopScene(int width, int height, Paint background, Player player) {
+	public ShopScene(int width, int height, GameScene gameScene, List<Item> availableItems, Paint background, Player player) {
 		super(width, height, background);
 		mainPlayer = player;
-		currencyDisplay = new Label("" + mainPlayer.getCurrency());
-		HBox hbox = new HBox();
-		canvas = new Canvas(width,height);
-		gc = canvas.getGraphicsContext2D();
-		gc.drawImage(shopBackground, 0, 0);
-		gc.drawImage(bagImage, 30, 200);
-		this.rootAdd(canvas);
-		this.rootAdd(setListView());
+		currencyDisplay.getChildren().addAll(createCurrencyDisplay());
+		currencyDisplay.setPrefSize(350, 100);
+		currencyDisplay.setId("stack-pane");
+		this.rootAdd(currencyDisplay, 0, 0);
+		this.rootAdd(setListView(availableItems));
+		this.rootAdd(showItemList(mainPlayer.getItems()));
+		this.getScene().getStylesheets().add("resources/shopScene.css");
+		Button quitButton = new Button("quit");
+		quitButton.setOnMouseClicked(e->{
+			gameScene.changeBackScene();
+		});
+		this.rootAdd(quitButton,120, 420);
 	}
 	
-	private ListView<String> setListView() {
+	private ListView<String> setListView(List<Item> items) {
+		ObservableList<String> allItemsList = FXCollections.observableArrayList(
+			items.stream()
+				 .map(e->e.getItemName())
+				 .collect(Collectors.toList())
+		);
+
 		ListView<String> itemList = new ListView<>(allItemsList);
-		Map<String, Image> imageCollection = allItemsList.stream().collect(
+		Map<String, Item> itemCollection = items.stream().
+				collect(
                 Collectors.toMap(
-                        item -> item,
-                        item -> new Image("file:images/items/" + item.toLowerCase() + ".png")
+                        Item::getItemName,
+                        item -> item
                 )
         );
-		itemList.setCellFactory(param -> new ShopCell(imageCollection,mainPlayer));
+		itemList.setCellFactory(param -> new ShopCell(itemCollection,mainPlayer,new Callback<Integer, Integer>(){
+			@Override
+			public Integer call(Integer param) {
+				rootAdd(showItemList(mainPlayer.getItems()));
+				currencyDisplay.getChildren().clear();
+				currencyDisplay.getChildren().addAll(createCurrencyDisplay());
+				return null;
+			}
+		}));
         itemList.setPrefWidth(350);
-        itemList.setPrefHeight(300);
-        itemList.setLayoutX(340);
-        itemList.setLayoutY(70);
+        itemList.setPrefHeight(480);
+        itemList.setLayoutX(360);
+        itemList.setLayoutY(0);
         return itemList;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public TableView<List<String>> showItemList(Map<String, Integer> items){
+		TableView<List<String>> table = new TableView<List<String>>();
+		table.setEditable(false); 
+        TableColumn<List<String>, String> abilityCol = new TableColumn<List<String>, String>("Item");
+        abilityCol.setCellValueFactory(new Callback<CellDataFeatures<List<String>, String>, ObservableValue<String>>() {
+            public ObservableValue<String> call(CellDataFeatures<List<String>, String> p) {
+                StringProperty result = new SimpleStringProperty();
+                result.set(p.getValue().get(0));
+                return result;
+            }
+         });
+        TableColumn<List<String>, String> valueCol = new TableColumn<List<String>, String>("Number");
+        valueCol.setCellValueFactory(new Callback<CellDataFeatures<List<String>, String>, ObservableValue<String>>() {
+            public ObservableValue<String> call(CellDataFeatures<List<String>, String> p) {
+                StringProperty result = new SimpleStringProperty();
+                result.set(p.getValue().get(1));
+                return result;
+            }
+         });
+        ObservableList<List<String>> data = FXCollections.observableArrayList();
+        for(String key: items.keySet()){
+        	List<String> tempList = new ArrayList<String>();
+        	tempList.add(key);
+        	tempList.add(String.valueOf(items.get(key)));
+        	data.add(tempList);
+        }
+        table.setItems(data); 
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        table.getColumns().addAll(abilityCol, valueCol);
+        table.setPrefWidth(350);
+        table.setPrefHeight(300);
+        table.setLayoutX(0);
+        table.setLayoutY(100);
+        return table;
+	}
+	
+	//https://stackoverflow.com/questions/37541279/javafx-centered-text-in-scene
+	private Text createCurrencyDisplay(){
+		Text currency =  new Text("Money: " + new Double(mainPlayer.getCurrency()).intValue());
+		currency.setTextAlignment(TextAlignment.CENTER);
+        StackPane.setAlignment(currency, Pos.CENTER);
+        return currency;
 	}
 	
 	

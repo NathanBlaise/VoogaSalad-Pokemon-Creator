@@ -52,7 +52,7 @@ public class DIYEventEditor {
 		BorderPane result = new BorderPane();
 		Map<String, String> name2instruction = NPCEventEditor.createName2Instruction(eventDIY);
 		Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions = createReaction(stage, result);
-		result.setLeft(new EventInstructions(eventDIY, name2instruction, reactions, new InstructionListEditor(eventDIY, saver)).getList());
+		result.setLeft(new EventInstructions(eventDIY, name2instruction, reactions, new InstructionListEditor(eventDIY, e->{saver.call(e);stage.close();return null;})).getList());
 		return result;
 	}
 	

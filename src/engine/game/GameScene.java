@@ -59,10 +59,10 @@ public abstract class GameScene extends ScreenDisplay {
 	protected static final Map<String, Pair<Integer, Integer>> input2direction = new HashMap<String, Pair<Integer, Integer>>();
 
 	{
-		input2direction.put(KeyCode.DOWN.toString(), new Pair<Integer, Integer>(1, 0));
-		input2direction.put(KeyCode.UP.toString(), new Pair<Integer, Integer>(-1, 0));
-		input2direction.put(KeyCode.LEFT.toString(), new Pair<Integer, Integer>(0, -1));
-		input2direction.put(KeyCode.RIGHT.toString(), new Pair<Integer, Integer>(0, 1));
+		input2direction.put(KeyCode.DOWN.toString(), new Pair<Integer, Integer>(0, 1));
+		input2direction.put(KeyCode.UP.toString(), new Pair<Integer, Integer>(0, -1));
+		input2direction.put(KeyCode.LEFT.toString(), new Pair<Integer, Integer>(-1, 0));
+		input2direction.put(KeyCode.RIGHT.toString(), new Pair<Integer, Integer>(1, 0));
 	}
 	
 	
@@ -82,6 +82,9 @@ public abstract class GameScene extends ScreenDisplay {
 		playerImage = new ImageView(image);
 		playerImage.setFitHeight(PLAYER_HEIGHT);
 		playerImage.setFitWidth(PLAYER_WIDTH);
+		playerImage.setY(mainPlayer.getPosY()*pixelSize);
+		playerImage.setX(mainPlayer.getPosX()*pixelSize);
+//		System.out.printf("player position: %d %d\n", mainPlayer.getPosX(), mainPlayer.getPosY());
 		//Initialize variables; Deal with map
 		tileCanvas = new Canvas (screen_width,screen_height);
 		GraphicsContext gc = tileCanvas.getGraphicsContext2D();
@@ -150,10 +153,14 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
-		instructionIndex++;
+		if((currentEvent!=null)&&(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
+			instructionIndex++;
+		}else{
+			currentEvent = null;
+		}
 		myStage.setScene(this.getScene());
 		myStage.sizeToScene();
-		myStage.setHeight(mapPane.getHeight()+10);
+		myStage.setHeight(mapPane.getHeight()+20);
 		screen_height = new Double(mapPane.getHeight()).intValue();
 		myStage.setWidth(mapPane.getWidth());
 		screen_width = new Double(mapPane.getWidth()).intValue();
@@ -178,7 +185,7 @@ public abstract class GameScene extends ScreenDisplay {
 		return myStage;
 	}
 	
-	public void refreshMap(int futureX, int futureY, GameMap mainMap){
+	public void refreshMap(int futureRow, int futureColumn, GameMap mainMap){
 		currentEvent = null;
 		this.mainMap = mainMap;
 		this.rootClear();
@@ -189,8 +196,8 @@ public abstract class GameScene extends ScreenDisplay {
 		this.rootAdd(tileCanvas);
 		mapPane = drawMap.getPane();
 		this.rootAdd(mapPane);
-		playerImage.setX(pixelSize*futureX);
-		playerImage.setY(pixelSize*futureY);
+		playerImage.setX(pixelSize*futureColumn);
+		playerImage.setY(pixelSize*futureRow);
 		this.rootAdd(playerImage);
 	}
 	

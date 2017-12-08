@@ -89,7 +89,7 @@ import javafx.scene.text.Font;
 			VBox totalPane = new VBox();
 			HBox subPane = new HBox();
 			
-			Label  name = new Label(entry.getKey().getName());
+			Label  name = new Label(entry.getKey().getName()+" :"+new Integer(entry.getKey().getWidth()).toString()+"x"+new Integer(entry.getKey().getHeight()).toString());
 			name.setFont(new Font(11));
 			subPane.getChildren().add(name);
 			

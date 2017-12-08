@@ -5,11 +5,18 @@
 		https://stackoverflow.com/questions/7900575/how-to-add-css-autocomplete-to-eclipse
 	for the background color of textarea, https://stackoverflow.com/questions/42236560/read-only-textarea-with-scrollbar-javafx 
 	
-	for the scroll bar, check https://farrukhobaid.wordpress.com/2013/01/16/dark-scrollbar-skin-for-javafx/*/
+	for the scroll bar, check https://farrukhobaid.wordpress.com/2013/01/16/dark-scrollbar-skin-for-javafx/
+	for the button, https://docs.oracle.com/javafx/2/get_started/css.htm*/
 
 .root {
  -fx-spacing: 30;
- -fx-background: #FFFFFF;
+ -fx-background: #428cf4;
+ -fx-background-color:  #428cf4;
+ background-color:  #428cf4;
+}
+
+.group {
+ -fx-background-color:  #428cf4;
 }
 
 .image-view-wrapper:border {
@@ -18,14 +25,31 @@
     -fx-border-width: 5;
 }
 
+
 .table-row-cell:empty {
-    -fx-background-color: transparent;
+    -fx-background-color: #68a0a0;
 }
 
-.table-view .column-header .label {
+.table-view .table-row-cell:even {
+-fx-background-color: #68a0a0;
+-fx-text-fill: white;
+}
+.table-view .table-row-cell:odd {
+-fx-background-color: #81c6c6;
+-fx-text-fill: white;
+}
+
+.table-view .column-header {
     -fx-text-fill: black;
     -fx-font-weight: bold;
-    -fx-background-color: transparent;
+  -fx-background-color: rgb(211,211,211);
+  -fx-border-color: rgb(211,211,211);
+}
+
+.table-view: {
+ -fx-background: #428cf4;
+ -fx-background-color:  #428cf4;
+ background-color:  #428cf4;
 }
 
 input[type="text"], textarea {
@@ -40,6 +64,13 @@ input[type="text"], textarea {
 
 .text-area .content {
     -fx-background-color: text-area-background ;
+}
+
+#stack-pane {
+ -fx-background-color: #68a0a0;
+ -fx-border-color: #68a0a0;
+ -fx-text-fill: white;
+ -fx-font-weight: bold;
 }
 
 .scroll-pane > .viewport {
@@ -141,4 +172,25 @@ input[type="text"], textarea {
 .scroll-bar:horizontal:focused {
  -fx-background-color: #68a0a0;
  -fx-border-color:#68a0a0;
+}
+
+.list-view .list-cell:even {
+-fx-background-color: #68a0a0;
+-fx-text-fill: white;
+}
+.list-view .list-cell:odd {
+-fx-background-color: #81c6c6;
+-fx-text-fill: white;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }

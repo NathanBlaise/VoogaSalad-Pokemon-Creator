@@ -13,7 +13,6 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -28,7 +27,7 @@ import javafx.stage.Stage;
 public class StartMenu {
 	private Scene scene;
 	private Pane root = new Pane();
-	
+	//coordinates for different buttons
 	private final static double NewX = 593.0;
 	private final static double EditX = 831.0;
 	private final static double PlayX = 1063.0;
@@ -136,10 +135,8 @@ public class StartMenu {
 				gameStage.setScene(splashGame);
 				gameStage.centerOnScreen();
 				splashGame.setOnKeyPressed(e->{
-					if(e.getCode()==KeyCode.SPACE) {
-						Engine engine = new Engine(one, two, gameType, gameStage);
-						engine.toMainGameScene();
-					}
+					Engine engine = new Engine(one, two, gameType, gameStage);
+					engine.toMainGameScene();
 				});
 				return null;
 			}

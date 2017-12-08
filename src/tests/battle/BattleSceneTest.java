@@ -1,9 +1,13 @@
 package tests.battle;
 
+import java.awt.Color;
+
 import authoring.eventManage.Function3;
 import data.Database;
 import engine.Engine;
+import engine.battle.BattleScene;
 import javafx.application.Application;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import start.DatabasePathConfig;
 

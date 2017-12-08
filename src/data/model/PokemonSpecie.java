@@ -2,6 +2,7 @@ package data.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +27,7 @@ public class PokemonSpecie implements Serializable{
 	private Map<Integer,String> levelEvolutionImagePath; // the value here is the path of Image of pokemon for the related level.
 													// if there is no image for the current level, 
 													//then choose the image of the biggest level which is lower than or equal to the current level
+	
 	public PokemonSpecie(String raceName, String elemental, int maxLevel,
 			Map<Integer, Move> levelMoves,
 			Map<Integer, PokemonStat> levelStats,
@@ -171,4 +173,22 @@ public class PokemonSpecie implements Serializable{
 		}
 		return currentImagePath;
 	}
+
+	/**
+	 * https://stackoverflow.com/questions/2367381/how-to-extract-numbers-from-a-string-and-get-an-array-of-ints
+	 * @return
+	 */
+	public int getSpecieIndex(int currentLevel) {
+		String indexImagePath = getImagePath(currentLevel);   
+		indexImagePath = indexImagePath.replaceAll("[^-?0-9]+", " "); 
+	    int index = 1;
+		try {
+			index = Integer.parseInt(Arrays.asList(indexImagePath.trim().split(" ")).get(0));
+		} catch (NumberFormatException e) {
+			index = 1;
+			e.printStackTrace();
+		}
+		return index;
+	}
+	
 }

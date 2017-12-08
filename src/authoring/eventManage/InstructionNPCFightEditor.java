@@ -40,6 +40,10 @@ public class InstructionNPCFightEditor implements InstructionEditor{
 			if(npcFight.getPokemons()[i]!=null){
 				tempButton.setText(npcFight.getPokemons()[i].getNickName());
 				buttonMap.put(tempButton, npcFight.getPokemons()[i]);
+			}else{
+				Pokemon newPokemon = new Pokemon(pokemonSpecies.get(0), pokemonSpecies.get(0).getSpecieName());
+				tempButton.setText(newPokemon.getNickName());
+				buttonMap.put(tempButton, newPokemon);
 			}
 			tempButton.setPrefSize(70, 230/(pokemonNum/gridWidth));
 			tempButton.setOnMouseClicked(e->{
