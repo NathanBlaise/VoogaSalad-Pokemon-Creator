@@ -22,8 +22,8 @@ public class Player implements Serializable{
 	private ArrayList<Pokemon> warehouse;
 	
 	public Player(){
-		posX=50;
-		posY=50;
+		posX=0;
+		posY=0;
 		pokemons = new Pokemon[6];
 		currency = 0;
 		warehouse = new ArrayList<Pokemon>();

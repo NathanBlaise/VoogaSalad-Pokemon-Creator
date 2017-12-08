@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import data.event.Event;
-import data.event.EventNPC;
 import data.event.Instruction;
 import engine.UI.UIComponentFactory.ListViewFactory;
 import javafx.beans.value.ChangeListener;

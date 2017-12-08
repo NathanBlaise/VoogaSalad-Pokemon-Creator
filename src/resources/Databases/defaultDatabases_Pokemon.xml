@@ -22484,6 +22484,52 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
+          <string>images/tiles/cornerdirt.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Dirt</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/cornerdirt.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/edgeofwaterright.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Edge of water(right)</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/edgeofwaterright.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
           <string>images/tiles/bridge2.png</string>
          </void>
         </object>
@@ -22542,6 +22588,29 @@
        </void>
        <void property="wholePic">
         <string>images/tiles/tree.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/edgeofwaterbottom.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Edge of water(bottom)</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/edgeofwaterbottom.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -22801,6 +22870,52 @@
        </void>
        <void property="width">
         <int>3</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/edgeofwatertop.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Edge of water(top)</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/edgeofwatertop.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/edgeofwaterleft.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Edge of water(left)</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/edgeofwaterleft.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
        </void>
       </object>
      </void>

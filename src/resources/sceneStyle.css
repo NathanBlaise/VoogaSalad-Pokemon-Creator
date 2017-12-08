@@ -2,7 +2,10 @@
 	if you cannot edit css in Eclipse, please try to follow the first answer in:
 		https://stackoverflow.com/questions/43389337/autocomplete-von-available-css-classes-in-html-javascript-jquery-in-eclipse/43549935#43549935
 	if then there is still problems, please try to follow the first answer in:
-		https://stackoverflow.com/questions/7900575/how-to-add-css-autocomplete-to-eclipse */
+		https://stackoverflow.com/questions/7900575/how-to-add-css-autocomplete-to-eclipse
+	for the background color of textarea, https://stackoverflow.com/questions/42236560/read-only-textarea-with-scrollbar-javafx 
+	
+	for the scroll bar, check https://farrukhobaid.wordpress.com/2013/01/16/dark-scrollbar-skin-for-javafx/*/
 
 .root {
  -fx-spacing: 30;
@@ -23,4 +26,119 @@
     -fx-text-fill: black;
     -fx-font-weight: bold;
     -fx-background-color: transparent;
+}
+
+input[type="text"], textarea {
+
+  background-color : #68a0a0; 
+
+}
+
+.text-area {
+    text-area-background: #68a0a0;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background ;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: #68a0a0;
+}
+
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane > .corner {    
+    -fx-background-color: #68a0a0;
+}
+
+.scroll-bar{
+ -fx-background-color: #68a0a0;
+ background-color : #68a0a0;
+ -fx-border-color:  #68a0a0;
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+ -fx-background-color: #68a0a0;
+ -fx-border-color:#68a0a0;
+
+}
+.scroll-bar:vertical .track-background,
+.scroll-bar:horizontal .track-background {
+ -fx-background-color: #68a0a0;
+ -fx-background-insets: 0;
+ -fx-border-color:#68a0a0;
+}
+.scroll-bar:horizontal .thumb {
+ -fx-background-color: rgb(211,211,211);
+  -fx-border-color:#68a0a0;
+
+}
+.scroll-bar:vertical .thumb {
+ -fx-background-color: rgb(211,211,211);
+  -fx-border-color:#68a0a0;
+
+}
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+ -fx-background-color: rgb(231,231,231);
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:horizontal .thumb:pressed,
+.scroll-bar:vertical .thumb:pressed {
+ -fx-background-color: rgb(255,255,255);
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+ -fx-background-color:#68a0a0;
+  -fx-border-color:#68a0a0;
+
+}
+.scroll-bar:horizontal .increment-button, .scroll-bar:horizontal .decrement-button {
+ -fx-background-color:#68a0a0;
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:horizontal .increment-arrow {
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-background-color: rgb(211,211,211);
+ background-color : #68a0a0; 
+ -fx-rotate: -90;
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:vertical .increment-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ background-color : #68a0a0; 
+ -fx-rotate: 0;
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:horizontal .decrement-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ background-color : #68a0a0; 
+ -fx-rotate: 90;
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:vertical .decrement-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ background-color : #68a0a0; 
+ -fx-rotate: -180;
+ -fx-border-color:#68a0a0;
+}
+.scroll-bar:vertical:focused,
+.scroll-bar:horizontal:focused {
+ -fx-background-color: #68a0a0;
+ -fx-border-color:#68a0a0;
 }
