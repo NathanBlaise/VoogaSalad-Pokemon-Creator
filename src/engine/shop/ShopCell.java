@@ -3,19 +3,23 @@ package engine.shop;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import data.items.Item;
 import data.player.Player;
-import javafx.collections.ObservableList;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.util.Callback;
 
 /**
  * 
@@ -29,15 +33,17 @@ public class ShopCell extends ListCell<String> {
     private Pane pane = new Pane();
     private Button button = new Button("Buy");
     private HBox hbox = new HBox();
-    private Map<String, Image> imageCollection;
+    private Map<String, Item> itemCollection;
     private Player mainPlayer;
+    private Callback<Integer, Integer> callback;
     
-    public ShopCell(Map<String, Image> images, Player player) {
+    public ShopCell(Map<String, Item> itemCollection, Player player, Callback<Integer, Integer> callback) {
     		super();
     		mainPlayer = player;
-    		imageCollection = images;
+    		this.itemCollection = itemCollection;
     		hbox.getChildren().addAll(imageView,label,pane,button);
     		HBox.setHgrow(pane, Priority.ALWAYS);
+    		this.callback = callback;
     }
 
     @Override
@@ -50,18 +56,25 @@ public class ShopCell extends ListCell<String> {
             
         } else {
             imageView.setImage(
-                    imageCollection.get(
-                            item
-                    )
+            		new Image("file:images/items/" + item.toLowerCase() + ".png")
             );
             label.setText(item);
             setGraphic(hbox);
+            button.setText("$"+new Integer(itemCollection.get(item).getItemPrice()).toString());
             button.setOnAction((event) -> {
 					try {
-						Class<?> clazz = Class.forName(item);
-						Constructor<?> ctor = clazz.getConstructor(String.class);
-						Object object = ctor.newInstance();
-						mainPlayer.addItem((Item) object);
+						Class<?> clazz = Class.forName("data.items."+item);
+						Constructor<?> ctor = clazz.getConstructor();
+						Item object = (Item)ctor.newInstance();
+						if(mainPlayer.getCurrency()>=object.getItemPrice()){
+							mainPlayer.addItem(((Item)object).getItemName());
+							mainPlayer.setCurrency(mainPlayer.getCurrency()-object.getItemPrice());
+							callback.call(null);
+							popUpWarning("Successfully buy "+object.getItemName()+"!");
+						}else {
+							popUpWarning("Not Enough Money");
+						}
+						
 					} catch (ClassNotFoundException e) {
 						System.out.println("Reflection for item failed");
 						e.printStackTrace();
@@ -80,4 +93,16 @@ public class ShopCell extends ListCell<String> {
     			});
         }
     }
+
+	private void popUpWarning(String text) {
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        BorderPane dialogVbox = new BorderPane();
+        dialogVbox.setCenter(new Text(text));
+        Scene dialogScene = new Scene(dialogVbox, 300, 200);
+        dialog.setScene(dialogScene);
+        dialog.show();
+	}
+    
+    
 }

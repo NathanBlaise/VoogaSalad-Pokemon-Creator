@@ -15,8 +15,8 @@ public class HPDrain extends Item{
 
 	//Specifies name, price and image in the constructor
 	public HPDrain(){
-		itemName = "HP Drain";
-		itemPrice = 1200;
+		itemName = "HPDrain";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

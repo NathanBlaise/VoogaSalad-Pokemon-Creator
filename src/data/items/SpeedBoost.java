@@ -15,8 +15,8 @@ public class SpeedBoost extends Item{
 
 	//Specifies name, price and image in the constructor
 	public SpeedBoost(){
-		itemName = "Speed Boost";
-		itemPrice = 1200;
+		itemName = "SpeedBoost";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

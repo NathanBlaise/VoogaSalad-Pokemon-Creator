@@ -29,7 +29,7 @@ public class DatabaseScene extends BasicAuthorScreen {
 		Player player = app.getDatabase().getPlayer();
 		int XLength = app.getDatabase().getMap().getXlength();
 		int YLength = app.getDatabase().getMap().getYlength();
-		tabPane = new TabPane(new PlayerTab(player, species, XLength-1, YLength-1, new Callback<Player, Integer>(){
+		tabPane = new TabPane(new PlayerTab(player, species, XLength, YLength, new Callback<Player, Integer>(){
 			@Override
 			public Integer call(Player param) {
 				app.getDatabase().setPlayer(param);

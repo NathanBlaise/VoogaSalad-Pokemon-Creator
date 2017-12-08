@@ -15,8 +15,8 @@ public class HyperPotion extends Item{
 
 	//Specifies name, price and image in the constructor
 	public HyperPotion(){
-		itemName = "Hyper Potion";
-		itemPrice = 1200;
+		itemName = "HyperPotion";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has
