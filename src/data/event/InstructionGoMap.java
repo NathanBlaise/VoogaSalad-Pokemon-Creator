@@ -39,6 +39,7 @@ public class InstructionGoMap extends Instruction{
 				break;
 			}
 		}
+		super.setGoNextInstruction(true);
 		gameScene.changeBackScene();
 	}
 

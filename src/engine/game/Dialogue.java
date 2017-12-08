@@ -4,14 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.concurrent.locks.Lock;
 import java.util.function.Function;
 
 import data.event.InstructionNPCDialogue;
-import authoring.ScreenDisplay;
-import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
@@ -19,16 +17,13 @@ import javafx.scene.text.Font;
 /**
  * Pass in an arrayList of String, scene to put the chatBox on the screen
  * Class would be used in game scene class
- * @author supertony
+ * @author supertony cy122
  *
  */
 public class Dialogue {
 	/*final variable*/
-	private final static int XPOS = 0;
-	private final static int YPOS = 336;
+
 	private ImageView CHATBOX = new ImageView(new Image("file:images/battle_box.png"));
-	private final int TEXT_XPOS = 30;
-	private final int TEXT_YPOS = 380;
 	private final int FONTSIZE = 36;
 	
 	
@@ -36,7 +31,8 @@ public class Dialogue {
 	private GameScene oriDisplay;
 	private ArrayList<String> sentenceList;
 	private InstructionNPCDialogue instruction;
-	private Label textDisplay;
+	private TextArea textDisplay;
+	private ScrollPane textShow = new ScrollPane();
 	
 	private Function<String, Integer> handleF = new Function<String, Integer>(){
 		@Override
@@ -46,11 +42,6 @@ public class Dialogue {
 		}
 	};
 	private Map<String, ArrayList<Function<String, Integer>>> inputHandler;
-
-	//default Dialogue constructor
-//	public Dialogue () {
-//		
-//	}
 	
 	
 	public Dialogue (InstructionNPCDialogue instruction, GameScene gameScene, Map<String, ArrayList<Function<String, Integer>>> inputHandler) {
@@ -61,7 +52,8 @@ public class Dialogue {
 		inputHandler.get("F").add(handleF);
 
 		//deal with specific pokemon font
-		textDisplay = new Label("");
+		textDisplay = new TextArea("");
+		textDisplay.setEditable(false);
 		Font f = getFont();
 		
 		if (sentenceList != null) {
@@ -69,8 +61,6 @@ public class Dialogue {
 		}
 		
 		textDisplay.setFont(f); 
-		
-		
 		
 		//Put textDisplay and ChatBox on the screen
 		putOnScreen();
@@ -88,37 +78,35 @@ public class Dialogue {
 				textDisplay.setText(sentenceList.get(currentIndex + 1)); 
 			}
 			else {
-				System.out.println(1);
 				oriDisplay.rootRemove(CHATBOX); 
-				oriDisplay.rootRemove(textDisplay);
+				oriDisplay.rootRemove(textShow);
 				ArrayList<Function<String, Integer>> handlers = inputHandler.get("F");
 				handlers.remove(handleF);
-//				while(iter.hasNext()){
-//				    Function<String, Integer> func = iter.next();
-//				      if( func.equals(handleF) )
-//				      {
-//				    	inputHandler.remove(handleF);
-//				    	break;
-//				      }
-//				}
 				instruction.setGoNextInstruction(true);
 				oriDisplay.changeBackScene();
 			}
 	}
 	
-	
+	 
 	
 	/**
 	 * Put the textBox and the chatBox on the screen
 	 */
 	private void putOnScreen() {
+		oriDisplay.getScene().getStylesheets().add("resources/sceneStyle.css");
 		//set up the position of chatBox
 		if (!oriDisplay.getRootChildren().contains(CHATBOX)) {
-			oriDisplay.rootAdd(CHATBOX, XPOS, YPOS);
+//			CHATBOX.setPreserveRatio(true);
+//			CHATBOX.setFitWidth(oriDisplay.getStage().getWidth());
+//			oriDisplay.rootAdd(CHATBOX, 0, new Double(oriDisplay.getStage().getHeight()).intValue()-new Double(20+0.7*CHATBOX.getImage().getHeight()).intValue());
 		}
 		//set up the position of textDisplay
-		if (!oriDisplay.getRootChildren().contains(textDisplay)) {
-			oriDisplay.rootAdd(textDisplay,TEXT_XPOS,TEXT_YPOS);
+		if (!oriDisplay.getRootChildren().contains(textShow)) {
+			textShow.setPrefWidth(oriDisplay.getStage().getWidth());
+			textShow.setPrefHeight(oriDisplay.getStage().getHeight()*0.3);
+			textShow.setContent(textDisplay);
+			oriDisplay.rootAdd(textShow,0,new Double(oriDisplay.getStage().getHeight()-textShow.getPrefHeight()-20).intValue());
+			System.out.printf("holding letters: %f\n", textDisplay.getPrefWidth()/FONTSIZE);
 		}
 	
 	}
@@ -142,24 +130,6 @@ public class Dialogue {
 		}
 		return f;
 	}
-//	
-//	/**
-//	 * Getter of the boolean value beginBattle
-//	 * Help notify the NPC battle begins
-//	 * @return the boolean value
-//	 */
-//	
-//	public boolean getBattleFlag() {
-//		return beginBattle;
-//	}
-//	
-//	/**
-//	 * Setter of the boolean value beginBattle
-//	 * Set the BeginBattle a new Boolean value
-//	 */
-//	public void setBattleFlag(boolean BattleFlag) {
-//		beginBattle = BattleFlag;
-//	}
 	
 
 }

@@ -150,14 +150,19 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
-		instructionIndex++;
+		if((currentEvent!=null)&&(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
+			instructionIndex++;
+		}else{
+			currentEvent = null;
+		}
 		myStage.setScene(this.getScene());
 		myStage.sizeToScene();
-		myStage.setHeight(mapPane.getHeight()+10);
+		myStage.setHeight(mapPane.getHeight()+20);
 		screen_height = new Double(mapPane.getHeight()).intValue();
 		myStage.setWidth(mapPane.getWidth());
 		screen_width = new Double(mapPane.getWidth()).intValue();
 		input.releaseAllKeys();
+		refreshMap(mainPlayer.getPosX(), mainPlayer.getPosY(), mainMap);
 		input.addListeners();
 		animation.play();
 	}
