@@ -13,6 +13,7 @@ import data.model.NPC;
 import data.model.Pokemon;
 import data.model.moves.Move;
 import data.player.Player;
+import engine.UI.ScrollingLabel;
 import engine.game.GameScene;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -73,6 +74,9 @@ public class BattleScene extends ScreenDisplay{
 	private ListView<String> listOfPokemons;
 	//an instance variable to show whose turn it is, 0 means player's turn to attack, 1 means NPC's turn.
 	
+	private HealthBar healthBarPlayer;
+	private HealthBar healthBarEnemy;
+	
 	private Text activePokemonHP;
 	private Text enemyPokemonHP;
 	
@@ -98,10 +102,19 @@ public class BattleScene extends ScreenDisplay{
 		this.rootAdd(canvas);
 		resetButtons();
 		printHPInfo();
+		healthBarPlayer = new HealthBar(activePokemon.getCurrentStat().getHP(),200,15,100,200);
+		healthBarEnemy = new HealthBar(activePokemon.getCurrentStat().getHP(),200,15,350,60);
+		this.rootAdd(healthBarPlayer.getHealthBar());
+		this.rootAdd(healthBarEnemy.getHealthBar());
 		rootAdd(actionMessage);
 		setTextEffects(actionMessage,20,40,Color.BLACK);
 	}
 	
+	
+	protected void updateHealthBars(int playerHealth, int enemyHealth) {
+		healthBarPlayer.setHealth(playerHealth);
+		healthBarEnemy.setHealth(enemyHealth);
+	}
 	
 	/*
 	 * Set up four initial buttons to be used in battle and sets them to default.
