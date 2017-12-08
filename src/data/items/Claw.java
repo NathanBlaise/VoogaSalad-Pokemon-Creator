@@ -16,7 +16,7 @@ public class Claw extends Item{
 	//Specifies name, price and image in the constructor
 	public Claw(){
 		itemName = "Claw";
-		itemPrice = 1200;
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

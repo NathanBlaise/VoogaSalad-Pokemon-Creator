@@ -1,0 +1,196 @@
+/* 
+	if you cannot edit css in Eclipse, please try to follow the first answer in:
+		https://stackoverflow.com/questions/43389337/autocomplete-von-available-css-classes-in-html-javascript-jquery-in-eclipse/43549935#43549935
+	if then there is still problems, please try to follow the first answer in:
+		https://stackoverflow.com/questions/7900575/how-to-add-css-autocomplete-to-eclipse
+	for the background color of textarea, https://stackoverflow.com/questions/42236560/read-only-textarea-with-scrollbar-javafx 
+	
+	for the scroll bar, check https://farrukhobaid.wordpress.com/2013/01/16/dark-scrollbar-skin-for-javafx/
+	for the button, https://docs.oracle.com/javafx/2/get_started/css.htm*/
+
+.root {
+ -fx-spacing: 30;
+ -fx-background: #428cf4;
+ -fx-background-color:  #428cf4;
+ background-color:  #428cf4;
+}
+
+.group {
+ -fx-background-color:  #428cf4;
+}
+
+.image-view-wrapper:border {
+    -fx-border-color: black;
+    -fx-border-style: solid;
+    -fx-border-width: 5;
+}
+
+
+.table-row-cell:empty {
+    -fx-background-color: #68a0a0;
+}
+
+.table-view .table-row-cell:even {
+-fx-background-color: #68a0a0;
+-fx-text-fill: white;
+}
+.table-view .table-row-cell:odd {
+-fx-background-color: #81c6c6;
+-fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+  -fx-background-color: rgb(211,211,211);
+  -fx-border-color: rgb(211,211,211);
+}
+
+.table-view: {
+ -fx-background: #428cf4;
+ -fx-background-color:  #428cf4;
+ background-color:  #428cf4;
+}
+
+input[type="text"], textarea {
+
+  background-color : #68a0a0; 
+
+}
+
+.text-area {
+    text-area-background: #68a0a0;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background ;
+}
+
+#stack-pane {
+ -fx-background-color: #68a0a0;
+ -fx-border-color: #68a0a0;
+ -fx-text-fill: white;
+ -fx-font-weight: bold;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: #68a0a0;
+}
+
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane > .corner {    
+    -fx-background-color: #68a0a0;
+}
+
+.scroll-bar{
+ -fx-background-color: #68a0a0;
+ background-color : #68a0a0;
+ -fx-border-color:  #68a0a0;
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+ -fx-background-color: #68a0a0;
+ -fx-border-color:#68a0a0;
+
+}
+.scroll-bar:vertical .track-background,
+.scroll-bar:horizontal .track-background {
+ -fx-background-color: #68a0a0;
+ -fx-background-insets: 0;
+ -fx-border-color:#68a0a0;
+}
+.scroll-bar:horizontal .thumb {
+ -fx-background-color: rgb(211,211,211);
+  -fx-border-color:#68a0a0;
+
+}
+.scroll-bar:vertical .thumb {
+ -fx-background-color: rgb(211,211,211);
+  -fx-border-color:#68a0a0;
+
+}
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+ -fx-background-color: rgb(231,231,231);
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:horizontal .thumb:pressed,
+.scroll-bar:vertical .thumb:pressed {
+ -fx-background-color: rgb(255,255,255);
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+ -fx-background-color:#68a0a0;
+  -fx-border-color:#68a0a0;
+
+}
+.scroll-bar:horizontal .increment-button, .scroll-bar:horizontal .decrement-button {
+ -fx-background-color:#68a0a0;
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:horizontal .increment-arrow {
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-background-color: rgb(211,211,211);
+ background-color : #68a0a0; 
+ -fx-rotate: -90;
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:vertical .increment-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ background-color : #68a0a0; 
+ -fx-rotate: 0;
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:horizontal .decrement-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ background-color : #68a0a0; 
+ -fx-rotate: 90;
+  -fx-border-color:#68a0a0;
+}
+.scroll-bar:vertical .decrement-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ background-color : #68a0a0; 
+ -fx-rotate: -180;
+ -fx-border-color:#68a0a0;
+}
+.scroll-bar:vertical:focused,
+.scroll-bar:horizontal:focused {
+ -fx-background-color: #68a0a0;
+ -fx-border-color:#68a0a0;
+}
+
+.list-view .list-cell:even {
+-fx-background-color: #68a0a0;
+-fx-text-fill: white;
+}
+.list-view .list-cell:odd {
+-fx-background-color: #81c6c6;
+-fx-text-fill: white;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}

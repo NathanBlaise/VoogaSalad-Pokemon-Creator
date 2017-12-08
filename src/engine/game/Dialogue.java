@@ -24,7 +24,7 @@ public class Dialogue {
 	/*final variable*/
 
 	private ImageView CHATBOX = new ImageView(new Image("file:images/battle_box.png"));
-	private final int FONTSIZE = 36;
+	private final static int FONTSIZE = 36;
 	
 	
 	/*instance variable*/
@@ -106,7 +106,6 @@ public class Dialogue {
 			textShow.setPrefHeight(oriDisplay.getStage().getHeight()*0.3);
 			textShow.setContent(textDisplay);
 			oriDisplay.rootAdd(textShow,0,new Double(oriDisplay.getStage().getHeight()-textShow.getPrefHeight()-20).intValue());
-			System.out.printf("holding letters: %f\n", textDisplay.getPrefWidth()/FONTSIZE);
 		}
 	
 	}
@@ -120,7 +119,7 @@ public class Dialogue {
 	/**
 	 * @return the specific Pokemon font
 	 */
-	private Font getFont() {
+	public static Font getFont() {
 		Font f = new Font(30) ;
 		try {
 			f = Font.loadFont(new FileInputStream(new File("./src/resources/pkmnem.ttf")), FONTSIZE);

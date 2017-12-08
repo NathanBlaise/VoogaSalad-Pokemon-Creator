@@ -13,8 +13,8 @@ public class ShopSceneTest  extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		ShopScene ss = new ShopScene(720,480,Color.WHITE,null);
-		primaryStage.setScene(ss.getScene());
+//		ShopScene ss = new ShopScene(720,480,Color.WHITE,null);
+//		primaryStage.setScene(ss.getScene());
 		primaryStage.show();
 	}
 

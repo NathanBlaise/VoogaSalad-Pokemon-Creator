@@ -26,8 +26,8 @@ public class PlayerMovement {
 		    double nextPosX = nextPos.getKey();
 		    double nextPosY = nextPos.getValue();
 	    	if(input.getInputList().contains(key)){
-	    		nextPosY += input2direction.get(key).getKey()*runSpeed;
-	    		nextPosX += input2direction.get(key).getValue()*runSpeed;
+	    		nextPosX += input2direction.get(key).getKey()*runSpeed;
+	    		nextPosY += input2direction.get(key).getValue()*runSpeed;
 	    		List<Image> imageSets = direction.getPictures(key).getImages();
 	    		playerImage.setImage(imageSets.get(nextPic%imageSets.size()));
 	    		nextPos = new Pair<Double, Double>(nextPosX, nextPosY);
@@ -63,7 +63,7 @@ public class PlayerMovement {
 	 * @return the left element of pair is row index, the right element of pair is column index
 	 */
 	public static Pair<Integer, Integer> playerIndexOnGrid(double posX, double posY, double gridWidth, double gridHeight){
-		return new Pair<Integer, Integer>(new Double(posY/gridHeight).intValue(), new Double(posX/gridWidth).intValue());
+		return new Pair<Integer, Integer>(new Double(posX/gridWidth).intValue(), new Double(posY/gridHeight).intValue());
 	}
 	
 	

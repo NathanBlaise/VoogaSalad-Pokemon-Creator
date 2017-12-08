@@ -100,6 +100,10 @@ public class Model implements Serializable{
 	public void setTiles(ArrayList<Tile> tiles) {
 		this.tiles = tiles;
 	}
+
+	public ArrayList<Item> getItems() {
+		return items;
+	}
 	
 	
 }
