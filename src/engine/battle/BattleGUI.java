@@ -71,16 +71,14 @@ public class BattleGUI {
 	 * Passed in the player's pokemon; return the pokemon pictures from the back
 	 */
 	private String backSpriteURL(Pokemon myPokemon) {
-		String path=myPokemon.getCurrentImagePath();
-		return "file:"+path.substring(0, 14) + "_back_sprites" + path.substring(15,17) + ".png";
+		return "file:images/pokemon_back_sprites/"+myPokemon.getSpecieIndex(myPokemon.getCurrentLevel())+".png";
 	}
 	
 	/*
 	 * Passed in the enemy pokemon; return the gif version of the picture
 	 */
 	private String gifSpriteURL(Pokemon enemyPokemon) {
-		String path=enemyPokemon.getCurrentImagePath();
-		return "file:"+path.substring(0, 14) +"_sprites"+ path.substring(15,path.length()) + "_.gif";
+		return "file:images/pokemon_sprites/"+enemyPokemon.getSpecieIndex(enemyPokemon.getCurrentLevel())+".gif_.gif";
 	}
 
 }
