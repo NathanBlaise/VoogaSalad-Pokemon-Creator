@@ -35,6 +35,7 @@ public class PokemonEventEditor implements Callback<Pokemon, Integer>{
 	public Integer call(Pokemon param) {
 		pokemon = new Pokemon(param);
 		saver.call(new EventPokemon(pokemon));
+		stage.close();
 		return null;
 	}
 }

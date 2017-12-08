@@ -26,7 +26,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -58,7 +57,7 @@ public class PokemonChooser {
 		if(selectedPokemon instanceof Pokemon){
 			localPokemon = selectedPokemon;
 		}else{
-			localPokemon = new Pokemon(pokemonSpecies.get(0), "");
+			localPokemon = new Pokemon(pokemonSpecies.get(0), pokemonSpecies.get(0).getSpecieName());
 		}
 		this.pokemonSpecies = pokemonSpecies;
 		this.saver = saver;
@@ -84,16 +83,24 @@ public class PokemonChooser {
         rcons2.setVgrow(Priority.SOMETIMES); 
         root.getRowConstraints().addAll(rcons1, rcons2, rcons3);
 		//add components
+        
+		for(int i=0;i<localPokemon.getMoveNum();i++){
+			if(localPokemon.getMoves()[i]!=null){
+				break;
+			}
+			if(i==localPokemon.getMoveNum()-1){
+				localPokemon.changeMove(null, localPokemon.getAvailableMoves().get(0));
+			}
+		}
 		root.add(showStatList(localPokemon.getCurrentStat().getStatMap()),2,1,2,2);
 		root.add(saveButton(),3,0,1,1);
         root.add(showMoveList(localPokemon.getMoves()), 1, 2,1,1);
         root.add(showImage(localPokemon.getCurrentImagePath()), 1, 1, 1, 1);
         root.add(showNickName(localPokemon.getNickName()), 1, 0, 1, 1);
-        root.add(showLevelPicker(localPokemon.getMaxLevel()), 2, 0, 1, 1);
+        root.add(showLevelPicker(root, localPokemon.getMaxLevel()), 2, 0, 1, 1);
         root.add(showSpecieList(pokemonSpecies),0,0,1,3);
         root.setPrefSize(660, 230);
         root.getStylesheets().add("resources/sceneStyle.css");
-        saver.call(localPokemon);
         return root;
 	}
 
@@ -103,7 +110,7 @@ public class PokemonChooser {
 	
 	public Button saveButton(){
 		Button result = new Button("save");
-		result.setOnMouseClicked(e->{showPokemon();});
+		result.setOnMouseClicked(e->{showPokemon(); saver.call(localPokemon);});
 		return result;
 	}
 	
@@ -184,11 +191,13 @@ public class PokemonChooser {
 		showPokemon();
 	}
 	
-	public HBox showLevelPicker(int maxLevel){
+	public HBox showLevelPicker(GridPane root, int maxLevel){
 		HBox result = UIComponentFactory.intSlider(localPokemon.getCurrentLevel(), 1, maxLevel, new Callback<Integer, Integer>(){
 				@Override
 				public Integer call(Integer param) {
 					localPokemon.changeCurrentLevel(param.intValue());
+					root.add(showStatList(localPokemon.getCurrentStat().getStatMap()),2,1,2,2);
+					root.add(showMoveList(localPokemon.getMoves()), 1, 2,1,1);
 					return null;
 				}
 		}, "Lv");
@@ -200,16 +209,12 @@ public class PokemonChooser {
 		Label nickNameLabel = new Label("Nick Name:");
 		result.getChildren().add(nickNameLabel);
 		TextField nickNameField = new TextField(initialName);
-		nickNameField.setOnKeyPressed(new EventHandler<KeyEvent>()
+		nickNameField.setOnKeyReleased(new EventHandler<KeyEvent>()
 			    {
 			        @Override
 			        public void handle(KeyEvent ke)
 			        {
-			            if (ke.getCode().equals(KeyCode.ENTER))
-			            {
 			            	localPokemon.setName(nickNameField.getText());
-			    		    showPokemon();
-			            }
 			        }
 			   });
 		result.getChildren().add(nickNameField);
