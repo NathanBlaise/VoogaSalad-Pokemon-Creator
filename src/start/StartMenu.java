@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 /**
  * 
  * @author cy122
- * 
+ * @author Dan Sun for refactor
  * Showing the menu to user
  *
  */
