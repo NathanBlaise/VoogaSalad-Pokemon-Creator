@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 /**
  * 
  * @author cy122
- * 
+ * @author Dan Sun for refactor
  * Showing the menu to user
  *
  */
@@ -111,8 +111,9 @@ public class StartMenu {
 		Stage editorStage = new Stage();
 		new DatabasePathConfig(editorStage, new Function3<String, Database, String, Integer>(){
 			@Override
-			public Integer apply(String gameType, Database one, String two) {
-				StageDelegate editor = new Author(one, two, editorStage);
+			public Integer apply(String gameType, Database database, String savePath) {
+			    	//function to create and  go to authoring environment 
+				StageDelegate editor = new Author(database, savePath, editorStage);
 				editor.toFirstAuthorScene();
 				return null;
 			}

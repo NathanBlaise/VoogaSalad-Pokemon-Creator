@@ -15,7 +15,7 @@ import javafx.util.Duration;
 /**
  * 
  * @author cy122
- *
+ * @author Dan Sun： for refactor
  * splash screen: showing to user about loading the program and showing the Logo
  * animates the spalsh screen, and spawns the StartMenu after it finishes
  * passes the current stage to the startMenu

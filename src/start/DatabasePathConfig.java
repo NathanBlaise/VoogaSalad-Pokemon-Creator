@@ -22,20 +22,25 @@ import javafx.scene.Node;
 /**
  * let the user to choose which database
  * @author cy122
+ * @author Dan Sun for commenting and renaming
  *
  */
 public class DatabasePathConfig{
-	
+	/**
+	 * Constructor for the class
+	 * @param stage The stage to show the database chooser
+	 * @param reaction The reaction of pressing the corresponding database 
+	 */
 	public DatabasePathConfig(Stage stage, Function3<String, Database, String, Integer> reaction){
 		BorderPane gameTypeChooser = chooseGameType((type, databasesPath)->{
 			BorderPane databasesChooser = chooseDatabase(stage, type, databasesPath, (database, path)-> reaction.apply(type, database, path));
-			customizeStage(stage, databasesChooser);
+			customizeAndShowStage(stage, databasesChooser);
 			return null;
 		});
-		customizeStage(stage, gameTypeChooser);
+		customizeAndShowStage(stage, gameTypeChooser);
 	}
 
-	private static void customizeStage(Stage stage, BorderPane gameTypeChooser) {
+	private static void customizeAndShowStage(Stage stage, BorderPane gameTypeChooser) {
 		stage.setScene(new Scene(gameTypeChooser));
 		stage.show();
 		stage.centerOnScreen();
@@ -43,10 +48,10 @@ public class DatabasePathConfig{
 	
 	/**
 	 * choose the type of game first ---- like the Pacman, the Pokemon
-	 * @param saver
-	 * @return
+	 * @param gameTypeChosenAction The action to perform when a game type is selected
+	 * @return The chooser for game type
 	 */
-	public BorderPane chooseGameType(Function<String, String, Integer> saver){
+	private BorderPane chooseGameType(Function<String, String, Integer> gameTypeChosenAction){
 		Label title = new Label("Choose the Game Type Please :>)");
 		Map<String, String> availableGameTypes = DatabaseLoader.getAvailableGameTypes();
 		TilePane types = new TilePane();
@@ -54,7 +59,7 @@ public class DatabasePathConfig{
 			Button button = new Button();
 			button.setText(name);
 			button.setOnMouseClicked(e->{
-				saver.apply(name, availableGameTypes.get(name));
+				gameTypeChosenAction.apply(name, availableGameTypes.get(name));
 			});
 			types.getChildren().add(button);
 		}
@@ -94,7 +99,7 @@ public class DatabasePathConfig{
 					return null;
 				}		 
 			});
-			customizeStage(stage, databaseNameCreator);
+			customizeAndShowStage(stage, databaseNameCreator);
 		});
 		databases.getChildren().add(button);
 		databases.setAlignment(Pos.CENTER);

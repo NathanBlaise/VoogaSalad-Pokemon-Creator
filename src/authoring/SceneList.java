@@ -41,6 +41,7 @@ public class SceneList{
 		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.exit(1);
 			return null;
 		}
 	}
