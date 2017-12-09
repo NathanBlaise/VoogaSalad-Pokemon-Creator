@@ -24660,15 +24660,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/tiles4shop/floor.png</string>
+          <string>images/tiles/watercenter.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>Floor</string>
+        <string>pond</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/tiles4shop/floor.png</string>
+        <string>images/tiles/watercenter.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -24683,18 +24686,15 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/watercenter.png</string>
+          <string>images/tiles/tiles4shop/floor.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>pond</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
+        <string>Floor</string>
        </void>
        <void property="wholePic">
-        <string>images/tiles/watercenter.png</string>
+        <string>images/tiles/tiles4shop/floor.png</string>
        </void>
        <void property="width">
         <int>1</int>

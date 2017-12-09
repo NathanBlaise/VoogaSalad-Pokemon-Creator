@@ -6,7 +6,7 @@ import data.event.Event;
 import javafx.geometry.Rectangle2D;
 
 /**
- * The Cell is the unit that forms that forms a map.
+ * The Cell is the unit that forms a map.
  * It includes the event (Event), the tilePath (String), the openState (boolean), and the obstacle(boolean)
  * if the obstacle is true, the user cannot go through the tile
  * 
