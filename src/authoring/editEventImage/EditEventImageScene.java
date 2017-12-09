@@ -29,6 +29,7 @@ public class EditEventImageScene extends BasicAuthorScreen {
 		this.rootAdd(new MapManager(stageHelper.getDatabase(), e->{
 			return null;
 		}, new Tile("grass", false, 1, 1, "images/reg_tile_scaled.png", new ArrayList<String>())),200,0);
+		super.getScene().getStylesheets().add("resources/sceneStyle.css");
 //		myMap = new DBMap(stageHelper.getDatabase());
 //		this.rootAdd(myMap.getGrid(),200,0);
 		
