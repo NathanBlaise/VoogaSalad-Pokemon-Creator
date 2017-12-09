@@ -58,11 +58,6 @@ public class Input {
 			return flag;
 		}
 	};
-//	
-//	private KeyCode upKey = KeyCode.UP;
-//    private KeyCode downKey = KeyCode.DOWN;
-//    private KeyCode leftKey = KeyCode.LEFT;
-//    private KeyCode rightKey = KeyCode.RIGHT;
 	
 	public Input (Scene scene) {
 		myScene = scene;

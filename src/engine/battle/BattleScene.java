@@ -103,7 +103,7 @@ public class BattleScene extends ScreenDisplay{
 		resetButtons();
 		printHPInfo();
 		healthBarPlayer = new HealthBar(activePokemon.getCurrentStat().getHP(),200,15,100,200);
-		healthBarEnemy = new HealthBar(activePokemon.getCurrentStat().getHP(),200,15,350,60);
+		healthBarEnemy = new HealthBar(enemyPokemon.getCurrentStat().getHP(),200,15,350,60);
 		this.rootAdd(healthBarPlayer.getHealthBar());
 		this.rootAdd(healthBarEnemy.getHealthBar());
 		rootAdd(actionMessage);

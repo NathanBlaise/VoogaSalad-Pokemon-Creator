@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -31,8 +32,8 @@ public class BattleFightOptions {
 	private Button moveButton4;
 	protected Button[] buttonArr;
 	
-	
-	protected Text message=new Text("");
+	private Label ppLabel;
+	private Label typeLabel;
 	protected HBox hbox=new HBox(5);
 	
 	
@@ -47,31 +48,24 @@ public class BattleFightOptions {
 		
 	}
 	
-	public Text getText() {
-		message.setText("Select my attack");;
-		message.setFont(new Font(30));
-		return message;
-		
-	}
 	
 	public void setUpScene() {
 		ebfo=battleScene.getEnemyBattleScene();
-		if (!ebfo.getText().equals(null) && battleScene.getRootChildren().contains(ebfo.getText())) {
-		    battleScene.rootRemove(ebfo.getText());
-		}
 		
 		if (ebfo.getHBox()!=null && battleScene.getRootChildren().contains(ebfo.getHBox())) {
 		    battleScene.rootRemove(ebfo.getHBox());
 		}
 		
-		
+		Button back = new Button("Go Back");
 		hbox=battleScene.fourButtonLayout(buttonArr);
-		
+		hbox.getChildren().add(back);
 		battleScene.rootAdd(hbox);
-		battleScene.rootAdd(this.getText(),400,400);
 		
-
-		
+		back.setOnAction((e) -> {
+			battleScene.rootRemove(hbox);
+			battleScene.resetButtons();
+		});
+	
 	}
 	
 	protected HBox getHBox() {
@@ -88,37 +82,43 @@ public class BattleFightOptions {
 		buttonArr = new Button[] {moveButton1,moveButton2,moveButton3,moveButton4};
 		int i=0;
 		for(Move move: activePokemon.getAvailableMoves()) {
-			//System.out.println(move.getMoveName());
-			//System.out.println(i);
+			//Sets text and action for each button to be used for a move
 			buttonArr[i].setText(move.getMoveName());
 			buttonArr[i].setOnAction((event) -> {
-				move.move(activePokemon, enemyPokemon);
-				//Load hit animation, then change scene to enemy's move
-				changeScene();
-				activePokemon.printCurrentInfo();
-				enemyPokemon.printCurrentInfo();
-				int newActiveHP=activePokemon.getCurrentStat().getHP();
-				int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
-				System.out.println(newEnemyHP);
-				battleScene.updateHealthBars(newActiveHP, newEnemyHP);
-				battleScene.getActivePokemonHP().setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newActiveHP);
-				battleScene.getEnemyPokemonHP().setText(enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newEnemyHP);
-				//battleScene.printHPInfo();
-				
-				if(activePokemon.isDead()) {
-					showEnding("Game end. Your pokemon is dead.");
-			
-				    
-				}
-				
-				if (enemyPokemon.isDead()) {
-					showEnding("Game end. Enemy pokemon is dead.");
-				
-				}
-               
-				
-				
-				
+				typeLabel = new Label("Type/"+ move.getElemental());
+				ppLabel = new Label("PP: " + move.getPP()+"/"+move.getMaxPP());
+				VBox moveInfo = new VBox(15);
+				moveInfo.getChildren().addAll(typeLabel,ppLabel);
+				Button confirm = new Button("Use "+move.getMoveName()+" ?");
+				Button back = new Button("Go Back");
+				hbox.getChildren().clear();
+				hbox.getChildren().addAll(confirm,back,moveInfo);
+				confirm.setOnAction((e) -> {
+					move.move(activePokemon, enemyPokemon);
+					//Load hit animation, then change scene to enemy's move
+					changeScene();
+					activePokemon.printCurrentInfo();
+					enemyPokemon.printCurrentInfo();
+					int newActiveHP=activePokemon.getCurrentStat().getHP();
+					int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
+					System.out.println(newEnemyHP);
+					battleScene.updateHealthBars(newActiveHP, newEnemyHP);
+					battleScene.getActivePokemonHP().setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newActiveHP);
+					battleScene.getEnemyPokemonHP().setText(enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newEnemyHP);
+					//battleScene.printHPInfo();
+					if(activePokemon.isDead()) {
+						showEnding("Game end. Your pokemon is dead.");   
+					}
+					
+					if (enemyPokemon.isDead()) {
+						showEnding("Game end. Enemy pokemon is dead.");
+					}
+				});
+				back.setOnAction((e) -> {
+					hbox.getChildren().clear();
+					setButtonText();
+					setUpScene();
+				});
 			});
 			
 			i++;
@@ -130,32 +130,26 @@ public class BattleFightOptions {
 	//show the game end message
 	private void showEnding(String message) {
 		Text end=new Text(message);
+		final Stage dialog = new Stage();
+		dialog.initModality(Modality.APPLICATION_MODAL);
+		Stage myStage=battleScene.getGameScene().getStage();
+		System.out.println("i am here");
+		System.out.println(myStage.equals(null));
+		dialog.initOwner(myStage);
+		VBox dialogVbox = new VBox(20);
 
-	   
+		Button btn = new Button();
+		btn.setText("Got it");
+		dialogVbox.getChildren().add(end);
+		dialogVbox.getChildren().add(btn);
+		btn.setOnAction((event) ->{
+			dialog.close();
+			battleScene.getGameScene().changeBackScene();
+		});
+		Scene dialogScene = new Scene(dialogVbox, 300, 200);
+		dialog.setScene(dialogScene);
+		dialog.show();
 
-	                final Stage dialog = new Stage();
-	                dialog.initModality(Modality.APPLICATION_MODAL);
-	                Stage myStage=battleScene.getGameScene().getStage();
-	                System.out.println("i am here");
-	                System.out.println(myStage.equals(null));
-	                dialog.initOwner(myStage);
-	                VBox dialogVbox = new VBox(20);
-	                
-        		        Button btn = new Button();
-	        	         btn.setText("Got it");
-	                dialogVbox.getChildren().add(end);
-	                dialogVbox.getChildren().add(btn);
-	                btn.setOnAction((event) ->{
-	                   	dialog.close();
-	                	     battleScene.getGameScene().changeBackScene();
-	                });
-	                Scene dialogScene = new Scene(dialogVbox, 300, 200);
-	                dialog.setScene(dialogScene);
-	                dialog.show();
-
-		
-		
-		//battleScene.getGameScene().changeBackScene();
 	}
 
 	public void changeScene() {

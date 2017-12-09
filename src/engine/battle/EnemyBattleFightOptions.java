@@ -28,9 +28,6 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 			Pokemon ap, Pokemon ep, BattleScene bs) {
 		super(ap, ep,bs);
 		mainScene = bs;
-		// TODO Auto-generated constructor stub
-		
-		
 	}
 	
 	
@@ -39,7 +36,6 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	public void changeScene() {
 		mainScene.resetButtons();
 		mainScene.rootRemove(super.hbox);
-		mainScene.rootRemove(this.getText());
 		
 		
 		//bfo.setUpScene();
@@ -48,69 +44,24 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
   @Override
    public void setUpScene() {
 	  //perform move 
-	  
-	  
-	  bfo=super.battleScene.getMyBattleScene();
-	  
-	  if (battleScene.getRootChildren().contains(bfo.getText())) {
-		  battleScene.rootRemove(bfo.getText());
-		  battleScene.getRootChildren().remove(bfo.getText());
-		
-		    
-		   
-		}
-		
-		if (battleScene.getRootChildren().contains(bfo.getHBox())) {
-		    battleScene.rootRemove(bfo.getHBox());
-		  
-		}
-		
-		
-		
-		
-		super.hbox=ButtonLayout(super.buttonArr);
-		
-		battleScene.rootAdd(hbox);
+	  bfo=super.battleScene.getMyBattleScene();	
+	  if (battleScene.getRootChildren().contains(bfo.getHBox())) {
+		  battleScene.rootRemove(bfo.getHBox());
 
-		battleScene.rootAdd(this.getText(),400,420);
-		//battleScene.gc.drawImage(battleScene.battleBox,0,0);
-
-		cancel.setOnAction((event) -> {
-			//move.move(activePokemon, enemyPokemon);
-			//Load hit animation, then change scene to enemy's move
-			performMove();
-			int newActiveHP=activePokemon.getCurrentStat().getHP();
-			int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
-			//reverse because now it is reversed
-			battleScene.getActivePokemonHP().setText(enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newEnemyHP);
-			battleScene.getEnemyPokemonHP().setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newActiveHP);
-			changeScene();
-			
-			
-			
-			
-		});
-		
-		
-		//battleScene.setTextEffects(actionMessage, 20, 20);
-		
-		
-
-		
+	  }
+	  super.hbox=ButtonLayout(super.buttonArr);
+	  battleScene.rootAdd(hbox);
+	  cancel.setOnAction((event) -> {
+		  performMove();
+		  int newActiveHP=activePokemon.getCurrentStat().getHP();
+		  int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
+		  //reverse because now it is reversed
+		  battleScene.getActivePokemonHP().setText(enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newEnemyHP);
+		  battleScene.getEnemyPokemonHP().setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newActiveHP);
+		  changeScene();
+	  });
 	}
   
-  private void styleText(Text t) {
-	  t.setTranslateX(20);
-	  t.setTranslateY(40);
-	  InnerShadow is = new InnerShadow();
-		is.setOffsetX(4.0f);
-		is.setOffsetY(4.0f);
-		t.setEffect(is);
-		t.setFill(Color.BLACK);
-		
-		t.setFont(Font.font("Helvetica", FontWeight.BOLD, 30));
-	  
-  }
   
   private void performMove() {
 	  
@@ -139,13 +90,6 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 		return hbox;
 	}
   
-  @Override
-  public Text getText() {
-		super.message.setText("Watch out!");
-		super.message.setFont(new Font(30));
-		return super.message;
-		
-	}
 
 
 }
