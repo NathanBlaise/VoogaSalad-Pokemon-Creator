@@ -28,7 +28,7 @@ public class Collisions {
 	 * @return true if the player has collided with other nodes
 	 */
 	public static boolean checkCollision(double posX, double posY, double blockWidth, double blockHeight, GridPane mapPane) {
-		for (Node node: mapPane.getChildren() ) {
+		for (Node node: mapPane.getChildren()) {
 			if (GridPane.getRowIndex(node)!= null && GridPane.getColumnIndex(node)!= null){
 				if(node.getBoundsInParent().intersects(posX, posY, blockWidth, blockHeight)) {
 					return true;
