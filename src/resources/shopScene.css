@@ -8,6 +8,12 @@
 	for the scroll bar, check https://farrukhobaid.wordpress.com/2013/01/16/dark-scrollbar-skin-for-javafx/
 	for the button, https://docs.oracle.com/javafx/2/get_started/css.htm*/
 
+.background {
+    -fx-background-color: #68a0a0;
+    background-color: #68a0a0;
+    -fx-background: #68a0a0;	
+}
+
 .root {
  -fx-spacing: 30;
  -fx-background: #428cf4;

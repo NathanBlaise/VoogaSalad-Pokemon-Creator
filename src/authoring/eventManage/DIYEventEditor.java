@@ -33,6 +33,7 @@ public class DIYEventEditor {
 		this.database = database;
 		this.saver = saver;
 		editImage(stage, eventDIY);
+		stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 		stage.show();
 	}
 	
@@ -43,6 +44,7 @@ public class DIYEventEditor {
 		next.setOnMouseClicked(e->{
 			eventDIY.setImagePath(imagePane.getImagePath());
 			stage.setScene(new Scene(showEvent(stage)));
+			stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 		});
 		imagePane.setBottom(next);		
 		stage.setScene(new Scene(imagePane));

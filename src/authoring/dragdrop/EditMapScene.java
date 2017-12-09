@@ -19,7 +19,8 @@ public class EditMapScene extends BasicAuthorScreen {
 	public EditMapScene(Paint background, StageDelegate stageHelper) {
 		super(background, stageHelper);
 		
-		
+		super.getScene().getStylesheets().add("resources/sceneStyle.css");
+		super.getRoot().getStylesheets().add("resources/sceneStyle.css");
 		
 		// set up the t-menu
 		tMenu = new TileMenu(stageHelper.getDatabase().getModel().getTiles());
@@ -29,7 +30,7 @@ public class EditMapScene extends BasicAuthorScreen {
 		}, new Tile("grass", false, 1, 1, "images/reg_tile_scaled.png", new ArrayList<String>())),200,0);
 //		DBMap(stageHelper.getDatabase());
 		
-	 
+
 	    
 		
 		//testFont.setLayoutX(700);
