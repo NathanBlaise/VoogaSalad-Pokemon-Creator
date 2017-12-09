@@ -29,6 +29,7 @@ public class PokemonEventEditor implements Callback<Pokemon, Integer>{
 		BorderPane borderPane = new BorderPane();
 		borderPane.setCenter(gridPane);	
 		stage.setScene(new Scene(borderPane));
+        stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 	}
 
 	@Override

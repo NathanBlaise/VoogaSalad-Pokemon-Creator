@@ -16,7 +16,8 @@ public class DatabaseLoader {
 	
 	/**
 	 * 
-	 * @return - key is the simple name, value is the map
+	 * @return - A map that maps game type to absolute path of folder that 
+	 * contains maps for a specific game type
 	 */
 	public static Map<String, String> getAvailableGameTypes(){
 		File f = new File(path);
@@ -39,7 +40,7 @@ public class DatabaseLoader {
 	
 	/**
 	 * 
-	 * @return - key is the simple name, value is the map.
+	 * @return - A mapping form game name to absolute path its XML file 
 	 */
 	public static Map<String, String> getAvailableDatabase(String path) {
 		File f = new File(path);

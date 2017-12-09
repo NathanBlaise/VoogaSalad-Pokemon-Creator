@@ -183,7 +183,12 @@ public class PokemonSpecie implements Serializable{
 		indexImagePath = indexImagePath.replaceAll("[^-?0-9]+", " "); 
 	    int index = 1;
 		try {
-			index = Integer.parseInt(Arrays.asList(indexImagePath.trim().split(" ")).get(0));
+			for(String i: Arrays.asList(indexImagePath.trim().split(" "))){
+				if(!i.equals("")){
+					index = Integer.parseInt(i);
+					break;
+				}
+			}
 		} catch (NumberFormatException e) {
 			index = 1;
 			e.printStackTrace();

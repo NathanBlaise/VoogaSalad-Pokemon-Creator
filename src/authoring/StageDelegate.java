@@ -1,5 +1,9 @@
 package authoring;
-
+/**
+ * Interface that defines the functionality shared 
+ * among game environments such as authoring and playing
+ * @author Dan Sun for commenting
+ */
 import javafx.stage.Stage;
 import data.Database;
 
@@ -15,7 +19,7 @@ public interface StageDelegate {
 	 */
 	void BackButtonPressed();
 	/**
-	 * Type the Space to go to first author scene;
+	 * Type the Space to go to first authoring scene;
 	 */
 	void toFirstAuthorScene();
 	
