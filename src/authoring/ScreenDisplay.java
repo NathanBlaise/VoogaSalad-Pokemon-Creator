@@ -2,7 +2,6 @@ package authoring;
 
 import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -68,7 +67,7 @@ public class ScreenDisplay {
 			root.getChildren().clear();
 		}
 		
-		protected Pane getRoot(){
+		public Pane getRoot(){
 			return root;
 		}
 		
