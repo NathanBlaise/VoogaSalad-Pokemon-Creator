@@ -25,6 +25,7 @@ public class DatabaseScene extends BasicAuthorScreen {
 		super.getGoSceneButton().setText("Finish");
 		super.getGoSceneButton().addEventHandler(MouseEvent.MOUSE_CLICKED, e->{app.GoButtonPressed(); app.getStage().close();});
 //		app.GoButtonPressed());
+		super.getScene().getStylesheets().add("resources/sceneStyle.css");
 		List<PokemonSpecie> species = app.getDatabase().getModel().getPokemonSpecies();
 		Player player = app.getDatabase().getPlayer();
 		int XLength = app.getDatabase().getMap().getXlength();

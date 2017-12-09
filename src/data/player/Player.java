@@ -2,9 +2,9 @@ package data.player;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
-import data.items.Item;
 import data.model.Pokemon;
 
 /**
@@ -18,12 +18,12 @@ public class Player implements Serializable{
 	private int posX, posY;
 	private Pokemon[] pokemons;
 	private double currency;
-	private Map<String, Integer> items;  // a map from the item to the number of item
+	private Map<String, Integer> items = new HashMap<String, Integer>();  // a map from the item to the number of item, String stands for the class name of item
 	private ArrayList<Pokemon> warehouse;
 	
 	public Player(){
-		posX=50;
-		posY=50;
+		posX=0;
+		posY=0;
 		pokemons = new Pokemon[6];
 		currency = 0;
 		warehouse = new ArrayList<Pokemon>();
@@ -57,8 +57,7 @@ public class Player implements Serializable{
 		this.items = items;
 	}
 
-	public void addItem(Item item) {
-		String itemName = item.getItemName();
+	public void addItem(String itemName) {
 		if(items.containsKey(itemName)){
 			items.put(itemName, items.get(itemName)+1);
 		}else{
@@ -71,8 +70,7 @@ public class Player implements Serializable{
 	 * @param item - the goal item to be deleted
 	 * @return true if the item exists in the items and be deleted successfully.
 	 */
-	public boolean deleteItem(Item item){
-		String itemName = item.getItemName();
+	public boolean deleteItem(String itemName){
 		if(items.containsKey(itemName)){
 			if((items.get(itemName)-1)<0){
 				items.put(itemName, 0);

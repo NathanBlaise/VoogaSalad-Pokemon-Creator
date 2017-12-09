@@ -4,8 +4,12 @@ import java.util.List;
 import java.util.Map;
 
 import data.player.Player;
+import engine.game.GameScene;
+import javafx.scene.Node;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
 
 public class PlayerMovement {
@@ -26,8 +30,8 @@ public class PlayerMovement {
 		    double nextPosX = nextPos.getKey();
 		    double nextPosY = nextPos.getValue();
 	    	if(input.getInputList().contains(key)){
-	    		nextPosY += input2direction.get(key).getKey()*runSpeed;
-	    		nextPosX += input2direction.get(key).getValue()*runSpeed;
+	    		nextPosX += input2direction.get(key).getKey()*runSpeed;
+	    		nextPosY += input2direction.get(key).getValue()*runSpeed;
 	    		List<Image> imageSets = direction.getPictures(key).getImages();
 	    		playerImage.setImage(imageSets.get(nextPic%imageSets.size()));
 	    		nextPos = new Pair<Double, Double>(nextPosX, nextPosY);
@@ -44,12 +48,11 @@ public class PlayerMovement {
 	 * @param mapWidth - the width of map
 	 * @param mapHeight - the height of map
 	 */
-	public static void changePos(Player player, double pixelSize, ImageView playerImage, double nextX, double nextY, double mapWidth, double mapHeight){
-		if (nextX >= 0 && nextY >= 0 && (nextX + playerImage.getFitWidth()<= mapWidth)&&(nextY + playerImage.getFitHeight()<= mapHeight)) {
-			playerImage.setX(nextX);
-			playerImage.setY(nextY);
-			player.setPosX(new Double(nextX/pixelSize).intValue());
-			player.setPosY(new Double(nextY/pixelSize).intValue());
+	public static void changePos(Player player, double pixelSize, ImageView playerImage, double nextX, double nextY, Canvas tileCanvas, GameScene gameScene){
+		if (nextX >= tileCanvas.getLayoutX() && nextY >= tileCanvas.getLayoutY() && (nextX + playerImage.getFitWidth()<= tileCanvas.getLayoutX()+tileCanvas.getWidth())&&(nextY + playerImage.getFitHeight()<= tileCanvas.getLayoutY()+tileCanvas.getHeight())) {
+			gameScene.changePlayerImagePosition(nextX, nextY);
+//			player.setPosX(new Double(nextX/pixelSize).intValue());
+//			player.setPosY(new Double(nextY/pixelSize).intValue());
 		}
 	}
 	
@@ -63,7 +66,7 @@ public class PlayerMovement {
 	 * @return the left element of pair is row index, the right element of pair is column index
 	 */
 	public static Pair<Integer, Integer> playerIndexOnGrid(double posX, double posY, double gridWidth, double gridHeight){
-		return new Pair<Integer, Integer>(new Double(posY/gridHeight).intValue(), new Double(posX/gridWidth).intValue());
+		return new Pair<Integer, Integer>(new Double(posX/gridWidth).intValue(), new Double(posY/gridHeight).intValue());
 	}
 	
 	

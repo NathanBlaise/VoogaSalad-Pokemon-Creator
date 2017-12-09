@@ -28,7 +28,7 @@ public class Collisions {
 	 * @return true if the player has collided with other nodes
 	 */
 	public static boolean checkCollision(double posX, double posY, double blockWidth, double blockHeight, GridPane mapPane) {
-		for (Node node: mapPane.getChildren() ) {
+		for (Node node: mapPane.getChildren()) {
 			if (GridPane.getRowIndex(node)!= null && GridPane.getColumnIndex(node)!= null){
 				if(node.getBoundsInParent().intersects(posX, posY, blockWidth, blockHeight)) {
 					return true;
@@ -48,6 +48,7 @@ public class Collisions {
 	 * @return
 	 */
 	public static Event searchEvent(Pair<Integer, Integer> playerFuturePos, ArrayList<Pair<Integer, Integer>> direction, Map<Pair<Integer, Integer>, Event> collideEvents) {
+		
 		for(Pair<Integer, Integer> offset : direction){
 				Pair<Integer, Integer> tempIndex = new Pair<Integer, Integer>(playerFuturePos.getKey()+offset.getKey(), playerFuturePos.getValue()+offset.getValue());
 				if(collideEvents.keySet().contains(tempIndex)){
@@ -64,7 +65,7 @@ public class Collisions {
 	 * @param posY - the y coordinate of the left-up point of player's detection block
 	 * @param blockWidth - the width of detection block of player
 	 * @param blockHeight - the height of detection block of player
-	 * @return a map from the colliding event's coordinates to the event
+	 * @return a map from the colliding event's coordinates to the event (column index, row index) -----> the event
 	 */
 	public static Map<Pair<Integer, Integer>, Event> getCollideEvents(double posX, double posY, double blockWidth, double blockHeight, GridPane mapPane, GameMap mainMap){
 		Map<Pair<Integer, Integer>, Event> result = new HashMap<Pair<Integer, Integer>, Event>();
@@ -73,7 +74,7 @@ public class Collisions {
 				int i = GridPane.getRowIndex(node);
 				int j = GridPane.getColumnIndex(node);
 				if(node.getBoundsInParent().intersects(posX, posY, blockWidth, blockHeight) && mainMap.getCell(i, j).getEvent()!=null) {
-					result.put(new Pair<Integer, Integer>(i, j), mainMap.getCell(i, j).getEvent());
+					result.put(new Pair<Integer, Integer>(j, i), mainMap.getCell(i, j).getEvent());
 				}
 			}
 		}

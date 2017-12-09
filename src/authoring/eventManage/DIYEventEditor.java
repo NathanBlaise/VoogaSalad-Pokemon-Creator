@@ -33,6 +33,7 @@ public class DIYEventEditor {
 		this.database = database;
 		this.saver = saver;
 		editImage(stage, eventDIY);
+		stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 		stage.show();
 	}
 	
@@ -43,6 +44,7 @@ public class DIYEventEditor {
 		next.setOnMouseClicked(e->{
 			eventDIY.setImagePath(imagePane.getImagePath());
 			stage.setScene(new Scene(showEvent(stage)));
+			stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 		});
 		imagePane.setBottom(next);		
 		stage.setScene(new Scene(imagePane));
@@ -52,7 +54,7 @@ public class DIYEventEditor {
 		BorderPane result = new BorderPane();
 		Map<String, String> name2instruction = NPCEventEditor.createName2Instruction(eventDIY);
 		Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions = createReaction(stage, result);
-		result.setLeft(new EventInstructions(eventDIY, name2instruction, reactions, new InstructionListEditor(eventDIY, saver)).getList());
+		result.setLeft(new EventInstructions(eventDIY, name2instruction, reactions, new InstructionListEditor(eventDIY, e->{saver.call(e);stage.close();return null;})).getList());
 		return result;
 	}
 	

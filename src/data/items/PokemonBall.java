@@ -15,8 +15,8 @@ public class PokemonBall extends Item{
 	private static final long serialVersionUID = 1291677902844899580L;
 
 	public PokemonBall(){
-		itemName = "Pokemon Ball";
-		itemPrice = 1200;
+		itemName = "PokemonBall";
+		itemPrice = 50;
 	}
 	
 	@Override

@@ -56,7 +56,7 @@ public class PokemonStat implements Serializable{
 		this.specialAttack=origin.specialAttack;
 		this.specialDefense=origin.specialDefense;
 		this.speed=origin.speed;
-		this.HP = origin.maxHP;
+		this.HP = origin.HP;
 	}
 	
 	public void setSpeed(int speed) {

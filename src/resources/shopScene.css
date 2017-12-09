@@ -6,28 +6,23 @@
 	for the background color of textarea, https://stackoverflow.com/questions/42236560/read-only-textarea-with-scrollbar-javafx 
 	
 	for the scroll bar, check https://farrukhobaid.wordpress.com/2013/01/16/dark-scrollbar-skin-for-javafx/
-	for slider, https://stackoverflow.com/questions/14157161/hybrid-of-slider-with-progress-bar-javafx
-	for the combobox, https://stackoverflow.com/questions/19343531/javafx-combobox-styling*/
+	for the button, https://docs.oracle.com/javafx/2/get_started/css.htm*/
 
 .background {
-    -fx-background-color: #4b789f;
-    background-color:  #4b789f;
-    -fx-background: #4b789f;
+    -fx-background-color: #68a0a0;
+    background-color: #68a0a0;
+    -fx-background: #68a0a0;	
 }
 
 .root {
  -fx-spacing: 30;
- -fx-background: #4b789f;
- -fx-background-color:   #4b789f;
- background-color:   #4b789f;
+ -fx-background: #428cf4;
+ -fx-background-color:  #428cf4;
+ background-color:  #428cf4;
 }
 
 .group {
- -fx-background-color: #68a0a0;
-}
-
-.region {
- -fx-background-color: #68a0a0;
+ -fx-background-color:  #428cf4;
 }
 
 .image-view-wrapper:border {
@@ -35,6 +30,7 @@
     -fx-border-style: solid;
     -fx-border-width: 5;
 }
+
 
 .table-row-cell:empty {
     -fx-background-color: #68a0a0;
@@ -62,16 +58,6 @@
  background-color:  #428cf4;
 }
 
-.list-view .list-cell:even {
--fx-background-color: #68a0a0;
--fx-text-fill: white;
-}
-
-.list-view .list-cell:odd {
--fx-background-color: #81c6c6;
--fx-text-fill: white;
-}
-
 input[type="text"], textarea {
 
   background-color : #68a0a0; 
@@ -84,6 +70,13 @@ input[type="text"], textarea {
 
 .text-area .content {
     -fx-background-color: text-area-background ;
+}
+
+#stack-pane {
+ -fx-background-color: #68a0a0;
+ -fx-border-color: #68a0a0;
+ -fx-text-fill: white;
+ -fx-font-weight: bold;
 }
 
 .scroll-pane > .viewport {
@@ -187,6 +180,15 @@ input[type="text"], textarea {
  -fx-border-color:#68a0a0;
 }
 
+.list-view .list-cell:even {
+-fx-background-color: #68a0a0;
+-fx-text-fill: white;
+}
+.list-view .list-cell:odd {
+-fx-background-color: #81c6c6;
+-fx-text-fill: white;
+}
+
 .button {
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
@@ -197,65 +199,4 @@ input[type="text"], textarea {
 
 .button:hover {
     -fx-background-color: linear-gradient(#2A5058, #61a2b1);
-}
-
-.titled-pane > .title 
-{
--fx-background-color: rgb(211,211,211);
--fx-background-insets: 0, 1, 2;
--fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
--fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
-}
-
-.tab-pane .tab
-{
-    -fx-background-color: rgb(211,211,211);
-}
-
-.hbox {
-    -fx-background-color: #4b789f;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-}
-
-.vbox {
-    -fx-background-color: #4b789f;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-}
-
-.grid-pane {
-    -fx-background-color: #4b789f;
-    -fx-background-radius: 5.0;
-    -fx-background-insets: 0.0 5.0 0.0 5.0;
-    -fx-padding: 10;
-    -fx-hgap: 10;
-    -fx-vgap: 10;
-}
-
-.slider .track {
-    -fx-background-color: #68a0a0; /* Hide the track */
-    -fx-background-insets: 1 0 -1 0, 0, 1;
-    -fx-background-radius: 2.5, 2.5, 1.5;
-    -fx-padding: 0.208333em; /* 2.5 */
-    -fx-control-inner-background: #68a0a0;
-}
-
-.combo-box .list-cell {
-    -fx-background: #68a0a0;
-    -fx-background-color: transparent;
-    -fx-text-fill: -fx-text-base-color;
-    -fx-padding: 3 0 2 7;
-    -fx-cell-size: 1.66667em; 
-}
-
-.combo-box-base {
-    -fx-background-color:  #68a0a0;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
-}
-
-.combo-box-base:focused {
-    -fx-background-color:  #81c6c6;
-    -fx-background-radius: 6.4, 4, 5, 3;
-    -fx-background-insets: -1.4, 0, 1, 2;
 }

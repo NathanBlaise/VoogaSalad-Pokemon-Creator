@@ -2,9 +2,9 @@ package authoring;
 
 import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 
 public class ScreenDisplay {
@@ -16,7 +16,7 @@ public class ScreenDisplay {
 		//Private Variable
 		protected Timeline animation = new Timeline();
 		private Scene myScene;
-		private Group root = new Group();
+		private Pane root = new Pane();
 
 		/**
 		 * Constructor: Screen Display class
@@ -65,6 +65,10 @@ public class ScreenDisplay {
 		
 		protected void rootClear(){
 			root.getChildren().clear();
+		}
+		
+		public Pane getRoot(){
+			return root;
 		}
 		
 }

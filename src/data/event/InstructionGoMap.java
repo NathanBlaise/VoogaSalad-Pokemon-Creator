@@ -35,10 +35,11 @@ public class InstructionGoMap extends Instruction{
 			if(map.getName().equals(mapName)){
 				mainPlayer.setPosX(futureX);
 				mainPlayer.setPosY(futureY);
-				gameScene.refreshMap(futureX, futureY, map);
+				gameScene.refreshMap(map);
 				break;
 			}
 		}
+		super.setGoNextInstruction(true);
 		gameScene.changeBackScene();
 	}
 

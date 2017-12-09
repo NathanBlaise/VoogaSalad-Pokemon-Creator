@@ -15,8 +15,8 @@ public class XPBoost extends Item{
 
 	//Specifies name, price and image in the constructor
 	public XPBoost(){
-		itemName = "XP Boost";
-		itemPrice = 1200;
+		itemName = "XPBoost";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

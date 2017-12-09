@@ -80,8 +80,9 @@ public final class MapManager extends BorderPane{
 			}
 		});
 		
-		sp.setPrefSize(48*15, 48*10);
+		sp.setPrefSize(48*12, 48*10);
 		setCenter(sp);
+		showSelectedMap();
 		setRight(listView);
 	}
 	

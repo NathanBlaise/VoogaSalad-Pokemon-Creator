@@ -27,6 +27,7 @@ public class BasicAuthorScreen extends ScreenDisplay{
 		// TODO Auto-generated constructor stub
 		this.stageHelper = stageHelper;
 		ButtonInit();
+		this.getScene().getStylesheets().add("resources/sceneStyle.css");
 		
 	}
 	
@@ -49,15 +50,18 @@ public class BasicAuthorScreen extends ScreenDisplay{
 	
 	private void ButtonInit() {
 		HBox ButtonBox = new HBox();
-		NextScene = new Button("GO");
-		BackScene = new Button("BACK");
+		NextScene = new Button("next >");
+		BackScene = new Button("< back");
 		
 		//Set EventHandler for Buttons; Once clicked, go to the next scene or the back scene
 		NextScene.addEventHandler(MouseEvent.MOUSE_CLICKED, e->stageHelper.GoButtonPressed());
 		BackScene.addEventHandler(MouseEvent.MOUSE_CLICKED, e->stageHelper.BackButtonPressed());
 		
-		ButtonBox.getChildren().add(NextScene);
+		NextScene.getStylesheets().add("resources/sceneStyle.css");
+        BackScene.getStylesheets().add("resources/sceneStyle.css");
+		
 		ButtonBox.getChildren().add(BackScene);
+		ButtonBox.getChildren().add(NextScene);
 		ButtonBox.setLayoutX(BUTTONX);
 		ButtonBox.setLayoutY(BUTTONY);
 		this.rootAdd(ButtonBox);

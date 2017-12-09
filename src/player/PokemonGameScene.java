@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.Map;
 
 import data.event.Event;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Pair;
@@ -48,20 +50,27 @@ public class PokemonGameScene extends GameScene{
 	
 	public PokemonGameScene(int width, int height, Paint background,
 			Engine engine, Stage stage) {
-		super(PLAYER_WIDTH, PLAYER_HEIGHT, width, height, background, engine, stage);
+		super(PLAYER_WIDTH, PLAYER_HEIGHT, 480, 480, background, engine, stage, true);
+		refreshMap(mainMap);
 		changeBackScene();
 	}
 
 	@Override
 	protected void step()  {
 		Pair<Double, Double> nextPos = new Pair<Double, Double>(playerImage.getX(), playerImage.getY());
+		for(Node node: mapPane.getChildren()){
+			int row = GridPane.getRowIndex(node);
+			int column= GridPane.getColumnIndex(node);
+			node.setLayoutX(mapPane.getLayoutX()+pixelSize*column);
+			node.setLayoutY(mapPane.getLayoutY()+pixelSize*row);
+		}
 		nextPos = playerMoves.nextPosition(playerImage, input2direction, input, nextPos);
-	    double nextPosX = nextPos.getKey();
+		double nextPosX = nextPos.getKey();
 	    double nextPosY = nextPos.getValue();
 	    if(!Collisions.checkCollision(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane)){
-	    	PlayerMovement.changePos(mainPlayer, pixelSize, playerImage, nextPosX, nextPosY, mapPane.getWidth(), mapPane.getHeight());
+	    	PlayerMovement.changePos(mainPlayer, pixelSize, playerImage, nextPosX, nextPosY, tileCanvas, (GameScene)this);
 	    }else{
-			Pair<Integer, Integer> playerIndex = PlayerMovement.playerIndexOnGrid(nextPosX+offsetX+sizeBlockX/2, nextPosY+offsetY+sizeBlockY/2, pixelSize, pixelSize);
+			Pair<Integer, Integer> playerIndex = PlayerMovement.playerIndexOnGrid(nextPosX+offsetX+sizeBlockX/2-tileCanvas.getLayoutX(), nextPosY+offsetY+sizeBlockY/2-tileCanvas.getLayoutY(), pixelSize, pixelSize);
 			Map<Pair<Integer, Integer>, Event> collideEvents = Collisions.getCollideEvents(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane, mainMap);
 			ArrayList<Pair<Integer, Integer>> directions = new ArrayList<Pair<Integer, Integer>>();
 			for(String key: input2direction.keySet()){
@@ -70,9 +79,9 @@ public class PokemonGameScene extends GameScene{
 				}
 			}
 			Event encounterEvent = Collisions.searchEvent(playerIndex, directions, collideEvents);
-		    	if((encounterEvent!=null)&&(directions.size()!=0)){
-		    		executeEvent(encounterEvent);
-		    	}
+		    if((encounterEvent!=null)&&(directions.size()!=0)){
+		    	executeEvent(encounterEvent);
+		    }
 	    }
 	}
 
