@@ -1,5 +1,5 @@
-<defaultNPC>
+<defaultTile>
 	<name>water</name>
 	<wholePic>images/tiles/purewatercenter.png</wholePic>
 	<obstacle>true</obstacle>
-</defaultNPC>
+</defaultTile>

@@ -1,4 +1,4 @@
-<defaultNPC>
+<defaultTile>
 	<name>Desk</name>
 	<wholePic>images/tiles/tiles4shop/deskWhole.png</wholePic>
 	<obstacle>true</obstacle>
@@ -8,4 +8,4 @@
 	<imagePaths>images/tiles/tiles4shop/desk2.png</imagePaths>
 	<imagePaths>images/tiles/tiles4shop/desk3.png</imagePaths>
 	<imagePaths>images/tiles/tiles4shop/desk4.png</imagePaths>
-</defaultNPC>
+</defaultTile>

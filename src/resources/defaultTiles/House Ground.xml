@@ -1,5 +1,5 @@
-<defaultNPC>
+<defaultTile>
 	<name>House Ground</name>
 	<wholePic>images/tiles/tiles4shop/HouseGround.png</wholePic>
 	<obstacle>false</obstacle>
-</defaultNPC>
+</defaultTile>

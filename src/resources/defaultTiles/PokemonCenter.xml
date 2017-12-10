@@ -1,4 +1,4 @@
-<defaultNPC>
+<defaultTile>
 	<name>PokemonCenter</name>
 	<wholePic>images/shopCenterSplitedWithBackground/Center.jpg</wholePic>
 	<obstacle>true</obstacle>
@@ -13,4 +13,4 @@
 	<imagePaths>images/shopCenterSplitedWithBackground/Center7.jpg</imagePaths>
 	<imagePaths>images/shopCenterSplitedWithBackground/Center8.jpg</imagePaths>
 	<imagePaths>images/shopCenterSplitedWithBackground/Center9.jpg</imagePaths>
-</defaultNPC>
+</defaultTile>
