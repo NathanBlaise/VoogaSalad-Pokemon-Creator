@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 public abstract class Event implements Serializable{
 	private static final long serialVersionUID = -1088455784075495760L;
+	
 	private ArrayList<Instruction> instructions = new ArrayList<Instruction>();; // a series of instructions that will be triggered by the event
 	//since javafx's image cannot be serialized, here it stores the path (prefer absolute path) of the image
 	private String imagePath;

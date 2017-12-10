@@ -6,6 +6,7 @@ import java.io.Serializable;
  * Map is responsible for showing all the information needed to show a map on the screen,
  * and also include the info to let the Player interact with the map
  * @author cy122
+ * @author Dan Sun for additional commenting
  *
  */
 public class GameMap implements Serializable{
@@ -17,15 +18,17 @@ public class GameMap implements Serializable{
 	
 	// this constructor is only for serialization, it shouldn't be used for any intention else
 	public GameMap(){
-		
+	    //do nothing
 	}
 	
 	/**
-	 * Cell[0~(Xlength-1)][0~(Ylength-1)] is the legal Cell.
-	 * @param Xlength - the length in the first dimension
-	 * @param Ylength - the length in the second dimension.
+	 * 
+	 * @param name The name of the map.
+	 * @param Xlength The length in the first dimension
+	 * @param Ylength The length in the second dimension.
 	 */
 	public GameMap(String name, int Xlength, int Ylength){
+	    	// Cell[0~(Xlength-1)][0~(Ylength-1)] is the legal Cell
 		this.name = name;
 		this.Xlength = Xlength;
 		this.Ylength = Ylength;

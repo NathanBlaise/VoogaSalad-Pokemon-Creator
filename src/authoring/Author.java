@@ -69,6 +69,7 @@ public class Author implements StageDelegate{
 
 	@Override
 	public void toFirstAuthorScene() {
+	        saveDatabase();
 		scControl.goToFirstEditingScene(myStage);
 		myStage.centerOnScreen();
 		//System.out.println("0");	

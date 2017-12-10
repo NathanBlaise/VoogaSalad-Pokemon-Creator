@@ -17,7 +17,8 @@ import data.model.NPC;
 
 /**
  * for giving the model the npc models
- * @author cy122 Dan Sun
+ * @author cy122
+ * @author Dan Sun
  *
  */
 public class NPCCollection extends DataCollectionAbstract{
@@ -53,7 +54,8 @@ public class NPCCollection extends DataCollectionAbstract{
 	    }
 
 	    private void readDefaultNPCs() {
-			File[] files = getFilesWithinAsArray(FilePathConverter.getAbsolutePath(defaultNPCsRelativePath));
+			File[] files = getFilesWithinAsArray(
+				FilePathConverter.getAbsolutePath(defaultNPCsRelativePath));
 			for(File NPCFile:files) {
 			    NPC NPC = null;
 			    try {

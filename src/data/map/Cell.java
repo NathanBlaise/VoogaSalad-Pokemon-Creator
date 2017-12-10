@@ -11,13 +11,15 @@ import javafx.geometry.Rectangle2D;
  * if the obstacle is true, the user cannot go through the tile
  * 
  * @author cy122
+ * @author Dan Sun for additional commenting
  *
  */
 public class Cell implements Serializable{
 
 	private static final long serialVersionUID = -2980246764307592878L;
-	private final int CELL_SIZE = 48;
-	private String tilePath; /* the path of stile*/
+	private static final int CELL_SIZE = 48;
+	
+	private String tilePath; /* the path of the iamge of the tile*/
 	private boolean openState; /* whether the user can edit the event on the cell*/
 	private boolean obstacle; /* if the obstacle is true, the user cannot go through the tile  */
 	/** the event included in the cell. 
