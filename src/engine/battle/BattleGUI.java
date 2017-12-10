@@ -20,6 +20,8 @@ public class BattleGUI {
 	private Image grassBattleGrass2 = new Image("file:images/grass_battle_grass_2.png");
 	private Image itemList = new Image("file:images/item_list_background.jpg");
 	private Image battleBox = new Image("file:images/battle_box.png");
+	private Image hpBoxPlayer = new Image("file:images/hp_box_1.png");
+	private Image hpBoxEnemy = new Image("file:images/hp_box_2.png");
 	private String[] initialButtons = {"FIGHT","BAG","POKEMON","RUN"};
 	
 	private final int PLAYER_HOME_XPOS = 15;
@@ -54,6 +56,8 @@ public class BattleGUI {
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
 		gc.drawImage(new Image(gifSpriteURL(enemyPokemon)),ENEMY_POKEMON_XPOS, ENEMY_POKEMON_YPOS);
 		gc.drawImage(new Image(backSpriteURL(playerPokemon)),PLAYER_POKEMON_XPOS ,PLAYER_POKEMON_YPOS);
+		gc.drawImage(hpBoxPlayer, 350, 225);
+		gc.drawImage(hpBoxEnemy, 30, 50);
 	}
 	
 	/*

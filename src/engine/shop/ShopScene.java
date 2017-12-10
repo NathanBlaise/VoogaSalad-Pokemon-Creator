@@ -32,22 +32,23 @@ import javafx.util.Callback;
  *
  */
 
-public class ShopScene extends ScreenDisplay{
+public class ShopScene extends ItemsScene{
 	
 //	private Image shopBackground = new Image("file:images/bag_game_background.png");
 //	private Image bagImage = new Image("file:images/shop_bag.png");
 	
-	private Player mainPlayer;
-	private StackPane currencyDisplay = new StackPane();
-
+	
+	/**
+	 * Scene used to buy items
+	 * @param width
+	 * @param height
+	 * @param gameScene
+	 * @param availableItems
+	 * @param background
+	 * @param player
+	 */
 	public ShopScene(int width, int height, GameScene gameScene, List<Item> availableItems, Paint background, Player player) {
-		super(width, height, background);
-		mainPlayer = player;
-		currencyDisplay.getChildren().addAll(createCurrencyDisplay());
-		currencyDisplay.setPrefSize(350, 100);
-		currencyDisplay.setId("stack-pane");
-		this.rootAdd(currencyDisplay, 0, 0);
-		this.rootAdd(setListView(availableItems));
+		super(width, height, availableItems, background, player);
 		this.rootAdd(showItemList(mainPlayer.getItems()));
 		this.getScene().getStylesheets().add("resources/shopScene.css");
 		Button quitButton = new Button("quit");
@@ -57,7 +58,7 @@ public class ShopScene extends ScreenDisplay{
 		this.rootAdd(quitButton,120, 420);
 	}
 	
-	private ListView<String> setListView(List<Item> items) {
+	protected ListView<String> setListView(List<Item> items) {
 		ObservableList<String> allItemsList = FXCollections.observableArrayList(
 			items.stream()
 				 .map(e->e.getItemName())
@@ -125,13 +126,6 @@ public class ShopScene extends ScreenDisplay{
         return table;
 	}
 	
-	//https://stackoverflow.com/questions/37541279/javafx-centered-text-in-scene
-	private Text createCurrencyDisplay(){
-		Text currency =  new Text("Money: " + new Double(mainPlayer.getCurrency()).intValue());
-		currency.setTextAlignment(TextAlignment.CENTER);
-        StackPane.setAlignment(currency, Pos.CENTER);
-        return currency;
-	}
 	
 	
 }
