@@ -26,6 +26,7 @@ public class EditMapScene extends BasicAuthorScreen {
 		tMenu = new TileMenu(stageHelper.getDatabase().getModel().getTiles());
 		this.rootAdd(tMenu);
 		this.rootAdd(new MapManager(stageHelper.getDatabase(), e->{
+		    	//do nothing
 			return null;
 		}, new Tile("grass", false, 1, 1, "images/reg_tile_scaled.png", new ArrayList<String>())),200,0);
 //		DBMap(stageHelper.getDatabase());
