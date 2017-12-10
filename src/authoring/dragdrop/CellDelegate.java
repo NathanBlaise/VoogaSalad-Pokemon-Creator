@@ -10,7 +10,7 @@ import data.model.Tile;
  * @author supertony
  *
  */
-public interface cellDelegate {
+public interface CellDelegate {
 
 	/**
 	 * @param dbCell
