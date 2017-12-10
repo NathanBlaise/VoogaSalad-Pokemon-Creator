@@ -37,6 +37,7 @@ public class ShopScene extends ItemsScene{
 //	private Image shopBackground = new Image("file:images/bag_game_background.png");
 //	private Image bagImage = new Image("file:images/shop_bag.png");
 	
+	private Player mainPlayer;
 	
 	/**
 	 * Scene used to buy items

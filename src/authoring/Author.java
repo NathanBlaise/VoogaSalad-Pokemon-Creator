@@ -30,11 +30,12 @@ public class Author implements StageDelegate{
 	 * @param savePath - the path to save the Database
 	 * @param primaryStage - the stage to show the data
 	 */
-	public Author(Database database, String savePath, Stage primaryStage){
+	public Author(Database database, String savePath, Stage primaryStage, String gameType){
 		myStage = primaryStage;
 		this.database = database;
 		this.savePath = savePath;
-		scControl = new SceneController(this);
+		scControl = new SceneController(this,gameType);
+		System.out.println(gameType);
 //		myList = scControl.getScList();
 	}
 	

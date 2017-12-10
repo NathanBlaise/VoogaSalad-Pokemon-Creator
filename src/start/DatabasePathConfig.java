@@ -52,7 +52,7 @@ public class DatabasePathConfig{
 	 * @return The chooser for game type
 	 */
 	private BorderPane chooseGameType(Function<String, String, Integer> gameTypeChosenAction){
-		Label title = new Label("Choose the Game Type Please :>)");
+		Label title = new Label("Choose the Game Type Please :)");
 		Map<String, String> availableGameTypes = DatabaseLoader.getAvailableGameTypes();
 		TilePane types = new TilePane();
 		for(String name : availableGameTypes.keySet()){
@@ -70,7 +70,7 @@ public class DatabasePathConfig{
 
 	public static BorderPane chooseDatabase(Stage stage, String type, String databasesPath, Function<Database, String, Integer> reaction) {
 		BorderPane result = new BorderPane();
-		new CreateDefaultDatabase();
+		new CreateDefaultDatabase(type);
 		Label title = new Label("Choose the database please :)");
 		title.setMaxWidth(Double.MAX_VALUE);
 		AnchorPane.setLeftAnchor(title, 0.0);
@@ -109,8 +109,8 @@ public class DatabasePathConfig{
 	
 	public static BorderPane createDatabaseName(Callback<String, Integer> saver){
 		BorderPane result = new BorderPane();
-		TextField databaseName = new TextField("input your database name please");
-		Button saveButton = new Button("save");
+		TextField databaseName = new TextField("Input your database name please");
+		Button saveButton = new Button("Save");
 		saveButton.setOnMouseClicked(e->{
 			saver.call(databaseName.getText());
 		});
