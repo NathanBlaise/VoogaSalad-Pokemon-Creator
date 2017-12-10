@@ -8,14 +8,20 @@ package util.pokemonPropertyGenerator;
  */
 public class LevelStatsGenerator extends LevelSpecificStatsGeneratorAbstract{
 
-    private static String propertyTag = "levelStats";
-    private static String elementTag = "stat";
-    private static String speedTag = "speed";
-    private static String specialAttackTag = "specialAttack";
-    private static String specialDefenseTag = "specialDefense";
-    private static String normalAttackTag = "normalAttack";
-    private static String normalDefenseTag = "normalDefense";
-    private static String maxHpTag = "maxHP";
+    
+    private static final String propertyTag = "levelStats";
+    private static final String elementTag = "stat";
+    private static final String speedTag = "speed";
+    private static final String specialAttackTag = "specialAttack";
+    private static final String specialDefenseTag = "specialDefense";
+    private static final String normalAttackTag = "normalAttack";
+    private static final String normalDefenseTag = "normalDefense";
+    private static final String maxHpTag = "maxHP";
+    //A discussino of EV and IV can be found at https://www.gamefaqs.com/boards/989552-pokemon-black-version/58673641
+    //However, use representative constant values for now.
+    private static final int EV = 85;
+    private static final int IV = 15;
+    
     
     private int baseSpeed;
     private int baseSpecialAttack;
@@ -109,25 +115,33 @@ public class LevelStatsGenerator extends LevelSpecificStatsGeneratorAbstract{
 	createLeafWithinElement(stringBuilder,speedTag,
 		Integer.toString(speed));
     }
+    
     private int getMaxHpForLevel(int maxHp, int level) {
-	return maxHp + 5 * level;
+	//see https://www.gamefaqs.com/boards/989552-pokemon-black-version/58673641
+	return ((maxHp * 2 + IV + EV/4) * level / 100) + 10 + level;
     }
     private int getNormalDefenseForLevel(int normalDefense, int level) {
-	return normalDefense + level;
+	return calculateOtherStats(normalDefense, level);
     }
     private int getNormalAttackForLevel(int normalAttack, int level) {
-	return normalAttack + level;
+	return calculateOtherStats(normalAttack, level);
     }
     private int getSpecialDefenseForLevel(int specialDefense, int level) {
-	return specialDefense + level;
+	return calculateOtherStats(specialDefense, level);
     }
     
     private int getSpecialAttackForLevel(int specialAttack, int level) {
-	return specialAttack + level;
+	return calculateOtherStats(specialAttack, level);
     }
 
     private int getSpeedForLevel(int speed, int level) {
-	return speed + level;
+	return calculateOtherStats(speed,level);
+    }
+    
+    private int calculateOtherStats(int base, int level) {
+	//see https://www.gamefaqs.com/boards/989552-pokemon-black-version/58673641
+	int NMod = 1;
+	return ((base*2 + IV + EV/4) *level/100) + 5 * NMod;
     }
     
 }

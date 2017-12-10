@@ -46,7 +46,8 @@ public class DamageCalculator {
 		double damage = 0.0;
 		double attack = physicalMove.contains(moveElemental)?attacker.getCurrentStat().getNormalAttack():attacker.getCurrentStat().getSpecialAttack();
 		double defense = physicalMove.contains(moveElemental)?defender.getCurrentStat().getNormalDefense():defender.getCurrentStat().getSpecialDefense();
-		damage = (((((2.0*attacker.getCurrentLevel())/5.0)+2)*movePower*(attack/defense))/50.0+2)*getModifier(attacker.getElemental(), defender.getElemental(), moveElemental);
+		damage = ( ( ( ( (2.0*attacker.getCurrentLevel()) / 5.0) + 2 ) * movePower * (attack/defense) ) /50.0 + 2) * 
+			getModifier(attacker.getElemental(), defender.getElemental(), moveElemental);
 		return (int)Math.round(damage);
 	}
 	
