@@ -101,12 +101,14 @@ public class BattleFightOptions {
 					enemyPokemon.printCurrentInfo();
 					//Update Health Bars
 					battleScene.updateHealthBars(activePokemon.getCurrentStat().getHP(), enemyPokemon.getCurrentStat().getHP());
-					if(activePokemon.isDead()) {
-						showEnding("Game end. Your pokemon is dead.");   
-					}
+					
 					
 					if (enemyPokemon.isDead()) {
-						showEnding("Game end. Enemy pokemon is dead.");
+						showEnding("You have caught the enemy pokemon successfully!");
+						enemyPokemon.resetCurrentStat();
+						battleScene.getPlayer().addPokemon(enemyPokemon);
+						//remove the enemy pokemon
+						
 					}
 				});
 				back.setOnAction((e) -> {
@@ -123,13 +125,11 @@ public class BattleFightOptions {
 	}
 	
 	//show the game end message
-	private void showEnding(String message) {
+	protected void showEnding(String message) {
 		Text end=new Text(message);
 		final Stage dialog = new Stage();
 		dialog.initModality(Modality.APPLICATION_MODAL);
 		Stage myStage=battleScene.getGameScene().getStage();
-		System.out.println("i am here");
-		System.out.println(myStage.equals(null));
 		dialog.initOwner(myStage);
 		VBox dialogVbox = new VBox(20);
 
