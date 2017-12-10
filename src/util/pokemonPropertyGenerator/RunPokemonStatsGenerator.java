@@ -23,7 +23,7 @@ public class RunPokemonStatsGenerator {
 	final int baseSpecialDefense = 64;
 	final int baseNormalAttack = 48;
 	final int baseNormalDefense = 65;
-	final int baseMaxHp = 44;
+	final int baseMaxHp = 15;
 	
 	LevelStatsGenerator gen = new LevelStatsGenerator(baseSpeed,
 		baseSpecialAttack, baseSpecialDefense,

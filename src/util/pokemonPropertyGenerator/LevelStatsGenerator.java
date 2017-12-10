@@ -110,7 +110,7 @@ public class LevelStatsGenerator extends LevelSpecificStatsGeneratorAbstract{
 		Integer.toString(speed));
     }
     private int getMaxHpForLevel(int maxHp, int level) {
-	return maxHp + 20 * level;
+	return maxHp + 5 * level;
     }
     private int getNormalDefenseForLevel(int normalDefense, int level) {
 	return normalDefense + level;
@@ -125,7 +125,6 @@ public class LevelStatsGenerator extends LevelSpecificStatsGeneratorAbstract{
     private int getSpecialAttackForLevel(int specialAttack, int level) {
 	return specialAttack + level;
     }
-
 
     private int getSpeedForLevel(int speed, int level) {
 	return speed + level;

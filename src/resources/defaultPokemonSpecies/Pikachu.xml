@@ -30,9 +30,9 @@
 		<specialDefense>50</specialDefense>
 		<normalAttack>55</normalAttack>
 		<normalDefense>40</normalDefense>
-		<maxHP>35</maxHP>
+		<maxHP>12</maxHP>
 	</baseStats>
-	
+
 	<levelStats>
 		<stat>
 			<level>1</level>
@@ -41,7 +41,7 @@
 			<specialDefense>51</specialDefense>
 			<normalAttack>56</normalAttack>
 			<normalDefense>41</normalDefense>
-			<maxHP>55</maxHP>
+			<maxHP>17</maxHP>
 		</stat>
 		<stat>
 			<level>2</level>
@@ -50,7 +50,7 @@
 			<specialDefense>52</specialDefense>
 			<normalAttack>57</normalAttack>
 			<normalDefense>42</normalDefense>
-			<maxHP>75</maxHP>
+			<maxHP>22</maxHP>
 		</stat>
 		<stat>
 			<level>3</level>
@@ -59,7 +59,7 @@
 			<specialDefense>53</specialDefense>
 			<normalAttack>58</normalAttack>
 			<normalDefense>43</normalDefense>
-			<maxHP>95</maxHP>
+			<maxHP>27</maxHP>
 		</stat>
 		<stat>
 			<level>4</level>
@@ -68,7 +68,7 @@
 			<specialDefense>54</specialDefense>
 			<normalAttack>59</normalAttack>
 			<normalDefense>44</normalDefense>
-			<maxHP>115</maxHP>
+			<maxHP>32</maxHP>
 		</stat>
 		<stat>
 			<level>5</level>
@@ -77,7 +77,7 @@
 			<specialDefense>55</specialDefense>
 			<normalAttack>60</normalAttack>
 			<normalDefense>45</normalDefense>
-			<maxHP>135</maxHP>
+			<maxHP>37</maxHP>
 		</stat>
 		<stat>
 			<level>6</level>
@@ -86,7 +86,7 @@
 			<specialDefense>56</specialDefense>
 			<normalAttack>61</normalAttack>
 			<normalDefense>46</normalDefense>
-			<maxHP>155</maxHP>
+			<maxHP>42</maxHP>
 		</stat>
 		<stat>
 			<level>7</level>
@@ -95,7 +95,7 @@
 			<specialDefense>57</specialDefense>
 			<normalAttack>62</normalAttack>
 			<normalDefense>47</normalDefense>
-			<maxHP>175</maxHP>
+			<maxHP>47</maxHP>
 		</stat>
 		<stat>
 			<level>8</level>
@@ -104,7 +104,7 @@
 			<specialDefense>58</specialDefense>
 			<normalAttack>63</normalAttack>
 			<normalDefense>48</normalDefense>
-			<maxHP>195</maxHP>
+			<maxHP>52</maxHP>
 		</stat>
 		<stat>
 			<level>9</level>
@@ -113,7 +113,7 @@
 			<specialDefense>59</specialDefense>
 			<normalAttack>64</normalAttack>
 			<normalDefense>49</normalDefense>
-			<maxHP>215</maxHP>
+			<maxHP>57</maxHP>
 		</stat>
 		<stat>
 			<level>10</level>
@@ -122,7 +122,7 @@
 			<specialDefense>60</specialDefense>
 			<normalAttack>65</normalAttack>
 			<normalDefense>50</normalDefense>
-			<maxHP>235</maxHP>
+			<maxHP>62</maxHP>
 		</stat>
 		<stat>
 			<level>11</level>
@@ -131,7 +131,7 @@
 			<specialDefense>61</specialDefense>
 			<normalAttack>66</normalAttack>
 			<normalDefense>51</normalDefense>
-			<maxHP>255</maxHP>
+			<maxHP>67</maxHP>
 		</stat>
 		<stat>
 			<level>12</level>
@@ -140,7 +140,7 @@
 			<specialDefense>62</specialDefense>
 			<normalAttack>67</normalAttack>
 			<normalDefense>52</normalDefense>
-			<maxHP>275</maxHP>
+			<maxHP>72</maxHP>
 		</stat>
 		<stat>
 			<level>13</level>
@@ -149,7 +149,7 @@
 			<specialDefense>63</specialDefense>
 			<normalAttack>68</normalAttack>
 			<normalDefense>53</normalDefense>
-			<maxHP>295</maxHP>
+			<maxHP>77</maxHP>
 		</stat>
 		<stat>
 			<level>14</level>
@@ -158,7 +158,7 @@
 			<specialDefense>64</specialDefense>
 			<normalAttack>69</normalAttack>
 			<normalDefense>54</normalDefense>
-			<maxHP>315</maxHP>
+			<maxHP>82</maxHP>
 		</stat>
 		<stat>
 			<level>15</level>
@@ -167,7 +167,7 @@
 			<specialDefense>65</specialDefense>
 			<normalAttack>70</normalAttack>
 			<normalDefense>55</normalDefense>
-			<maxHP>335</maxHP>
+			<maxHP>87</maxHP>
 		</stat>
 		<stat>
 			<level>16</level>
@@ -176,7 +176,7 @@
 			<specialDefense>66</specialDefense>
 			<normalAttack>71</normalAttack>
 			<normalDefense>56</normalDefense>
-			<maxHP>355</maxHP>
+			<maxHP>92</maxHP>
 		</stat>
 		<stat>
 			<level>17</level>
@@ -185,7 +185,7 @@
 			<specialDefense>67</specialDefense>
 			<normalAttack>72</normalAttack>
 			<normalDefense>57</normalDefense>
-			<maxHP>375</maxHP>
+			<maxHP>97</maxHP>
 		</stat>
 		<stat>
 			<level>18</level>
@@ -194,7 +194,7 @@
 			<specialDefense>68</specialDefense>
 			<normalAttack>73</normalAttack>
 			<normalDefense>58</normalDefense>
-			<maxHP>395</maxHP>
+			<maxHP>102</maxHP>
 		</stat>
 		<stat>
 			<level>19</level>
@@ -203,7 +203,7 @@
 			<specialDefense>69</specialDefense>
 			<normalAttack>74</normalAttack>
 			<normalDefense>59</normalDefense>
-			<maxHP>415</maxHP>
+			<maxHP>107</maxHP>
 		</stat>
 		<stat>
 			<level>20</level>
@@ -212,7 +212,7 @@
 			<specialDefense>70</specialDefense>
 			<normalAttack>75</normalAttack>
 			<normalDefense>60</normalDefense>
-			<maxHP>435</maxHP>
+			<maxHP>112</maxHP>
 		</stat>
 		<stat>
 			<level>21</level>
@@ -221,7 +221,7 @@
 			<specialDefense>71</specialDefense>
 			<normalAttack>76</normalAttack>
 			<normalDefense>61</normalDefense>
-			<maxHP>455</maxHP>
+			<maxHP>117</maxHP>
 		</stat>
 		<stat>
 			<level>22</level>
@@ -230,7 +230,7 @@
 			<specialDefense>72</specialDefense>
 			<normalAttack>77</normalAttack>
 			<normalDefense>62</normalDefense>
-			<maxHP>475</maxHP>
+			<maxHP>122</maxHP>
 		</stat>
 		<stat>
 			<level>23</level>
@@ -239,7 +239,7 @@
 			<specialDefense>73</specialDefense>
 			<normalAttack>78</normalAttack>
 			<normalDefense>63</normalDefense>
-			<maxHP>495</maxHP>
+			<maxHP>127</maxHP>
 		</stat>
 		<stat>
 			<level>24</level>
@@ -248,7 +248,7 @@
 			<specialDefense>74</specialDefense>
 			<normalAttack>79</normalAttack>
 			<normalDefense>64</normalDefense>
-			<maxHP>515</maxHP>
+			<maxHP>132</maxHP>
 		</stat>
 		<stat>
 			<level>25</level>
@@ -257,7 +257,7 @@
 			<specialDefense>75</specialDefense>
 			<normalAttack>80</normalAttack>
 			<normalDefense>65</normalDefense>
-			<maxHP>535</maxHP>
+			<maxHP>137</maxHP>
 		</stat>
 		<stat>
 			<level>26</level>
@@ -266,7 +266,7 @@
 			<specialDefense>76</specialDefense>
 			<normalAttack>81</normalAttack>
 			<normalDefense>66</normalDefense>
-			<maxHP>555</maxHP>
+			<maxHP>142</maxHP>
 		</stat>
 		<stat>
 			<level>27</level>
@@ -275,7 +275,7 @@
 			<specialDefense>77</specialDefense>
 			<normalAttack>82</normalAttack>
 			<normalDefense>67</normalDefense>
-			<maxHP>575</maxHP>
+			<maxHP>147</maxHP>
 		</stat>
 		<stat>
 			<level>28</level>
@@ -284,7 +284,7 @@
 			<specialDefense>78</specialDefense>
 			<normalAttack>83</normalAttack>
 			<normalDefense>68</normalDefense>
-			<maxHP>595</maxHP>
+			<maxHP>152</maxHP>
 		</stat>
 		<stat>
 			<level>29</level>
@@ -293,7 +293,7 @@
 			<specialDefense>79</specialDefense>
 			<normalAttack>84</normalAttack>
 			<normalDefense>69</normalDefense>
-			<maxHP>615</maxHP>
+			<maxHP>157</maxHP>
 		</stat>
 		<stat>
 			<level>30</level>
@@ -302,7 +302,7 @@
 			<specialDefense>80</specialDefense>
 			<normalAttack>85</normalAttack>
 			<normalDefense>70</normalDefense>
-			<maxHP>635</maxHP>
+			<maxHP>162</maxHP>
 		</stat>
 		<stat>
 			<level>31</level>
@@ -311,7 +311,7 @@
 			<specialDefense>81</specialDefense>
 			<normalAttack>86</normalAttack>
 			<normalDefense>71</normalDefense>
-			<maxHP>655</maxHP>
+			<maxHP>167</maxHP>
 		</stat>
 		<stat>
 			<level>32</level>
@@ -320,7 +320,7 @@
 			<specialDefense>82</specialDefense>
 			<normalAttack>87</normalAttack>
 			<normalDefense>72</normalDefense>
-			<maxHP>675</maxHP>
+			<maxHP>172</maxHP>
 		</stat>
 		<stat>
 			<level>33</level>
@@ -329,7 +329,7 @@
 			<specialDefense>83</specialDefense>
 			<normalAttack>88</normalAttack>
 			<normalDefense>73</normalDefense>
-			<maxHP>695</maxHP>
+			<maxHP>177</maxHP>
 		</stat>
 		<stat>
 			<level>34</level>
@@ -338,7 +338,7 @@
 			<specialDefense>84</specialDefense>
 			<normalAttack>89</normalAttack>
 			<normalDefense>74</normalDefense>
-			<maxHP>715</maxHP>
+			<maxHP>182</maxHP>
 		</stat>
 		<stat>
 			<level>35</level>
@@ -347,7 +347,7 @@
 			<specialDefense>85</specialDefense>
 			<normalAttack>90</normalAttack>
 			<normalDefense>75</normalDefense>
-			<maxHP>735</maxHP>
+			<maxHP>187</maxHP>
 		</stat>
 		<stat>
 			<level>36</level>
@@ -356,7 +356,7 @@
 			<specialDefense>86</specialDefense>
 			<normalAttack>91</normalAttack>
 			<normalDefense>76</normalDefense>
-			<maxHP>755</maxHP>
+			<maxHP>192</maxHP>
 		</stat>
 		<stat>
 			<level>37</level>
@@ -365,7 +365,7 @@
 			<specialDefense>87</specialDefense>
 			<normalAttack>92</normalAttack>
 			<normalDefense>77</normalDefense>
-			<maxHP>775</maxHP>
+			<maxHP>197</maxHP>
 		</stat>
 		<stat>
 			<level>38</level>
@@ -374,7 +374,7 @@
 			<specialDefense>88</specialDefense>
 			<normalAttack>93</normalAttack>
 			<normalDefense>78</normalDefense>
-			<maxHP>795</maxHP>
+			<maxHP>202</maxHP>
 		</stat>
 		<stat>
 			<level>39</level>
@@ -383,7 +383,7 @@
 			<specialDefense>89</specialDefense>
 			<normalAttack>94</normalAttack>
 			<normalDefense>79</normalDefense>
-			<maxHP>815</maxHP>
+			<maxHP>207</maxHP>
 		</stat>
 		<stat>
 			<level>40</level>
@@ -392,7 +392,7 @@
 			<specialDefense>90</specialDefense>
 			<normalAttack>95</normalAttack>
 			<normalDefense>80</normalDefense>
-			<maxHP>835</maxHP>
+			<maxHP>212</maxHP>
 		</stat>
 		<stat>
 			<level>41</level>
@@ -401,7 +401,7 @@
 			<specialDefense>91</specialDefense>
 			<normalAttack>96</normalAttack>
 			<normalDefense>81</normalDefense>
-			<maxHP>855</maxHP>
+			<maxHP>217</maxHP>
 		</stat>
 		<stat>
 			<level>42</level>
@@ -410,7 +410,7 @@
 			<specialDefense>92</specialDefense>
 			<normalAttack>97</normalAttack>
 			<normalDefense>82</normalDefense>
-			<maxHP>875</maxHP>
+			<maxHP>222</maxHP>
 		</stat>
 		<stat>
 			<level>43</level>
@@ -419,7 +419,7 @@
 			<specialDefense>93</specialDefense>
 			<normalAttack>98</normalAttack>
 			<normalDefense>83</normalDefense>
-			<maxHP>895</maxHP>
+			<maxHP>227</maxHP>
 		</stat>
 		<stat>
 			<level>44</level>
@@ -428,7 +428,7 @@
 			<specialDefense>94</specialDefense>
 			<normalAttack>99</normalAttack>
 			<normalDefense>84</normalDefense>
-			<maxHP>915</maxHP>
+			<maxHP>232</maxHP>
 		</stat>
 		<stat>
 			<level>45</level>
@@ -437,7 +437,7 @@
 			<specialDefense>95</specialDefense>
 			<normalAttack>100</normalAttack>
 			<normalDefense>85</normalDefense>
-			<maxHP>935</maxHP>
+			<maxHP>237</maxHP>
 		</stat>
 		<stat>
 			<level>46</level>
@@ -446,7 +446,7 @@
 			<specialDefense>96</specialDefense>
 			<normalAttack>101</normalAttack>
 			<normalDefense>86</normalDefense>
-			<maxHP>955</maxHP>
+			<maxHP>242</maxHP>
 		</stat>
 		<stat>
 			<level>47</level>
@@ -455,7 +455,7 @@
 			<specialDefense>97</specialDefense>
 			<normalAttack>102</normalAttack>
 			<normalDefense>87</normalDefense>
-			<maxHP>975</maxHP>
+			<maxHP>247</maxHP>
 		</stat>
 		<stat>
 			<level>48</level>
@@ -464,7 +464,7 @@
 			<specialDefense>98</specialDefense>
 			<normalAttack>103</normalAttack>
 			<normalDefense>88</normalDefense>
-			<maxHP>995</maxHP>
+			<maxHP>252</maxHP>
 		</stat>
 		<stat>
 			<level>49</level>
@@ -473,7 +473,7 @@
 			<specialDefense>99</specialDefense>
 			<normalAttack>104</normalAttack>
 			<normalDefense>89</normalDefense>
-			<maxHP>1015</maxHP>
+			<maxHP>257</maxHP>
 		</stat>
 		<stat>
 			<level>50</level>
@@ -482,7 +482,7 @@
 			<specialDefense>100</specialDefense>
 			<normalAttack>105</normalAttack>
 			<normalDefense>90</normalDefense>
-			<maxHP>1035</maxHP>
+			<maxHP>262</maxHP>
 		</stat>
 		<stat>
 			<level>51</level>
@@ -491,7 +491,7 @@
 			<specialDefense>101</specialDefense>
 			<normalAttack>106</normalAttack>
 			<normalDefense>91</normalDefense>
-			<maxHP>1055</maxHP>
+			<maxHP>267</maxHP>
 		</stat>
 		<stat>
 			<level>52</level>
@@ -500,7 +500,7 @@
 			<specialDefense>102</specialDefense>
 			<normalAttack>107</normalAttack>
 			<normalDefense>92</normalDefense>
-			<maxHP>1075</maxHP>
+			<maxHP>272</maxHP>
 		</stat>
 		<stat>
 			<level>53</level>
@@ -509,7 +509,7 @@
 			<specialDefense>103</specialDefense>
 			<normalAttack>108</normalAttack>
 			<normalDefense>93</normalDefense>
-			<maxHP>1095</maxHP>
+			<maxHP>277</maxHP>
 		</stat>
 		<stat>
 			<level>54</level>
@@ -518,7 +518,7 @@
 			<specialDefense>104</specialDefense>
 			<normalAttack>109</normalAttack>
 			<normalDefense>94</normalDefense>
-			<maxHP>1115</maxHP>
+			<maxHP>282</maxHP>
 		</stat>
 		<stat>
 			<level>55</level>
@@ -527,7 +527,7 @@
 			<specialDefense>105</specialDefense>
 			<normalAttack>110</normalAttack>
 			<normalDefense>95</normalDefense>
-			<maxHP>1135</maxHP>
+			<maxHP>287</maxHP>
 		</stat>
 		<stat>
 			<level>56</level>
@@ -536,7 +536,7 @@
 			<specialDefense>106</specialDefense>
 			<normalAttack>111</normalAttack>
 			<normalDefense>96</normalDefense>
-			<maxHP>1155</maxHP>
+			<maxHP>292</maxHP>
 		</stat>
 		<stat>
 			<level>57</level>
@@ -545,7 +545,7 @@
 			<specialDefense>107</specialDefense>
 			<normalAttack>112</normalAttack>
 			<normalDefense>97</normalDefense>
-			<maxHP>1175</maxHP>
+			<maxHP>297</maxHP>
 		</stat>
 		<stat>
 			<level>58</level>
@@ -554,7 +554,7 @@
 			<specialDefense>108</specialDefense>
 			<normalAttack>113</normalAttack>
 			<normalDefense>98</normalDefense>
-			<maxHP>1195</maxHP>
+			<maxHP>302</maxHP>
 		</stat>
 		<stat>
 			<level>59</level>
@@ -563,7 +563,7 @@
 			<specialDefense>109</specialDefense>
 			<normalAttack>114</normalAttack>
 			<normalDefense>99</normalDefense>
-			<maxHP>1215</maxHP>
+			<maxHP>307</maxHP>
 		</stat>
 		<stat>
 			<level>60</level>
@@ -572,7 +572,7 @@
 			<specialDefense>110</specialDefense>
 			<normalAttack>115</normalAttack>
 			<normalDefense>100</normalDefense>
-			<maxHP>1235</maxHP>
+			<maxHP>312</maxHP>
 		</stat>
 		<stat>
 			<level>61</level>
@@ -581,7 +581,7 @@
 			<specialDefense>111</specialDefense>
 			<normalAttack>116</normalAttack>
 			<normalDefense>101</normalDefense>
-			<maxHP>1255</maxHP>
+			<maxHP>317</maxHP>
 		</stat>
 		<stat>
 			<level>62</level>
@@ -590,7 +590,7 @@
 			<specialDefense>112</specialDefense>
 			<normalAttack>117</normalAttack>
 			<normalDefense>102</normalDefense>
-			<maxHP>1275</maxHP>
+			<maxHP>322</maxHP>
 		</stat>
 		<stat>
 			<level>63</level>
@@ -599,7 +599,7 @@
 			<specialDefense>113</specialDefense>
 			<normalAttack>118</normalAttack>
 			<normalDefense>103</normalDefense>
-			<maxHP>1295</maxHP>
+			<maxHP>327</maxHP>
 		</stat>
 		<stat>
 			<level>64</level>
@@ -608,7 +608,7 @@
 			<specialDefense>114</specialDefense>
 			<normalAttack>119</normalAttack>
 			<normalDefense>104</normalDefense>
-			<maxHP>1315</maxHP>
+			<maxHP>332</maxHP>
 		</stat>
 		<stat>
 			<level>65</level>
@@ -617,7 +617,7 @@
 			<specialDefense>115</specialDefense>
 			<normalAttack>120</normalAttack>
 			<normalDefense>105</normalDefense>
-			<maxHP>1335</maxHP>
+			<maxHP>337</maxHP>
 		</stat>
 		<stat>
 			<level>66</level>
@@ -626,7 +626,7 @@
 			<specialDefense>116</specialDefense>
 			<normalAttack>121</normalAttack>
 			<normalDefense>106</normalDefense>
-			<maxHP>1355</maxHP>
+			<maxHP>342</maxHP>
 		</stat>
 		<stat>
 			<level>67</level>
@@ -635,7 +635,7 @@
 			<specialDefense>117</specialDefense>
 			<normalAttack>122</normalAttack>
 			<normalDefense>107</normalDefense>
-			<maxHP>1375</maxHP>
+			<maxHP>347</maxHP>
 		</stat>
 		<stat>
 			<level>68</level>
@@ -644,7 +644,7 @@
 			<specialDefense>118</specialDefense>
 			<normalAttack>123</normalAttack>
 			<normalDefense>108</normalDefense>
-			<maxHP>1395</maxHP>
+			<maxHP>352</maxHP>
 		</stat>
 		<stat>
 			<level>69</level>
@@ -653,7 +653,7 @@
 			<specialDefense>119</specialDefense>
 			<normalAttack>124</normalAttack>
 			<normalDefense>109</normalDefense>
-			<maxHP>1415</maxHP>
+			<maxHP>357</maxHP>
 		</stat>
 		<stat>
 			<level>70</level>
@@ -662,7 +662,7 @@
 			<specialDefense>120</specialDefense>
 			<normalAttack>125</normalAttack>
 			<normalDefense>110</normalDefense>
-			<maxHP>1435</maxHP>
+			<maxHP>362</maxHP>
 		</stat>
 		<stat>
 			<level>71</level>
@@ -671,7 +671,7 @@
 			<specialDefense>121</specialDefense>
 			<normalAttack>126</normalAttack>
 			<normalDefense>111</normalDefense>
-			<maxHP>1455</maxHP>
+			<maxHP>367</maxHP>
 		</stat>
 		<stat>
 			<level>72</level>
@@ -680,7 +680,7 @@
 			<specialDefense>122</specialDefense>
 			<normalAttack>127</normalAttack>
 			<normalDefense>112</normalDefense>
-			<maxHP>1475</maxHP>
+			<maxHP>372</maxHP>
 		</stat>
 		<stat>
 			<level>73</level>
@@ -689,7 +689,7 @@
 			<specialDefense>123</specialDefense>
 			<normalAttack>128</normalAttack>
 			<normalDefense>113</normalDefense>
-			<maxHP>1495</maxHP>
+			<maxHP>377</maxHP>
 		</stat>
 		<stat>
 			<level>74</level>
@@ -698,7 +698,7 @@
 			<specialDefense>124</specialDefense>
 			<normalAttack>129</normalAttack>
 			<normalDefense>114</normalDefense>
-			<maxHP>1515</maxHP>
+			<maxHP>382</maxHP>
 		</stat>
 		<stat>
 			<level>75</level>
@@ -707,9 +707,10 @@
 			<specialDefense>125</specialDefense>
 			<normalAttack>130</normalAttack>
 			<normalDefense>115</normalDefense>
-			<maxHP>1535</maxHP>
+			<maxHP>387</maxHP>
 		</stat>
 	</levelStats>
+
 
 	<levelExps>
 		<exp>
