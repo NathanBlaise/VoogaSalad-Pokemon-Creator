@@ -1,44 +1,51 @@
 package engine.UI;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 
-
-/**
- * Made for UTILITY purposes, we use pokemonLabel
- * @author nathanlewis
- *
- */
-public class ScrollingLabel extends Label {
+public class PokemonLabel extends Label {
 	
+	private final int FONTSIZE = 12;
 	private String myString;
 	private Label myLabel;
+	private AnimationTimer timer;
 	
-	public ScrollingLabel() {
+	public PokemonLabel() {
 		super();
+		this.setFont(getPokemonFont());
 	}
 	
-	public ScrollingLabel(String string) {
+	public PokemonLabel(String string) {
 		super(string);
+		this.setFont(getPokemonFont());
 	}
 	
-	public ScrollingLabel(String string, Font f) {
-		super(string);
-		this.setFont(f);
+	
+	/**
+	 * @return the specific Pokemon font
+	 */
+	public Font getPokemonFont() {
+		Font f = new Font(30) ;
+		try {
+			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), FONTSIZE);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return f;
 	}
 	
-	public ScrollingLabel(Font f) {
-		super();
-		this.setFont(f);
-	}
 	
 	public void animateText() {
 		myString = this.getText();
 		this.setText("");
 		myLabel = this;
-			AnimationTimer timer = new AnimationTimer() {
+			timer = new AnimationTimer() {
 				private int count = 0;
 				private double lastUpdate = 0;
 				private String temp;
@@ -57,5 +64,4 @@ public class ScrollingLabel extends Label {
 				
 			}; timer.start();
 	} 
-	
 }

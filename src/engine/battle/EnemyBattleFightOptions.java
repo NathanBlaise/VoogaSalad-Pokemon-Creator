@@ -24,8 +24,7 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	private Button cancel=new Button("Enemy Pokemon's move");
 
 	
-	public EnemyBattleFightOptions(
-			Pokemon ap, Pokemon ep, BattleScene bs) {
+	public EnemyBattleFightOptions(Pokemon ap, Pokemon ep, BattleScene bs) {
 		super(ap, ep,bs);
 		mainScene = bs;
 	}
@@ -47,36 +46,25 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	  bfo=super.battleScene.getMyBattleScene();	
 	  if (battleScene.getRootChildren().contains(bfo.getHBox())) {
 		  battleScene.rootRemove(bfo.getHBox());
-
 	  }
 	  super.hbox=ButtonLayout(super.buttonArr);
 	  battleScene.rootAdd(hbox);
 	  cancel.setOnAction((event) -> {
 		  performMove();
-		  int newActiveHP=activePokemon.getCurrentStat().getHP();
-		  int newEnemyHP=enemyPokemon.getCurrentStat().getHP();
-		  //reverse because now it is reversed
-		  battleScene.getActivePokemonHP().setText(enemyPokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newEnemyHP);
-		  battleScene.getEnemyPokemonHP().setText(activePokemon.getNickName()+System.getProperty("line.separator")+"Hp: "+newActiveHP);
 		  changeScene();
 	  });
 	}
   
   
   private void performMove() {
-	  
-	
-	  
+	    
 	  int numberOfMoves=super.activePokemon.getAvailableMoves().size();
 	  Random rand=new Random();
 	  int thisMove=rand.nextInt(numberOfMoves);
-	  
 	  Move move=super.activePokemon.getAvailableMoves().get(thisMove);
 	  move.move(super.activePokemon, super.enemyPokemon);
-	  System.out.println(move.getMoveName());
-	  String currentMessage="Oh no! It performs "+move.getMoveName()+" to you!";
-	  super.battleScene.getActionMessage().setText(currentMessage);
-		 
+	  super.battleScene.setMessage("Oh no! "+ enemyPokemon.getNickName() + " performed "+move.getMoveName()+"!");
+	  
   }
   
   
