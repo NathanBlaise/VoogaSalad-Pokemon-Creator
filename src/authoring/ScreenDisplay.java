@@ -11,7 +11,7 @@ public class ScreenDisplay {
 		// Final Variable
 		public double FRAMES_PER_SECOND = 1;
 		public double MILLISECOND_DELAY = 1000 / FRAMES_PER_SECOND;
-		public double SECOND_DELAY = 100.0 / FRAMES_PER_SECOND;
+		public double SECOND_DELAY = 1.0 / FRAMES_PER_SECOND;
 		
 		//Private Variable
 		protected Timeline animation = new Timeline();

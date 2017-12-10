@@ -42,7 +42,10 @@ import javafx.scene.text.Font;
 		private Map<Tile, Image> imageMap = new HashMap<Tile, Image>();
 		private ArrayList<Tile> tiles;
 
-		
+		/**
+		 * Constructor for the class
+		 * @param tiles Available tiles for the world
+		 */
 		public TileMenu(List<Tile> tiles){
 
 			this.tiles = new ArrayList<Tile>(tiles);

@@ -6,7 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import data.Database;
-
+/**
+ * 
+ * @author Dan Sun for commenting
+ *
+ */
 public class DatabaseLoader {
 
 	private final static String path = "src"+File.separator+"resources"+File.separator+"databases";
@@ -71,15 +75,21 @@ public class DatabaseLoader {
 		return databasePath+File.separator+databaseTypeName+type+File.separator+name+".xml";
 	}
 	
-
-	public static Database loadDatabase(String type, String pathName) {
+	/**
+	 * 
+	 * @param gameType Type of the game
+	 * @param pathName path of the XML file
+	 * @return The database specified by the XML file if it exists,
+	 * otherwise returns default database of this game
+	 */
+	public static Database loadDatabase(String gameType, String pathName) {
 		Database result; 
 		File f = new File(pathName);
 		if(f.exists()) { 
 			result = (Database) new xmlReader<Database>().readXML(pathName);
 			return result;
 		}else{
-			result = getDefaultDatabase(type);
+			result = getDefaultDatabase(gameType);
 			return result;
 		}
 	}
