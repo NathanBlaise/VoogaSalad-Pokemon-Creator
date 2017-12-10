@@ -32,7 +32,7 @@ import util.FilePathConverter;
 	/**
 	 * The tileMenu which can select tiles displayed in a menu
 	 * @author supertony cy122
-	 *
+	 * @author Dan Sun
 	 */
 	public class TileMenu extends TitledPane{
 

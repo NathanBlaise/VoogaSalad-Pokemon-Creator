@@ -5,7 +5,8 @@ import java.io.File;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 /**
- * 
+ * The class provides the functionality of producing image of the 
+ * desired width and height from a path
  * @author Dan Sun for commenting
  *
  */
