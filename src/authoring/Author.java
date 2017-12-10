@@ -8,8 +8,10 @@ import javafx.stage.Stage;
 /**
  * 
  * @author cy122, hy133
+ * @author Dan Sun for refactoring
  * 
- * Author holds the key components and display the authoring environment to user
+ * Author holds the key components and provides the 
+ * functionality needed by the authoring window
  *
  */
 

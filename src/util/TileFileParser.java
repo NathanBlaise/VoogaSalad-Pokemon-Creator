@@ -42,7 +42,7 @@ public class TileFileParser {
     
     
     /**
-     * get the tile according to the tile
+     * get the tile according to the file
      * @param file - the file
      * @return
      * @throws ParserConfigurationException

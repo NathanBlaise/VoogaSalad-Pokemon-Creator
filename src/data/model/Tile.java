@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * for saving available tiles
+ * passive data object for storing tile information
+ * 
  * @author cy122
  *
  */

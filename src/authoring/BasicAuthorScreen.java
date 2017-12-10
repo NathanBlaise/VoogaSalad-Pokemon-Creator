@@ -11,16 +11,13 @@ public class BasicAuthorScreen extends ScreenDisplay{
 	//final variable
 	private final static int WIDTH = 1000;
 	private final static int HEIGHT = 600;
-
+	private final static int BUTTONX = 600;
+	private final static int BUTTONY = 500;
 	
 	//instance variable
 	private Button NextScene;
 	private Button BackScene;
 	private StageDelegate stageHelper;
-
-	
-	private final static int BUTTONX = 600;
-	private final static int BUTTONY = 500;
 
 	public BasicAuthorScreen(int width, int height, Paint background,StageDelegate stageHelper) {
 		super(width, height, background);
@@ -58,7 +55,7 @@ public class BasicAuthorScreen extends ScreenDisplay{
 		BackScene.addEventHandler(MouseEvent.MOUSE_CLICKED, e->stageHelper.BackButtonPressed());
 		
 		NextScene.getStylesheets().add("resources/sceneStyle.css");
-        BackScene.getStylesheets().add("resources/sceneStyle.css");
+		BackScene.getStylesheets().add("resources/sceneStyle.css");
 		
 		ButtonBox.getChildren().add(BackScene);
 		ButtonBox.getChildren().add(NextScene);
