@@ -101,15 +101,13 @@ public class BattleFightOptions {
 					enemyPokemon.printCurrentInfo();
 					//Update Health Bars
 					battleScene.updateHealthBars(activePokemon.getCurrentStat().getHP(), enemyPokemon.getCurrentStat().getHP());
-					if(activePokemon.isDead()) {
-						showEnding("Game end. Your pokemon is dead.");
-						battleScene.getPlayer().deletePokemon(activePokemon);
-					}
+					
 					
 					if (enemyPokemon.isDead()) {
-						showEnding("You have catched the enemy pokemon successfully!");
+						showEnding("You have caught the enemy pokemon successfully!");
 						enemyPokemon.resetCurrentStat();
 						battleScene.getPlayer().addPokemon(enemyPokemon);
+						//remove the enemy pokemon
 						
 					}
 				});
@@ -127,7 +125,7 @@ public class BattleFightOptions {
 	}
 	
 	//show the game end message
-	private void showEnding(String message) {
+	protected void showEnding(String message) {
 		Text end=new Text(message);
 		final Stage dialog = new Stage();
 		dialog.initModality(Modality.APPLICATION_MODAL);

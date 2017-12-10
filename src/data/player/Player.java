@@ -90,7 +90,8 @@ public class Player extends PacmanPlayer{
 			if (remove==true) {
 				pokemons[i-1]=pokemons[i];
 			}
-			else if(pokemons[i]!=null && pokemons[i].getNickName()==pokemon.getNickName()){
+			else if(pokemons[i]!=null && pokemons[i].getNickName().equals(pokemon.getNickName())){
+			
 				this.pokemons[i] = null;
 				remove=true;
 			}
