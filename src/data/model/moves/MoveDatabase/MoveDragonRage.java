@@ -15,6 +15,7 @@ public class MoveDragonRage extends Move{
 	}
 
 	private static void damage(Pokemon friend, Pokemon enemy) {
+	    	//inflicts a constant 40 points of damage to the enemy pokemon
 		enemy.getCurrentStat().setHP(enemy.getCurrentStat().getHP()-40);
 	}
 }
