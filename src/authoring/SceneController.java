@@ -17,7 +17,7 @@ public class SceneController {
 	private SceneList sceneList;
 	public int currentIndex = 0;
 	
-	public SceneController(StageDelegate stageDelegate){
+	public SceneController(StageDelegate stageDelegate, String gameType){
 		sceneList = new SceneList(Color.WHITE,stageDelegate);	
 		
 		// create an Editing Map Screen

@@ -117,7 +117,7 @@ public class StartMenu {
 			@Override
 			public Integer apply(String gameType, Database database, String savePath) {
 			    	//function to create and  go to authoring environment 
-				StageDelegate editor = new Author(database, savePath, editorStage);
+				StageDelegate editor = new Author(database, savePath, editorStage,gameType);
 				editor.toFirstAuthorScene();
 				return null;
 			}
