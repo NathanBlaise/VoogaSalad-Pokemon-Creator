@@ -1,4 +1,4 @@
-<defaultNPC>
+<defaultTile>
 	<name>House</name>
 	<wholePic>images/houseSplitedWithBackground/House.jpg</wholePic>
 	<obstacle>true</obstacle>
@@ -13,4 +13,4 @@
 	<imagePaths>images/houseSplitedWithBackground/House7.jpg</imagePaths>
 	<imagePaths>images/houseSplitedWithBackground/House8.jpg</imagePaths>
 	<imagePaths>images/houseSplitedWithBackground/House9.jpg</imagePaths>
-</defaultNPC>
+</defaultTile>

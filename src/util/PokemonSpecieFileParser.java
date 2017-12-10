@@ -20,7 +20,7 @@ import data.model.moves.Move;
 import util.pokemonSpecieDataParser.LeafElementParser.ElementalParser;
 import util.pokemonSpecieDataParser.LeafElementParser.MaxLevelParser;
 import util.pokemonSpecieDataParser.LeafElementParser.NameParser;
-//import util.pokemonSpecieDataParser.LeafElementParser.PokemonSpecieIndexParser;
+import util.pokemonSpecieDataParser.LeafElementParser.PokemonSpecieIndexParser;
 import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelExpsParser;
 import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelImagesParser;
 import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelMovesParser;

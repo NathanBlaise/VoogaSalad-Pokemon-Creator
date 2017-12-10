@@ -1,13 +1,13 @@
 package authoring;
+
+import javafx.stage.Stage;
+import data.Database;
+
 /**
  * Interface that defines the functionality shared 
  * among game environments such as authoring and playing
  * @author Dan Sun for commenting
  */
-import javafx.stage.Stage;
-import data.Database;
-
-
 public interface StageDelegate {
 
 	/**

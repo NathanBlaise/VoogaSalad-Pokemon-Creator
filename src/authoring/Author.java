@@ -8,15 +8,17 @@ import javafx.stage.Stage;
 /**
  * 
  * @author cy122, hy133
+ * @author Dan Sun for refactoring
  * 
- * Author holds the key components and display the authoring environment to user
+ * Author holds the key components and provides the 
+ * functionality needed by the authoring window
  *
  */
 
 public class Author implements StageDelegate{
 	/*final variable*/
-	final static int EDITMAPSCENE = 0;
-	final static int EDITEVENTIMAGESCENE = 1;
+//	final static int EDITMAPSCENE = 0;
+//	final static int EDITEVENTIMAGESCENE = 1;
 	/*Instance Variable*/
 	private Stage myStage;
 //	private SceneList myList;
@@ -27,7 +29,7 @@ public class Author implements StageDelegate{
 	/**
 	 * 
 	 * @param database - the database
-	 * @param savePath - the path to save the Database
+	 * @param savePath - the path to save the database
 	 * @param primaryStage - the stage to show the data
 	 */
 	public Author(Database database, String savePath, Stage primaryStage, String gameType){
@@ -68,6 +70,7 @@ public class Author implements StageDelegate{
 
 	@Override
 	public void toFirstAuthorScene() {
+	        saveDatabase();
 		scControl.goToFirstEditingScene(myStage);
 		myStage.centerOnScreen();
 		//System.out.println("0");	

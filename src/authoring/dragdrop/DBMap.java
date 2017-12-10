@@ -17,7 +17,7 @@ import javafx.scene.layout.GridPane;
  * @author supertony cy122
  *
  */
-public class DBMap implements cellDelegate {
+public class DBMap implements CellDelegate {
 	/*final variable*/
 	private int   PANE_WIDTH_NUMBER;
 	private int  PANE_HEIGHT_NUMBER;

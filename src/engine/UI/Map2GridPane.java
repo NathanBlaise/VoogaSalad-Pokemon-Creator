@@ -62,6 +62,7 @@ public class Map2GridPane {
 			return result;
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.exit(1);
 			return null;
 		}
 	}

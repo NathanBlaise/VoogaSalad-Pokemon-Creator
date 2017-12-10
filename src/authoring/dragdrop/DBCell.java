@@ -47,10 +47,10 @@ public class DBCell {
 	private int row;
 	private int col;
 	private GridPane myGrid;
-	private cellDelegate app;
+	private CellDelegate app;
 	
 	/*ordinary cell constructor*/
-	public DBCell(int row, int col, Cell cell, GridPane grid, cellDelegate app) {
+	public DBCell(int row, int col, Cell cell, GridPane grid, CellDelegate app) {
 		this.row = row;
 		this.col = col;
 		this.cell = cell;

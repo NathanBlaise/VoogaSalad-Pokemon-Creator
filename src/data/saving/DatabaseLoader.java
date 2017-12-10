@@ -6,7 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import data.Database;
-
+/**
+ * 
+ * @author Dan Sun for commenting
+ *
+ */
 public class DatabaseLoader {
 
 	private final static String path = "src"+File.separator+"resources"+File.separator+"databases";
@@ -40,7 +44,7 @@ public class DatabaseLoader {
 	
 	/**
 	 * 
-	 * @return - A mapping form game name to absolute path its XML file 
+	 * @return - A mapping form game name to absolute path of its XML file 
 	 */
 	public static Map<String, String> getAvailableDatabase(String path) {
 		File f = new File(path);
@@ -62,24 +66,31 @@ public class DatabaseLoader {
 	}
 
 	/**
-	 * 
-	 * @param name - a simple name
-	 * @return
+	 * Generates the path to store the XML file, given the type of the game
+	 * and the name of this specific game
+	 * @param type The type of the game
+	 * @param name The name of this specific game
+	 * @return The path to store the XML file
 	 */
 	public static String getDatabasePath(String type, String name) {
-		// TODO Auto-generated method stub
 		return databasePath+File.separator+databaseTypeName+type+File.separator+name+".xml";
 	}
 	
-
-	public static Database loadDatabase(String type, String pathName) {
+	/**
+	 * 
+	 * @param gameType Type of the game
+	 * @param pathName path of the XML file
+	 * @return The database specified by the XML file if it exists,
+	 * otherwise returns default database of this game
+	 */
+	public static Database loadDatabase(String gameType, String pathName) {
 		Database result; 
 		File f = new File(pathName);
 		if(f.exists()) { 
 			result = (Database) new xmlReader<Database>().readXML(pathName);
 			return result;
 		}else{
-			result = getDefaultDatabase(type);
+			result = getDefaultDatabase(gameType);
 			return result;
 		}
 	}
