@@ -1,5 +1,5 @@
-<defaultNPC>
+<defaultTile>
 	<name>Wall</name>
 	<wholePic>images/tiles/tiles4shop/wall.png</wholePic>
 	<obstacle>false</obstacle>
-</defaultNPC>
+</defaultTile>

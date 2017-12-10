@@ -37,18 +37,10 @@ public class CreateDefaultDatabase{
 			Model model = new Model(new ArrayList<NPC>(), new ArrayList<PokemonSpecie>(), new ArrayList<Tile>());
 			new NPCCollection().passNPCToModel(model);
 			new TileCollection().passTileToModel(model);
-			
-			
-			PokemonSpecieCollection species = new PokemonSpecieCollection();
-			species.passSpeciesToModel(model);
-			
-			
-			
-			//add new specie
+			new PokemonSpecieCollection().passSpeciesToModel(model);
+			//add new specie for the purpose of the demo
 			ArrayList<PokemonSpecie> newSpecies = model.getPokemonSpecies();
-			
 			// from index 1 to 386; retrieve the pokemon image from the database
-			
 			for (int num = 1; num < 386; num ++) {
 				PokemonSpecie specie1 = new PokemonSpecie(newSpecies.get(0));
 				specie1.setSpecieName("Tony " + num);
@@ -58,12 +50,11 @@ public class CreateDefaultDatabase{
 				newSpecies.add(specie1);
 				model.setPokemonSpecies(newSpecies);
 			}
-			
-		
-			
 			return model;
 		}
-
+		/**
+		 * Creates the XML file of the default Pokemon database
+		 */
 		public CreateDefaultDatabase(){
 			String path = "src/resources/Databases/defaultDatabases_Pokemon.xml";
 			GameMap map = createMap();

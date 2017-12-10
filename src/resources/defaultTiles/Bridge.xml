@@ -1,5 +1,5 @@
-<defaultNPC>
+<defaultTile>
 	<name>bridge</name>
 	<wholePic>images/tiles/bridge.png</wholePic>
 	<obstacle>false</obstacle>
-</defaultNPC>
+</defaultTile>
