@@ -77,6 +77,8 @@ public class Model implements Serializable{
 		this.tiles = new ArrayList<Tile>(tiles);
 	}
 	
+	
+	
 	public ArrayList<NPC> getNPCs() {
 		return new ArrayList<NPC>(NPCs);
 	}

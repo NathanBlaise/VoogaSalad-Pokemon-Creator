@@ -1,0 +1,4 @@
+<defaultPacmanEnemy>
+	<speed>5</speed>
+	<imagePath>images/NPC/CaptainMap.png</imagePath>	
+</defaultPacmanEnemy>
