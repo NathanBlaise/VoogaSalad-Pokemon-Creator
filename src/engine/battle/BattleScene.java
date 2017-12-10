@@ -3,9 +3,12 @@ package engine.battle;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import authoring.ScreenDisplay;
 import data.items.Item;
@@ -13,6 +16,7 @@ import data.model.NPC;
 import data.model.Pokemon;
 import data.model.moves.Move;
 import data.player.Player;
+import engine.Engine;
 import engine.UI.PokemonLabel;
 import engine.UI.ScrollingLabel;
 import engine.game.GameScene;
@@ -29,6 +33,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -53,14 +58,15 @@ import javafx.scene.input.MouseEvent;
 
 public class BattleScene extends ScreenDisplay{
 	
-	
+	private final int PLAYER_POKEMON_XPOS = 100;
+	private final int PLAYER_POKEMON_YPOS = 186;
 	private static final int LIST_OF_BAG_ITEMS_HEIGHT = 200;
 	private static final int LIST_OF_BAG_ITEMS_WIDTH = 150;
 	private final int BUTTONS_XPOS = 60;
 	private final int BUTTONS_YPOS = 370;
 	
 	String backgroundImage="file:images/item_list_background.jpg";
-
+    private BattleScene bs;
 	private Stage myStage;
 	private Canvas canvas;
 	private HBox	buttonBox;
@@ -75,12 +81,13 @@ public class BattleScene extends ScreenDisplay{
 	private ListView<String> listOfItems;
 	private ListView<String> listOfPokemons;
 	//an instance variable to show whose turn it is, 0 means player's turn to attack, 1 means NPC's turn.
+	private VBox activePokemonInfo;
 	
 	private HealthBar healthBarPlayer;
 	private HealthBar healthBarEnemy;
 	private PokemonLabel activePokemonHealth;
 	private PokemonLabel enemyPokemonHealth;
-	
+	private ImageView currentActivePokemon;
 	private PokemonLabel messageLabel;
 	
 	/**
@@ -106,6 +113,9 @@ public class BattleScene extends ScreenDisplay{
 		myStage.setWidth(width);
 		gui = new BattleGUI(canvas.getGraphicsContext2D(),width,height,activePokemon,enemyPokemon);
 		this.rootAdd(canvas);
+		currentActivePokemon=new ImageView(new Image(gui.backSpriteURL(activePokemon)));
+		this.rootAdd(currentActivePokemon,PLAYER_POKEMON_XPOS, PLAYER_POKEMON_YPOS);
+		
 		resetButtons();
 		printActiveHPInfo();
 		printEnemyHPInfo();
@@ -113,6 +123,7 @@ public class BattleScene extends ScreenDisplay{
 		messageLabel.setLayoutX(BUTTONS_XPOS);
 		messageLabel.setLayoutY(BUTTONS_YPOS);
 		this.rootAdd(messageLabel);
+		this.bs=this;
 	}
 	
 	
@@ -163,21 +174,21 @@ public class BattleScene extends ScreenDisplay{
 		button.setOnAction((event) -> {
 			this.rootRemove(listOfPokemons);
 			this.rootRemove(listOfItems);
-			//gc.drawImage(itemList, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS,100,200);
-//			ArrayList<Item> bags= mainPlayer.getItems();
+			
+			Map<String,Integer> bags= mainPlayer.getItems();
 			ArrayList<String> itemNames=new ArrayList<>();
-//			for (Item each:bags) {
-//				itemNames.add(each.getItemName());
-//			}
+			for (String each:bags.keySet()) {
 
-			//put itemNames in real code, but will hard code for now
-			itemNames.add("item1");
-			itemNames.add("item2");
-			itemNames.add("item3");
+				for (int i=0;i<bags.get(each);i++) {
+					itemNames.add(each);
+
+				};
+				
+			}
 			
 			listOfItems=addListView(itemNames,500,200);
-			System.out.println(listOfItems==null);
 			
+			itemListAction();
 		});
 	}
 
@@ -202,12 +213,11 @@ public class BattleScene extends ScreenDisplay{
 		button.setOnAction((event) -> {
 			//load list of pokemon
 			this.rootRemove(listOfItems);
-			this.rootRemove(listOfPokemons);
 			ArrayList<String> pokemonNames=new ArrayList<>();
 			for (Pokemon each:mainPlayer.getPokemons()) {
 				//check if the pokemon has nick name, if they has nick name, then the pokemon exists
 				if((each!=null) &&each.getNickName()!=null){
-					System.out.println(each.getNickName());
+					
 					pokemonNames.add(each.getNickName());
 				}
 				//System.out.println(each.getNickName());
@@ -217,7 +227,40 @@ public class BattleScene extends ScreenDisplay{
 		});
 	}
 	
-	
+	private void itemListAction() {
+		listOfItems.setOnMouseClicked(new EventHandler<MouseEvent>(){
+	          @Override
+	          public void handle(MouseEvent arg0) {
+
+	                 String item=listOfItems.getSelectionModel().getSelectedItems().get(0);
+	                 System.out.println("this is what i want "+item);
+	          
+					try {
+						Class<?> itemClass = Class.forName("data.items."+item);
+						Constructor<?> constructor = itemClass.getConstructor();
+		     			Item thisItem = (Item) constructor.newInstance();
+		     			thisItem.useItem(mainPlayer, activePokemon, enemyPokemon);
+		     			updateHealthBars(activePokemon.getCurrentStat().getHP(), enemyPokemon.getCurrentStat().getHP());
+		     			mainPlayer.deleteItem(item);
+		     			rootRemove(listOfItems);
+		     			bfo = new BattleFightOptions(activePokemon,enemyPokemon,bs);
+		     			ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,bs);
+		     			rootRemove(buttonBox);
+		     			ebfo.setUpScene();
+		     			
+					} catch (ClassNotFoundException | NoSuchMethodException
+							| SecurityException | InstantiationException
+							| IllegalAccessException | IllegalArgumentException
+							| InvocationTargetException e) {
+						
+						System.out.printf("type:%s, item not found!", item);
+					}
+	     			
+	               
+	          }
+	      });	
+		
+	}
 	
 	private void pokemonListAction() {
 		listOfPokemons.setOnMouseClicked(new EventHandler<MouseEvent>(){
@@ -228,11 +271,20 @@ public class BattleScene extends ScreenDisplay{
 	                 for (Pokemon each: mainPlayer.getPokemons()) {
 	                	     if (each.getNickName().equals(item)) {
 	                	    	     activePokemon=each;
+	                	    	     changeActiveHPInfo();
+	                	    	     resetActivePokemon();
+	                	    	     rootRemove(listOfPokemons);
 	                	    	     break;
 	                	     }
 	                 }   
 	          }
 	      });	
+	}
+	
+	
+	private void resetActivePokemon() {
+	
+		currentActivePokemon.setImage(new Image(gui.backSpriteURL(activePokemon)));
 	}
 	
 	
@@ -245,9 +297,21 @@ public class BattleScene extends ScreenDisplay{
 		});
 	}
 	
+	
+	public Canvas getCanvas() {
+		return canvas;
+	}
+	
+	public Player getPlayer() {
+		return mainPlayer;
+	}
 
 	public GameScene getGameScene() {
 		return gameScene;
+	}
+	
+	public HBox getButtonBox() {
+		return buttonBox;
 	}
 	
 	protected void setMessage(String string) {
@@ -256,7 +320,16 @@ public class BattleScene extends ScreenDisplay{
 	}
 	
 	protected void clearMessage() {
+		messageLabel.stopTimer();
 		messageLabel.setText("");
+	}
+	
+	
+	private void changeActiveHPInfo() {
+		this.rootRemove(activePokemonInfo);
+		printActiveHPInfo();
+		
+		
 	}
 	
 	/**
@@ -271,7 +344,7 @@ public class BattleScene extends ScreenDisplay{
 		activePokemonHealth = new PokemonLabel(activePokemon.getCurrentStat().getHP() + "/" + activePokemon.getCurrentStat().getMaxHP());
 		HBox healthBox = new HBox(10);
 		healthBox.getChildren().addAll(healthBarPlayer.getHealthBar(),activePokemonHealth);
-		VBox activePokemonInfo = new VBox(15);
+		activePokemonInfo = new VBox(15);
 		activePokemonInfo.getChildren().addAll(nameBox,healthBox);
 		
 		

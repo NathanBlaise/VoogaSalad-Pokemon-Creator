@@ -40,6 +40,9 @@ public class PokemonLabel extends Label {
 		return f;
 	}
 	
+	public void stopTimer() {
+		timer.stop();
+	}
 	
 	public void animateText() {
 		myString = this.getText();

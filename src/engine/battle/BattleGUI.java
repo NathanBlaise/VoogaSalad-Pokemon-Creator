@@ -10,6 +10,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -31,13 +32,13 @@ public class BattleGUI {
 	private final int ENEMY_HOME_YPOS = 145;
 	private final int ENEMY_POKEMON_XPOS = 400;
 	private final int ENEMY_POKEMON_YPOS = 60;
-	private final int PLAYER_POKEMON_XPOS = 100;
-	private final int PLAYER_POKEMON_YPOS = 186;
+	
 	
 	private GraphicsContext gc;
 	private Pokemon playerPokemon;
 	private Pokemon enemyPokemon;
 	protected Button[] buttonArr;
+	private ImageView currentActivePokemon;
 	
 	public BattleGUI(GraphicsContext gc, int width, int height, Pokemon pokemon1, Pokemon pokemon2) {
 		this.gc = gc;
@@ -46,16 +47,23 @@ public class BattleGUI {
 		setUpScreen();
 	}
 	
+	
+	
+	
+	
 	/*
 	 * Used to display and animate all objects initially when battle loaded
 	 */
 	private void setUpScreen() {
 		gc.drawImage(grassBattleBackground, 0, 0);
+		
+		
+		
 		gc.drawImage(grassBattleGrass1, PLAYER_HOME_XPOS, PLAYER_HOME_YPOS); //Needs to be animated
 		gc.drawImage(grassBattleGrass2, ENEMY_HOME_XPOS, ENEMY_HOME_YPOS); //Needs to be animated
 		gc.drawImage(battleBox,0,INFO_BOX_YPOS);
 		gc.drawImage(new Image(gifSpriteURL(enemyPokemon)),ENEMY_POKEMON_XPOS, ENEMY_POKEMON_YPOS);
-		gc.drawImage(new Image(backSpriteURL(playerPokemon)),PLAYER_POKEMON_XPOS ,PLAYER_POKEMON_YPOS);
+		//gc.drawImage(new Image(backSpriteURL(playerPokemon)),PLAYER_POKEMON_XPOS ,PLAYER_POKEMON_YPOS);
 		gc.drawImage(hpBoxPlayer, 350, 225);
 		gc.drawImage(hpBoxEnemy, 30, 50);
 	}
@@ -74,7 +82,7 @@ public class BattleGUI {
 	/*
 	 * Passed in the player's pokemon; return the pokemon pictures from the back
 	 */
-	private String backSpriteURL(Pokemon myPokemon) {
+	String backSpriteURL(Pokemon myPokemon) {
 		return "file:images/pokemon_back_sprites/"+myPokemon.getSpecieIndex(myPokemon.getCurrentLevel())+".png";
 	}
 	
