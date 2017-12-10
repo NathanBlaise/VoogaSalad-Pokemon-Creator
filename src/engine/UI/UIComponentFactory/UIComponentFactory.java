@@ -19,6 +19,12 @@ import javafx.util.Callback;
  */
 
 public class UIComponentFactory {
+    	/**
+    	 * creates an MenuItem with the specified action 
+    	 * @param title The title of the menu item created
+    	 * @param handler The action to perform when the MenuItem is acted upon
+    	 * @return The MenuItem created
+    	 */
 	static public MenuItem createMenuItem(String title, EventHandler<ActionEvent> handler){
 		MenuItem result =  new MenuItem(title);
 		result.setOnAction(handler);

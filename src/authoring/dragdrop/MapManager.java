@@ -38,8 +38,8 @@ import javafx.util.Callback;
  */
 public final class MapManager extends BorderPane{
 	
-	private ListView<GameMap> listView;
-	private Callback<List<GameMap>, Integer> saver;
+	private ListView<GameMap> mapListView;
+	private Callback<List<GameMap>, Integer> saver;//currently not used
 	private Database database;
 	private Tile defaultTile;
 	ScrollPane sp = new ScrollPane();
@@ -49,47 +49,49 @@ public final class MapManager extends BorderPane{
 		this.defaultTile = defaultTile;
 		this.saver = saver;
 		this.database = database;
-		listView = ListViewFactory.createListView(new ContextMenu(), forListView(),
+		mapListView = ListViewFactory.createListView(new ContextMenu(), specifyControlForListCell(),
 				new ChangeListener<GameMap>() {
 			@Override
 			public void changed(ObservableValue<? extends GameMap> observable,GameMap oldValue, GameMap newValue) {
 				// DO NOTHING
 			}   
-	    }, "add new instruction", "remove the last instruction");
+	    }, null, null);
 		for(int i=0; i<database.getMaps().size();i++){
 			GameMap temp = database.getMaps().get(i);
-			listView.getItems().add(temp);
+			mapListView.getItems().add(temp);
 		}
 		
-		ContextMenu contextMenu = ListViewFactory.createClickMenu(null, new ContextMenu(), "add new map", "remove currrent selected map", h->{addNewMap();}, h->{deleteSelectedMap();}); 
+		ContextMenu contextMenu = ListViewFactory.createClickMenu(null, new ContextMenu(), 
+			"add new map", "remove currrent selected map", h->{addNewMap();}, h->{deleteSelectedMap();}); 
 		
-		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		mapListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 	        @Override
 	        public void handle(MouseEvent event) {
 				if(event.getButton() == MouseButton.SECONDARY){
-					contextMenu.show(listView, event.getScreenX(), event.getScreenY());
+					contextMenu.show(mapListView, event.getScreenX(), event.getScreenY());
 				}else{
 					showSelectedMap();
 				}
-	        }
-	    });
-		listView.getItems().addListener(new ListChangeListener<GameMap>(){
+	        }});
+		mapListView.getItems().addListener(new ListChangeListener<GameMap>(){
 			@Override
 			public void onChanged(javafx.collections.ListChangeListener.Change<? extends GameMap> c) {
-				save();
+			    //save whenever the listView changes; i.e. whenever a map is 
+			    //created or deleted
+			    save(); 
 			}
 		});
 		
 		sp.setPrefSize(48*12, 48*10);
 		setCenter(sp);
 		showSelectedMap();
-		setRight(listView);
+		setRight(mapListView);
 	}
 	
 	private void showSelectedMap() {
-		int index = listView.getSelectionModel().getSelectedIndex()<0?0:listView.getSelectionModel().getSelectedIndex();
-		if(index<listView.getItems().size()){
-			GameMap selectedItem = listView.getItems().get(index);
+		int index = mapListView.getSelectionModel().getSelectedIndex()<0?0:mapListView.getSelectionModel().getSelectedIndex();
+		if(index<mapListView.getItems().size()){
+			GameMap selectedItem = mapListView.getItems().get(index);
 			GridPane map = new DBMap(database, selectedItem).getGrid();
 			sp.setContent(map);
 		}
@@ -103,7 +105,7 @@ public final class MapManager extends BorderPane{
 					newMap.setCell(i,j,new Cell(defaultTile.getWholePic(), true, defaultTile.isObstacle(), null));
 				}
 			}
-			listView.getItems().add(newMap);
+			mapListView.getItems().add(newMap);
 			GridPane map = new DBMap(database, newMap).getGrid();
 			sp.setContent(map);
 			return null;
@@ -111,24 +113,25 @@ public final class MapManager extends BorderPane{
 	}
 	
 	private void deleteSelectedMap(){
-		int index = listView.getSelectionModel().getSelectedIndex()<0?0:listView.getSelectionModel().getSelectedIndex();
-		if((index<listView.getItems().size())&&(listView.getItems().size()>1)){
-			listView.getItems().remove(index);
+		int index = mapListView.getSelectionModel().getSelectedIndex()<0?0:mapListView.getSelectionModel().getSelectedIndex();
+		if((index<mapListView.getItems().size())&&(mapListView.getItems().size()>1)){
+			mapListView.getItems().remove(index);
 		}
 	}
 
-	private Callback<ListView<GameMap>, ListCell<GameMap>> forListView() {
+	private Callback<ListView<GameMap>, ListCell<GameMap>> specifyControlForListCell() {
 		return list -> {
 			MapCell result = new MapCell();
 			result.textProperty().addListener((obs, oldItem, newItem) -> {
-				if ((newItem != null)&&(!newItem.equals(""))) {
-					result.getItem().setName(newItem);
-		        }
-		    });
+			    	//set name stored in the back to match with name display on the front end
+			    	if ((newItem != null)&&(!newItem.equals(""))) {
+				result.getItem().setName(newItem);
+			    }
+			});
 			result.setOnMouseClicked(new EventHandler<MouseEvent>() {
 		        @Override
 		        public void handle(MouseEvent event) {
-					showSelectedMap();
+		            showSelectedMap();
 		        }
 		    });
 			return result;
@@ -136,7 +139,7 @@ public final class MapManager extends BorderPane{
     }
 
 	private void save() {
-		ArrayList<GameMap> gameMapArray = new ArrayList<GameMap>(listView.getItems());
+		ArrayList<GameMap> gameMapArray = new ArrayList<GameMap>(mapListView.getItems());
 		database.setMaps(gameMapArray);
 		saver.call(gameMapArray);
 	}

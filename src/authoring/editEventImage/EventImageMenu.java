@@ -178,6 +178,7 @@ public class EventImageMenu extends TitledPane{
 		Tab tabSize = new Tab();
 		tabSize.setText(tabName);
 		tabSize.setContent(tabContext);
+		tabSize.setClosable(false);
 		tabMenu.getTabs().addAll(tabSize);
 	}
 }
