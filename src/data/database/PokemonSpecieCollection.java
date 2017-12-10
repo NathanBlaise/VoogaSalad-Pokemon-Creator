@@ -13,7 +13,7 @@ import org.xml.sax.SAXException;
 import data.model.Model;
 import data.model.PokemonSpecie;
 import util.FilePathConverter;
-import util.PokemonSpecieFileParser;
+import util.fileParsers.PokemonSpecieFileParser;
 
 /**
  * This class stores pokemon species that are avialable in a game

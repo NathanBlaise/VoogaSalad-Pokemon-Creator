@@ -19,9 +19,10 @@ import data.items.Item;
 
 public class Model implements Serializable{
 	private static final long serialVersionUID = -3434227257089326223L; //used for serialization
-	private ArrayList<NPC> NPCs= new ArrayList<NPC>(); // the NPC models
-	private ArrayList<PokemonSpecie> PokemonSpecies= new ArrayList<PokemonSpecie>(); // the pokemon models
-	private ArrayList<Tile> tiles = new ArrayList<Tile>();
+	private List<NPC> NPCs= new ArrayList<NPC>(); // the NPC models
+	private List<PokemonSpecie> PokemonSpecies= new ArrayList<PokemonSpecie>(); // the pokemon models
+	private List<Tile> tiles = new ArrayList<Tile>();
+	private List<PacmanEnemy> pacmanEnemies = new ArrayList<PacmanEnemy>();
 	private transient static final ArrayList<Item> items;
 	
 	static{
@@ -79,32 +80,40 @@ public class Model implements Serializable{
 	
 	
 	
-	public ArrayList<NPC> getNPCs() {
+	public List<NPC> getNPCs() {
 		return new ArrayList<NPC>(NPCs);
 	}
 
-	public void setNPCs(ArrayList<NPC> NPCs) {
+	public void setNPCs(List<NPC> NPCs) {
 		this.NPCs = new ArrayList<NPC>(NPCs);
 	}
 
-	public ArrayList<PokemonSpecie> getPokemonSpecies() {
+	public List<PokemonSpecie> getPokemonSpecies() {
 		return new ArrayList<PokemonSpecie>(PokemonSpecies);
 	}
 
-	public void setPokemonSpecies(ArrayList<PokemonSpecie> pokemonSpecies) {
+	public void setPokemonSpecies(List<PokemonSpecie> pokemonSpecies) {
 		PokemonSpecies = new ArrayList<PokemonSpecie>(pokemonSpecies);
 	}
 
-	public ArrayList<Tile> getTiles() {
+	public List<Tile> getTiles() {
 		return tiles;
 	}
 
-	public void setTiles(ArrayList<Tile> tiles) {
+	public void setTiles(List<Tile> tiles) {
 		this.tiles = tiles;
 	}
 
-	public ArrayList<Item> getItems() {
+	public List<Item> getItems() {
 		return items;
+	}
+
+	public void setPacmanEnemies(List<PacmanEnemy> newList) {
+	    pacmanEnemies = newList;
+	}
+	
+	public List<PacmanEnemy> getPacmanEnemies(){
+	    return new ArrayList<>(pacmanEnemies);
 	}
 	
 	

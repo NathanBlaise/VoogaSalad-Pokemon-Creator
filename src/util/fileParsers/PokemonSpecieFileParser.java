@@ -1,4 +1,4 @@
-package util;
+package util.fileParsers;
 
 
 import java.io.File;
@@ -32,7 +32,7 @@ import util.pokemonSpecieDataParser.ListOfElementsParser.PokemonLevelStatsParser
  * @author DanSun
  *
  */
-public class PokemonSpecieFileParser {
+public class PokemonSpecieFileParser extends XMLFileParserAbstract{
     //data required to initialize a pokemonSpecie
     private String specieName;
     private String elemental;
@@ -41,15 +41,12 @@ public class PokemonSpecieFileParser {
     private Map<Integer,PokemonStat> levelStats; 
     private Map<Integer,Double> levelExps; 
     private Map<Integer,String> levelEvolutionImagePaths; 
-    //file for this parser
-    private File xmlFile;
-    //root node of the xml file
-    private Element rootNode;
+
     private PokemonLevelMovesParser levelMovesParser;
     /**
      * Gets the PokemonSpecie from the File given
      * @param file The xml file specifying a pokemon specie 
-     * @return The Pokemon Specie Class described by the file
+     * @return The Pokemon Specie Object described by the file
      * @throws ParserConfigurationException
      * @throws SAXException
      * @throws IOException
@@ -57,16 +54,7 @@ public class PokemonSpecieFileParser {
     public PokemonSpecie parseFile(File file) 
 	    throws ParserConfigurationException, 
 	    SAXException, IOException {
-	xmlFile = file;
-	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-	Document doc = dBuilder.parse(xmlFile);
-	rootNode = doc.getDocumentElement();
-	rootNode.normalize();
-	reinitializePokemonData();
-	parsePokemonData();
-	//read from the xml file and fill in the necessary fields 
-	//needed by the constructor of pokemonSpecies
+	super.fillDataFromFileIntoFields(file);
 	return new PokemonSpecie(specieName,elemental,maxLevel,
 		levelMoves,levelStats,levelExps,levelEvolutionImagePaths);
     }
@@ -87,8 +75,8 @@ public class PokemonSpecieFileParser {
     }
     
     
-    
-    private void parsePokemonData() {
+    @Override
+    protected void reinitializeObjectData() {
 	specieName = NameParser.parse(rootNode);
 	elemental = ElementalParser.parse(rootNode);
 	maxLevel = MaxLevelParser.parse(rootNode);
@@ -97,8 +85,8 @@ public class PokemonSpecieFileParser {
 	levelExps = PokemonLevelExpsParser.parse(rootNode);
 	levelEvolutionImagePaths = PokemonLevelImagesParser.parse(rootNode);
     }
-
-    private void reinitializePokemonData() {
+    @Override
+    protected void parseData() {
 	specieName = "";
 	elemental = "";
 	maxLevel = -1;
