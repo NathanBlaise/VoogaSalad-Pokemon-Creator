@@ -143,15 +143,7 @@ public class ScrollingDialogue extends Application {
 		
 		
 		count +=1;
-		
-		
-		
-
-		
 		updateHealthBar();
-		
-		
-	
 
 	}
 

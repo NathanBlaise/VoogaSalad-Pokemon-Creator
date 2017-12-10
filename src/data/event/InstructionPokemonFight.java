@@ -21,6 +21,8 @@ import engine.game.GameScene;
 public class InstructionPokemonFight extends Instruction{
 	
 	private static final long serialVersionUID = -7387342417939089291L;
+	private final int BATTLE_SCREEN_WIDTH = 720;
+	private final int BATTLE_SCREEN_HEIGHT = 480;
 	private Pokemon pokemon;
 
 	/**
@@ -57,7 +59,7 @@ public class InstructionPokemonFight extends Instruction{
 	 */
 	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
 			GameMap mainMap, Event event, GameScene gameScene) {
-		BattleScene battle = new BattleScene(SCREEN_WIDTH,SCREEN_HEIGHT,Color.WHITE,mainPlayer,null,pokemon, gameScene);
+		BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,mainPlayer,null,pokemon, gameScene, gameScene.getStage());
 		// Change the battle scene here
 		((Stage) gameScene.getScene().getWindow()).setScene(battle.getScene());					
 //		ArrayList<Instruction> newInstructions = event.getInstructions();

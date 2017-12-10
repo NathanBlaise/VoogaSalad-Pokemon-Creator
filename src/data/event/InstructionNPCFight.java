@@ -18,9 +18,13 @@ import engine.game.GameScene;
  *
  */
 
+
+
 public class InstructionNPCFight  extends Instruction{
 	private static final long serialVersionUID = -7111511237505842406L;
 	private static final int pokemonNum = 6; //the number of available Pokemon
+	private final int BATTLE_SCREEN_WIDTH = 720;
+	private final int BATTLE_SCREEN_HEIGHT = 480;
 	private NPC npc; //the NPC himself/herself
 	private Pokemon[] pokemons = new Pokemon[pokemonNum]; //the pokemons belong to NPC
 
@@ -77,7 +81,9 @@ public class InstructionNPCFight  extends Instruction{
 	@Override
 	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
 			GameMap mainMap, Event event, GameScene gameScene) {
-		NPCBattleHelper npcHelper = new NPCBattleHelper(SCREEN_WIDTH, SCREEN_HEIGHT, Color.WHITE, gameScene, gameScene.getInputList());
+		NPCBattleHelper npcHelper = new NPCBattleHelper(BATTLE_SCREEN_WIDTH, BATTLE_SCREEN_HEIGHT, Color.WHITE, gameScene, gameScene.getInputList());
+		((Stage) gameScene.getScene().getWindow()).setHeight(SCREEN_HEIGHT);
+		((Stage) gameScene.getScene().getWindow()).setWidth(SCREEN_WIDTH);
 		((Stage)gameScene.getScene().getWindow()).setScene(npcHelper.getScene());
 		npcHelper.startTimer();
 	}
