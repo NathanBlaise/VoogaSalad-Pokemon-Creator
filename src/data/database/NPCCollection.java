@@ -11,7 +11,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import util.FilePathConverter;
-import util.NPCFileParser;
+import util.fileParsers.NPCFileParser;
 import data.model.Model;
 import data.model.NPC;
 
