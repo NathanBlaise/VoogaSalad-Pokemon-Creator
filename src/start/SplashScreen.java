@@ -15,7 +15,7 @@ import javafx.util.Duration;
 /**
  * 
  * @author cy122
- *
+ * @author Dan Sun： for refactor
  * splash screen: showing to user about loading the program and showing the Logo
  * animates the spalsh screen, and spawns the StartMenu after it finishes
  * passes the current stage to the startMenu
@@ -27,9 +27,11 @@ public class SplashScreen {
 	private Scene scene;
 	private VBox root = new VBox();
 	private RotateTransition rt; //for animation
-	
-	public SplashScreen(Stage stage) {
-		
+	/**
+	 * Displays the splash screen on stage
+	 * @param stage The stage to display the splash screen
+	 */
+	public SplashScreen(Stage stage) {	
 	    	mainStage=stage;
 		root.getChildren().addAll(createLogo());
 		setupScene();
@@ -37,9 +39,7 @@ public class SplashScreen {
 		stage.show();
 	}
 
-	private void goToStartMenu() {
-	    new StartMenu(mainStage);
-	}
+
 	private void setupScene() {
 	    scene = new Scene(root,320,180);
 	    scene.getStylesheets().add("resources/sceneStyle.css");
@@ -70,4 +70,7 @@ public class SplashScreen {
 	    new Timeline(new KeyFrame(Duration.seconds(1), e->rt.play())).play();
 	}
 	
+	private void goToStartMenu() {
+	    new StartMenu(mainStage);
+	}
 }

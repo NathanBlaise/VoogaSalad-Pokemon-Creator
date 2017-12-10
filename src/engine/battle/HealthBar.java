@@ -39,6 +39,17 @@ public class HealthBar {
 		lastHealth = health;
 		increase = false;
 	}
+	
+	public HealthBar(double health, double width, double height) {
+		healthBar = new Rectangle(width,height);
+		healthBar.setArcHeight(10);
+		healthBar.setArcWidth(10);
+		healthBar.setFill(Color.LIGHTGREEN);
+		totalWidth = width;
+		totalHealth = health;
+		lastHealth = health;
+		increase = false;
+	}
 
 	
 	public Rectangle getHealthBar() {

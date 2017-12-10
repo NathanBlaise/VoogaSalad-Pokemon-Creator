@@ -6,12 +6,16 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
-
+/**
+ * 
+ * @author Dan Sun for commenting
+ *
+ */
 public class ScreenDisplay {
 		// Final Variable
 		public double FRAMES_PER_SECOND = 1;
 		public double MILLISECOND_DELAY = 1000 / FRAMES_PER_SECOND;
-		public double SECOND_DELAY = 100.0 / FRAMES_PER_SECOND;
+		public double SECOND_DELAY = 1.0 / FRAMES_PER_SECOND;
 		
 		//Private Variable
 		protected Timeline animation = new Timeline();
@@ -19,16 +23,16 @@ public class ScreenDisplay {
 		private Pane root = new Pane();
 
 		/**
-		 * Constructor: Screen Display class
+		 * Initializes the scene of this class
+		 * @param width The width of the scene
+		 * @param hieght The height of the scene
+		 * @param background The background color of the scene
 		 */
-
 		public ScreenDisplay(int width, int height, Paint background) {
 			init();
 			myScene = new Scene(root, width, height, background);
 
 		}
-
-	
 
 		public Scene getScene() {
 			return myScene;

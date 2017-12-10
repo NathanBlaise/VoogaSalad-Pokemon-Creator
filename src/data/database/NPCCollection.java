@@ -17,10 +17,11 @@ import data.model.NPC;
 
 /**
  * for giving the model the npc models
- * @author cy122 Dan Sun
+ * @author cy122
+ * @author Dan Sun
  *
  */
-public class NPCCollection {
+public class NPCCollection extends DataCollectionAbstract{
 	private static String defaultNPCsRelativePath = "src/resources/defaultNPC";
 	    //stores mapping from name to class
 	    private Map<String,NPC> NPCs; 
@@ -53,7 +54,8 @@ public class NPCCollection {
 	    }
 
 	    private void readDefaultNPCs() {
-			File[] files = getFilesWithinAsArray(FilePathConverter.getAbsolutePath(defaultNPCsRelativePath));
+			File[] files = getFilesWithinAsArray(
+				FilePathConverter.getAbsolutePath(defaultNPCsRelativePath));
 			for(File NPCFile:files) {
 			    NPC NPC = null;
 			    try {
@@ -69,16 +71,4 @@ public class NPCCollection {
 			}
 	    }
 
-	    //adopted from https://stackoverflow.com/questions/5694385/getting-the-filenames-of-all-files-in-a-folder
-	    private File[] getFilesWithinAsArray(File folder) {
-			assert(folder.exists());
-			assert(folder.isDirectory());
-			File[] listOfFiles = folder.listFiles();
-			return listOfFiles;
-	    }
-
-	    private File[] getFilesWithinAsArray(String folder) {
-			File folderFile = new File(folder);
-			return getFilesWithinAsArray(folderFile);
-	    }
 }

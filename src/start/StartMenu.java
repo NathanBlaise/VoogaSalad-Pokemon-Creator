@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 /**
  * 
  * @author cy122
- * 
+ * @author Dan Sun for refactoring
  * Showing the menu to user
  *
  */
@@ -43,42 +43,46 @@ public class StartMenu {
 		
 		scene = new Scene(root);
 		scene.getStylesheets().add("resources/sceneStyle.css");
-		scene.setOnMouseMoved(e -> {
-			double x = e.getSceneX();
-			double y = e.getSceneY();
-			if((y<=InitialY+AreaHeight)&&(y>=InitialY)){
-				if(((x>=NewX)&&(x<=NewX+AreaWidth))||((x>=EditX)&&(x<=EditX+AreaWidth))||((x>=PlayX)&&(x<=PlayX+AreaWidth))){
-					scene.setCursor(Cursor.HAND);
-				}else{
-					scene.setCursor(Cursor.DEFAULT);
-				}
-			}else{
-				scene.setCursor(Cursor.DEFAULT);
-			}
-		});
-		
-		
+		addCursorPatternOnScene();	
 		FadeTransition fade = Fade.fadeIn(root, null);
-		
-		scene.setOnMouseClicked(e -> {
-			double x = e.getSceneX();
-			double y = e.getSceneY();
-			if((y<=InitialY+AreaHeight)&&(y>=InitialY)){
-				if((x>=NewX)&&(x<=NewX+AreaWidth)){
-					//TODO create a new file in default configuration and let user edit this file
-				}else if((x>=EditX)&&(x<=EditX+AreaWidth)){
-					goEdit();
-				}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
-					//TODO go to player
-					goPlay();
-				}
-			}
-		});
-		
+		addMouseEventOnScene();	
 		stage.setScene(scene);
 		stage.centerOnScreen();
 		stage.show();
 		fade.play();
+	}
+
+	private void addMouseEventOnScene() {
+	    scene.setOnMouseClicked(e -> {
+	    	double x = e.getSceneX();
+	    	double y = e.getSceneY();
+	    	if((y<=InitialY+AreaHeight)&&(y>=InitialY)){
+	    		if((x>=NewX)&&(x<=NewX+AreaWidth)){
+	    			//TODO create a new file in default configuration and let user edit this file
+	    		}else if((x>=EditX)&&(x<=EditX+AreaWidth)){
+	    			goEdit();
+	    		}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
+	    			//TODO go to player
+	    			goPlay();
+	    		}
+	    	}
+	    });
+	}
+
+	private void addCursorPatternOnScene() {
+	    scene.setOnMouseMoved(e -> {
+	    	double x = e.getSceneX();
+	    	double y = e.getSceneY();
+	    	if((y<=InitialY+AreaHeight)&&(y>=InitialY)){
+	    		if(((x>=NewX)&&(x<=NewX+AreaWidth))||((x>=EditX)&&(x<=EditX+AreaWidth))||((x>=PlayX)&&(x<=PlayX+AreaWidth))){
+	    			scene.setCursor(Cursor.HAND);
+	    		}else{
+	    			scene.setCursor(Cursor.DEFAULT);
+	    		}
+	    	}else{
+	    		scene.setCursor(Cursor.DEFAULT);
+	    	}
+	    });
 	}
 
 	private ImageView createLogo() {
@@ -111,21 +115,21 @@ public class StartMenu {
 		Stage editorStage = new Stage();
 		new DatabasePathConfig(editorStage, new Function3<String, Database, String, Integer>(){
 			@Override
-			public Integer apply(String gameType, Database one, String two) {
-				StageDelegate editor = new Author(one, two, editorStage);
+			public Integer apply(String gameType, Database database, String savePath) {
+			    	//function to create and  go to authoring environment 
+				StageDelegate editor = new Author(database, savePath, editorStage);
 				editor.toFirstAuthorScene();
 				return null;
 			}
 		});
 	}
 	
-	// Used currently to test battle screen
 	private void goPlay() {
 		Stage gameStage = new Stage();
-
 		new DatabasePathConfig(gameStage, new Function3<String, Database, String, Integer>() {
 			@Override
-			public Integer apply(String gameType, Database one, String two) {
+			public Integer apply(String gameType, Database database, String savePath) {
+			    	//shows the splash game screen, and creates the Engine
 				ImageView background = new ImageView(Path2Image.showImage("images/BattleBegin.gif"));
 				background.setFitWidth(720);
 				background.setFitHeight(480);
@@ -135,7 +139,7 @@ public class StartMenu {
 				gameStage.setScene(splashGame);
 				gameStage.centerOnScreen();
 				splashGame.setOnKeyPressed(e->{
-					Engine engine = new Engine(one, two, gameType, gameStage);
+					Engine engine = new Engine(database, savePath, gameType, gameStage);
 					engine.toMainGameScene();
 				});
 				return null;

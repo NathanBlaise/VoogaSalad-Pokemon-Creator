@@ -15,8 +15,8 @@ import util.TileFileParser;
 import data.model.Model;
 import data.model.Tile;
 
-public class TileCollection {
-	private static String defaultTilesRelativePath = "src/resources/defaultTiles";
+public class TileCollection extends DataCollectionAbstract{
+    private static String defaultTilesRelativePath = "src/resources/defaultTiles";
     //stores mapping from name to class
     private Map<String,Tile> Tiles; 
     private TileFileParser fileParser;
@@ -64,16 +64,4 @@ public class TileCollection {
 		}
     }
 
-    //adopted from https://stackoverflow.com/questions/5694385/getting-the-filenames-of-all-files-in-a-folder
-    private File[] getFilesWithinAsArray(File folder) {
-		assert(folder.exists());
-		assert(folder.isDirectory());
-		File[] listOfFiles = folder.listFiles();
-		return listOfFiles;
-    }
-
-    private File[] getFilesWithinAsArray(String folder) {
-		File folderFile = new File(folder);
-		return getFilesWithinAsArray(folderFile);
-    }
 }

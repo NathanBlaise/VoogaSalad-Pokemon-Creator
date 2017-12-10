@@ -26,8 +26,6 @@ public class InstructionGoShop extends Instruction{
 		stage.setWidth(720);
 		stage.show();
 	}
-	
-	
 
 }
 

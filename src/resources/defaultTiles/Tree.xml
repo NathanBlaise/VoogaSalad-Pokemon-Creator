@@ -1,5 +1,5 @@
-<defaultNPC>
+<defaultTile>
 	<name>tree</name>
 	<wholePic>images/tiles/tree.png</wholePic>
 	<obstacle>true</obstacle>
-</defaultNPC>
+</defaultTile>
