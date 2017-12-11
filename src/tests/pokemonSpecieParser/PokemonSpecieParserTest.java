@@ -22,6 +22,7 @@ public class PokemonSpecieParserTest {
 	PokemonSpecieFileParser specieParser = new PokemonSpecieFileParser();
 	PokemonSpecie specie = specieParser.parseFile(
 		FilePathConverter.getAbsolutePath(testSpecieFilePath));
+	specie.printDebugInfo();
 	assertTrue(true);
     }
 

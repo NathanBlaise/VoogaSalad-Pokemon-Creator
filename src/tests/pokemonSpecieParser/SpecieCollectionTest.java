@@ -21,7 +21,7 @@ public class SpecieCollectionTest {
 	PokemonSpecieCollection species = 
 		new PokemonSpecieCollection();
 	species.passSpeciesToModel(model);
-	assertTrue(true);
+	assertTrue(model.getPokemonSpecies() != null);
     }
 
 }
