@@ -85,6 +85,7 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	  Move move=super.activePokemon.getAvailableMoves().get(thisMove);
 	  move.move(super.activePokemon, super.enemyPokemon);
 	  battleScene.updateHealthBars(enemyPokemon.getCurrentStat().getHP(), activePokemon.getCurrentStat().getHP());
+	  System.out.println("this value currrentlylylylyl"+enemyPokemon.getCurrentStat().getHP());
 	  super.battleScene.setMessage("Oh no! "+ activePokemon.getNickName() + " performed "+move.getMoveName()+"!");
 	  if(enemyPokemon.isDead()) {
 			battleScene.showEnding("Game end. Your pokemon is dead.",true);

@@ -73,6 +73,7 @@ public class BattleScene extends ScreenDisplay{
 	private Canvas canvas;
 	private HBox	buttonBox;
 	private BattleGUI gui;
+	
 	private BattleFightOptions bfo;
 	private EnemyBattleFightOptions ebfo;
 	private Player mainPlayer;
@@ -126,6 +127,8 @@ public class BattleScene extends ScreenDisplay{
 		messageLabel.setLayoutY(BUTTONS_YPOS);
 		this.rootAdd(messageLabel);
 		this.bs=this;
+		bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
+		ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this);
 	}
 	
 	
@@ -152,8 +155,7 @@ public class BattleScene extends ScreenDisplay{
 			rootRemove(listOfItems);
 			rootRemove(listOfPokemons);
 			this.rootRemove(buttonBox);
-			bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
-			ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this);
+			
 			bfo.setUpScene();				
 		});	
 	}
@@ -258,8 +260,8 @@ public class BattleScene extends ScreenDisplay{
 		     			updateHealthBars(activePokemon.getCurrentStat().getHP(), enemyPokemon.getCurrentStat().getHP());
 		     			mainPlayer.deleteItem(item);
 		     			rootRemove(listOfItems);
-		     			bfo = new BattleFightOptions(activePokemon,enemyPokemon,bs);
-		     			ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,bs);
+		     			
+		     		
 		     			rootRemove(buttonBox);
 		     			ebfo.setUpScene();
 		     			
@@ -313,6 +315,8 @@ public class BattleScene extends ScreenDisplay{
 	                 for (Pokemon each: mainPlayer.getPokemons()) {
 	                	     if (each.getNickName().equals(item)) {
 	                	    	     activePokemon=each;
+	                	    	     bfo = new BattleFightOptions(activePokemon,enemyPokemon,bs);
+	                	    	     ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,bs);
 	                	    	     changeActiveHPInfo();
 	                	    	     resetActivePokemon();
 	                	    	     rootRemove(listOfPokemons);
