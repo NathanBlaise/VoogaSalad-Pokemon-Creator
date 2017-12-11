@@ -20,7 +20,11 @@ import data.event.InstructionNPCFight;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
-
+/**
+ * 
+ * @author cy122
+ * edit the event of NPC
+ */
 public class NPCEventEditor{
 		private Stage stage;
 		private EventNPC eventNPC;
@@ -33,6 +37,7 @@ public class NPCEventEditor{
 			this.pokemonSpecies = new ArrayList<PokemonSpecie>(pokemonSpecies);
 			this.saver = saver;
 			editNPC(selectedEventNPC.getNpc());
+			stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 			stage.show();
 		}
 		
@@ -44,24 +49,31 @@ public class NPCEventEditor{
 			next.setOnMouseClicked(e->{
 				editInstructions(null);
 			});
-			borderPane.setBottom(next);		
+			borderPane.setBottom(next);	
 			stage.setScene(new Scene(borderPane));
+			stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 		}
 		
 		private void editInstructions(Callback<List<Instruction>, Integer> saver){
 			Scene scene = new Scene(showEvent(eventNPC));
 			stage.setScene(scene);
+			stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 		}
 		
 		private BorderPane showEvent(EventNPC eventNPC){
 			BorderPane result =new BorderPane();
+			Map<String, String> name2instruction = createName2Instruction(eventNPC);
+			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions = createReaction(result);
+			result.setLeft(new EventInstructions(eventNPC, name2instruction, reactions, new InstructionListEditor(eventNPC, e->{saver.call(e);stage.close();return null;})).getList());
+			return result;
+		}
+
+		public static Map<String, String> createName2Instruction(Event event) {
 			Map<String, String> name2instruction = new HashMap<String, String>();
-			for(String s: eventNPC.getAvailableInstructions()){
+			for(String s: event.getAvailableInstructions()){
 				name2instruction.put(new String(LanguageReader.convertLanguage("English", s)), new String(s));
 			}
-			Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> reactions = createReaction(result);
-			result.setLeft(new EventInstructions(eventNPC, name2instruction, reactions, new InstructionListEditor(eventNPC, saver)).getList());
-			return result;
+			return name2instruction;
 		}
 		
 		private Map<String, Function<Instruction, Callback<Instruction, Integer>, Integer>> createReaction(BorderPane instructionPane){
@@ -109,24 +121,6 @@ public class NPCEventEditor{
 			public Integer call(NPC param) {
 				event.getNpc().setName(param.getName());
 				event.getNpc().setImagePath(param.getImagePath());
-				saver.call(event);
-				return null;
-			}	
-		}
-		
-		private class InstructionListEditor implements Callback<List<Instruction>, Integer>{
-
-			private Event event;
-			private Callback<Event, Integer> saver;
-			
-			public InstructionListEditor(Event event, Callback<Event, Integer> saver){
-				this.event = event;
-				this.saver = saver;
-			}
-			
-			@Override
-			public Integer call(List<Instruction> param) {
-				event.setInstructions(new ArrayList<Instruction>(param));
 				saver.call(event);
 				return null;
 			}	

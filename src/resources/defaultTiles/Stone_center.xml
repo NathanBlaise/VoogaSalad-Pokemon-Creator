@@ -1,0 +1,5 @@
+<defaultTile>
+	<name>stone in water</name>
+	<wholePic>images/tiles/stonecenter.png</wholePic>
+	<obstacle>true</obstacle>
+</defaultTile>

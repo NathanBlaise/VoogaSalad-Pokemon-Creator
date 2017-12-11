@@ -1,0 +1,16 @@
+<defaultTile>
+	<name>PokemonCenter</name>
+	<wholePic>images/shopCenterSplitedWithBackground/Center.jpg</wholePic>
+	<obstacle>true</obstacle>
+	<height>3</height>
+	<width>3</width>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center1.jpg</imagePaths>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center2.jpg</imagePaths>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center3.jpg</imagePaths>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center4.jpg</imagePaths>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center5.jpg</imagePaths>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center6.jpg</imagePaths>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center7.jpg</imagePaths>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center8.jpg</imagePaths>
+	<imagePaths>images/shopCenterSplitedWithBackground/Center9.jpg</imagePaths>
+</defaultTile>

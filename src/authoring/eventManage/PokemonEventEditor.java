@@ -29,12 +29,14 @@ public class PokemonEventEditor implements Callback<Pokemon, Integer>{
 		BorderPane borderPane = new BorderPane();
 		borderPane.setCenter(gridPane);	
 		stage.setScene(new Scene(borderPane));
+        stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 	}
 
 	@Override
 	public Integer call(Pokemon param) {
 		pokemon = new Pokemon(param);
 		saver.call(new EventPokemon(pokemon));
+		stage.close();
 		return null;
 	}
 }

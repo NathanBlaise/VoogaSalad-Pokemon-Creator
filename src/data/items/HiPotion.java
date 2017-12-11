@@ -11,10 +11,12 @@ import data.player.Player;
 
 public class HiPotion extends Item{
 	
+	private static final long serialVersionUID = 7173105637066176780L;
+
 	//Specifies name, price and image in the constructor
 	public HiPotion(){
-		itemName = "Hi Potion";
-		itemPrice = 1200;
+		itemName = "HiPotion";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

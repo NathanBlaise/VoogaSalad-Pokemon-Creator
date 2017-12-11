@@ -37,26 +37,23 @@ public class PlayerTab{
 		tab = new Tab(new PropertyReader("../resources/English.properties").getString("PlayerTabName"), root);
 		VBox vbox = new VBox();
 		vbox.getChildren().add(placeChooser(player.getPosX(), player.getPosY(), XLength, YLength));
+		if((player.getPosX()>YLength-1)||(player.getPosX()<0)){
+			player.setPosX(0);
+		}
+		if((player.getPosY()>XLength-1)||(player.getPosY()<0)){
+			player.setPosY(0);
+		}
 		vbox.getChildren().add(imageChooser(new PropertyReader(path).getString("PlayerImageDown")));
 		root.setLeft(vbox);
 		root.setCenter(choosePokemon(player.getPokemons(), pokemonSpecies));
 		root.setPrefSize(1000, 600);
+		refresh(player);
 	}
 	
 	private GridPane placeChooser(int posX, int posY, int XLength, int YLength){
 		GridPane grid = new GridPane();
-		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change Y coordinates")), 0, 0);
-		HBox Xchanger = UIComponentFactory.intSlider(player.getPosX(), 0, XLength, new Callback<Integer, Integer>(){
-			@Override
-			public Integer call(Integer param) {
-				player.setPosX(param);
-				refresh(player);
-				return null;
-			}			
-		}, "x coord");
-		grid.add(Xchanger, 0, 1);
-		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change X coordinates")), 0, 2);
-		HBox Ychanger = UIComponentFactory.intSlider(player.getPosY(), 0, YLength, new Callback<Integer, Integer>(){
+		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change X coordinates")), 0, 0);
+		HBox Ychanger = UIComponentFactory.intSlider(player.getPosY(), 0, XLength-1, new Callback<Integer, Integer>(){
 			@Override
 			public Integer call(Integer param) {
 				player.setPosY(param);
@@ -65,6 +62,26 @@ public class PlayerTab{
 			}			
 		}, "y coord");
 		grid.add(Ychanger, 0, 3);
+		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change Y coordinates")), 0, 2);
+		HBox Xchanger = UIComponentFactory.intSlider(player.getPosX(), 0, YLength-1, new Callback<Integer, Integer>(){
+			@Override
+			public Integer call(Integer param) {
+				player.setPosX(param);
+				refresh(player);
+				return null;
+			}			
+		}, "x coord");
+		grid.add(Xchanger, 0, 1);
+		grid.add(new Label(new PropertyReader("../resources/English.properties").getString("change money")), 0, 4);
+		HBox currencyChanger = UIComponentFactory.doubleSlider(player.getCurrency(), 0.0, 480, new Callback<Double, Integer>(){
+			@Override
+			public Integer call(Double param) {
+				player.setCurrency(param);
+				refresh(player);
+				return null;
+			}			
+		}, "money");
+		grid.add(currencyChanger, 0, 5);
 		return grid;
 	}
 	

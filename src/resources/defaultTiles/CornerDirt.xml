@@ -1,0 +1,5 @@
+<defaultTile>
+	<name>Dirt</name>
+	<wholePic>images/tiles/cornerdirt.png</wholePic>
+	<obstacle>false</obstacle>
+</defaultTile>

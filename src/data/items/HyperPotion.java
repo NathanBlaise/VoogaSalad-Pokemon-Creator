@@ -11,10 +11,12 @@ import data.player.Player;
 
 public class HyperPotion extends Item{
 	
+	private static final long serialVersionUID = -4505067090640977063L;
+
 	//Specifies name, price and image in the constructor
 	public HyperPotion(){
-		itemName = "Hyper Potion";
-		itemPrice = 1200;
+		itemName = "HyperPotion";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

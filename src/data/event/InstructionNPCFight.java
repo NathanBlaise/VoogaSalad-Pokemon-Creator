@@ -1,7 +1,13 @@
 package data.event;
 
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import data.map.GameMap;
 import data.model.NPC;
 import data.model.Pokemon;
+import data.player.Player;
+import engine.battle.NPCBattleHelper;
+import engine.game.GameScene;
 
 /**
  * this is a instruction for fighting with NPC, it holds a private NPC member and an array of Pokemon
@@ -12,9 +18,13 @@ import data.model.Pokemon;
  *
  */
 
-public class InstructionNPCFight  implements Instruction{
+
+
+public class InstructionNPCFight  extends Instruction{
 	private static final long serialVersionUID = -7111511237505842406L;
 	private static final int pokemonNum = 6; //the number of available Pokemon
+	private final int BATTLE_SCREEN_WIDTH = 720;
+	private final int BATTLE_SCREEN_HEIGHT = 480;
 	private NPC npc; //the NPC himself/herself
 	private Pokemon[] pokemons = new Pokemon[pokemonNum]; //the pokemons belong to NPC
 
@@ -63,18 +73,19 @@ public class InstructionNPCFight  implements Instruction{
 	public void setPokemons(Pokemon[] pokemons) {
 		this.pokemons = pokemons;
 	}
-
-	@Override
-	/**
-	 * @see Instruction#execute
-	 */
-	public void execute(Object... parameters) {
-		// TODO call the API in Engine to begin a battle with npc
-		
-	}
 	
 	public static int getPokemonNum(){
 		return pokemonNum;
+	}
+
+	@Override
+	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
+			GameMap mainMap, Event event, GameScene gameScene) {
+		NPCBattleHelper npcHelper = new NPCBattleHelper(BATTLE_SCREEN_WIDTH, BATTLE_SCREEN_HEIGHT, Color.WHITE, gameScene, gameScene.getInputList());
+		((Stage) gameScene.getScene().getWindow()).setHeight(SCREEN_HEIGHT);
+		((Stage) gameScene.getScene().getWindow()).setWidth(SCREEN_WIDTH);
+		((Stage)gameScene.getScene().getWindow()).setScene(npcHelper.getScene());
+		npcHelper.startTimer();
 	}
 
 }

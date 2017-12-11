@@ -21,7 +21,7 @@ import util.PokemonSpecieFileParser;
  * @author Dan Sun
  *
  */
-public class PokemonSpecieCollection {
+public class PokemonSpecieCollection extends DataCollectionAbstract{
 
     private static String defaultSpeciesRelativePath = 
 	    "src/resources/defaultPokemonSpecies";
@@ -73,17 +73,5 @@ public class PokemonSpecieCollection {
 	}
     }
 
-    //adopted from https://stackoverflow.com/questions/5694385/getting-the-filenames-of-all-files-in-a-folder
-    private File[] getFilesWithinAsArray(File folder) {
-	assert(folder.exists());
-	assert(folder.isDirectory());
-	File[] listOfFiles = folder.listFiles();
-	return listOfFiles;
-    }
 
-    private File[] getFilesWithinAsArray(String folder) {
-//	System.out.println(folder); //for testing
-	File folderFile = new File(folder);
-	return getFilesWithinAsArray(folderFile);
-    }
 }

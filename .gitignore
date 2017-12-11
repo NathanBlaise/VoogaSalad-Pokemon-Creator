@@ -87,7 +87,9 @@ DerivedData
 .gradle
 bin/
 tmp/
-src/resources/databases/
+src/resources/Databases/Databases_Pokemon/*.xml
+src/resources/Databases/Databases_Pacman/*.xml
+src/resources/Databases/defaultDatabases_Pokemon.xml
 *.tmp
 *.bak
 *.swp

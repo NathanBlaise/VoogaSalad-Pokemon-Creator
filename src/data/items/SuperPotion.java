@@ -11,15 +11,21 @@ import data.player.Player;
 
 public class SuperPotion extends Item{
 	
+
+	private static final long serialVersionUID = -9005950347526973001L;
+
 	//Specifies name, price and image in the constructor
 	public SuperPotion(){
-		itemName = "Super Potion";
-		itemPrice = 1200;
+		itemName = "SuperPotion";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has
+	@SuppressWarnings("deprecation")
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
 		int newMaxHP = mine.getCurrentStat().getMaxHP() + 10;
+		mine.getCurrentStat().setMaxHP(newMaxHP);
+		mine.fillCurrentHP();
 	}
 }

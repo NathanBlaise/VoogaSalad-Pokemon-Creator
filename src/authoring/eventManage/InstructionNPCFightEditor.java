@@ -40,6 +40,10 @@ public class InstructionNPCFightEditor implements InstructionEditor{
 			if(npcFight.getPokemons()[i]!=null){
 				tempButton.setText(npcFight.getPokemons()[i].getNickName());
 				buttonMap.put(tempButton, npcFight.getPokemons()[i]);
+			}else{
+				Pokemon newPokemon = new Pokemon(pokemonSpecies.get(0), pokemonSpecies.get(0).getSpecieName());
+				tempButton.setText(newPokemon.getNickName());
+				buttonMap.put(tempButton, newPokemon);
 			}
 			tempButton.setPrefSize(70, 230/(pokemonNum/gridWidth));
 			tempButton.setOnMouseClicked(e->{
@@ -66,8 +70,10 @@ public class InstructionNPCFightEditor implements InstructionEditor{
 			int i=0;
 			for(Button button: buttonMap.keySet()){
 				Pokemon tempPokemon = buttonMap.get(button);
-				pokemons[i] = tempPokemon;
-				i++;
+				if((tempPokemon.getName()!=null)&&(!tempPokemon.getName().equals(""))){
+					pokemons[i] = tempPokemon;
+					i++;
+				}
 			}
 			npcFight.setPokemons(pokemons);
 			saver.call(npcFight);

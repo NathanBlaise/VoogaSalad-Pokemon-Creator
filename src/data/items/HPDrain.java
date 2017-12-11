@@ -11,10 +11,12 @@ import data.player.Player;
 
 public class HPDrain extends Item{
 	
+	private static final long serialVersionUID = -5735649083685458381L;
+
 	//Specifies name, price and image in the constructor
 	public HPDrain(){
-		itemName = "HP Drain";
-		itemPrice = 1200;
+		itemName = "HPDrain";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

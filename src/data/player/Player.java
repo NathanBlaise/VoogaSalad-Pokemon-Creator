@@ -2,145 +2,68 @@ package data.player;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-import data.items.Item;
 import data.model.Pokemon;
-import engine.movement.Direction;
-import engine.movement.Input;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import static engine.movement.Direction.DOWN;
 
 /**
  * The main character which the user plays the role of
  * 
- * @author 
+ * @author cy122 nathan
  *
  */
-public class Player implements Serializable{
+public class Player extends PacmanPlayer{
 	private static final long serialVersionUID = 556462866183029469L;
-	
-	/*
-	 * NEEDS REFACTORING!
-	 */
-	public Image emerald_down_rest; //Don't need all of these
-	public Image emerald_down_1;
-	public Image emerald_down_2;
-	public Image emerald_left_rest;
-	public Image emerald_left_1;
-	public Image emerald_left_2;
-	public Image emerald_right_rest;
-	public Image emerald_right_1;
-	public Image emerald_right_2;
-	public Image emerald_up_rest;
-	public Image emerald_up_1;
-	public Image emerald_up_2;
-
-	
-	private final int speed = 3;
-	//only holds these attributes for now
-	private int posX, posY;
-	public int rightspeed, leftspeed, downspeed, upspeed;
-	private boolean canMove;
-	private Pokemon[] pokemons; //the pokemons for battle, no pokemon in the warehouse for now
-	private ArrayList<Item> items; //Items held by the player
-	public Direction direction;
-	//private Map<Item,Integer> Bag;  // a map from the item to the number of item
+	private Pokemon[] pokemons;
+	private double currency;
+	private Map<String, Integer> items = new HashMap<String, Integer>();  // a map from the item to the number of item, String stands for the class name of item
+	private ArrayList<Pokemon> warehouse;
 	
 	public Player(){
-		posX=50;
-		posY=50;
-		rightspeed = speed;
-		leftspeed = speed;
-		upspeed = speed;
-		downspeed = speed;
-		direction = DOWN;
-		canMove = true;
+		super();
 		pokemons = new Pokemon[6];
-		
-		emerald_down_rest = new Image("file:images/emerald_down_rest.png");
-		emerald_down_1 = new Image("file:images/emerald_down_1.png");
-		emerald_down_2 = new Image("file:images/emerald_down_2.png");
-		emerald_left_rest = new Image("file:images/emerald_left_rest.png");
-		emerald_left_1 = new Image("file:images/emerald_left_1.png");
-		emerald_left_2 = new Image("file:images/emerald_left_2.png");
-		emerald_right_rest = new Image("file:images/emerald_right_rest.png");
-		emerald_right_1 = new Image("file:images/emerald_right_1.png");
-		emerald_right_2 = new Image("file:images/emerald_right_2.png");
-		emerald_up_rest = new Image("file:images/emerald_up_rest.png");
-		emerald_up_1 = new Image("file:images/emerald_up_1.png");
-		emerald_up_2 = new Image("file:images/emerald_up_2.png");
-
+		currency = 0;
+		warehouse = new ArrayList<Pokemon>();
 	}
 	
-	public int getPosX() {
-		return posX;
-	}
-
-	public void setPosX(int posX) {
-		this.posX = posX;
-	}
-
-	public int getPosY() {
-		return posY;
-	}
-
-	public void setPosY(int posY) {
-		this.posY = posY;
-	}
-	
-	
-	public void stopMoving() {
-		canMove = false;
-	}
-	
-//	/*
-//	 * Processes input using the input class
-//	 */
-//	public void processInput(Input input) {
-//		if(canMove) {
-//			if( input.isMoveUp()) {
-//				moveUp();
-//	        } else if( input.isMoveDown()) {
-//	        		moveDown();
-//	        } 
-//			
-//			if( input.isMoveLeft()) {
-//				moveLeft();
-//	        } else if( input.isMoveRight()) {
-//	        		moveRight();
-//	        } 
-//		}
-//	}
-	
-	public void moveUp() {
-		posY = posY - upspeed;
-	}
-	
-	public void moveDown() {
-		posY = posY + downspeed;
-	}
-	
-	public void moveLeft() {
-		posX = posX - leftspeed;
-	}
-	
-	public void moveRight() {
-		posX = posX + rightspeed;
-	}
-
-
 	public Pokemon[] getPokemons() {
 		return pokemons;
 	}
 	
-	public ArrayList<Item> getItems() {
+	public Map<String, Integer> getItems() {
 		return items;
 	}
 
-	public void setItems(ArrayList<Item> items) {
+	public void setItems(Map<String, Integer> items) {
 		this.items = items;
+	}
+
+	public void addItem(String itemName) {
+		if(items.containsKey(itemName)){
+			items.put(itemName, items.get(itemName)+1);
+		}else{
+			items.put(itemName, 1);
+		}
+	}
+	
+	/**
+	 * 
+	 * @param item - the goal item to be deleted
+	 * @return true if the item exists in the items and be deleted successfully.
+	 */
+	public boolean deleteItem(String itemName){
+		if(items.containsKey(itemName)){
+			if((items.get(itemName)-1)<0){
+				items.put(itemName, 0);
+				return false;
+			}else{
+				items.put(itemName, items.get(itemName)-1);
+				return true;
+			}
+		}else{
+			return false;
+		}
 	}
 
 	public void setPokemons(Pokemon[] pokemons) {
@@ -150,4 +73,32 @@ public class Player implements Serializable{
 			}
 		}
 	}
+
+	public double getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(double currency) {
+		this.currency = currency;
+		if(this.currency<0){
+			this.currency = 0;
+		}
+	}
+
+	public ArrayList<Pokemon> getWarehouse() {
+		return warehouse;
+	}
+
+	public void setWarehouse(ArrayList<Pokemon> warehouse) {
+		this.warehouse = warehouse;
+	}
+	
+	public int itemsSize(){
+		int number = 0;
+		for(String key: items.keySet()){
+			number += items.get(key);
+		}
+		return number;
+	}
+
 }

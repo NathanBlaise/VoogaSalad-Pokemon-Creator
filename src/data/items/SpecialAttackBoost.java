@@ -11,10 +11,12 @@ import data.player.Player;
 
 public class SpecialAttackBoost extends Item{
 	
+	private static final long serialVersionUID = 2623191051935709345L;
+
 	//Specifies name, price and image in the constructor
 	public SpecialAttackBoost(){
-		itemName = "Special Attack Boost";
-		itemPrice = 1200;
+		itemName = "SpecialAttackBoost";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

@@ -1,30 +1,25 @@
 package start;
 
 import data.Database;
-
-import data.model.NPC;
-import data.player.Player;
 import engine.Engine;
-
 import engine.UI.Fade;
-import engine.battle.BattleScene;
+import engine.UI.Path2Image;
 import authoring.Author;
 import authoring.StageDelegate;
-import authoring.eventManage.Function;
+import authoring.eventManage.Function3;
 import javafx.animation.FadeTransition;
 import javafx.scene.Cursor;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
  * 
  * @author cy122
- * 
+ * @author Dan Sun for refactoring
  * Showing the menu to user
  *
  */
@@ -32,7 +27,7 @@ import javafx.stage.Stage;
 public class StartMenu {
 	private Scene scene;
 	private Pane root = new Pane();
-	
+	//coordinates for different buttons
 	private final static double NewX = 593.0;
 	private final static double EditX = 831.0;
 	private final static double PlayX = 1063.0;
@@ -48,42 +43,46 @@ public class StartMenu {
 		
 		scene = new Scene(root);
 		scene.getStylesheets().add("resources/sceneStyle.css");
-		scene.setOnMouseMoved(e -> {
-			double x = e.getSceneX();
-			double y = e.getSceneY();
-			if((y<=InitialY+AreaHeight)&&(y>=InitialY)){
-				if(((x>=NewX)&&(x<=NewX+AreaWidth))||((x>=EditX)&&(x<=EditX+AreaWidth))||((x>=PlayX)&&(x<=PlayX+AreaWidth))){
-					scene.setCursor(Cursor.HAND);
-				}else{
-					scene.setCursor(Cursor.DEFAULT);
-				}
-			}else{
-				scene.setCursor(Cursor.DEFAULT);
-			}
-		});
-		
-		
+		addCursorPatternOnScene();	
 		FadeTransition fade = Fade.fadeIn(root, null);
-		
-		scene.setOnMouseClicked(e -> {
-			double x = e.getSceneX();
-			double y = e.getSceneY();
-			if((y<=InitialY+AreaHeight)&&(y>=InitialY)){
-				if((x>=NewX)&&(x<=NewX+AreaWidth)){
-					//TODO create a new file in default configuration and let user edit this file
-				}else if((x>=EditX)&&(x<=EditX+AreaWidth)){
-					goEdit();
-				}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
-					//TODO go to player
-					goPlay();
-				}
-			}
-		});
-		
+		addMouseEventOnScene();	
 		stage.setScene(scene);
 		stage.centerOnScreen();
 		stage.show();
 		fade.play();
+	}
+
+	private void addMouseEventOnScene() {
+	    scene.setOnMouseClicked(e -> {
+	    	double x = e.getSceneX();
+	    	double y = e.getSceneY();
+	    	if((y<=InitialY+AreaHeight)&&(y>=InitialY)){
+	    		if((x>=NewX)&&(x<=NewX+AreaWidth)){
+	    			//TODO create a new file in default configuration and let user edit this file
+	    		}else if((x>=EditX)&&(x<=EditX+AreaWidth)){
+	    			goEdit();
+	    		}else if((x>=PlayX)&&(x<=PlayX+AreaWidth)){
+	    			//TODO go to player
+	    			goPlay();
+	    		}
+	    	}
+	    });
+	}
+
+	private void addCursorPatternOnScene() {
+	    scene.setOnMouseMoved(e -> {
+	    	double x = e.getSceneX();
+	    	double y = e.getSceneY();
+	    	if((y<=InitialY+AreaHeight)&&(y>=InitialY)){
+	    		if(((x>=NewX)&&(x<=NewX+AreaWidth))||((x>=EditX)&&(x<=EditX+AreaWidth))||((x>=PlayX)&&(x<=PlayX+AreaWidth))){
+	    			scene.setCursor(Cursor.HAND);
+	    		}else{
+	    			scene.setCursor(Cursor.DEFAULT);
+	    		}
+	    	}else{
+	    		scene.setCursor(Cursor.DEFAULT);
+	    	}
+	    });
 	}
 
 	private ImageView createLogo() {
@@ -114,33 +113,37 @@ public class StartMenu {
 	
 	private void goEdit(){
 		Stage editorStage = new Stage();
-		BorderPane pathSetter = new DatabasePathConfig(editorStage, new Function<Database, String, Integer>(){
+		new DatabasePathConfig(editorStage, new Function3<String, Database, String, Integer>(){
 			@Override
-			public Integer apply(Database one, String two) {
-				StageDelegate editor = new Author(one, two, editorStage);
+			public Integer apply(String gameType, Database database, String savePath) {
+			    	//function to create and  go to authoring environment 
+				StageDelegate editor = new Author(database, savePath, editorStage,gameType);
 				editor.toFirstAuthorScene();
 				return null;
 			}
 		});
-		editorStage.setScene(new Scene(pathSetter));
-		editorStage.show();
-		editorStage.centerOnScreen();
 	}
 	
-	// Used currently to test battle screen
 	private void goPlay() {
 		Stage gameStage = new Stage();
-
-		BorderPane pathSetter = new DatabasePathConfig(gameStage, new Function<Database, String, Integer>() {
+		new DatabasePathConfig(gameStage, new Function3<String, Database, String, Integer>() {
 			@Override
-			public Integer apply(Database one, String two) {
-				Engine engine = new Engine(one, two, gameStage);
-				engine.toMainGameScene();
+			public Integer apply(String gameType, Database database, String savePath) {
+			    	//shows the splash game screen, and creates the Engine
+				ImageView background = new ImageView(Path2Image.showImage("images/BattleBegin.gif"));
+				background.setFitWidth(720);
+				background.setFitHeight(480);
+				Group root = new Group();
+				root.getChildren().add(background);
+				Scene splashGame = new Scene(root);
+				gameStage.setScene(splashGame);
+				gameStage.centerOnScreen();
+				splashGame.setOnKeyPressed(e->{
+					Engine engine = new Engine(database, savePath, gameType, gameStage);
+					engine.toMainGameScene();
+				});
 				return null;
 			}
 		});
-		gameStage.setScene(new Scene(pathSetter));
-		gameStage.show();
-		gameStage.centerOnScreen();
 	}
 }

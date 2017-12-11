@@ -1,9 +1,13 @@
 package authoring.dragdrop;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
-import java.util.TreeMap;
 
+import data.model.Tile;
 import engine.UI.Path2Image;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -21,50 +25,42 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import util.FilePathConverter;
 	
 
 	/**
 	 * The tileMenu which can select tiles displayed in a menu
-	 * @author supertony
-	 *
+	 * @author supertony cy122
+	 * @author Dan Sun
 	 */
 	public class TileMenu extends TitledPane{
-		
-		/*final variable*/
-		final static String REGTILE_PATH = "images/reg_tile_scaled.png";
-		final static String GRASS_PATH = "images/grass_tile.png";
-		final static String FLOWER_PATH = "images/flower_tile.png";
-		final static String SHOP_PATH = "images/pokemonCenterScaled.png";
-		final static String SPACE_PATH = "images/space.png";
+
 		
 		
 		/*instance variable*/
 		private ListView<HBox> paneListView = new ListView<>();
-		private TreeMap<String, Image> imageMap = new TreeMap<String, Image>();
-		
+		private Map<Tile, Image> imageMap = new HashMap<Tile, Image>();
+		private ArrayList<Tile> tiles;
 
-		
-		public TileMenu() {
-
+		/**
+		 * Constructor for the class
+		 * @param tiles Available tiles for the world
+		 */
+		public TileMenu(List<Tile> tiles){
+			this.tiles = new ArrayList<Tile>(tiles);
 			// init image
 			initImageMap();
-
-
 			// set style
 			this.getStylesheets().add(this.getClass().getResource("tab.css").toExternalForm());
-
 			// set graphic of the title
 			HBox graphic = new HBox();
 			graphic.setSpacing(5);
 			graphic.setAlignment(Pos.CENTER_LEFT);
 			graphic.getChildren().add(new Label("Tile Menu"));
 			this.setGraphic(graphic);
-
 			// set the content of the pane view
 			this.setContent(createListView());
-
 			//set the size of the pane 
 			this.setPrefSize(190, 546);
 		}
@@ -72,11 +68,9 @@ import javafx.scene.text.Font;
 
 
 		private void initImageMap() {			
-			imageMap.put(REGTILE_PATH, Path2Image.showImage(REGTILE_PATH));
-			imageMap.put(GRASS_PATH, Path2Image.showImage(GRASS_PATH));
-			imageMap.put(FLOWER_PATH, Path2Image.showImage(FLOWER_PATH));
-			imageMap.put(SHOP_PATH, Path2Image.scale(Path2Image.showImage(SHOP_PATH), 48,48, true).snapshot(null, null));
-			imageMap.put(SPACE_PATH, Path2Image.scale(Path2Image.showImage(SPACE_PATH), 48,48, true).snapshot(null, null));
+			for(Tile tile: tiles){
+				imageMap.put(tile, Path2Image.scale(Path2Image.showImage(tile.getWholePic()), 48,48, true).snapshot(null, null));
+			}
 		}
 		
 		
@@ -86,95 +80,97 @@ import javafx.scene.text.Font;
 		 * @return a list view
 		 */
 		private Node createListView() {
-			//create a subPane
-			
-			for(Entry<String, Image> entry : imageMap.entrySet()) {
-			HBox finalPane = new HBox();
-			VBox totalPane = new VBox();
-			HBox subPane = new HBox();
-			
-			Label  name = new Label(entry.getKey());
-			name.setFont(new Font(11));
-			subPane.getChildren().add(name);
-
-			//though Chenning thinks this label is redundant
-			Label gitControl = new Label(" [GUI master]");
-			gitControl.setTextFill(Color.GOLDENROD);
-			gitControl.setFont(new Font(11));
-			subPane.getChildren().add(gitControl);
-			gitControl.setAlignment(Pos.BASELINE_CENTER);
-			
-			subPane.setAlignment(Pos.BOTTOM_LEFT); 
-			
-			totalPane.getChildren().add(subPane);
-			ImageView sourceImage = new ImageView(entry.getValue());
-			totalPane.getChildren().add(sourceImage);
-			//totalPane.getChildren().add()
-			finalPane.getChildren().add(totalPane);
-			paneListView.getItems().add(finalPane);
-			
-			
-			//add drag event handler
-			sourceImage.setOnDragDetected(new EventHandler <MouseEvent>() {
-		         public void handle(MouseEvent event) {
-		             /* drag was detected, start drag-and-drop gesture*/
-		             //System.out.println("onDragDetected");
-		             
-		             /* allow any transfer mode */
-		             Dragboard db = sourceImage.startDragAndDrop(TransferMode.ANY);
-		             
-		             /* put a string on dragboard */
-		             ClipboardContent content = new ClipboardContent();
-		             // if you want to add a shop tile, it needs to resize to the original one
-		             if (entry.getKey().equals("Shop Tile")) {
-		            	 	Image source = new Image(SHOP_PATH);
-		            	 	content.putImage(source);
-		            	 	content.putString(entry.getKey());
-		             } else {
-		            	 content.putImage(sourceImage.getImage());
-		             }
-		             content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "Tile");
-		             content.put(DataFormat.lookupMimeType("Path")==null?new DataFormat("Path"):DataFormat.lookupMimeType("Path"), entry.getKey());
-		             db.setContent(content);
-		             
-		             event.consume();
-		         }
-		     });
-			
-			//set drop down
-			 sourceImage.setOnDragDone(new EventHandler <DragEvent>() {
-		         public void handle(DragEvent event) {
-		             /* the drag-and-drop gesture ended */
-		             //System.out.println("onDragDone");
-		             /* if the data was successfully moved, clear it */
-		             if (event.getTransferMode() == TransferMode.MOVE) {
-		               //TO-DO
-		             }
-		             
-		             event.consume();
-		         }
-		     });
-			
-			
-			
-			
+			for(Entry<Tile, Image> entry : imageMap.entrySet()) {
+			    ImageView sourceImage = addTileImageToListView(entry);
+			    addDragEventHandlerToImage(entry, sourceImage);
+			    addDropEventForImage(sourceImage);
 			}
-			
 			return paneListView;
 		}
 
-		
 
-		
-//		public void printIndex() {
-//			paneListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//
-//				@Override
-//				public void handle(MouseEvent event) {
-//					System.out.println("clicked on " + ((Label) paneListView.getSelectionModel().getSelectedItem().getChildren().get(2)).getText());
-//				}
-//			});
-//		}
+
+		private void addDropEventForImage(ImageView sourceImage) {
+		    //set drop down
+		     sourceImage.setOnDragDone(new EventHandler <DragEvent>() {
+			 public void handle(DragEvent event) {
+			     /* the drag-and-drop gesture ended */
+			     //System.out.println("onDragDone");
+			     /* if the data was successfully moved, clear it */
+			     if (event.getTransferMode() == TransferMode.MOVE) {
+				 //TO-DO
+			     }
+			     event.consume();
+			 }
+		     });
+		}
+
+
+		/**
+		 * Adds drag event handler that is necessary for the drag and drop operation
+		 * @param entry Specifies a kind of tile in the form of <Tile, Image>
+		 * @param sourceImage The image shown in the ListView
+		 */
+		private void addDragEventHandlerToImage(Entry<Tile, Image> entry, ImageView sourceImage) {
+		    //add drag event handler
+		    sourceImage.setOnDragDetected(new EventHandler <MouseEvent>() {
+		    public void handle(MouseEvent event) {
+		        /* drag was detected, start drag-and-drop gesture*/
+		        //System.out.println("onDragDetected");
+			Tile tile = entry.getKey();
+		        /* allow any transfer mode */
+		        Dragboard db = sourceImage.startDragAndDrop(TransferMode.ANY);
+		     
+		        /* put a string on dragboard */
+		        ClipboardContent content = new ClipboardContent();
+		        Image dragImage = scaleImageBasedOnTileDimensions(sourceImage, tile);
+		        content.putImage(dragImage);
+		        content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "Tile");
+		        content.put(DataFormat.lookupMimeType("Tile")==null?new DataFormat("Tile"):DataFormat.lookupMimeType("Tile"), tile);
+		        db.setContent(content);     
+		        event.consume();
+     }
+  });
+		}
+		//image scaling from https://stackoverflow.com/questions/27894945/how-do-i-resize-an-imageview-image-in-javafx
+		private Image scaleImageBasedOnTileDimensions(ImageView source, Tile tileData) {
+		    Image sourceImage = source.getImage();
+		    double originalWidth = sourceImage.getWidth();
+		    double originalHeight = sourceImage.getHeight();
+		    int widthCoefficient = tileData.getWidth();
+		    int heightCoefficient = tileData.getHeight();
+//		    System.out.println("Scaled by " + widthCoefficient + "x" + heightCoefficient);
+		    double scaledWidth = originalWidth * widthCoefficient;
+		    double scaledHeight = originalHeight * heightCoefficient;
+		    Image scaledImage = Path2Image.scale(Path2Image.showImage(tileData.getWholePic()), 
+			    (int)scaledWidth,(int)scaledHeight, true).snapshot(null, null);
+		    return scaledImage;
+		}
+
+
+		/**
+		 * adds the tile specified by the entry to the ListView
+		 * @param entry Specifies a kind of tile
+		 * @return The Imageview created for this tile in the ListView
+		 */
+		private ImageView addTileImageToListView(Entry<Tile, Image> entry) {
+		    HBox finalPane = new HBox();
+		    VBox totalPane = new VBox(); //for name and picture of a tile
+		    HBox subPane = new HBox(); // for name of a tile
+		    Label name = new Label(entry.getKey().getName() + ": " + 
+		        new Integer(entry.getKey().getWidth()).toString() + "x" + 
+		        new Integer(entry.getKey().getHeight()).toString());
+		    name.setFont(new Font(11));
+		    subPane.getChildren().add(name);
+		    subPane.setAlignment(Pos.BOTTOM_LEFT); 
+		    totalPane.getChildren().add(subPane);
+		    ImageView sourceImage = new ImageView(entry.getValue());
+		    totalPane.getChildren().add(sourceImage);
+		    //totalPane.getChildren().add()
+		    finalPane.getChildren().add(totalPane);
+		    paneListView.getItems().add(finalPane);
+		    return sourceImage;
+		}
 
 
 

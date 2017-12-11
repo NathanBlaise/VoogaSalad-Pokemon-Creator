@@ -1,0 +1,5 @@
+<defaultTile>
+	<name>space</name>
+	<wholePic>images/tiles/space.png</wholePic>
+	<obstacle>true</obstacle>
+</defaultTile>

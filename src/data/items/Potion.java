@@ -10,11 +10,13 @@ import data.player.Player;
  */
 
 public class Potion extends Item{
-	
+
+	private static final long serialVersionUID = 3284561105645468766L;
+
 	//Specifies name, price and image in the constructor
 	public Potion(){
 		itemName = "Potion";
-		itemPrice = 1200;
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

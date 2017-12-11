@@ -11,10 +11,12 @@ import data.player.Player;
 
 public class XPBoost extends Item{
 	
+	private static final long serialVersionUID = 1296292968492235173L;
+
 	//Specifies name, price and image in the constructor
 	public XPBoost(){
-		itemName = "XP Boost";
-		itemPrice = 1200;
+		itemName = "XPBoost";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has

@@ -3,6 +3,7 @@ package authoring.editEventImage;
 import java.util.List;
 
 import data.model.NPC;
+import data.model.PacmanEnemy;
 import data.model.PokemonSpecie;
 import engine.UI.Path2Image;
 import javafx.event.EventHandler;
@@ -26,7 +27,7 @@ import javafx.scene.text.Font;
 
 /**
  * The EventImageMenu which displays all the event images you can choose over 
- * @author supertony
+ * @author supertony cy122
  *
  */
 public class EventImageMenu extends TitledPane{
@@ -61,8 +62,47 @@ public class EventImageMenu extends TitledPane{
 		//set the size of the pane 
 		this.setPrefSize(190, 546);
 	}
+	
+	public EventImageMenu(List<PacmanEnemy> pacmanEnemies) {
+		HBox graphic = new HBox();
+		graphic.setSpacing(5);
+		graphic.setAlignment(Pos.CENTER_LEFT);
+		graphic.getChildren().add(new Label("Event Image Menu"));
+		this.setGraphic(graphic);
+		
+		this.setPrefSize(190, 546);
+	}
 
+	private Node createPacmanEnemyListView(List<PacmanEnemy> pacmanEnemies) {
+		ListView<HBox> paneListView = new ListView<>();
+		for(PacmanEnemy enemy:pacmanEnemies) {
+			HBox totalPane = new HBox();
+			ImageView sourceImage = new ImageView(Path2Image.showImage(enemy.getImagePath()));
+			totalPane.getChildren().add(sourceImage);
+			paneListView.getItems().add(totalPane);
+			
+			sourceImage.setOnDragDetected(new EventHandler <MouseEvent>() {
+				public void handle(MouseEvent event) {
+					/* drag was detected, start drag-and-drop gesture*/
+					//System.out.println("onDragDetected");
 
+					/* allow any transfer mode */
+					Dragboard db = sourceImage.startDragAndDrop(TransferMode.ANY);
+
+					/* put a string on dragboard */
+					ClipboardContent content = new ClipboardContent();
+					// if you want to add a shop tile, it needs to resize to the original one
+					content.putImage(sourceImage.getImage());
+					content.put(DataFormat.lookupMimeType("Type")==null?new DataFormat("Type"):DataFormat.lookupMimeType("Type"), "PacmanEnemy");
+		            content.put(DataFormat.lookupMimeType("PacmanEnemy")==null?new DataFormat("PacmanEnemy"):DataFormat.lookupMimeType("PacmanEnemy"), enemy);
+		            db.setContent(content);
+
+					event.consume();
+				}
+			});
+		}
+		return paneListView;
+	}
 
 	/**
 	 * private method to create a list view as the content of the titled pane
@@ -178,6 +218,7 @@ public class EventImageMenu extends TitledPane{
 		Tab tabSize = new Tab();
 		tabSize.setText(tabName);
 		tabSize.setContent(tabContext);
+		tabSize.setClosable(false);
 		tabMenu.getTabs().addAll(tabSize);
 	}
 }

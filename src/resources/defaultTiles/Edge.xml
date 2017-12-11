@@ -1,0 +1,5 @@
+<defaultTile>
+	<name>Edge of water</name>
+	<wholePic>images/tiles/edgecenter.png</wholePic>
+	<obstacle>true</obstacle>
+</defaultTile>

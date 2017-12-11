@@ -1,0 +1,5 @@
+<defaultTile>
+	<name>bridge2</name>
+	<wholePic>images/tiles/bridge2.png</wholePic>
+	<obstacle>false</obstacle>
+</defaultTile>

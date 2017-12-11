@@ -3,6 +3,7 @@ package data.model;
 import java.io.Serializable;
 
 /**
+ * This class stores the name and imagePath of a NPC
  * NPC is the same meaning to trainer in Pokemon, the NPC don't need to stay in the Map:
  * they are just a part of model, 
  * and NPC is waiting for the Event to put NPC in the Instructions such as beginning a dialogue, or a battle

@@ -1,0 +1,11 @@
+<defaultTile>
+	<name>Desk</name>
+	<wholePic>images/tiles/tiles4shop/deskWhole.png</wholePic>
+	<obstacle>true</obstacle>
+	<height>2</height>
+	<width>2</width>
+	<imagePaths>images/tiles/tiles4shop/desk1.png</imagePaths>
+	<imagePaths>images/tiles/tiles4shop/desk2.png</imagePaths>
+	<imagePaths>images/tiles/tiles4shop/desk3.png</imagePaths>
+	<imagePaths>images/tiles/tiles4shop/desk4.png</imagePaths>
+</defaultTile>

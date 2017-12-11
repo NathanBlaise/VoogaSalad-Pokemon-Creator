@@ -11,10 +11,12 @@ import data.player.Player;
 
 public class LevelBoost extends Item{
 	
+	private static final long serialVersionUID = 3329845208040856863L;
+
 	//Specifies name, price and image in the constructor
 	public LevelBoost(){
-		itemName = "Level Boost";
-		itemPrice = 1200;
+		itemName = "LevelBoost";
+		itemPrice = 50;
 	}
 	
 	//Overrides the useItem function that every item has
