@@ -104,12 +104,14 @@ public class BattleFightOptions {
 					
 					
 					if (enemyPokemon.isDead()) {
-						showEnding("You have caught the enemy pokemon successfully!");
+						battleScene.showEnding("The enemy pokemon is dead!");
 						enemyPokemon.resetCurrentStat();
-						battleScene.getPlayer().addPokemon(enemyPokemon);
 						//remove the enemy pokemon
 						
 					}
+					
+				
+					
 				});
 				back.setOnAction((e) -> {
 					hbox.getChildren().clear();
@@ -124,28 +126,7 @@ public class BattleFightOptions {
 		
 	}
 	
-	//show the game end message
-	protected void showEnding(String message) {
-		Text end=new Text(message);
-		final Stage dialog = new Stage();
-		dialog.initModality(Modality.APPLICATION_MODAL);
-		Stage myStage=battleScene.getGameScene().getStage();
-		dialog.initOwner(myStage);
-		VBox dialogVbox = new VBox(20);
-
-		Button btn = new Button();
-		btn.setText("Got it");
-		dialogVbox.getChildren().add(end);
-		dialogVbox.getChildren().add(btn);
-		btn.setOnAction((event) ->{
-			dialog.close();
-			battleScene.getGameScene().changeBackScene();
-		});
-		Scene dialogScene = new Scene(dialogVbox, 300, 200);
-		dialog.setScene(dialogScene);
-		dialog.show();
-
-	}
+	
 
 	public void changeScene() {
 		

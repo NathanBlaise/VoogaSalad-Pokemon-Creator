@@ -13,6 +13,7 @@ import data.player.Player;
 public class PokemonBall extends Item{
 
 	private static final long serialVersionUID = 1291677902844899580L;
+	private boolean caught=false;
 
 	public PokemonBall(){
 		itemName = "PokemonBall";
@@ -24,8 +25,14 @@ public class PokemonBall extends Item{
 		Double num = new Random().nextDouble();
 		if(num<0.3){
 			player.getWarehouse().add(new Pokemon(Enemy));
-			Enemy.getCurrentStat().setHP(0);;
+			player.addPokemon(Enemy);
+			caught=true;
+			
 		}
+	}
+	
+	public boolean getCaught() {
+		return caught;
 	}
 
 }
