@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_144" class="java.beans.XMLDecoder">
+<java version="1.8.0_121" class="java.beans.XMLDecoder">
  <object class="data.Database" id="Database0">
   <void property="maps">
    <void method="add">
@@ -1925,10 +1925,10 @@
           <int>1</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>55</int>
+            <int>17</int>
            </void>
            <void property="maxHP">
-            <int>55</int>
+            <int>17</int>
            </void>
            <void property="normalAttack">
             <int>56</int>
@@ -1951,10 +1951,10 @@
           <int>2</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>75</int>
+            <int>22</int>
            </void>
            <void property="maxHP">
-            <int>75</int>
+            <int>22</int>
            </void>
            <void property="normalAttack">
             <int>57</int>
@@ -1977,10 +1977,10 @@
           <int>3</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>95</int>
+            <int>27</int>
            </void>
            <void property="maxHP">
-            <int>95</int>
+            <int>27</int>
            </void>
            <void property="normalAttack">
             <int>58</int>
@@ -2003,10 +2003,10 @@
           <int>4</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>115</int>
+            <int>32</int>
            </void>
            <void property="maxHP">
-            <int>115</int>
+            <int>32</int>
            </void>
            <void property="normalAttack">
             <int>59</int>
@@ -2029,10 +2029,10 @@
           <int>5</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>135</int>
+            <int>37</int>
            </void>
            <void property="maxHP">
-            <int>135</int>
+            <int>37</int>
            </void>
            <void property="normalAttack">
             <int>60</int>
@@ -2055,10 +2055,10 @@
           <int>6</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>155</int>
+            <int>42</int>
            </void>
            <void property="maxHP">
-            <int>155</int>
+            <int>42</int>
            </void>
            <void property="normalAttack">
             <int>61</int>
@@ -2081,10 +2081,10 @@
           <int>7</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>175</int>
+            <int>47</int>
            </void>
            <void property="maxHP">
-            <int>175</int>
+            <int>47</int>
            </void>
            <void property="normalAttack">
             <int>62</int>
@@ -2107,10 +2107,10 @@
           <int>8</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>195</int>
+            <int>52</int>
            </void>
            <void property="maxHP">
-            <int>195</int>
+            <int>52</int>
            </void>
            <void property="normalAttack">
             <int>63</int>
@@ -2133,10 +2133,10 @@
           <int>9</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>215</int>
+            <int>57</int>
            </void>
            <void property="maxHP">
-            <int>215</int>
+            <int>57</int>
            </void>
            <void property="normalAttack">
             <int>64</int>
@@ -2159,10 +2159,10 @@
           <int>10</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>235</int>
+            <int>62</int>
            </void>
            <void property="maxHP">
-            <int>235</int>
+            <int>62</int>
            </void>
            <void property="normalAttack">
             <int>65</int>
@@ -2185,10 +2185,10 @@
           <int>11</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>255</int>
+            <int>67</int>
            </void>
            <void property="maxHP">
-            <int>255</int>
+            <int>67</int>
            </void>
            <void property="normalAttack">
             <int>66</int>
@@ -2211,10 +2211,10 @@
           <int>12</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>275</int>
+            <int>72</int>
            </void>
            <void property="maxHP">
-            <int>275</int>
+            <int>72</int>
            </void>
            <void property="normalAttack">
             <int>67</int>
@@ -2237,10 +2237,10 @@
           <int>13</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>295</int>
+            <int>77</int>
            </void>
            <void property="maxHP">
-            <int>295</int>
+            <int>77</int>
            </void>
            <void property="normalAttack">
             <int>68</int>
@@ -2263,10 +2263,10 @@
           <int>14</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>315</int>
+            <int>82</int>
            </void>
            <void property="maxHP">
-            <int>315</int>
+            <int>82</int>
            </void>
            <void property="normalAttack">
             <int>69</int>
@@ -2289,10 +2289,10 @@
           <int>15</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>335</int>
+            <int>87</int>
            </void>
            <void property="maxHP">
-            <int>335</int>
+            <int>87</int>
            </void>
            <void property="normalAttack">
             <int>70</int>
@@ -2315,10 +2315,10 @@
           <int>16</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>355</int>
+            <int>92</int>
            </void>
            <void property="maxHP">
-            <int>355</int>
+            <int>92</int>
            </void>
            <void property="normalAttack">
             <int>71</int>
@@ -2341,10 +2341,10 @@
           <int>17</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>375</int>
+            <int>97</int>
            </void>
            <void property="maxHP">
-            <int>375</int>
+            <int>97</int>
            </void>
            <void property="normalAttack">
             <int>72</int>
@@ -2367,10 +2367,10 @@
           <int>18</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>395</int>
+            <int>102</int>
            </void>
            <void property="maxHP">
-            <int>395</int>
+            <int>102</int>
            </void>
            <void property="normalAttack">
             <int>73</int>
@@ -2393,10 +2393,10 @@
           <int>19</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>415</int>
+            <int>107</int>
            </void>
            <void property="maxHP">
-            <int>415</int>
+            <int>107</int>
            </void>
            <void property="normalAttack">
             <int>74</int>
@@ -2419,10 +2419,10 @@
           <int>20</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>435</int>
+            <int>112</int>
            </void>
            <void property="maxHP">
-            <int>435</int>
+            <int>112</int>
            </void>
            <void property="normalAttack">
             <int>75</int>
@@ -2445,10 +2445,10 @@
           <int>21</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>455</int>
+            <int>117</int>
            </void>
            <void property="maxHP">
-            <int>455</int>
+            <int>117</int>
            </void>
            <void property="normalAttack">
             <int>76</int>
@@ -2471,10 +2471,10 @@
           <int>22</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>475</int>
+            <int>122</int>
            </void>
            <void property="maxHP">
-            <int>475</int>
+            <int>122</int>
            </void>
            <void property="normalAttack">
             <int>77</int>
@@ -2497,10 +2497,10 @@
           <int>23</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>495</int>
+            <int>127</int>
            </void>
            <void property="maxHP">
-            <int>495</int>
+            <int>127</int>
            </void>
            <void property="normalAttack">
             <int>78</int>
@@ -2523,10 +2523,10 @@
           <int>24</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>515</int>
+            <int>132</int>
            </void>
            <void property="maxHP">
-            <int>515</int>
+            <int>132</int>
            </void>
            <void property="normalAttack">
             <int>79</int>
@@ -2549,10 +2549,10 @@
           <int>25</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>535</int>
+            <int>137</int>
            </void>
            <void property="maxHP">
-            <int>535</int>
+            <int>137</int>
            </void>
            <void property="normalAttack">
             <int>80</int>
@@ -2575,10 +2575,10 @@
           <int>26</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>555</int>
+            <int>142</int>
            </void>
            <void property="maxHP">
-            <int>555</int>
+            <int>142</int>
            </void>
            <void property="normalAttack">
             <int>81</int>
@@ -2601,10 +2601,10 @@
           <int>27</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>575</int>
+            <int>147</int>
            </void>
            <void property="maxHP">
-            <int>575</int>
+            <int>147</int>
            </void>
            <void property="normalAttack">
             <int>82</int>
@@ -2627,10 +2627,10 @@
           <int>28</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>595</int>
+            <int>152</int>
            </void>
            <void property="maxHP">
-            <int>595</int>
+            <int>152</int>
            </void>
            <void property="normalAttack">
             <int>83</int>
@@ -2653,10 +2653,10 @@
           <int>29</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>615</int>
+            <int>157</int>
            </void>
            <void property="maxHP">
-            <int>615</int>
+            <int>157</int>
            </void>
            <void property="normalAttack">
             <int>84</int>
@@ -2679,10 +2679,10 @@
           <int>30</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>635</int>
+            <int>162</int>
            </void>
            <void property="maxHP">
-            <int>635</int>
+            <int>162</int>
            </void>
            <void property="normalAttack">
             <int>85</int>
@@ -2705,10 +2705,10 @@
           <int>31</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>655</int>
+            <int>167</int>
            </void>
            <void property="maxHP">
-            <int>655</int>
+            <int>167</int>
            </void>
            <void property="normalAttack">
             <int>86</int>
@@ -2731,10 +2731,10 @@
           <int>32</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>675</int>
+            <int>172</int>
            </void>
            <void property="maxHP">
-            <int>675</int>
+            <int>172</int>
            </void>
            <void property="normalAttack">
             <int>87</int>
@@ -2757,10 +2757,10 @@
           <int>33</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>695</int>
+            <int>177</int>
            </void>
            <void property="maxHP">
-            <int>695</int>
+            <int>177</int>
            </void>
            <void property="normalAttack">
             <int>88</int>
@@ -2783,10 +2783,10 @@
           <int>34</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>715</int>
+            <int>182</int>
            </void>
            <void property="maxHP">
-            <int>715</int>
+            <int>182</int>
            </void>
            <void property="normalAttack">
             <int>89</int>
@@ -2809,10 +2809,10 @@
           <int>35</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>735</int>
+            <int>187</int>
            </void>
            <void property="maxHP">
-            <int>735</int>
+            <int>187</int>
            </void>
            <void property="normalAttack">
             <int>90</int>
@@ -2835,10 +2835,10 @@
           <int>36</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>755</int>
+            <int>192</int>
            </void>
            <void property="maxHP">
-            <int>755</int>
+            <int>192</int>
            </void>
            <void property="normalAttack">
             <int>91</int>
@@ -2861,10 +2861,10 @@
           <int>37</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>775</int>
+            <int>197</int>
            </void>
            <void property="maxHP">
-            <int>775</int>
+            <int>197</int>
            </void>
            <void property="normalAttack">
             <int>92</int>
@@ -2887,10 +2887,10 @@
           <int>38</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>795</int>
+            <int>202</int>
            </void>
            <void property="maxHP">
-            <int>795</int>
+            <int>202</int>
            </void>
            <void property="normalAttack">
             <int>93</int>
@@ -2913,10 +2913,10 @@
           <int>39</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>815</int>
+            <int>207</int>
            </void>
            <void property="maxHP">
-            <int>815</int>
+            <int>207</int>
            </void>
            <void property="normalAttack">
             <int>94</int>
@@ -2939,10 +2939,10 @@
           <int>40</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>835</int>
+            <int>212</int>
            </void>
            <void property="maxHP">
-            <int>835</int>
+            <int>212</int>
            </void>
            <void property="normalAttack">
             <int>95</int>
@@ -2965,10 +2965,10 @@
           <int>41</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>855</int>
+            <int>217</int>
            </void>
            <void property="maxHP">
-            <int>855</int>
+            <int>217</int>
            </void>
            <void property="normalAttack">
             <int>96</int>
@@ -2991,10 +2991,10 @@
           <int>42</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>875</int>
+            <int>222</int>
            </void>
            <void property="maxHP">
-            <int>875</int>
+            <int>222</int>
            </void>
            <void property="normalAttack">
             <int>97</int>
@@ -3017,10 +3017,10 @@
           <int>43</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>895</int>
+            <int>227</int>
            </void>
            <void property="maxHP">
-            <int>895</int>
+            <int>227</int>
            </void>
            <void property="normalAttack">
             <int>98</int>
@@ -3043,10 +3043,10 @@
           <int>44</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>915</int>
+            <int>232</int>
            </void>
            <void property="maxHP">
-            <int>915</int>
+            <int>232</int>
            </void>
            <void property="normalAttack">
             <int>99</int>
@@ -3069,10 +3069,10 @@
           <int>45</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>935</int>
+            <int>237</int>
            </void>
            <void property="maxHP">
-            <int>935</int>
+            <int>237</int>
            </void>
            <void property="normalAttack">
             <int>100</int>
@@ -3095,10 +3095,10 @@
           <int>46</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>955</int>
+            <int>242</int>
            </void>
            <void property="maxHP">
-            <int>955</int>
+            <int>242</int>
            </void>
            <void property="normalAttack">
             <int>101</int>
@@ -3121,10 +3121,10 @@
           <int>47</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>975</int>
+            <int>247</int>
            </void>
            <void property="maxHP">
-            <int>975</int>
+            <int>247</int>
            </void>
            <void property="normalAttack">
             <int>102</int>
@@ -3147,10 +3147,10 @@
           <int>48</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>995</int>
+            <int>252</int>
            </void>
            <void property="maxHP">
-            <int>995</int>
+            <int>252</int>
            </void>
            <void property="normalAttack">
             <int>103</int>
@@ -3173,10 +3173,10 @@
           <int>49</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1015</int>
+            <int>257</int>
            </void>
            <void property="maxHP">
-            <int>1015</int>
+            <int>257</int>
            </void>
            <void property="normalAttack">
             <int>104</int>
@@ -3199,10 +3199,10 @@
           <int>50</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1035</int>
+            <int>262</int>
            </void>
            <void property="maxHP">
-            <int>1035</int>
+            <int>262</int>
            </void>
            <void property="normalAttack">
             <int>105</int>
@@ -3225,10 +3225,10 @@
           <int>51</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1055</int>
+            <int>267</int>
            </void>
            <void property="maxHP">
-            <int>1055</int>
+            <int>267</int>
            </void>
            <void property="normalAttack">
             <int>106</int>
@@ -3251,10 +3251,10 @@
           <int>52</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1075</int>
+            <int>272</int>
            </void>
            <void property="maxHP">
-            <int>1075</int>
+            <int>272</int>
            </void>
            <void property="normalAttack">
             <int>107</int>
@@ -3277,10 +3277,10 @@
           <int>53</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1095</int>
+            <int>277</int>
            </void>
            <void property="maxHP">
-            <int>1095</int>
+            <int>277</int>
            </void>
            <void property="normalAttack">
             <int>108</int>
@@ -3303,10 +3303,10 @@
           <int>54</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1115</int>
+            <int>282</int>
            </void>
            <void property="maxHP">
-            <int>1115</int>
+            <int>282</int>
            </void>
            <void property="normalAttack">
             <int>109</int>
@@ -3329,10 +3329,10 @@
           <int>55</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1135</int>
+            <int>287</int>
            </void>
            <void property="maxHP">
-            <int>1135</int>
+            <int>287</int>
            </void>
            <void property="normalAttack">
             <int>110</int>
@@ -3355,10 +3355,10 @@
           <int>56</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1155</int>
+            <int>292</int>
            </void>
            <void property="maxHP">
-            <int>1155</int>
+            <int>292</int>
            </void>
            <void property="normalAttack">
             <int>111</int>
@@ -3381,10 +3381,10 @@
           <int>57</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1175</int>
+            <int>297</int>
            </void>
            <void property="maxHP">
-            <int>1175</int>
+            <int>297</int>
            </void>
            <void property="normalAttack">
             <int>112</int>
@@ -3407,10 +3407,10 @@
           <int>58</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1195</int>
+            <int>302</int>
            </void>
            <void property="maxHP">
-            <int>1195</int>
+            <int>302</int>
            </void>
            <void property="normalAttack">
             <int>113</int>
@@ -3433,10 +3433,10 @@
           <int>59</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1215</int>
+            <int>307</int>
            </void>
            <void property="maxHP">
-            <int>1215</int>
+            <int>307</int>
            </void>
            <void property="normalAttack">
             <int>114</int>
@@ -3459,10 +3459,10 @@
           <int>60</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1235</int>
+            <int>312</int>
            </void>
            <void property="maxHP">
-            <int>1235</int>
+            <int>312</int>
            </void>
            <void property="normalAttack">
             <int>115</int>
@@ -3485,10 +3485,10 @@
           <int>61</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1255</int>
+            <int>317</int>
            </void>
            <void property="maxHP">
-            <int>1255</int>
+            <int>317</int>
            </void>
            <void property="normalAttack">
             <int>116</int>
@@ -3511,10 +3511,10 @@
           <int>62</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1275</int>
+            <int>322</int>
            </void>
            <void property="maxHP">
-            <int>1275</int>
+            <int>322</int>
            </void>
            <void property="normalAttack">
             <int>117</int>
@@ -3537,10 +3537,10 @@
           <int>63</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1295</int>
+            <int>327</int>
            </void>
            <void property="maxHP">
-            <int>1295</int>
+            <int>327</int>
            </void>
            <void property="normalAttack">
             <int>118</int>
@@ -3563,10 +3563,10 @@
           <int>64</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1315</int>
+            <int>332</int>
            </void>
            <void property="maxHP">
-            <int>1315</int>
+            <int>332</int>
            </void>
            <void property="normalAttack">
             <int>119</int>
@@ -3589,10 +3589,10 @@
           <int>65</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1335</int>
+            <int>337</int>
            </void>
            <void property="maxHP">
-            <int>1335</int>
+            <int>337</int>
            </void>
            <void property="normalAttack">
             <int>120</int>
@@ -3615,10 +3615,10 @@
           <int>66</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1355</int>
+            <int>342</int>
            </void>
            <void property="maxHP">
-            <int>1355</int>
+            <int>342</int>
            </void>
            <void property="normalAttack">
             <int>121</int>
@@ -3641,10 +3641,10 @@
           <int>67</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1375</int>
+            <int>347</int>
            </void>
            <void property="maxHP">
-            <int>1375</int>
+            <int>347</int>
            </void>
            <void property="normalAttack">
             <int>122</int>
@@ -3667,10 +3667,10 @@
           <int>68</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1395</int>
+            <int>352</int>
            </void>
            <void property="maxHP">
-            <int>1395</int>
+            <int>352</int>
            </void>
            <void property="normalAttack">
             <int>123</int>
@@ -3693,10 +3693,10 @@
           <int>69</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1415</int>
+            <int>357</int>
            </void>
            <void property="maxHP">
-            <int>1415</int>
+            <int>357</int>
            </void>
            <void property="normalAttack">
             <int>124</int>
@@ -3719,10 +3719,10 @@
           <int>70</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1435</int>
+            <int>362</int>
            </void>
            <void property="maxHP">
-            <int>1435</int>
+            <int>362</int>
            </void>
            <void property="normalAttack">
             <int>125</int>
@@ -3745,10 +3745,10 @@
           <int>71</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1455</int>
+            <int>367</int>
            </void>
            <void property="maxHP">
-            <int>1455</int>
+            <int>367</int>
            </void>
            <void property="normalAttack">
             <int>126</int>
@@ -3771,10 +3771,10 @@
           <int>72</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1475</int>
+            <int>372</int>
            </void>
            <void property="maxHP">
-            <int>1475</int>
+            <int>372</int>
            </void>
            <void property="normalAttack">
             <int>127</int>
@@ -3797,10 +3797,10 @@
           <int>73</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1495</int>
+            <int>377</int>
            </void>
            <void property="maxHP">
-            <int>1495</int>
+            <int>377</int>
            </void>
            <void property="normalAttack">
             <int>128</int>
@@ -3823,10 +3823,10 @@
           <int>74</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1515</int>
+            <int>382</int>
            </void>
            <void property="maxHP">
-            <int>1515</int>
+            <int>382</int>
            </void>
            <void property="normalAttack">
             <int>129</int>
@@ -3849,10 +3849,10 @@
           <int>75</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1535</int>
+            <int>387</int>
            </void>
            <void property="maxHP">
-            <int>1535</int>
+            <int>387</int>
            </void>
            <void property="normalAttack">
             <int>130</int>
@@ -4224,25 +4224,25 @@
           <int>1</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>65</int>
+            <int>15</int>
            </void>
            <void property="maxHP">
-            <int>65</int>
+            <int>15</int>
            </void>
            <void property="normalAttack">
-            <int>50</int>
+            <int>51</int>
            </void>
            <void property="normalDefense">
-            <int>50</int>
+            <int>51</int>
            </void>
            <void property="specialAttack">
-            <int>66</int>
+            <int>67</int>
            </void>
            <void property="specialDefense">
-            <int>66</int>
+            <int>67</int>
            </void>
            <void property="speed">
-            <int>66</int>
+            <int>67</int>
            </void>
           </object>
          </void>
@@ -4250,25 +4250,25 @@
           <int>2</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>85</int>
+            <int>20</int>
            </void>
            <void property="maxHP">
-            <int>85</int>
+            <int>20</int>
            </void>
            <void property="normalAttack">
-            <int>51</int>
+            <int>52</int>
            </void>
            <void property="normalDefense">
-            <int>51</int>
+            <int>52</int>
            </void>
            <void property="specialAttack">
-            <int>67</int>
+            <int>68</int>
            </void>
            <void property="specialDefense">
-            <int>67</int>
+            <int>68</int>
            </void>
            <void property="speed">
-            <int>67</int>
+            <int>68</int>
            </void>
           </object>
          </void>
@@ -4276,25 +4276,25 @@
           <int>3</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>105</int>
+            <int>25</int>
            </void>
            <void property="maxHP">
-            <int>105</int>
+            <int>25</int>
            </void>
            <void property="normalAttack">
-            <int>52</int>
+            <int>53</int>
            </void>
            <void property="normalDefense">
-            <int>52</int>
+            <int>53</int>
            </void>
            <void property="specialAttack">
-            <int>68</int>
+            <int>69</int>
            </void>
            <void property="specialDefense">
-            <int>68</int>
+            <int>69</int>
            </void>
            <void property="speed">
-            <int>68</int>
+            <int>69</int>
            </void>
           </object>
          </void>
@@ -4302,25 +4302,25 @@
           <int>4</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>125</int>
+            <int>30</int>
            </void>
            <void property="maxHP">
-            <int>125</int>
+            <int>30</int>
            </void>
            <void property="normalAttack">
-            <int>53</int>
+            <int>54</int>
            </void>
            <void property="normalDefense">
-            <int>53</int>
+            <int>54</int>
            </void>
            <void property="specialAttack">
-            <int>69</int>
+            <int>70</int>
            </void>
            <void property="specialDefense">
-            <int>69</int>
+            <int>70</int>
            </void>
            <void property="speed">
-            <int>69</int>
+            <int>70</int>
            </void>
           </object>
          </void>
@@ -4328,25 +4328,25 @@
           <int>5</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>145</int>
+            <int>35</int>
            </void>
            <void property="maxHP">
-            <int>145</int>
+            <int>35</int>
            </void>
            <void property="normalAttack">
-            <int>54</int>
+            <int>55</int>
            </void>
            <void property="normalDefense">
-            <int>54</int>
+            <int>55</int>
            </void>
            <void property="specialAttack">
-            <int>70</int>
+            <int>71</int>
            </void>
            <void property="specialDefense">
-            <int>70</int>
+            <int>71</int>
            </void>
            <void property="speed">
-            <int>70</int>
+            <int>71</int>
            </void>
           </object>
          </void>
@@ -4354,25 +4354,25 @@
           <int>6</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>165</int>
+            <int>40</int>
            </void>
            <void property="maxHP">
-            <int>165</int>
+            <int>40</int>
            </void>
            <void property="normalAttack">
-            <int>55</int>
+            <int>56</int>
            </void>
            <void property="normalDefense">
-            <int>55</int>
+            <int>56</int>
            </void>
            <void property="specialAttack">
-            <int>71</int>
+            <int>72</int>
            </void>
            <void property="specialDefense">
-            <int>71</int>
+            <int>72</int>
            </void>
            <void property="speed">
-            <int>71</int>
+            <int>72</int>
            </void>
           </object>
          </void>
@@ -4380,25 +4380,25 @@
           <int>7</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>185</int>
+            <int>45</int>
            </void>
            <void property="maxHP">
-            <int>185</int>
+            <int>45</int>
            </void>
            <void property="normalAttack">
-            <int>56</int>
+            <int>57</int>
            </void>
            <void property="normalDefense">
-            <int>56</int>
+            <int>57</int>
            </void>
            <void property="specialAttack">
-            <int>72</int>
+            <int>73</int>
            </void>
            <void property="specialDefense">
-            <int>72</int>
+            <int>73</int>
            </void>
            <void property="speed">
-            <int>72</int>
+            <int>73</int>
            </void>
           </object>
          </void>
@@ -4406,25 +4406,25 @@
           <int>8</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>205</int>
+            <int>50</int>
            </void>
            <void property="maxHP">
-            <int>205</int>
+            <int>50</int>
            </void>
            <void property="normalAttack">
-            <int>57</int>
+            <int>58</int>
            </void>
            <void property="normalDefense">
-            <int>57</int>
+            <int>58</int>
            </void>
            <void property="specialAttack">
-            <int>73</int>
+            <int>74</int>
            </void>
            <void property="specialDefense">
-            <int>73</int>
+            <int>74</int>
            </void>
            <void property="speed">
-            <int>73</int>
+            <int>74</int>
            </void>
           </object>
          </void>
@@ -4432,25 +4432,25 @@
           <int>9</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>225</int>
+            <int>55</int>
            </void>
            <void property="maxHP">
-            <int>225</int>
+            <int>55</int>
            </void>
            <void property="normalAttack">
-            <int>58</int>
+            <int>59</int>
            </void>
            <void property="normalDefense">
-            <int>58</int>
+            <int>59</int>
            </void>
            <void property="specialAttack">
-            <int>74</int>
+            <int>75</int>
            </void>
            <void property="specialDefense">
-            <int>74</int>
+            <int>75</int>
            </void>
            <void property="speed">
-            <int>74</int>
+            <int>75</int>
            </void>
           </object>
          </void>
@@ -4458,25 +4458,25 @@
           <int>10</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>245</int>
+            <int>60</int>
            </void>
            <void property="maxHP">
-            <int>245</int>
+            <int>60</int>
            </void>
            <void property="normalAttack">
-            <int>59</int>
+            <int>60</int>
            </void>
            <void property="normalDefense">
-            <int>59</int>
+            <int>60</int>
            </void>
            <void property="specialAttack">
-            <int>75</int>
+            <int>76</int>
            </void>
            <void property="specialDefense">
-            <int>75</int>
+            <int>76</int>
            </void>
            <void property="speed">
-            <int>75</int>
+            <int>76</int>
            </void>
           </object>
          </void>
@@ -4484,25 +4484,25 @@
           <int>11</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>265</int>
+            <int>65</int>
            </void>
            <void property="maxHP">
-            <int>265</int>
+            <int>65</int>
            </void>
            <void property="normalAttack">
-            <int>60</int>
+            <int>61</int>
            </void>
            <void property="normalDefense">
-            <int>60</int>
+            <int>61</int>
            </void>
            <void property="specialAttack">
-            <int>76</int>
+            <int>77</int>
            </void>
            <void property="specialDefense">
-            <int>76</int>
+            <int>77</int>
            </void>
            <void property="speed">
-            <int>76</int>
+            <int>77</int>
            </void>
           </object>
          </void>
@@ -4510,25 +4510,25 @@
           <int>12</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>285</int>
+            <int>70</int>
            </void>
            <void property="maxHP">
-            <int>285</int>
+            <int>70</int>
            </void>
            <void property="normalAttack">
-            <int>61</int>
+            <int>62</int>
            </void>
            <void property="normalDefense">
-            <int>61</int>
+            <int>62</int>
            </void>
            <void property="specialAttack">
-            <int>77</int>
+            <int>78</int>
            </void>
            <void property="specialDefense">
-            <int>77</int>
+            <int>78</int>
            </void>
            <void property="speed">
-            <int>77</int>
+            <int>78</int>
            </void>
           </object>
          </void>
@@ -4536,25 +4536,25 @@
           <int>13</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>305</int>
+            <int>75</int>
            </void>
            <void property="maxHP">
-            <int>305</int>
+            <int>75</int>
            </void>
            <void property="normalAttack">
-            <int>62</int>
+            <int>63</int>
            </void>
            <void property="normalDefense">
-            <int>62</int>
+            <int>63</int>
            </void>
            <void property="specialAttack">
-            <int>78</int>
+            <int>79</int>
            </void>
            <void property="specialDefense">
-            <int>78</int>
+            <int>79</int>
            </void>
            <void property="speed">
-            <int>78</int>
+            <int>79</int>
            </void>
           </object>
          </void>
@@ -4562,25 +4562,25 @@
           <int>14</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>325</int>
+            <int>80</int>
            </void>
            <void property="maxHP">
-            <int>325</int>
+            <int>80</int>
            </void>
            <void property="normalAttack">
-            <int>63</int>
+            <int>64</int>
            </void>
            <void property="normalDefense">
-            <int>63</int>
+            <int>64</int>
            </void>
            <void property="specialAttack">
-            <int>79</int>
+            <int>80</int>
            </void>
            <void property="specialDefense">
-            <int>79</int>
+            <int>80</int>
            </void>
            <void property="speed">
-            <int>79</int>
+            <int>80</int>
            </void>
           </object>
          </void>
@@ -4588,25 +4588,25 @@
           <int>15</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>345</int>
+            <int>85</int>
            </void>
            <void property="maxHP">
-            <int>345</int>
+            <int>85</int>
            </void>
            <void property="normalAttack">
-            <int>64</int>
+            <int>65</int>
            </void>
            <void property="normalDefense">
-            <int>64</int>
+            <int>65</int>
            </void>
            <void property="specialAttack">
-            <int>80</int>
+            <int>81</int>
            </void>
            <void property="specialDefense">
-            <int>80</int>
+            <int>81</int>
            </void>
            <void property="speed">
-            <int>80</int>
+            <int>81</int>
            </void>
           </object>
          </void>
@@ -4614,25 +4614,25 @@
           <int>16</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>365</int>
+            <int>90</int>
            </void>
            <void property="maxHP">
-            <int>365</int>
+            <int>90</int>
            </void>
            <void property="normalAttack">
-            <int>65</int>
+            <int>66</int>
            </void>
            <void property="normalDefense">
-            <int>65</int>
+            <int>66</int>
            </void>
            <void property="specialAttack">
-            <int>81</int>
+            <int>82</int>
            </void>
            <void property="specialDefense">
-            <int>81</int>
+            <int>82</int>
            </void>
            <void property="speed">
-            <int>81</int>
+            <int>82</int>
            </void>
           </object>
          </void>
@@ -4640,25 +4640,25 @@
           <int>17</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>385</int>
+            <int>95</int>
            </void>
            <void property="maxHP">
-            <int>385</int>
+            <int>95</int>
            </void>
            <void property="normalAttack">
-            <int>66</int>
+            <int>67</int>
            </void>
            <void property="normalDefense">
-            <int>66</int>
+            <int>67</int>
            </void>
            <void property="specialAttack">
-            <int>82</int>
+            <int>83</int>
            </void>
            <void property="specialDefense">
-            <int>82</int>
+            <int>83</int>
            </void>
            <void property="speed">
-            <int>82</int>
+            <int>83</int>
            </void>
           </object>
          </void>
@@ -4666,25 +4666,25 @@
           <int>18</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>405</int>
+            <int>100</int>
            </void>
            <void property="maxHP">
-            <int>405</int>
+            <int>100</int>
            </void>
            <void property="normalAttack">
-            <int>67</int>
+            <int>68</int>
            </void>
            <void property="normalDefense">
-            <int>67</int>
+            <int>68</int>
            </void>
            <void property="specialAttack">
-            <int>83</int>
+            <int>84</int>
            </void>
            <void property="specialDefense">
-            <int>83</int>
+            <int>84</int>
            </void>
            <void property="speed">
-            <int>83</int>
+            <int>84</int>
            </void>
           </object>
          </void>
@@ -4692,25 +4692,25 @@
           <int>19</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>425</int>
+            <int>105</int>
            </void>
            <void property="maxHP">
-            <int>425</int>
+            <int>105</int>
            </void>
            <void property="normalAttack">
-            <int>68</int>
+            <int>69</int>
            </void>
            <void property="normalDefense">
-            <int>68</int>
+            <int>69</int>
            </void>
            <void property="specialAttack">
-            <int>84</int>
+            <int>85</int>
            </void>
            <void property="specialDefense">
-            <int>84</int>
+            <int>85</int>
            </void>
            <void property="speed">
-            <int>84</int>
+            <int>85</int>
            </void>
           </object>
          </void>
@@ -4718,25 +4718,25 @@
           <int>20</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>445</int>
+            <int>110</int>
            </void>
            <void property="maxHP">
-            <int>445</int>
+            <int>110</int>
            </void>
            <void property="normalAttack">
-            <int>69</int>
+            <int>70</int>
            </void>
            <void property="normalDefense">
-            <int>69</int>
+            <int>70</int>
            </void>
            <void property="specialAttack">
-            <int>85</int>
+            <int>86</int>
            </void>
            <void property="specialDefense">
-            <int>85</int>
+            <int>86</int>
            </void>
            <void property="speed">
-            <int>85</int>
+            <int>86</int>
            </void>
           </object>
          </void>
@@ -4744,25 +4744,25 @@
           <int>21</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>465</int>
+            <int>115</int>
            </void>
            <void property="maxHP">
-            <int>465</int>
+            <int>115</int>
            </void>
            <void property="normalAttack">
-            <int>70</int>
+            <int>71</int>
            </void>
            <void property="normalDefense">
-            <int>70</int>
+            <int>71</int>
            </void>
            <void property="specialAttack">
-            <int>86</int>
+            <int>87</int>
            </void>
            <void property="specialDefense">
-            <int>86</int>
+            <int>87</int>
            </void>
            <void property="speed">
-            <int>86</int>
+            <int>87</int>
            </void>
           </object>
          </void>
@@ -4770,25 +4770,25 @@
           <int>22</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>485</int>
+            <int>120</int>
            </void>
            <void property="maxHP">
-            <int>485</int>
+            <int>120</int>
            </void>
            <void property="normalAttack">
-            <int>71</int>
+            <int>72</int>
            </void>
            <void property="normalDefense">
-            <int>71</int>
+            <int>72</int>
            </void>
            <void property="specialAttack">
-            <int>87</int>
+            <int>88</int>
            </void>
            <void property="specialDefense">
-            <int>87</int>
+            <int>88</int>
            </void>
            <void property="speed">
-            <int>87</int>
+            <int>88</int>
            </void>
           </object>
          </void>
@@ -4796,25 +4796,25 @@
           <int>23</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>505</int>
+            <int>125</int>
            </void>
            <void property="maxHP">
-            <int>505</int>
+            <int>125</int>
            </void>
            <void property="normalAttack">
-            <int>72</int>
+            <int>73</int>
            </void>
            <void property="normalDefense">
-            <int>72</int>
+            <int>73</int>
            </void>
            <void property="specialAttack">
-            <int>88</int>
+            <int>89</int>
            </void>
            <void property="specialDefense">
-            <int>88</int>
+            <int>89</int>
            </void>
            <void property="speed">
-            <int>88</int>
+            <int>89</int>
            </void>
           </object>
          </void>
@@ -4822,25 +4822,25 @@
           <int>24</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>525</int>
+            <int>130</int>
            </void>
            <void property="maxHP">
-            <int>525</int>
+            <int>130</int>
            </void>
            <void property="normalAttack">
-            <int>73</int>
+            <int>74</int>
            </void>
            <void property="normalDefense">
-            <int>73</int>
+            <int>74</int>
            </void>
            <void property="specialAttack">
-            <int>89</int>
+            <int>90</int>
            </void>
            <void property="specialDefense">
-            <int>89</int>
+            <int>90</int>
            </void>
            <void property="speed">
-            <int>89</int>
+            <int>90</int>
            </void>
           </object>
          </void>
@@ -4848,25 +4848,25 @@
           <int>25</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>545</int>
+            <int>135</int>
            </void>
            <void property="maxHP">
-            <int>545</int>
+            <int>135</int>
            </void>
            <void property="normalAttack">
-            <int>74</int>
+            <int>75</int>
            </void>
            <void property="normalDefense">
-            <int>74</int>
+            <int>75</int>
            </void>
            <void property="specialAttack">
-            <int>90</int>
+            <int>91</int>
            </void>
            <void property="specialDefense">
-            <int>90</int>
+            <int>91</int>
            </void>
            <void property="speed">
-            <int>90</int>
+            <int>91</int>
            </void>
           </object>
          </void>
@@ -4874,25 +4874,25 @@
           <int>26</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>565</int>
+            <int>140</int>
            </void>
            <void property="maxHP">
-            <int>565</int>
+            <int>140</int>
            </void>
            <void property="normalAttack">
-            <int>75</int>
+            <int>76</int>
            </void>
            <void property="normalDefense">
-            <int>75</int>
+            <int>76</int>
            </void>
            <void property="specialAttack">
-            <int>91</int>
+            <int>92</int>
            </void>
            <void property="specialDefense">
-            <int>91</int>
+            <int>92</int>
            </void>
            <void property="speed">
-            <int>91</int>
+            <int>92</int>
            </void>
           </object>
          </void>
@@ -4900,25 +4900,25 @@
           <int>27</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>585</int>
+            <int>145</int>
            </void>
            <void property="maxHP">
-            <int>585</int>
+            <int>145</int>
            </void>
            <void property="normalAttack">
-            <int>76</int>
+            <int>77</int>
            </void>
            <void property="normalDefense">
-            <int>76</int>
+            <int>77</int>
            </void>
            <void property="specialAttack">
-            <int>92</int>
+            <int>93</int>
            </void>
            <void property="specialDefense">
-            <int>92</int>
+            <int>93</int>
            </void>
            <void property="speed">
-            <int>92</int>
+            <int>93</int>
            </void>
           </object>
          </void>
@@ -4926,25 +4926,25 @@
           <int>28</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>605</int>
+            <int>150</int>
            </void>
            <void property="maxHP">
-            <int>605</int>
+            <int>150</int>
            </void>
            <void property="normalAttack">
-            <int>77</int>
+            <int>78</int>
            </void>
            <void property="normalDefense">
-            <int>77</int>
+            <int>78</int>
            </void>
            <void property="specialAttack">
-            <int>93</int>
+            <int>94</int>
            </void>
            <void property="specialDefense">
-            <int>93</int>
+            <int>94</int>
            </void>
            <void property="speed">
-            <int>93</int>
+            <int>94</int>
            </void>
           </object>
          </void>
@@ -4952,25 +4952,25 @@
           <int>29</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>625</int>
+            <int>155</int>
            </void>
            <void property="maxHP">
-            <int>625</int>
+            <int>155</int>
            </void>
            <void property="normalAttack">
-            <int>78</int>
+            <int>79</int>
            </void>
            <void property="normalDefense">
-            <int>78</int>
+            <int>79</int>
            </void>
            <void property="specialAttack">
-            <int>94</int>
+            <int>95</int>
            </void>
            <void property="specialDefense">
-            <int>94</int>
+            <int>95</int>
            </void>
            <void property="speed">
-            <int>94</int>
+            <int>95</int>
            </void>
           </object>
          </void>
@@ -4978,25 +4978,25 @@
           <int>30</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>645</int>
+            <int>160</int>
            </void>
            <void property="maxHP">
-            <int>645</int>
+            <int>160</int>
            </void>
            <void property="normalAttack">
-            <int>79</int>
+            <int>80</int>
            </void>
            <void property="normalDefense">
-            <int>79</int>
+            <int>80</int>
            </void>
            <void property="specialAttack">
-            <int>95</int>
+            <int>96</int>
            </void>
            <void property="specialDefense">
-            <int>95</int>
+            <int>96</int>
            </void>
            <void property="speed">
-            <int>95</int>
+            <int>96</int>
            </void>
           </object>
          </void>
@@ -5004,25 +5004,25 @@
           <int>31</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>665</int>
+            <int>165</int>
            </void>
            <void property="maxHP">
-            <int>665</int>
+            <int>165</int>
            </void>
            <void property="normalAttack">
-            <int>80</int>
+            <int>81</int>
            </void>
            <void property="normalDefense">
-            <int>80</int>
+            <int>81</int>
            </void>
            <void property="specialAttack">
-            <int>96</int>
+            <int>97</int>
            </void>
            <void property="specialDefense">
-            <int>96</int>
+            <int>97</int>
            </void>
            <void property="speed">
-            <int>96</int>
+            <int>97</int>
            </void>
           </object>
          </void>
@@ -5030,25 +5030,25 @@
           <int>32</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>685</int>
+            <int>170</int>
            </void>
            <void property="maxHP">
-            <int>685</int>
+            <int>170</int>
            </void>
            <void property="normalAttack">
-            <int>81</int>
+            <int>82</int>
            </void>
            <void property="normalDefense">
-            <int>81</int>
+            <int>82</int>
            </void>
            <void property="specialAttack">
-            <int>97</int>
+            <int>98</int>
            </void>
            <void property="specialDefense">
-            <int>97</int>
+            <int>98</int>
            </void>
            <void property="speed">
-            <int>97</int>
+            <int>98</int>
            </void>
           </object>
          </void>
@@ -5056,25 +5056,25 @@
           <int>33</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>705</int>
+            <int>175</int>
            </void>
            <void property="maxHP">
-            <int>705</int>
+            <int>175</int>
            </void>
            <void property="normalAttack">
-            <int>82</int>
+            <int>83</int>
            </void>
            <void property="normalDefense">
-            <int>82</int>
+            <int>83</int>
            </void>
            <void property="specialAttack">
-            <int>98</int>
+            <int>99</int>
            </void>
            <void property="specialDefense">
-            <int>98</int>
+            <int>99</int>
            </void>
            <void property="speed">
-            <int>98</int>
+            <int>99</int>
            </void>
           </object>
          </void>
@@ -5082,25 +5082,25 @@
           <int>34</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>725</int>
+            <int>180</int>
            </void>
            <void property="maxHP">
-            <int>725</int>
+            <int>180</int>
            </void>
            <void property="normalAttack">
-            <int>83</int>
+            <int>84</int>
            </void>
            <void property="normalDefense">
-            <int>83</int>
+            <int>84</int>
            </void>
            <void property="specialAttack">
-            <int>99</int>
+            <int>100</int>
            </void>
            <void property="specialDefense">
-            <int>99</int>
+            <int>100</int>
            </void>
            <void property="speed">
-            <int>99</int>
+            <int>100</int>
            </void>
           </object>
          </void>
@@ -5108,25 +5108,25 @@
           <int>35</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>745</int>
+            <int>185</int>
            </void>
            <void property="maxHP">
-            <int>745</int>
+            <int>185</int>
            </void>
            <void property="normalAttack">
-            <int>84</int>
+            <int>85</int>
            </void>
            <void property="normalDefense">
-            <int>84</int>
+            <int>85</int>
            </void>
            <void property="specialAttack">
-            <int>100</int>
+            <int>101</int>
            </void>
            <void property="specialDefense">
-            <int>100</int>
+            <int>101</int>
            </void>
            <void property="speed">
-            <int>100</int>
+            <int>101</int>
            </void>
           </object>
          </void>
@@ -5134,25 +5134,25 @@
           <int>36</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>765</int>
+            <int>190</int>
            </void>
            <void property="maxHP">
-            <int>765</int>
+            <int>190</int>
            </void>
            <void property="normalAttack">
-            <int>85</int>
+            <int>86</int>
            </void>
            <void property="normalDefense">
-            <int>85</int>
+            <int>86</int>
            </void>
            <void property="specialAttack">
-            <int>101</int>
+            <int>102</int>
            </void>
            <void property="specialDefense">
-            <int>101</int>
+            <int>102</int>
            </void>
            <void property="speed">
-            <int>101</int>
+            <int>102</int>
            </void>
           </object>
          </void>
@@ -5160,25 +5160,25 @@
           <int>37</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>785</int>
+            <int>195</int>
            </void>
            <void property="maxHP">
-            <int>785</int>
+            <int>195</int>
            </void>
            <void property="normalAttack">
-            <int>86</int>
+            <int>87</int>
            </void>
            <void property="normalDefense">
-            <int>86</int>
+            <int>87</int>
            </void>
            <void property="specialAttack">
-            <int>102</int>
+            <int>103</int>
            </void>
            <void property="specialDefense">
-            <int>102</int>
+            <int>103</int>
            </void>
            <void property="speed">
-            <int>102</int>
+            <int>103</int>
            </void>
           </object>
          </void>
@@ -5186,25 +5186,25 @@
           <int>38</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>805</int>
+            <int>200</int>
            </void>
            <void property="maxHP">
-            <int>805</int>
+            <int>200</int>
            </void>
            <void property="normalAttack">
-            <int>87</int>
+            <int>88</int>
            </void>
            <void property="normalDefense">
-            <int>87</int>
+            <int>88</int>
            </void>
            <void property="specialAttack">
-            <int>103</int>
+            <int>104</int>
            </void>
            <void property="specialDefense">
-            <int>103</int>
+            <int>104</int>
            </void>
            <void property="speed">
-            <int>103</int>
+            <int>104</int>
            </void>
           </object>
          </void>
@@ -5212,25 +5212,25 @@
           <int>39</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>825</int>
+            <int>205</int>
            </void>
            <void property="maxHP">
-            <int>825</int>
+            <int>205</int>
            </void>
            <void property="normalAttack">
-            <int>88</int>
+            <int>89</int>
            </void>
            <void property="normalDefense">
-            <int>88</int>
+            <int>89</int>
            </void>
            <void property="specialAttack">
-            <int>104</int>
+            <int>105</int>
            </void>
            <void property="specialDefense">
-            <int>104</int>
+            <int>105</int>
            </void>
            <void property="speed">
-            <int>104</int>
+            <int>105</int>
            </void>
           </object>
          </void>
@@ -5238,25 +5238,25 @@
           <int>40</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>845</int>
+            <int>210</int>
            </void>
            <void property="maxHP">
-            <int>845</int>
+            <int>210</int>
            </void>
            <void property="normalAttack">
-            <int>89</int>
+            <int>90</int>
            </void>
            <void property="normalDefense">
-            <int>89</int>
+            <int>90</int>
            </void>
            <void property="specialAttack">
-            <int>105</int>
+            <int>106</int>
            </void>
            <void property="specialDefense">
-            <int>105</int>
+            <int>106</int>
            </void>
            <void property="speed">
-            <int>105</int>
+            <int>106</int>
            </void>
           </object>
          </void>
@@ -5264,25 +5264,25 @@
           <int>41</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>865</int>
+            <int>215</int>
            </void>
            <void property="maxHP">
-            <int>865</int>
+            <int>215</int>
            </void>
            <void property="normalAttack">
-            <int>90</int>
+            <int>91</int>
            </void>
            <void property="normalDefense">
-            <int>90</int>
+            <int>91</int>
            </void>
            <void property="specialAttack">
-            <int>106</int>
+            <int>107</int>
            </void>
            <void property="specialDefense">
-            <int>106</int>
+            <int>107</int>
            </void>
            <void property="speed">
-            <int>106</int>
+            <int>107</int>
            </void>
           </object>
          </void>
@@ -5290,25 +5290,25 @@
           <int>42</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>885</int>
+            <int>220</int>
            </void>
            <void property="maxHP">
-            <int>885</int>
+            <int>220</int>
            </void>
            <void property="normalAttack">
-            <int>91</int>
+            <int>92</int>
            </void>
            <void property="normalDefense">
-            <int>91</int>
+            <int>92</int>
            </void>
            <void property="specialAttack">
-            <int>107</int>
+            <int>108</int>
            </void>
            <void property="specialDefense">
-            <int>107</int>
+            <int>108</int>
            </void>
            <void property="speed">
-            <int>107</int>
+            <int>108</int>
            </void>
           </object>
          </void>
@@ -5316,25 +5316,25 @@
           <int>43</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>905</int>
+            <int>225</int>
            </void>
            <void property="maxHP">
-            <int>905</int>
+            <int>225</int>
            </void>
            <void property="normalAttack">
-            <int>92</int>
+            <int>93</int>
            </void>
            <void property="normalDefense">
-            <int>92</int>
+            <int>93</int>
            </void>
            <void property="specialAttack">
-            <int>108</int>
+            <int>109</int>
            </void>
            <void property="specialDefense">
-            <int>108</int>
+            <int>109</int>
            </void>
            <void property="speed">
-            <int>108</int>
+            <int>109</int>
            </void>
           </object>
          </void>
@@ -5342,25 +5342,25 @@
           <int>44</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>925</int>
+            <int>230</int>
            </void>
            <void property="maxHP">
-            <int>925</int>
+            <int>230</int>
            </void>
            <void property="normalAttack">
-            <int>93</int>
+            <int>94</int>
            </void>
            <void property="normalDefense">
-            <int>93</int>
+            <int>94</int>
            </void>
            <void property="specialAttack">
-            <int>109</int>
+            <int>110</int>
            </void>
            <void property="specialDefense">
-            <int>109</int>
+            <int>110</int>
            </void>
            <void property="speed">
-            <int>109</int>
+            <int>110</int>
            </void>
           </object>
          </void>
@@ -5368,25 +5368,25 @@
           <int>45</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>945</int>
+            <int>235</int>
            </void>
            <void property="maxHP">
-            <int>945</int>
+            <int>235</int>
            </void>
            <void property="normalAttack">
-            <int>94</int>
+            <int>95</int>
            </void>
            <void property="normalDefense">
-            <int>94</int>
+            <int>95</int>
            </void>
            <void property="specialAttack">
-            <int>110</int>
+            <int>111</int>
            </void>
            <void property="specialDefense">
-            <int>110</int>
+            <int>111</int>
            </void>
            <void property="speed">
-            <int>110</int>
+            <int>111</int>
            </void>
           </object>
          </void>
@@ -5394,25 +5394,25 @@
           <int>46</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>965</int>
+            <int>240</int>
            </void>
            <void property="maxHP">
-            <int>965</int>
+            <int>240</int>
            </void>
            <void property="normalAttack">
-            <int>95</int>
+            <int>96</int>
            </void>
            <void property="normalDefense">
-            <int>95</int>
+            <int>96</int>
            </void>
            <void property="specialAttack">
-            <int>111</int>
+            <int>112</int>
            </void>
            <void property="specialDefense">
-            <int>111</int>
+            <int>112</int>
            </void>
            <void property="speed">
-            <int>111</int>
+            <int>112</int>
            </void>
           </object>
          </void>
@@ -5420,25 +5420,25 @@
           <int>47</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>985</int>
+            <int>245</int>
            </void>
            <void property="maxHP">
-            <int>985</int>
+            <int>245</int>
            </void>
            <void property="normalAttack">
-            <int>96</int>
+            <int>97</int>
            </void>
            <void property="normalDefense">
-            <int>96</int>
+            <int>97</int>
            </void>
            <void property="specialAttack">
-            <int>112</int>
+            <int>113</int>
            </void>
            <void property="specialDefense">
-            <int>112</int>
+            <int>113</int>
            </void>
            <void property="speed">
-            <int>112</int>
+            <int>113</int>
            </void>
           </object>
          </void>
@@ -5446,25 +5446,25 @@
           <int>48</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1005</int>
+            <int>250</int>
            </void>
            <void property="maxHP">
-            <int>1005</int>
+            <int>250</int>
            </void>
            <void property="normalAttack">
-            <int>97</int>
+            <int>98</int>
            </void>
            <void property="normalDefense">
-            <int>97</int>
+            <int>98</int>
            </void>
            <void property="specialAttack">
-            <int>113</int>
+            <int>114</int>
            </void>
            <void property="specialDefense">
-            <int>113</int>
+            <int>114</int>
            </void>
            <void property="speed">
-            <int>113</int>
+            <int>114</int>
            </void>
           </object>
          </void>
@@ -5472,25 +5472,25 @@
           <int>49</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1025</int>
+            <int>255</int>
            </void>
            <void property="maxHP">
-            <int>1025</int>
+            <int>255</int>
            </void>
            <void property="normalAttack">
-            <int>98</int>
+            <int>99</int>
            </void>
            <void property="normalDefense">
-            <int>98</int>
+            <int>99</int>
            </void>
            <void property="specialAttack">
-            <int>114</int>
+            <int>115</int>
            </void>
            <void property="specialDefense">
-            <int>114</int>
+            <int>115</int>
            </void>
            <void property="speed">
-            <int>114</int>
+            <int>115</int>
            </void>
           </object>
          </void>
@@ -5498,25 +5498,25 @@
           <int>50</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1045</int>
+            <int>260</int>
            </void>
            <void property="maxHP">
-            <int>1045</int>
+            <int>260</int>
            </void>
            <void property="normalAttack">
-            <int>99</int>
+            <int>100</int>
            </void>
            <void property="normalDefense">
-            <int>99</int>
+            <int>100</int>
            </void>
            <void property="specialAttack">
-            <int>115</int>
+            <int>116</int>
            </void>
            <void property="specialDefense">
-            <int>115</int>
+            <int>116</int>
            </void>
            <void property="speed">
-            <int>115</int>
+            <int>116</int>
            </void>
           </object>
          </void>
@@ -5524,25 +5524,25 @@
           <int>51</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1065</int>
+            <int>265</int>
            </void>
            <void property="maxHP">
-            <int>1065</int>
+            <int>265</int>
            </void>
            <void property="normalAttack">
-            <int>100</int>
+            <int>101</int>
            </void>
            <void property="normalDefense">
-            <int>100</int>
+            <int>101</int>
            </void>
            <void property="specialAttack">
-            <int>116</int>
+            <int>117</int>
            </void>
            <void property="specialDefense">
-            <int>116</int>
+            <int>117</int>
            </void>
            <void property="speed">
-            <int>116</int>
+            <int>117</int>
            </void>
           </object>
          </void>
@@ -5550,25 +5550,25 @@
           <int>52</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1085</int>
+            <int>270</int>
            </void>
            <void property="maxHP">
-            <int>1085</int>
+            <int>270</int>
            </void>
            <void property="normalAttack">
-            <int>101</int>
+            <int>102</int>
            </void>
            <void property="normalDefense">
-            <int>101</int>
+            <int>102</int>
            </void>
            <void property="specialAttack">
-            <int>117</int>
+            <int>118</int>
            </void>
            <void property="specialDefense">
-            <int>117</int>
+            <int>118</int>
            </void>
            <void property="speed">
-            <int>117</int>
+            <int>118</int>
            </void>
           </object>
          </void>
@@ -5576,25 +5576,25 @@
           <int>53</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1105</int>
+            <int>275</int>
            </void>
            <void property="maxHP">
-            <int>1105</int>
+            <int>275</int>
            </void>
            <void property="normalAttack">
-            <int>102</int>
+            <int>103</int>
            </void>
            <void property="normalDefense">
-            <int>102</int>
+            <int>103</int>
            </void>
            <void property="specialAttack">
-            <int>118</int>
+            <int>119</int>
            </void>
            <void property="specialDefense">
-            <int>118</int>
+            <int>119</int>
            </void>
            <void property="speed">
-            <int>118</int>
+            <int>119</int>
            </void>
           </object>
          </void>
@@ -5602,25 +5602,25 @@
           <int>54</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1125</int>
+            <int>280</int>
            </void>
            <void property="maxHP">
-            <int>1125</int>
+            <int>280</int>
            </void>
            <void property="normalAttack">
-            <int>103</int>
+            <int>104</int>
            </void>
            <void property="normalDefense">
-            <int>103</int>
+            <int>104</int>
            </void>
            <void property="specialAttack">
-            <int>119</int>
+            <int>120</int>
            </void>
            <void property="specialDefense">
-            <int>119</int>
+            <int>120</int>
            </void>
            <void property="speed">
-            <int>119</int>
+            <int>120</int>
            </void>
           </object>
          </void>
@@ -5628,25 +5628,25 @@
           <int>55</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1145</int>
+            <int>285</int>
            </void>
            <void property="maxHP">
-            <int>1145</int>
+            <int>285</int>
            </void>
            <void property="normalAttack">
-            <int>104</int>
+            <int>105</int>
            </void>
            <void property="normalDefense">
-            <int>104</int>
+            <int>105</int>
            </void>
            <void property="specialAttack">
-            <int>120</int>
+            <int>121</int>
            </void>
            <void property="specialDefense">
-            <int>120</int>
+            <int>121</int>
            </void>
            <void property="speed">
-            <int>120</int>
+            <int>121</int>
            </void>
           </object>
          </void>
@@ -5654,25 +5654,25 @@
           <int>56</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1165</int>
+            <int>290</int>
            </void>
            <void property="maxHP">
-            <int>1165</int>
+            <int>290</int>
            </void>
            <void property="normalAttack">
-            <int>105</int>
+            <int>106</int>
            </void>
            <void property="normalDefense">
-            <int>105</int>
+            <int>106</int>
            </void>
            <void property="specialAttack">
-            <int>121</int>
+            <int>122</int>
            </void>
            <void property="specialDefense">
-            <int>121</int>
+            <int>122</int>
            </void>
            <void property="speed">
-            <int>121</int>
+            <int>122</int>
            </void>
           </object>
          </void>
@@ -5680,25 +5680,25 @@
           <int>57</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1185</int>
+            <int>295</int>
            </void>
            <void property="maxHP">
-            <int>1185</int>
+            <int>295</int>
            </void>
            <void property="normalAttack">
-            <int>106</int>
+            <int>107</int>
            </void>
            <void property="normalDefense">
-            <int>106</int>
+            <int>107</int>
            </void>
            <void property="specialAttack">
-            <int>122</int>
+            <int>123</int>
            </void>
            <void property="specialDefense">
-            <int>122</int>
+            <int>123</int>
            </void>
            <void property="speed">
-            <int>122</int>
+            <int>123</int>
            </void>
           </object>
          </void>
@@ -5706,25 +5706,25 @@
           <int>58</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1205</int>
+            <int>300</int>
            </void>
            <void property="maxHP">
-            <int>1205</int>
+            <int>300</int>
            </void>
            <void property="normalAttack">
-            <int>107</int>
+            <int>108</int>
            </void>
            <void property="normalDefense">
-            <int>107</int>
+            <int>108</int>
            </void>
            <void property="specialAttack">
-            <int>123</int>
+            <int>124</int>
            </void>
            <void property="specialDefense">
-            <int>123</int>
+            <int>124</int>
            </void>
            <void property="speed">
-            <int>123</int>
+            <int>124</int>
            </void>
           </object>
          </void>
@@ -5732,25 +5732,25 @@
           <int>59</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1225</int>
+            <int>305</int>
            </void>
            <void property="maxHP">
-            <int>1225</int>
+            <int>305</int>
            </void>
            <void property="normalAttack">
-            <int>108</int>
+            <int>109</int>
            </void>
            <void property="normalDefense">
-            <int>108</int>
+            <int>109</int>
            </void>
            <void property="specialAttack">
-            <int>124</int>
+            <int>125</int>
            </void>
            <void property="specialDefense">
-            <int>124</int>
+            <int>125</int>
            </void>
            <void property="speed">
-            <int>124</int>
+            <int>125</int>
            </void>
           </object>
          </void>
@@ -5758,25 +5758,25 @@
           <int>60</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1245</int>
+            <int>310</int>
            </void>
            <void property="maxHP">
-            <int>1245</int>
+            <int>310</int>
            </void>
            <void property="normalAttack">
-            <int>109</int>
+            <int>110</int>
            </void>
            <void property="normalDefense">
-            <int>109</int>
+            <int>110</int>
            </void>
            <void property="specialAttack">
-            <int>125</int>
+            <int>126</int>
            </void>
            <void property="specialDefense">
-            <int>125</int>
+            <int>126</int>
            </void>
            <void property="speed">
-            <int>125</int>
+            <int>126</int>
            </void>
           </object>
          </void>
@@ -5784,25 +5784,25 @@
           <int>61</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1265</int>
+            <int>315</int>
            </void>
            <void property="maxHP">
-            <int>1265</int>
+            <int>315</int>
            </void>
            <void property="normalAttack">
-            <int>110</int>
+            <int>111</int>
            </void>
            <void property="normalDefense">
-            <int>110</int>
+            <int>111</int>
            </void>
            <void property="specialAttack">
-            <int>126</int>
+            <int>127</int>
            </void>
            <void property="specialDefense">
-            <int>126</int>
+            <int>127</int>
            </void>
            <void property="speed">
-            <int>126</int>
+            <int>127</int>
            </void>
           </object>
          </void>
@@ -5810,25 +5810,25 @@
           <int>62</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1285</int>
+            <int>320</int>
            </void>
            <void property="maxHP">
-            <int>1285</int>
+            <int>320</int>
            </void>
            <void property="normalAttack">
-            <int>111</int>
+            <int>112</int>
            </void>
            <void property="normalDefense">
-            <int>111</int>
+            <int>112</int>
            </void>
            <void property="specialAttack">
-            <int>127</int>
+            <int>128</int>
            </void>
            <void property="specialDefense">
-            <int>127</int>
+            <int>128</int>
            </void>
            <void property="speed">
-            <int>127</int>
+            <int>128</int>
            </void>
           </object>
          </void>
@@ -5836,25 +5836,25 @@
           <int>63</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1305</int>
+            <int>325</int>
            </void>
            <void property="maxHP">
-            <int>1305</int>
+            <int>325</int>
            </void>
            <void property="normalAttack">
-            <int>112</int>
+            <int>113</int>
            </void>
            <void property="normalDefense">
-            <int>112</int>
+            <int>113</int>
            </void>
            <void property="specialAttack">
-            <int>128</int>
+            <int>129</int>
            </void>
            <void property="specialDefense">
-            <int>128</int>
+            <int>129</int>
            </void>
            <void property="speed">
-            <int>128</int>
+            <int>129</int>
            </void>
           </object>
          </void>
@@ -5862,25 +5862,25 @@
           <int>64</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1325</int>
+            <int>330</int>
            </void>
            <void property="maxHP">
-            <int>1325</int>
+            <int>330</int>
            </void>
            <void property="normalAttack">
-            <int>113</int>
+            <int>114</int>
            </void>
            <void property="normalDefense">
-            <int>113</int>
+            <int>114</int>
            </void>
            <void property="specialAttack">
-            <int>129</int>
+            <int>130</int>
            </void>
            <void property="specialDefense">
-            <int>129</int>
+            <int>130</int>
            </void>
            <void property="speed">
-            <int>129</int>
+            <int>130</int>
            </void>
           </object>
          </void>
@@ -5888,25 +5888,25 @@
           <int>65</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1345</int>
+            <int>335</int>
            </void>
            <void property="maxHP">
-            <int>1345</int>
+            <int>335</int>
            </void>
            <void property="normalAttack">
-            <int>114</int>
+            <int>115</int>
            </void>
            <void property="normalDefense">
-            <int>114</int>
+            <int>115</int>
            </void>
            <void property="specialAttack">
-            <int>130</int>
+            <int>131</int>
            </void>
            <void property="specialDefense">
-            <int>130</int>
+            <int>131</int>
            </void>
            <void property="speed">
-            <int>130</int>
+            <int>131</int>
            </void>
           </object>
          </void>
@@ -5914,25 +5914,25 @@
           <int>66</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1365</int>
+            <int>340</int>
            </void>
            <void property="maxHP">
-            <int>1365</int>
+            <int>340</int>
            </void>
            <void property="normalAttack">
-            <int>115</int>
+            <int>116</int>
            </void>
            <void property="normalDefense">
-            <int>115</int>
+            <int>116</int>
            </void>
            <void property="specialAttack">
-            <int>131</int>
+            <int>132</int>
            </void>
            <void property="specialDefense">
-            <int>131</int>
+            <int>132</int>
            </void>
            <void property="speed">
-            <int>131</int>
+            <int>132</int>
            </void>
           </object>
          </void>
@@ -5940,25 +5940,25 @@
           <int>67</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1385</int>
+            <int>345</int>
            </void>
            <void property="maxHP">
-            <int>1385</int>
+            <int>345</int>
            </void>
            <void property="normalAttack">
-            <int>116</int>
+            <int>117</int>
            </void>
            <void property="normalDefense">
-            <int>116</int>
+            <int>117</int>
            </void>
            <void property="specialAttack">
-            <int>132</int>
+            <int>133</int>
            </void>
            <void property="specialDefense">
-            <int>132</int>
+            <int>133</int>
            </void>
            <void property="speed">
-            <int>132</int>
+            <int>133</int>
            </void>
           </object>
          </void>
@@ -5966,25 +5966,25 @@
           <int>68</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1405</int>
+            <int>350</int>
            </void>
            <void property="maxHP">
-            <int>1405</int>
+            <int>350</int>
            </void>
            <void property="normalAttack">
-            <int>117</int>
+            <int>118</int>
            </void>
            <void property="normalDefense">
-            <int>117</int>
+            <int>118</int>
            </void>
            <void property="specialAttack">
-            <int>133</int>
+            <int>134</int>
            </void>
            <void property="specialDefense">
-            <int>133</int>
+            <int>134</int>
            </void>
            <void property="speed">
-            <int>133</int>
+            <int>134</int>
            </void>
           </object>
          </void>
@@ -5992,25 +5992,25 @@
           <int>69</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1425</int>
+            <int>355</int>
            </void>
            <void property="maxHP">
-            <int>1425</int>
+            <int>355</int>
            </void>
            <void property="normalAttack">
-            <int>118</int>
+            <int>119</int>
            </void>
            <void property="normalDefense">
-            <int>118</int>
+            <int>119</int>
            </void>
            <void property="specialAttack">
-            <int>134</int>
+            <int>135</int>
            </void>
            <void property="specialDefense">
-            <int>134</int>
+            <int>135</int>
            </void>
            <void property="speed">
-            <int>134</int>
+            <int>135</int>
            </void>
           </object>
          </void>
@@ -6018,25 +6018,25 @@
           <int>70</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1445</int>
+            <int>360</int>
            </void>
            <void property="maxHP">
-            <int>1445</int>
+            <int>360</int>
            </void>
            <void property="normalAttack">
-            <int>119</int>
+            <int>120</int>
            </void>
            <void property="normalDefense">
-            <int>119</int>
+            <int>120</int>
            </void>
            <void property="specialAttack">
-            <int>135</int>
+            <int>136</int>
            </void>
            <void property="specialDefense">
-            <int>135</int>
+            <int>136</int>
            </void>
            <void property="speed">
-            <int>135</int>
+            <int>136</int>
            </void>
           </object>
          </void>
@@ -6044,25 +6044,25 @@
           <int>71</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1465</int>
+            <int>365</int>
            </void>
            <void property="maxHP">
-            <int>1465</int>
+            <int>365</int>
            </void>
            <void property="normalAttack">
-            <int>120</int>
+            <int>121</int>
            </void>
            <void property="normalDefense">
-            <int>120</int>
+            <int>121</int>
            </void>
            <void property="specialAttack">
-            <int>136</int>
+            <int>137</int>
            </void>
            <void property="specialDefense">
-            <int>136</int>
+            <int>137</int>
            </void>
            <void property="speed">
-            <int>136</int>
+            <int>137</int>
            </void>
           </object>
          </void>
@@ -6070,25 +6070,25 @@
           <int>72</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1485</int>
+            <int>370</int>
            </void>
            <void property="maxHP">
-            <int>1485</int>
+            <int>370</int>
            </void>
            <void property="normalAttack">
-            <int>121</int>
+            <int>122</int>
            </void>
            <void property="normalDefense">
-            <int>121</int>
+            <int>122</int>
            </void>
            <void property="specialAttack">
-            <int>137</int>
+            <int>138</int>
            </void>
            <void property="specialDefense">
-            <int>137</int>
+            <int>138</int>
            </void>
            <void property="speed">
-            <int>137</int>
+            <int>138</int>
            </void>
           </object>
          </void>
@@ -6096,25 +6096,25 @@
           <int>73</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1505</int>
+            <int>375</int>
            </void>
            <void property="maxHP">
-            <int>1505</int>
+            <int>375</int>
            </void>
            <void property="normalAttack">
-            <int>122</int>
+            <int>123</int>
            </void>
            <void property="normalDefense">
-            <int>122</int>
+            <int>123</int>
            </void>
            <void property="specialAttack">
-            <int>138</int>
+            <int>139</int>
            </void>
            <void property="specialDefense">
-            <int>138</int>
+            <int>139</int>
            </void>
            <void property="speed">
-            <int>138</int>
+            <int>139</int>
            </void>
           </object>
          </void>
@@ -6122,25 +6122,25 @@
           <int>74</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1525</int>
+            <int>380</int>
            </void>
            <void property="maxHP">
-            <int>1525</int>
+            <int>380</int>
            </void>
            <void property="normalAttack">
-            <int>123</int>
+            <int>124</int>
            </void>
            <void property="normalDefense">
-            <int>123</int>
+            <int>124</int>
            </void>
            <void property="specialAttack">
-            <int>139</int>
+            <int>140</int>
            </void>
            <void property="specialDefense">
-            <int>139</int>
+            <int>140</int>
            </void>
            <void property="speed">
-            <int>139</int>
+            <int>140</int>
            </void>
           </object>
          </void>
@@ -6148,25 +6148,25 @@
           <int>75</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1545</int>
+            <int>385</int>
            </void>
            <void property="maxHP">
-            <int>1545</int>
+            <int>385</int>
            </void>
            <void property="normalAttack">
-            <int>124</int>
+            <int>125</int>
            </void>
            <void property="normalDefense">
-            <int>124</int>
+            <int>125</int>
            </void>
            <void property="specialAttack">
-            <int>140</int>
+            <int>141</int>
            </void>
            <void property="specialDefense">
-            <int>140</int>
+            <int>141</int>
            </void>
            <void property="speed">
-            <int>140</int>
+            <int>141</int>
            </void>
           </object>
          </void>
@@ -6523,10 +6523,10 @@
           <int>1</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>59</int>
+            <int>16</int>
            </void>
            <void property="maxHP">
-            <int>59</int>
+            <int>16</int>
            </void>
            <void property="normalAttack">
             <int>53</int>
@@ -6549,10 +6549,10 @@
           <int>2</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>79</int>
+            <int>21</int>
            </void>
            <void property="maxHP">
-            <int>79</int>
+            <int>21</int>
            </void>
            <void property="normalAttack">
             <int>54</int>
@@ -6575,10 +6575,10 @@
           <int>3</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>99</int>
+            <int>26</int>
            </void>
            <void property="maxHP">
-            <int>99</int>
+            <int>26</int>
            </void>
            <void property="normalAttack">
             <int>55</int>
@@ -6601,10 +6601,10 @@
           <int>4</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>119</int>
+            <int>31</int>
            </void>
            <void property="maxHP">
-            <int>119</int>
+            <int>31</int>
            </void>
            <void property="normalAttack">
             <int>56</int>
@@ -6627,10 +6627,10 @@
           <int>5</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>139</int>
+            <int>36</int>
            </void>
            <void property="maxHP">
-            <int>139</int>
+            <int>36</int>
            </void>
            <void property="normalAttack">
             <int>57</int>
@@ -6653,10 +6653,10 @@
           <int>6</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>159</int>
+            <int>41</int>
            </void>
            <void property="maxHP">
-            <int>159</int>
+            <int>41</int>
            </void>
            <void property="normalAttack">
             <int>58</int>
@@ -6679,10 +6679,10 @@
           <int>7</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>179</int>
+            <int>46</int>
            </void>
            <void property="maxHP">
-            <int>179</int>
+            <int>46</int>
            </void>
            <void property="normalAttack">
             <int>59</int>
@@ -6705,10 +6705,10 @@
           <int>8</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>199</int>
+            <int>51</int>
            </void>
            <void property="maxHP">
-            <int>199</int>
+            <int>51</int>
            </void>
            <void property="normalAttack">
             <int>60</int>
@@ -6731,10 +6731,10 @@
           <int>9</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>219</int>
+            <int>56</int>
            </void>
            <void property="maxHP">
-            <int>219</int>
+            <int>56</int>
            </void>
            <void property="normalAttack">
             <int>61</int>
@@ -6757,10 +6757,10 @@
           <int>10</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>239</int>
+            <int>61</int>
            </void>
            <void property="maxHP">
-            <int>239</int>
+            <int>61</int>
            </void>
            <void property="normalAttack">
             <int>62</int>
@@ -6783,10 +6783,10 @@
           <int>11</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>259</int>
+            <int>66</int>
            </void>
            <void property="maxHP">
-            <int>259</int>
+            <int>66</int>
            </void>
            <void property="normalAttack">
             <int>63</int>
@@ -6809,10 +6809,10 @@
           <int>12</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>279</int>
+            <int>71</int>
            </void>
            <void property="maxHP">
-            <int>279</int>
+            <int>71</int>
            </void>
            <void property="normalAttack">
             <int>64</int>
@@ -6835,10 +6835,10 @@
           <int>13</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>299</int>
+            <int>76</int>
            </void>
            <void property="maxHP">
-            <int>299</int>
+            <int>76</int>
            </void>
            <void property="normalAttack">
             <int>65</int>
@@ -6861,10 +6861,10 @@
           <int>14</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>319</int>
+            <int>81</int>
            </void>
            <void property="maxHP">
-            <int>319</int>
+            <int>81</int>
            </void>
            <void property="normalAttack">
             <int>66</int>
@@ -6887,10 +6887,10 @@
           <int>15</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>339</int>
+            <int>86</int>
            </void>
            <void property="maxHP">
-            <int>339</int>
+            <int>86</int>
            </void>
            <void property="normalAttack">
             <int>67</int>
@@ -6913,10 +6913,10 @@
           <int>16</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>359</int>
+            <int>91</int>
            </void>
            <void property="maxHP">
-            <int>359</int>
+            <int>91</int>
            </void>
            <void property="normalAttack">
             <int>68</int>
@@ -6939,10 +6939,10 @@
           <int>17</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>379</int>
+            <int>96</int>
            </void>
            <void property="maxHP">
-            <int>379</int>
+            <int>96</int>
            </void>
            <void property="normalAttack">
             <int>69</int>
@@ -6965,10 +6965,10 @@
           <int>18</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>399</int>
+            <int>101</int>
            </void>
            <void property="maxHP">
-            <int>399</int>
+            <int>101</int>
            </void>
            <void property="normalAttack">
             <int>70</int>
@@ -6991,10 +6991,10 @@
           <int>19</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>419</int>
+            <int>106</int>
            </void>
            <void property="maxHP">
-            <int>419</int>
+            <int>106</int>
            </void>
            <void property="normalAttack">
             <int>71</int>
@@ -7017,10 +7017,10 @@
           <int>20</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>439</int>
+            <int>111</int>
            </void>
            <void property="maxHP">
-            <int>439</int>
+            <int>111</int>
            </void>
            <void property="normalAttack">
             <int>72</int>
@@ -7043,10 +7043,10 @@
           <int>21</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>459</int>
+            <int>116</int>
            </void>
            <void property="maxHP">
-            <int>459</int>
+            <int>116</int>
            </void>
            <void property="normalAttack">
             <int>73</int>
@@ -7069,10 +7069,10 @@
           <int>22</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>479</int>
+            <int>121</int>
            </void>
            <void property="maxHP">
-            <int>479</int>
+            <int>121</int>
            </void>
            <void property="normalAttack">
             <int>74</int>
@@ -7095,10 +7095,10 @@
           <int>23</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>499</int>
+            <int>126</int>
            </void>
            <void property="maxHP">
-            <int>499</int>
+            <int>126</int>
            </void>
            <void property="normalAttack">
             <int>75</int>
@@ -7121,10 +7121,10 @@
           <int>24</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>519</int>
+            <int>131</int>
            </void>
            <void property="maxHP">
-            <int>519</int>
+            <int>131</int>
            </void>
            <void property="normalAttack">
             <int>76</int>
@@ -7147,10 +7147,10 @@
           <int>25</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>539</int>
+            <int>136</int>
            </void>
            <void property="maxHP">
-            <int>539</int>
+            <int>136</int>
            </void>
            <void property="normalAttack">
             <int>77</int>
@@ -7173,10 +7173,10 @@
           <int>26</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>559</int>
+            <int>141</int>
            </void>
            <void property="maxHP">
-            <int>559</int>
+            <int>141</int>
            </void>
            <void property="normalAttack">
             <int>78</int>
@@ -7199,10 +7199,10 @@
           <int>27</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>579</int>
+            <int>146</int>
            </void>
            <void property="maxHP">
-            <int>579</int>
+            <int>146</int>
            </void>
            <void property="normalAttack">
             <int>79</int>
@@ -7225,10 +7225,10 @@
           <int>28</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>599</int>
+            <int>151</int>
            </void>
            <void property="maxHP">
-            <int>599</int>
+            <int>151</int>
            </void>
            <void property="normalAttack">
             <int>80</int>
@@ -7251,10 +7251,10 @@
           <int>29</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>619</int>
+            <int>156</int>
            </void>
            <void property="maxHP">
-            <int>619</int>
+            <int>156</int>
            </void>
            <void property="normalAttack">
             <int>81</int>
@@ -7277,10 +7277,10 @@
           <int>30</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>639</int>
+            <int>161</int>
            </void>
            <void property="maxHP">
-            <int>639</int>
+            <int>161</int>
            </void>
            <void property="normalAttack">
             <int>82</int>
@@ -7303,10 +7303,10 @@
           <int>31</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>659</int>
+            <int>166</int>
            </void>
            <void property="maxHP">
-            <int>659</int>
+            <int>166</int>
            </void>
            <void property="normalAttack">
             <int>83</int>
@@ -7329,10 +7329,10 @@
           <int>32</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>679</int>
+            <int>171</int>
            </void>
            <void property="maxHP">
-            <int>679</int>
+            <int>171</int>
            </void>
            <void property="normalAttack">
             <int>84</int>
@@ -7355,10 +7355,10 @@
           <int>33</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>699</int>
+            <int>176</int>
            </void>
            <void property="maxHP">
-            <int>699</int>
+            <int>176</int>
            </void>
            <void property="normalAttack">
             <int>85</int>
@@ -7381,10 +7381,10 @@
           <int>34</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>719</int>
+            <int>181</int>
            </void>
            <void property="maxHP">
-            <int>719</int>
+            <int>181</int>
            </void>
            <void property="normalAttack">
             <int>86</int>
@@ -7407,10 +7407,10 @@
           <int>35</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>739</int>
+            <int>186</int>
            </void>
            <void property="maxHP">
-            <int>739</int>
+            <int>186</int>
            </void>
            <void property="normalAttack">
             <int>87</int>
@@ -7433,10 +7433,10 @@
           <int>36</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>759</int>
+            <int>191</int>
            </void>
            <void property="maxHP">
-            <int>759</int>
+            <int>191</int>
            </void>
            <void property="normalAttack">
             <int>88</int>
@@ -7459,10 +7459,10 @@
           <int>37</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>779</int>
+            <int>196</int>
            </void>
            <void property="maxHP">
-            <int>779</int>
+            <int>196</int>
            </void>
            <void property="normalAttack">
             <int>89</int>
@@ -7485,10 +7485,10 @@
           <int>38</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>799</int>
+            <int>201</int>
            </void>
            <void property="maxHP">
-            <int>799</int>
+            <int>201</int>
            </void>
            <void property="normalAttack">
             <int>90</int>
@@ -7511,10 +7511,10 @@
           <int>39</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>819</int>
+            <int>206</int>
            </void>
            <void property="maxHP">
-            <int>819</int>
+            <int>206</int>
            </void>
            <void property="normalAttack">
             <int>91</int>
@@ -7537,10 +7537,10 @@
           <int>40</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>839</int>
+            <int>211</int>
            </void>
            <void property="maxHP">
-            <int>839</int>
+            <int>211</int>
            </void>
            <void property="normalAttack">
             <int>92</int>
@@ -7563,10 +7563,10 @@
           <int>41</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>859</int>
+            <int>216</int>
            </void>
            <void property="maxHP">
-            <int>859</int>
+            <int>216</int>
            </void>
            <void property="normalAttack">
             <int>93</int>
@@ -7589,10 +7589,10 @@
           <int>42</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>879</int>
+            <int>221</int>
            </void>
            <void property="maxHP">
-            <int>879</int>
+            <int>221</int>
            </void>
            <void property="normalAttack">
             <int>94</int>
@@ -7615,10 +7615,10 @@
           <int>43</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>899</int>
+            <int>226</int>
            </void>
            <void property="maxHP">
-            <int>899</int>
+            <int>226</int>
            </void>
            <void property="normalAttack">
             <int>95</int>
@@ -7641,10 +7641,10 @@
           <int>44</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>919</int>
+            <int>231</int>
            </void>
            <void property="maxHP">
-            <int>919</int>
+            <int>231</int>
            </void>
            <void property="normalAttack">
             <int>96</int>
@@ -7667,10 +7667,10 @@
           <int>45</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>939</int>
+            <int>236</int>
            </void>
            <void property="maxHP">
-            <int>939</int>
+            <int>236</int>
            </void>
            <void property="normalAttack">
             <int>97</int>
@@ -7693,10 +7693,10 @@
           <int>46</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>959</int>
+            <int>241</int>
            </void>
            <void property="maxHP">
-            <int>959</int>
+            <int>241</int>
            </void>
            <void property="normalAttack">
             <int>98</int>
@@ -7719,10 +7719,10 @@
           <int>47</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>979</int>
+            <int>246</int>
            </void>
            <void property="maxHP">
-            <int>979</int>
+            <int>246</int>
            </void>
            <void property="normalAttack">
             <int>99</int>
@@ -7745,10 +7745,10 @@
           <int>48</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>999</int>
+            <int>251</int>
            </void>
            <void property="maxHP">
-            <int>999</int>
+            <int>251</int>
            </void>
            <void property="normalAttack">
             <int>100</int>
@@ -7771,10 +7771,10 @@
           <int>49</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1019</int>
+            <int>256</int>
            </void>
            <void property="maxHP">
-            <int>1019</int>
+            <int>256</int>
            </void>
            <void property="normalAttack">
             <int>101</int>
@@ -7797,10 +7797,10 @@
           <int>50</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1039</int>
+            <int>261</int>
            </void>
            <void property="maxHP">
-            <int>1039</int>
+            <int>261</int>
            </void>
            <void property="normalAttack">
             <int>102</int>
@@ -7823,10 +7823,10 @@
           <int>51</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1059</int>
+            <int>266</int>
            </void>
            <void property="maxHP">
-            <int>1059</int>
+            <int>266</int>
            </void>
            <void property="normalAttack">
             <int>103</int>
@@ -7849,10 +7849,10 @@
           <int>52</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1079</int>
+            <int>271</int>
            </void>
            <void property="maxHP">
-            <int>1079</int>
+            <int>271</int>
            </void>
            <void property="normalAttack">
             <int>104</int>
@@ -7875,10 +7875,10 @@
           <int>53</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1099</int>
+            <int>276</int>
            </void>
            <void property="maxHP">
-            <int>1099</int>
+            <int>276</int>
            </void>
            <void property="normalAttack">
             <int>105</int>
@@ -7901,10 +7901,10 @@
           <int>54</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1119</int>
+            <int>281</int>
            </void>
            <void property="maxHP">
-            <int>1119</int>
+            <int>281</int>
            </void>
            <void property="normalAttack">
             <int>106</int>
@@ -7927,10 +7927,10 @@
           <int>55</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1139</int>
+            <int>286</int>
            </void>
            <void property="maxHP">
-            <int>1139</int>
+            <int>286</int>
            </void>
            <void property="normalAttack">
             <int>107</int>
@@ -7953,10 +7953,10 @@
           <int>56</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1159</int>
+            <int>291</int>
            </void>
            <void property="maxHP">
-            <int>1159</int>
+            <int>291</int>
            </void>
            <void property="normalAttack">
             <int>108</int>
@@ -7979,10 +7979,10 @@
           <int>57</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1179</int>
+            <int>296</int>
            </void>
            <void property="maxHP">
-            <int>1179</int>
+            <int>296</int>
            </void>
            <void property="normalAttack">
             <int>109</int>
@@ -8005,10 +8005,10 @@
           <int>58</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1199</int>
+            <int>301</int>
            </void>
            <void property="maxHP">
-            <int>1199</int>
+            <int>301</int>
            </void>
            <void property="normalAttack">
             <int>110</int>
@@ -8031,10 +8031,10 @@
           <int>59</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1219</int>
+            <int>306</int>
            </void>
            <void property="maxHP">
-            <int>1219</int>
+            <int>306</int>
            </void>
            <void property="normalAttack">
             <int>111</int>
@@ -8057,10 +8057,10 @@
           <int>60</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1239</int>
+            <int>311</int>
            </void>
            <void property="maxHP">
-            <int>1239</int>
+            <int>311</int>
            </void>
            <void property="normalAttack">
             <int>112</int>
@@ -8083,10 +8083,10 @@
           <int>61</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1259</int>
+            <int>316</int>
            </void>
            <void property="maxHP">
-            <int>1259</int>
+            <int>316</int>
            </void>
            <void property="normalAttack">
             <int>113</int>
@@ -8109,10 +8109,10 @@
           <int>62</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1279</int>
+            <int>321</int>
            </void>
            <void property="maxHP">
-            <int>1279</int>
+            <int>321</int>
            </void>
            <void property="normalAttack">
             <int>114</int>
@@ -8135,10 +8135,10 @@
           <int>63</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1299</int>
+            <int>326</int>
            </void>
            <void property="maxHP">
-            <int>1299</int>
+            <int>326</int>
            </void>
            <void property="normalAttack">
             <int>115</int>
@@ -8161,10 +8161,10 @@
           <int>64</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1319</int>
+            <int>331</int>
            </void>
            <void property="maxHP">
-            <int>1319</int>
+            <int>331</int>
            </void>
            <void property="normalAttack">
             <int>116</int>
@@ -8187,10 +8187,10 @@
           <int>65</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1339</int>
+            <int>336</int>
            </void>
            <void property="maxHP">
-            <int>1339</int>
+            <int>336</int>
            </void>
            <void property="normalAttack">
             <int>117</int>
@@ -8213,10 +8213,10 @@
           <int>66</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1359</int>
+            <int>341</int>
            </void>
            <void property="maxHP">
-            <int>1359</int>
+            <int>341</int>
            </void>
            <void property="normalAttack">
             <int>118</int>
@@ -8239,10 +8239,10 @@
           <int>67</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1379</int>
+            <int>346</int>
            </void>
            <void property="maxHP">
-            <int>1379</int>
+            <int>346</int>
            </void>
            <void property="normalAttack">
             <int>119</int>
@@ -8265,10 +8265,10 @@
           <int>68</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1399</int>
+            <int>351</int>
            </void>
            <void property="maxHP">
-            <int>1399</int>
+            <int>351</int>
            </void>
            <void property="normalAttack">
             <int>120</int>
@@ -8291,10 +8291,10 @@
           <int>69</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1419</int>
+            <int>356</int>
            </void>
            <void property="maxHP">
-            <int>1419</int>
+            <int>356</int>
            </void>
            <void property="normalAttack">
             <int>121</int>
@@ -8317,10 +8317,10 @@
           <int>70</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1439</int>
+            <int>361</int>
            </void>
            <void property="maxHP">
-            <int>1439</int>
+            <int>361</int>
            </void>
            <void property="normalAttack">
             <int>122</int>
@@ -8343,10 +8343,10 @@
           <int>71</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1459</int>
+            <int>366</int>
            </void>
            <void property="maxHP">
-            <int>1459</int>
+            <int>366</int>
            </void>
            <void property="normalAttack">
             <int>123</int>
@@ -8369,10 +8369,10 @@
           <int>72</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1479</int>
+            <int>371</int>
            </void>
            <void property="maxHP">
-            <int>1479</int>
+            <int>371</int>
            </void>
            <void property="normalAttack">
             <int>124</int>
@@ -8395,10 +8395,10 @@
           <int>73</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1499</int>
+            <int>376</int>
            </void>
            <void property="maxHP">
-            <int>1499</int>
+            <int>376</int>
            </void>
            <void property="normalAttack">
             <int>125</int>
@@ -8421,10 +8421,10 @@
           <int>74</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1519</int>
+            <int>381</int>
            </void>
            <void property="maxHP">
-            <int>1519</int>
+            <int>381</int>
            </void>
            <void property="normalAttack">
             <int>126</int>
@@ -8447,10 +8447,10 @@
           <int>75</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1539</int>
+            <int>386</int>
            </void>
            <void property="maxHP">
-            <int>1539</int>
+            <int>386</int>
            </void>
            <void property="normalAttack">
             <int>127</int>
@@ -11141,10 +11141,10 @@
           <int>1</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>64</int>
+            <int>20</int>
            </void>
            <void property="maxHP">
-            <int>64</int>
+            <int>20</int>
            </void>
            <void property="normalAttack">
             <int>49</int>
@@ -11167,10 +11167,10 @@
           <int>2</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>84</int>
+            <int>25</int>
            </void>
            <void property="maxHP">
-            <int>84</int>
+            <int>25</int>
            </void>
            <void property="normalAttack">
             <int>50</int>
@@ -11193,10 +11193,10 @@
           <int>3</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>104</int>
+            <int>30</int>
            </void>
            <void property="maxHP">
-            <int>104</int>
+            <int>30</int>
            </void>
            <void property="normalAttack">
             <int>51</int>
@@ -11219,10 +11219,10 @@
           <int>4</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>124</int>
+            <int>35</int>
            </void>
            <void property="maxHP">
-            <int>124</int>
+            <int>35</int>
            </void>
            <void property="normalAttack">
             <int>52</int>
@@ -11245,10 +11245,10 @@
           <int>5</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>144</int>
+            <int>40</int>
            </void>
            <void property="maxHP">
-            <int>144</int>
+            <int>40</int>
            </void>
            <void property="normalAttack">
             <int>53</int>
@@ -11271,10 +11271,10 @@
           <int>6</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>164</int>
+            <int>45</int>
            </void>
            <void property="maxHP">
-            <int>164</int>
+            <int>45</int>
            </void>
            <void property="normalAttack">
             <int>54</int>
@@ -11297,10 +11297,10 @@
           <int>7</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>184</int>
+            <int>50</int>
            </void>
            <void property="maxHP">
-            <int>184</int>
+            <int>50</int>
            </void>
            <void property="normalAttack">
             <int>55</int>
@@ -11323,10 +11323,10 @@
           <int>8</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>204</int>
+            <int>55</int>
            </void>
            <void property="maxHP">
-            <int>204</int>
+            <int>55</int>
            </void>
            <void property="normalAttack">
             <int>56</int>
@@ -11349,10 +11349,10 @@
           <int>9</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>224</int>
+            <int>60</int>
            </void>
            <void property="maxHP">
-            <int>224</int>
+            <int>60</int>
            </void>
            <void property="normalAttack">
             <int>57</int>
@@ -11375,10 +11375,10 @@
           <int>10</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>244</int>
+            <int>65</int>
            </void>
            <void property="maxHP">
-            <int>244</int>
+            <int>65</int>
            </void>
            <void property="normalAttack">
             <int>58</int>
@@ -11401,10 +11401,10 @@
           <int>11</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>264</int>
+            <int>70</int>
            </void>
            <void property="maxHP">
-            <int>264</int>
+            <int>70</int>
            </void>
            <void property="normalAttack">
             <int>59</int>
@@ -11427,10 +11427,10 @@
           <int>12</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>284</int>
+            <int>75</int>
            </void>
            <void property="maxHP">
-            <int>284</int>
+            <int>75</int>
            </void>
            <void property="normalAttack">
             <int>60</int>
@@ -11453,10 +11453,10 @@
           <int>13</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>304</int>
+            <int>80</int>
            </void>
            <void property="maxHP">
-            <int>304</int>
+            <int>80</int>
            </void>
            <void property="normalAttack">
             <int>61</int>
@@ -11479,10 +11479,10 @@
           <int>14</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>324</int>
+            <int>85</int>
            </void>
            <void property="maxHP">
-            <int>324</int>
+            <int>85</int>
            </void>
            <void property="normalAttack">
             <int>62</int>
@@ -11505,10 +11505,10 @@
           <int>15</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>344</int>
+            <int>90</int>
            </void>
            <void property="maxHP">
-            <int>344</int>
+            <int>90</int>
            </void>
            <void property="normalAttack">
             <int>63</int>
@@ -11531,10 +11531,10 @@
           <int>16</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>364</int>
+            <int>95</int>
            </void>
            <void property="maxHP">
-            <int>364</int>
+            <int>95</int>
            </void>
            <void property="normalAttack">
             <int>64</int>
@@ -11557,10 +11557,10 @@
           <int>17</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>384</int>
+            <int>100</int>
            </void>
            <void property="maxHP">
-            <int>384</int>
+            <int>100</int>
            </void>
            <void property="normalAttack">
             <int>65</int>
@@ -11583,10 +11583,10 @@
           <int>18</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>404</int>
+            <int>105</int>
            </void>
            <void property="maxHP">
-            <int>404</int>
+            <int>105</int>
            </void>
            <void property="normalAttack">
             <int>66</int>
@@ -11609,10 +11609,10 @@
           <int>19</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>424</int>
+            <int>110</int>
            </void>
            <void property="maxHP">
-            <int>424</int>
+            <int>110</int>
            </void>
            <void property="normalAttack">
             <int>67</int>
@@ -11635,10 +11635,10 @@
           <int>20</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>444</int>
+            <int>115</int>
            </void>
            <void property="maxHP">
-            <int>444</int>
+            <int>115</int>
            </void>
            <void property="normalAttack">
             <int>68</int>
@@ -11661,10 +11661,10 @@
           <int>21</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>464</int>
+            <int>120</int>
            </void>
            <void property="maxHP">
-            <int>464</int>
+            <int>120</int>
            </void>
            <void property="normalAttack">
             <int>69</int>
@@ -11687,10 +11687,10 @@
           <int>22</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>484</int>
+            <int>125</int>
            </void>
            <void property="maxHP">
-            <int>484</int>
+            <int>125</int>
            </void>
            <void property="normalAttack">
             <int>70</int>
@@ -11713,10 +11713,10 @@
           <int>23</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>504</int>
+            <int>130</int>
            </void>
            <void property="maxHP">
-            <int>504</int>
+            <int>130</int>
            </void>
            <void property="normalAttack">
             <int>71</int>
@@ -11739,10 +11739,10 @@
           <int>24</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>524</int>
+            <int>135</int>
            </void>
            <void property="maxHP">
-            <int>524</int>
+            <int>135</int>
            </void>
            <void property="normalAttack">
             <int>72</int>
@@ -11765,10 +11765,10 @@
           <int>25</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>544</int>
+            <int>140</int>
            </void>
            <void property="maxHP">
-            <int>544</int>
+            <int>140</int>
            </void>
            <void property="normalAttack">
             <int>73</int>
@@ -11791,10 +11791,10 @@
           <int>26</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>564</int>
+            <int>145</int>
            </void>
            <void property="maxHP">
-            <int>564</int>
+            <int>145</int>
            </void>
            <void property="normalAttack">
             <int>74</int>
@@ -11817,10 +11817,10 @@
           <int>27</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>584</int>
+            <int>150</int>
            </void>
            <void property="maxHP">
-            <int>584</int>
+            <int>150</int>
            </void>
            <void property="normalAttack">
             <int>75</int>
@@ -11843,10 +11843,10 @@
           <int>28</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>604</int>
+            <int>155</int>
            </void>
            <void property="maxHP">
-            <int>604</int>
+            <int>155</int>
            </void>
            <void property="normalAttack">
             <int>76</int>
@@ -11869,10 +11869,10 @@
           <int>29</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>624</int>
+            <int>160</int>
            </void>
            <void property="maxHP">
-            <int>624</int>
+            <int>160</int>
            </void>
            <void property="normalAttack">
             <int>77</int>
@@ -11895,10 +11895,10 @@
           <int>30</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>644</int>
+            <int>165</int>
            </void>
            <void property="maxHP">
-            <int>644</int>
+            <int>165</int>
            </void>
            <void property="normalAttack">
             <int>78</int>
@@ -11921,10 +11921,10 @@
           <int>31</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>664</int>
+            <int>170</int>
            </void>
            <void property="maxHP">
-            <int>664</int>
+            <int>170</int>
            </void>
            <void property="normalAttack">
             <int>79</int>
@@ -11947,10 +11947,10 @@
           <int>32</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>684</int>
+            <int>175</int>
            </void>
            <void property="maxHP">
-            <int>684</int>
+            <int>175</int>
            </void>
            <void property="normalAttack">
             <int>80</int>
@@ -11973,10 +11973,10 @@
           <int>33</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>704</int>
+            <int>180</int>
            </void>
            <void property="maxHP">
-            <int>704</int>
+            <int>180</int>
            </void>
            <void property="normalAttack">
             <int>81</int>
@@ -11999,10 +11999,10 @@
           <int>34</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>724</int>
+            <int>185</int>
            </void>
            <void property="maxHP">
-            <int>724</int>
+            <int>185</int>
            </void>
            <void property="normalAttack">
             <int>82</int>
@@ -12025,10 +12025,10 @@
           <int>35</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>744</int>
+            <int>190</int>
            </void>
            <void property="maxHP">
-            <int>744</int>
+            <int>190</int>
            </void>
            <void property="normalAttack">
             <int>83</int>
@@ -12051,10 +12051,10 @@
           <int>36</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>764</int>
+            <int>195</int>
            </void>
            <void property="maxHP">
-            <int>764</int>
+            <int>195</int>
            </void>
            <void property="normalAttack">
             <int>84</int>
@@ -12077,10 +12077,10 @@
           <int>37</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>784</int>
+            <int>200</int>
            </void>
            <void property="maxHP">
-            <int>784</int>
+            <int>200</int>
            </void>
            <void property="normalAttack">
             <int>85</int>
@@ -12103,10 +12103,10 @@
           <int>38</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>804</int>
+            <int>205</int>
            </void>
            <void property="maxHP">
-            <int>804</int>
+            <int>205</int>
            </void>
            <void property="normalAttack">
             <int>86</int>
@@ -12129,10 +12129,10 @@
           <int>39</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>824</int>
+            <int>210</int>
            </void>
            <void property="maxHP">
-            <int>824</int>
+            <int>210</int>
            </void>
            <void property="normalAttack">
             <int>87</int>
@@ -12155,10 +12155,10 @@
           <int>40</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>844</int>
+            <int>215</int>
            </void>
            <void property="maxHP">
-            <int>844</int>
+            <int>215</int>
            </void>
            <void property="normalAttack">
             <int>88</int>
@@ -12181,10 +12181,10 @@
           <int>41</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>864</int>
+            <int>220</int>
            </void>
            <void property="maxHP">
-            <int>864</int>
+            <int>220</int>
            </void>
            <void property="normalAttack">
             <int>89</int>
@@ -12207,10 +12207,10 @@
           <int>42</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>884</int>
+            <int>225</int>
            </void>
            <void property="maxHP">
-            <int>884</int>
+            <int>225</int>
            </void>
            <void property="normalAttack">
             <int>90</int>
@@ -12233,10 +12233,10 @@
           <int>43</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>904</int>
+            <int>230</int>
            </void>
            <void property="maxHP">
-            <int>904</int>
+            <int>230</int>
            </void>
            <void property="normalAttack">
             <int>91</int>
@@ -12259,10 +12259,10 @@
           <int>44</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>924</int>
+            <int>235</int>
            </void>
            <void property="maxHP">
-            <int>924</int>
+            <int>235</int>
            </void>
            <void property="normalAttack">
             <int>92</int>
@@ -12285,10 +12285,10 @@
           <int>45</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>944</int>
+            <int>240</int>
            </void>
            <void property="maxHP">
-            <int>944</int>
+            <int>240</int>
            </void>
            <void property="normalAttack">
             <int>93</int>
@@ -12311,10 +12311,10 @@
           <int>46</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>964</int>
+            <int>245</int>
            </void>
            <void property="maxHP">
-            <int>964</int>
+            <int>245</int>
            </void>
            <void property="normalAttack">
             <int>94</int>
@@ -12337,10 +12337,10 @@
           <int>47</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>984</int>
+            <int>250</int>
            </void>
            <void property="maxHP">
-            <int>984</int>
+            <int>250</int>
            </void>
            <void property="normalAttack">
             <int>95</int>
@@ -12363,10 +12363,10 @@
           <int>48</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1004</int>
+            <int>255</int>
            </void>
            <void property="maxHP">
-            <int>1004</int>
+            <int>255</int>
            </void>
            <void property="normalAttack">
             <int>96</int>
@@ -12389,10 +12389,10 @@
           <int>49</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1024</int>
+            <int>260</int>
            </void>
            <void property="maxHP">
-            <int>1024</int>
+            <int>260</int>
            </void>
            <void property="normalAttack">
             <int>97</int>
@@ -12415,10 +12415,10 @@
           <int>50</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1044</int>
+            <int>265</int>
            </void>
            <void property="maxHP">
-            <int>1044</int>
+            <int>265</int>
            </void>
            <void property="normalAttack">
             <int>98</int>
@@ -12441,10 +12441,10 @@
           <int>51</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1064</int>
+            <int>270</int>
            </void>
            <void property="maxHP">
-            <int>1064</int>
+            <int>270</int>
            </void>
            <void property="normalAttack">
             <int>99</int>
@@ -12467,10 +12467,10 @@
           <int>52</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1084</int>
+            <int>275</int>
            </void>
            <void property="maxHP">
-            <int>1084</int>
+            <int>275</int>
            </void>
            <void property="normalAttack">
             <int>100</int>
@@ -12493,10 +12493,10 @@
           <int>53</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1104</int>
+            <int>280</int>
            </void>
            <void property="maxHP">
-            <int>1104</int>
+            <int>280</int>
            </void>
            <void property="normalAttack">
             <int>101</int>
@@ -12519,10 +12519,10 @@
           <int>54</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1124</int>
+            <int>285</int>
            </void>
            <void property="maxHP">
-            <int>1124</int>
+            <int>285</int>
            </void>
            <void property="normalAttack">
             <int>102</int>
@@ -12545,10 +12545,10 @@
           <int>55</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1144</int>
+            <int>290</int>
            </void>
            <void property="maxHP">
-            <int>1144</int>
+            <int>290</int>
            </void>
            <void property="normalAttack">
             <int>103</int>
@@ -12571,10 +12571,10 @@
           <int>56</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1164</int>
+            <int>295</int>
            </void>
            <void property="maxHP">
-            <int>1164</int>
+            <int>295</int>
            </void>
            <void property="normalAttack">
             <int>104</int>
@@ -12597,10 +12597,10 @@
           <int>57</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1184</int>
+            <int>300</int>
            </void>
            <void property="maxHP">
-            <int>1184</int>
+            <int>300</int>
            </void>
            <void property="normalAttack">
             <int>105</int>
@@ -12623,10 +12623,10 @@
           <int>58</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1204</int>
+            <int>305</int>
            </void>
            <void property="maxHP">
-            <int>1204</int>
+            <int>305</int>
            </void>
            <void property="normalAttack">
             <int>106</int>
@@ -12649,10 +12649,10 @@
           <int>59</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1224</int>
+            <int>310</int>
            </void>
            <void property="maxHP">
-            <int>1224</int>
+            <int>310</int>
            </void>
            <void property="normalAttack">
             <int>107</int>
@@ -12675,10 +12675,10 @@
           <int>60</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1244</int>
+            <int>315</int>
            </void>
            <void property="maxHP">
-            <int>1244</int>
+            <int>315</int>
            </void>
            <void property="normalAttack">
             <int>108</int>
@@ -12701,10 +12701,10 @@
           <int>61</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1264</int>
+            <int>320</int>
            </void>
            <void property="maxHP">
-            <int>1264</int>
+            <int>320</int>
            </void>
            <void property="normalAttack">
             <int>109</int>
@@ -12727,10 +12727,10 @@
           <int>62</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1284</int>
+            <int>325</int>
            </void>
            <void property="maxHP">
-            <int>1284</int>
+            <int>325</int>
            </void>
            <void property="normalAttack">
             <int>110</int>
@@ -12753,10 +12753,10 @@
           <int>63</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1304</int>
+            <int>330</int>
            </void>
            <void property="maxHP">
-            <int>1304</int>
+            <int>330</int>
            </void>
            <void property="normalAttack">
             <int>111</int>
@@ -12779,10 +12779,10 @@
           <int>64</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1324</int>
+            <int>335</int>
            </void>
            <void property="maxHP">
-            <int>1324</int>
+            <int>335</int>
            </void>
            <void property="normalAttack">
             <int>112</int>
@@ -12805,10 +12805,10 @@
           <int>65</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1344</int>
+            <int>340</int>
            </void>
            <void property="maxHP">
-            <int>1344</int>
+            <int>340</int>
            </void>
            <void property="normalAttack">
             <int>113</int>
@@ -12831,10 +12831,10 @@
           <int>66</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1364</int>
+            <int>345</int>
            </void>
            <void property="maxHP">
-            <int>1364</int>
+            <int>345</int>
            </void>
            <void property="normalAttack">
             <int>114</int>
@@ -12857,10 +12857,10 @@
           <int>67</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1384</int>
+            <int>350</int>
            </void>
            <void property="maxHP">
-            <int>1384</int>
+            <int>350</int>
            </void>
            <void property="normalAttack">
             <int>115</int>
@@ -12883,10 +12883,10 @@
           <int>68</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1404</int>
+            <int>355</int>
            </void>
            <void property="maxHP">
-            <int>1404</int>
+            <int>355</int>
            </void>
            <void property="normalAttack">
             <int>116</int>
@@ -12909,10 +12909,10 @@
           <int>69</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1424</int>
+            <int>360</int>
            </void>
            <void property="maxHP">
-            <int>1424</int>
+            <int>360</int>
            </void>
            <void property="normalAttack">
             <int>117</int>
@@ -12935,10 +12935,10 @@
           <int>70</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1444</int>
+            <int>365</int>
            </void>
            <void property="maxHP">
-            <int>1444</int>
+            <int>365</int>
            </void>
            <void property="normalAttack">
             <int>118</int>
@@ -12961,10 +12961,10 @@
           <int>71</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1464</int>
+            <int>370</int>
            </void>
            <void property="maxHP">
-            <int>1464</int>
+            <int>370</int>
            </void>
            <void property="normalAttack">
             <int>119</int>
@@ -12987,10 +12987,10 @@
           <int>72</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1484</int>
+            <int>375</int>
            </void>
            <void property="maxHP">
-            <int>1484</int>
+            <int>375</int>
            </void>
            <void property="normalAttack">
             <int>120</int>
@@ -13013,10 +13013,10 @@
           <int>73</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1504</int>
+            <int>380</int>
            </void>
            <void property="maxHP">
-            <int>1504</int>
+            <int>380</int>
            </void>
            <void property="normalAttack">
             <int>121</int>
@@ -13039,10 +13039,10 @@
           <int>74</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1524</int>
+            <int>385</int>
            </void>
            <void property="maxHP">
-            <int>1524</int>
+            <int>385</int>
            </void>
            <void property="normalAttack">
             <int>122</int>
@@ -13065,10 +13065,10 @@
           <int>75</int>
           <object class="data.model.PokemonStat">
            <void property="HP">
-            <int>1544</int>
+            <int>390</int>
            </void>
            <void property="maxHP">
-            <int>1544</int>
+            <int>390</int>
            </void>
            <void property="normalAttack">
             <int>123</int>
@@ -24660,18 +24660,15 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/watercenter.png</string>
+          <string>images/tiles/tiles4shop/floor.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>pond</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
+        <string>Floor</string>
        </void>
        <void property="wholePic">
-        <string>images/tiles/watercenter.png</string>
+        <string>images/tiles/tiles4shop/floor.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -24686,15 +24683,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/tiles4shop/floor.png</string>
+          <string>images/tiles/watercenter.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>Floor</string>
+        <string>pond</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/tiles4shop/floor.png</string>
+        <string>images/tiles/watercenter.png</string>
        </void>
        <void property="width">
         <int>1</int>

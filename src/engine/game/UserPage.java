@@ -2,20 +2,10 @@ package engine.game;
 
 
 import javafx.stage.Stage;
-import javafx.scene.*;
-import javafx.scene.image.*;
-import javafx.scene.input.*;
-import javafx.scene.paint.*;
-import javafx.scene.shape.*;
 
 
-import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.URL;
+
+
 import java.util.ArrayList;
 import java.util.Enumeration;
 
@@ -24,7 +14,7 @@ import javafx.animation.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.scene.Group;
+
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -52,57 +42,36 @@ import javafx.util.Duration;
  */
 public class UserPage extends Application {
 
-	public static final String ITEM_NAME_EXIT = "EXIT";
-	public static final String ITEM_NAME_INVENTORY = "PACK";
-	public static final String ITEM_NAME_SAVE = "SAVE";
-	private final int PANE_XPOS = 180;
-	private final int PANE_YPOS = 0;
-	private final int ITEMBOX_XPOS = 200;
-	private final int ITEMBOX_YPOS = 30;
-	private final Image PANE_POINT = new Image("file:dialog/dialogue_pointer.png",24,24,false,false);
-	private final Image TOP_LEFT = new Image("file:dialog/dialogue_top_left.png",32,32,false,false);
-	private final Image LEFT = new Image("file:dialog/dialogue_left.png",32,32,false,false);
-	private final Image RIGHT = new Image("file:dialog/dialogue_right.png",32,32,false,false);
-	private final Image TOP = new Image("file:dialog/dialogue_top.png",32,32,false,false);
-	private final Image BOTTOM_LEFT = new Image("file:dialog/dialogue_bottom_left.png",32,32,false,false);
-	private final Image TOP_RIGHT = new Image("file:dialog/dialogue_top_right.png",32,32,false,false);
-	private final Image BOTTOM_RIGHT = new Image("file:dialog/dialogue_bottom_right.png",32,32,false,false);
-	private final Image CONTENT = new Image("file:dialog/dialogue_bg.png",32,32,false,false);
-	private final Image BOTTOM = new Image("file:dialog/dialogue_bottom.png",32,32,false,false);
-	private final int POPOUT_WIDTH = 7;
-	private final int POPOUT_HEIGHT = 6;
+	/*final variable*/
 
-	private ImageView arrow1 = new ImageView();
-	private ImageView arrow2 = new ImageView();
-	private ImageView arrow3 = new ImageView();
-	private boolean UserInterfaceEntered = true;
-	//private final Image  = new Image("file:dialog/dialogue_top_left.png");
-	
-	
-	
-	public static final String BALL2_IMAGE = "newNathanBall.gif";
-	public static final int SIZE = 400;
+	public static final int SIZE = 480;
 	public static final Paint BACKGROUND = Color.WHITE;
 	public static final int FRAMES_PER_SECOND = 8;
 	public static final int MILLISECOND_DELAY = 1000 / FRAMES_PER_SECOND;
 	public static final double SECOND_DELAY = 1.0 / FRAMES_PER_SECOND;
-	public static final int KEY_INPUT_SPEED = 5;
-	public static final double GROWTH_RATE = 1.1;
-	public static final int BOUNCER_SPEED = 40;
 	public static final int FONTSIZE = 15;
+	public static final String ITEM_NAME_EXIT = "EXIT";
+	public static final String ITEM_NAME_INVENTORY = "PACK";
+	public static final String ITEM_NAME_SAVE = "SAVE";
+	private final int PANE_XPOS = 220;
+	private final int PANE_YPOS = 0;
+	private final int ITEMBOX_XPOS = 260;
+	private final int ITEMBOX_YPOS = 30;
+	private final int POPOUT_WIDTH = 8;
+	private final int POPOUT_HEIGHT = 8;
 	
+	/*instance variable*/
 	
-	private Group root = new Group();
-	private String TargetString;
-	private Text DisplayText = new Text();
-	private String DisplayStr = new String();
-	private Scene myScene;
-	private Rectangle myTopBlock;
-	private int count = 0;
-	private int tarRow = 0;
+	private ArrayList <ItemColomn> colList = new ArrayList<ItemColomn>();
+	private Scene scene;
+	private Stage myStage = new Stage();
+	private boolean UserInterfaceEntered = true;
+	private Pane root = new Pane();
+	private int tarRow = -1;
+	private int currentSce = -1;
 	private GridPane itemBox = new GridPane();
-	private ArrayList<ImageView> arrowList = new ArrayList<ImageView>();
-	
+	private ArrayList<BagScene> bagSceList = new ArrayList<BagScene>();
+	private UserPageArt uPageArt = new UserPageArt();
 
 	
 	
@@ -113,10 +82,25 @@ public class UserPage extends Application {
 	 */
 	@Override
 	public void start (Stage s) {
-
-		Scene scene = setupGame(SIZE, SIZE, BACKGROUND);
-		s.setScene(scene);
-		s.show();
+		
+		myStage = s;
+		
+		// SET UP BAGSCENE OVER HERE
+		bagSceList.add(new PokemonBagScene(SIZE,SIZE,BACKGROUND, this));
+		bagSceList.add(new HMBagScene(SIZE,SIZE,BACKGROUND,this));
+		bagSceList.add(new KeyItemBagScene(SIZE,SIZE,BACKGROUND,this));
+		bagSceList.add(new potionBagScene(SIZE,SIZE,BACKGROUND,this));
+		
+		//SET UP COLOMN LIST
+		colList.add(new ItemColomn(ITEM_NAME_INVENTORY));
+		colList.add(new ItemColomn(ITEM_NAME_SAVE));
+		colList.add(new ItemColomn(ITEM_NAME_EXIT));
+		
+		//SET UP MAIN SCENE
+		scene = setupGame(SIZE, SIZE, BACKGROUND);
+		myStage.setScene(scene);
+		myStage.show();
+		
 		
 		
 		KeyFrame frame = new KeyFrame(Duration.millis(MILLISECOND_DELAY),
@@ -130,23 +114,19 @@ public class UserPage extends Application {
 	
 	
 
-	// Create the game's "scene": what shapes will be in the game and their starting properties
+	
 	private Scene setupGame (int width, int height, Paint background) {
 		
-		myScene = new Scene(root, width, height, background);
-		myTopBlock = new Rectangle(width / 2 - 25, height / 2 - 100, 50, 50);
+		scene = new Scene(root, width, height, background);
+		scene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 	
+		return scene;
 		
-		
-		
-		//set up arrowList
-		
-		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
-	
-		return myScene;
 	}
-
 	
+
+
+	/*
 	private void setUpBasicItemGrid() {
 		for(int i = 0; i < 2 ; i++) {
 			ColumnConstraints column = new ColumnConstraints(40);
@@ -184,7 +164,6 @@ public class UserPage extends Application {
 		 root.getChildren().add(itemBox);
 		 
 		 
-		 
 	}
 	
 	
@@ -210,11 +189,11 @@ public class UserPage extends Application {
 			arrow2.setImage(null);
 		}
 	}
-	/**
+	*//**
 	 * @param target: target String
 	 * @param Size: size of the text
 	 * @return The Text with the certain target and certain size
-	 */
+	 *//*
 	private Text useFont(String target, int Size) {
 		Text ans = new Text(target);
 		ans.setFont(getFont(Size));
@@ -262,7 +241,7 @@ public class UserPage extends Application {
 	
 	
 	
-	
+	*/
 	private void step (double elapsedTime) {
 		
 		
@@ -280,52 +259,88 @@ public class UserPage extends Application {
 	// What to do each time a key is pressed
 	private void handleKeyInput (KeyCode code) {
 		if  (code == KeyCode.ENTER) {
+			
+			// load the game scene
 			if(UserInterfaceEntered) {
-			makeGrid(root);
-			setUpBasicItemGrid();
+			
+			uPageArt.makeGrid(POPOUT_WIDTH, POPOUT_HEIGHT, root, PANE_XPOS,PANE_YPOS);
+			uPageArt.setUpBasicItemGrid(root, colList, ITEMBOX_XPOS, ITEMBOX_YPOS);
+			
+			//change the tarRow
+			if (tarRow == -1) {
+				tarRow = 0;
+			}
+			
 		 	UserInterfaceEntered = false;
 	}
 			
 			
 		}
-		if (code == KeyCode.RIGHT) {
-			
-		}
-		else if (code == KeyCode.LEFT) {
+	
 		
-		}
+		
 		else if (code == KeyCode.UP) {
+			tarRow = (tarRow+2)%3;
+			uPageArt.updateItemGrid(root, tarRow, colList);
+		}
+		
+		
+		else if (code == KeyCode.Z) {
+		if (!UserInterfaceEntered) {
+			if(tarRow == 0) {
+				myStage.setScene(bagSceList.get(0).getScene());
+				currentSce = 0;
+			}
+			else if(tarRow == 2) {
+				root.getChildren().clear(); 
+				UserInterfaceEntered = true; 
+				tarRow = -1;
+				itemBox.getChildren().clear();
 			
 		}
-		else if (code == KeyCode.X) {
-		if (UserInterfaceEntered) {
-			
 		}
 		}
+		
 		else if (code == KeyCode.DOWN) {
-			updateItemGrid(root,tarRow);
 			tarRow = (tarRow+1)%3;
+			uPageArt.updateItemGrid(root, tarRow, colList);
+			
 			
 		}
 		
 	}
 	
+	
+	public void switchBagSceneRight() {
+		if (currentSce != -1) {
+			currentSce = (currentSce + 1)%3;
+			myStage.setScene(bagSceList.get(currentSce).getScene());
+		}
+	}
+	
+	public void swithBagSceneLeft() {
+		if (currentSce != -1) {
+			currentSce = (currentSce + 2)%3;
+			myStage.setScene(bagSceList.get(currentSce).getScene());
+		}
+	}
+	
+	
+	
+	
+
 
 	
 	/**
-	 * @return the specific Pokemon font
+	 * Let each scene able to go back to original scene
 	 */
-	private Font getFont(int fontSize) {
-		Font f = new Font(30) ;
-		try {
-			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), fontSize);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return f;
+	public void goBackToOriScene() {
+		myStage.setScene(scene);
+		currentSce = -1;
+		tarRow = 0;
+
 	}
-	
+
 	/**
 	 * Start the program.
 	 */

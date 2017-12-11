@@ -28,6 +28,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
@@ -66,6 +67,7 @@ public class ScrollingDialogue extends Application {
 	private double barLength = 200;
 	private int count = 0;
 	private Rectangle r = new Rectangle();
+	private Rectangle rOpposite = new Rectangle();
 
 	
 	
@@ -117,7 +119,22 @@ public class ScrollingDialogue extends Application {
 		r.setArcHeight(10);
 		r.setFill(Color.LIGHTGREEN);
 		
-		root.getChildren().add(r);
+		rOpposite.setX(50);
+		rOpposite.setY(50);
+		rOpposite.setWidth(200);
+		rOpposite.setHeight(15);
+		rOpposite.setArcWidth(10);
+		rOpposite.setArcHeight(10);
+		rOpposite.setFill(Color.DARKGREY);
+		
+		
+		Pane healthBar = new Pane();
+		healthBar.getChildren().add(rOpposite);
+		healthBar.getChildren().add(r);
+		
+		root.getChildren().add(healthBar);
+		//root.getChildren().add(r);
+		
 		myScene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
 	
 		return myScene;
@@ -152,6 +169,7 @@ public class ScrollingDialogue extends Application {
 		if (barLength > 20) {
 		barLength = barLength - 5;
 		r.setWidth(barLength);
+		
 		
 		if (barLength < 50)  r.setFill(Color.RED);
 		else if (barLength < 100) r.setFill(Color.ORANGE);
