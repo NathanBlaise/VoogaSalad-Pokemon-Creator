@@ -23,6 +23,12 @@ public class Potion extends Item{
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
 		int newHP = mine.getCurrentStat().getHP() + 50;
+		int maxHP=mine.getLevelStats().get(mine.getCurrentLevel()).getMaxHP();
+	
+		if (newHP>maxHP) {
+			mine.getCurrentStat().setHP(maxHP);
+			return;
+		}
 		mine.getCurrentStat().setHP(newHP);
 	}
 }

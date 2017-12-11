@@ -21,6 +21,7 @@ import javafx.stage.Stage;
  */
 public class BattleFightOptions {
 	
+	private static final int experienceLevel = 50;
 	protected Pokemon activePokemon;
 	protected Pokemon enemyPokemon;
 	protected BattleScene battleScene;
@@ -104,12 +105,15 @@ public class BattleFightOptions {
 					
 					
 					if (enemyPokemon.isDead()) {
-						showEnding("You have caught the enemy pokemon successfully!");
-						enemyPokemon.resetCurrentStat();
-						battleScene.getPlayer().addPokemon(enemyPokemon);
-						//remove the enemy pokemon
+						battleScene.showEnding("The enemy pokemon is dead!",true);
+						activePokemon.absorbExperience(experienceLevel);
+						//enemyPokemon.resetCurrentStat();
+						
 						
 					}
+					
+				
+					
 				});
 				back.setOnAction((e) -> {
 					hbox.getChildren().clear();
@@ -124,28 +128,7 @@ public class BattleFightOptions {
 		
 	}
 	
-	//show the game end message
-	protected void showEnding(String message) {
-		Text end=new Text(message);
-		final Stage dialog = new Stage();
-		dialog.initModality(Modality.APPLICATION_MODAL);
-		Stage myStage=battleScene.getGameScene().getStage();
-		dialog.initOwner(myStage);
-		VBox dialogVbox = new VBox(20);
-
-		Button btn = new Button();
-		btn.setText("Got it");
-		dialogVbox.getChildren().add(end);
-		dialogVbox.getChildren().add(btn);
-		btn.setOnAction((event) ->{
-			dialog.close();
-			battleScene.getGameScene().changeBackScene();
-		});
-		Scene dialogScene = new Scene(dialogVbox, 300, 200);
-		dialog.setScene(dialogScene);
-		dialog.show();
-
-	}
+	
 
 	public void changeScene() {
 		

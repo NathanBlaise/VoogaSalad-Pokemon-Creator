@@ -12,6 +12,7 @@ import java.util.Map;
 
 import authoring.ScreenDisplay;
 import data.items.Item;
+import data.items.PokemonBall;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.model.moves.Move;
@@ -46,6 +47,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
 
@@ -186,6 +188,11 @@ public class BattleScene extends ScreenDisplay{
 				
 			}
 			
+			if (itemNames.size()==0) {
+				showEnding("Nothing inside the bag",false);
+				return;
+			}
+			
 			listOfItems=addListView(itemNames,500,200);
 			
 			itemListAction();
@@ -212,6 +219,7 @@ public class BattleScene extends ScreenDisplay{
 	private void pokemonButtonPressed(Button button) {
 		button.setOnAction((event) -> {
 			//load list of pokemon
+			this.rootRemove(listOfPokemons);
 			this.rootRemove(listOfItems);
 			ArrayList<String> pokemonNames=new ArrayList<>();
 			for (Pokemon each:mainPlayer.getPokemons()) {
@@ -240,6 +248,13 @@ public class BattleScene extends ScreenDisplay{
 						Constructor<?> constructor = itemClass.getConstructor();
 		     			Item thisItem = (Item) constructor.newInstance();
 		     			thisItem.useItem(mainPlayer, activePokemon, enemyPokemon);
+		     			if (thisItem instanceof PokemonBall) {
+		     				boolean caught=((PokemonBall) thisItem).getCaught();
+		     				if (caught) {
+		     					showEnding("The pokemon is caught!",true);
+		     				}
+		     				
+		     			} 
 		     			updateHealthBars(activePokemon.getCurrentStat().getHP(), enemyPokemon.getCurrentStat().getHP());
 		     			mainPlayer.deleteItem(item);
 		     			rootRemove(listOfItems);
@@ -261,6 +276,33 @@ public class BattleScene extends ScreenDisplay{
 	      });	
 		
 	}
+	
+	
+	//show the game end message
+		protected void showEnding(String message, boolean whetherEnd) {
+			Text end=new Text(message);
+			final Stage dialog = new Stage();
+			dialog.initModality(Modality.APPLICATION_MODAL);
+			Stage myStage=this.getGameScene().getStage();
+			dialog.initOwner(myStage);
+			VBox dialogVbox = new VBox(20);
+
+			Button btn = new Button();
+			btn.setText("Got it");
+			dialogVbox.getChildren().add(end);
+			dialogVbox.getChildren().add(btn);
+			
+			Scene dialogScene = new Scene(dialogVbox, 300, 200);
+			dialog.setScene(dialogScene);
+			dialog.show();
+			btn.setOnAction((event) ->{
+				dialog.close();
+				if (whetherEnd) {
+				getGameScene().changeBackScene();
+				}
+			});
+
+		}
 	
 	private void pokemonListAction() {
 		listOfPokemons.setOnMouseClicked(new EventHandler<MouseEvent>(){
