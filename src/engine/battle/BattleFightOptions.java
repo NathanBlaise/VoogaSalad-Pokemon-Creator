@@ -21,6 +21,7 @@ import javafx.stage.Stage;
  */
 public class BattleFightOptions {
 	
+	private static final int experienceLevel = 50;
 	protected Pokemon activePokemon;
 	protected Pokemon enemyPokemon;
 	protected BattleScene battleScene;
@@ -95,19 +96,25 @@ public class BattleFightOptions {
 				hbox.getChildren().addAll(confirm,back,moveInfo);
 				confirm.setOnAction((e) -> {
 					move.move(activePokemon, enemyPokemon);
+					System.out.println("now move stats"+move.getPP());
 					//Load hit animation, then change scene to enemy's move
 					changeScene();
 					activePokemon.printCurrentInfo();
 					enemyPokemon.printCurrentInfo();
 					//Update Health Bars
 					battleScene.updateHealthBars(activePokemon.getCurrentStat().getHP(), enemyPokemon.getCurrentStat().getHP());
-					if(activePokemon.isDead()) {
-						showEnding("Game end. Your pokemon is dead.");   
-					}
+					
 					
 					if (enemyPokemon.isDead()) {
-						showEnding("Game end. Enemy pokemon is dead.");
+						battleScene.showEnding("The enemy pokemon is dead!",true);
+						activePokemon.absorbExperience(experienceLevel);
+						//enemyPokemon.resetCurrentStat();
+						
+						
 					}
+					
+				
+					
 				});
 				back.setOnAction((e) -> {
 					hbox.getChildren().clear();
@@ -122,30 +129,7 @@ public class BattleFightOptions {
 		
 	}
 	
-	//show the game end message
-	private void showEnding(String message) {
-		Text end=new Text(message);
-		final Stage dialog = new Stage();
-		dialog.initModality(Modality.APPLICATION_MODAL);
-		Stage myStage=battleScene.getGameScene().getStage();
-		System.out.println("i am here");
-		System.out.println(myStage.equals(null));
-		dialog.initOwner(myStage);
-		VBox dialogVbox = new VBox(20);
-
-		Button btn = new Button();
-		btn.setText("Got it");
-		dialogVbox.getChildren().add(end);
-		dialogVbox.getChildren().add(btn);
-		btn.setOnAction((event) ->{
-			dialog.close();
-			battleScene.getGameScene().changeBackScene();
-		});
-		Scene dialogScene = new Scene(dialogVbox, 300, 200);
-		dialog.setScene(dialogScene);
-		dialog.show();
-
-	}
+	
 
 	public void changeScene() {
 		

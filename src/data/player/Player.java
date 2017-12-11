@@ -73,6 +73,32 @@ public class Player extends PacmanPlayer{
 			}
 		}
 	}
+	
+	public void addPokemon(Pokemon pokemon) {
+		for(int i=0;i<6;i++){
+			if(pokemons[i]==null){
+				this.pokemons[i] = pokemon;
+				break;
+			}
+		}
+		
+	}
+	
+	public void deletePokemon(Pokemon pokemon) {
+		boolean remove=false;
+		for(int i=0;i<6;i++){
+			if (remove==true) {
+				pokemons[i-1]=pokemons[i];
+			}
+			else if(pokemons[i]!=null && pokemons[i].getNickName().equals(pokemon.getNickName())){
+			
+				this.pokemons[i] = null;
+				remove=true;
+			}
+		}
+		
+	}
+	
 
 	public double getCurrency() {
 		return currency;

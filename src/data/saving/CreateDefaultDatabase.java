@@ -2,6 +2,7 @@ package data.saving;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import data.Database;
@@ -43,7 +44,7 @@ public class CreateDefaultDatabase{
 			new TileCollection().passTileToModel(model);
 			new PokemonSpecieCollection().passSpeciesToModel(model);
 			//add new specie for the purpose of the demo
-			ArrayList<PokemonSpecie> newSpecies = model.getPokemonSpecies();
+			List<PokemonSpecie> newSpecies = model.getPokemonSpecies();
 			// from index 1 to 386; retrieve the pokemon image from the database
 			for (int num = 1; num < 386; num ++) {
 				PokemonSpecie specie1 = new PokemonSpecie(newSpecies.get(0));
