@@ -77,7 +77,7 @@ public class PokemonSpecieFileParser extends XMLFileParserAbstract{
     
     
     @Override
-    protected void reinitializeObjectData() {
+    protected void parseData() {
 	specieName = NameParser.parse(rootNode);
 	elemental = ElementalParser.parse(rootNode);
 	maxLevel = MaxLevelParser.parse(rootNode);
@@ -87,7 +87,7 @@ public class PokemonSpecieFileParser extends XMLFileParserAbstract{
 	levelEvolutionImagePaths = PokemonLevelImagesParser.parse(rootNode);
     }
     @Override
-    protected void parseData() {
+    protected void reinitializeObjectData() {
 	specieName = "";
 	elemental = "";
 	maxLevel = -1;
