@@ -38,11 +38,16 @@ public class SceneList{
 			Method getSceneMethod = clazz.getMethod("getScene", new Class[]{});
 			Scene result = (Scene) getSceneMethod.invoke(myObject);
 			return result;
-		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.exit(1);
 			return null;
+		} catch (InvocationTargetException e) {
+		    e.getTargetException().printStackTrace();
+		    e.printStackTrace();
+		    System.exit(1);
+		    return null;
 		}
 	}
 	

@@ -195,5 +195,24 @@ public class PokemonSpecie implements Serializable{
 		}
 		return index;
 	}
-	
+	/**
+	 * print the pokemon specie info, for debugging purposes only.
+	 */
+	public void printDebugInfo() {
+	    StringBuilder sb = new StringBuilder();
+	    sb.append("Specie Name: " + specieName + "\n");
+	    sb.append("Elemental: " + elemental + "\n");
+	    sb.append("Max Level: " + maxLevel + "\n");
+	    sb.append("Level Moves:\n");
+	    for(Integer level:levelMoves.keySet()) {
+		sb.append("\tLevel: " + level + "; Move: " + levelMoves.get(level).getMoveName() + "\n");
+	    }
+	    for(Integer level:levelEvolutionImagePath.keySet()) {
+		sb.append("\tLevel: " + level + "; ImagePath: " + levelEvolutionImagePath.get(level) + "\n");
+	    }
+	    System.out.println(sb.toString());
+	    //These arent important
+//		this.levelStats = levelStats;
+//		this.levelExp = levelExp;
+	}
 }
