@@ -54,6 +54,7 @@ public class PokemonSpecieFileParser extends XMLFileParserAbstract{
     public PokemonSpecie parseFile(File file) 
 	    throws ParserConfigurationException, 
 	    SAXException, IOException {
+	levelMovesParser = new PokemonLevelMovesParser();
 	super.fillDataFromFileIntoFields(file);
 	return new PokemonSpecie(specieName,elemental,maxLevel,
 		levelMoves,levelStats,levelExps,levelEvolutionImagePaths);
