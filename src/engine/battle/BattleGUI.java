@@ -100,8 +100,8 @@ public class BattleGUI {
 		try {
 			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), 20);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
 		}
 		return f;
 	}

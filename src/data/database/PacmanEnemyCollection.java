@@ -65,7 +65,7 @@ public class PacmanEnemyCollection extends DataCollectionAbstract{
 		//TODO: handle exception better
 		System.out.println("Failed to parse PacmenEnemy from file " + 
 			pacmanEnemyFile.getAbsolutePath());
-		e.printStackTrace();
+		e.printStackTrace();//handled by exiting the program
 		System.exit(1);
 	    }
 	    pacmanEnemies.add(pacmanEnemy);

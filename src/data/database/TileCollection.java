@@ -57,7 +57,7 @@ public class TileCollection extends DataCollectionAbstract{
 				//TODO: handle exception better
 				System.out.println("Failed to parse Tile from file " + 
 					TileFile.getAbsolutePath());
-				e.printStackTrace();
+				e.printStackTrace();//handled by exiting the program
 				System.exit(1);
 		    }
 		    Tiles.put(Tile.getName(), Tile);

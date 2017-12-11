@@ -77,18 +77,24 @@ public class ShopCell extends ListCell<String> {
 						
 					} catch (ClassNotFoundException e) {
 						System.out.println("Reflection for item failed");
-						e.printStackTrace();
+						e.printStackTrace(); //handled by exiting the program
+						System.exit(1);
 					} catch (NoSuchMethodException e) {
 						System.out.println("No method found for constructor of item");
-						e.printStackTrace();
+						e.printStackTrace();//handled by exiting the program
+						System.exit(1);
 					} catch (InstantiationException e) {
-						e.printStackTrace();
+						e.printStackTrace();//handled by exiting the program
+						System.exit(1);
 					}  catch (InvocationTargetException e) {
-						e.printStackTrace();
+						e.printStackTrace();//handled by exiting the program
+						System.exit(1);
 					} catch (IllegalAccessException e) {
-						e.printStackTrace();
+						e.printStackTrace();//handled by exiting the program
+						System.exit(1);
 					} catch (IllegalArgumentException e) {
-						e.printStackTrace();
+						e.printStackTrace();//handled by exiting the program
+						System.exit(1);
 					} 
     			});
         }
