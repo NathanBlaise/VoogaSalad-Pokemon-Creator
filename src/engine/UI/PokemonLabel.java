@@ -40,6 +40,7 @@ public class PokemonLabel extends Label {
 		return f;
 	}
 	
+	
 	public void stopTimer() {
 		timer.stop();
 	}
@@ -67,4 +68,5 @@ public class PokemonLabel extends Label {
 				
 			}; timer.start();
 	} 
+	
 }
