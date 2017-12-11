@@ -188,6 +188,11 @@ public class BattleScene extends ScreenDisplay{
 				
 			}
 			
+			if (itemNames.size()==0) {
+				showEnding("Nothing inside the bag",false);
+				return;
+			}
+			
 			listOfItems=addListView(itemNames,500,200);
 			
 			itemListAction();
@@ -214,6 +219,7 @@ public class BattleScene extends ScreenDisplay{
 	private void pokemonButtonPressed(Button button) {
 		button.setOnAction((event) -> {
 			//load list of pokemon
+			this.rootRemove(listOfPokemons);
 			this.rootRemove(listOfItems);
 			ArrayList<String> pokemonNames=new ArrayList<>();
 			for (Pokemon each:mainPlayer.getPokemons()) {
@@ -245,7 +251,7 @@ public class BattleScene extends ScreenDisplay{
 		     			if (thisItem instanceof PokemonBall) {
 		     				boolean caught=((PokemonBall) thisItem).getCaught();
 		     				if (caught) {
-		     					showEnding("The pokemon is caught!");
+		     					showEnding("The pokemon is caught!",true);
 		     				}
 		     				
 		     			} 
@@ -273,7 +279,7 @@ public class BattleScene extends ScreenDisplay{
 	
 	
 	//show the game end message
-		protected void showEnding(String message) {
+		protected void showEnding(String message, boolean whetherEnd) {
 			Text end=new Text(message);
 			final Stage dialog = new Stage();
 			dialog.initModality(Modality.APPLICATION_MODAL);
@@ -285,13 +291,16 @@ public class BattleScene extends ScreenDisplay{
 			btn.setText("Got it");
 			dialogVbox.getChildren().add(end);
 			dialogVbox.getChildren().add(btn);
-			btn.setOnAction((event) ->{
-				dialog.close();
-				getGameScene().changeBackScene();
-			});
+			
 			Scene dialogScene = new Scene(dialogVbox, 300, 200);
 			dialog.setScene(dialogScene);
 			dialog.show();
+			btn.setOnAction((event) ->{
+				dialog.close();
+				if (whetherEnd) {
+				getGameScene().changeBackScene();
+				}
+			});
 
 		}
 	

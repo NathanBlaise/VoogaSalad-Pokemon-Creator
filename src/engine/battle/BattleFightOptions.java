@@ -21,6 +21,7 @@ import javafx.stage.Stage;
  */
 public class BattleFightOptions {
 	
+	private static final int experienceLevel = 50;
 	protected Pokemon activePokemon;
 	protected Pokemon enemyPokemon;
 	protected BattleScene battleScene;
@@ -104,9 +105,10 @@ public class BattleFightOptions {
 					
 					
 					if (enemyPokemon.isDead()) {
-						battleScene.showEnding("The enemy pokemon is dead!");
-						enemyPokemon.resetCurrentStat();
-						//remove the enemy pokemon
+						battleScene.showEnding("The enemy pokemon is dead!",true);
+						activePokemon.absorbExperience(experienceLevel);
+						//enemyPokemon.resetCurrentStat();
+						
 						
 					}
 					
