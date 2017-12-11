@@ -23,8 +23,16 @@ public class HPDrain extends Item{
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
 		int newHPEnemy = Enemy.getCurrentStat().getHP() - 10;
+		int maxHP=mine.getLevelStats().get(mine.getCurrentLevel()).getMaxHP();
+		
 		int newHPMine = mine.getCurrentStat().getHP() + 10; 
 		Enemy.getCurrentStat().setHP(newHPEnemy);
+		
+
+		if (newHPMine>maxHP) {
+			mine.getCurrentStat().setHP(maxHP);
+			return;
+		}
 		mine.getCurrentStat().setHP(newHPMine);
 	}
 }
