@@ -128,16 +128,15 @@ public abstract class GameScene extends ScreenDisplay {
 			return 0;
 		}
 		Instruction instruction = event.getInstructions().get(index);
-//		if (instruction.isGoNextInstruction()==false) {
 			pause();
 			assert(mainPlayer!=null);
-			instruction.execute(screen_width,screen_height,mainPlayer,mainMap,event,this);
-//		} else {
-//			index++;
-//		}	
+			instruction.execute(screen_width,screen_height,mainPlayer,mainMap,event,this);	
 		return -1;
 	}
-
+	
+	/**
+	 * pause the game scene
+	 */
 	protected void pause() {
 		input.releaseAllKeys();
 		animation.pause();
