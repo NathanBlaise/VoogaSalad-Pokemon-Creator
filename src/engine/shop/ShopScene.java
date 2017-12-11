@@ -34,11 +34,6 @@ import javafx.util.Callback;
 
 public class ShopScene extends ItemsScene{
 	
-//	private Image shopBackground = new Image("file:images/bag_game_background.png");
-//	private Image bagImage = new Image("file:images/shop_bag.png");
-	
-	private Player mainPlayer;
-	
 	/**
 	 * Scene used to buy items
 	 * @param width
@@ -50,7 +45,15 @@ public class ShopScene extends ItemsScene{
 	 */
 	public ShopScene(int width, int height, GameScene gameScene, List<Item> availableItems, Paint background, Player player) {
 		super(width, height, availableItems, background, player);
-		this.rootAdd(showItemList(mainPlayer.getItems()));
+		
+		Map<String,Integer> items = null;
+		try{
+		    items = mainPlayer.getItems();
+		} catch(NullPointerException e) {
+		    e.printStackTrace();//handled by exiting 
+		    System.exit(1);
+		}
+		this.rootAdd(showItemList(items));
 		this.getScene().getStylesheets().add("resources/shopScene.css");
 		Button quitButton = new Button("quit");
 		quitButton.setOnMouseClicked(e->{
