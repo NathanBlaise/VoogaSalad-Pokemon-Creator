@@ -1,18 +1,16 @@
 package engine.battle;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import data.model.Pokemon;
 import data.model.moves.Move;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * Class to create the buttons and set actions for when fight button is chosen
@@ -58,6 +56,8 @@ public class BattleFightOptions {
 		}
 		
 		Button back = new Button("Go Back");
+		setButtonStyle(back);
+		
 		hbox=battleScene.fourButtonLayout(buttonArr);
 		hbox.getChildren().add(back);
 		battleScene.rootAdd(hbox);
@@ -74,12 +74,32 @@ public class BattleFightOptions {
 		
 	}
 	
+	protected void setButtonStyle(Button b) {
+		b.setStyle("-fx-border-color: transparent; -fx-border-width: 0;-fx-background-radius: 0;-fx-background-color: transparent;");
+		Font font=getFont();
+		b.setFont(font);
+	}
+	
+	private Font getFont() {
+		Font f = new Font(30) ;
+		try {
+			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), 20);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return f;
+	}
+	
 	private void setButtonText() {
 		moveButton1 = new Button("-");
 		moveButton2 = new Button("-");
 		moveButton3 = new Button("-");
 		moveButton4 = new Button("-");
-		
+		setButtonStyle(moveButton1);
+		setButtonStyle(moveButton2);
+		setButtonStyle(moveButton3);
+		setButtonStyle(moveButton4);
 		buttonArr = new Button[] {moveButton1,moveButton2,moveButton3,moveButton4};
 		int i=0;
 		for(Move move: activePokemon.getAvailableMoves()) {
@@ -92,6 +112,11 @@ public class BattleFightOptions {
 				moveInfo.getChildren().addAll(typeLabel,ppLabel);
 				Button confirm = new Button("Use "+move.getMoveName()+" ?");
 				Button back = new Button("Go Back");
+				
+				
+				setButtonStyle(confirm);
+				setButtonStyle(back);
+				
 				hbox.getChildren().clear();
 				hbox.getChildren().addAll(confirm,back,moveInfo);
 				confirm.setOnAction((e) -> {

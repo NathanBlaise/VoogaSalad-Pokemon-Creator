@@ -118,7 +118,6 @@ public class BattleScene extends ScreenDisplay{
 		this.rootAdd(canvas);
 		currentActivePokemon=new ImageView(new Image(gui.backSpriteURL(activePokemon)));
 		this.rootAdd(currentActivePokemon,PLAYER_POKEMON_XPOS, PLAYER_POKEMON_YPOS);
-		
 		resetButtons();
 		printActiveHPInfo();
 		printEnemyHPInfo();
@@ -389,7 +388,8 @@ public class BattleScene extends ScreenDisplay{
 		healthBarPlayer = new HealthBar(activePokemon.getCurrentStat().getHP(),150,15);
 		activePokemonHealth = new PokemonLabel(activePokemon.getCurrentStat().getHP() + "/" + activePokemon.getCurrentStat().getMaxHP());
 		HBox healthBox = new HBox(10);
-		healthBox.getChildren().addAll(healthBarPlayer.getHealthBar(),activePokemonHealth);
+		healthBox.getChildren().addAll(healthBarPlayer.getPane(),activePokemonHealth);
+		
 		activePokemonInfo = new VBox(15);
 		activePokemonInfo.getChildren().addAll(nameBox,healthBox);
 		
@@ -411,7 +411,7 @@ public class BattleScene extends ScreenDisplay{
 		healthBarEnemy = new HealthBar(enemyPokemon.getCurrentStat().getHP(),150,15);
 		enemyPokemonHealth = new PokemonLabel(enemyPokemon.getCurrentStat().getHP() + "/" + enemyPokemon.getCurrentStat().getMaxHP());
 		HBox enemyHealthBox = new HBox(10);
-		enemyHealthBox.getChildren().addAll(healthBarEnemy.getHealthBar(),enemyPokemonHealth);
+		enemyHealthBox.getChildren().addAll(healthBarEnemy.getPane(),enemyPokemonHealth);
 		VBox enemyPokemonInfo = new VBox(15);
 		enemyPokemonInfo.getChildren().addAll(enemyNameBox,enemyHealthBox);
 		
