@@ -14,7 +14,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -24,7 +24,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -34,7 +34,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -44,7 +44,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -54,7 +54,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -64,7 +64,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -74,7 +74,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -84,7 +84,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -94,7 +94,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -104,7 +104,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -114,7 +114,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -124,7 +124,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -134,7 +134,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -144,7 +144,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -154,7 +154,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -168,7 +168,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -178,7 +178,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -188,7 +188,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -198,7 +198,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -208,7 +208,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -218,7 +218,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -228,7 +228,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -238,7 +238,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -248,7 +248,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -258,7 +258,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -268,7 +268,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -278,7 +278,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -288,7 +288,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -298,7 +298,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -308,7 +308,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -322,7 +322,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -332,7 +332,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -342,7 +342,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -352,7 +352,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -362,7 +362,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -372,7 +372,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -382,7 +382,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -392,7 +392,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -402,7 +402,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -412,7 +412,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -422,7 +422,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -432,7 +432,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -442,7 +442,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -452,7 +452,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -462,7 +462,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -476,7 +476,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -486,7 +486,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -496,7 +496,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -506,7 +506,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -516,7 +516,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -526,7 +526,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -536,7 +536,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -546,7 +546,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -556,7 +556,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -566,7 +566,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -576,7 +576,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -586,7 +586,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -596,7 +596,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -606,7 +606,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -616,7 +616,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -630,7 +630,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -640,7 +640,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -650,7 +650,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -660,7 +660,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -670,7 +670,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -680,7 +680,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -690,7 +690,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -700,7 +700,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -710,7 +710,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -720,7 +720,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -730,7 +730,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -740,7 +740,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -750,7 +750,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -760,7 +760,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -770,7 +770,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -784,7 +784,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -794,7 +794,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -804,7 +804,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -814,7 +814,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -824,7 +824,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -834,7 +834,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -844,7 +844,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -854,7 +854,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -864,7 +864,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -874,7 +874,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -884,7 +884,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -894,7 +894,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -904,7 +904,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -914,7 +914,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -924,7 +924,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -938,7 +938,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -948,7 +948,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -958,7 +958,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -968,7 +968,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -978,7 +978,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -988,7 +988,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -998,7 +998,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1008,7 +1008,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1018,7 +1018,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1028,7 +1028,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1038,7 +1038,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1048,7 +1048,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1058,7 +1058,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1068,7 +1068,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1078,7 +1078,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1092,7 +1092,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1102,7 +1102,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1112,7 +1112,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1122,7 +1122,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1132,7 +1132,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1142,7 +1142,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1152,7 +1152,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1162,7 +1162,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1172,7 +1172,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1182,7 +1182,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1192,7 +1192,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1202,7 +1202,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1212,7 +1212,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1222,7 +1222,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1232,7 +1232,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1246,7 +1246,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1256,7 +1256,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1266,7 +1266,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1276,7 +1276,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1286,7 +1286,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1296,7 +1296,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1306,7 +1306,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1316,7 +1316,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1326,7 +1326,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1336,7 +1336,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1346,7 +1346,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1356,7 +1356,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1366,7 +1366,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1376,7 +1376,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1386,7 +1386,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1400,7 +1400,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1410,7 +1410,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1420,7 +1420,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1430,7 +1430,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1440,7 +1440,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1450,7 +1450,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1460,7 +1460,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1470,7 +1470,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1480,7 +1480,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1490,7 +1490,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1500,7 +1500,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1510,7 +1510,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1520,7 +1520,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1530,7 +1530,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -1540,7 +1540,7 @@
             <boolean>true</boolean>
            </void>
            <void property="tilePath">
-            <string>images/reg_tile_scaled.png</string>
+            <string>images/tiles/pacman_tiles/black_tile.png</string>
            </void>
           </object>
          </void>
@@ -24709,41 +24709,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/tiles4shop/floor.png</string>
+          <string>images/tiles/pacman_tiles/corner_tile_3.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>Floor</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/tiles4shop/floor.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/watercenter.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>pond</string>
+        <string>Corner 3 Tile</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/watercenter.png</string>
+        <string>images/tiles/pacman_tiles/corner_tile_3.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -24758,15 +24735,15 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/flower_tile.png</string>
+          <string>images/tiles/pacman_tiles/black_tile.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>Flower</string>
+        <string>Regular Tile</string>
        </void>
        <void property="wholePic">
-        <string>images/tiles/flower_tile.png</string>
+        <string>images/tiles/pacman_tiles/black_tile.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -24781,41 +24758,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/tiles4shop/wall.png</string>
+          <string>images/tiles/pacman_tiles/straight_tile_3.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>Wall</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/tiles4shop/wall.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/edgecenter.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>Edge of water</string>
+        <string>Straight 3 Tile</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/edgecenter.png</string>
+        <string>images/tiles/pacman_tiles/straight_tile_3.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -24830,18 +24784,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/stonecenter.png</string>
+          <string>images/tiles/pacman_tiles/corner_tile_1.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>stone in water</string>
+        <string>Corner 1 Tile</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/stonecenter.png</string>
+        <string>images/tiles/pacman_tiles/corner_tile_1.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -24856,87 +24810,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/cornerdirt.png</string>
+          <string>images/tiles/pacman_tiles/corner_tile_2.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>Dirt</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/cornerdirt.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/bridge2.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>bridge2</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/bridge2.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/tiles4shop/HouseGround.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>House Ground</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/tiles4shop/HouseGround.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/tree.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>tree</string>
+        <string>Corner 2 Tile</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/tree.png</string>
+        <string>images/tiles/pacman_tiles/corner_tile_2.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -24946,50 +24831,26 @@
      <void method="add">
       <object class="data.model.Tile">
        <void property="height">
-        <int>3</int>
+        <int>1</int>
        </void>
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/houseSplitedWithBackground/House1.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House2.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House3.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House4.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House5.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House6.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House7.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House8.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House9.jpg</string>
+          <string>images/tiles/pacman_tiles/straight_tile_4.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>House</string>
+        <string>Straight 4 Tile</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/houseSplitedWithBackground/House.jpg</string>
+        <string>images/tiles/pacman_tiles/straight_tile_4.png</string>
        </void>
        <void property="width">
-        <int>3</int>
+        <int>1</int>
        </void>
       </object>
      </void>
@@ -25001,18 +24862,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/purewatercenter.png</string>
+          <string>images/tiles/pacman_tiles/straight_tile_1.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>water</string>
+        <string>Straight 1 Tile</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/purewatercenter.png</string>
+        <string>images/tiles/pacman_tiles/straight_tile_1.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -25027,18 +24888,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/space.png</string>
+          <string>images/tiles/pacman_tiles/straight_tile_2.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>space</string>
+        <string>Straight 2 Tile</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/space.png</string>
+        <string>images/tiles/pacman_tiles/straight_tile_2.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -25053,149 +24914,21 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/reg_tile.png</string>
+          <string>images/tiles/pacman_tiles/corner_tile_4.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>barren ground</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/reg_tile.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/grass_tile.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>grass</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/grass_tile.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>2</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/tiles4shop/desk1.png</string>
-         </void>
-         <void method="add">
-          <string>images/tiles/tiles4shop/desk2.png</string>
-         </void>
-         <void method="add">
-          <string>images/tiles/tiles4shop/desk3.png</string>
-         </void>
-         <void method="add">
-          <string>images/tiles/tiles4shop/desk4.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>Desk</string>
+        <string>Corner 4 Tile</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/tiles4shop/deskWhole.png</string>
-       </void>
-       <void property="width">
-        <int>2</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/bridge.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>bridge</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/bridge.png</string>
+        <string>images/tiles/pacman_tiles/corner_tile_4.png</string>
        </void>
        <void property="width">
         <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>3</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center1.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center2.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center3.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center4.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center5.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center6.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center7.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center8.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/shopCenterSplitedWithBackground/Center9.jpg</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>PokemonCenter</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
-       <void property="wholePic">
-        <string>images/shopCenterSplitedWithBackground/Center.jpg</string>
-       </void>
-       <void property="width">
-        <int>3</int>
        </void>
       </object>
      </void>

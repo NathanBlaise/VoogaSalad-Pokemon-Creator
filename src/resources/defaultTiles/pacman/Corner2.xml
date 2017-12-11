@@ -1,0 +1,5 @@
+<defaultTile>
+	<name>Corner 2 Tile</name>
+	<wholePic>images/tiles/pacman_tiles/corner_tile_2.png</wholePic>
+	<obstacle>true</obstacle>
+</defaultTile>

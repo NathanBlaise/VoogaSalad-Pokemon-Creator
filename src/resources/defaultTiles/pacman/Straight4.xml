@@ -1,0 +1,5 @@
+<defaultTile>
+	<name>Straight 4 Tile</name>
+	<wholePic>images/tiles/pacman_tiles/straight_tile_4.png</wholePic>
+	<obstacle>true</obstacle>
+</defaultTile>
