@@ -3,7 +3,6 @@ package authoring;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-
 /**
  * This class to initialize all the scenes over here and pass it to the main class
  * @author supertony
@@ -19,13 +18,14 @@ public class SceneController {
 	
 	public SceneController(StageDelegate stageDelegate, String gameType){
 		sceneList = new SceneList(Color.WHITE,stageDelegate);	
-		
 		// create an Editing Map Screen
 		sceneList.add("authoring.dragdrop.EditMapScene");			
 		// create a Event Picture Screen
 		sceneList.add("authoring.editEventImage.EditEventImageScene");
 		//create Database Screen
-		sceneList.add("authoring.databaseEditor.DatabaseScene");
+		if(gameType.equals("Pokemon")) {
+			sceneList.add("authoring.databaseEditor.DatabaseScene");
+		}
 	}
 	
 	//removed getter for encapsulation
