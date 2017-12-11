@@ -26,7 +26,12 @@ public class EditEventImageScene extends BasicAuthorScreen {
 	public EditEventImageScene(Paint background, StageDelegate stageHelper) {
 		super(background, stageHelper);
 		this.stageHelper = stageHelper;
-		this.rootAdd(new EventImageMenu(stageHelper.getDatabase().getModel().getPokemonSpecies(), stageHelper.getDatabase().getModel().getNPCs()));
+		if(stageHelper.getGameType().equals("Pokemon")) {
+			this.rootAdd(new EventImageMenu(stageHelper.getDatabase().getModel().getPokemonSpecies(), stageHelper.getDatabase().getModel().getNPCs()));
+		} else {
+			this.rootAdd(new EventImageMenu(stageHelper.getDatabase().getModel().getPacmanEnemies()));
+			makeFinalScreen();
+		}
 		this.rootAdd(new MapManager(stageHelper.getDatabase(), e->{
 			return null;
 		}, new Tile("grass", false, 1, 1, "images/reg_tile_scaled.png", new ArrayList<String>())),200,0);

@@ -44,7 +44,9 @@ public abstract class GameScene extends ScreenDisplay {
 	private int screen_height;
 	private int screen_width;
 	private int instructionIndex = 0;
-	private final Image image = new Image("file:images/emerald_down_rest.png");
+	protected static final int offsetX = 10; //for the offset of the block of the player
+	protected static final int offsetY = 10; //for the offset of the block of the player
+	
 
 	protected GameMap mainMap;
 	protected Player mainPlayer;
@@ -86,7 +88,7 @@ public abstract class GameScene extends ScreenDisplay {
 		this.changeMapPosition = changeMapPosition;
 		
 		//Deal with player
-		playerImage = new ImageView(image);
+		playerImage = new ImageView();
 		playerImage.setFitHeight(PLAYER_HEIGHT);
 		playerImage.setFitWidth(PLAYER_WIDTH);
 		playerImage.setY((height-PLAYER_HEIGHT)/2);

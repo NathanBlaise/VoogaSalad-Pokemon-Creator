@@ -7,6 +7,7 @@ import java.util.Map;
 
 import data.Database;
 import data.database.NPCCollection;
+import data.database.PacmanEnemyCollection;
 import data.database.PokemonSpecieCollection;
 import data.database.TileCollection;
 import data.map.Cell;
@@ -38,11 +39,12 @@ public class CreateDefaultDatabase{
 			return map;
 		}
 		
-		private static Model createModel(){		
+		private static Model createModel(String type){		
 			Model model = new Model(new ArrayList<NPC>(), new ArrayList<PokemonSpecie>(), new ArrayList<Tile>());
 			new NPCCollection().passNPCToModel(model);
-			new TileCollection().passTileToModel(model);
 			new PokemonSpecieCollection().passSpeciesToModel(model);
+			new TileCollection(type).passTileToModel(model);
+			new PacmanEnemyCollection().passPacmanEnemiesToModel(model);
 			//add new specie for the purpose of the demo
 			List<PokemonSpecie> newSpecies = model.getPokemonSpecies();
 			// from index 1 to 386; retrieve the pokemon image from the database
@@ -64,7 +66,7 @@ public class CreateDefaultDatabase{
 		public CreateDefaultDatabase(String type){
 			String path = "src/resources/Databases/defaultDatabases_"+type+".xml";
 			GameMap map = createMap(type);
-			Model model = createModel();
+			Model model = createModel(type);
 			Player player = new Player();			
 			ArrayList<GameMap> maps = new ArrayList<GameMap>();
 			maps.add(map);

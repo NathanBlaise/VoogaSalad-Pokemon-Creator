@@ -16,7 +16,7 @@ import data.model.Model;
 import data.model.Tile;
 
 public class TileCollection extends DataCollectionAbstract{
-    private static String defaultTilesRelativePath = "src/resources/defaultTiles";
+    private static String defaultTilesRelativePath = "src/resources/defaultTiles/";
     //stores mapping from name to class
     private Map<String,Tile> Tiles; 
     private TileFileParser fileParser;
@@ -28,10 +28,10 @@ public class TileCollection extends DataCollectionAbstract{
      * that is holding them
      * 
      */
-    public TileCollection() {
+    public TileCollection(String type) {
 		Tiles = new HashMap<>();
 		fileParser = new TileFileParser();
-		readDefaultTiles();
+		readDefaultTiles(type);
     }
     
     /**
@@ -47,8 +47,8 @@ public class TileCollection extends DataCollectionAbstract{
 		model.setTiles(TileList);
     }
 
-    private void readDefaultTiles() {
-		File[] files = getFilesWithinAsArray(FilePathConverter.getAbsolutePath(defaultTilesRelativePath));
+    private void readDefaultTiles(String type) {
+		File[] files = getFilesWithinAsArray(FilePathConverter.getAbsolutePath(defaultTilesRelativePath+type));
 		for(File TileFile:files) {
 		    Tile Tile = null;
 		    try {

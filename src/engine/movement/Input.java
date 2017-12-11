@@ -64,7 +64,7 @@ public class Input {
 	}
 	
 	/*
-	 * Adds listeners for keys, need to be removed when scene changes
+	 * Adds listeners for keys and remove, allows the keys to be activated/deactived
 	 */
 	public void addListeners() {
         myScene.addEventFilter(KeyEvent.KEY_PRESSED, (event) -> inputList.add(event.getCode().toString()));
@@ -76,28 +76,12 @@ public class Input {
         myScene.removeEventFilter(KeyEvent.KEY_RELEASED, (event) -> inputList.remove(event.getCode().toString()));
     }
     
+    /*
+     * Clears all keys the user is holding
+     */
     public void releaseAllKeys(){
     	inputList.clear();
     }
-    
-//	/*
-//	 * Registers each key press, if up and down are pressed for example it won't work
-//	 */
-//    public boolean isMoveUp() {
-//        return inputList.contains( upKey.toString()) && !inputList.contains( downKey.toString());
-//    }
-//
-//    public boolean isMoveDown() {
-//        return inputList.contains( downKey.toString()) && !inputList.contains( upKey.toString());
-//    }
-//
-//    public boolean isMoveLeft() {
-//        return inputList.contains( leftKey.toString()) && !inputList.contains( rightKey.toString());  
-//    }
-//
-//    public boolean isMoveRight() {
-//        return inputList.contains( rightKey.toString()) && !inputList.contains( leftKey.toString());
-//    }
 
 	public Map<String, ArrayList<Function<String, Integer>>> getInputHandler() {
 		return pressHandler;

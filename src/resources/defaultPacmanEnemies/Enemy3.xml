@@ -1,0 +1,4 @@
+<defaultPacmanEnemy>
+	<speed>5</speed>
+	<imagePath>images/pacman_enemies/pacman_enemy_3.png</imagePath>	
+</defaultPacmanEnemy>
