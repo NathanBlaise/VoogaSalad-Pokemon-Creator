@@ -21,10 +21,11 @@ public class EditEventImageScene extends BasicAuthorScreen {
 	
 	/*instance variable*/
 	private DBMap myMap;
+	private StageDelegate stageHelper;
 
 	public EditEventImageScene(Paint background, StageDelegate stageHelper) {
 		super(background, stageHelper);
-		// TODO Auto-generated constructor stub
+		this.stageHelper = stageHelper;
 		this.rootAdd(new EventImageMenu(stageHelper.getDatabase().getModel().getPokemonSpecies(), stageHelper.getDatabase().getModel().getNPCs()));
 		this.rootAdd(new MapManager(stageHelper.getDatabase(), e->{
 			return null;
@@ -33,6 +34,11 @@ public class EditEventImageScene extends BasicAuthorScreen {
 //		myMap = new DBMap(stageHelper.getDatabase());
 //		this.rootAdd(myMap.getGrid(),200,0);
 		
+	}
+	
+	public void makeFinalScreen() {
+		super.getGoSceneButton().setText("Finish");
+		super.getGoSceneButton().setOnAction((e) -> {stageHelper.GoButtonPressed(); stageHelper.getStage().close();});
 	}
 	
 	

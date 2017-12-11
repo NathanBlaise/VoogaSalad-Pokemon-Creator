@@ -68,9 +68,9 @@ public class PacmanEnemy implements Serializable {
 
 	/**
 	 * 
-	 * @param name - name of NPC
+	 * @param speed - speed of NPC
 	 */
-	public void setName(int speed) {
+	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 	
