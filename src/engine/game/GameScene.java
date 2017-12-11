@@ -91,23 +91,7 @@ public abstract class GameScene extends ScreenDisplay {
 		playerImage.setFitWidth(PLAYER_WIDTH);
 		playerImage.setY((height-PLAYER_HEIGHT)/2);
 		playerImage.setX((width-PLAYER_WIDTH)/2);
-		
-		//mainPlayer.getPosX()*pixelSize
-		//mainPlayer.getPosY()*pixelSize
-		
-//		System.out.printf("player position: %d %d\n", mainPlayer.getPosX(), mainPlayer.getPosY());
-		//Initialize variables; Deal with map
-//		tileCanvas = new Canvas (screen_width,screen_height);
-//		GraphicsContext gc = tileCanvas.getGraphicsContext2D();
-//		DrawMap drawMap = new DrawMap(mainMap,gc);
-//		//Add tile pics into root
-//		this.rootAdd(tileCanvas);
-//		mapPane = drawMap.getPane();
-//		this.rootAdd(mapPane);
-//		this.rootAdd(playerImage);
-
 		input = new Input(this.getScene());
-
 		KeyFrame frame = new KeyFrame(Duration.millis(MILLISECOND_DELAY*0.0025), e -> {
 			if(hasNextInstruction()&&(currentEvent!=null)) {
 				executeEvent(currentEvent, instructionIndex);
@@ -146,6 +130,7 @@ public abstract class GameScene extends ScreenDisplay {
 		Instruction instruction = event.getInstructions().get(index);
 //		if (instruction.isGoNextInstruction()==false) {
 			pause();
+			assert(mainPlayer!=null);
 			instruction.execute(screen_width,screen_height,mainPlayer,mainMap,event,this);
 //		} else {
 //			index++;

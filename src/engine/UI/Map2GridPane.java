@@ -61,7 +61,7 @@ public class Map2GridPane {
 			Image result = SwingFXUtils.toFXImage(combined, null);
 			return result;
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
 			System.exit(1);
 			return null;
 		}

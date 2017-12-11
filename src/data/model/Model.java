@@ -55,7 +55,8 @@ public class Model implements Serializable{
 					| IllegalAccessException | IllegalArgumentException
 					| InvocationTargetException e) {
 				System.out.printf("wrong item class!");
-				e.printStackTrace();
+				e.printStackTrace();//handled by exiting the program
+				System.exit(1);
 			}
 		}
 	}
