@@ -3,6 +3,7 @@ package engine.battle;
 import java.util.Observable;
 
 import javafx.animation.AnimationTimer;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -15,11 +16,13 @@ import javafx.scene.shape.Rectangle;
 public class HealthBar {
 	
 	private Rectangle healthBar;
+	private Rectangle healthBackgroundBar;
 	private double finalWidth;
 	private double totalHealth;
 	private double totalWidth;
 	private double lastHealth;
 	private boolean increase;
+	private Pane healthPane = new Pane();
 	
 	/**
 	 * Using this constructor the user can 
@@ -30,7 +33,9 @@ public class HealthBar {
 	 * @param yPos
 	 */
 	public HealthBar(double health, double width, double height, double xPos, double yPos) {
+		
 		healthBar = new Rectangle(xPos,yPos,width,height);
+		
 		healthBar.setArcHeight(10);
 		healthBar.setArcWidth(10);
 		healthBar.setFill(Color.LIGHTGREEN);
@@ -38,9 +43,17 @@ public class HealthBar {
 		totalHealth = health;
 		lastHealth = health;
 		increase = false;
+		
+		
 	}
 	
 	public HealthBar(double health, double width, double height) {
+		healthBackgroundBar = new Rectangle(width,height);
+		healthBackgroundBar.setArcHeight(10);
+		healthBackgroundBar.setArcWidth(10);
+		healthBackgroundBar.setFill(Color.DARKGREY);
+		
+		
 		healthBar = new Rectangle(width,height);
 		healthBar.setArcHeight(10);
 		healthBar.setArcWidth(10);
@@ -49,6 +62,9 @@ public class HealthBar {
 		totalHealth = health;
 		lastHealth = health;
 		increase = false;
+		
+		healthPane.getChildren().add(healthBackgroundBar);
+		healthPane.getChildren().add(healthBar);
 	}
 
 	
@@ -61,6 +77,7 @@ public class HealthBar {
 			if(health > 0) finalWidth = (health/totalHealth) * totalWidth;
 			else if(health <= 0) finalWidth = 0;
 			double diff = Math.abs(lastHealth - health);
+			
 			if(lastHealth < health) increase = true;
 			double decrement = ((diff/totalHealth) * totalWidth)/10;
 			AnimationTimer timer = new AnimationTimer() {
@@ -96,4 +113,7 @@ public class HealthBar {
 		}
 	}
 
+	public Pane getPane() {
+		return healthPane;
+	}
 }

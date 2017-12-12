@@ -55,7 +55,8 @@ public class Engine {
 				| IllegalAccessException | IllegalArgumentException
 				| InvocationTargetException e) {
 			System.out.printf("type:%s, Game Type not found!", gameType);
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
 		}
 
 	}

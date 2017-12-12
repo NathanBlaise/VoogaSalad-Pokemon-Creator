@@ -203,7 +203,8 @@ public class ScrollingDialogue extends Application {
 			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), FONTSIZE);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
 		}
 		return f;
 	}

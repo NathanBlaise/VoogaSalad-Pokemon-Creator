@@ -2,10 +2,12 @@ package data.saving;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import data.Database;
 import data.database.NPCCollection;
+import data.database.PacmanEnemyCollection;
 import data.database.PokemonSpecieCollection;
 import data.database.TileCollection;
 import data.map.Cell;
@@ -14,6 +16,7 @@ import data.model.Model;
 import data.model.NPC;
 import data.model.Tile;
 import data.model.PokemonSpecie;
+import data.player.PacmanPlayer;
 import data.player.Player;
 
 /**
@@ -23,23 +26,27 @@ import data.player.Player;
  */
 public class CreateDefaultDatabase{
 		
-		private static GameMap createMap(){
+		private static GameMap createMap(String type){
+			String cellImagePath;
+			if(type.equals("Pokemon")) cellImagePath = "images/reg_tile_scaled.png";
+			else cellImagePath = "images/tiles/pacman_tiles/black_tile.png";
 			GameMap map = new GameMap("default map", 10, 15);
 			for(int i=0; i<10; i++){
 				for(int j=0; j<15; j++){
-					map.setCell(i,j,new Cell("images/reg_tile_scaled.png",true,false,null));
+					map.setCell(i,j,new Cell(cellImagePath,true,false,null));
 				}
 			}
 			return map;
 		}
 		
-		private static Model createModel(){		
+		private static Model createModel(String type){		
 			Model model = new Model(new ArrayList<NPC>(), new ArrayList<PokemonSpecie>(), new ArrayList<Tile>());
 			new NPCCollection().passNPCToModel(model);
-			new TileCollection().passTileToModel(model);
 			new PokemonSpecieCollection().passSpeciesToModel(model);
+			new TileCollection(type).passTileToModel(model);
+			new PacmanEnemyCollection().passPacmanEnemiesToModel(model);
 			//add new specie for the purpose of the demo
-			ArrayList<PokemonSpecie> newSpecies = model.getPokemonSpecies();
+			List<PokemonSpecie> newSpecies = model.getPokemonSpecies();
 			// from index 1 to 386; retrieve the pokemon image from the database
 			for (int num = 1; num < 386; num ++) {
 				PokemonSpecie specie1 = new PokemonSpecie(newSpecies.get(0));
@@ -52,14 +59,15 @@ public class CreateDefaultDatabase{
 			}
 			return model;
 		}
+
 		/**
 		 * Creates the XML file of the default Pokemon database
 		 */
-		public CreateDefaultDatabase(){
-			String path = "src/resources/Databases/defaultDatabases_Pokemon.xml";
-			GameMap map = createMap();
-			Model model = createModel();
-			Player player = new Player();
+		public CreateDefaultDatabase(String type){
+			String path = "src/resources/Databases/defaultDatabases_"+type+".xml";
+			GameMap map = createMap(type);
+			Model model = createModel(type);
+			Player player = new Player();			
 			ArrayList<GameMap> maps = new ArrayList<GameMap>();
 			maps.add(map);
 			Database database = new Database(maps, model, player);

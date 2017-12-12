@@ -39,4 +39,11 @@ public interface StageDelegate {
 	 */
 	Stage getStage();
 	
+	
+	/**
+	 * 
+	 * @return - the game type
+	 */
+	String getGameType();
+	
 }

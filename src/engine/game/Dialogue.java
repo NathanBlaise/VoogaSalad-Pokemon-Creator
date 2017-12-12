@@ -125,7 +125,8 @@ public class Dialogue {
 			f = Font.loadFont(new FileInputStream(new File("./src/resources/pkmnem.ttf")), FONTSIZE);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
 		}
 		return f;
 	}

@@ -76,7 +76,8 @@ public class DIYEventEditor {
 					stage.sizeToScene();
 					return null;
 				} catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | IllegalAccessException | InstantiationException e1) {
-					e1.printStackTrace();
+					e1.printStackTrace(); //handled by exiting the program
+					System.exit(1);
 					return null;
 				}
 			});

@@ -4,9 +4,13 @@ import java.util.Random;
 
 import data.model.Pokemon;
 import data.model.moves.Move;
+import javafx.geometry.Point2D;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -27,14 +31,33 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	public EnemyBattleFightOptions(Pokemon ap, Pokemon ep, BattleScene bs) {
 		super(ap, ep,bs);
 		mainScene = bs;
+		super.setButtonStyle(cancel);
+		
+	}
+	
+	
+	private void handleKeyInput(KeyCode code) {
+
+		// start the game
+		if (code == KeyCode.ENTER) {
+			
+			    	mainScene.clearMessage();
+                 mainScene.resetButtons();
+                 mainScene.getCanvas().setFocusTraversable(false);
+		}
 	}
 	
 	
 	
 	@Override
 	public void changeScene() {
-		mainScene.resetButtons();
+		mainScene.getCanvas().setFocusTraversable(true);
+		mainScene.getCanvas().setOnKeyPressed(e -> handleKeyInput(e.getCode()));
+	
+		
+		 
 		mainScene.rootRemove(super.hbox);
+		
 		
 		
 		//bfo.setUpScene();
@@ -57,13 +80,18 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
   
   
   private void performMove() {
-	    
+	 
 	  int numberOfMoves=super.activePokemon.getAvailableMoves().size();
 	  Random rand=new Random();
 	  int thisMove=rand.nextInt(numberOfMoves);
 	  Move move=super.activePokemon.getAvailableMoves().get(thisMove);
 	  move.move(super.activePokemon, super.enemyPokemon);
-	  super.battleScene.setMessage("Oh no! "+ enemyPokemon.getNickName() + " performed "+move.getMoveName()+"!");
+	  battleScene.updateHealthBars(enemyPokemon.getCurrentStat().getHP(), activePokemon.getCurrentStat().getHP());
+	  super.battleScene.setMessage("Oh no! "+ activePokemon.getNickName() + " performed "+move.getMoveName()+"!");
+	  if(enemyPokemon.isDead()) {
+			battleScene.showEnding("Game end. Your pokemon is dead.",true);
+			battleScene.getPlayer().deletePokemon(enemyPokemon);
+		}  
 	  
   }
   

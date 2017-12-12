@@ -8,10 +8,8 @@ public class DatabaseSaver {
 		try {
 			new xmlWriter().writeXML(database, savePath);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
 			System.exit(1);
 		}
 	}
-
 }

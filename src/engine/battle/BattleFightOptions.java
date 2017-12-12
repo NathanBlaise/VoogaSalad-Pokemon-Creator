@@ -1,18 +1,16 @@
 package engine.battle;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import data.model.Pokemon;
 import data.model.moves.Move;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * Class to create the buttons and set actions for when fight button is chosen
@@ -21,6 +19,7 @@ import javafx.stage.Stage;
  */
 public class BattleFightOptions {
 	
+	private static final int experienceLevel = 50;
 	protected Pokemon activePokemon;
 	protected Pokemon enemyPokemon;
 	protected BattleScene battleScene;
@@ -57,6 +56,8 @@ public class BattleFightOptions {
 		}
 		
 		Button back = new Button("Go Back");
+		setButtonStyle(back);
+		
 		hbox=battleScene.fourButtonLayout(buttonArr);
 		hbox.getChildren().add(back);
 		battleScene.rootAdd(hbox);
@@ -73,12 +74,33 @@ public class BattleFightOptions {
 		
 	}
 	
+	protected void setButtonStyle(Button b) {
+		b.setStyle("-fx-border-color: transparent; -fx-border-width: 0;-fx-background-radius: 0;-fx-background-color: transparent;");
+		Font font=getFont();
+		b.setFont(font);
+	}
+	
+	private Font getFont() {
+		Font f = new Font(30) ;
+		try {
+			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), 20);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
+			
+		}
+		return f;
+	}
+	
 	private void setButtonText() {
 		moveButton1 = new Button("-");
 		moveButton2 = new Button("-");
 		moveButton3 = new Button("-");
 		moveButton4 = new Button("-");
-		
+		setButtonStyle(moveButton1);
+		setButtonStyle(moveButton2);
+		setButtonStyle(moveButton3);
+		setButtonStyle(moveButton4);
 		buttonArr = new Button[] {moveButton1,moveButton2,moveButton3,moveButton4};
 		int i=0;
 		for(Move move: activePokemon.getAvailableMoves()) {
@@ -91,23 +113,34 @@ public class BattleFightOptions {
 				moveInfo.getChildren().addAll(typeLabel,ppLabel);
 				Button confirm = new Button("Use "+move.getMoveName()+" ?");
 				Button back = new Button("Go Back");
+				
+				
+				setButtonStyle(confirm);
+				setButtonStyle(back);
+				
 				hbox.getChildren().clear();
 				hbox.getChildren().addAll(confirm,back,moveInfo);
 				confirm.setOnAction((e) -> {
 					move.move(activePokemon, enemyPokemon);
+					System.out.println("now move stats"+move.getPP());
 					//Load hit animation, then change scene to enemy's move
 					changeScene();
 					activePokemon.printCurrentInfo();
 					enemyPokemon.printCurrentInfo();
 					//Update Health Bars
 					battleScene.updateHealthBars(activePokemon.getCurrentStat().getHP(), enemyPokemon.getCurrentStat().getHP());
-					if(activePokemon.isDead()) {
-						showEnding("Game end. Your pokemon is dead.");   
-					}
+					
 					
 					if (enemyPokemon.isDead()) {
-						showEnding("Game end. Enemy pokemon is dead.");
+						battleScene.showEnding("The enemy pokemon is dead!",true);
+						activePokemon.absorbExperience(experienceLevel);
+						//enemyPokemon.resetCurrentStat();
+						
+						
 					}
+					
+				
+					
 				});
 				back.setOnAction((e) -> {
 					hbox.getChildren().clear();
@@ -122,30 +155,7 @@ public class BattleFightOptions {
 		
 	}
 	
-	//show the game end message
-	private void showEnding(String message) {
-		Text end=new Text(message);
-		final Stage dialog = new Stage();
-		dialog.initModality(Modality.APPLICATION_MODAL);
-		Stage myStage=battleScene.getGameScene().getStage();
-		System.out.println("i am here");
-		System.out.println(myStage.equals(null));
-		dialog.initOwner(myStage);
-		VBox dialogVbox = new VBox(20);
-
-		Button btn = new Button();
-		btn.setText("Got it");
-		dialogVbox.getChildren().add(end);
-		dialogVbox.getChildren().add(btn);
-		btn.setOnAction((event) ->{
-			dialog.close();
-			battleScene.getGameScene().changeBackScene();
-		});
-		Scene dialogScene = new Scene(dialogVbox, 300, 200);
-		dialog.setScene(dialogScene);
-		dialog.show();
-
-	}
+	
 
 	public void changeScene() {
 		

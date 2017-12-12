@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import authoring.eventManage.NPCEventEditor;
+import authoring.eventManage.PacmanEventEditor;
 import authoring.eventManage.PokemonEventEditor;
 import authoring.eventManage.DIYEventEditor;
 import data.event.Event;
 import data.event.EventDIY;
 import data.event.EventNPC;
+import data.event.EventPacmanEnemy;
 import data.event.EventPokemon;
 import data.map.Cell;
 import data.model.NPC;
+import data.model.PacmanEnemy;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
 import data.model.Tile;
@@ -251,6 +254,8 @@ public class DBCell {
 					new PokemonEventEditor(app.getDatabase().getModel().getPokemonSpecies(), ((EventPokemon)cell.getEvent()).getPokemon(), (m)->{UpdatEvent(m); return null;});
 				}else if(cell.getEvent() instanceof EventNPC){
 					new NPCEventEditor((EventNPC)cell.getEvent(), app.getDatabase().getModel().getPokemonSpecies(), (m)->{UpdatEvent(m); return null;});
+				}else if(cell.getEvent() instanceof EventPacmanEnemy) {
+					new PacmanEventEditor((EventPacmanEnemy)cell.getEvent(),(m)->{UpdatEvent(m); return null;});
 				}else if(cell.getEvent() instanceof EventDIY){
 					new DIYEventEditor((EventDIY)cell.getEvent(), app.getDatabase(), (m)->{UpdatEvent(m); return null;});
 				}
@@ -290,6 +295,9 @@ public class DBCell {
 			@SuppressWarnings("unchecked")
 			List<PokemonSpecie> pokemons = (List<PokemonSpecie>)db.getContent(DataFormat.lookupMimeType("PokemonList"));
 			new PokemonEventEditor(pokemons, new Pokemon(pokemonSpecie,""), (e)->{UpdatEvent(e); return null;});
+		} else if (db.getContent(DataFormat.lookupMimeType("Type")).equals("PacmanEnemy")) {
+			PacmanEnemy pacmanEnemy = (PacmanEnemy)db.getContent(DataFormat.lookupMimeType("PacmanEnemy"));
+			new PacmanEventEditor(new EventPacmanEnemy(pacmanEnemy), (e) -> {UpdatEvent(e); return null;});
 		}
 	}
 

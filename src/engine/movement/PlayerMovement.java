@@ -48,11 +48,10 @@ public class PlayerMovement {
 	 * @param mapWidth - the width of map
 	 * @param mapHeight - the height of map
 	 */
-	public static void changePos(Player player, double pixelSize, ImageView playerImage, double nextX, double nextY, Canvas tileCanvas, GameScene gameScene){
+	public static void changePos(double pixelSize, ImageView playerImage, double nextX, double nextY, Canvas tileCanvas, GameScene gameScene){
 		if (nextX >= tileCanvas.getLayoutX() && nextY >= tileCanvas.getLayoutY() && (nextX + playerImage.getFitWidth()<= tileCanvas.getLayoutX()+tileCanvas.getWidth())&&(nextY + playerImage.getFitHeight()<= tileCanvas.getLayoutY()+tileCanvas.getHeight())) {
 			gameScene.changePlayerImagePosition(nextX, nextY);
-//			player.setPosX(new Double(nextX/pixelSize).intValue());
-//			player.setPosY(new Double(nextY/pixelSize).intValue());
+
 		}
 	}
 	

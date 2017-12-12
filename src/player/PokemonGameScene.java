@@ -21,10 +21,9 @@ public class PokemonGameScene extends GameScene{
 
 	private static final int PLAYER_WIDTH = 45;
 	private static final int PLAYER_HEIGHT = 45;
-	private static final int offsetX = 10; //for the offset of the block of the player
-	private static final int offsetY = 10; //for the offset of the block of the player
 	private static final int sizeBlockX = PLAYER_WIDTH - 2*offsetX;
 	private static final int sizeBlockY = PLAYER_HEIGHT - 2*offsetY;
+	private final Image image = new Image("file:images/emerald_down_rest.png");
 	private PlayerMovement playerMoves;
 	
 	{
@@ -51,6 +50,7 @@ public class PokemonGameScene extends GameScene{
 	public PokemonGameScene(int width, int height, Paint background,
 			Engine engine, Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, 480, 480, background, engine, stage, true);
+		playerImage.setImage(image);
 		refreshMap(mainMap);
 		changeBackScene();
 	}
@@ -68,7 +68,7 @@ public class PokemonGameScene extends GameScene{
 		double nextPosX = nextPos.getKey();
 	    double nextPosY = nextPos.getValue();
 	    if(!Collisions.checkCollision(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane)){
-	    	PlayerMovement.changePos(mainPlayer, pixelSize, playerImage, nextPosX, nextPosY, tileCanvas, (GameScene)this);
+	    	PlayerMovement.changePos(pixelSize, playerImage, nextPosX, nextPosY, tileCanvas, (GameScene)this);
 	    }else{
 			Pair<Integer, Integer> playerIndex = PlayerMovement.playerIndexOnGrid(nextPosX+offsetX+sizeBlockX/2-tileCanvas.getLayoutX(), nextPosY+offsetY+sizeBlockY/2-tileCanvas.getLayoutY(), pixelSize, pixelSize);
 			Map<Pair<Integer, Integer>, Event> collideEvents = Collisions.getCollideEvents(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane, mainMap);

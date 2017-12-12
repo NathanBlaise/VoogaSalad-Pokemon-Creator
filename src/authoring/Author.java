@@ -24,6 +24,7 @@ public class Author implements StageDelegate{
 //	private SceneList myList;
 	private SceneController scControl;
 	private String savePath;
+	private String gameType;
 	private Database database;
 	
 	/**
@@ -32,11 +33,13 @@ public class Author implements StageDelegate{
 	 * @param savePath - the path to save the database
 	 * @param primaryStage - the stage to show the data
 	 */
-	public Author(Database database, String savePath, Stage primaryStage){
+	public Author(Database database, String savePath, Stage primaryStage, String gameType){
 		myStage = primaryStage;
 		this.database = database;
 		this.savePath = savePath;
-		scControl = new SceneController(this);
+		this.gameType = gameType;
+		scControl = new SceneController(this,gameType);
+		System.out.println(gameType);
 //		myList = scControl.getScList();
 	}
 	
@@ -90,6 +93,12 @@ public class Author implements StageDelegate{
 	@Override
 	public Stage getStage(){
 		return myStage;
+	}
+
+
+	@Override
+	public String getGameType() {
+		return gameType;
 	}
 
 }

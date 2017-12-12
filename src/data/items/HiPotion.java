@@ -22,7 +22,13 @@ public class HiPotion extends Item{
 	//Overrides the useItem function that every item has
 	@Override
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
+	
+		int maxHP=mine.getLevelStats().get(mine.getCurrentLevel()).getMaxHP();
 		int newHP = mine.getCurrentStat().getHP() + 100;
+		if (newHP>maxHP) {
+			mine.getCurrentStat().setHP(maxHP);
+			return;
+		}
 		mine.getCurrentStat().setHP(newHP);
 	}
 }

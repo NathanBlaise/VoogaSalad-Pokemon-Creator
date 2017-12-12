@@ -42,11 +42,13 @@ public class PropertyReader{
 		} catch (FileNotFoundException e) {
 			System.out.print("file not found!");
 			property = new NullReader();
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
 		} catch (IOException e) {
 			System.out.print("file format wrong!");
 			property = new NullReader();
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
 		}
 	}
 	

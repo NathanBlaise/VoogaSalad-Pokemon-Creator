@@ -13,38 +13,20 @@ import data.model.Pokemon;
  * @author cy122 nathan
  *
  */
-public class Player implements Serializable{
+public class Player extends PacmanPlayer{
 	private static final long serialVersionUID = 556462866183029469L;
-	private int posX, posY;
 	private Pokemon[] pokemons;
 	private double currency;
 	private Map<String, Integer> items = new HashMap<String, Integer>();  // a map from the item to the number of item, String stands for the class name of item
 	private ArrayList<Pokemon> warehouse;
 	
 	public Player(){
-		posX=0;
-		posY=0;
+		super();
 		pokemons = new Pokemon[6];
 		currency = 0;
 		warehouse = new ArrayList<Pokemon>();
 	}
 	
-	public int getPosX() {
-		return posX;
-	}
-
-	public void setPosX(int posX) {
-		this.posX = posX;
-	}
-
-	public int getPosY() {
-		return posY;
-	}
-
-	public void setPosY(int posY) {
-		this.posY = posY;
-	}
-
 	public Pokemon[] getPokemons() {
 		return pokemons;
 	}
@@ -91,6 +73,32 @@ public class Player implements Serializable{
 			}
 		}
 	}
+	
+	public void addPokemon(Pokemon pokemon) {
+		for(int i=0;i<6;i++){
+			if(pokemons[i]==null){
+				this.pokemons[i] = pokemon;
+				break;
+			}
+		}
+		
+	}
+	
+	public void deletePokemon(Pokemon pokemon) {
+		boolean remove=false;
+		for(int i=0;i<6;i++){
+			if (remove==true) {
+				pokemons[i-1]=pokemons[i];
+			}
+			else if(pokemons[i]!=null && pokemons[i].getNickName().equals(pokemon.getNickName())){
+			
+				this.pokemons[i] = null;
+				remove=true;
+			}
+		}
+		
+	}
+	
 
 	public double getCurrency() {
 		return currency;
@@ -118,6 +126,5 @@ public class Player implements Serializable{
 		}
 		return number;
 	}
-	
-	
+
 }

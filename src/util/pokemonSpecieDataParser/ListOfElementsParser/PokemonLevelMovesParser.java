@@ -66,22 +66,11 @@ public class PokemonLevelMovesParser extends ListOfElementsParserAbstract{
 	try {
 	    move = movesFactory.getMove(moveName);
 	} catch (Exception e) {
-	    // TODO add additional steps to handle exception
 	    System.out.println("Failed to get the correct move!");
-	    e.printStackTrace();
+	    e.printStackTrace(); //handled by exiting the program
 	    java.lang.System.exit(1);
 	}
 	assert(move != null);
 	movesMap.put(level, move);	
     }
-//moved into abstract super class
-//    private NodeList getAllMoves(Element levelMoves) {
-//	return levelMoves.getElementsByTagName(moveTag);
-//    }
-//
-//    private Element getLevelMovesElement(Element rootNode) {
-//	NodeList levelMoves = rootNode.getElementsByTagName(levelMovesTag);
-//	Element levelMovesElement = (Element)levelMoves.item(0);
-//	return levelMovesElement;
-//    }
 }

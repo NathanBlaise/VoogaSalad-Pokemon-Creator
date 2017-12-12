@@ -3,9 +3,9 @@ package engine.game;
 
 import javafx.stage.Stage;
 
-
-
-
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
@@ -334,11 +334,11 @@ public class UserPage extends Application {
 	/**
 	 * Let each scene able to go back to original scene
 	 */
+
 	public void goBackToOriScene() {
 		myStage.setScene(scene);
 		currentSce = -1;
 		tarRow = 0;
-
 	}
 
 	/**

@@ -4,7 +4,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -38,11 +37,15 @@ public class SceneList{
 			Method getSceneMethod = clazz.getMethod("getScene", new Class[]{});
 			Scene result = (Scene) getSceneMethod.invoke(myObject);
 			return result;
-		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException e) {
+			e.printStackTrace(); //handled by exiting the program
 			System.exit(1);
 			return null;
+		} catch (InvocationTargetException e) {
+		    e.getTargetException().printStackTrace(); //handled by exiting the program
+		    e.printStackTrace(); //handled by exiting the program
+		    System.exit(1);
+		    return null;
 		}
 	}
 	

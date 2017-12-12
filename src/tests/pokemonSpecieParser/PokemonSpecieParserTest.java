@@ -11,7 +11,7 @@ import org.xml.sax.SAXException;
 
 import data.model.PokemonSpecie;
 import util.FilePathConverter;
-import util.PokemonSpecieFileParser;
+import util.fileParsers.PokemonSpecieFileParser;
 
 public class PokemonSpecieParserTest {
 
@@ -22,6 +22,7 @@ public class PokemonSpecieParserTest {
 	PokemonSpecieFileParser specieParser = new PokemonSpecieFileParser();
 	PokemonSpecie specie = specieParser.parseFile(
 		FilePathConverter.getAbsolutePath(testSpecieFilePath));
+	specie.printDebugInfo();
 	assertTrue(true);
     }
 
