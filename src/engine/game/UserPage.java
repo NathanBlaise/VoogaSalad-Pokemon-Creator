@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
+import data.Database;
 import javafx.animation.*;
 
 import javafx.animation.KeyFrame;
@@ -31,6 +32,7 @@ import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import javafx.util.Duration;
 
 
@@ -64,26 +66,21 @@ public class UserPage extends Application {
 	
 	private ArrayList <ItemColomn> colList = new ArrayList<ItemColomn>();
 	private Scene scene;
-	private Stage myStage = new Stage();
-	private boolean UserInterfaceEntered = true;
-	private Pane root = new Pane();
-	private int tarRow = -1;
+	private Stage myStage;
+	private boolean 	UserInterfaceEntered = false;
+	private Pane root;
+	private int tarRow = 0;
 	private int currentSce = -1;
 	private GridPane itemBox = new GridPane();
 	private ArrayList<BagScene> bagSceList = new ArrayList<BagScene>();
 	private UserPageArt uPageArt = new UserPageArt();
+	private Database database;
 
-	
-	
-	
-	
-	/**
-	 * Initialize what will be displayed and how it will be updated.
-	 */
-	@Override
-	public void start (Stage s) {
-		
-		myStage = s;
+	public UserPage(Database database, Stage stage, Scene scene, Pane root){
+		this.database = database;
+		this.myStage = stage;
+		this.scene =  scene;
+		this.root = root;
 		
 		// SET UP BAGSCENE OVER HERE
 		bagSceList.add(new PokemonBagScene(SIZE,SIZE,BACKGROUND, this));
@@ -95,6 +92,25 @@ public class UserPage extends Application {
 		colList.add(new ItemColomn(ITEM_NAME_INVENTORY));
 		colList.add(new ItemColomn(ITEM_NAME_SAVE));
 		colList.add(new ItemColomn(ITEM_NAME_EXIT));
+		
+		uPageArt.makeGrid(POPOUT_WIDTH, POPOUT_HEIGHT, root, PANE_XPOS,PANE_YPOS);
+		uPageArt.setUpBasicItemGrid(root, colList, ITEMBOX_XPOS, ITEMBOX_YPOS);
+		if (tarRow == -1) {
+			tarRow = 0;
+		}
+	}
+	
+	
+	
+	/**
+	 * Initialize what will be displayed and how it will be updated.
+	 */
+	@Override
+	public void start (Stage s) {
+		
+		myStage = s;
+		
+
 		
 		//SET UP MAIN SCENE
 		scene = setupGame(SIZE, SIZE, BACKGROUND);
@@ -118,7 +134,7 @@ public class UserPage extends Application {
 	private Scene setupGame (int width, int height, Paint background) {
 		
 		scene = new Scene(root, width, height, background);
-		scene.setOnKeyPressed(e -> handleKeyInput(e.getCode()));
+		scene.setOnKeyPressed(e -> handleKeyInput(myStage, root, e.getCode(), i->{return null;}));
 	
 		return scene;
 		
@@ -257,29 +273,30 @@ public class UserPage extends Application {
 
 
 	// What to do each time a key is pressed
-	private void handleKeyInput (KeyCode code) {
-		if  (code == KeyCode.ENTER) {
-			
-			// load the game scene
-			if(UserInterfaceEntered) {
-			
-			uPageArt.makeGrid(POPOUT_WIDTH, POPOUT_HEIGHT, root, PANE_XPOS,PANE_YPOS);
-			uPageArt.setUpBasicItemGrid(root, colList, ITEMBOX_XPOS, ITEMBOX_YPOS);
-			
-			//change the tarRow
-			if (tarRow == -1) {
-				tarRow = 0;
-			}
-			
-		 	UserInterfaceEntered = false;
-	}
-			
-			
-		}
+	public void handleKeyInput (Stage myStage, Pane root, KeyCode code, Callback<Integer, Integer> end) {
+//		if  (code == KeyCode.ENTER) {
+//			
+//			// load the game scene
+//			if(UserInterfaceEntered) {
+//			
+////			uPageArt.makeGrid(POPOUT_WIDTH, POPOUT_HEIGHT, root, PANE_XPOS,PANE_YPOS);
+////			uPageArt.setUpBasicItemGrid(root, colList, ITEMBOX_XPOS, ITEMBOX_YPOS);
+//			
+////			//change the tarRow
+////			if (tarRow == -1) {
+////				tarRow = 0;
+////			}
+//			
+//		 	UserInterfaceEntered = false;
+//	}
+//			
+//			
+//		}
 	
 		
 		
-		else if (code == KeyCode.UP) {
+//		else 
+			if (code == KeyCode.UP) {
 			tarRow = (tarRow+2)%3;
 			uPageArt.updateItemGrid(root, tarRow, colList);
 		}
@@ -292,11 +309,11 @@ public class UserPage extends Application {
 				currentSce = 0;
 			}
 			else if(tarRow == 2) {
-				root.getChildren().clear(); 
 				UserInterfaceEntered = true; 
 				tarRow = -1;
 				itemBox.getChildren().clear();
-			
+				uPageArt.removeAll(root);
+				end.call(0);
 		}
 		}
 		}

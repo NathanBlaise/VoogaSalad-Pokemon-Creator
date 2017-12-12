@@ -145,6 +145,11 @@ public abstract class GameScene extends ScreenDisplay {
 		input.removeListeners();
 	}
 	
+	protected void carryOn() {
+		animation.play();
+		input.addListeners();
+	}
+	
 	/**
 	 * The method called by NPC Battle Helper
 	 * Come back from the NPC Battle Scene to Game Scene

@@ -27,19 +27,19 @@ public class UserPageArt {
 	
 
 	/*instance variable*/
+	VBox itemGrid = new VBox();
+	GridPane userBox = new GridPane();
 	
 	
 	
-	
-	public UserPageArt() {
-		
-	}
 	
 	
 	
 	public void setUpBasicItemGrid(Pane root, ArrayList <ItemColomn> colList, int xPos, int yPos) {
-		VBox itemGrid = new VBox();
 		
+		if (itemGrid.getChildren() != null) {
+			itemGrid.getChildren().clear();
+		}
 		for (ItemColomn itemCol: colList ) {
 			itemGrid.getChildren().add(itemCol);
 		}
@@ -66,8 +66,6 @@ public class UserPageArt {
 	
 	public void makeGrid(int width, int height, Pane root, int xPos, int yPos) {
 		//build a grid pane
-		GridPane userBox = new GridPane();
-		
 		for(int i = 0; i < width ; i++) {
 			ColumnConstraints column = new ColumnConstraints(32);
 			userBox.getColumnConstraints().add(column);
@@ -97,6 +95,10 @@ public class UserPageArt {
 		
 		userBox.setLayoutX(xPos);
 		userBox.setLayoutY(yPos);
+	}
+	
+	public void removeAll(Pane root){
+		root.getChildren().removeAll(userBox, itemGrid);
 	}
 	
 	
