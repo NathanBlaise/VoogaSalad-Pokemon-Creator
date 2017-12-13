@@ -310,14 +310,14 @@ public class BattleScene extends ScreenDisplay{
 	          @Override
 	          public void handle(MouseEvent arg0) {
 
-	                 String item=listOfPokemons.getSelectionModel().getSelectedItems().get(0);
+	                 String pokemon=listOfPokemons.getSelectionModel().getSelectedItems().get(0);
 	                 for (Pokemon each: mainPlayer.getPokemons()) {
-	                	     if (each.getNickName().equals(item)) {
-	                	    	     activePokemon=each;
+	                	     if (each.getNickName().equals(pokemon)) {
+	                		     resetActivePokemon(each);
 	                	    	     bfo = new BattleFightOptions(activePokemon,enemyPokemon,bs);
 	                	    	     ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,bs);
 	                	    	     changeActiveHPInfo();
-	                	    	     resetActivePokemon();
+	                	    	     
 	                	    	     rootRemove(listOfPokemons);
 	                	    	     break;
 	                	     }
@@ -327,9 +327,11 @@ public class BattleScene extends ScreenDisplay{
 	}
 	
 	
-	private void resetActivePokemon() {
-	
+	private void resetActivePokemon(Pokemon newActivePokemon) {
+	    	this.rootRemove(currentActivePokemon);
+	    	activePokemon=newActivePokemon;
 		currentActivePokemon.setImage(new Image(gui.backSpriteURL(activePokemon)));
+		this.rootAdd(currentActivePokemon,PLAYER_POKEMON_XPOS, PLAYER_POKEMON_YPOS);
 	}
 	
 	

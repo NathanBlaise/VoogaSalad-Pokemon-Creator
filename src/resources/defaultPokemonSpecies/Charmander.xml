@@ -1013,15 +1013,15 @@
 	<levelEvolutionImages>
 		<evolutionImage>
 			<level>1</level>
-			<imagePath>images/pokemons/4.gif</imagePath>
+			<imagePath>images/pokemon_sprites/4.gif</imagePath>
 		</evolutionImage>
 		<evolutionImage>
 			<level>25</level>
-			<imagePath>images/pokemons/5.gif</imagePath>
+			<imagePath>images/pokemon_sprites/5.gif</imagePath>
 		</evolutionImage>
 			<evolutionImage>
 			<level>50</level>
-			<imagePath>images/pokemons/6.gif</imagePath>
+			<imagePath>images/pokemon_sprites/6.gif</imagePath>
 		</evolutionImage>
 	</levelEvolutionImages>
 </defaultPokemonSpecie>
