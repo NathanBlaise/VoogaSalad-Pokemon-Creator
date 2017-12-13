@@ -1,26 +1,30 @@
 <defaultPokemonSpecie>
 	<name>Pikachu</name>
-	
-	<elemental>Lightning</elemental>
+	<!--  from https://pokemondb.net/pokedex/pikachu -->
+	<elemental>Electric</elemental>
 	
 	<maxLevel>75</maxLevel>
 	
 	<levelMoves>
 		<move>
 			<level>1</level>
-			<name>Growl</name>
-		</move>
-		<move>
-			<level>5</level>
-			<name>QuickAttack</name>
+			<name>ThunderShock</name>
 		</move>
 		<move>
 			<level>10</level>
-			<name>TailWhip</name>
+			<name>QuickAttack</name>
 		</move>
 		<move>
-			<level>15</level>
-			<name>ThunderShock</name>
+			<level>26</level>
+			<name>Spark</name>
+		</move>
+		<move>
+			<level>50</level>
+			<name>WildCharge</name>
+		</move>
+		<move>
+			<level>58</level>
+			<name>Thunder</name>
 		</move>
 	</levelMoves>
 	
