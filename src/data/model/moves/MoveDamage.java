@@ -65,6 +65,7 @@ public class MoveDamage extends Move{
 	private static void damage(Pokemon friend, Pokemon enemy, String moveElemental, int power, double selfDamageRatio) {
 		int damage = DamageCalculator.getDamage(friend, enemy, moveElemental, power);
 		int enemyCurrentHp = enemy.getCurrentStat().getHP();
+		System.out.println("Damage is calculated to be " + damage);
 		System.out.println("current enemy health is " + enemyCurrentHp);
 		enemy.getCurrentStat().setHP(enemyCurrentHp-damage);
 		System.out.println("After move, enemy health is " + enemy.getCurrentStat().getHP());

@@ -16,7 +16,7 @@ public class MoveBite extends MoveDamage{
 
     	private final static int power = 60;
     	private final static int maxPP = 25;
-    	private final static String name = "Tackle";
+    	private final static String name = "Bite";
     	private final static String elemental = "Normal";
 	public MoveBite(){
 		super(name, elemental, maxPP, power);
