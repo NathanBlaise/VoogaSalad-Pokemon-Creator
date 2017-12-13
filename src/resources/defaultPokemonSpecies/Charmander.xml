@@ -1,6 +1,6 @@
 <defaultPokemonSpecie>
 	<name>Charmander</name>
-	
+	<!-- from https://pokemondb.net/move/inferno -->
 	<elemental>Fire</elemental>
 	
 	<maxLevel>75</maxLevel>
@@ -8,15 +8,35 @@
 	<levelMoves>
 		<move>
 			<level>1</level>
-			<name>Growl</name>
+			<name>Scratch</name>
 		</move>
 		<move>
 			<level>7</level>
 			<name>Ember</name>
 		</move>
 		<move>
-			<level>47</level>
+			<level>16</level>
 			<name>DragonRage</name>
+		</move>
+		<move>
+			<level>25</level>
+			<name>FireFang</name>
+		</move>
+		<move>
+			<level>28</level>
+			<name>FlameBurst</name>
+		</move>
+		<move>
+			<level>34</level>
+			<name>Slash</name>
+		</move>
+		<move>
+			<level>37</level>
+			<name>FlameThrower</name>
+		</move>
+		<move>
+			<level>46</level>
+			<name>Inferno</name>
 		</move>
 	</levelMoves>
 	
@@ -1016,11 +1036,11 @@
 			<imagePath>images/pokemon_sprites/4.gif</imagePath>
 		</evolutionImage>
 		<evolutionImage>
-			<level>25</level>
+			<level>16</level>
 			<imagePath>images/pokemon_sprites/5.gif</imagePath>
 		</evolutionImage>
 			<evolutionImage>
-			<level>50</level>
+			<level>36</level>
 			<imagePath>images/pokemon_sprites/6.gif</imagePath>
 		</evolutionImage>
 	</levelEvolutionImages>
