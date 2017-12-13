@@ -145,6 +145,11 @@ public abstract class GameScene extends ScreenDisplay {
 		input.removeListeners();
 	}
 	
+	protected void carryOn() {
+		animation.play();
+		input.addListeners();
+	}
+	
 	/**
 	 * The method called by NPC Battle Helper
 	 * Come back from the NPC Battle Scene to Game Scene
@@ -217,11 +222,11 @@ public abstract class GameScene extends ScreenDisplay {
 				node.setLayoutY(mapPane.getLayoutY()+pixelSize*row);
 			}
 		}else{
-			playerImage.setX(playerImage.getX()-mainPlayer.getPosX()*pixelSize);
-			playerImage.setY(playerImage.getY()-mainPlayer.getPosY()*pixelSize);
+			playerImage.setX(futureX);
+			playerImage.setY(futureY);
 		}
-		mainPlayer.setPosX(new Double((playerImage.getX()-mapPane.getLayoutX())/pixelSize).intValue());
-		mainPlayer.setPosY(new Double((playerImage.getY()-mapPane.getLayoutY())/pixelSize).intValue());
+		mainPlayer.setPosX(new Double((playerImage.getX()+playerImage.getFitWidth()/2-mapPane.getLayoutX())/pixelSize).intValue());
+		mainPlayer.setPosY(new Double((playerImage.getY()+playerImage.getFitHeight()/2-mapPane.getLayoutY())/pixelSize).intValue());
 	}
 	
 	protected Canvas getTileCanvas() {

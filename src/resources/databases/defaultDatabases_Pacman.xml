@@ -1591,7 +1591,7 @@
      <void method="add">
       <object class="data.model.PacmanEnemy">
        <void property="imagePath">
-        <string>images/pacman_enemies/pacman_enemy_2.png</string>
+        <string>images/pacman_enemies/pacman_enemy_3.png</string>
        </void>
        <void property="speed">
         <int>5</int>
@@ -1601,7 +1601,7 @@
      <void method="add">
       <object class="data.model.PacmanEnemy">
        <void property="imagePath">
-        <string>images/pacman_enemies/pacman_enemy_3.png</string>
+        <string>images/pacman_enemies/pacman_enemy_2.png</string>
        </void>
        <void property="speed">
         <int>5</int>
