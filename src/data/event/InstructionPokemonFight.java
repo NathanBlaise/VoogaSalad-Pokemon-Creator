@@ -59,12 +59,21 @@ public class InstructionPokemonFight extends Instruction{
 	 */
 	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
 			GameMap mainMap, Event event, GameScene gameScene) {
+	    	if(pokemon.isDead()) {
+	    	    //do not fight dead pokemons
+			ArrayList<Instruction> newInstructions = event.getInstructions();
+			newInstructions.remove(this);
+			event.setInstructions(newInstructions);
+			if (event.getInstructions().size() == 0) {
+			    mainMap.removeEvent(event);
+			}
+			gameScene.changeBackSceneFromWinningBattle();
+			return;
+	    	}
 		BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,mainPlayer,null,pokemon, gameScene, gameScene.getStage());
 		// Change the battle scene here
 		((Stage) gameScene.getScene().getWindow()).setScene(battle.getScene());					
-//		ArrayList<Instruction> newInstructions = event.getInstructions();
-//		newInstructions.remove(this);
-//		event.setInstructions(newInstructions);
+
 	}
 
 }
