@@ -1017,11 +1017,11 @@
 	<levelEvolutionImages>
 		<evolutionImage>
 			<level>1</level>
-			<imagePath>images/pokemons/pikachu.png</imagePath>
+			<imagePath>images/pokemon_sprites/25.gif</imagePath>
 		</evolutionImage>
 		<evolutionImage>
 			<level>50</level>
-			<imagePath>images/pokemons/raichu.png</imagePath>
+			<imagePath>images/pokemon_sprites/26.gif</imagePath>
 		</evolutionImage>
 	</levelEvolutionImages>
 </defaultPokemonSpecie>

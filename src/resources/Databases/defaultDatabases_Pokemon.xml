@@ -1632,11 +1632,11 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>images/pokemons/pikachu.png</string>
+          <string>images/pokemon_sprites/25.gif</string>
          </void>
          <void method="put">
           <int>50</int>
-          <string>images/pokemons/raichu.png</string>
+          <string>images/pokemon_sprites/26.gif</string>
          </void>
         </object>
        </void>
@@ -3935,15 +3935,15 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>images/pokemons/1.gif</string>
+          <string>images/pokemon_sprites/1.gif</string>
          </void>
          <void method="put">
           <int>50</int>
-          <string>images/pokemons/3.gif</string>
+          <string>images/pokemon_sprites/3.gif</string>
          </void>
          <void method="put">
           <int>25</int>
-          <string>images/pokemons/2.gif</string>
+          <string>images/pokemon_sprites/2.gif</string>
          </void>
         </object>
        </void>
@@ -6234,15 +6234,15 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>images/pokemons/4.gif</string>
+          <string>images/pokemon_sprites/4.gif</string>
          </void>
          <void method="put">
           <int>50</int>
-          <string>images/pokemons/6.gif</string>
+          <string>images/pokemon_sprites/6.gif</string>
          </void>
          <void method="put">
           <int>25</int>
-          <string>images/pokemons/5.gif</string>
+          <string>images/pokemon_sprites/5.gif</string>
          </void>
         </object>
        </void>
@@ -10860,15 +10860,15 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>images/pokemons/7.gif</string>
+          <string>images/pokemon_sprites7.gif</string>
          </void>
          <void method="put">
           <int>50</int>
-          <string>images/pokemons/9.gif</string>
+          <string>images/pokemon_sprites/9.gif</string>
          </void>
          <void method="put">
           <int>25</int>
-          <string>images/pokemons/8.gif</string>
+          <string>images/pokemon_sprites/8.gif</string>
          </void>
         </object>
        </void>

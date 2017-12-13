@@ -1009,15 +1009,15 @@
 	<levelEvolutionImages>
 		<evolutionImage>
 			<level>1</level>
-			<imagePath>images/pokemons/1.gif</imagePath>
+			<imagePath>images/pokemon_sprites/1.gif</imagePath>
 		</evolutionImage>
 		<evolutionImage>
 			<level>25</level>
-			<imagePath>images/pokemons/2.gif</imagePath>
+			<imagePath>images/pokemon_sprites/2.gif</imagePath>
 		</evolutionImage>
 			<evolutionImage>
 			<level>50</level>
-			<imagePath>images/pokemons/3.gif</imagePath>
+			<imagePath>images/pokemon_sprites/3.gif</imagePath>
 		</evolutionImage>
 	</levelEvolutionImages>
 </defaultPokemonSpecie>
