@@ -2,6 +2,11 @@ package data.map;
 
 import java.io.Serializable;
 
+import data.event.Event;
+import data.event.EventPokemon;
+import engine.UI.Path2Image;
+import javafx.scene.image.ImageView;
+
 /**
  * Map is responsible for showing all the information needed to show a map on the screen,
  * and also include the info to let the Player interact with the map
@@ -136,6 +141,21 @@ public class GameMap implements Serializable{
 			System.exit(1);
 			return null;
 		}
+	}
+	
+	/**
+	 * removes an exisiting event from the map
+	 * @param event The event to be removed
+	 */
+	public void removeEvent(Event event) {
+	    for (int i = 0; i < getXlength(); i++) {
+		for (int j = 0; j < getYlength(); j++) {
+			if(getCells()[i][j].getEvent()==event){
+			    getCells()[i][j].setEvent(null);
+			    return;
+			}
+		}
+	}
 	}
 	
 }
