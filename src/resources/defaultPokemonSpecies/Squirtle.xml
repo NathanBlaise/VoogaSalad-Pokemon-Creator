@@ -1021,7 +1021,7 @@
 	<levelEvolutionImages>
 		<evolutionImage>
 			<level>1</level>
-			<imagePath>images/pokemon_sprites7.gif</imagePath>
+			<imagePath>images/pokemon_sprites/7.gif</imagePath>
 		</evolutionImage>
 		<evolutionImage>
 			<level>16</level>
