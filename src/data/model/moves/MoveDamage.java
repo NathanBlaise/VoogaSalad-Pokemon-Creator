@@ -70,10 +70,10 @@ public class MoveDamage extends Move{
 		enemy.getCurrentStat().setHP(enemyCurrentHp-damage);
 		System.out.println("After move, enemy health is " + enemy.getCurrentStat().getHP());
 		int self_damage = (int)(selfDamageRatio * damage);
-		int friendCurrentHp = friend.getCurrentStat().getHP();
 		if(self_damage!=0) {
+		    int friendCurrentHp = friend.getCurrentStat().getHP();
 		    System.out.println("current self health is " + friendCurrentHp);
-		    enemy.getCurrentStat().setHP(friendCurrentHp-self_damage);
+		    friend.getCurrentStat().setHP(friendCurrentHp-self_damage);
 		    System.out.println("After move, self health is " + friend.getCurrentStat().getHP());
 		}
 
