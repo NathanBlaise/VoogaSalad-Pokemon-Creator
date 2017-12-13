@@ -1,6 +1,6 @@
 <defaultPokemonSpecie>
 	<name>Bulbasaur</name>
-	
+	<!-- from https://pokemondb.net/pokedex/bulbasaur --> 
 	<elemental>Grass</elemental>
 	
 	<maxLevel>75</maxLevel>
@@ -8,11 +8,31 @@
 	<levelMoves>
 		<move>
 			<level>1</level>
+			<name>Tackle</name>
+		</move>
+		<move>
+			<level>3</level>
 			<name>Growl</name>
 		</move>
 		<move>
 			<level>7</level>
 			<name>VineWhip</name>
+		</move>
+		<move>
+			<level>15</level>
+			<name>TakeDown</name>
+		</move>
+		<move>
+			<level>19</level>
+			<name>RazorLeaf</name>
+		</move>
+		<move>
+			<level>27</level>
+			<name>DoubleEdge</name>
+		</move>
+		<move>
+			<level>37</level>
+			<name>SeedBomb</name>
 		</move>
 	</levelMoves>
 	
@@ -1012,11 +1032,11 @@
 			<imagePath>images/pokemon_sprites/1.gif</imagePath>
 		</evolutionImage>
 		<evolutionImage>
-			<level>25</level>
+			<level>16</level>
 			<imagePath>images/pokemon_sprites/2.gif</imagePath>
 		</evolutionImage>
-			<evolutionImage>
-			<level>50</level>
+		<evolutionImage>
+			<level>32</level>
 			<imagePath>images/pokemon_sprites/3.gif</imagePath>
 		</evolutionImage>
 	</levelEvolutionImages>

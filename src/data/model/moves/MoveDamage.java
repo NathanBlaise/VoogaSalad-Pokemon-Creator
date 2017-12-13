@@ -20,7 +20,7 @@ public class MoveDamage extends Move{
 	}
 	
 	/**
-	 * 
+	 * Constructor for moves that does not also damage the pokemon using it
 	 * @param moveName - the name of move
 	 * @param elemental - such as Fire, Water
 	 * @param maxPP - the maximum PP number
@@ -28,11 +28,26 @@ public class MoveDamage extends Move{
 	 * where the damage is debuffed or buffed power according to the elemental
 	 */
 	public MoveDamage(String moveName, String elemental, int maxPP, int power){
+		this(moveName,elemental,maxPP,power,0);
+	}
+	
+
+	/**
+	 * 
+	 * @param moveName - the name of move
+	 * @param elemental - such as Fire, Water
+	 * @param maxPP - the maximum PP number
+	 * @param power - the power of move, related to the actual damage to the opponent, 
+	 * where the damage is debuffed or buffed power according to the elemental
+	 * @param selfDamageRatio the fraction of damage that is dealt to self after using the move,
+	 * 0 if the move does not damage self
+	 */
+	public MoveDamage(String moveName, String elemental, int maxPP, int power, double selfDamageRatio){
 		super(moveName, elemental, maxPP, new Action<Pokemon, Pokemon>(){
 			private static final long serialVersionUID = -1569968083239145204L;
 			@Override
 			public void move(Pokemon friend, Pokemon enemy) {
-				damage(friend, enemy, elemental, power);
+				damage(friend, enemy, elemental, power,selfDamageRatio);
 			}
 		});
 	}
@@ -44,13 +59,23 @@ public class MoveDamage extends Move{
 	 * @param moveElemental - the elemental of move
 	 * @param power - the power of move, related to the actual damage to the opponent, 
 	 * where the damage is debuffed or buffed power according to the elemental
+ 	 * @param selfDamageRatio the fraction of damage that is dealt to self after using the move,
+	 * 0 if the move does not damage self
 	 */
-	private static void damage(Pokemon friend, Pokemon enemy, String moveElemental, int power) {
+	private static void damage(Pokemon friend, Pokemon enemy, String moveElemental, int power, double selfDamageRatio) {
 		int damage = DamageCalculator.getDamage(friend, enemy, moveElemental, power);
 		int enemyCurrentHp = enemy.getCurrentStat().getHP();
+		System.out.println("Damage is calculated to be " + damage);
 		System.out.println("current enemy health is " + enemyCurrentHp);
 		enemy.getCurrentStat().setHP(enemyCurrentHp-damage);
 		System.out.println("After move, enemy health is " + enemy.getCurrentStat().getHP());
+		int self_damage = (int)selfDamageRatio * damage;
+		int friendCurrentHp = friend.getCurrentStat().getHP();
+		if(self_damage!=0) {
+		    System.out.println("current self health is " + friendCurrentHp);
+		    enemy.getCurrentStat().setHP(friendCurrentHp-self_damage);
+		    System.out.println("After move, self health is " + friend.getCurrentStat().getHP());
+		}
 
 	}
 
