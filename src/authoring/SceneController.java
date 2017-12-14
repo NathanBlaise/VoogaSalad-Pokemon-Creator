@@ -28,14 +28,6 @@ public class SceneController {
 		}
 	}
 	
-	//removed getter for encapsulation
-//	/**
-//	 * @return The Scene List which stores all the scenes
-//	 */
-//	public SceneList getScList() {
-//		return sceneList;
-//	}
-	
 	/**
 	 * Sets the stage to display the first editing scene
 	 * @param stage The stage that is going to display editing scenes
@@ -64,21 +56,6 @@ public class SceneController {
 		stage.setScene(sceneList.get(currentIndex));
 	    }
 	}
-	
-	
-	/**
-	 * Pass the map from the first scene to the second one
-	 */
-	public void passMapForward() {
-		//eeis.setMyMap(bsc.passMyMap());
-		//do nothing for now
-	}
-	
-	public void passMapBackward() {
-		//bsc.setMyMap(eeis.passMyMap());
-		//do nothing for now
-	}
-	
 }
 	
 	

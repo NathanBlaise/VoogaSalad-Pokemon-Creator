@@ -69,7 +69,7 @@ public class EventImageMenu extends TitledPane{
 		graphic.setAlignment(Pos.CENTER_LEFT);
 		graphic.getChildren().add(new Label("Event Image Menu"));
 		this.setGraphic(graphic);
-		
+		this.setContent(createPacmanEnemyListView(pacmanEnemies));
 		this.setPrefSize(190, 546);
 	}
 
@@ -78,6 +78,8 @@ public class EventImageMenu extends TitledPane{
 		for(PacmanEnemy enemy:pacmanEnemies) {
 			HBox totalPane = new HBox();
 			ImageView sourceImage = new ImageView(Path2Image.showImage(enemy.getImagePath()));
+			sourceImage.setFitWidth(48);
+			sourceImage.setFitHeight(48);
 			totalPane.getChildren().add(sourceImage);
 			paneListView.getItems().add(totalPane);
 			

@@ -191,7 +191,9 @@ public class PokemonSpecie implements Serializable{
 			}
 		} catch (NumberFormatException e) {
 			index = 1;
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
+			
 		}
 		return index;
 	}

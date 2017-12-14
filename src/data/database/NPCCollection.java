@@ -61,10 +61,9 @@ public class NPCCollection extends DataCollectionAbstract{
 			    try {
 			    	NPC = fileParser.parseFile(NPCFile);
 			    } catch (ParserConfigurationException | SAXException | IOException e) {
-					//TODO: handle exception better
 					System.out.println("Failed to parse NPC from file " + 
 						NPCFile.getAbsolutePath());
-					e.printStackTrace();
+					e.printStackTrace();//handled by exiting the program
 					System.exit(1);
 			    }
 			    NPCs.put(NPC.getName(), NPC);

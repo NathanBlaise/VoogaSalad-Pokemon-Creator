@@ -43,12 +43,13 @@ public class PacmanEventEditor {
 		});
 		BorderPane bp = new BorderPane();
 		bp.setCenter(hbox);
-		bp.setBottom(bp);
+		bp.setBottom(save);
 		stage.setScene(new Scene(bp));
 		stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 	}
 	
 	private HBox setSlider() {
+		Label speed = new Label("Speed:");
 		Slider speedSlider = new Slider(1,10,5);
 		speedSlider.prefWidth(250);
 		speedSlider.setShowTickMarks(true);
@@ -61,7 +62,7 @@ public class PacmanEventEditor {
 			pacmanEnemy.setSpeed((int) speedSlider.getValue());
 		});
 		HBox sliderBox = new HBox(20);
-		sliderBox.getChildren().addAll(speedSlider,sliderCaption);
+		sliderBox.getChildren().addAll(speed,speedSlider,sliderCaption);
 		return sliderBox;
 	}
 	

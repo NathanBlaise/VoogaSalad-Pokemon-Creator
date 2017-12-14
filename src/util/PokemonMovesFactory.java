@@ -1,15 +1,12 @@
 package util;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
-
 import data.model.moves.Move;
-
 
 /**
  * This class gets the move class for pokemon
@@ -19,9 +16,6 @@ import data.model.moves.Move;
  *
  */
 public class PokemonMovesFactory {
-    //TODO: complete a file that matches the name of each file 
-    // to the complete class name of the move, to be used 
-    // for reflection
 
     private String pokemonMoveLookupPath;
 
@@ -42,15 +36,22 @@ public class PokemonMovesFactory {
 	try {
 	    className = getMoveClassName(moveName);
 	} catch (IOException e) {
-	    //TODO: handle exception better
 	    System.out.println("Cannot get the class name of the move " +
 		    moveName);
-	    e.printStackTrace();
+	    e.printStackTrace(); //handled by exiting the program
 	    System.exit(1);
 	}
-	Class<?> c = Class.forName(className);
+	Class<?> c = null; 
+	try {
+	    c = Class.forName(className);
+	} catch(ClassNotFoundException e) {
+	    System.out.println("Cannot find class for move " + moveName);
+	    System.out.println("Attempted " + className);
+	    e.printStackTrace(); //handled by exiting the program
+	    System.exit(1);
+	}
 	Constructor<?> cons = c.getConstructor();
-	Object object = cons.newInstance(new Object[] {}); //TODO:add list of paramters
+	Object object = cons.newInstance(new Object[] {});
 	return (Move)object;
     }
 
@@ -62,7 +63,6 @@ public class PokemonMovesFactory {
      * @throws IOException 
      */
     private String getMoveClassName(String moveName) throws IOException {
-	// TODO: get class name from a file
 	//read properties file
 	Properties moveName2ClassName = new Properties();
 	InputStream input = null;

@@ -90,6 +90,7 @@ tmp/
 src/resources/Databases/Databases_Pokemon/*.xml
 src/resources/Databases/Databases_Pacman/*.xml
 src/resources/Databases/defaultDatabases_Pokemon.xml
+src/resources/Databases/defaultDatabases_Pacman.xml
 *.tmp
 *.bak
 *.swp

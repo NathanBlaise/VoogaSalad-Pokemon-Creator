@@ -1,0 +1,5 @@
+<defaultTile>
+	<name>Regular Tile</name>
+	<wholePic>images/tiles/pacman_tiles/black_tile.png</wholePic>
+	<obstacle>false</obstacle>
+</defaultTile>

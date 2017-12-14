@@ -1,4 +1,4 @@
 <defaultPacmanEnemy>
 	<speed>5</speed>
-	<imagePath>images/NPC/CaptainMap.png</imagePath>	
+	<imagePath>images/pacman_enemies/pacman_enemy_1.png</imagePath>	
 </defaultPacmanEnemy>
