@@ -85,7 +85,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene, Stage stage) {
 		super(width, height, background);
-		be=new BattleEnding(this.getGameScene());
+		
 		canvas = new Canvas(width,height);
 		myStage = stage;
 		mainPlayer = player;
@@ -107,6 +107,7 @@ public class BattleScene extends ScreenDisplay{
 		messageLabel.setLayoutY(BUTTONS_YPOS);
 		this.rootAdd(messageLabel);
 		this.bs=this;
+		be=new BattleEnding(this.getGameScene());
 		bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
 		ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this);
 	}

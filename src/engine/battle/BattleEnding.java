@@ -12,7 +12,7 @@ public class BattleEnding {
 	private GameScene gs;
 	
 	public BattleEnding(GameScene gs) {
-		
+		this.gs=gs;
 	}
 	
 	
