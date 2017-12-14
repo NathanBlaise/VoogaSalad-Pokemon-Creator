@@ -34,6 +34,7 @@ public class BattleFightOptions {
 	private Label ppLabel;
 	private Label typeLabel;
 	protected HBox hbox=new HBox(5);
+	protected BattleEnding be;
 	
 	
 
@@ -42,6 +43,7 @@ public class BattleFightOptions {
 		activePokemon = ap;
 		enemyPokemon = ep;
 		battleScene = bs;
+		be=new BattleEnding(bs.getGameScene());
 		
 		setButtonText();
 		
@@ -81,7 +83,7 @@ public class BattleFightOptions {
 	}
 	
 	private Font getFont() {
-		Font f = new Font(30) ;
+		Font f = new Font(20) ;
 		try {
 			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), 20);
 		} catch (FileNotFoundException e) {
@@ -102,11 +104,11 @@ public class BattleFightOptions {
 		setButtonStyle(moveButton3);
 		setButtonStyle(moveButton4);
 		buttonArr = new Button[] {moveButton1,moveButton2,moveButton3,moveButton4};
+		
+		
+		
 		int i=0;
-		//for testing
-		System.out.println("Active Pokemon is " + activePokemon.getName());
-		System.out.println("Active Pokemon has " + activePokemon.getEquippedMoves().size() + "moves");
-		//for testing
+		
 		for(Move move: activePokemon.getEquippedMoves()) {
 			//Sets text and action for each button to be used for a move
 		    	if (move==null) continue;
@@ -145,7 +147,7 @@ public class BattleFightOptions {
 					
 					
 					if (enemyPokemon.isDead()) {
-						battleScene.showEnding("The enemy pokemon is dead!",true);
+						be.showEnding("The enemy pokemon is dead!",true);
 						activePokemon.absorbExperience(experienceLevel);
 						//enemyPokemon.resetCurrentStat();
 						
