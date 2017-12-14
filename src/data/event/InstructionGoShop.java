@@ -6,7 +6,11 @@ import data.map.GameMap;
 import data.player.Player;
 import engine.game.GameScene;
 import engine.shop.ShopScene;
-
+/**
+ * show the shop to the player
+ * @author cy122
+ *
+ */
 public class InstructionGoShop extends Instruction{
 	
 	private static final long serialVersionUID = 3425297418577947868L; //for serialization

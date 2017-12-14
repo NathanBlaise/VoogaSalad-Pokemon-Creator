@@ -96,7 +96,7 @@ public class PokemonChooser {
 		root.add(saveButton(),3,0,1,1);
         root.add(showMoveList(localPokemon.getMoves()), 1, 2,1,1);
         root.add(showImage(localPokemon.getCurrentImagePath()), 1, 1, 1, 1);
-        root.add(showNickName(localPokemon.getNickName()), 1, 0, 1, 1);
+        root.add(UIComponentFactory.nameEditor("Nick Name:", localPokemon.getNickName(), e->{localPokemon.setName(e);return null;}), 1, 0, 1, 1);
         root.add(showLevelPicker(root, localPokemon.getMaxLevel()), 2, 0, 1, 1);
         root.add(showSpecieList(pokemonSpecies),0,0,1,3);
         root.setPrefSize(660, 230);
@@ -201,23 +201,6 @@ public class PokemonChooser {
 					return null;
 				}
 		}, "Lv");
-		return result;
-	}
-	
-	public VBox showNickName(String initialName){
-		VBox result = new VBox();
-		Label nickNameLabel = new Label("Nick Name:");
-		result.getChildren().add(nickNameLabel);
-		TextField nickNameField = new TextField(initialName);
-		nickNameField.setOnKeyReleased(new EventHandler<KeyEvent>()
-			    {
-			        @Override
-			        public void handle(KeyEvent ke)
-			        {
-			            	localPokemon.setName(nickNameField.getText());
-			        }
-			   });
-		result.getChildren().add(nickNameField);
 		return result;
 	}
 	

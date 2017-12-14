@@ -2,7 +2,9 @@ package data.player;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import data.model.Pokemon;
 
@@ -17,6 +19,7 @@ public class Player extends PacmanPlayer{
 	private Pokemon[] pokemons;
 	private double currency;
 	private Map<String, Integer> items = new HashMap<String, Integer>();  // a map from the item to the number of item, String stands for the class name of item
+	private Set<String> keyItems = new HashSet<String>();
 	private ArrayList<Pokemon> warehouse;
 	
 	public Player(){
@@ -24,6 +27,7 @@ public class Player extends PacmanPlayer{
 		pokemons = new Pokemon[6];
 		currency = 0;
 		warehouse = new ArrayList<Pokemon>();
+		keyItems = new HashSet<String>();
 	}
 	
 	public Pokemon[] getPokemons() {
@@ -122,6 +126,14 @@ public class Player extends PacmanPlayer{
 		this.warehouse = warehouse;
 	}
 	
+	public Set<String> getKeyItems() {
+		return keyItems;
+	}
+
+	public void setKeyItems(Set<String> keyItems) {
+		this.keyItems = keyItems;
+	}
+
 	public int itemsSize(){
 		int number = 0;
 		for(String key: items.keySet()){
