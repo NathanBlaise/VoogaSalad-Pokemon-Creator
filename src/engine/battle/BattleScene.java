@@ -50,6 +50,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Callback;
 
 /**
  * 
@@ -92,6 +93,8 @@ public class BattleScene extends ScreenDisplay{
 	private PokemonLabel enemyPokemonHealth;
 	private ImageView currentActivePokemon;
 	private PokemonLabel messageLabel;
+	private Callback<Integer, Integer> winAction;
+	private Callback<Integer, Integer> loseAction;
 	
 	/**
 	 * 
@@ -103,7 +106,7 @@ public class BattleScene extends ScreenDisplay{
 	 * @param inputList 
 	 * @param enemyPokemon - the encountered enemy pokemon (null if trainer is encountered)
 	 */
-	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene, Stage stage) {
+	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene, Stage stage, Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction) {
 		super(width, height, background);
 		canvas = new Canvas(width,height);
 		myStage = stage;
@@ -112,7 +115,9 @@ public class BattleScene extends ScreenDisplay{
 		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
 		gameScene = scene;
-		myStage.setHeight(height);
+		this.winAction = winAction;
+		this.loseAction = loseAction;
+		myStage.setHeight(height+20);
 		myStage.setWidth(width);
 		gui = new BattleGUI(canvas.getGraphicsContext2D(),width,height,activePokemon,enemyPokemon);
 		this.rootAdd(canvas);
@@ -190,7 +195,7 @@ public class BattleScene extends ScreenDisplay{
 			}
 			
 			if (itemNames.size()==0) {
-				showEnding("Nothing inside the bag",false);
+				showEnding("Nothing inside the bag", false, false);
 				return;
 			}
 			
@@ -252,7 +257,9 @@ public class BattleScene extends ScreenDisplay{
 		     			if (thisItem instanceof PokemonBall) {
 		     				boolean caught=((PokemonBall) thisItem).getCaught();
 		     				if (caught) {
-		     					showEnding("The pokemon is caught!",true);
+		     					showEnding("The pokemon is caught!", true, true);
+		     				} else {
+		     					showEnding("The pokemon is not caught!", false, false);
 		     				}
 		     				
 		     			} 
@@ -280,7 +287,7 @@ public class BattleScene extends ScreenDisplay{
 	
 	
 	//show the game end message
-		protected void showEnding(String message, boolean whetherEnd) {
+		protected void showEnding(String message, boolean whetherEnd, boolean whetherWin) {
 			Text end=new Text(message);
 			final Stage dialog = new Stage();
 			dialog.initModality(Modality.APPLICATION_MODAL);
@@ -299,7 +306,11 @@ public class BattleScene extends ScreenDisplay{
 			btn.setOnAction((event) ->{
 				dialog.close();
 				if (whetherEnd) {
-				getGameScene().changeBackScene();
+					if(whetherWin){
+						winAction.call(0);
+					}else{
+						loseAction.call(0);
+					}
 				}
 			});
 
@@ -385,7 +396,8 @@ public class BattleScene extends ScreenDisplay{
 		PokemonLabel activePokemonLevel = new PokemonLabel("Lvl:" + activePokemon.getCurrentLevel());
 		HBox nameBox = new HBox(40);
 		nameBox.getChildren().addAll(activePokemonName,activePokemonLevel);
-		healthBarPlayer = new HealthBar(activePokemon.getCurrentStat().getHP(),150,15);
+		healthBarPlayer = new HealthBar(activePokemon.getCurrentStat().getMaxHP(),150,15);
+		healthBarPlayer.setHealth(activePokemon.getCurrentStat().getHP());
 		activePokemonHealth = new PokemonLabel(activePokemon.getCurrentStat().getHP() + "/" + activePokemon.getCurrentStat().getMaxHP());
 		HBox healthBox = new HBox(10);
 		healthBox.getChildren().addAll(healthBarPlayer.getPane(),activePokemonHealth);
@@ -408,7 +420,8 @@ public class BattleScene extends ScreenDisplay{
 		PokemonLabel enemyPokemonLevel = new PokemonLabel("Lvl:" + enemyPokemon.getCurrentLevel());
 		HBox enemyNameBox = new HBox(40);
 		enemyNameBox.getChildren().addAll(enemyPokemonName,enemyPokemonLevel);
-		healthBarEnemy = new HealthBar(enemyPokemon.getCurrentStat().getHP(),150,15);
+		healthBarEnemy = new HealthBar(enemyPokemon.getCurrentStat().getMaxHP(),150,15);
+		healthBarEnemy.setHealth(enemyPokemon.getCurrentStat().getHP());
 		enemyPokemonHealth = new PokemonLabel(enemyPokemon.getCurrentStat().getHP() + "/" + enemyPokemon.getCurrentStat().getMaxHP());
 		HBox enemyHealthBox = new HBox(10);
 		enemyHealthBox.getChildren().addAll(healthBarEnemy.getPane(),enemyPokemonHealth);

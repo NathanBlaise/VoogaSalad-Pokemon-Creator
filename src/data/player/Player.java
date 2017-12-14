@@ -1,6 +1,5 @@
 package data.player;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -79,6 +78,10 @@ public class Player extends PacmanPlayer{
 			if(pokemons[i]==null){
 				this.pokemons[i] = pokemon;
 				break;
+			}
+			// if the bag of pokemon is full, the pokemon goes to the warehouse
+			if(i==5){
+				warehouse.add(pokemon);
 			}
 		}
 		

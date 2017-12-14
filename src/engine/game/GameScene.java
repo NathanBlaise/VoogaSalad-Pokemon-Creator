@@ -4,6 +4,7 @@ import authoring.ScreenDisplay;
 import data.Database;
 import data.event.Event;
 import data.event.Instruction;
+import data.map.Cell;
 import data.map.DrawMap;
 import data.map.GameMap;
 import data.player.Player;
@@ -123,16 +124,46 @@ public abstract class GameScene extends ScreenDisplay {
 		return 1;
 	}
 	
+	public void refreshCurrentEvent(){
+		if(currentEvent==null){
+			System.out.printf("null event!");
+			return;
+		}else{
+			for(Instruction instruction: currentEvent.getInstructions()){
+				if(instruction.isGoNextInstruction()==true){
+					currentEvent.getInstructions().remove(instruction);
+					System.out.printf("removed!");
+				}
+			}
+			if(currentEvent.getInstructions().size()!=0){
+				System.out.printf("size not 0!");
+				return;
+			}
+			for(int i=-1;i<=1;i++){
+				for(int j=-1;j<=1;j++){
+					Cell cell = mainMap.getCell(mainPlayer.getPosX()+i, mainPlayer.getPosY()+j);
+					if((cell!=null)&&(cell.getEvent()!=null)&&(cell.getEvent()==currentEvent)){
+						cell.setEvent(null);
+						refreshMap(mainMap);
+						System.out.printf("refresh map!");
+						break;
+					}
+				}
+			}
+		}
+	}
+	
 	private int executeEvent(Event event, int index){
 		if(index >= event.getInstructions().size()){
+			refreshCurrentEvent();
 			instructionIndex = 0;
 			event = null;
 			return 0;
 		}
 		Instruction instruction = event.getInstructions().get(index);
-			pause();
-			assert(mainPlayer!=null);
-			instruction.execute(screen_width,screen_height,mainPlayer,mainMap,event,this);	
+		pause();
+		assert(mainPlayer!=null);
+		instruction.execute(screen_width,screen_height,mainPlayer,mainMap,event,this);	
 		return -1;
 	}
 	
@@ -145,6 +176,9 @@ public abstract class GameScene extends ScreenDisplay {
 		input.removeListeners();
 	}
 	
+	/**
+	 * continue the game
+	 */
 	protected void carryOn() {
 		animation.play();
 		input.addListeners();
@@ -158,6 +192,7 @@ public abstract class GameScene extends ScreenDisplay {
 		if((currentEvent!=null)&&(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
 			instructionIndex++;
 		}else{
+//			refreshCurrentEvent();
 			currentEvent = null;
 		}
 		myStage.setScene(this.getScene());
@@ -186,7 +221,6 @@ public abstract class GameScene extends ScreenDisplay {
 	}
 	
 	public void refreshMap(GameMap mainMap){
-		currentEvent = null;
 		this.mainMap = mainMap;
 		this.rootClear();
 		tileCanvas = new Canvas (mainMap.getYlength()*pixelSize, mainMap.getXlength()*pixelSize);
