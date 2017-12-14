@@ -59,7 +59,6 @@ public class BattleScene extends ScreenDisplay{
 	private EnemyBattleFightOptions ebfo;
 	private Player mainPlayer;
 	private Pokemon activePokemon;
-	private NPC enemyTrainer;
 	private Pokemon enemyPokemon;
 	private GameScene gameScene;
 	private ListView<String> listOfItems;
@@ -84,14 +83,13 @@ public class BattleScene extends ScreenDisplay{
 	 * @param inputList 
 	 * @param enemyPokemon - the encountered enemy pokemon (null if trainer is encountered)
 	 */
-	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene, Stage stage, Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction) {
+	public BattleScene(int width, int height, Paint background, Player player, Pokemon pokemon, GameScene scene, Stage stage, Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction) {
 		super(width, height, background);
 		
 		canvas = new Canvas(width,height);
 		myStage = stage;
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
-		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
 		gameScene = scene;
 		myStage.setHeight(height+20);
@@ -346,8 +344,8 @@ public class BattleScene extends ScreenDisplay{
 		PokemonLabel PokemonLevel = new PokemonLabel("Lvl:" + pokemon.getCurrentLevel());
 		HBox nameBox = new HBox(40);
 		nameBox.getChildren().addAll(PokemonName,PokemonLevel);
-		HealthBar healthBar = new HealthBar(activePokemon.getCurrentStat().getMaxHP(),150,15);
-		healthBar.setHealth(activePokemon.getCurrentStat().getHP());
+		HealthBar healthBar = new HealthBar(pokemon.getCurrentStat().getMaxHP(),150,15);
+		healthBar.setHealth(pokemon.getCurrentStat().getHP());
 		PokemonLabel PokemonHealth = new PokemonLabel(pokemon.getCurrentStat().getHP() + "/" + pokemon.getCurrentStat().getMaxHP());
 		HBox healthBox = new HBox(10);
 		healthBox.getChildren().addAll(healthBar.getPane(),PokemonHealth);
@@ -359,25 +357,6 @@ public class BattleScene extends ScreenDisplay{
 		PokemonInfo.setLayoutX(x);
 		PokemonInfo.setLayoutY(y);
 		this.rootAdd(PokemonInfo);
-	
-//<<<<<<< HEAD
-//	/**
-//	 * Add Health Bar, name, level and health text for enemy
-//	 */
-//	protected void printEnemyHPInfo() {
-//		PokemonLabel enemyPokemonName = new PokemonLabel(enemyPokemon.getNickName());
-//		PokemonLabel enemyPokemonLevel = new PokemonLabel("Lvl:" + enemyPokemon.getCurrentLevel());
-//		HBox enemyNameBox = new HBox(40);
-//		enemyNameBox.getChildren().addAll(enemyPokemonName,enemyPokemonLevel);
-//		healthBarEnemy = new HealthBar(enemyPokemon.getCurrentStat().getMaxHP(),150,15);
-//		healthBarEnemy.setHealth(enemyPokemon.getCurrentStat().getHP());
-//		enemyPokemonHealth = new PokemonLabel(enemyPokemon.getCurrentStat().getHP() + "/" + enemyPokemon.getCurrentStat().getMaxHP());
-//		HBox enemyHealthBox = new HBox(10);
-//		enemyHealthBox.getChildren().addAll(healthBarEnemy.getPane(),enemyPokemonHealth);
-//		VBox enemyPokemonInfo = new VBox(15);
-//		enemyPokemonInfo.getChildren().addAll(enemyNameBox,enemyHealthBox);
-//=======
-//>>>>>>> master
 		
 		if (pokemon.equals(activePokemon)){
 			activePokemonHealth=PokemonHealth;

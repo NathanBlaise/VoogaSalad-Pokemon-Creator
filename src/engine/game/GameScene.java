@@ -4,7 +4,6 @@ import authoring.ScreenDisplay;
 import data.Database;
 import data.event.Event;
 import data.event.Instruction;
-import data.map.Cell;
 import data.map.DrawMap;
 import data.map.GameMap;
 import data.player.Player;
@@ -15,7 +14,6 @@ import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
@@ -126,14 +124,12 @@ public abstract class GameScene extends ScreenDisplay {
 	
 	public void refreshCurrentEvent(){
 		if(currentEvent==null){
-			System.out.printf("null event!");
 			return;
 		}else{
 			ArrayList<Instruction> instructions = currentEvent.getInstructions();
 			for(int i=0;i<instructions.size();){
 				if(instructions.get(i).isGoNextInstruction()==true){
 					instructions.remove(instructions.get(i));
-					System.out.printf("removed!");
 				}else{
 					i++;
 				}
@@ -246,7 +242,6 @@ public abstract class GameScene extends ScreenDisplay {
 		this.rootAdd(tileCanvas);
 		mapPane = drawMap.getPane();
 		this.rootAdd(mapPane);
-		System.out.printf("x: %d, y: %d\n", mainPlayer.getPosX(), mainPlayer.getPosY());
 		changePlayerImagePosition(mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
 		this.rootAdd(playerImage);
 	}
