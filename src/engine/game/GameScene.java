@@ -9,7 +9,6 @@ import data.map.GameMap;
 import data.player.Player;
 import engine.Engine;
 import engine.movement.Input;
-import engine.movement.PlayerMovement;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Node;
