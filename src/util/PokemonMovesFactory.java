@@ -41,7 +41,15 @@ public class PokemonMovesFactory {
 	    e.printStackTrace(); //handled by exiting the program
 	    System.exit(1);
 	}
-	Class<?> c = Class.forName(className);
+	Class<?> c = null; 
+	try {
+	    c = Class.forName(className);
+	} catch(ClassNotFoundException e) {
+	    System.out.println("Cannot find class for move " + moveName);
+	    System.out.println("Attempted " + className);
+	    e.printStackTrace(); //handled by exiting the program
+	    System.exit(1);
+	}
 	Constructor<?> cons = c.getConstructor();
 	Object object = cons.newInstance(new Object[] {});
 	return (Move)object;

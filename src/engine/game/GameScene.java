@@ -155,20 +155,34 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
-		if((currentEvent!=null)&&(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
-			instructionIndex++;
-		}else{
-			currentEvent = null;
-		}
-		myStage.setScene(this.getScene());
-		refreshMap(mainMap);
-		myStage.setWidth(screen_width);
-		myStage.setHeight(screen_height);
-		input.releaseAllKeys();
-		input.addListeners();
-		animation.play();
+	    if(currentEvent!=null){
+		if((currentEvent.getInstructions().size() > instructionIndex) &&
+			(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
+		    instructionIndex++;
+		} 
+	    }else{
+		currentEvent = null;
+		instructionIndex = 0;
+	    }
+	    myStage.setScene(this.getScene());
+	    refreshMap(mainMap);
+	    myStage.setWidth(screen_width);
+	    myStage.setHeight(screen_height);
+	    input.releaseAllKeys();
+	    input.addListeners();
+	    animation.play();
 	}
-	
+
+	/**
+	 * Access point after a battle is won, in which case 
+	 * the battle event is removed from the instructoin list
+	 * consequently we need to decrease the bookkeeping variables
+	 */
+	public void changeBackSceneFromWinningBattle() {
+	    //currentEvent cannot be null
+	    instructionIndex = instructionIndex > 0 ? instructionIndex - 1 : 0;
+	    changeBackScene();
+	}
 	public boolean hasNextInstruction() {
 		return instructionIndex!=0;
 	}
