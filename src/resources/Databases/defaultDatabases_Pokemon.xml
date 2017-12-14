@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_144" class="java.beans.XMLDecoder">
+<java version="1.8.0_102" class="java.beans.XMLDecoder">
  <object class="data.Database" id="Database0">
   <void property="maps">
    <void method="add">
@@ -1591,7 +1591,7 @@
      <void method="add">
       <object class="data.model.PacmanEnemy">
        <void property="imagePath">
-        <string>images/pacman_enemies/pacman_enemy_3.png</string>
+        <string>images/pacman_enemies/pacman_enemy_2.png</string>
        </void>
        <void property="speed">
         <int>5</int>
@@ -1601,7 +1601,7 @@
      <void method="add">
       <object class="data.model.PacmanEnemy">
        <void property="imagePath">
-        <string>images/pacman_enemies/pacman_enemy_2.png</string>
+        <string>images/pacman_enemies/pacman_enemy_3.png</string>
        </void>
        <void property="speed">
         <int>5</int>
