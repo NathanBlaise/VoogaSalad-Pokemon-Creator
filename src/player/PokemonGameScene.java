@@ -53,7 +53,7 @@ public class PokemonGameScene extends GameScene{
 			Engine engine, Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, 480, 480, background, engine, stage, true);
 		playerImage.setImage(image);
-		refreshMap(mainMap);
+		refreshMap(engine.getDatabase().getMap(), mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
 		changeBackScene();
 		input.getInputList().clear();
 	}

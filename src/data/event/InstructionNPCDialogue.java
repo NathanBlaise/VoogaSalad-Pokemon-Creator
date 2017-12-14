@@ -89,7 +89,6 @@ public class InstructionNPCDialogue extends Instruction{
 	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
 			GameMap mainMap, Event event, GameScene gameScene) {
 		new Dialogue(this, gameScene, gameScene.getInputHandler());
-		super.setGoNextInstruction(true);
 	}
 
 }

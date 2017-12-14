@@ -35,8 +35,9 @@ public class InstructionGoMap extends Instruction{
 			if(map.getName().equals(mapName)){
 				mainPlayer.setPosX(futureX);
 				mainPlayer.setPosY(futureY);
-				gameScene.refreshMap(map);
-				break;
+				gameScene.refreshMap(map, futureX*GameScene.getPixelSize(), futureY*GameScene.getPixelSize());
+				gameScene.changeBackScene();
+				return;
 			}
 		}
 		super.setGoNextInstruction(true);
