@@ -111,6 +111,7 @@ public class BattleGUI {
 	 * Passed in the player's pokemon; return the pokemon pictures from the back
 	 */
 	String backSpriteURL(Pokemon myPokemon) {
+		System.out.printf("%d\n", myPokemon.getSpecieIndex(myPokemon.getCurrentLevel()));
 		return "file:images/pokemon_back_sprites/"+myPokemon.getSpecieIndex(myPokemon.getCurrentLevel())+".png";
 	}
 	

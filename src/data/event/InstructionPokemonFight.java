@@ -1,6 +1,5 @@
 package data.event;
 
-import java.util.ArrayList;
 
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -21,8 +20,10 @@ import engine.game.GameScene;
 public class InstructionPokemonFight extends Instruction{
 	
 	private static final long serialVersionUID = -7387342417939089291L;
-	private final int BATTLE_SCREEN_WIDTH = 720;
-	private final int BATTLE_SCREEN_HEIGHT = 480;
+	private static final int BATTLE_SCREEN_WIDTH = 720;
+	private static final int BATTLE_SCREEN_HEIGHT = 480;
+	private static final int experienceLevel = 50;
+	private static final int currency = 50;
 	private Pokemon pokemon;
 
 	/**
@@ -59,18 +60,36 @@ public class InstructionPokemonFight extends Instruction{
 	 */
 	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
 			GameMap mainMap, Event event, GameScene gameScene) {
-	    	if(pokemon.isDead()) {
-	    	    //do not fight dead pokemons
-			ArrayList<Instruction> newInstructions = event.getInstructions();
-			newInstructions.remove(this);
-			event.setInstructions(newInstructions);
-			if (event.getInstructions().size() == 0) {
-			    mainMap.removeEvent(event);
+//<<<<<<< HEAD
+		BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,mainPlayer,pokemon, gameScene, gameScene.getStage(), e->{
+			for(Pokemon pokemon: mainPlayer.getPokemons()){
+				if(pokemon!=null){
+					pokemon.absorbExperience(experienceLevel);
+				}
 			}
-			gameScene.changeBackSceneFromWinningBattle();
-			return;
-	    	}
-		BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,mainPlayer,null,pokemon, gameScene, gameScene.getStage());
+			mainPlayer.setCurrency(mainPlayer.getCurrency()+currency);
+			super.setGoNextInstruction(true);
+			gameScene.changeBackScene();
+			return null;
+		}, h->{
+			pokemon.fillCurrentHP();
+			gameScene.changeBackScene();
+			return null;
+		});
+//=======
+//	    	if(pokemon.isDead()) {
+//	    	    //do not fight dead pokemons
+//			ArrayList<Instruction> newInstructions = event.getInstructions();
+//			newInstructions.remove(this);
+//			event.setInstructions(newInstructions);
+//			if (event.getInstructions().size() == 0) {
+//			    mainMap.removeEvent(event);
+//			}
+//			gameScene.changeBackSceneFromWinningBattle();
+//			return;
+//	    	}
+//		BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,mainPlayer,null,pokemon, gameScene, gameScene.getStage());
+//>>>>>>> master
 		// Change the battle scene here
 		((Stage) gameScene.getScene().getWindow()).setScene(battle.getScene());					
 

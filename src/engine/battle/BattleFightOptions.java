@@ -19,7 +19,6 @@ import javafx.scene.text.Font;
  */
 public class BattleFightOptions {
 	
-	private static final int experienceLevel = 50;
 	protected Pokemon activePokemon;
 	protected Pokemon enemyPokemon;
 	protected BattleScene battleScene;
@@ -39,11 +38,11 @@ public class BattleFightOptions {
 	
 
 	
-	public BattleFightOptions(Pokemon ap, Pokemon ep,BattleScene bs) {
+	public BattleFightOptions(Pokemon ap, Pokemon ep,BattleScene bs, BattleEnding be) {
 		activePokemon = ap;
 		enemyPokemon = ep;
 		battleScene = bs;
-		be=new BattleEnding(bs.getGameScene());
+		this.be = be;
 		
 		setButtonText();
 		
@@ -147,11 +146,7 @@ public class BattleFightOptions {
 					
 					
 					if (enemyPokemon.isDead()) {
-						be.showEnding("The enemy pokemon is dead!",true);
-						activePokemon.absorbExperience(experienceLevel);
-						//enemyPokemon.resetCurrentStat();
-						
-						
+						be.showEnding("The enemy pokemon is dead! Congratulations!", true, true);
 					}
 					
 				

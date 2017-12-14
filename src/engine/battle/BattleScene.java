@@ -27,6 +27,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Callback;
 
 /**
  * 
@@ -58,7 +59,6 @@ public class BattleScene extends ScreenDisplay{
 	private EnemyBattleFightOptions ebfo;
 	private Player mainPlayer;
 	private Pokemon activePokemon;
-	private NPC enemyTrainer;
 	private Pokemon enemyPokemon;
 	private GameScene gameScene;
 	private ListView<String> listOfItems;
@@ -83,17 +83,16 @@ public class BattleScene extends ScreenDisplay{
 	 * @param inputList 
 	 * @param enemyPokemon - the encountered enemy pokemon (null if trainer is encountered)
 	 */
-	public BattleScene(int width, int height, Paint background, Player player, NPC trainer, Pokemon pokemon, GameScene scene, Stage stage) {
+	public BattleScene(int width, int height, Paint background, Player player, Pokemon pokemon, GameScene scene, Stage stage, Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction) {
 		super(width, height, background);
 		
 		canvas = new Canvas(width,height);
 		myStage = stage;
 		mainPlayer = player;
 		activePokemon = mainPlayer.getPokemons()[0];
-		enemyTrainer = trainer;
 		enemyPokemon = pokemon;
 		gameScene = scene;
-		myStage.setHeight(height);
+		myStage.setHeight(height+20);
 		myStage.setWidth(width);
 		gui = new BattleGUI(canvas.getGraphicsContext2D(),width,height,activePokemon,enemyPokemon);
 		this.rootAdd(canvas);
@@ -107,9 +106,9 @@ public class BattleScene extends ScreenDisplay{
 		messageLabel.setLayoutY(BUTTONS_YPOS);
 		this.rootAdd(messageLabel);
 		this.bs=this;
-		be=new BattleEnding(this.getGameScene());
-		bfo = new BattleFightOptions(activePokemon,enemyPokemon,this);
-		ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this);
+		be=new BattleEnding(this.getGameScene(),winAction,loseAction);
+		bfo = new BattleFightOptions(activePokemon,enemyPokemon,this,be);
+		ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,this,be);
 	}
 	
 	
@@ -176,7 +175,7 @@ public class BattleScene extends ScreenDisplay{
 			}
 			
 			if (itemNames.size()==0) {
-				be.showEnding("Nothing inside the bag",false);
+				be.showEnding("Nothing inside the bag", false, false);
 				return;
 			}
 			
@@ -237,7 +236,9 @@ public class BattleScene extends ScreenDisplay{
 		     			if (thisItem instanceof PokemonBall) {
 		     				boolean caught=((PokemonBall) thisItem).getCaught();
 		     				if (caught) {
-		     					be.showEnding("The pokemon is caught!",true);
+		     					be.showEnding("The pokemon is caught!", true, true);
+		     				} else {
+		     					be.showEnding("The pokemon is not caught!", false, false);
 		     				}
 		     				
 		     			} 
@@ -261,8 +262,6 @@ public class BattleScene extends ScreenDisplay{
 		
 	}
 	
-	
-	
 	private void pokemonListAction() {
 		listOfPokemons.setOnMouseClicked(new EventHandler<MouseEvent>(){
 	          @Override
@@ -272,8 +271,8 @@ public class BattleScene extends ScreenDisplay{
 	                 for (Pokemon each: mainPlayer.getPokemons()) {
 	                	     if (each.getNickName().equals(pokemon)) {
 	                		     resetActivePokemon(each);
-	                	    	     bfo = new BattleFightOptions(activePokemon,enemyPokemon,bs);
-	                	    	     ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,bs);
+	                	    	     bfo = new BattleFightOptions(activePokemon,enemyPokemon,bs,be);
+	                	    	     ebfo=new EnemyBattleFightOptions(enemyPokemon,activePokemon,bs,be);
 	                	    	     changeActiveHPInfo();
 	                	    	     
 	                	    	     rootRemove(listOfPokemons);
@@ -345,9 +344,9 @@ public class BattleScene extends ScreenDisplay{
 		PokemonLabel PokemonLevel = new PokemonLabel("Lvl:" + pokemon.getCurrentLevel());
 		HBox nameBox = new HBox(40);
 		nameBox.getChildren().addAll(PokemonName,PokemonLevel);
-		
-		PokemonLabel PokemonHealth = new PokemonLabel(pokemon.getCurrentStat().getHP() + "/" +pokemon.getCurrentStat().getMaxHP());
-		HealthBar healthBar = new HealthBar(pokemon.getCurrentStat().getHP(),150,15);
+		HealthBar healthBar = new HealthBar(pokemon.getCurrentStat().getMaxHP(),150,15);
+		healthBar.setHealth(pokemon.getCurrentStat().getHP());
+		PokemonLabel PokemonHealth = new PokemonLabel(pokemon.getCurrentStat().getHP() + "/" + pokemon.getCurrentStat().getMaxHP());
 		HBox healthBox = new HBox(10);
 		healthBox.getChildren().addAll(healthBar.getPane(),PokemonHealth);
 		
@@ -358,7 +357,6 @@ public class BattleScene extends ScreenDisplay{
 		PokemonInfo.setLayoutX(x);
 		PokemonInfo.setLayoutY(y);
 		this.rootAdd(PokemonInfo);
-	
 		
 		if (pokemon.equals(activePokemon)){
 			activePokemonHealth=PokemonHealth;

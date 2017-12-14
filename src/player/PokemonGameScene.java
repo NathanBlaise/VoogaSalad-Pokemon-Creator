@@ -9,7 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Pair;
@@ -56,20 +55,6 @@ public class PokemonGameScene extends GameScene{
 		playerImage.setImage(image);
 		refreshMap(mainMap);
 		changeBackScene();
-//		input.getInputHandler().get(KeyCode.ENTER.toString()).add(e->{
-//			
-//			return null;
-//		});
-//		super.getScene().setOnKeyPressed(e -> {
-//			super.pause();
-//			UserPage userPage = new UserPage(super.getStage(), super.getScene(), super.getRoot());
-//			super.getScene().setOnKeyPressed(i->{
-//				userPage.handleKeyInput(super.getStage(), super.getRoot(), i.getCode(), h->{
-//					super.changeBackScene();
-//					return null;
-//				});
-//			});	
-//		});
 		input.getInputList().clear();
 	}
 

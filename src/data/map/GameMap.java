@@ -137,7 +137,7 @@ public class GameMap implements Serializable{
 			return cells[coordX][coordY];
 		} catch (Exception e) {
 			System.out.print("Dimension over range!");
-			e.printStackTrace();//handled by exiting the program
+//			e.printStackTrace();//handled by exiting the program
 			System.exit(1);
 			return null;
 		}

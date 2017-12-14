@@ -14,7 +14,6 @@ import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
@@ -123,16 +122,37 @@ public abstract class GameScene extends ScreenDisplay {
 		return 1;
 	}
 	
+	public void refreshCurrentEvent(){
+		if(currentEvent==null){
+			return;
+		}else{
+			ArrayList<Instruction> instructions = currentEvent.getInstructions();
+			for(int i=0;i<instructions.size();){
+				if(instructions.get(i).isGoNextInstruction()==true){
+					instructions.remove(instructions.get(i));
+				}else{
+					i++;
+				}
+			}
+			currentEvent.setInstructions(instructions);
+			if(currentEvent.getInstructions().size()==0){
+				mainMap.removeEvent(currentEvent);
+				refreshMap(mainMap);
+			}
+		}
+	}
+	
 	private int executeEvent(Event event, int index){
 		if(index >= event.getInstructions().size()){
+			refreshCurrentEvent();
 			instructionIndex = 0;
 			event = null;
 			return 0;
 		}
 		Instruction instruction = event.getInstructions().get(index);
-			pause();
-			assert(mainPlayer!=null);
-			instruction.execute(screen_width,screen_height,mainPlayer,mainMap,event,this);	
+		pause();
+		assert(mainPlayer!=null);
+		instruction.execute(screen_width,screen_height,mainPlayer,mainMap,event,this);	
 		return -1;
 	}
 	
@@ -145,6 +165,9 @@ public abstract class GameScene extends ScreenDisplay {
 		input.removeListeners();
 	}
 	
+	/**
+	 * continue the game
+	 */
 	protected void carryOn() {
 		animation.play();
 		input.addListeners();
@@ -155,34 +178,44 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
-	    if(currentEvent!=null){
-		if((currentEvent.getInstructions().size() > instructionIndex) &&
-			(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
-		    instructionIndex++;
-		} 
-	    }else{
-		currentEvent = null;
-		instructionIndex = 0;
-	    }
-	    myStage.setScene(this.getScene());
-	    refreshMap(mainMap);
-	    myStage.setWidth(screen_width);
-	    myStage.setHeight(screen_height);
-	    input.releaseAllKeys();
-	    input.addListeners();
-	    animation.play();
+//<<<<<<< HEAD
+		if((currentEvent!=null)&&(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
+			instructionIndex++;
+		}else{
+//			refreshCurrentEvent();
+			currentEvent = null;
+		}
+		myStage.setScene(this.getScene());
+		refreshMap(mainMap);
+		myStage.setWidth(screen_width);
+		myStage.setHeight(screen_height);
+		input.releaseAllKeys();
+		input.addListeners();
+		animation.play();
+//=======
+//	    if(currentEvent!=null){
+//		if((currentEvent.getInstructions().size() > instructionIndex) &&
+//			(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
+//		    instructionIndex++;
+//		} 
+//	    }else{
+//		currentEvent = null;
+//		instructionIndex = 0;
+//	    }
+//	}
+//
+//	/**
+//	 * Access point after a battle is won, in which case 
+//	 * the battle event is removed from the instructoin list
+//	 * consequently we need to decrease the bookkeeping variables
+//	 */
+//	public void changeBackSceneFromWinningBattle() {
+//	    //currentEvent cannot be null
+//	    instructionIndex = instructionIndex > 0 ? instructionIndex - 1 : 0;
+//	    changeBackScene();
+//>>>>>>> master
 	}
-
-	/**
-	 * Access point after a battle is won, in which case 
-	 * the battle event is removed from the instructoin list
-	 * consequently we need to decrease the bookkeeping variables
-	 */
-	public void changeBackSceneFromWinningBattle() {
-	    //currentEvent cannot be null
-	    instructionIndex = instructionIndex > 0 ? instructionIndex - 1 : 0;
-	    changeBackScene();
-	}
+	
 	public boolean hasNextInstruction() {
 		return instructionIndex!=0;
 	}
@@ -200,7 +233,6 @@ public abstract class GameScene extends ScreenDisplay {
 	}
 	
 	public void refreshMap(GameMap mainMap){
-		currentEvent = null;
 		this.mainMap = mainMap;
 		this.rootClear();
 		tileCanvas = new Canvas (mainMap.getYlength()*pixelSize, mainMap.getXlength()*pixelSize);
@@ -210,7 +242,6 @@ public abstract class GameScene extends ScreenDisplay {
 		this.rootAdd(tileCanvas);
 		mapPane = drawMap.getPane();
 		this.rootAdd(mapPane);
-		System.out.printf("x: %d, y: %d\n", mainPlayer.getPosX(), mainPlayer.getPosY());
 		changePlayerImagePosition(mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
 		this.rootAdd(playerImage);
 	}
@@ -236,11 +267,11 @@ public abstract class GameScene extends ScreenDisplay {
 				node.setLayoutY(mapPane.getLayoutY()+pixelSize*row);
 			}
 		}else{
-			playerImage.setX(playerImage.getX()-mainPlayer.getPosX()*pixelSize);
-			playerImage.setY(playerImage.getY()-mainPlayer.getPosY()*pixelSize);
+			playerImage.setX(futureX);
+			playerImage.setY(futureY);
 		}
-		mainPlayer.setPosX(new Double((playerImage.getX()-mapPane.getLayoutX())/pixelSize).intValue());
-		mainPlayer.setPosY(new Double((playerImage.getY()-mapPane.getLayoutY())/pixelSize).intValue());
+		mainPlayer.setPosX(new Double((playerImage.getX()+playerImage.getFitWidth()/2-mapPane.getLayoutX())/pixelSize).intValue());
+		mainPlayer.setPosY(new Double((playerImage.getY()+playerImage.getFitHeight()/2-mapPane.getLayoutY())/pixelSize).intValue());
 	}
 	
 	protected Canvas getTileCanvas() {

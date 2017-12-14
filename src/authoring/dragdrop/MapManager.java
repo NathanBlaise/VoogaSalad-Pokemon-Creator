@@ -162,8 +162,8 @@ public final class MapManager extends BorderPane{
     	public sizeChooser(Function3<Integer, Integer, String, Integer> saver){ 
         	Stage stage = new Stage();
           	TextField nameMap = new TextField("input your map name please");
-       		HBox xChooser =  UIComponentFactory.intSlider(lengthX, 1, 20, x -> {lengthX = x; return null;}, "height");
-       		HBox yChooser =  UIComponentFactory.intSlider(lengthY, 1, 20, y -> {lengthY = y; return null;}, "width");
+       		HBox xChooser =  UIComponentFactory.intSlider(lengthX, 1, 100, x -> {lengthX = x; return null;}, "height");
+       		HBox yChooser =  UIComponentFactory.intSlider(lengthY, 1, 100, y -> {lengthY = y; return null;}, "width");
        		Button button = new Button("go to new map");
           	button.setOnMouseClicked(e->{
           		saver.apply(lengthX, lengthY, nameMap.getText());

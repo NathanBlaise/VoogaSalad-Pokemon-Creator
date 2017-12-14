@@ -24,10 +24,8 @@ public class PokemonBall extends Item{
 	public void useItem(Player player, Pokemon mine, Pokemon Enemy) {
 		Double num = new Random().nextDouble();
 		if(num<0.3){
-			player.getWarehouse().add(new Pokemon(Enemy));
 			player.addPokemon(Enemy);
 			caught=true;
-			
 		}
 	}
 	
