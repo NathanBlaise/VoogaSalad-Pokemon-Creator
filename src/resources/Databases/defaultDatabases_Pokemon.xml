@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_144" class="java.beans.XMLDecoder">
+<java version="1.8.0_102" class="java.beans.XMLDecoder">
  <object class="data.Database" id="Database0">
   <void property="maps">
    <void method="add">
@@ -1591,7 +1591,7 @@
      <void method="add">
       <object class="data.model.PacmanEnemy">
        <void property="imagePath">
-        <string>images/pacman_enemies/pacman_enemy_3.png</string>
+        <string>images/pacman_enemies/pacman_enemy_2.png</string>
        </void>
        <void property="speed">
         <int>5</int>
@@ -1601,7 +1601,7 @@
      <void method="add">
       <object class="data.model.PacmanEnemy">
        <void property="imagePath">
-        <string>images/pacman_enemies/pacman_enemy_2.png</string>
+        <string>images/pacman_enemies/pacman_enemy_3.png</string>
        </void>
        <void property="speed">
         <int>5</int>
@@ -22446,18 +22446,15 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/watercenter.png</string>
+          <string>images/tiles/tiles4shop/floor.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>pond</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
+        <string>Floor</string>
        </void>
        <void property="wholePic">
-        <string>images/tiles/watercenter.png</string>
+        <string>images/tiles/tiles4shop/floor.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -22472,15 +22469,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/tiles4shop/floor.png</string>
+          <string>images/tiles/watercenter.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>Floor</string>
+        <string>pond</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/tiles4shop/floor.png</string>
+        <string>images/tiles/watercenter.png</string>
        </void>
        <void property="width">
         <int>1</int>

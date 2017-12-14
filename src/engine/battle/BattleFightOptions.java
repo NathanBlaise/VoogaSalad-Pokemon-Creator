@@ -34,6 +34,7 @@ public class BattleFightOptions {
 	private Label ppLabel;
 	private Label typeLabel;
 	protected HBox hbox=new HBox(5);
+	protected BattleEnding be;
 	
 	
 
@@ -42,6 +43,7 @@ public class BattleFightOptions {
 		activePokemon = ap;
 		enemyPokemon = ep;
 		battleScene = bs;
+		be=new BattleEnding(bs.getGameScene());
 		
 		setButtonText();
 		
@@ -145,7 +147,7 @@ public class BattleFightOptions {
 					
 					
 					if (enemyPokemon.isDead()) {
-						battleScene.showEnding("The enemy pokemon is dead!",true);
+						be.showEnding("The enemy pokemon is dead!",true);
 						activePokemon.absorbExperience(experienceLevel);
 						//enemyPokemon.resetCurrentStat();
 						
