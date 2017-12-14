@@ -102,9 +102,21 @@ public class BattleFightOptions {
 		setButtonStyle(moveButton4);
 		buttonArr = new Button[] {moveButton1,moveButton2,moveButton3,moveButton4};
 		int i=0;
-		for(Move move: activePokemon.getAvailableMoves()) {
+		//for testing
+		System.out.println("Active Pokemon is " + activePokemon.getName());
+		System.out.println("Active Pokemon has " + activePokemon.getEquippedMoves().size() + "moves");
+		//for testing
+		for(Move move: activePokemon.getEquippedMoves()) {
 			//Sets text and action for each button to be used for a move
-			buttonArr[i].setText(move.getMoveName());
+		    	if (move==null) continue;
+		    	String moveName = null;
+		    	try {
+		    	moveName = move.getMoveName();
+		    	} catch(NullPointerException e) {
+		    	    e.printStackTrace(); //handled by exiting
+		    	    System.exit(1);
+		    	}
+			buttonArr[i].setText(moveName);
 			buttonArr[i].setOnAction((event) -> {
 				typeLabel = new Label("Type/"+ move.getElemental());
 				ppLabel = new Label("PP: " + move.getPP()+"/"+move.getMaxPP());
@@ -121,7 +133,8 @@ public class BattleFightOptions {
 				hbox.getChildren().addAll(confirm,back,moveInfo);
 				confirm.setOnAction((e) -> {
 					move.move(activePokemon, enemyPokemon);
-					System.out.println("now move stats"+move.getPP());
+					System.out.println("Move " + move.getMoveName() + 
+						" has PP "+move.getPP());
 					//Load hit animation, then change scene to enemy's move
 					changeScene();
 					activePokemon.printCurrentInfo();

@@ -129,26 +129,19 @@ public abstract class GameScene extends ScreenDisplay {
 			System.out.printf("null event!");
 			return;
 		}else{
-			for(Instruction instruction: currentEvent.getInstructions()){
-				if(instruction.isGoNextInstruction()==true){
-					currentEvent.getInstructions().remove(instruction);
+			ArrayList<Instruction> instructions = currentEvent.getInstructions();
+			for(int i=0;i<instructions.size();){
+				if(instructions.get(i).isGoNextInstruction()==true){
+					instructions.remove(instructions.get(i));
 					System.out.printf("removed!");
+				}else{
+					i++;
 				}
 			}
-			if(currentEvent.getInstructions().size()!=0){
-				System.out.printf("size not 0!");
-				return;
-			}
-			for(int i=-1;i<=1;i++){
-				for(int j=-1;j<=1;j++){
-					Cell cell = mainMap.getCell(mainPlayer.getPosX()+i, mainPlayer.getPosY()+j);
-					if((cell!=null)&&(cell.getEvent()!=null)&&(cell.getEvent()==currentEvent)){
-						cell.setEvent(null);
-						refreshMap(mainMap);
-						System.out.printf("refresh map!");
-						break;
-					}
-				}
+			currentEvent.setInstructions(instructions);
+			if(currentEvent.getInstructions().size()==0){
+				mainMap.removeEvent(currentEvent);
+				refreshMap(mainMap);
 			}
 		}
 	}
@@ -189,6 +182,7 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
+//<<<<<<< HEAD
 		if((currentEvent!=null)&&(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
 			instructionIndex++;
 		}else{
@@ -202,6 +196,28 @@ public abstract class GameScene extends ScreenDisplay {
 		input.releaseAllKeys();
 		input.addListeners();
 		animation.play();
+//=======
+//	    if(currentEvent!=null){
+//		if((currentEvent.getInstructions().size() > instructionIndex) &&
+//			(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
+//		    instructionIndex++;
+//		} 
+//	    }else{
+//		currentEvent = null;
+//		instructionIndex = 0;
+//	    }
+//	}
+//
+//	/**
+//	 * Access point after a battle is won, in which case 
+//	 * the battle event is removed from the instructoin list
+//	 * consequently we need to decrease the bookkeeping variables
+//	 */
+//	public void changeBackSceneFromWinningBattle() {
+//	    //currentEvent cannot be null
+//	    instructionIndex = instructionIndex > 0 ? instructionIndex - 1 : 0;
+//	    changeBackScene();
+//>>>>>>> master
 	}
 	
 	public boolean hasNextInstruction() {
