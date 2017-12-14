@@ -23,13 +23,15 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	private BattleScene mainScene;
 	private BattleFightOptions bfo;
 	
+	
 
 
 	private Button cancel=new Button("Enemy Pokemon's move");
 
 	
-	public EnemyBattleFightOptions(Pokemon ap, Pokemon ep, BattleScene bs) {
-		super(ap, ep,bs);
+	public EnemyBattleFightOptions(Pokemon ap, Pokemon ep, BattleScene bs, BattleEnding be) {
+		super(ap, ep,bs,be);
+		
 		mainScene = bs;
 		super.setButtonStyle(cancel);
 		
@@ -89,7 +91,8 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	  battleScene.updateHealthBars(enemyPokemon.getCurrentStat().getHP(), activePokemon.getCurrentStat().getHP());
 	  super.battleScene.setMessage("Oh no! "+ activePokemon.getNickName() + " performed "+move.getMoveName()+"!");
 	  if(enemyPokemon.isDead()) {
-			battleScene.showEnding("Game end. Your pokemon is dead.", true, false);
+			be.showEnding("Game end. Your pokemon is dead.",true,false);
+//			battleScene.getPlayer().deletePokemon(enemyPokemon);
 		}  
 	  
   }
