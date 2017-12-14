@@ -24,7 +24,7 @@ public class InstructionPokemonFight extends Instruction{
 	private static final int BATTLE_SCREEN_HEIGHT = 480;
 	private static final int experienceLevel = 50;
 	private static final int currency = 50;
-	private Pokemon pokemon;
+	private Pokemon pokemon = null;
 
 	/**
 	 * WARNING!

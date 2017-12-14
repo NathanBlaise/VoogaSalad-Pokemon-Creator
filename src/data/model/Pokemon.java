@@ -105,18 +105,18 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 *  @return - whether the change succeeds
 	 */
 	public boolean changeMove(Move originMove, Move newMove){
-	    	/**Testing only **/
-	    	for(int i = 0; i < moveNum; i++) {
-	    	    Move move = moves[i]; 
-	    	    String moveName = move==null?"-":move.getMoveName();
-	    	    System.out.println("Move " + i + " is " + moveName);
-	    	}
-	    
-	    	String oldMoveName = originMove==null?"-":originMove.getMoveName();
-	    	String newMoveName = newMove.getMoveName();
-	    	System.out.println("Move changing from" + oldMoveName
-	    	+" to " + newMoveName + "with PP " + newMove.getPP() );
-	    	  /**End of Testing only **/
+//	    	/**Testing only **/
+//	    	for(int i = 0; i < moveNum; i++) {
+//	    	    Move move = moves[i]; 
+//	    	    String moveName = move==null?"-":move.getMoveName();
+//	    	    System.out.println("Move " + i + " is " + moveName);
+//	    	}
+//	    
+//	    	String oldMoveName = originMove==null?"-":originMove.getMoveName();
+//	    	String newMoveName = newMove.getMoveName();
+//	    	System.out.println("Move changing from" + oldMoveName
+//	    	+" to " + newMoveName + "with PP " + newMove.getPP() );
+//	    	  /**End of Testing only **/
 		for(int k=0;k<moveNum;k++){
 			if((moves[k]!=null) && moves[k].equals(newMove)){
 				return true;
