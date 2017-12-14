@@ -82,7 +82,6 @@ public class Dialogue {
 				oriDisplay.rootRemove(textShow);
 				ArrayList<Function<String, Integer>> handlers = inputHandler.get("F");
 				handlers.remove(handleF);
-				instruction.setGoNextInstruction(true);
 				oriDisplay.changeBackScene();
 			}
 	}

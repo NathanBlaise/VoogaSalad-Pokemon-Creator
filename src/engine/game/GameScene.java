@@ -9,6 +9,7 @@ import data.map.GameMap;
 import data.player.Player;
 import engine.Engine;
 import engine.movement.Input;
+import engine.movement.PlayerMovement;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Node;
@@ -137,7 +138,7 @@ public abstract class GameScene extends ScreenDisplay {
 			currentEvent.setInstructions(instructions);
 			if(currentEvent.getInstructions().size()==0){
 				mainMap.removeEvent(currentEvent);
-				refreshMap(mainMap);
+				refreshMap(mainMap, playerImage.getX()-tileCanvas.getLayoutX(), playerImage.getY()-tileCanvas.getLayoutY());
 			}
 		}
 	}
@@ -186,7 +187,7 @@ public abstract class GameScene extends ScreenDisplay {
 			currentEvent = null;
 		}
 		myStage.setScene(this.getScene());
-		refreshMap(mainMap);
+//		refreshMap(mainMap, playerImage.getX()-tileCanvas.getLayoutX(), playerImage.getY()-tileCanvas.getLayoutY());
 		myStage.setWidth(screen_width);
 		myStage.setHeight(screen_height);
 		input.releaseAllKeys();
@@ -232,7 +233,7 @@ public abstract class GameScene extends ScreenDisplay {
 		return myStage;
 	}
 	
-	public void refreshMap(GameMap mainMap){
+	public void refreshMap(GameMap mainMap, double futureX, double futureY){
 		this.mainMap = mainMap;
 		this.rootClear();
 		tileCanvas = new Canvas (mainMap.getYlength()*pixelSize, mainMap.getXlength()*pixelSize);
@@ -242,7 +243,7 @@ public abstract class GameScene extends ScreenDisplay {
 		this.rootAdd(tileCanvas);
 		mapPane = drawMap.getPane();
 		this.rootAdd(mapPane);
-		changePlayerImagePosition(mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
+		changePlayerImagePosition(futureX, futureY);
 		this.rootAdd(playerImage);
 	}
 	
@@ -276,5 +277,9 @@ public abstract class GameScene extends ScreenDisplay {
 	
 	protected Canvas getTileCanvas() {
 		return tileCanvas;
+	}
+	
+	public static double getPixelSize(){
+		return pixelSize;
 	}
 }
