@@ -36,7 +36,6 @@ public class Map2GridPane {
 		}
 		try {
 			BufferedImage image = ImageIO.read(new File(base));
-
 			BufferedImage overlay = ImageIO.read(new File(overlap));
 			
 			//check if it is the shop_path
