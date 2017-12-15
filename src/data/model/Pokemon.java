@@ -1,6 +1,8 @@
 package data.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import data.model.moves.Move;
@@ -19,6 +21,7 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	private String name = new String(""); //the name of Pokemon
 	private double currentExperience; //the current experience got, it should greater or equal to 0, and smaller to the super.getUpNeededExp(currentLevel)
 	private PokemonStat currentStat; // the stat of current pokemon
+	private List<Move> equippedMovesForBattle;
 	
 	public Pokemon(PokemonSpecie origin, String name, int targetLevel){
 		super(origin);
@@ -102,6 +105,18 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 *  @return - whether the change succeeds
 	 */
 	public boolean changeMove(Move originMove, Move newMove){
+//	    	/**Testing only **/
+//	    	for(int i = 0; i < moveNum; i++) {
+//	    	    Move move = moves[i]; 
+//	    	    String moveName = move==null?"-":move.getMoveName();
+//	    	    System.out.println("Move " + i + " is " + moveName);
+//	    	}
+//	    
+//	    	String oldMoveName = originMove==null?"-":originMove.getMoveName();
+//	    	String newMoveName = newMove.getMoveName();
+//	    	System.out.println("Move changing from" + oldMoveName
+//	    	+" to " + newMoveName + "with PP " + newMove.getPP() );
+//	    	  /**End of Testing only **/
 		for(int k=0;k<moveNum;k++){
 			if((moves[k]!=null) && moves[k].equals(newMove)){
 				return true;
@@ -204,6 +219,27 @@ public class Pokemon extends PokemonSpecie implements Serializable{
 	 */
 	public List<Move> getAvailableMoves(){
 		return super.getAvailableMoves(currentLevel);
+	}
+	/**
+	 * 
+	 * @return The moves that this pokemon currently have
+	 */
+	public List<Move> getEquippedMoves(){
+	    /**
+	     * Test for null moves
+	     */
+	    if(equippedMovesForBattle == null) {
+		equippedMovesForBattle = new ArrayList<Move>();
+		for(int i = 0; i < moveNum; i++) {
+		    Move template = moves[i]; 
+		   if (template == null) continue;
+		    Move move = new Move(template);
+		    move.setPP(move.getMaxPP());
+		    equippedMovesForBattle.add(move);
+		    }
+		
+	    }
+	    return new ArrayList<Move>(equippedMovesForBattle);
 	}
 	
 	/**

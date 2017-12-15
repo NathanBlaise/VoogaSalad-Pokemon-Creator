@@ -2,11 +2,12 @@ package data.event;
 
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import data.map.GameMap;
 import data.model.NPC;
 import data.model.Pokemon;
 import data.player.Player;
-import engine.battle.NPCBattleHelper;
+import engine.battle.BattleScene;
 import engine.game.GameScene;
 
 /**
@@ -25,6 +26,8 @@ public class InstructionNPCFight  extends Instruction{
 	private static final int pokemonNum = 6; //the number of available Pokemon
 	private final int BATTLE_SCREEN_WIDTH = 720;
 	private final int BATTLE_SCREEN_HEIGHT = 480;
+	private static final int experienceLevel = 50;
+	private static final int currency = 50;
 	private NPC npc; //the NPC himself/herself
 	private Pokemon[] pokemons = new Pokemon[pokemonNum]; //the pokemons belong to NPC
 
@@ -79,13 +82,59 @@ public class InstructionNPCFight  extends Instruction{
 	}
 
 	@Override
-	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
-			GameMap mainMap, Event event, GameScene gameScene) {
-		NPCBattleHelper npcHelper = new NPCBattleHelper(BATTLE_SCREEN_WIDTH, BATTLE_SCREEN_HEIGHT, Color.WHITE, gameScene, gameScene.getInputList());
-		((Stage) gameScene.getScene().getWindow()).setHeight(SCREEN_HEIGHT);
-		((Stage) gameScene.getScene().getWindow()).setWidth(SCREEN_WIDTH);
-		((Stage)gameScene.getScene().getWindow()).setScene(npcHelper.getScene());
-		npcHelper.startTimer();
+	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer, GameMap mainMap, Event event, GameScene gameScene) {
+		beginBattle(livePokemon(), mainPlayer, gameScene, gameScene.getStage(), e->{
+			for(Pokemon pokemon: mainPlayer.getPokemons()){
+				if(pokemon!=null){
+					pokemon.absorbExperience(experienceLevel);
+				}
+			}
+			mainPlayer.setCurrency(mainPlayer.getCurrency()+currency);
+			super.setGoNextInstruction(true);
+			gameScene.changeBackScene();
+			return null;
+		}, h->{
+			refillAllPokemons(pokemons);
+			gameScene.changeBackScene();
+			return null;
+		});
+	}
+	
+	private Pokemon livePokemon(){
+		for(Pokemon pokemon: pokemons){
+			if((pokemon!=null)&&(pokemon.getCurrentStat().getHP()>0)){
+				return pokemon;
+			}
+		}
+		return null;
+	}
+	
+	public static void refillAllPokemons(Pokemon[] pokemons){
+		for(Pokemon pokemon: pokemons){
+			if(pokemon!=null){
+				pokemon.fillCurrentHP();
+			}
+		}
+	}
+	
+	/**
+	 * 
+	 * @param livePokemon
+	 */
+	public BattleScene beginBattle(Pokemon livePokemon, Player player, GameScene gameScene, Stage stage, Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction){
+		if(livePokemon!=null){
+			BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,player,livePokemon, gameScene, gameScene.getStage(), e->{
+				beginBattle(livePokemon(), player, gameScene, stage, winAction, loseAction);
+				return null;
+			}, h->{
+				return loseAction.call(0);
+			});
+			stage.setScene(battle.getScene());
+			return battle;
+		}else{
+			winAction.call(0);
+			return null;
+		}
 	}
 
 }

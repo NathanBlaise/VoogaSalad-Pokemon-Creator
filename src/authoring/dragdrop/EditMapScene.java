@@ -29,16 +29,6 @@ public class EditMapScene extends BasicAuthorScreen {
 		    	//do nothing
 			return null;
 		}, new Tile("grass", false, 1, 1, "images/reg_tile_scaled.png", new ArrayList<String>())),200,0);
-//		DBMap(stageHelper.getDatabase());
-		
-
-	    
-		
-		//testFont.setLayoutX(700);
-		//testFont.setLayoutY(300);
-//		this.rootAdd(myMap.getGrid(),200,0);
-		
-	
 	}
 
 }

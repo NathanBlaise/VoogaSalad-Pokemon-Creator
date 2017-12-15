@@ -1,6 +1,6 @@
 <defaultPokemonSpecie>
 	<name>Squirtle</name>
-	
+	<!--  from https://pokemondb.net/pokedex/squirtle -->
 	<elemental>Water</elemental>
 	
 	<maxLevel>75</maxLevel>
@@ -8,7 +8,23 @@
 	<levelMoves>
 		<move>
 			<level>1</level>
-			<name>TailWhip</name>
+			<name>Tackle</name>
+		</move>
+		<move>
+			<level>7</level>
+			<name>WaterGun</name>
+		</move>
+		<move>
+			<level>16</level>
+			<name>Bite</name>
+		</move>
+		<move>
+			<level>28</level>
+			<name>AquaTail</name>
+		</move>
+		<move>
+			<level>40</level>
+			<name>HydroPump</name>
 		</move>
 	</levelMoves>
 	
@@ -1005,15 +1021,15 @@
 	<levelEvolutionImages>
 		<evolutionImage>
 			<level>1</level>
-			<imagePath>images/pokemons/7.gif</imagePath>
+			<imagePath>images/pokemon_sprites/7.gif</imagePath>
 		</evolutionImage>
 		<evolutionImage>
-			<level>25</level>
-			<imagePath>images/pokemons/8.gif</imagePath>
+			<level>16</level>
+			<imagePath>images/pokemon_sprites/8.gif</imagePath>
 		</evolutionImage>
 			<evolutionImage>
-			<level>50</level>
-			<imagePath>images/pokemons/9.gif</imagePath>
+			<level>36</level>
+			<imagePath>images/pokemon_sprites/9.gif</imagePath>
 		</evolutionImage>
 	</levelEvolutionImages>
 </defaultPokemonSpecie>

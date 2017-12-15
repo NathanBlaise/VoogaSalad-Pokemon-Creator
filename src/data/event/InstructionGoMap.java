@@ -4,8 +4,13 @@ import java.util.Collection;
 
 import data.map.GameMap;
 import data.player.Player;
+import engine.UI.Fade;
 import engine.game.GameScene;
-
+/**
+ * go to  another map
+ * @author cy122
+ *
+ */
 public class InstructionGoMap extends Instruction{
 	
 	private static final long serialVersionUID = 3425297418577947868L; //for serialization
@@ -35,8 +40,12 @@ public class InstructionGoMap extends Instruction{
 			if(map.getName().equals(mapName)){
 				mainPlayer.setPosX(futureX);
 				mainPlayer.setPosY(futureY);
-				gameScene.refreshMap(map);
-				break;
+				Fade.FadeFromOneSceneToAnother(gameScene, gameScene, e->{
+					gameScene.refreshMap(map, futureX*GameScene.getPixelSize(), futureY*GameScene.getPixelSize());
+					gameScene.changeBackScene();
+					return null;
+				});
+				return;
 			}
 		}
 		super.setGoNextInstruction(true);

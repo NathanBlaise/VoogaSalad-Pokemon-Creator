@@ -74,7 +74,7 @@ public class InstructionGoMapEditor implements InstructionEditor {
 	private Pair<Integer, Integer> searchLength(String mapName, List<GameMap> maps){
 		for(GameMap map: maps){
 			if(map.getName().equals(mapName)){
-				return new Pair<Integer, Integer>(map.getXlength(), map.getYlength());
+				return new Pair<Integer, Integer>(map.getYlength(), map.getXlength());
 			}
 		}
 		return new Pair<Integer, Integer>(0, 0);

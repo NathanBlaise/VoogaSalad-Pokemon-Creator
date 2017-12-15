@@ -98,9 +98,6 @@ public class DBCell {
 	
 	public DBCell UpdatEvent(Event event){
 		cell.setEvent(event);
-		if((!(event instanceof EventPokemon))&&(event!=null)) {
-			cell.setObstacle(true);
-		}
 		app.updateCellList(this);
 		myGrid.add(setDragTarget(cell), col, row);
 		return this;

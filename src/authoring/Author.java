@@ -40,7 +40,6 @@ public class Author implements StageDelegate{
 		this.gameType = gameType;
 		scControl = new SceneController(this,gameType);
 		System.out.println(gameType);
-//		myList = scControl.getScList();
 	}
 	
 	
@@ -48,12 +47,6 @@ public class Author implements StageDelegate{
 	public void GoButtonPressed() {
 		saveDatabase();
 		scControl.goToNextEditingScene(myStage);
-		//functionality encapsuled in sceneController
-//		if (scControl.currentIndex < myList.size() - 1) {
-//		scControl.currentIndex +=1;
-//		myStage.setScene(myList.get(scControl.currentIndex));
-//		}
-		//System.out.println("I am currently at scene " + scControl.currentIndex );
 		
 	}
 
@@ -61,21 +54,13 @@ public class Author implements StageDelegate{
 	public void BackButtonPressed() {
 		saveDatabase();
 		scControl.goToPreviousEditingScene(myStage);
-		//functionlaity encapsuled in sceneController
-//		if (scControl.currentIndex > 0)
-//		{
-//		    scControl.currentIndex -=1;
-//		    myStage.setScene(myList.get(scControl.currentIndex));
-//		}
-			//System.out.println("I am currently at scene " + scControl.currentIndex );
 	}
 
 	@Override
 	public void toFirstAuthorScene() {
 	        saveDatabase();
 		scControl.goToFirstEditingScene(myStage);
-		myStage.centerOnScreen();
-		//System.out.println("0");	
+		myStage.centerOnScreen();	
 	}
 
 

@@ -9,7 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Pair;
@@ -24,7 +23,7 @@ import engine.movement.PlayerMovement;
 
 public class PokemonGameScene extends GameScene implements keyItemInterface{
 
-	private static final int PLAYER_WIDTH = 45;
+	private static final int PLAYER_WIDTH = 40;
 	private static final int PLAYER_HEIGHT = 45;
 	private static final int sizeBlockX = PLAYER_WIDTH - 2*offsetX;
 	private static final int sizeBlockY = PLAYER_HEIGHT - 2*offsetY;
@@ -59,22 +58,8 @@ public class PokemonGameScene extends GameScene implements keyItemInterface{
 			Engine engine, Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, 480, 480, background, engine, stage, true);
 		playerImage.setImage(image);
-		refreshMap(mainMap);
+		refreshMap(engine.getDatabase().getMap(), mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
 		changeBackScene();
-//		input.getInputHandler().get(KeyCode.ENTER.toString()).add(e->{
-//			
-//			return null;
-//		});
-//		super.getScene().setOnKeyPressed(e -> {
-//			super.pause();
-//			UserPage userPage = new UserPage(super.getStage(), super.getScene(), super.getRoot());
-//			super.getScene().setOnKeyPressed(i->{
-//				userPage.handleKeyInput(super.getStage(), super.getRoot(), i.getCode(), h->{
-//					super.changeBackScene();
-//					return null;
-//				});
-//			});	
-//		});
 		input.getInputList().clear();
 	}
 

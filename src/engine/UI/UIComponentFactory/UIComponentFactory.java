@@ -8,7 +8,10 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 /**
@@ -84,6 +87,23 @@ public class UIComponentFactory {
             }
         });
 		result.getChildren().addAll(slider, levelLabel);
+		return result;
+	}
+	
+	public static VBox nameEditor(String labelName, String initialName, Callback<String, Integer> saver){
+		VBox result = new VBox();
+		Label nickNameLabel = new Label(labelName);
+		result.getChildren().add(nickNameLabel);
+		TextField nickNameField = new TextField(initialName);
+		nickNameField.setOnKeyReleased(new EventHandler<KeyEvent>()
+			    {
+			        @Override
+			        public void handle(KeyEvent ke)
+			        {
+			        	saver.call(nickNameField.getText());
+			        }
+			   });
+		result.getChildren().add(nickNameField);
 		return result;
 	}
 }

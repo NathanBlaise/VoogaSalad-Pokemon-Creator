@@ -9,7 +9,7 @@ import javafx.scene.control.ContextMenu;
 import javafx.util.Callback;
 /**
  * 
- * @author DanSun for commenting
+ * @author DanSun: commenting cy122: creator
  *
  */
 public class ListViewFactory {
@@ -42,7 +42,7 @@ public class ListViewFactory {
 	 * @param list
 	 */
 	private static void add(ListView list){
-		list.getItems().add("");
+		list.getItems().add(null);
 	}
 	/**
 	 * remove the last item fro the ListView
@@ -63,7 +63,7 @@ public class ListViewFactory {
 	 * @param removeHandler Action to perform when removing is selected
 	 * @return
 	 */
-	public static ContextMenu createClickMenu(ListView<String> listView, 
+	public static ContextMenu createClickMenu(ListView listView, 
 		ContextMenu oldContextMenu, String addText, String removeText, 
 		EventHandler<ActionEvent> addHandler, EventHandler<ActionEvent> removeHandler){
 		ContextMenu newContextMenu = new ContextMenu();
