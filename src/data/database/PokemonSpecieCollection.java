@@ -69,6 +69,7 @@ public class PokemonSpecieCollection extends DataCollectionAbstract{
 		System.exit(1);
 	    }
 	    species.put(specie.getSpecieName(), specie);
+	    System.out.println("Sucessfully parsed specie " + specie.getSpecieName());
 	}
     }
 
