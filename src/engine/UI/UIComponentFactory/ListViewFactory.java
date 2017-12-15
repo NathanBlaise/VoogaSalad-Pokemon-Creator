@@ -9,7 +9,7 @@ import javafx.scene.control.ContextMenu;
 import javafx.util.Callback;
 /**
  * 
- * @author DanSun for commenting
+ * @author DanSun: commenting cy122: creator
  *
  */
 public class ListViewFactory {

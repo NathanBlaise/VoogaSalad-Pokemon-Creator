@@ -21,7 +21,7 @@ import engine.movement.PlayerMovement;
 
 public class PokemonGameScene extends GameScene{
 
-	private static final int PLAYER_WIDTH = 45;
+	private static final int PLAYER_WIDTH = 40;
 	private static final int PLAYER_HEIGHT = 45;
 	private static final int sizeBlockX = PLAYER_WIDTH - 2*offsetX;
 	private static final int sizeBlockY = PLAYER_HEIGHT - 2*offsetY;

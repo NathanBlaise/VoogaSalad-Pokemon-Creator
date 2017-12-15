@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import data.map.GameMap;
 import data.model.Pokemon;
 import data.player.Player;
+import engine.UI.Fade;
 import engine.battle.BattleScene;
 import engine.game.GameScene;
 
@@ -60,7 +61,6 @@ public class InstructionPokemonFight extends Instruction{
 	 */
 	public void execute(int SCREEN_WIDTH, int SCREEN_HEIGHT, Player mainPlayer,
 			GameMap mainMap, Event event, GameScene gameScene) {
-//<<<<<<< HEAD
 		BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,mainPlayer,pokemon, gameScene, gameScene.getStage(), e->{
 			for(Pokemon pokemon: mainPlayer.getPokemons()){
 				if(pokemon!=null){
@@ -76,23 +76,8 @@ public class InstructionPokemonFight extends Instruction{
 			gameScene.changeBackScene();
 			return null;
 		});
-//=======
-//	    	if(pokemon.isDead()) {
-//	    	    //do not fight dead pokemons
-//			ArrayList<Instruction> newInstructions = event.getInstructions();
-//			newInstructions.remove(this);
-//			event.setInstructions(newInstructions);
-//			if (event.getInstructions().size() == 0) {
-//			    mainMap.removeEvent(event);
-//			}
-//			gameScene.changeBackSceneFromWinningBattle();
-//			return;
-//	    	}
-//		BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,mainPlayer,null,pokemon, gameScene, gameScene.getStage());
-//>>>>>>> master
 		// Change the battle scene here
-		((Stage) gameScene.getScene().getWindow()).setScene(battle.getScene());					
-
+		Fade.FadeFromOneSceneToAnother(gameScene, battle, e->{((Stage) gameScene.getScene().getWindow()).setScene(battle.getScene());return null;});
 	}
 
 }
