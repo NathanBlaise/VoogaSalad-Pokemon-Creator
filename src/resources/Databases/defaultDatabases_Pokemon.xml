@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_102" class="java.beans.XMLDecoder">
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
  <object class="data.Database" id="Database0">
   <void property="maps">
    <void method="add">
@@ -1591,7 +1591,7 @@
      <void method="add">
       <object class="data.model.PacmanEnemy">
        <void property="imagePath">
-        <string>images/pacman_enemies/pacman_enemy_2.png</string>
+        <string>images/pacman_enemies/pacman_enemy_3.png</string>
        </void>
        <void property="speed">
         <int>5</int>
@@ -1601,7 +1601,7 @@
      <void method="add">
       <object class="data.model.PacmanEnemy">
        <void property="imagePath">
-        <string>images/pacman_enemies/pacman_enemy_3.png</string>
+        <string>images/pacman_enemies/pacman_enemy_2.png</string>
        </void>
        <void property="speed">
         <int>5</int>
@@ -29379,15 +29379,18 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/tiles4shop/floor.png</string>
+          <string>images/tiles/watercenter.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>Floor</string>
+        <string>pond</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
        </void>
        <void property="wholePic">
-        <string>images/tiles/tiles4shop/floor.png</string>
+        <string>images/tiles/watercenter.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -29402,18 +29405,15 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/watercenter.png</string>
+          <string>images/tiles/tiles4shop/floor.png</string>
          </void>
         </object>
        </void>
        <void property="name">
-        <string>pond</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
+        <string>Floor</string>
        </void>
        <void property="wholePic">
-        <string>images/tiles/watercenter.png</string>
+        <string>images/tiles/tiles4shop/floor.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -29783,6 +29783,58 @@
        </void>
        <void property="wholePic">
         <string>images/tiles/tiles4shop/wall.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/edgecenter.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Edge of water</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/edgecenter.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/stonecenter.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>stone in water</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/stonecenter.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -30492,58 +30544,6 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/edgecenter.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>Edge of water</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/edgecenter.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/stonecenter.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>stone in water</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/stonecenter.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
           <string>images/tiles/cornerdirt.png</string>
          </void>
         </object>
@@ -30628,56 +30628,6 @@
        </void>
        <void property="width">
         <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>3</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House1.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House2.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House3.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House4.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House5.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House6.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House7.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House8.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/houseSplitedWithBackground/House9.jpg</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>House</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
-       <void property="wholePic">
-        <string>images/houseSplitedWithBackground/House.jpg</string>
-       </void>
-       <void property="width">
-        <int>3</int>
        </void>
       </object>
      </void>
@@ -31112,6 +31062,415 @@
        </void>
        <void property="name">
         <string>CenterF2</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/tiles4shop/deskWhole.png</string>
+       </void>
+       <void property="width">
+        <int>14</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>3</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House1.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House2.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House3.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House4.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House5.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House6.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House7.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House8.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/houseSplitedWithBackground/House9.jpg</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>House</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/houseSplitedWithBackground/House.jpg</string>
+       </void>
+       <void property="width">
+        <int>3</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>8</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/Center1/image_part_001.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_002.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_003.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_004.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_005.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_006.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_007.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_008.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_009.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_010.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_011.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_012.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_013.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_014.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_015.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_016.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_017.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_018.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_019.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_020.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_021.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_022.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_023.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_024.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_025.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_026.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_027.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_028.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_029.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_030.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_031.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_032.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_033.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_034.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_035.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_036.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_037.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_038.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_039.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_040.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_041.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_042.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_043.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_044.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_045.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_046.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_047.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_048.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_049.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_050.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_051.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_052.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_053.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_054.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_055.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_056.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_057.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_058.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_059.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_060.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_061.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_062.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_063.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_064.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_065.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_066.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_067.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_068.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_069.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_070.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_071.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_072.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_073.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_074.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_075.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_076.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_077.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_078.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_079.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_080.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_081.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_082.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_083.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_084.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_085.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_086.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_087.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_088.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_089.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_090.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_091.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_092.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_093.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_094.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_095.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_096.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_097.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_098.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_099.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_100.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_101.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_102.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_103.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_104.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_105.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_106.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_107.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_108.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_109.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_110.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_111.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/Center1/image_part_112.jpg</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>CenterInside</string>
        </void>
        <void property="obstacle">
         <boolean>true</boolean>
@@ -33841,365 +34200,6 @@
        </void>
        <void property="width">
         <int>30</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>8</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/Center1/image_part_001.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_002.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_003.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_004.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_005.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_006.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_007.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_008.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_009.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_010.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_011.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_012.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_013.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_014.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_015.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_016.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_017.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_018.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_019.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_020.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_021.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_022.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_023.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_024.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_025.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_026.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_027.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_028.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_029.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_030.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_031.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_032.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_033.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_034.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_035.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_036.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_037.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_038.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_039.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_040.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_041.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_042.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_043.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_044.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_045.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_046.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_047.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_048.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_049.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_050.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_051.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_052.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_053.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_054.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_055.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_056.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_057.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_058.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_059.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_060.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_061.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_062.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_063.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_064.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_065.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_066.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_067.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_068.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_069.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_070.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_071.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_072.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_073.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_074.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_075.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_076.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_077.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_078.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_079.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_080.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_081.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_082.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_083.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_084.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_085.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_086.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_087.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_088.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_089.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_090.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_091.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_092.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_093.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_094.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_095.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_096.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_097.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_098.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_099.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_100.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_101.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_102.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_103.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_104.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_105.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_106.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_107.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_108.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_109.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_110.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_111.jpg</string>
-         </void>
-         <void method="add">
-          <string>images/Center1/image_part_112.jpg</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>CenterInside</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/tiles4shop/deskWhole.png</string>
-       </void>
-       <void property="width">
-        <int>14</int>
        </void>
       </object>
      </void>
