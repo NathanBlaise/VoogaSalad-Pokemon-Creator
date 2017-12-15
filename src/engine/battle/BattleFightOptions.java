@@ -142,8 +142,8 @@ public class BattleFightOptions {
 				hbox.getChildren().addAll(confirm,back,moveInfo);
 				confirm.setOnAction((e) -> {
 					move.move(activePokemon, enemyPokemon);
-					System.out.println("Move " + move.getMoveName() + 
-						" has PP "+move.getPP());
+//					System.out.println("Move " + move.getMoveName() + 
+//						" has PP "+move.getPP());
 					//Load hit animation, then change scene to enemy's move
 					changeScene();
 					activePokemon.printCurrentInfo();

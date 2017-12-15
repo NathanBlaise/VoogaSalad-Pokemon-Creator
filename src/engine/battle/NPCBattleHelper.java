@@ -260,7 +260,7 @@ public class NPCBattleHelper extends ScreenDisplay { //Really messy class, needs
 			gc.drawImage(pokemonBack, g1x + pokemonOffset2 + 30, 350 - pokemonBack.getHeight()); // drawPokemon
 
 			HPBoxXPos = HPBoxXPos - HPBoxSpeed;
-			System.out.println(HPBoxXPos);
+//			System.out.println(HPBoxXPos);
 			gc.drawImage(HPBox2, HPBoxXPos2, 48);
 			gc.drawImage(HPBox1, HPBoxXPos, 222);
 
