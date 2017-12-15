@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 import data.event.Event;
+import data.map.GameMap;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -15,6 +16,8 @@ import javafx.util.Pair;
 import engine.Engine;
 import engine.game.GameScene;
 import engine.game.UserPage;
+import engine.game.keyItemInterface;
+import engine.movement.Bicycle;
 import engine.movement.Collisions;
 import engine.movement.Direction;
 import engine.movement.PlayerMovement;
@@ -23,14 +26,18 @@ import engine.movement.PlayerMovement;
  * @author nathan cy122 
  *
  */
-public class PokemonGameScene extends GameScene{
+
+public class PokemonGameScene extends GameScene implements keyItemInterface{
 
 	private static final int PLAYER_WIDTH = 40;
 	private static final int PLAYER_HEIGHT = 45;
 	private static final int sizeBlockX = PLAYER_WIDTH - 2*offsetX;
 	private static final int sizeBlockY = PLAYER_HEIGHT - 2*offsetY;
 	private final Image image = new Image("file:images/emerald_down_rest.png");
+	private final Image bike_rest_image = new Image("file:images/Bike_left_1.gif");
 	private PlayerMovement playerMoves;
+	private Bicycle myBike = new Bicycle();
+	private Direction direction;
 	
 	{
 		Image emerald_down_rest = new Image("file:images/emerald_down_rest.png");
@@ -49,7 +56,7 @@ public class PokemonGameScene extends GameScene{
 		ArrayList<Image> down = new ArrayList<Image>(Arrays.asList(emerald_down_rest, emerald_down_1, emerald_down_2));
 		ArrayList<Image> left = new ArrayList<Image>(Arrays.asList(emerald_left_rest, emerald_left_1, emerald_left_2));
 		ArrayList<Image> right = new ArrayList<Image>(Arrays.asList(emerald_right_rest, emerald_right_1, emerald_right_2));
-		Direction direction = new Direction(up, down, left, right);
+		direction = new Direction(up, down, left, right);
 		playerMoves = new PlayerMovement(direction);
 	}
 	
@@ -57,6 +64,10 @@ public class PokemonGameScene extends GameScene{
 			Engine engine, Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, 480, 480, background, engine, stage, true);
 		playerImage.setImage(image);
+		GameMap map = engine.getDatabase().searchMap(mainPlayer.getCurrentMapName());
+		if(map ==null){
+			mainPlayer.setCurrentMapName(super.getDatabase().getMap().getName());
+		}
 		refreshMap(engine.getDatabase().searchMap(mainPlayer.getCurrentMapName()), mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
 		changeBackScene();
 		input.getInputList().clear();
@@ -66,7 +77,7 @@ public class PokemonGameScene extends GameScene{
 	protected void step()  {
 		if(input.getInputList().contains(KeyCode.ENTER.toString())) {
 			super.pause();
-			UserPage userPage = new UserPage(super.getDatabase(), super.getStage(), super.getScene(), super.getRoot());
+			UserPage userPage = new UserPage(super.getDatabase(), super.getStage(), this, super.getRoot());
 			super.getScene().setOnKeyPressed(i->{
 				userPage.handleKeyInput(super.getStage(), super.getRoot(), i.getCode(), h->{
 					super.changeBackScene();
@@ -103,4 +114,27 @@ public class PokemonGameScene extends GameScene{
 		}
 	}
 
+	
+
+	@Override
+	public void changeToBike() {
+		playerImage.setImage(bike_rest_image);
+		playerMoves.setPlayerMovement(myBike.MakeBicycleSprite());
+		myBike.setBikingStatus(true);
+	}
+	
+	
+	
+	@Override
+	public void changeToWalk() {
+		playerImage.setImage(image);
+		playerMoves.setPlayerMovement(direction);
+		myBike.setBikingStatus(false);
+	}
+
+	@Override
+	public boolean isBiking() {
+		
+		return myBike.getBikingStatus();
+	}
 }

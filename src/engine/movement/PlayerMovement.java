@@ -19,6 +19,7 @@ public class PlayerMovement {
 	private int frame = 0;
 	private Direction direction;
 	
+	
 	public PlayerMovement(Direction direction){
 		this.direction = direction;
 	}
@@ -68,5 +69,9 @@ public class PlayerMovement {
 		return new Pair<Integer, Integer>(new Double(posX/gridWidth).intValue(), new Double(posY/gridHeight).intValue());
 	}
 	
+	
+	public void setPlayerMovement(Direction direction) {
+		this.direction = direction;
+	}
 	
 }

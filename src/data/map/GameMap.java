@@ -3,9 +3,6 @@ package data.map;
 import java.io.Serializable;
 
 import data.event.Event;
-import data.event.EventPokemon;
-import engine.UI.Path2Image;
-import javafx.scene.image.ImageView;
 
 /**
  * Map is responsible for showing all the information needed to show a map on the screen,

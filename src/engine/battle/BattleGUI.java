@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import data.model.Pokemon;
 import javafx.collections.ObservableList;
@@ -19,7 +20,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 public class BattleGUI {
-	
+	private static final String DEFAULT_RESOURCE_PACKAGE = "util/English_Text";
+	private ResourceBundle myResources;
 	private Image grassBattleBackground = new Image("file:images/grass_battle_background.png");
 	private Image grassBattleGrass1 = new Image("file:images/grass_battle_grass_1.png");
 	private Image grassBattleGrass2 = new Image("file:images/grass_battle_grass_2.png");
@@ -49,6 +51,7 @@ public class BattleGUI {
 		this.gc = gc;
 		playerPokemon = pokemon1;
 		enemyPokemon = pokemon2;
+		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE);
 		setUpScreen();
 	}
 	
@@ -90,7 +93,7 @@ public class BattleGUI {
 	}
 	
 	private void setButtonStyle(Button b) {
-		b.setStyle("-fx-border-color: transparent; -fx-border-width: 0;-fx-background-radius: 0;-fx-background-color: transparent;");
+		b.setStyle(myResources.getString("buttonStyle"));
 		Font font=getFont();
 		b.setFont(font);
 	}
@@ -98,7 +101,7 @@ public class BattleGUI {
 	private Font getFont() {
 		Font f = new Font(30) ;
 		try {
-			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), 20);
+			f = Font.loadFont(new FileInputStream(new File(myResources.getString("fontPath"))), 20);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();//handled by exiting the program
 			System.exit(1);
@@ -112,14 +115,14 @@ public class BattleGUI {
 	 */
 	String backSpriteURL(Pokemon myPokemon) {
 		System.out.printf("%d\n", myPokemon.getSpecieIndex(myPokemon.getCurrentLevel()));
-		return "file:images/pokemon_back_sprites/"+myPokemon.getSpecieIndex(myPokemon.getCurrentLevel())+".png";
+		return myResources.getString("backSpritePath")+myPokemon.getSpecieIndex(myPokemon.getCurrentLevel())+myResources.getString("suffix");
 	}
 	
 	/*
 	 * Passed in the enemy pokemon; return the gif version of the picture
 	 */
 	private String gifSpriteURL(Pokemon enemyPokemon) {
-		return "file:images/pokemon_sprites/"+enemyPokemon.getSpecieIndex(enemyPokemon.getCurrentLevel())+".gif_.gif";
+		return myResources.getString("spritePath")+enemyPokemon.getSpecieIndex(enemyPokemon.getCurrentLevel())+myResources.getString("gifSuffix");
 	}
 
 }
