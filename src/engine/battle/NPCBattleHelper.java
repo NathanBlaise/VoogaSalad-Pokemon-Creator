@@ -11,6 +11,7 @@ import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
 
 import authoring.ScreenDisplay;
@@ -20,12 +21,14 @@ public class NPCBattleHelper extends ScreenDisplay { //Really messy class, needs
 	
 	private Canvas battleCanvas;
 	private GraphicsContext gc;
+	private ResourceBundle myResources;
+	private static final String DEFAULT_RESOURCE_PACKAGE = "util/English_Text";
 	
 	
 	public NPCBattleHelper(int width, int height, Paint background, GameScene myself, Collection<String> inputList) {
 		super(width, height, background);
 		// TODO Auto-generated constructor stub
-
+		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE);
 		battleCanvas = new Canvas(720,480);
 		gc = battleCanvas.getGraphicsContext2D();
 		this.rootAdd(battleCanvas);
@@ -331,12 +334,12 @@ public class NPCBattleHelper extends ScreenDisplay { //Really messy class, needs
 
 	public void randomPokemon() {
 		num = ThreadLocalRandom.current().nextInt(386) + 1;
-		pokemon = new Image("file:images/pokemon_sprites/" + num + ".gif_.gif");
+		pokemon = new Image(myResources.getString("spritePath") + num + myResources.getString("gifSuffix"));
 	}
 
 	public void randomPokemonBack() {
 		num = ThreadLocalRandom.current().nextInt(386) + 1;
-		pokemonBack = new Image("file:images/pokemon_back_sprites/" + num + ".png");
+		pokemonBack = new Image(myResources.getString("backSpritePath")  + num + myResources.getString("suffix"));
 	}
 
 }
