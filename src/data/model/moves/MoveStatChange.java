@@ -67,10 +67,10 @@ public class MoveStatChange extends Move{
 			PokemonStat targetStat = targetPokemon.getLevelStats().get(targetLevel);
 			PokemonStat currentStat = targetPokemon.getCurrentStat();
 			for(String property: properties){
-			    	System.out.println("Changing property " + property ) ;
+//			    	System.out.println("Changing property " + property ) ;
 				Method getPropertyMethod = PokemonStat.class.getMethod("get"+property);
 				int propertyTargetValue = (int)getPropertyMethod.invoke(targetStat);
-				System.out.println("TargetValue: " + propertyTargetValue);
+//				System.out.println("TargetValue: " + propertyTargetValue);
 				Method setPropertyMethod = PokemonStat.class.getMethod("set"+property, int.class);
 				setPropertyMethod.invoke(currentStat, propertyTargetValue);
 				
