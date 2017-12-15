@@ -18,7 +18,11 @@ import engine.game.UserPage;
 import engine.movement.Collisions;
 import engine.movement.Direction;
 import engine.movement.PlayerMovement;
-
+/**
+ * 
+ * @author nathan cy122 
+ *
+ */
 public class PokemonGameScene extends GameScene{
 
 	private static final int PLAYER_WIDTH = 40;

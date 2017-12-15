@@ -11,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import authoring.databaseEditor.NPCChooser;
+import data.Database;
 import data.LanguageReader;
 import data.event.Event;
 import data.event.EventNPC;
@@ -30,12 +31,14 @@ public class NPCEventEditor{
 		private EventNPC eventNPC;
 		private Callback<Event, Integer> saver;
 		private List<PokemonSpecie> pokemonSpecies;
+		private Database database;
 		
-		public NPCEventEditor(EventNPC selectedEventNPC, List<PokemonSpecie> pokemonSpecies, Callback<Event, Integer> saver){
+		public NPCEventEditor(EventNPC selectedEventNPC, Database database, List<PokemonSpecie> pokemonSpecies, Callback<Event, Integer> saver){
 			stage = new Stage();
 			eventNPC = selectedEventNPC;
 			this.pokemonSpecies = new ArrayList<PokemonSpecie>(pokemonSpecies);
 			this.saver = saver;
+			this.database = database;
 			editNPC(selectedEventNPC.getNpc());
 			stage.getScene().getStylesheets().add("resources/sceneStyle.css");
 			stage.show();
@@ -82,7 +85,7 @@ public class NPCEventEditor{
 				if(!(instruction instanceof InstructionNPCDialogue)){
 					instruction = new InstructionNPCDialogue(eventNPC.getNpc(), new ArrayList<String>());
 				}
-				instructionPane.setCenter(new InstructionNPCDialogueEditor((InstructionNPCDialogue) instruction, e).showEditor());
+				instructionPane.setCenter(new InstructionNPCDialogueEditor((InstructionNPCDialogue) instruction, database, e).showEditor());
 				instructionPane.autosize();
 				stage.sizeToScene();
 				return null;
