@@ -79,7 +79,7 @@ public class MoveStatChange extends Move{
 		} catch (NoSuchMethodException|SecurityException|IllegalAccessException|IllegalArgumentException|InvocationTargetException e) {
 			// DO NOTHING
 		    	System.out.println("Change Stat Failed!");
-			e.printStackTrace();
+			e.printStackTrace(); //handled by exiting the program
 			System.exit(1);
 		} 
 	}

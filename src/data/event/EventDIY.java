@@ -10,6 +10,10 @@ public class EventDIY extends Event{
 	{
 		availableInstructions.add("InstructionGoMap");
 		availableInstructions.add("InstructionGoShop");
+		availableInstructions.add("InstructionVictory");
+		availableInstructions.add("InstructionPokemonFight");
+		availableInstructions.add("InstructionCheckKeyItem");
+		availableInstructions.add("InstructionGiveKeyItem");
 	}
 	
 	/**

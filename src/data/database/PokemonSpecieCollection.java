@@ -63,10 +63,9 @@ public class PokemonSpecieCollection extends DataCollectionAbstract{
 	    try {
 		specie = fileParser.parseFile(specieFile);
 	    } catch (ParserConfigurationException | SAXException | IOException e) {
-		//TODO: handle exception better
 		System.out.println("Failed to parse specie from file " + 
 			specieFile.getAbsolutePath());
-		e.printStackTrace();
+		e.printStackTrace();//handled by exiting the program
 		System.exit(1);
 	    }
 	    species.put(specie.getSpecieName(), specie);

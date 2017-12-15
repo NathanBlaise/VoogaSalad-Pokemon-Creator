@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_101" class="java.beans.XMLDecoder">
+<java version="1.8.0_121" class="java.beans.XMLDecoder">
  <object class="data.Database" id="Database0">
   <void property="maps">
    <void method="add">
@@ -1626,17 +1626,17 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
-          <string>images/pokemons/pikachu.png</string>
+          <string>images/pokemon_sprites/25.gif</string>
          </void>
          <void method="put">
           <int>50</int>
-          <string>images/pokemons/raichu.png</string>
+          <string>images/pokemon_sprites/26.gif</string>
          </void>
         </object>
        </void>
@@ -1948,19 +1948,23 @@
         <object class="java.util.HashMap" id="HashMap1">
          <void method="put">
           <int>1</int>
-          <object class="data.model.moves.MoveDatabase.MoveGrowl"/>
+          <object class="data.model.moves.MoveDatabase.MoveThunderShock"/>
          </void>
          <void method="put">
-          <int>5</int>
-          <object class="data.model.moves.MoveDatabase.MoveQuickAttack"/>
+          <int>50</int>
+          <object class="data.model.moves.MoveDatabase.MoveWildCharge"/>
          </void>
          <void method="put">
           <int>10</int>
-          <object class="data.model.moves.MoveDatabase.MoveTailWhip"/>
+          <object class="data.model.moves.MoveDatabase.MoveQuickAttack"/>
          </void>
          <void method="put">
-          <int>15</int>
-          <object class="data.model.moves.MoveDatabase.MoveThunderShock"/>
+          <int>26</int>
+          <object class="data.model.moves.MoveDatabase.MoveSpark"/>
+         </void>
+         <void method="put">
+          <int>58</int>
+          <object class="data.model.moves.MoveDatabase.MoveThunder"/>
          </void>
         </object>
        </void>
@@ -3934,16 +3938,16 @@
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
          <void method="put">
+          <int>16</int>
+          <string>images/pokemon_sprites/2.gif</string>
+         </void>
+         <void method="put">
+          <int>32</int>
+          <string>images/pokemon_sprites/3.gif</string>
+         </void>
+         <void method="put">
           <int>1</int>
-          <string>images/pokemons/1.gif</string>
-         </void>
-         <void method="put">
-          <int>50</int>
-          <string>images/pokemons/3.gif</string>
-         </void>
-         <void method="put">
-          <int>25</int>
-          <string>images/pokemons/2.gif</string>
+          <string>images/pokemon_sprites/1.gif</string>
          </void>
         </object>
        </void>
@@ -4255,11 +4259,31 @@
         <object class="java.util.HashMap">
          <void method="put">
           <int>1</int>
+          <object class="data.model.moves.MoveDatabase.MoveTackle"/>
+         </void>
+         <void method="put">
+          <int>3</int>
           <object class="data.model.moves.MoveDatabase.MoveGrowl"/>
+         </void>
+         <void method="put">
+          <int>19</int>
+          <object class="data.model.moves.MoveDatabase.MoveRazorLeaf"/>
+         </void>
+         <void method="put">
+          <int>37</int>
+          <object class="data.model.moves.MoveDatabase.MoveSeedBomb"/>
          </void>
          <void method="put">
           <int>7</int>
           <object class="data.model.moves.MoveDatabase.MoveVineWhip"/>
+         </void>
+         <void method="put">
+          <int>27</int>
+          <object class="data.model.moves.MoveDatabase.MoveDoubleEdge"/>
+         </void>
+         <void method="put">
+          <int>15</int>
+          <object class="data.model.moves.MoveDatabase.MoveTakeDown"/>
          </void>
         </object>
        </void>
@@ -6233,16 +6257,16 @@
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
          <void method="put">
+          <int>16</int>
+          <string>images/pokemon_sprites/5.gif</string>
+         </void>
+         <void method="put">
           <int>1</int>
-          <string>images/pokemons/4.gif</string>
+          <string>images/pokemon_sprites/4.gif</string>
          </void>
          <void method="put">
-          <int>50</int>
-          <string>images/pokemons/6.gif</string>
-         </void>
-         <void method="put">
-          <int>25</int>
-          <string>images/pokemons/5.gif</string>
+          <int>36</int>
+          <string>images/pokemon_sprites/6.gif</string>
          </void>
         </object>
        </void>
@@ -6553,16 +6577,36 @@
        <void property="levelMoves">
         <object class="java.util.HashMap">
          <void method="put">
+          <int>16</int>
+          <object class="data.model.moves.MoveDatabase.MoveDragonRage"/>
+         </void>
+         <void method="put">
           <int>1</int>
-          <object class="data.model.moves.MoveDatabase.MoveGrowl"/>
+          <object class="data.model.moves.MoveDatabase.MoveScratch"/>
+         </void>
+         <void method="put">
+          <int>34</int>
+          <object class="data.model.moves.MoveDatabase.MoveSlash"/>
+         </void>
+         <void method="put">
+          <int>37</int>
+          <object class="data.model.moves.MoveDatabase.MoveFlameThrower"/>
          </void>
          <void method="put">
           <int>7</int>
           <object class="data.model.moves.MoveDatabase.MoveEmber"/>
          </void>
          <void method="put">
-          <int>47</int>
-          <object class="data.model.moves.MoveDatabase.MoveDragonRage"/>
+          <int>25</int>
+          <object class="data.model.moves.MoveDatabase.MoveFireFang"/>
+         </void>
+         <void method="put">
+          <int>28</int>
+          <object class="data.model.moves.MoveDatabase.MoveFlameBurst"/>
+         </void>
+         <void method="put">
+          <int>46</int>
+          <object class="data.model.moves.MoveDatabase.MoveInferno"/>
          </void>
         </object>
        </void>
@@ -8536,16 +8580,16 @@
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
          <void method="put">
+          <int>16</int>
+          <string>images/pokemon_sprites/8.gif</string>
+         </void>
+         <void method="put">
           <int>1</int>
-          <string>images/pokemons/7.gif</string>
+          <string>images/pokemon_sprites/7.gif</string>
          </void>
          <void method="put">
-          <int>50</int>
-          <string>images/pokemons/9.gif</string>
-         </void>
-         <void method="put">
-          <int>25</int>
-          <string>images/pokemons/8.gif</string>
+          <int>36</int>
+          <string>images/pokemon_sprites/9.gif</string>
          </void>
         </object>
        </void>
@@ -8856,2331 +8900,24 @@
        <void property="levelMoves">
         <object class="java.util.HashMap">
          <void method="put">
-          <int>1</int>
-          <object class="data.model.moves.MoveDatabase.MoveTailWhip"/>
-         </void>
-         <void method="put">
-          <int>2</int>
-          <object class="data.model.moves.MoveDatabase.MoveDragonRage"/>
-         </void>
-         <void method="put">
-          <int>3</int>
-          <object class="data.model.moves.MoveDatabase.MoveEmber"/>
-         </void>
-         <void method="put">
-          <int>4</int>
-          <object class="data.model.moves.MoveDatabase.MoveGrowl"/>
-         </void>
-         <void method="put">
-          <int>5</int>
-          <object class="data.model.moves.MoveDatabase.MoveQuickAttack"/>
-         </void>
-         <void method="put">
-          <int>6</int>
-          <object class="data.model.moves.MoveDatabase.MoveScratch"/>
-         </void>
-         <void method="put">
-          <int>7</int>
-          <object class="data.model.moves.MoveDatabase.MoveThunderShock"/>
-         </void>
-         <void method="put">
-          <int>8</int>
-          <object class="data.model.moves.MoveDatabase.MoveVineWhip"/>
-         </void>
-        </object>
-       </void>
-       <void property="levelStats">
-        <object class="java.util.HashMap">
-         <void method="put">
-          <int>1</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>64</int>
-           </void>
-           <void property="maxHP">
-            <int>64</int>
-           </void>
-           <void property="normalAttack">
-            <int>49</int>
-           </void>
-           <void property="normalDefense">
-            <int>66</int>
-           </void>
-           <void property="specialAttack">
-            <int>51</int>
-           </void>
-           <void property="specialDefense">
-            <int>65</int>
-           </void>
-           <void property="speed">
-            <int>44</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>2</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>84</int>
-           </void>
-           <void property="maxHP">
-            <int>84</int>
-           </void>
-           <void property="normalAttack">
-            <int>50</int>
-           </void>
-           <void property="normalDefense">
-            <int>67</int>
-           </void>
-           <void property="specialAttack">
-            <int>52</int>
-           </void>
-           <void property="specialDefense">
-            <int>66</int>
-           </void>
-           <void property="speed">
-            <int>45</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>3</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>104</int>
-           </void>
-           <void property="maxHP">
-            <int>104</int>
-           </void>
-           <void property="normalAttack">
-            <int>51</int>
-           </void>
-           <void property="normalDefense">
-            <int>68</int>
-           </void>
-           <void property="specialAttack">
-            <int>53</int>
-           </void>
-           <void property="specialDefense">
-            <int>67</int>
-           </void>
-           <void property="speed">
-            <int>46</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>4</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>124</int>
-           </void>
-           <void property="maxHP">
-            <int>124</int>
-           </void>
-           <void property="normalAttack">
-            <int>52</int>
-           </void>
-           <void property="normalDefense">
-            <int>69</int>
-           </void>
-           <void property="specialAttack">
-            <int>54</int>
-           </void>
-           <void property="specialDefense">
-            <int>68</int>
-           </void>
-           <void property="speed">
-            <int>47</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>5</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>144</int>
-           </void>
-           <void property="maxHP">
-            <int>144</int>
-           </void>
-           <void property="normalAttack">
-            <int>53</int>
-           </void>
-           <void property="normalDefense">
-            <int>70</int>
-           </void>
-           <void property="specialAttack">
-            <int>55</int>
-           </void>
-           <void property="specialDefense">
-            <int>69</int>
-           </void>
-           <void property="speed">
-            <int>48</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>6</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>164</int>
-           </void>
-           <void property="maxHP">
-            <int>164</int>
-           </void>
-           <void property="normalAttack">
-            <int>54</int>
-           </void>
-           <void property="normalDefense">
-            <int>71</int>
-           </void>
-           <void property="specialAttack">
-            <int>56</int>
-           </void>
-           <void property="specialDefense">
-            <int>70</int>
-           </void>
-           <void property="speed">
-            <int>49</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>7</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>184</int>
-           </void>
-           <void property="maxHP">
-            <int>184</int>
-           </void>
-           <void property="normalAttack">
-            <int>55</int>
-           </void>
-           <void property="normalDefense">
-            <int>72</int>
-           </void>
-           <void property="specialAttack">
-            <int>57</int>
-           </void>
-           <void property="specialDefense">
-            <int>71</int>
-           </void>
-           <void property="speed">
-            <int>50</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>8</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>204</int>
-           </void>
-           <void property="maxHP">
-            <int>204</int>
-           </void>
-           <void property="normalAttack">
-            <int>56</int>
-           </void>
-           <void property="normalDefense">
-            <int>73</int>
-           </void>
-           <void property="specialAttack">
-            <int>58</int>
-           </void>
-           <void property="specialDefense">
-            <int>72</int>
-           </void>
-           <void property="speed">
-            <int>51</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>9</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>224</int>
-           </void>
-           <void property="maxHP">
-            <int>224</int>
-           </void>
-           <void property="normalAttack">
-            <int>57</int>
-           </void>
-           <void property="normalDefense">
-            <int>74</int>
-           </void>
-           <void property="specialAttack">
-            <int>59</int>
-           </void>
-           <void property="specialDefense">
-            <int>73</int>
-           </void>
-           <void property="speed">
-            <int>52</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>10</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>244</int>
-           </void>
-           <void property="maxHP">
-            <int>244</int>
-           </void>
-           <void property="normalAttack">
-            <int>58</int>
-           </void>
-           <void property="normalDefense">
-            <int>75</int>
-           </void>
-           <void property="specialAttack">
-            <int>60</int>
-           </void>
-           <void property="specialDefense">
-            <int>74</int>
-           </void>
-           <void property="speed">
-            <int>53</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>11</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>264</int>
-           </void>
-           <void property="maxHP">
-            <int>264</int>
-           </void>
-           <void property="normalAttack">
-            <int>59</int>
-           </void>
-           <void property="normalDefense">
-            <int>76</int>
-           </void>
-           <void property="specialAttack">
-            <int>61</int>
-           </void>
-           <void property="specialDefense">
-            <int>75</int>
-           </void>
-           <void property="speed">
-            <int>54</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>12</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>284</int>
-           </void>
-           <void property="maxHP">
-            <int>284</int>
-           </void>
-           <void property="normalAttack">
-            <int>60</int>
-           </void>
-           <void property="normalDefense">
-            <int>77</int>
-           </void>
-           <void property="specialAttack">
-            <int>62</int>
-           </void>
-           <void property="specialDefense">
-            <int>76</int>
-           </void>
-           <void property="speed">
-            <int>55</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>13</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>304</int>
-           </void>
-           <void property="maxHP">
-            <int>304</int>
-           </void>
-           <void property="normalAttack">
-            <int>61</int>
-           </void>
-           <void property="normalDefense">
-            <int>78</int>
-           </void>
-           <void property="specialAttack">
-            <int>63</int>
-           </void>
-           <void property="specialDefense">
-            <int>77</int>
-           </void>
-           <void property="speed">
-            <int>56</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>14</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>324</int>
-           </void>
-           <void property="maxHP">
-            <int>324</int>
-           </void>
-           <void property="normalAttack">
-            <int>62</int>
-           </void>
-           <void property="normalDefense">
-            <int>79</int>
-           </void>
-           <void property="specialAttack">
-            <int>64</int>
-           </void>
-           <void property="specialDefense">
-            <int>78</int>
-           </void>
-           <void property="speed">
-            <int>57</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>15</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>344</int>
-           </void>
-           <void property="maxHP">
-            <int>344</int>
-           </void>
-           <void property="normalAttack">
-            <int>63</int>
-           </void>
-           <void property="normalDefense">
-            <int>80</int>
-           </void>
-           <void property="specialAttack">
-            <int>65</int>
-           </void>
-           <void property="specialDefense">
-            <int>79</int>
-           </void>
-           <void property="speed">
-            <int>58</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
           <int>16</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>364</int>
-           </void>
-           <void property="maxHP">
-            <int>364</int>
-           </void>
-           <void property="normalAttack">
-            <int>64</int>
-           </void>
-           <void property="normalDefense">
-            <int>81</int>
-           </void>
-           <void property="specialAttack">
-            <int>66</int>
-           </void>
-           <void property="specialDefense">
-            <int>80</int>
-           </void>
-           <void property="speed">
-            <int>59</int>
-           </void>
-          </object>
+          <object class="data.model.moves.MoveDatabase.MoveBite"/>
          </void>
          <void method="put">
-          <int>17</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>384</int>
-           </void>
-           <void property="maxHP">
-            <int>384</int>
-           </void>
-           <void property="normalAttack">
-            <int>65</int>
-           </void>
-           <void property="normalDefense">
-            <int>82</int>
-           </void>
-           <void property="specialAttack">
-            <int>67</int>
-           </void>
-           <void property="specialDefense">
-            <int>81</int>
-           </void>
-           <void property="speed">
-            <int>60</int>
-           </void>
-          </object>
+          <int>1</int>
+          <object class="data.model.moves.MoveDatabase.MoveTackle"/>
          </void>
          <void method="put">
-          <int>18</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>404</int>
-           </void>
-           <void property="maxHP">
-            <int>404</int>
-           </void>
-           <void property="normalAttack">
-            <int>66</int>
-           </void>
-           <void property="normalDefense">
-            <int>83</int>
-           </void>
-           <void property="specialAttack">
-            <int>68</int>
-           </void>
-           <void property="specialDefense">
-            <int>82</int>
-           </void>
-           <void property="speed">
-            <int>61</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>19</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>424</int>
-           </void>
-           <void property="maxHP">
-            <int>424</int>
-           </void>
-           <void property="normalAttack">
-            <int>67</int>
-           </void>
-           <void property="normalDefense">
-            <int>84</int>
-           </void>
-           <void property="specialAttack">
-            <int>69</int>
-           </void>
-           <void property="specialDefense">
-            <int>83</int>
-           </void>
-           <void property="speed">
-            <int>62</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>20</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>444</int>
-           </void>
-           <void property="maxHP">
-            <int>444</int>
-           </void>
-           <void property="normalAttack">
-            <int>68</int>
-           </void>
-           <void property="normalDefense">
-            <int>85</int>
-           </void>
-           <void property="specialAttack">
-            <int>70</int>
-           </void>
-           <void property="specialDefense">
-            <int>84</int>
-           </void>
-           <void property="speed">
-            <int>63</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>21</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>464</int>
-           </void>
-           <void property="maxHP">
-            <int>464</int>
-           </void>
-           <void property="normalAttack">
-            <int>69</int>
-           </void>
-           <void property="normalDefense">
-            <int>86</int>
-           </void>
-           <void property="specialAttack">
-            <int>71</int>
-           </void>
-           <void property="specialDefense">
-            <int>85</int>
-           </void>
-           <void property="speed">
-            <int>64</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>22</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>484</int>
-           </void>
-           <void property="maxHP">
-            <int>484</int>
-           </void>
-           <void property="normalAttack">
-            <int>70</int>
-           </void>
-           <void property="normalDefense">
-            <int>87</int>
-           </void>
-           <void property="specialAttack">
-            <int>72</int>
-           </void>
-           <void property="specialDefense">
-            <int>86</int>
-           </void>
-           <void property="speed">
-            <int>65</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>23</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>504</int>
-           </void>
-           <void property="maxHP">
-            <int>504</int>
-           </void>
-           <void property="normalAttack">
-            <int>71</int>
-           </void>
-           <void property="normalDefense">
-            <int>88</int>
-           </void>
-           <void property="specialAttack">
-            <int>73</int>
-           </void>
-           <void property="specialDefense">
-            <int>87</int>
-           </void>
-           <void property="speed">
-            <int>66</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>24</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>524</int>
-           </void>
-           <void property="maxHP">
-            <int>524</int>
-           </void>
-           <void property="normalAttack">
-            <int>72</int>
-           </void>
-           <void property="normalDefense">
-            <int>89</int>
-           </void>
-           <void property="specialAttack">
-            <int>74</int>
-           </void>
-           <void property="specialDefense">
-            <int>88</int>
-           </void>
-           <void property="speed">
-            <int>67</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>25</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>544</int>
-           </void>
-           <void property="maxHP">
-            <int>544</int>
-           </void>
-           <void property="normalAttack">
-            <int>73</int>
-           </void>
-           <void property="normalDefense">
-            <int>90</int>
-           </void>
-           <void property="specialAttack">
-            <int>75</int>
-           </void>
-           <void property="specialDefense">
-            <int>89</int>
-           </void>
-           <void property="speed">
-            <int>68</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>26</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>564</int>
-           </void>
-           <void property="maxHP">
-            <int>564</int>
-           </void>
-           <void property="normalAttack">
-            <int>74</int>
-           </void>
-           <void property="normalDefense">
-            <int>91</int>
-           </void>
-           <void property="specialAttack">
-            <int>76</int>
-           </void>
-           <void property="specialDefense">
-            <int>90</int>
-           </void>
-           <void property="speed">
-            <int>69</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>27</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>584</int>
-           </void>
-           <void property="maxHP">
-            <int>584</int>
-           </void>
-           <void property="normalAttack">
-            <int>75</int>
-           </void>
-           <void property="normalDefense">
-            <int>92</int>
-           </void>
-           <void property="specialAttack">
-            <int>77</int>
-           </void>
-           <void property="specialDefense">
-            <int>91</int>
-           </void>
-           <void property="speed">
-            <int>70</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>28</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>604</int>
-           </void>
-           <void property="maxHP">
-            <int>604</int>
-           </void>
-           <void property="normalAttack">
-            <int>76</int>
-           </void>
-           <void property="normalDefense">
-            <int>93</int>
-           </void>
-           <void property="specialAttack">
-            <int>78</int>
-           </void>
-           <void property="specialDefense">
-            <int>92</int>
-           </void>
-           <void property="speed">
-            <int>71</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>29</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>624</int>
-           </void>
-           <void property="maxHP">
-            <int>624</int>
-           </void>
-           <void property="normalAttack">
-            <int>77</int>
-           </void>
-           <void property="normalDefense">
-            <int>94</int>
-           </void>
-           <void property="specialAttack">
-            <int>79</int>
-           </void>
-           <void property="specialDefense">
-            <int>93</int>
-           </void>
-           <void property="speed">
-            <int>72</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>30</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>644</int>
-           </void>
-           <void property="maxHP">
-            <int>644</int>
-           </void>
-           <void property="normalAttack">
-            <int>78</int>
-           </void>
-           <void property="normalDefense">
-            <int>95</int>
-           </void>
-           <void property="specialAttack">
-            <int>80</int>
-           </void>
-           <void property="specialDefense">
-            <int>94</int>
-           </void>
-           <void property="speed">
-            <int>73</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>31</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>664</int>
-           </void>
-           <void property="maxHP">
-            <int>664</int>
-           </void>
-           <void property="normalAttack">
-            <int>79</int>
-           </void>
-           <void property="normalDefense">
-            <int>96</int>
-           </void>
-           <void property="specialAttack">
-            <int>81</int>
-           </void>
-           <void property="specialDefense">
-            <int>95</int>
-           </void>
-           <void property="speed">
-            <int>74</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>32</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>684</int>
-           </void>
-           <void property="maxHP">
-            <int>684</int>
-           </void>
-           <void property="normalAttack">
-            <int>80</int>
-           </void>
-           <void property="normalDefense">
-            <int>97</int>
-           </void>
-           <void property="specialAttack">
-            <int>82</int>
-           </void>
-           <void property="specialDefense">
-            <int>96</int>
-           </void>
-           <void property="speed">
-            <int>75</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>33</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>704</int>
-           </void>
-           <void property="maxHP">
-            <int>704</int>
-           </void>
-           <void property="normalAttack">
-            <int>81</int>
-           </void>
-           <void property="normalDefense">
-            <int>98</int>
-           </void>
-           <void property="specialAttack">
-            <int>83</int>
-           </void>
-           <void property="specialDefense">
-            <int>97</int>
-           </void>
-           <void property="speed">
-            <int>76</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>34</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>724</int>
-           </void>
-           <void property="maxHP">
-            <int>724</int>
-           </void>
-           <void property="normalAttack">
-            <int>82</int>
-           </void>
-           <void property="normalDefense">
-            <int>99</int>
-           </void>
-           <void property="specialAttack">
-            <int>84</int>
-           </void>
-           <void property="specialDefense">
-            <int>98</int>
-           </void>
-           <void property="speed">
-            <int>77</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>35</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>744</int>
-           </void>
-           <void property="maxHP">
-            <int>744</int>
-           </void>
-           <void property="normalAttack">
-            <int>83</int>
-           </void>
-           <void property="normalDefense">
-            <int>100</int>
-           </void>
-           <void property="specialAttack">
-            <int>85</int>
-           </void>
-           <void property="specialDefense">
-            <int>99</int>
-           </void>
-           <void property="speed">
-            <int>78</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>36</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>764</int>
-           </void>
-           <void property="maxHP">
-            <int>764</int>
-           </void>
-           <void property="normalAttack">
-            <int>84</int>
-           </void>
-           <void property="normalDefense">
-            <int>101</int>
-           </void>
-           <void property="specialAttack">
-            <int>86</int>
-           </void>
-           <void property="specialDefense">
-            <int>100</int>
-           </void>
-           <void property="speed">
-            <int>79</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>37</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>784</int>
-           </void>
-           <void property="maxHP">
-            <int>784</int>
-           </void>
-           <void property="normalAttack">
-            <int>85</int>
-           </void>
-           <void property="normalDefense">
-            <int>102</int>
-           </void>
-           <void property="specialAttack">
-            <int>87</int>
-           </void>
-           <void property="specialDefense">
-            <int>101</int>
-           </void>
-           <void property="speed">
-            <int>80</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>38</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>804</int>
-           </void>
-           <void property="maxHP">
-            <int>804</int>
-           </void>
-           <void property="normalAttack">
-            <int>86</int>
-           </void>
-           <void property="normalDefense">
-            <int>103</int>
-           </void>
-           <void property="specialAttack">
-            <int>88</int>
-           </void>
-           <void property="specialDefense">
-            <int>102</int>
-           </void>
-           <void property="speed">
-            <int>81</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>39</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>824</int>
-           </void>
-           <void property="maxHP">
-            <int>824</int>
-           </void>
-           <void property="normalAttack">
-            <int>87</int>
-           </void>
-           <void property="normalDefense">
-            <int>104</int>
-           </void>
-           <void property="specialAttack">
-            <int>89</int>
-           </void>
-           <void property="specialDefense">
-            <int>103</int>
-           </void>
-           <void property="speed">
-            <int>82</int>
-           </void>
-          </object>
+          <int>7</int>
+          <object class="data.model.moves.MoveDatabase.MoveWaterGun"/>
          </void>
          <void method="put">
           <int>40</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>844</int>
-           </void>
-           <void property="maxHP">
-            <int>844</int>
-           </void>
-           <void property="normalAttack">
-            <int>88</int>
-           </void>
-           <void property="normalDefense">
-            <int>105</int>
-           </void>
-           <void property="specialAttack">
-            <int>90</int>
-           </void>
-           <void property="specialDefense">
-            <int>104</int>
-           </void>
-           <void property="speed">
-            <int>83</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>41</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>864</int>
-           </void>
-           <void property="maxHP">
-            <int>864</int>
-           </void>
-           <void property="normalAttack">
-            <int>89</int>
-           </void>
-           <void property="normalDefense">
-            <int>106</int>
-           </void>
-           <void property="specialAttack">
-            <int>91</int>
-           </void>
-           <void property="specialDefense">
-            <int>105</int>
-           </void>
-           <void property="speed">
-            <int>84</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>42</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>884</int>
-           </void>
-           <void property="maxHP">
-            <int>884</int>
-           </void>
-           <void property="normalAttack">
-            <int>90</int>
-           </void>
-           <void property="normalDefense">
-            <int>107</int>
-           </void>
-           <void property="specialAttack">
-            <int>92</int>
-           </void>
-           <void property="specialDefense">
-            <int>106</int>
-           </void>
-           <void property="speed">
-            <int>85</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>43</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>904</int>
-           </void>
-           <void property="maxHP">
-            <int>904</int>
-           </void>
-           <void property="normalAttack">
-            <int>91</int>
-           </void>
-           <void property="normalDefense">
-            <int>108</int>
-           </void>
-           <void property="specialAttack">
-            <int>93</int>
-           </void>
-           <void property="specialDefense">
-            <int>107</int>
-           </void>
-           <void property="speed">
-            <int>86</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>44</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>924</int>
-           </void>
-           <void property="maxHP">
-            <int>924</int>
-           </void>
-           <void property="normalAttack">
-            <int>92</int>
-           </void>
-           <void property="normalDefense">
-            <int>109</int>
-           </void>
-           <void property="specialAttack">
-            <int>94</int>
-           </void>
-           <void property="specialDefense">
-            <int>108</int>
-           </void>
-           <void property="speed">
-            <int>87</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>45</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>944</int>
-           </void>
-           <void property="maxHP">
-            <int>944</int>
-           </void>
-           <void property="normalAttack">
-            <int>93</int>
-           </void>
-           <void property="normalDefense">
-            <int>110</int>
-           </void>
-           <void property="specialAttack">
-            <int>95</int>
-           </void>
-           <void property="specialDefense">
-            <int>109</int>
-           </void>
-           <void property="speed">
-            <int>88</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>46</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>964</int>
-           </void>
-           <void property="maxHP">
-            <int>964</int>
-           </void>
-           <void property="normalAttack">
-            <int>94</int>
-           </void>
-           <void property="normalDefense">
-            <int>111</int>
-           </void>
-           <void property="specialAttack">
-            <int>96</int>
-           </void>
-           <void property="specialDefense">
-            <int>110</int>
-           </void>
-           <void property="speed">
-            <int>89</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>47</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>984</int>
-           </void>
-           <void property="maxHP">
-            <int>984</int>
-           </void>
-           <void property="normalAttack">
-            <int>95</int>
-           </void>
-           <void property="normalDefense">
-            <int>112</int>
-           </void>
-           <void property="specialAttack">
-            <int>97</int>
-           </void>
-           <void property="specialDefense">
-            <int>111</int>
-           </void>
-           <void property="speed">
-            <int>90</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>48</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1004</int>
-           </void>
-           <void property="maxHP">
-            <int>1004</int>
-           </void>
-           <void property="normalAttack">
-            <int>96</int>
-           </void>
-           <void property="normalDefense">
-            <int>113</int>
-           </void>
-           <void property="specialAttack">
-            <int>98</int>
-           </void>
-           <void property="specialDefense">
-            <int>112</int>
-           </void>
-           <void property="speed">
-            <int>91</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>49</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1024</int>
-           </void>
-           <void property="maxHP">
-            <int>1024</int>
-           </void>
-           <void property="normalAttack">
-            <int>97</int>
-           </void>
-           <void property="normalDefense">
-            <int>114</int>
-           </void>
-           <void property="specialAttack">
-            <int>99</int>
-           </void>
-           <void property="specialDefense">
-            <int>113</int>
-           </void>
-           <void property="speed">
-            <int>92</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>50</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1044</int>
-           </void>
-           <void property="maxHP">
-            <int>1044</int>
-           </void>
-           <void property="normalAttack">
-            <int>98</int>
-           </void>
-           <void property="normalDefense">
-            <int>115</int>
-           </void>
-           <void property="specialAttack">
-            <int>100</int>
-           </void>
-           <void property="specialDefense">
-            <int>114</int>
-           </void>
-           <void property="speed">
-            <int>93</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>51</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1064</int>
-           </void>
-           <void property="maxHP">
-            <int>1064</int>
-           </void>
-           <void property="normalAttack">
-            <int>99</int>
-           </void>
-           <void property="normalDefense">
-            <int>116</int>
-           </void>
-           <void property="specialAttack">
-            <int>101</int>
-           </void>
-           <void property="specialDefense">
-            <int>115</int>
-           </void>
-           <void property="speed">
-            <int>94</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>52</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1084</int>
-           </void>
-           <void property="maxHP">
-            <int>1084</int>
-           </void>
-           <void property="normalAttack">
-            <int>100</int>
-           </void>
-           <void property="normalDefense">
-            <int>117</int>
-           </void>
-           <void property="specialAttack">
-            <int>102</int>
-           </void>
-           <void property="specialDefense">
-            <int>116</int>
-           </void>
-           <void property="speed">
-            <int>95</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>53</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1104</int>
-           </void>
-           <void property="maxHP">
-            <int>1104</int>
-           </void>
-           <void property="normalAttack">
-            <int>101</int>
-           </void>
-           <void property="normalDefense">
-            <int>118</int>
-           </void>
-           <void property="specialAttack">
-            <int>103</int>
-           </void>
-           <void property="specialDefense">
-            <int>117</int>
-           </void>
-           <void property="speed">
-            <int>96</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>54</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1124</int>
-           </void>
-           <void property="maxHP">
-            <int>1124</int>
-           </void>
-           <void property="normalAttack">
-            <int>102</int>
-           </void>
-           <void property="normalDefense">
-            <int>119</int>
-           </void>
-           <void property="specialAttack">
-            <int>104</int>
-           </void>
-           <void property="specialDefense">
-            <int>118</int>
-           </void>
-           <void property="speed">
-            <int>97</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>55</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1144</int>
-           </void>
-           <void property="maxHP">
-            <int>1144</int>
-           </void>
-           <void property="normalAttack">
-            <int>103</int>
-           </void>
-           <void property="normalDefense">
-            <int>120</int>
-           </void>
-           <void property="specialAttack">
-            <int>105</int>
-           </void>
-           <void property="specialDefense">
-            <int>119</int>
-           </void>
-           <void property="speed">
-            <int>98</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>56</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1164</int>
-           </void>
-           <void property="maxHP">
-            <int>1164</int>
-           </void>
-           <void property="normalAttack">
-            <int>104</int>
-           </void>
-           <void property="normalDefense">
-            <int>121</int>
-           </void>
-           <void property="specialAttack">
-            <int>106</int>
-           </void>
-           <void property="specialDefense">
-            <int>120</int>
-           </void>
-           <void property="speed">
-            <int>99</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>57</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1184</int>
-           </void>
-           <void property="maxHP">
-            <int>1184</int>
-           </void>
-           <void property="normalAttack">
-            <int>105</int>
-           </void>
-           <void property="normalDefense">
-            <int>122</int>
-           </void>
-           <void property="specialAttack">
-            <int>107</int>
-           </void>
-           <void property="specialDefense">
-            <int>121</int>
-           </void>
-           <void property="speed">
-            <int>100</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>58</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1204</int>
-           </void>
-           <void property="maxHP">
-            <int>1204</int>
-           </void>
-           <void property="normalAttack">
-            <int>106</int>
-           </void>
-           <void property="normalDefense">
-            <int>123</int>
-           </void>
-           <void property="specialAttack">
-            <int>108</int>
-           </void>
-           <void property="specialDefense">
-            <int>122</int>
-           </void>
-           <void property="speed">
-            <int>101</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>59</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1224</int>
-           </void>
-           <void property="maxHP">
-            <int>1224</int>
-           </void>
-           <void property="normalAttack">
-            <int>107</int>
-           </void>
-           <void property="normalDefense">
-            <int>124</int>
-           </void>
-           <void property="specialAttack">
-            <int>109</int>
-           </void>
-           <void property="specialDefense">
-            <int>123</int>
-           </void>
-           <void property="speed">
-            <int>102</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>60</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1244</int>
-           </void>
-           <void property="maxHP">
-            <int>1244</int>
-           </void>
-           <void property="normalAttack">
-            <int>108</int>
-           </void>
-           <void property="normalDefense">
-            <int>125</int>
-           </void>
-           <void property="specialAttack">
-            <int>110</int>
-           </void>
-           <void property="specialDefense">
-            <int>124</int>
-           </void>
-           <void property="speed">
-            <int>103</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>61</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1264</int>
-           </void>
-           <void property="maxHP">
-            <int>1264</int>
-           </void>
-           <void property="normalAttack">
-            <int>109</int>
-           </void>
-           <void property="normalDefense">
-            <int>126</int>
-           </void>
-           <void property="specialAttack">
-            <int>111</int>
-           </void>
-           <void property="specialDefense">
-            <int>125</int>
-           </void>
-           <void property="speed">
-            <int>104</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>62</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1284</int>
-           </void>
-           <void property="maxHP">
-            <int>1284</int>
-           </void>
-           <void property="normalAttack">
-            <int>110</int>
-           </void>
-           <void property="normalDefense">
-            <int>127</int>
-           </void>
-           <void property="specialAttack">
-            <int>112</int>
-           </void>
-           <void property="specialDefense">
-            <int>126</int>
-           </void>
-           <void property="speed">
-            <int>105</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>63</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1304</int>
-           </void>
-           <void property="maxHP">
-            <int>1304</int>
-           </void>
-           <void property="normalAttack">
-            <int>111</int>
-           </void>
-           <void property="normalDefense">
-            <int>128</int>
-           </void>
-           <void property="specialAttack">
-            <int>113</int>
-           </void>
-           <void property="specialDefense">
-            <int>127</int>
-           </void>
-           <void property="speed">
-            <int>106</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>64</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1324</int>
-           </void>
-           <void property="maxHP">
-            <int>1324</int>
-           </void>
-           <void property="normalAttack">
-            <int>112</int>
-           </void>
-           <void property="normalDefense">
-            <int>129</int>
-           </void>
-           <void property="specialAttack">
-            <int>114</int>
-           </void>
-           <void property="specialDefense">
-            <int>128</int>
-           </void>
-           <void property="speed">
-            <int>107</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>65</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1344</int>
-           </void>
-           <void property="maxHP">
-            <int>1344</int>
-           </void>
-           <void property="normalAttack">
-            <int>113</int>
-           </void>
-           <void property="normalDefense">
-            <int>130</int>
-           </void>
-           <void property="specialAttack">
-            <int>115</int>
-           </void>
-           <void property="specialDefense">
-            <int>129</int>
-           </void>
-           <void property="speed">
-            <int>108</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>66</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1364</int>
-           </void>
-           <void property="maxHP">
-            <int>1364</int>
-           </void>
-           <void property="normalAttack">
-            <int>114</int>
-           </void>
-           <void property="normalDefense">
-            <int>131</int>
-           </void>
-           <void property="specialAttack">
-            <int>116</int>
-           </void>
-           <void property="specialDefense">
-            <int>130</int>
-           </void>
-           <void property="speed">
-            <int>109</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>67</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1384</int>
-           </void>
-           <void property="maxHP">
-            <int>1384</int>
-           </void>
-           <void property="normalAttack">
-            <int>115</int>
-           </void>
-           <void property="normalDefense">
-            <int>132</int>
-           </void>
-           <void property="specialAttack">
-            <int>117</int>
-           </void>
-           <void property="specialDefense">
-            <int>131</int>
-           </void>
-           <void property="speed">
-            <int>110</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>68</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1404</int>
-           </void>
-           <void property="maxHP">
-            <int>1404</int>
-           </void>
-           <void property="normalAttack">
-            <int>116</int>
-           </void>
-           <void property="normalDefense">
-            <int>133</int>
-           </void>
-           <void property="specialAttack">
-            <int>118</int>
-           </void>
-           <void property="specialDefense">
-            <int>132</int>
-           </void>
-           <void property="speed">
-            <int>111</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>69</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1424</int>
-           </void>
-           <void property="maxHP">
-            <int>1424</int>
-           </void>
-           <void property="normalAttack">
-            <int>117</int>
-           </void>
-           <void property="normalDefense">
-            <int>134</int>
-           </void>
-           <void property="specialAttack">
-            <int>119</int>
-           </void>
-           <void property="specialDefense">
-            <int>133</int>
-           </void>
-           <void property="speed">
-            <int>112</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>70</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1444</int>
-           </void>
-           <void property="maxHP">
-            <int>1444</int>
-           </void>
-           <void property="normalAttack">
-            <int>118</int>
-           </void>
-           <void property="normalDefense">
-            <int>135</int>
-           </void>
-           <void property="specialAttack">
-            <int>120</int>
-           </void>
-           <void property="specialDefense">
-            <int>134</int>
-           </void>
-           <void property="speed">
-            <int>113</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>71</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1464</int>
-           </void>
-           <void property="maxHP">
-            <int>1464</int>
-           </void>
-           <void property="normalAttack">
-            <int>119</int>
-           </void>
-           <void property="normalDefense">
-            <int>136</int>
-           </void>
-           <void property="specialAttack">
-            <int>121</int>
-           </void>
-           <void property="specialDefense">
-            <int>135</int>
-           </void>
-           <void property="speed">
-            <int>114</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>72</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1484</int>
-           </void>
-           <void property="maxHP">
-            <int>1484</int>
-           </void>
-           <void property="normalAttack">
-            <int>120</int>
-           </void>
-           <void property="normalDefense">
-            <int>137</int>
-           </void>
-           <void property="specialAttack">
-            <int>122</int>
-           </void>
-           <void property="specialDefense">
-            <int>136</int>
-           </void>
-           <void property="speed">
-            <int>115</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>73</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1504</int>
-           </void>
-           <void property="maxHP">
-            <int>1504</int>
-           </void>
-           <void property="normalAttack">
-            <int>121</int>
-           </void>
-           <void property="normalDefense">
-            <int>138</int>
-           </void>
-           <void property="specialAttack">
-            <int>123</int>
-           </void>
-           <void property="specialDefense">
-            <int>137</int>
-           </void>
-           <void property="speed">
-            <int>116</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>74</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1524</int>
-           </void>
-           <void property="maxHP">
-            <int>1524</int>
-           </void>
-           <void property="normalAttack">
-            <int>122</int>
-           </void>
-           <void property="normalDefense">
-            <int>139</int>
-           </void>
-           <void property="specialAttack">
-            <int>124</int>
-           </void>
-           <void property="specialDefense">
-            <int>138</int>
-           </void>
-           <void property="speed">
-            <int>117</int>
-           </void>
-          </object>
-         </void>
-         <void method="put">
-          <int>75</int>
-          <object class="data.model.PokemonStat">
-           <void property="HP">
-            <int>1544</int>
-           </void>
-           <void property="maxHP">
-            <int>1544</int>
-           </void>
-           <void property="normalAttack">
-            <int>123</int>
-           </void>
-           <void property="normalDefense">
-            <int>140</int>
-           </void>
-           <void property="specialAttack">
-            <int>125</int>
-           </void>
-           <void property="specialDefense">
-            <int>139</int>
-           </void>
-           <void property="speed">
-            <int>118</int>
-           </void>
-          </object>
-         </void>
-        </object>
-       </void>
-       <void property="maxLevel">
-        <int>75</int>
-       </void>
-       <void property="specieName">
-        <string>Almighty</string>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.PokemonSpecie">
-       <void property="elemental">
-        <string>Water</string>
-       </void>
-       <void property="levelEvolutionImagePath">
-        <object class="java.util.HashMap">
-         <void method="put">
-          <int>1</int>
-          <string>images/pokemons/7.gif</string>
-         </void>
-         <void method="put">
-          <int>50</int>
-          <string>images/pokemons/9.gif</string>
-         </void>
-         <void method="put">
-          <int>25</int>
-          <string>images/pokemons/8.gif</string>
-         </void>
-        </object>
-       </void>
-       <void property="levelExp">
-        <object class="java.util.HashMap">
-         <void method="put">
-          <int>1</int>
-          <double>100.0</double>
-         </void>
-         <void method="put">
-          <int>2</int>
-          <double>200.0</double>
-         </void>
-         <void method="put">
-          <int>3</int>
-          <double>300.0</double>
-         </void>
-         <void method="put">
-          <int>4</int>
-          <double>400.0</double>
-         </void>
-         <void method="put">
-          <int>5</int>
-          <double>500.0</double>
-         </void>
-         <void method="put">
-          <int>6</int>
-          <double>600.0</double>
-         </void>
-         <void method="put">
-          <int>7</int>
-          <double>700.0</double>
-         </void>
-         <void method="put">
-          <int>8</int>
-          <double>800.0</double>
-         </void>
-         <void method="put">
-          <int>9</int>
-          <double>900.0</double>
-         </void>
-         <void method="put">
-          <int>10</int>
-          <double>1000.0</double>
-         </void>
-         <void method="put">
-          <int>11</int>
-          <double>1100.0</double>
-         </void>
-         <void method="put">
-          <int>12</int>
-          <double>1200.0</double>
-         </void>
-         <void method="put">
-          <int>13</int>
-          <double>1300.0</double>
-         </void>
-         <void method="put">
-          <int>14</int>
-          <double>1400.0</double>
-         </void>
-         <void method="put">
-          <int>15</int>
-          <double>1500.0</double>
-         </void>
-         <void method="put">
-          <int>16</int>
-          <double>1600.0</double>
-         </void>
-         <void method="put">
-          <int>17</int>
-          <double>1700.0</double>
-         </void>
-         <void method="put">
-          <int>18</int>
-          <double>1800.0</double>
-         </void>
-         <void method="put">
-          <int>19</int>
-          <double>1900.0</double>
-         </void>
-         <void method="put">
-          <int>20</int>
-          <double>2000.0</double>
-         </void>
-         <void method="put">
-          <int>21</int>
-          <double>2100.0</double>
-         </void>
-         <void method="put">
-          <int>22</int>
-          <double>2200.0</double>
-         </void>
-         <void method="put">
-          <int>23</int>
-          <double>2300.0</double>
-         </void>
-         <void method="put">
-          <int>24</int>
-          <double>2400.0</double>
-         </void>
-         <void method="put">
-          <int>25</int>
-          <double>2500.0</double>
-         </void>
-         <void method="put">
-          <int>26</int>
-          <double>2600.0</double>
-         </void>
-         <void method="put">
-          <int>27</int>
-          <double>2700.0</double>
+          <object class="data.model.moves.MoveDatabase.MoveHydroPump"/>
          </void>
          <void method="put">
           <int>28</int>
-          <double>2800.0</double>
-         </void>
-         <void method="put">
-          <int>29</int>
-          <double>2900.0</double>
-         </void>
-         <void method="put">
-          <int>30</int>
-          <double>3000.0</double>
-         </void>
-         <void method="put">
-          <int>31</int>
-          <double>3100.0</double>
-         </void>
-         <void method="put">
-          <int>32</int>
-          <double>3200.0</double>
-         </void>
-         <void method="put">
-          <int>33</int>
-          <double>3300.0</double>
-         </void>
-         <void method="put">
-          <int>34</int>
-          <double>3400.0</double>
-         </void>
-         <void method="put">
-          <int>35</int>
-          <double>3500.0</double>
-         </void>
-         <void method="put">
-          <int>36</int>
-          <double>3600.0</double>
-         </void>
-         <void method="put">
-          <int>37</int>
-          <double>3700.0</double>
-         </void>
-         <void method="put">
-          <int>38</int>
-          <double>3800.0</double>
-         </void>
-         <void method="put">
-          <int>39</int>
-          <double>3900.0</double>
-         </void>
-         <void method="put">
-          <int>40</int>
-          <double>4000.0</double>
-         </void>
-         <void method="put">
-          <int>41</int>
-          <double>4100.0</double>
-         </void>
-         <void method="put">
-          <int>42</int>
-          <double>4200.0</double>
-         </void>
-         <void method="put">
-          <int>43</int>
-          <double>4300.0</double>
-         </void>
-         <void method="put">
-          <int>44</int>
-          <double>4400.0</double>
-         </void>
-         <void method="put">
-          <int>45</int>
-          <double>4500.0</double>
-         </void>
-         <void method="put">
-          <int>46</int>
-          <double>4600.0</double>
-         </void>
-         <void method="put">
-          <int>47</int>
-          <double>4700.0</double>
-         </void>
-         <void method="put">
-          <int>48</int>
-          <double>4800.0</double>
-         </void>
-         <void method="put">
-          <int>49</int>
-          <double>4900.0</double>
-         </void>
-         <void method="put">
-          <int>50</int>
-          <double>5000.0</double>
-         </void>
-         <void method="put">
-          <int>51</int>
-          <double>5100.0</double>
-         </void>
-         <void method="put">
-          <int>52</int>
-          <double>5200.0</double>
-         </void>
-         <void method="put">
-          <int>53</int>
-          <double>5300.0</double>
-         </void>
-         <void method="put">
-          <int>54</int>
-          <double>5400.0</double>
-         </void>
-         <void method="put">
-          <int>55</int>
-          <double>5500.0</double>
-         </void>
-         <void method="put">
-          <int>56</int>
-          <double>5600.0</double>
-         </void>
-         <void method="put">
-          <int>57</int>
-          <double>5700.0</double>
-         </void>
-         <void method="put">
-          <int>58</int>
-          <double>5800.0</double>
-         </void>
-         <void method="put">
-          <int>59</int>
-          <double>5900.0</double>
-         </void>
-         <void method="put">
-          <int>60</int>
-          <double>6000.0</double>
-         </void>
-         <void method="put">
-          <int>61</int>
-          <double>6100.0</double>
-         </void>
-         <void method="put">
-          <int>62</int>
-          <double>6200.0</double>
-         </void>
-         <void method="put">
-          <int>63</int>
-          <double>6300.0</double>
-         </void>
-         <void method="put">
-          <int>64</int>
-          <double>6400.0</double>
-         </void>
-         <void method="put">
-          <int>65</int>
-          <double>6500.0</double>
-         </void>
-         <void method="put">
-          <int>66</int>
-          <double>6600.0</double>
-         </void>
-         <void method="put">
-          <int>67</int>
-          <double>6700.0</double>
-         </void>
-         <void method="put">
-          <int>68</int>
-          <double>6800.0</double>
-         </void>
-         <void method="put">
-          <int>69</int>
-          <double>6900.0</double>
-         </void>
-         <void method="put">
-          <int>70</int>
-          <double>7000.0</double>
-         </void>
-         <void method="put">
-          <int>71</int>
-          <double>7100.0</double>
-         </void>
-         <void method="put">
-          <int>72</int>
-          <double>7200.0</double>
-         </void>
-         <void method="put">
-          <int>73</int>
-          <double>7300.0</double>
-         </void>
-         <void method="put">
-          <int>74</int>
-          <double>7400.0</double>
-         </void>
-         <void method="put">
-          <int>75</int>
-          <double>7500.0</double>
-         </void>
-        </object>
-       </void>
-       <void property="levelMoves">
-        <object class="java.util.HashMap">
-         <void method="put">
-          <int>1</int>
-          <object class="data.model.moves.MoveDatabase.MoveTailWhip"/>
+          <object class="data.model.moves.MoveDatabase.MoveAquaTail"/>
          </void>
         </object>
        </void>
@@ -13149,7 +10886,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13179,7 +10916,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13209,7 +10946,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13239,7 +10976,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13269,7 +11006,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13299,7 +11036,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13329,7 +11066,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13359,7 +11096,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13389,7 +11126,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13419,7 +11156,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13449,7 +11186,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13479,7 +11216,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13509,7 +11246,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13539,7 +11276,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13569,7 +11306,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13599,7 +11336,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13629,7 +11366,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13659,7 +11396,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13689,7 +11426,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13719,7 +11456,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13749,7 +11486,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13779,7 +11516,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13809,7 +11546,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13839,7 +11576,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13869,7 +11606,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13899,7 +11636,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13929,7 +11666,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13959,7 +11696,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -13989,7 +11726,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14019,7 +11756,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14049,7 +11786,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14079,7 +11816,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14109,7 +11846,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14139,7 +11876,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14169,7 +11906,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14199,7 +11936,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14229,7 +11966,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14259,7 +11996,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14289,7 +12026,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14319,7 +12056,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14349,7 +12086,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14379,7 +12116,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14409,7 +12146,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14439,7 +12176,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14469,7 +12206,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14499,7 +12236,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14529,7 +12266,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14559,7 +12296,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14589,7 +12326,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14619,7 +12356,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14649,7 +12386,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14679,7 +12416,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14709,7 +12446,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14739,7 +12476,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14769,7 +12506,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14799,7 +12536,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14829,7 +12566,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14859,7 +12596,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14889,7 +12626,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14919,7 +12656,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14949,7 +12686,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -14979,7 +12716,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15009,7 +12746,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15039,7 +12776,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15069,7 +12806,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15099,7 +12836,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15129,7 +12866,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15159,7 +12896,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15189,7 +12926,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15219,7 +12956,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15249,7 +12986,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15279,7 +13016,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15309,7 +13046,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15339,7 +13076,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15369,7 +13106,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15399,7 +13136,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15429,7 +13166,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15459,7 +13196,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15489,7 +13226,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15519,7 +13256,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15549,7 +13286,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15579,7 +13316,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15609,7 +13346,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15639,7 +13376,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15669,7 +13406,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15699,7 +13436,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15729,7 +13466,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15759,7 +13496,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15789,7 +13526,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15819,7 +13556,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15849,7 +13586,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15879,7 +13616,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15909,7 +13646,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15939,7 +13676,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15969,7 +13706,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -15999,7 +13736,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16029,7 +13766,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16059,7 +13796,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16089,7 +13826,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16119,7 +13856,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16149,7 +13886,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16179,7 +13916,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16209,7 +13946,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16239,7 +13976,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16269,7 +14006,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16299,7 +14036,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16329,7 +14066,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16359,7 +14096,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16389,7 +14126,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16419,7 +14156,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16449,7 +14186,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16479,7 +14216,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16509,7 +14246,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16539,7 +14276,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16569,7 +14306,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16599,7 +14336,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16629,7 +14366,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16659,7 +14396,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16689,7 +14426,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16719,7 +14456,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16749,7 +14486,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16779,7 +14516,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16809,7 +14546,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16839,7 +14576,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16869,7 +14606,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16899,7 +14636,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16929,7 +14666,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16959,7 +14696,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -16989,7 +14726,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17019,7 +14756,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17049,7 +14786,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17079,7 +14816,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17109,7 +14846,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17139,7 +14876,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17169,7 +14906,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17199,7 +14936,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17229,7 +14966,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17259,7 +14996,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17289,7 +15026,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17319,7 +15056,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17349,7 +15086,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17379,7 +15116,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17409,7 +15146,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17439,7 +15176,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17469,7 +15206,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17499,7 +15236,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17529,7 +15266,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17559,7 +15296,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17589,7 +15326,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17619,7 +15356,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17649,7 +15386,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17679,7 +15416,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17709,7 +15446,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17739,7 +15476,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17769,7 +15506,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17799,7 +15536,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17829,7 +15566,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17859,7 +15596,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17889,7 +15626,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17919,7 +15656,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17949,7 +15686,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -17979,7 +15716,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18009,7 +15746,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18039,7 +15776,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18069,7 +15806,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18099,7 +15836,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18129,7 +15866,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18159,7 +15896,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18189,7 +15926,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18219,7 +15956,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18249,7 +15986,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18279,7 +16016,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18309,7 +16046,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18339,7 +16076,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18369,7 +16106,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18399,7 +16136,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18429,7 +16166,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18459,7 +16196,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18489,7 +16226,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18519,7 +16256,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18549,7 +16286,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18579,7 +16316,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18609,7 +16346,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18639,7 +16376,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18669,7 +16406,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18699,7 +16436,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18729,7 +16466,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18759,7 +16496,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18789,7 +16526,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18819,7 +16556,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18849,7 +16586,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18879,7 +16616,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18909,7 +16646,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18939,7 +16676,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18969,7 +16706,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -18999,7 +16736,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19029,7 +16766,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19059,7 +16796,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19089,7 +16826,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19119,7 +16856,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19149,7 +16886,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19179,7 +16916,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19209,7 +16946,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19239,7 +16976,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19269,7 +17006,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19299,7 +17036,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19329,7 +17066,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19359,7 +17096,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19389,7 +17126,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19419,7 +17156,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19449,7 +17186,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19479,7 +17216,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19509,7 +17246,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19539,7 +17276,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19569,7 +17306,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19599,7 +17336,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19629,7 +17366,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19659,7 +17396,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19689,7 +17426,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19719,7 +17456,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19749,7 +17486,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19779,7 +17516,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19809,7 +17546,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19839,7 +17576,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19869,7 +17606,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19899,7 +17636,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19929,7 +17666,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19959,7 +17696,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -19989,7 +17726,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20019,7 +17756,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20049,7 +17786,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20079,7 +17816,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20109,7 +17846,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20139,7 +17876,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20169,7 +17906,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20199,7 +17936,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20229,7 +17966,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20259,7 +17996,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20289,7 +18026,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20319,7 +18056,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20349,7 +18086,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20379,7 +18116,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20409,7 +18146,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20439,7 +18176,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20469,7 +18206,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20499,7 +18236,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20529,7 +18266,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20559,7 +18296,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20589,7 +18326,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20619,7 +18356,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20649,7 +18386,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20679,7 +18416,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20709,7 +18446,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20739,7 +18476,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20769,7 +18506,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20799,7 +18536,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20829,7 +18566,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20859,7 +18596,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20889,7 +18626,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20919,7 +18656,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20949,7 +18686,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -20979,7 +18716,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21009,7 +18746,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21039,7 +18776,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21069,7 +18806,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21099,7 +18836,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21129,7 +18866,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21159,7 +18896,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21189,7 +18926,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21219,7 +18956,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21249,7 +18986,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21279,7 +19016,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21309,7 +19046,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21339,7 +19076,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21369,7 +19106,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21399,7 +19136,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21429,7 +19166,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21459,7 +19196,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21489,7 +19226,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21519,7 +19256,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21549,7 +19286,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21579,7 +19316,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21609,7 +19346,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21639,7 +19376,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21669,7 +19406,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21699,7 +19436,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21729,7 +19466,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21759,7 +19496,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21789,7 +19526,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21819,7 +19556,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21849,7 +19586,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21879,7 +19616,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21909,7 +19646,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21939,7 +19676,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21969,7 +19706,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -21999,7 +19736,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22029,7 +19766,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22059,7 +19796,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22089,7 +19826,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22119,7 +19856,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22149,7 +19886,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22179,7 +19916,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22209,7 +19946,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22239,7 +19976,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22269,7 +20006,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22299,7 +20036,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22329,7 +20066,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22359,7 +20096,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22389,7 +20126,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22419,7 +20156,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22449,7 +20186,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22479,7 +20216,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22509,7 +20246,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22539,7 +20276,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22569,7 +20306,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22599,7 +20336,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22629,7 +20366,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22659,7 +20396,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22689,7 +20426,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22719,7 +20456,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22749,7 +20486,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22779,7 +20516,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22809,7 +20546,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22839,7 +20576,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22869,7 +20606,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22899,7 +20636,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22929,7 +20666,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22959,7 +20696,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -22989,7 +20726,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23019,7 +20756,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23049,7 +20786,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23079,7 +20816,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23109,7 +20846,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23139,7 +20876,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23169,7 +20906,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23199,7 +20936,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23229,7 +20966,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23259,7 +20996,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23289,7 +21026,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23319,7 +21056,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23349,7 +21086,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23379,7 +21116,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23409,7 +21146,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23439,7 +21176,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23469,7 +21206,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23499,7 +21236,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23529,7 +21266,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23559,7 +21296,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23589,7 +21326,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23619,7 +21356,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23649,7 +21386,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23679,7 +21416,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23709,7 +21446,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23739,7 +21476,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23769,7 +21506,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23799,7 +21536,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23829,7 +21566,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23859,7 +21596,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23889,7 +21626,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23919,7 +21656,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23949,7 +21686,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -23979,7 +21716,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24009,7 +21746,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24039,7 +21776,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24069,7 +21806,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24099,7 +21836,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24129,7 +21866,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24159,7 +21896,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24189,7 +21926,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24219,7 +21956,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24249,7 +21986,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24279,7 +22016,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24309,7 +22046,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24339,7 +22076,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24369,7 +22106,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24399,7 +22136,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24429,7 +22166,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24459,7 +22196,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24489,7 +22226,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24519,7 +22256,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24549,7 +22286,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24579,7 +22316,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24609,7 +22346,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24639,7 +22376,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">
@@ -24669,7 +22406,7 @@
      <void method="add">
       <object class="data.model.PokemonSpecie">
        <void property="elemental">
-        <string>Lightning</string>
+        <string>Electric</string>
        </void>
        <void property="levelEvolutionImagePath">
         <object class="java.util.HashMap">

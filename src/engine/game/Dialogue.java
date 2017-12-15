@@ -8,8 +8,6 @@ import java.util.Map;
 import java.util.function.Function;
 
 import data.event.InstructionNPCDialogue;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
@@ -30,9 +28,7 @@ public class Dialogue {
 	/*instance variable*/
 	private GameScene oriDisplay;
 	private ArrayList<String> sentenceList;
-	private InstructionNPCDialogue instruction;
-	private TextArea textDisplay;
-	private ScrollPane textShow = new ScrollPane();
+	private ScrollingText textDisplay = new ScrollingText();
 	
 	private Function<String, Integer> handleF = new Function<String, Integer>(){
 		@Override
@@ -46,24 +42,21 @@ public class Dialogue {
 	
 	public Dialogue (InstructionNPCDialogue instruction, GameScene gameScene, Map<String, ArrayList<Function<String, Integer>>> inputHandler) {
 		sentenceList = instruction.getDialogues();
-		this.instruction = instruction;
 		oriDisplay = gameScene;
 		this.inputHandler = inputHandler;
 		inputHandler.get("F").add(handleF);
+		//Put textDisplay and ChatBox on the screen
+		putOnScreen();
 
 		//deal with specific pokemon font
-		textDisplay = new TextArea("");
-		textDisplay.setEditable(false);
 		Font f = getFont();
 		
 		if (sentenceList != null) {
-		textDisplay.setText(sentenceList.get(0));
+			textDisplay.setText(sentenceList.get(0));
+			textDisplay.animateText();
 		}
 		
 		textDisplay.setFont(f); 
-		
-		//Put textDisplay and ChatBox on the screen
-		putOnScreen();
 	}
 	
 	
@@ -76,13 +69,13 @@ public class Dialogue {
 			int currentIndex = sentenceList.indexOf(textDisplay.getText());
 			if (currentIndex < sentenceList.size() -1 ) {
 				textDisplay.setText(sentenceList.get(currentIndex + 1)); 
+				textDisplay.animateText();
 			}
 			else {
 				oriDisplay.rootRemove(CHATBOX); 
-				oriDisplay.rootRemove(textShow);
+				oriDisplay.rootRemove(textDisplay);
 				ArrayList<Function<String, Integer>> handlers = inputHandler.get("F");
 				handlers.remove(handleF);
-				instruction.setGoNextInstruction(true);
 				oriDisplay.changeBackScene();
 			}
 	}
@@ -96,16 +89,13 @@ public class Dialogue {
 		oriDisplay.getScene().getStylesheets().add("resources/sceneStyle.css");
 		//set up the position of chatBox
 		if (!oriDisplay.getRootChildren().contains(CHATBOX)) {
-//			CHATBOX.setPreserveRatio(true);
-//			CHATBOX.setFitWidth(oriDisplay.getStage().getWidth());
-//			oriDisplay.rootAdd(CHATBOX, 0, new Double(oriDisplay.getStage().getHeight()).intValue()-new Double(20+0.7*CHATBOX.getImage().getHeight()).intValue());
+			CHATBOX.setPreserveRatio(true);
+			CHATBOX.setFitWidth(oriDisplay.getStage().getWidth());
+			oriDisplay.rootAdd(CHATBOX, 0, new Double(oriDisplay.getStage().getHeight()).intValue()-new Double(20+0.7*CHATBOX.getImage().getHeight()).intValue());
 		}
 		//set up the position of textDisplay
-		if (!oriDisplay.getRootChildren().contains(textShow)) {
-			textShow.setPrefWidth(oriDisplay.getStage().getWidth());
-			textShow.setPrefHeight(oriDisplay.getStage().getHeight()*0.3);
-			textShow.setContent(textDisplay);
-			oriDisplay.rootAdd(textShow,0,new Double(oriDisplay.getStage().getHeight()-textShow.getPrefHeight()-20).intValue());
+		if (!oriDisplay.getRootChildren().contains(textDisplay)) {
+			oriDisplay.rootAdd(textDisplay, 40, 50 + new Double(oriDisplay.getStage().getHeight()).intValue()-new Double(20+0.7*CHATBOX.getImage().getHeight()).intValue());
 		}
 	
 	}
@@ -125,7 +115,8 @@ public class Dialogue {
 			f = Font.loadFont(new FileInputStream(new File("./src/resources/pkmnem.ttf")), FONTSIZE);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
 		}
 		return f;
 	}

@@ -1,9 +1,12 @@
 package engine.UI;
 
+import authoring.ScreenDisplay;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.stage.Stage;
+import javafx.util.Callback;
 import javafx.util.Duration;
 
 /**
@@ -34,5 +37,15 @@ public class Fade {
 	    ft.setAutoReverse(true);
 	    ft.setOnFinished(endAction);
 	    return ft;
+	}
+	
+	public static void FadeFromOneSceneToAnother(ScreenDisplay originScene, ScreenDisplay newScene, Callback<Integer, Integer> behaviour){
+		Fade.fadeOut(originScene.getRoot(), e->{
+			Fade.fadeIn(originScene.getRoot(), h->{}).play();
+			if(originScene!=newScene){
+				Fade.fadeIn(newScene.getRoot(), h->{}).play();
+			}
+			behaviour.call(0);
+		}).play();	
 	}
 }

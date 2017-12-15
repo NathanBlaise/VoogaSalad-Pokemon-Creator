@@ -34,11 +34,12 @@ public class PokemonLabel extends Label {
 		try {
 			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), FONTSIZE);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
+			System.exit(1);
 		}
 		return f;
 	}
+	
 	
 	public void stopTimer() {
 		timer.stop();
@@ -67,4 +68,5 @@ public class PokemonLabel extends Label {
 				
 			}; timer.start();
 	} 
+	
 }

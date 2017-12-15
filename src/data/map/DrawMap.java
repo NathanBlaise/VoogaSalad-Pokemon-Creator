@@ -79,8 +79,9 @@ public class DrawMap extends DrawPane{
 		try {
 			bufImage = ImageIO.read(new File(filename));
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.printStackTrace();//handled by exiting the program
 			System.out.println("Tile image could not be loaded");
+			System.exit(1);
 		}
 		Image image = SwingFXUtils.toFXImage(bufImage, null);
 		ImageView graphic = new ImageView(image);
