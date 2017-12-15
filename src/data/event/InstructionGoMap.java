@@ -61,18 +61,22 @@ public class InstructionGoMap extends Instruction{
 	}
 
 	public int getFutureX() {
+//	    	System.out.println("Future X is " + futureX);
 		return futureX;
 	}
 
 	public void setFutureX(int futureX) {
+//	    System.out.println("Future X is set to be " + futureX);
 		this.futureX = futureX;
 	}
 
 	public int getFutureY() {
+//	    	System.out.println("Future Y is " + futureY);
 		return futureY;
 	}
 
 	public void setFutureY(int futureY) {
+//	    	System.out.println("Future Y is set to be " + futureY);
 		this.futureY = futureY;
 	}
 	

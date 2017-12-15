@@ -1,5 +1,7 @@
 package engine.pokemonScene;
 
+import data.player.Player;
+import engine.battle.BattleScene;
 import engine.battle.HealthBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,6 +30,37 @@ public class curPokemonCol extends Pane {
 		this.addEventFilter(MouseEvent.MOUSE_ENTERED, e->selectCol());
 		this.addEventFilter(MouseEvent.MOUSE_EXITED, e->DeSelectCol());
 		
+		
+		myImage = new ImageView(pokeImage);
+		hBar= new HealthBar(fullHea, 149,12);
+		hBar.setHealth(curHea,false);
+
+		// basic set up
+		this.getChildren().add(bg);
+		bg.setLayoutX(20);
+		bg.setLayoutY(0);
+		nameLevel = new VBox();
+		pCol.setUpVerticalBox(nameLevel, 15);
+		this.getChildren().add(nameLevel);
+		nameLevel.setLayoutX(105);
+		nameLevel.setLayoutY(30);
+		this.getChildren().add(pokeBall);
+		this.getChildren().add(myImage);
+		myImage.setLayoutX(0);
+		myImage.setLayoutY(0);
+		
+		this.getChildren().add(hBar.getPane());
+		hBar.getPane().relocate(91, 106);
+	}
+	
+	
+	public curPokemonCol (Image pokeImage,int le,String nam, int fullHea, int curHea, BattleScene battleScene) {
+		pCol = new pokemonCol(pokeImage,le,nam,fullHea,curHea);
+		bg = new ImageView(DESELECT_BOX);
+		pokeBall = new ImageView(CLOSE_BALL);
+		this.addEventFilter(MouseEvent.MOUSE_ENTERED, e->selectCol());
+		this.addEventFilter(MouseEvent.MOUSE_EXITED, e->DeSelectCol());
+		this.addEventFilter(MouseEvent.MOUSE_CLICKED, e->battleScene.changeActivePokemon(nam));
 		myImage = new ImageView(pokeImage);
 		hBar= new HealthBar(curHea, 149,12);
 		// basic set up
@@ -46,7 +79,12 @@ public class curPokemonCol extends Pane {
 		
 		this.getChildren().add(hBar.getPane());
 		hBar.getPane().relocate(91, 106);
+		
+		
 	}
+	
+	
+	
 
 	private void DeSelectCol() {
 		bg.setImage(DESELECT_BOX);

@@ -1,5 +1,7 @@
 package engine.battle;
 
+import java.util.ResourceBundle;
+
 import engine.game.GameScene;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,10 +16,15 @@ public class BattleEnding {
 	private Callback<Integer, Integer> winAction;
 	private Callback<Integer, Integer> loseAction;
 	
+	private static final String DEFAULT_RESOURCE_PACKAGE = "util/English_Text";
+	private ResourceBundle myResources;
+	
+	
 	public BattleEnding(GameScene gs, 	Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction) {
 		this.gs=gs;
 		this.winAction = winAction;
 		this.loseAction = loseAction;
+		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE);
 	}
 	
 	
@@ -36,7 +43,7 @@ public class BattleEnding {
 		VBox dialogVbox = new VBox(20);
 
 		Button btn = new Button();
-		btn.setText("Got it");
+		btn.setText(myResources.getString("gotButton"));
 		dialogVbox.getChildren().add(end);
 		dialogVbox.getChildren().add(btn);
 		

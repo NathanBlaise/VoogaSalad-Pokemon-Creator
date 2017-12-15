@@ -5,7 +5,6 @@ import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
 

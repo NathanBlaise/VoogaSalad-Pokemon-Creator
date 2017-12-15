@@ -2,6 +2,7 @@ package authoring.databaseEditor;
 
 import java.util.List;
 
+import data.map.GameMap;
 import data.model.PokemonSpecie;
 import data.player.Player;
 import javafx.geometry.Side;
@@ -28,8 +29,16 @@ public class DatabaseScene extends BasicAuthorScreen {
 		super.getScene().getStylesheets().add("resources/sceneStyle.css");
 		List<PokemonSpecie> species = app.getDatabase().getModel().getPokemonSpecies();
 		Player player = app.getDatabase().getPlayer();
-		int XLength = app.getDatabase().getMap().getXlength();
-		int YLength = app.getDatabase().getMap().getYlength();
+		int XLength, YLength;
+		GameMap currentMap = app.getDatabase().searchMap(app.getDatabase().getPlayer().getCurrentMapName());
+		if(currentMap==null){
+			player.setCurrentMapName(app.getDatabase().getMaps().get(0).getName());
+			XLength = app.getDatabase().getMaps().get(0).getXlength();
+			YLength = app.getDatabase().getMaps().get(0).getYlength();
+		}else{
+			XLength = currentMap.getXlength();
+			YLength = currentMap.getYlength();
+		}
 		tabPane = new TabPane(new PlayerTab(player, species, XLength, YLength, new Callback<Player, Integer>(){
 			@Override
 			public Integer call(Player param) {

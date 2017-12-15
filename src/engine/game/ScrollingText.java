@@ -59,7 +59,7 @@ public class ScrollingText extends Text {
 			private String temp;
 			@Override
 			public void handle(long now) {
-				if(now - lastUpdate >= 100000000) {
+				if(now - lastUpdate >= 50000000) {
 					temp = myString;
 					myText.setText(temp.substring(0, count+1));
 					count++;
