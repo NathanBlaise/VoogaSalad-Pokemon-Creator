@@ -234,6 +234,7 @@ public abstract class GameScene extends ScreenDisplay {
 	
 	public void refreshMap(GameMap mainMap, double futureX, double futureY){
 		this.mainMap = mainMap;
+		mainPlayer.setCurrentMapName(mainMap.getName());
 		this.rootClear();
 		tileCanvas = new Canvas (mainMap.getYlength()*pixelSize, mainMap.getXlength()*pixelSize);
 		GraphicsContext gc = tileCanvas.getGraphicsContext2D();

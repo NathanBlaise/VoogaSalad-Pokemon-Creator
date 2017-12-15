@@ -21,6 +21,7 @@ public class Player extends PacmanPlayer{
 	private Map<String, Integer> items = new HashMap<String, Integer>();  // a map from the item to the number of item, String stands for the class name of item
 	private Set<String> keyItems = new HashSet<String>();
 	private ArrayList<Pokemon> warehouse;
+	private String currentMapName = "";
 	
 	public Player(){
 		super();
@@ -132,6 +133,14 @@ public class Player extends PacmanPlayer{
 
 	public void setKeyItems(Set<String> keyItems) {
 		this.keyItems = keyItems;
+	}
+
+	public String getCurrentMapName() {
+		return currentMapName;
+	}
+
+	public void setCurrentMapName(String currentMapName) {
+		this.currentMapName = currentMapName;
 	}
 
 	public int itemsSize(){
