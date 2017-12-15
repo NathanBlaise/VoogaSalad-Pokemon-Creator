@@ -245,6 +245,12 @@ public class DBCell {
 	    
 	private void showContentMenu(MouseEvent e, ImageView image) {
 		ContextMenu contextMenu = new ContextMenu();
+		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem("obstacle from "+cell.isObstacle()+" to "+(!cell.isObstacle()), h -> {
+			cell.setObstacle(!cell.isObstacle());
+		}));
+		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem("row: "+row+", column: "+col, h -> {
+			
+		}));
 		contextMenu.getItems().addAll(UIComponentFactory.createMenuItem("edit the event", h -> {
 			if(cell.getEvent()!=null){
 				if(cell.getEvent() instanceof EventPokemon){

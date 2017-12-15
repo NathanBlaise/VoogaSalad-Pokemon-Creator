@@ -2,6 +2,7 @@ package authoring.eventManage;
 
 import java.io.File;
 
+import engine.UI.Path2Image;
 import javafx.event.EventHandler;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
@@ -55,7 +56,7 @@ public class EventImage extends BorderPane{
 		if(file!=null){
 			Image newImage = new Image(file.toURI().toString());
 			if(newImage!=null){
-				imageHolder.setImage(newImage);
+				imageHolder.setImage(Path2Image.scale(newImage, 48, 48, false).getImage());
 				imagePath = file.getAbsolutePath();
 			}
 		}

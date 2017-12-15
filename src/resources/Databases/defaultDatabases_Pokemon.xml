@@ -22446,29 +22446,6 @@
        <void property="imagePaths">
         <object class="java.util.ArrayList">
          <void method="add">
-          <string>images/tiles/tiles4shop/floor.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>Floor</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/tiles4shop/floor.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
           <string>images/tiles/watercenter.png</string>
          </void>
         </object>
@@ -22796,37 +22773,11 @@
        <void property="name">
         <string>DemoHouseFloor1</string>
        </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
        <void property="wholePic">
         <string>images/tiles/tiles4shop/deskWhole.png</string>
        </void>
        <void property="width">
         <int>11</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/flower_tile.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>Flower</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/flower_tile.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
        </void>
       </object>
      </void>
@@ -23629,6 +23580,2306 @@
      <void method="add">
       <object class="data.model.Tile">
        <void property="height">
+        <int>21</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/DemoGym/image_part_001.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_002.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_003.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_004.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_005.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_006.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_007.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_008.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_009.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_010.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_011.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_012.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_013.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_014.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_015.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_016.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_017.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_018.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_019.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_020.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_021.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_022.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_023.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_024.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_025.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_026.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_027.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_028.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_029.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_030.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_031.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_032.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_033.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_034.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_035.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_036.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_037.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_038.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_039.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_040.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_041.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_042.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_043.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_044.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_045.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_046.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_047.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_048.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_049.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_050.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_051.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_052.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_053.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_054.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_055.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_056.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_057.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_058.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_059.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_060.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_061.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_062.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_063.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_064.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_065.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_066.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_067.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_068.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_069.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_070.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_071.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_072.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_073.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_074.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_075.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_076.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_077.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_078.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_079.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_080.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_081.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_082.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_083.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_084.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_085.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_086.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_087.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_088.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_089.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_090.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_091.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_092.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_093.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_094.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_095.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_096.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_097.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_098.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_099.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_100.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_101.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_102.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_103.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_104.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_105.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_106.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_107.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_108.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_109.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_110.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_111.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_112.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_113.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_114.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_115.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_116.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_117.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_118.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_119.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_120.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_121.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_122.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_123.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_124.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_125.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_126.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_127.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_128.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_129.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_130.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_131.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_132.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_133.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_134.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_135.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_136.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_137.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_138.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_139.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_140.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_141.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_142.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_143.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_144.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_145.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_146.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_147.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_148.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_149.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_150.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_151.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_152.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_153.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_154.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_155.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_156.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_157.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_158.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_159.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_160.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_161.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_162.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_163.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_164.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_165.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_166.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_167.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_168.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_169.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_170.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_171.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_172.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_173.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_174.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_175.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_176.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_177.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_178.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_179.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_180.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_181.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_182.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_183.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_184.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_185.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_186.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_187.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_188.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_189.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_190.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_191.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_192.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_193.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_194.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_195.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_196.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_197.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_198.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_199.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_200.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_201.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_202.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_203.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_204.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_205.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_206.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_207.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_208.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_209.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/DemoGym/image_part_210.jpg</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>DemoGym</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/tiles4shop/deskWhole.png</string>
+       </void>
+       <void property="width">
+        <int>10</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/space.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>space</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/space.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/grass_tile.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>grass</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/grass_tile.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>2</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/tiles4shop/desk1.png</string>
+         </void>
+         <void method="add">
+          <string>images/tiles/tiles4shop/desk2.png</string>
+         </void>
+         <void method="add">
+          <string>images/tiles/tiles4shop/desk3.png</string>
+         </void>
+         <void method="add">
+          <string>images/tiles/tiles4shop/desk4.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Desk</string>
+       </void>
+       <void property="obstacle">
+        <boolean>true</boolean>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/tiles4shop/deskWhole.png</string>
+       </void>
+       <void property="width">
+        <int>2</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/tiles4shop/floor.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Floor</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/tiles4shop/floor.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>1</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/tiles/flower_tile.png</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>Flower</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/flower_tile.png</string>
+       </void>
+       <void property="width">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
+        <int>20</int>
+       </void>
+       <void property="imagePaths">
+        <object class="java.util.ArrayList">
+         <void method="add">
+          <string>images/City2/image_part_001.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_002.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_003.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_004.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_005.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_006.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_007.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_008.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_009.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_010.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_011.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_012.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_013.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_014.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_015.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_016.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_017.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_018.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_019.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_020.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_021.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_022.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_023.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_024.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_025.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_026.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_027.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_028.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_029.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_030.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_031.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_032.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_033.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_034.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_035.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_036.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_037.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_038.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_039.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_040.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_041.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_042.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_043.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_044.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_045.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_046.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_047.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_048.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_049.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_050.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_051.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_052.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_053.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_054.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_055.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_056.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_057.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_058.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_059.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_060.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_061.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_062.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_063.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_064.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_065.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_066.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_067.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_068.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_069.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_070.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_071.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_072.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_073.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_074.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_075.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_076.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_077.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_078.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_079.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_080.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_081.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_082.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_083.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_084.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_085.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_086.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_087.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_088.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_089.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_090.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_091.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_092.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_093.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_094.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_095.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_096.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_097.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_098.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_099.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_100.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_101.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_102.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_103.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_104.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_105.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_106.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_107.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_108.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_109.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_110.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_111.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_112.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_113.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_114.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_115.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_116.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_117.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_118.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_119.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_120.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_121.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_122.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_123.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_124.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_125.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_126.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_127.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_128.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_129.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_130.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_131.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_132.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_133.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_134.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_135.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_136.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_137.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_138.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_139.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_140.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_141.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_142.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_143.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_144.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_145.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_146.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_147.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_148.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_149.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_150.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_151.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_152.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_153.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_154.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_155.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_156.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_157.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_158.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_159.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_160.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_161.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_162.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_163.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_164.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_165.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_166.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_167.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_168.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_169.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_170.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_171.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_172.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_173.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_174.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_175.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_176.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_177.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_178.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_179.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_180.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_181.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_182.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_183.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_184.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_185.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_186.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_187.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_188.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_189.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_190.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_191.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_192.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_193.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_194.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_195.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_196.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_197.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_198.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_199.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_200.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_201.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_202.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_203.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_204.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_205.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_206.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_207.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_208.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_209.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_210.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_211.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_212.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_213.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_214.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_215.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_216.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_217.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_218.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_219.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_220.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_221.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_222.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_223.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_224.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_225.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_226.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_227.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_228.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_229.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_230.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_231.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_232.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_233.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_234.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_235.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_236.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_237.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_238.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_239.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_240.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_241.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_242.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_243.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_244.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_245.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_246.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_247.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_248.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_249.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_250.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_251.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_252.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_253.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_254.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_255.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_256.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_257.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_258.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_259.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_260.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_261.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_262.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_263.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_264.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_265.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_266.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_267.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_268.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_269.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_270.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_271.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_272.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_273.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_274.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_275.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_276.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_277.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_278.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_279.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_280.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_281.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_282.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_283.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_284.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_285.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_286.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_287.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_288.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_289.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_290.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_291.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_292.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_293.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_294.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_295.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_296.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_297.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_298.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_299.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_300.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_301.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_302.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_303.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_304.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_305.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_306.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_307.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_308.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_309.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_310.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_311.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_312.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_313.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_314.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_315.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_316.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_317.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_318.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_319.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_320.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_321.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_322.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_323.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_324.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_325.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_326.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_327.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_328.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_329.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_330.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_331.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_332.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_333.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_334.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_335.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_336.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_337.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_338.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_339.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_340.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_341.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_342.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_343.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_344.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_345.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_346.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_347.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_348.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_349.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_350.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_351.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_352.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_353.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_354.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_355.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_356.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_357.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_358.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_359.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_360.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_361.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_362.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_363.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_364.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_365.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_366.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_367.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_368.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_369.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_370.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_371.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_372.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_373.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_374.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_375.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_376.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_377.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_378.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_379.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_380.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_381.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_382.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_383.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_384.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_385.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_386.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_387.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_388.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_389.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_390.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_391.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_392.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_393.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_394.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_395.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_396.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_397.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_398.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_399.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_400.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_401.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_402.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_403.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_404.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_405.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_406.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_407.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_408.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_409.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_410.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_411.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_412.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_413.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_414.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_415.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_416.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_417.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_418.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_419.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_420.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_421.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_422.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_423.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_424.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_425.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_426.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_427.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_428.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_429.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_430.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_431.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_432.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_433.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_434.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_435.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_436.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_437.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_438.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_439.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_440.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_441.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_442.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_443.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_444.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_445.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_446.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_447.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_448.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_449.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_450.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_451.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_452.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_453.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_454.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_455.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_456.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_457.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_458.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_459.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_460.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_461.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_462.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_463.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_464.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_465.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_466.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_467.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_468.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_469.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_470.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_471.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_472.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_473.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_474.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_475.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_476.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_477.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_478.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_479.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_480.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_481.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_482.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_483.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_484.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_485.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_486.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_487.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_488.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_489.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_490.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_491.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_492.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_493.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_494.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_495.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_496.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_497.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_498.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_499.jpg</string>
+         </void>
+         <void method="add">
+          <string>images/City2/image_part_500.jpg</string>
+         </void>
+        </object>
+       </void>
+       <void property="name">
+        <string>City2</string>
+       </void>
+       <void property="wholePic">
+        <string>images/tiles/tiles4shop/deskWhole.png</string>
+       </void>
+       <void property="width">
+        <int>25</int>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="data.model.Tile">
+       <void property="height">
         <int>1</int>
        </void>
        <void property="imagePaths">
@@ -24179,9 +26430,6 @@
        </void>
        <void property="name">
         <string>CenterF2</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
        </void>
        <void property="wholePic">
         <string>images/tiles/tiles4shop/deskWhole.png</string>
@@ -27259,9 +29507,6 @@
        <void property="name">
         <string>CenterInside</string>
        </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
        <void property="wholePic">
         <string>images/tiles/tiles4shop/deskWhole.png</string>
        </void>
@@ -27290,32 +29535,6 @@
        </void>
        <void property="wholePic">
         <string>images/tiles/purewatercenter.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/space.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>space</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/space.png</string>
        </void>
        <void property="width">
         <int>1</int>
@@ -27598,9 +29817,6 @@
        <void property="name">
         <string>Shop</string>
        </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
        <void property="wholePic">
         <string>images/tiles/tiles4shop/deskWhole.png</string>
        </void>
@@ -27629,64 +29845,6 @@
        </void>
        <void property="width">
         <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>1</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/grass_tile.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>grass</string>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/grass_tile.png</string>
-       </void>
-       <void property="width">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-     <void method="add">
-      <object class="data.model.Tile">
-       <void property="height">
-        <int>2</int>
-       </void>
-       <void property="imagePaths">
-        <object class="java.util.ArrayList">
-         <void method="add">
-          <string>images/tiles/tiles4shop/desk1.png</string>
-         </void>
-         <void method="add">
-          <string>images/tiles/tiles4shop/desk2.png</string>
-         </void>
-         <void method="add">
-          <string>images/tiles/tiles4shop/desk3.png</string>
-         </void>
-         <void method="add">
-          <string>images/tiles/tiles4shop/desk4.png</string>
-         </void>
-        </object>
-       </void>
-       <void property="name">
-        <string>Desk</string>
-       </void>
-       <void property="obstacle">
-        <boolean>true</boolean>
-       </void>
-       <void property="wholePic">
-        <string>images/tiles/tiles4shop/deskWhole.png</string>
-       </void>
-       <void property="width">
-        <int>2</int>
        </void>
       </object>
      </void>
