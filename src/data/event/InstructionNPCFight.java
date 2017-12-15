@@ -121,17 +121,19 @@ public class InstructionNPCFight  extends Instruction{
 	 * 
 	 * @param livePokemon
 	 */
-	public Integer beginBattle(Pokemon livePokemon, Player player, GameScene gameScene, Stage stage, Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction){
+	public BattleScene beginBattle(Pokemon livePokemon, Player player, GameScene gameScene, Stage stage, Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction){
 		if(livePokemon!=null){
 			BattleScene battle = new BattleScene(BATTLE_SCREEN_WIDTH,BATTLE_SCREEN_HEIGHT,Color.WHITE,player,livePokemon, gameScene, gameScene.getStage(), e->{
-				return beginBattle(livePokemon(), player, gameScene, stage, winAction, loseAction);
+				beginBattle(livePokemon(), player, gameScene, stage, winAction, loseAction);
+				return null;
 			}, h->{
 				return loseAction.call(0);
 			});
 			stage.setScene(battle.getScene());
-			return null;
+			return battle;
 		}else{
-			return winAction.call(0);
+			winAction.call(0);
+			return null;
 		}
 	}
 

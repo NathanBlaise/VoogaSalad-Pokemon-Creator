@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import data.map.GameMap;
 import data.player.Player;
+import engine.UI.Fade;
 import engine.game.GameScene;
 /**
  * go to  another map
@@ -39,8 +40,11 @@ public class InstructionGoMap extends Instruction{
 			if(map.getName().equals(mapName)){
 				mainPlayer.setPosX(futureX);
 				mainPlayer.setPosY(futureY);
-				gameScene.refreshMap(map, futureX*GameScene.getPixelSize(), futureY*GameScene.getPixelSize());
-				gameScene.changeBackScene();
+				Fade.FadeFromOneSceneToAnother(gameScene, gameScene, e->{
+					gameScene.refreshMap(map, futureX*GameScene.getPixelSize(), futureY*GameScene.getPixelSize());
+					gameScene.changeBackScene();
+					return null;
+				});
 				return;
 			}
 		}
