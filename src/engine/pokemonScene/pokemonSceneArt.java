@@ -1,5 +1,8 @@
 package engine.pokemonScene;
 
+import data.player.Player;
+import engine.UI.Path2Image;
+import engine.battle.BattleScene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
@@ -23,13 +26,28 @@ public class pokemonSceneArt {
 	
 	
 	
-	public VBox drawColBox() {
+	public VBox drawColBox(Player player) {
 		VBox verticalCol = new VBox();
-		verticalCol.getChildren().add(new pokemonCol(POKE_TEST, 3,"TONY", 100, 100));
-		verticalCol.getChildren().add(new pokemonCol(POKE_TEST, 3,"TONY", 100, 100));
-		verticalCol.getChildren().add(new pokemonCol(POKE_TEST, 3,"TONY", 100, 80));
-		verticalCol.getChildren().add(new pokemonCol(POKE_TEST, 3,"TONY", 100, 100));
-		verticalCol.getChildren().add(new pokemonCol(POKE_TEST, 3,"TONY", 100, 100));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[1].getCurrentImagePath()) ,player.getPokemons()[1].getCurrentLevel() ,player.getPokemons()[1].getName(), 100, 100));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[2].getCurrentImagePath()) ,player.getPokemons()[2].getCurrentLevel() ,player.getPokemons()[2].getName(), 100, 100));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[3].getCurrentImagePath()) ,player.getPokemons()[3].getCurrentLevel() ,player.getPokemons()[3].getName(), 100, 80));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[4].getCurrentImagePath()) ,player.getPokemons()[4].getCurrentLevel() ,player.getPokemons()[4].getName(), 100, 100));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[5].getCurrentImagePath()) ,player.getPokemons()[5].getCurrentLevel() ,player.getPokemons()[5].getName(), 100, 100));
+		
+		verticalCol.setSpacing(15);
+		
+		return verticalCol;
+	}
+	
+	
+	
+	public VBox drawColBox(BattleScene bs, Player player) {
+		VBox verticalCol = new VBox();
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[1].getCurrentImagePath()) ,player.getPokemons()[1].getCurrentLevel() ,player.getPokemons()[1].getName(),100, 100,bs));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[2].getCurrentImagePath()) ,player.getPokemons()[2].getCurrentLevel() ,player.getPokemons()[2].getName(), 100, 100,bs));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[3].getCurrentImagePath()) ,player.getPokemons()[3].getCurrentLevel() ,player.getPokemons()[3].getName(), 100, 80,bs));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[4].getCurrentImagePath()) ,player.getPokemons()[4].getCurrentLevel() ,player.getPokemons()[4].getName(), 100, 100,bs));
+		verticalCol.getChildren().add(new pokemonCol(Path2Image.showImage(player.getPokemons()[5].getCurrentImagePath()) ,player.getPokemons()[5].getCurrentLevel() ,player.getPokemons()[5].getName(),100,100,bs));
 		
 		verticalCol.setSpacing(15);
 		

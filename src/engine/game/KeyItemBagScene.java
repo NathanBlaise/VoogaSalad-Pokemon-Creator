@@ -50,7 +50,7 @@ public class KeyItemBagScene extends BagScene {
 	
 	if (code == KeyCode.UP) {
 		tarRow = (tarRow+1)%listLength;
-		System.out.println(tarRow);
+//		System.out.println(tarRow);
 		uPageArt.updateItemGrid(this.getRoot(), tarRow, colList);
 		
 		

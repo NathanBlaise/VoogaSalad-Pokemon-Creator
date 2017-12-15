@@ -178,7 +178,7 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
-//<<<<<<< HEAD
+
 		if((currentEvent!=null)&&(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
 			instructionIndex++;
 		}else{
@@ -234,6 +234,7 @@ public abstract class GameScene extends ScreenDisplay {
 	
 	public void refreshMap(GameMap mainMap, double futureX, double futureY){
 		this.mainMap = mainMap;
+		mainPlayer.setCurrentMapName(mainMap.getName());
 		this.rootClear();
 		tileCanvas = new Canvas (mainMap.getYlength()*pixelSize, mainMap.getXlength()*pixelSize);
 		GraphicsContext gc = tileCanvas.getGraphicsContext2D();

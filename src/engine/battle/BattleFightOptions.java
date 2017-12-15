@@ -3,6 +3,7 @@ package engine.battle;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ResourceBundle;
 
 import data.model.Pokemon;
 import data.model.moves.Move;
@@ -18,6 +19,9 @@ import javafx.scene.text.Font;
  *
  */
 public class BattleFightOptions {
+	
+    private static final String DEFAULT_RESOURCE_PACKAGE = "util/English_Text";
+	private ResourceBundle myResources;
 	
 	protected Pokemon activePokemon;
 	protected Pokemon enemyPokemon;
@@ -39,6 +43,7 @@ public class BattleFightOptions {
 
 	
 	public BattleFightOptions(Pokemon ap, Pokemon ep,BattleScene bs, BattleEnding be) {
+		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE);
 		activePokemon = ap;
 		enemyPokemon = ep;
 		battleScene = bs;
@@ -56,7 +61,7 @@ public class BattleFightOptions {
 		    battleScene.rootRemove(ebfo.getHBox());
 		}
 		
-		Button back = new Button("Go Back");
+		Button back = new Button(myResources.getString("backButton"));
 		setButtonStyle(back);
 		
 		hbox=battleScene.fourButtonLayout(buttonArr);
@@ -76,7 +81,8 @@ public class BattleFightOptions {
 	}
 	
 	protected void setButtonStyle(Button b) {
-		b.setStyle("-fx-border-color: transparent; -fx-border-width: 0;-fx-background-radius: 0;-fx-background-color: transparent;");
+      
+		b.setStyle(myResources.getString("buttonStyle"));
 		Font font=getFont();
 		b.setFont(font);
 	}
@@ -84,7 +90,7 @@ public class BattleFightOptions {
 	private Font getFont() {
 		Font f = new Font(20) ;
 		try {
-			f = Font.loadFont(new FileInputStream(new File("./font/font.ttf")), 20);
+			f = Font.loadFont(new FileInputStream(new File(myResources.getString("fontPath"))), 20);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();//handled by exiting the program
 			System.exit(1);
@@ -94,10 +100,11 @@ public class BattleFightOptions {
 	}
 	
 	private void setButtonText() {
-		moveButton1 = new Button("-");
-		moveButton2 = new Button("-");
-		moveButton3 = new Button("-");
-		moveButton4 = new Button("-");
+		moveButton1 = new Button(myResources.getString("defaultButton"));
+		moveButton2 = new Button(myResources.getString("defaultButton"));
+		moveButton3 = new Button(myResources.getString("defaultButton"));
+		moveButton4 = new Button(myResources.getString("defaultButton"));
+	
 		setButtonStyle(moveButton1);
 		setButtonStyle(moveButton2);
 		setButtonStyle(moveButton3);
@@ -125,7 +132,7 @@ public class BattleFightOptions {
 				VBox moveInfo = new VBox(15);
 				moveInfo.getChildren().addAll(typeLabel,ppLabel);
 				Button confirm = new Button("Use "+move.getMoveName()+" ?");
-				Button back = new Button("Go Back");
+				Button back = new Button(myResources.getString("backButton"));
 				
 				
 				setButtonStyle(confirm);
@@ -135,8 +142,8 @@ public class BattleFightOptions {
 				hbox.getChildren().addAll(confirm,back,moveInfo);
 				confirm.setOnAction((e) -> {
 					move.move(activePokemon, enemyPokemon);
-					System.out.println("Move " + move.getMoveName() + 
-						" has PP "+move.getPP());
+//					System.out.println("Move " + move.getMoveName() + 
+//						" has PP "+move.getPP());
 					//Load hit animation, then change scene to enemy's move
 					changeScene();
 					activePokemon.printCurrentInfo();
@@ -146,7 +153,7 @@ public class BattleFightOptions {
 					
 					
 					if (enemyPokemon.isDead()) {
-						be.showEnding("The enemy pokemon is dead! Congratulations!", true, true);
+						be.showEnding(myResources.getString("win"), true, true);
 					}
 					
 				

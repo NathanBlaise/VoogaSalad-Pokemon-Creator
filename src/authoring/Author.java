@@ -39,7 +39,7 @@ public class Author implements StageDelegate{
 		this.savePath = savePath;
 		this.gameType = gameType;
 		scControl = new SceneController(this,gameType);
-		System.out.println(gameType);
+//		System.out.println(gameType);
 	}
 	
 	
@@ -58,7 +58,7 @@ public class Author implements StageDelegate{
 
 	@Override
 	public void toFirstAuthorScene() {
-	        saveDatabase();
+//	        saveDatabase();
 		scControl.goToFirstEditingScene(myStage);
 		myStage.centerOnScreen();	
 	}
