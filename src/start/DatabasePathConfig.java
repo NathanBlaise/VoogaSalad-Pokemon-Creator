@@ -5,6 +5,8 @@ import java.util.Map;
 import data.Database;
 import data.saving.CreateDefaultDatabase;
 import data.saving.DatabaseLoader;
+import engine.game.Dialogue;
+import engine.game.ScrollingText;
 import authoring.eventManage.Function;
 import authoring.eventManage.Function3;
 import javafx.geometry.Pos;
@@ -14,7 +16,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.scene.Node;
@@ -78,7 +82,7 @@ public class DatabasePathConfig{
 	 * @param reaction The reaction of pressing the corresponding database 
 	 * @return The BorderPane created to show the selection 
 	 */
-	private static BorderPane chooseDatabase(Stage stage, String type, String databasesPath, Function<Database, String, Integer> reaction) {
+	public static BorderPane chooseDatabase(Stage stage, String type, String databasesPath, Function<Database, String, Integer> reaction) {
 		BorderPane result = new BorderPane();
 		new CreateDefaultDatabase(type);
 		Label title = new Label("Choose the database please :)");

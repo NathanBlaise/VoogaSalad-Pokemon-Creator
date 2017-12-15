@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 import data.event.Event;
+import data.map.GameMap;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -20,6 +21,11 @@ import engine.movement.Bicycle;
 import engine.movement.Collisions;
 import engine.movement.Direction;
 import engine.movement.PlayerMovement;
+/**
+ * 
+ * @author nathan cy122 
+ *
+ */
 
 public class PokemonGameScene extends GameScene implements keyItemInterface{
 
@@ -58,7 +64,11 @@ public class PokemonGameScene extends GameScene implements keyItemInterface{
 			Engine engine, Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, 480, 480, background, engine, stage, true);
 		playerImage.setImage(image);
-		refreshMap(engine.getDatabase().getMap(), mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
+		GameMap map = engine.getDatabase().searchMap(mainPlayer.getCurrentMapName());
+		if(map ==null){
+			mainPlayer.setCurrentMapName(super.getDatabase().getMap().getName());
+		}
+		refreshMap(engine.getDatabase().searchMap(mainPlayer.getCurrentMapName()), mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
 		changeBackScene();
 		input.getInputList().clear();
 	}

@@ -14,6 +14,7 @@ public class EventDIY extends Event{
 		availableInstructions.add("InstructionPokemonFight");
 		availableInstructions.add("InstructionCheckKeyItem");
 		availableInstructions.add("InstructionGiveKeyItem");
+		availableInstructions.add("InstructionNPCDialogue");
 	}
 	
 	/**

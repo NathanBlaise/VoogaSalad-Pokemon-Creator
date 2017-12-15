@@ -11,7 +11,7 @@ import data.player.Player;
  * Passive class that holds all information 
  * needed to be saved to file 
  * 
- * @author 
+ * @author cy122 as creator
  * @author Dan Sun for commenting
  */
 //TODO: add author tag
@@ -63,6 +63,16 @@ public class Database implements Serializable{
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
+	
+	public GameMap searchMap(String name){
+		for(GameMap map: maps){
+			if((map!=null)&&(map.getName().equals(name))){
+				return map;
+			}
+		}
+		return null;
+	}
+	
 	public GameMap getMap(){
 		return maps.get(0);
 	}

@@ -2,6 +2,7 @@ package authoring.eventManage;
 
 import java.util.ArrayList;
 
+import data.Database;
 import data.event.Instruction;
 import data.event.InstructionNPCDialogue;
 import engine.UI.UIComponentFactory.ListViewFactory;
@@ -27,9 +28,10 @@ public class InstructionNPCDialogueEditor implements InstructionEditor{
 	private Callback<Instruction, Integer> saver;
 	private InstructionNPCDialogue npcDialogue;
 	
-	public InstructionNPCDialogueEditor(InstructionNPCDialogue npcDialogue, Callback<Instruction, Integer> saver){
+	public InstructionNPCDialogueEditor(InstructionNPCDialogue npcDialogue, Database database, Callback<Instruction, Integer> saver){
 		this.npcDialogue = npcDialogue;
 		this.saver = saver;
+		saver.call(npcDialogue);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -54,6 +56,8 @@ public class InstructionNPCDialogueEditor implements InstructionEditor{
 			@Override
 			public void handle(ListView.EditEvent<String> t) {
 				dialogueList.getItems().set(t.getIndex(), t.getNewValue());
+				npcDialogue.setDialogues(new ArrayList<String>(dialogueList.getItems()));
+				saver.call(npcDialogue);
 			}			
 		});
 		

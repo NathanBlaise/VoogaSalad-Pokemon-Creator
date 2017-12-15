@@ -3,46 +3,34 @@ package engine.game;
 
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Enumeration;
 
 import data.Database;
+import data.saving.DatabaseLoader;
+import data.saving.DatabaseSaver;
 import engine.pokemonScene.pokemonScene;
 import javafx.animation.*;
-
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.application.Application;
-
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import javafx.scene.text.TextAlignment;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import player.PokemonGameScene;
+import start.DatabasePathConfig;
 
 
 
 /**
- * A basic example JavaFX program for the first lab.
+ * for showing the info of player
  * 
- * @author Robert C. Duvall
+ * @author tony cy122
  */
 public class UserPage extends Application {
 
@@ -313,17 +301,32 @@ public class UserPage extends Application {
 				myStage.setScene(bagSceList.get(0).getScene());
 				currentSce = 0;
 			}
+			else if(tarRow == 1) {
+				myStage.setScene(new pokemonScene(723,SIZE,BACKGROUND, this, database.getPlayer()).getScene());
+				myStage.sizeToScene();
+			}
+			else if(tarRow == 2) {
+				Stage stage = new Stage();
+				BorderPane databaseChooser = DatabasePathConfig.chooseDatabase(stage, "Pokemon", DatabaseLoader.getAvailableGameTypes().get("Pokemon"), (database, path)-> {
+					DatabaseSaver.save(this.database, path);
+					ScrollingText text = new ScrollingText("Database successfully saved.", Dialogue.getFont());
+					text.setTextAlignment(TextAlignment.CENTER);
+					StackPane stack = new StackPane();
+					stack.getChildren().add(text);
+					stage.setScene(new Scene(stack,500,200));
+					text.animateText();
+					return null;
+				});
+				stage.setScene(new Scene(databaseChooser));
+				stage.show();
+			}
 			else if(tarRow == 3) {
 				UserInterfaceEntered = true; 
 				tarRow = -1;
 				itemBox.getChildren().clear();
 				uPageArt.removeAll(root);
 				end.call(0);
-		}
-			else if(tarRow == 1) {
-				myStage.setScene(new pokemonScene(723,SIZE,BACKGROUND, this,database.getPlayer()).getScene());
-				myStage.sizeToScene();
-		}
+			}
 			
 		}
 		}
