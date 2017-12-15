@@ -17,6 +17,7 @@ public class ItemColomn extends HBox{
 	/*private variable*/
 	private String ItemColomnName;
 	private ImageView ArrowView;
+	private int myNum = -1;
 	private String Explanation = new String();
 	
 	public ItemColomn(String name){
@@ -39,6 +40,19 @@ public class ItemColomn extends HBox{
 	}
 	
 	
+	public ItemColomn(String name, String explanation,int num){
+		ArrowView = new ImageView();
+		ItemColomnName = name;
+		myNum = num;
+		
+		
+		this.getChildren().add(ArrowView);
+		this.getChildren().add(useFont(ItemColomnName,25));
+		this.getChildren().add(useFont(myNum,25));
+		Explanation = explanation;
+		this.setSpacing(10);
+		
+	}
 	
 	public void selectItemColomn() {
 		ArrowView.setImage(PANE_POINT);
@@ -56,12 +70,33 @@ public class ItemColomn extends HBox{
 	 * @return The Text with the certain target and certain size
 	 */
 	private Text useFont(String target, int Size) {
+		while(target.length() <= 6) target = target + " ";
 		Text ans = new Text(target);
 		ans.setFont(getFont(Size));
+		
 		
 		return ans;
 		
 	}
+	
+	
+	/**
+	 * @param target: Integer Target
+	 * @param Size: size of the text
+	 * @return The Text with the certain target and certain size
+	 */
+	private Text useFont(int intTarget, int Size) {
+		String rawTarget = Integer.toString(intTarget);
+	    String target = " x " + rawTarget;
+		while(target.length() <= 3) target = target + " ";
+		Text ans = new Text(target);
+		ans.setFont(getFont(Size));
+		
+		
+		return ans;
+		
+	}
+	
 	
 	
 	

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 
 import data.Database;
+import engine.pokemonScene.pokemonScene;
 import javafx.animation.*;
 
 import javafx.animation.KeyFrame;
@@ -34,6 +35,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import player.PokemonGameScene;
 
 
 
@@ -55,9 +57,10 @@ public class UserPage extends Application {
 	public static final String ITEM_NAME_EXIT = "EXIT";
 	public static final String ITEM_NAME_INVENTORY = "PACK";
 	public static final String ITEM_NAME_SAVE = "SAVE";
+	public static final String ITEM_NAME_POKEMON = "POKEMON";
 	private final int PANE_XPOS = 220;
 	private final int PANE_YPOS = 0;
-	private final int ITEMBOX_XPOS = 260;
+	private final int ITEMBOX_XPOS = 250;
 	private final int ITEMBOX_YPOS = 30;
 	private final int POPOUT_WIDTH = 8;
 	private final int POPOUT_HEIGHT = 8;
@@ -76,22 +79,24 @@ public class UserPage extends Application {
 	private UserPageArt uPageArt = new UserPageArt();
 	private Database database;
 
-	public UserPage(Database database, Stage stage, Scene scene, Pane root){
+	public UserPage(Database database, Stage stage, PokemonGameScene pGscene, Pane root){
 		this.database = database;
 		this.myStage = stage;
-		this.scene =  scene;
+		this.scene =  pGscene.getScene();
 		this.root = root;
 		
 		// SET UP BAGSCENE OVER HERE
 		bagSceList.add(new PokemonBagScene(SIZE,SIZE,BACKGROUND, this));
 		bagSceList.add(new HMBagScene(SIZE,SIZE,BACKGROUND,this));
-		bagSceList.add(new KeyItemBagScene(SIZE,SIZE,BACKGROUND,this));
+		bagSceList.add(new KeyItemBagScene(SIZE,SIZE,BACKGROUND,this,pGscene));
 		bagSceList.add(new potionBagScene(SIZE,SIZE,BACKGROUND,this));
 		
 		//SET UP COLOMN LIST
 		colList.add(new ItemColomn(ITEM_NAME_INVENTORY));
+		colList.add(new ItemColomn(ITEM_NAME_POKEMON));
 		colList.add(new ItemColomn(ITEM_NAME_SAVE));
 		colList.add(new ItemColomn(ITEM_NAME_EXIT));
+
 		
 		uPageArt.makeGrid(POPOUT_WIDTH, POPOUT_HEIGHT, root, PANE_XPOS,PANE_YPOS);
 		uPageArt.setUpBasicItemGrid(root, colList, ITEMBOX_XPOS, ITEMBOX_YPOS);
@@ -297,7 +302,7 @@ public class UserPage extends Application {
 		
 //		else 
 			if (code == KeyCode.UP) {
-			tarRow = (tarRow+2)%3;
+			tarRow = (tarRow+2)%colList.size();
 			uPageArt.updateItemGrid(root, tarRow, colList);
 		}
 		
@@ -308,18 +313,23 @@ public class UserPage extends Application {
 				myStage.setScene(bagSceList.get(0).getScene());
 				currentSce = 0;
 			}
-			else if(tarRow == 2) {
+			else if(tarRow == 3) {
 				UserInterfaceEntered = true; 
 				tarRow = -1;
 				itemBox.getChildren().clear();
 				uPageArt.removeAll(root);
 				end.call(0);
 		}
+			else if(tarRow == 1) {
+				myStage.setScene(new pokemonScene(723,SIZE,BACKGROUND, this).getScene());
+				myStage.sizeToScene();
+		}
+			
 		}
 		}
 		
 		else if (code == KeyCode.DOWN) {
-			tarRow = (tarRow+1)%3;
+			tarRow = (tarRow+1)%colList.size();
 			uPageArt.updateItemGrid(root, tarRow, colList);
 			
 			
@@ -330,21 +340,27 @@ public class UserPage extends Application {
 	
 	public void switchBagSceneRight() {
 		if (currentSce != -1) {
-			currentSce = (currentSce + 1)%3;
+			currentSce = (currentSce + 1)%colList.size();
 			myStage.setScene(bagSceList.get(currentSce).getScene());
 		}
 	}
 	
 	public void swithBagSceneLeft() {
 		if (currentSce != -1) {
-			currentSce = (currentSce + 2)%3;
+			currentSce = (currentSce + 2)%colList.size();
 			myStage.setScene(bagSceList.get(currentSce).getScene());
 		}
 	}
 	
 	
+
+	/**
+	 * The getter of database
+	 */
 	
-	
+	public Database getDataBase() {
+		return database;
+	}
 
 
 	
@@ -358,6 +374,8 @@ public class UserPage extends Application {
 		tarRow = 0;
 	}
 
+	
+	
 	/**
 	 * Start the program.
 	 */
