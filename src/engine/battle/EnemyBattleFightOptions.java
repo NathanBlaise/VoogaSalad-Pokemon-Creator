@@ -1,6 +1,7 @@
 package engine.battle;
 
 import java.util.Random;
+import java.util.ResourceBundle;
 
 import data.model.Pokemon;
 import data.model.moves.Move;
@@ -22,18 +23,22 @@ import javafx.scene.text.Text;
 public class EnemyBattleFightOptions extends BattleFightOptions {
 	private BattleScene mainScene;
 	private BattleFightOptions bfo;
-	
+	private ResourceBundle myResources;
+	private static final String DEFAULT_RESOURCE_PACKAGE = "util/English_Text";
 	
 
 
-	private Button cancel=new Button("Enemy Pokemon's move");
+	private Button cancel;
 
 	
 	public EnemyBattleFightOptions(Pokemon ap, Pokemon ep, BattleScene bs, BattleEnding be) {
 		super(ap, ep,bs,be);
+		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE);
 		
 		mainScene = bs;
+		cancel=new Button(myResources.getString("enemyButton"));
 		super.setButtonStyle(cancel);
+		
 		
 	}
 	
@@ -91,7 +96,7 @@ public class EnemyBattleFightOptions extends BattleFightOptions {
 	  battleScene.updateHealthBars(enemyPokemon.getCurrentStat().getHP(), activePokemon.getCurrentStat().getHP());
 	  super.battleScene.setMessage("Oh no! "+ activePokemon.getNickName() + " performed "+move.getMoveName()+"!");
 	  if(enemyPokemon.isDead()) {
-			be.showEnding("Game end. Your pokemon is dead.",true,false);
+			be.showEnding(myResources.getString("lose"),true,false);
 //			battleScene.getPlayer().deletePokemon(enemyPokemon);
 		}  
 	  

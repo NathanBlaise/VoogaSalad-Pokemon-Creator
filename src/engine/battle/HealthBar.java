@@ -73,14 +73,14 @@ public class HealthBar {
 	}
 	
 	public void setHealth(double health, boolean animate) {
-		System.out.println("New Health: " + health + "Last Health :" + lastHealth);
+//		System.out.println("New Health: " + health + "Last Health :" + lastHealth);
 		if(health != lastHealth) {
 			if(health > 0) finalWidth = (health/totalHealth) * totalWidth;
 			else if(health <= 0) finalWidth = 0;
 			double diff = Math.abs(lastHealth - health);
 			if(animate) {
-				if(lastHealth < health) increase = true;
-				double decrement = ((diff/totalHealth) * totalWidth)/10;
+				increase = lastHealth < health? true:false;
+				double delta = ((diff/totalHealth) * totalWidth)/10;
 				AnimationTimer timer = new AnimationTimer() {
 					private long lastUpdate = 0;
 					@Override
@@ -88,20 +88,21 @@ public class HealthBar {
 						if(now - lastUpdate >= 100000000) {
 							
 							if(!increase) {
-								double newWidth = healthBar.getWidth() - decrement;
+								double newWidth = healthBar.getWidth() - delta;
 								healthBar.setWidth(newWidth);
 								if(newWidth <= finalWidth) {
 									healthBar.setWidth(finalWidth);
 									stop();
 								}
 							} else if(increase) {
-								double newWidth = healthBar.getWidth() + decrement;
+								double newWidth = healthBar.getWidth() + delta;
 								healthBar.setWidth(newWidth);
 								if(newWidth >= finalWidth) {
 									healthBar.setWidth(finalWidth);
 									stop();
 								}
 							}
+							changeColorBasedOnPercentHealth();
 							
 							lastUpdate = now;
 						}
@@ -109,13 +110,18 @@ public class HealthBar {
 					
 				}; timer.start();
 			} else {
-				System.out.println("Width changed");
+//				System.out.println("Width changed");
 				healthBar.setWidth(finalWidth);
 			}
-			if(healthBar.getWidth() < totalWidth * 0.3) healthBar.setFill(Color.RED);
-			else if(healthBar.getWidth() < totalWidth * 0.6) healthBar.setFill(Color.ORANGE);
+			
 			lastHealth = health;
 		}
+	}
+
+	private void changeColorBasedOnPercentHealth() {
+	    if(healthBar.getWidth() < totalWidth * 0.3) healthBar.setFill(Color.RED);
+	    else if(healthBar.getWidth() < totalWidth * 0.6) healthBar.setFill(Color.ORANGE);
+	    else healthBar.setFill(Color.LIGHTGREEN);
 	}
 
 	public Pane getPane() {

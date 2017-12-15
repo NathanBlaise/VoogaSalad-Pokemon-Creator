@@ -46,7 +46,7 @@ public class pokemonScene extends ScreenDisplay {
 		
 		this.rootAdd(pSceArt.drawColBox(bSce,player), 330, 20);
 		this.rootAdd(cancel,650,450);
-		System.out.println(player.getPokemons()[0].getCurrentImagePath());
+//		System.out.println(player.getPokemons()[0].getCurrentImagePath());
 		this.rootAdd(new curPokemonCol(Path2Image.showImage(player.getPokemons()[0].getCurrentImagePath()) ,player.getPokemons()[0].getCurrentLevel() ,player.getPokemons()[0].getName(), 100, 100, bSce),0,150);
 		cancel.addEventFilter(MouseEvent.MOUSE_CLICKED, e->bSce.goBackToOriScene());
 		

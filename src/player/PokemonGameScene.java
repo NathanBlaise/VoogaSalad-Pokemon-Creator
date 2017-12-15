@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 import data.event.Event;
+import data.map.GameMap;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -20,6 +21,11 @@ import engine.movement.Bicycle;
 import engine.movement.Collisions;
 import engine.movement.Direction;
 import engine.movement.PlayerMovement;
+/**
+ * 
+ * @author nathan cy122 
+ *
+ */
 
 public class PokemonGameScene extends GameScene implements keyItemInterface{
 
@@ -58,7 +64,11 @@ public class PokemonGameScene extends GameScene implements keyItemInterface{
 			Engine engine, Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, 480, 480, background, engine, stage, true);
 		playerImage.setImage(image);
-		refreshMap(engine.getDatabase().getMap(), mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
+		GameMap map = engine.getDatabase().searchMap(mainPlayer.getCurrentMapName());
+		if(map ==null){
+			mainPlayer.setCurrentMapName(super.getDatabase().getMap().getName());
+		}
+		refreshMap(engine.getDatabase().searchMap(mainPlayer.getCurrentMapName()), mainPlayer.getPosX()*pixelSize, mainPlayer.getPosY()*pixelSize);
 		changeBackScene();
 		input.getInputList().clear();
 	}
@@ -88,18 +98,7 @@ public class PokemonGameScene extends GameScene implements keyItemInterface{
 		    if(!Collisions.checkCollision(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane)){
 		    	PlayerMovement.changePos(pixelSize, playerImage, nextPosX, nextPosY, tileCanvas, (GameScene)this);
 		    }else{
-				Pair<Integer, Integer> playerIndex = PlayerMovement.playerIndexOnGrid(nextPosX+offsetX+sizeBlockX/2-tileCanvas.getLayoutX(), nextPosY+offsetY+sizeBlockY/2-tileCanvas.getLayoutY(), pixelSize, pixelSize);
-				Map<Pair<Integer, Integer>, Event> collideEvents = Collisions.getCollideEvents(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane, mainMap);
-				ArrayList<Pair<Integer, Integer>> directions = new ArrayList<Pair<Integer, Integer>>();
-				for(String key: input2direction.keySet()){
-					if(input.getInputList().contains(key)){
-						directions.add(input2direction.get(key));
-					}
-				}
-				Event encounterEvent = Collisions.searchEvent(playerIndex, directions, collideEvents);
-			    if((encounterEvent!=null)&&(directions.size()!=0)){
-			    	executeEvent(encounterEvent);
-			    }
+		    		executeFoundEvent(nextPosX, nextPosY,sizeBlockX,sizeBlockY);
 		    }
 		}
 	}

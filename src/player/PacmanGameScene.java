@@ -3,8 +3,11 @@ package player;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Random;
 
 import data.event.Event;
+import data.event.EventPacmanEnemy;
+import data.map.Cell;
 import engine.Engine;
 import engine.game.GameScene;
 import engine.movement.Collisions;
@@ -12,6 +15,7 @@ import engine.movement.Direction;
 import engine.movement.PlayerMovement;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
@@ -30,7 +34,9 @@ public class PacmanGameScene extends GameScene {
 	private static final int sizeBlockX = PLAYER_WIDTH - 2*offsetX;
 	private static final int sizeBlockY = PLAYER_HEIGHT - 2*offsetY;
 	private final Image image = new Image("file:images/pacman_movement/pacman_down_1.png");
+	private Random rand = new Random();
 	private PlayerMovement playerMoves;
+	private Map<Event,ImageView> pacmanEnemies;
 	
 	{
 		Image pacman_down_1 = new Image("file:images/pacman_movement/pacman_down_1.png");
@@ -53,36 +59,49 @@ public class PacmanGameScene extends GameScene {
 			Stage stage) {
 		super(PLAYER_WIDTH, PLAYER_HEIGHT, 720, 480, background, engine, stage, false);
 		playerImage.setImage(image);
-		refreshMap(mainMap);
-		changeBackScene();
-		
+		restartGame();
 	}
 
 	@Override
 	protected void step() {
 		Pair<Double, Double> nextPos = new Pair<Double, Double>(playerImage.getX(), playerImage.getY());
-		for(Node node: mapPane.getChildren()){
-			int row = GridPane.getRowIndex(node);
-			int column= GridPane.getColumnIndex(node);
-			node.setLayoutX(mapPane.getLayoutX()+pixelSize*column);
-			node.setLayoutY(mapPane.getLayoutY()+pixelSize*row);
-		}
 		nextPos = playerMoves.nextPosition(playerImage, input2direction, input, nextPos);
 		double nextPosX = nextPos.getKey();
 	    double nextPosY = nextPos.getValue();
-	    if(!Collisions.checkCollision(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane)){
-	    	PlayerMovement.changePos(pixelSize, playerImage, nextPosX, nextPosY, tileCanvas, (GameScene)this);
-	    } else {
-	    	Pair<Integer, Integer> playerIndex = PlayerMovement.playerIndexOnGrid(nextPosX+offsetX+sizeBlockX/2-tileCanvas.getLayoutX(), nextPosY+offsetY+sizeBlockY/2-tileCanvas.getLayoutY(), pixelSize, pixelSize);
-			Map<Pair<Integer, Integer>, Event> collideEvents = Collisions.getCollideEvents(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane, mainMap);
-			ArrayList<Pair<Integer, Integer>> directions = new ArrayList<Pair<Integer, Integer>>();
-			for(String key: input2direction.keySet()){
-				if(input.getInputList().contains(key)){
-					directions.add(input2direction.get(key));
-				}
-				Event encounterEvent = Collisions.searchEvent(playerIndex, directions, collideEvents);
-			}
-	    }
+	    	if(!Collisions.checkCollision(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane)){
+	    		PlayerMovement.changePos(pixelSize, playerImage, nextPosX, nextPosY, tileCanvas, (GameScene)this);
+	    	} else {
+	    		executeFoundEvent(nextPosX, nextPosY,sizeBlockX,sizeBlockY);
+	    	}
+	    	for (Map.Entry<Event, ImageView> entry : pacmanEnemies.entrySet()) {
+	    		ImageView enemyImage = entry.getValue();
+	    		if(playerImage.intersects(enemyImage.getBoundsInParent())) {
+	    			this.rootRemove(playerImage);
+	    			restartGame();
+	    		}
+	    		if(!Collisions.checkCollision(enemyImage.getX(), enemyImage.getY(), sizeBlockX, sizeBlockY, mapPane)){
+	    			int newDist = (int) (rand.nextInt(3) -1) * ((EventPacmanEnemy) entry.getKey()).getPacmanEnemy().getSpeed();
+	    			double newXPos = enemyImage.getX() + newDist;
+	    			enemyImage.setX(newXPos);
+	    		} else {
+	    			enemyImage.setX(enemyImage.getX() - 5);
+	    		}
+	    	}
+	    		
+	    		
+	}
+
+	
+	
+	
+	private void restartGame() {
+		pacmanEnemies = refreshMap(mainMap,2*pixelSize,3*pixelSize);
+		for (Map.Entry<Event, ImageView> entry : pacmanEnemies.entrySet()) {
+			entry.getValue().setX(((EventPacmanEnemy) entry.getKey()).getXPos() * pixelSize);
+			entry.getValue().setY(((EventPacmanEnemy) entry.getKey()).getYPos() * pixelSize);
+			this.rootAdd(entry.getValue());
+		}
+		changeBackScene();
 	}
 	
 }

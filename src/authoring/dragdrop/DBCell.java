@@ -256,7 +256,7 @@ public class DBCell {
 				if(cell.getEvent() instanceof EventPokemon){
 					new PokemonEventEditor(app.getDatabase().getModel().getPokemonSpecies(), ((EventPokemon)cell.getEvent()).getPokemon(), (m)->{UpdatEvent(m); return null;});
 				}else if(cell.getEvent() instanceof EventNPC){
-					new NPCEventEditor((EventNPC)cell.getEvent(), app.getDatabase().getModel().getPokemonSpecies(), (m)->{UpdatEvent(m); return null;});
+					new NPCEventEditor((EventNPC)cell.getEvent(), app.getDatabase(), app.getDatabase().getModel().getPokemonSpecies(), (m)->{UpdatEvent(m); return null;});
 				}else if(cell.getEvent() instanceof EventPacmanEnemy) {
 					new PacmanEventEditor((EventPacmanEnemy)cell.getEvent(),(m)->{UpdatEvent(m); return null;});
 				}else if(cell.getEvent() instanceof EventDIY){
@@ -292,7 +292,7 @@ public class DBCell {
 			NPC npc = (NPC)db.getContent(DataFormat.lookupMimeType("NPC"));
 			@SuppressWarnings("unchecked")
 			List<PokemonSpecie> pokemons = (List<PokemonSpecie>)db.getContent(DataFormat.lookupMimeType("PokemonList"));
-			new NPCEventEditor(new EventNPC(npc), pokemons, (e)->{UpdatEvent(e); return null;});
+			new NPCEventEditor(new EventNPC(npc), app.getDatabase(), pokemons, (e)->{UpdatEvent(e); return null;});
 		} else if (db.getContent(DataFormat.lookupMimeType("Type")).equals("Pokemon")){
 			PokemonSpecie pokemonSpecie = (PokemonSpecie)db.getContent(DataFormat.lookupMimeType("PokemonSpecie"));
 			@SuppressWarnings("unchecked")

@@ -5,6 +5,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 
 import authoring.ScreenDisplay;
@@ -49,7 +50,9 @@ public class BattleScene extends ScreenDisplay{
 	private static final int LIST_OF_BAG_ITEMS_WIDTH = 150;
 	private final int BUTTONS_XPOS = 60;
 	private final int BUTTONS_YPOS = 370;
+	private static final String DEFAULT_RESOURCE_PACKAGE = "util/English_Text";
 	
+	private ResourceBundle myResources;
 	private String backgroundImage="file:images/item_list_background.jpg";
     private BattleScene bs;
 	private Stage myStage;
@@ -88,7 +91,7 @@ public class BattleScene extends ScreenDisplay{
 	 */
 	public BattleScene(int width, int height, Paint background, Player player, Pokemon pokemon, GameScene scene, Stage stage, Callback<Integer, Integer> winAction, Callback<Integer, Integer> loseAction) {
 		super(width, height, background);
-		
+		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE);
 		canvas = new Canvas(width,height);
 		myStage = stage;
 		mainPlayer = player;
@@ -178,7 +181,7 @@ public class BattleScene extends ScreenDisplay{
 			}
 			
 			if (itemNames.size()==0) {
-				be.showEnding("Nothing inside the bag", false, false);
+				be.showEnding(myResources.getString("nothing"), false, false);
 				return;
 			}
 			
@@ -197,7 +200,7 @@ public class BattleScene extends ScreenDisplay{
 		list.setTranslateY(y);
 		list.setPrefWidth(LIST_OF_BAG_ITEMS_WIDTH);
 		list.setPrefHeight(LIST_OF_BAG_ITEMS_HEIGHT);
-		list.setStyle("-fx-control-inner-background: #61a2b1;");
+		list.setStyle(myResources.getString("style"));
 		this.rootAdd(list);
 		return list;
 	}
@@ -241,9 +244,9 @@ public class BattleScene extends ScreenDisplay{
 		     			if (thisItem instanceof PokemonBall) {
 		     				boolean caught=((PokemonBall) thisItem).getCaught();
 		     				if (caught) {
-		     					be.showEnding("The pokemon is caught!", true, true);
+		     					be.showEnding(myResources.getString("caught"), true, true);
 		     				} else {
-		     					be.showEnding("The pokemon is not caught!", false, false);
+		     					be.showEnding(myResources.getString("notCaught"), false, false);
 		     				}
 		     				
 		     			} 
@@ -258,7 +261,7 @@ public class BattleScene extends ScreenDisplay{
 							| IllegalAccessException | IllegalArgumentException
 							| InvocationTargetException e) {
 						
-						System.out.printf("type:%s, item not found!", item);
+						System.out.printf(myResources.getString("itemNotFoundError"), item);
 					}
 	     			
 	               

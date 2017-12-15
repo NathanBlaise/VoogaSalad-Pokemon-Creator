@@ -110,7 +110,7 @@ public class Dialogue {
 	 * @return the specific Pokemon font
 	 */
 	public static Font getFont() {
-		Font f = new Font(30) ;
+		Font f = new Font(10) ;
 		try {
 			f = Font.loadFont(new FileInputStream(new File("./src/resources/pkmnem.ttf")), FONTSIZE);
 		} catch (FileNotFoundException e) {

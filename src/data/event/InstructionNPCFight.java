@@ -76,7 +76,10 @@ public class InstructionNPCFight  extends Instruction{
 	public void setPokemons(Pokemon[] pokemons) {
 		this.pokemons = pokemons;
 	}
-	
+	/**
+	 * 
+	 * @return the maximum nunber of pokemons a NPC can carry
+	 */
 	public static int getPokemonNum(){
 		return pokemonNum;
 	}

@@ -41,16 +41,20 @@ public class InstructionNPCFightEditor implements InstructionEditor{
 				tempButton.setText(npcFight.getPokemons()[i].getNickName());
 				buttonMap.put(tempButton, npcFight.getPokemons()[i]);
 			}else{
-				Pokemon newPokemon = new Pokemon(pokemonSpecies.get(0), pokemonSpecies.get(0).getSpecieName());
-				tempButton.setText(newPokemon.getNickName());
-				buttonMap.put(tempButton, newPokemon);
+//				Pokemon newPokemon = new Pokemon(pokemonSpecies.get(0), pokemonSpecies.get(0).getSpecieName());
+//				tempButton.setText(newPokemon.getNickName());
+//				buttonMap.put(tempButton, newPokemon);
+			    	//do not fill player or NPC with random pokemons
+			    	tempButton.setText("New Pokemon");
+			    	buttonMap.put(tempButton, null);
 			}
 			tempButton.setPrefSize(70, 230/(pokemonNum/gridWidth));
 			tempButton.setOnMouseClicked(e->{
-				Pokemon selectedPokemon = buttonMap.get(tempButton);
+			    	Pokemon defaultPokemon = new Pokemon(pokemonSpecies.get(0), pokemonSpecies.get(0).getSpecieName());
+				Pokemon selectedPokemon = buttonMap.get(tempButton)==null? defaultPokemon: buttonMap.get(tempButton);
 				pokemonList.setRight(new PokemonChooser(pokemonSpecies, selectedPokemon, tempButton).showPokemon());
 				pokemonList.autosize();
-				tempButton.call(buttonMap.get(tempButton));
+				tempButton.call(selectedPokemon);
 			});
 			buttonPane.getChildren().add(tempButton);
 		}
@@ -70,7 +74,7 @@ public class InstructionNPCFightEditor implements InstructionEditor{
 			int i=0;
 			for(Button button: buttonMap.keySet()){
 				Pokemon tempPokemon = buttonMap.get(button);
-				if((tempPokemon.getName()!=null)&&(!tempPokemon.getName().equals(""))){
+				if((tempPokemon!=null)&&(tempPokemon.getName()!=null)&&(!tempPokemon.getName().equals(""))){
 					pokemons[i] = tempPokemon;
 					i++;
 				}
