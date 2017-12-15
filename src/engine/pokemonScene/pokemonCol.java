@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import engine.battle.BattleScene;
 import engine.battle.HealthBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,6 +27,7 @@ public class pokemonCol extends Pane{
 	private int fullHealth;
 	private int curHealth;
 	private String name = "";
+	private BattleScene myBs;
 	
 	//GUI
 	private VBox nameLevel;
@@ -40,7 +42,8 @@ public class pokemonCol extends Pane{
 		curHealth = curHea;
 		name = nam;
 		
-		healthBar = new HealthBar(curHea, 120,8);
+		healthBar = new HealthBar(fullHea, 120,8);
+		healthBar.setHealth(curHea, false);
 		bgBox = new ImageView(DESELECT_BOX);
 		
 		// intialize pokeball status
@@ -70,7 +73,54 @@ public class pokemonCol extends Pane{
 	}
 	
 	
+	public pokemonCol(Image pokeImage,int le,String nam, int fullHea, int curHea, BattleScene bSce) {
+		myImage = new ImageView(pokeImage);
+		level = le;
+		fullHealth = fullHea;
+		curHealth = curHea;
+		name = nam;
+		myBs = bSce;
+		
+		healthBar = new HealthBar(fullHea, 120,8);
+		healthBar.setHealth(curHea, false);
+		bgBox = new ImageView(DESELECT_BOX);
+		
+		// intialize pokeball status
+		pokeBall = new ImageView(CLOSE_BALL);
+		nameLevel = new VBox();
+		setUpVerticalBox(nameLevel,SPACE);
+		
+		this.addEventFilter(MouseEvent.MOUSE_ENTERED, e->selectCol());
+		this.addEventFilter(MouseEvent.MOUSE_EXITED, e->DeSelectCol());
+		this.addEventFilter(MouseEvent.MOUSE_CLICKED, e->clickResult());
+		
+		this.getChildren().add(bgBox);
+		bgBox.setLayoutX(20);
+		bgBox.setLayoutY(0);
+		this.getChildren().add(nameLevel);
+		nameLevel.setLayoutX(75);
+		nameLevel.setLayoutY(10);
+		this.getChildren().add(pokeBall);
+		this.getChildren().add(myImage);
+		myImage.setLayoutX(0);
+		myImage.setLayoutY(0);
+		this.getChildren().add(healthBar.getPane());
+		healthBar.getPane().relocate(233, 19);
+		
+		
+		
 	
+	}
+	
+	
+	
+	private void clickResult() {
+		myBs.changeActivePokemon(name);
+		myBs.goBackToOriScene();
+		
+	}
+
+
 	/**
 	 * When selecting the colomn, change gui to notify the change
 	 * @return

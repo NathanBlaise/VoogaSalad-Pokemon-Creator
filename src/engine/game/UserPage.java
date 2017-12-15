@@ -321,7 +321,7 @@ public class UserPage extends Application {
 				end.call(0);
 		}
 			else if(tarRow == 1) {
-				myStage.setScene(new pokemonScene(723,SIZE,BACKGROUND, this).getScene());
+				myStage.setScene(new pokemonScene(723,SIZE,BACKGROUND, this,database.getPlayer()).getScene());
 				myStage.sizeToScene();
 		}
 			

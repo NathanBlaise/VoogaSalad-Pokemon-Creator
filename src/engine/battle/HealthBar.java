@@ -72,41 +72,46 @@ public class HealthBar {
 		return healthBar;
 	}
 	
-	public void setHealth(double health) {
+	public void setHealth(double health, boolean animate) {
+		System.out.println("New Health: " + health + "Last Health :" + lastHealth);
 		if(health != lastHealth) {
 			if(health > 0) finalWidth = (health/totalHealth) * totalWidth;
 			else if(health <= 0) finalWidth = 0;
 			double diff = Math.abs(lastHealth - health);
-			
-			if(lastHealth < health) increase = true;
-			double decrement = ((diff/totalHealth) * totalWidth)/10;
-			AnimationTimer timer = new AnimationTimer() {
-				private long lastUpdate = 0;
-				@Override
-				public void handle(long now) {
-					if(now - lastUpdate >= 100000000) {
-						
-						if(!increase) {
-							double newWidth = healthBar.getWidth() - decrement;
-							healthBar.setWidth(newWidth);
-							if(newWidth <= finalWidth) {
-								healthBar.setWidth(finalWidth);
-								stop();
+			if(animate) {
+				if(lastHealth < health) increase = true;
+				double decrement = ((diff/totalHealth) * totalWidth)/10;
+				AnimationTimer timer = new AnimationTimer() {
+					private long lastUpdate = 0;
+					@Override
+					public void handle(long now) {
+						if(now - lastUpdate >= 100000000) {
+							
+							if(!increase) {
+								double newWidth = healthBar.getWidth() - decrement;
+								healthBar.setWidth(newWidth);
+								if(newWidth <= finalWidth) {
+									healthBar.setWidth(finalWidth);
+									stop();
+								}
+							} else if(increase) {
+								double newWidth = healthBar.getWidth() + decrement;
+								healthBar.setWidth(newWidth);
+								if(newWidth >= finalWidth) {
+									healthBar.setWidth(finalWidth);
+									stop();
+								}
 							}
-						} else if(increase) {
-							double newWidth = healthBar.getWidth() + decrement;
-							healthBar.setWidth(newWidth);
-							if(newWidth >= finalWidth) {
-								healthBar.setWidth(finalWidth);
-								stop();
-							}
+							
+							lastUpdate = now;
 						}
-						
-						lastUpdate = now;
 					}
-				}
-				
-			}; timer.start();
+					
+				}; timer.start();
+			} else {
+				System.out.println("Width changed");
+				healthBar.setWidth(finalWidth);
+			}
 			if(healthBar.getWidth() < totalWidth * 0.3) healthBar.setFill(Color.RED);
 			else if(healthBar.getWidth() < totalWidth * 0.6) healthBar.setFill(Color.ORANGE);
 			lastHealth = health;
