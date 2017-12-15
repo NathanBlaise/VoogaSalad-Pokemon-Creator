@@ -100,8 +100,8 @@ public class InstructionGoMapEditor implements InstructionEditor {
 	public sizeChooser(int XMax, int YMax, int initialX, int initialY, Function<Integer, Integer, Integer> saver){ 
 	    lengthX = initialX;
 	    lengthY = initialY;
-	    HBox xChooser =  UIComponentFactory.intSlider(lengthX, 0, XMax-1, x -> {lengthX = x; saver.apply(lengthX, lengthY); return null;}, "y coordinate");
-	    HBox yChooser =  UIComponentFactory.intSlider(lengthY, 0, YMax-1, y -> {lengthY = y; saver.apply(lengthX, lengthY); return null;}, "x coordinate");
+	    HBox xChooser =  UIComponentFactory.intSlider(lengthX, 0, XMax-1, x -> {lengthX = x; saver.apply(lengthX, lengthY); return null;}, "horizontal coordinate");
+	    HBox yChooser =  UIComponentFactory.intSlider(lengthY, 0, YMax-1, y -> {lengthY = y; saver.apply(lengthX, lengthY); return null;}, "vertical coordinate");
 	    VBox vBox = new VBox();
 	    vBox.getChildren().addAll(xChooser, yChooser);
 	    setTop(instruction);
