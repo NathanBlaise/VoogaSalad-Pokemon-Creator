@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import data.model.Tile;
 import authoring.BasicAuthorScreen;
 import authoring.StageDelegate;
-import authoring.dragdrop.DBMap;
 import authoring.dragdrop.MapManager;
 import javafx.scene.paint.Paint;
 
@@ -20,7 +19,6 @@ public class EditEventImageScene extends BasicAuthorScreen {
 	/*final variable*/
 	
 	/*instance variable*/
-	private DBMap myMap;
 	private StageDelegate stageHelper;
 
 	public EditEventImageScene(Paint background, StageDelegate stageHelper) {

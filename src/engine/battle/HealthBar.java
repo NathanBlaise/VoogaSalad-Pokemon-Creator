@@ -1,6 +1,5 @@
 package engine.battle;
 
-import java.util.Observable;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.layout.Pane;

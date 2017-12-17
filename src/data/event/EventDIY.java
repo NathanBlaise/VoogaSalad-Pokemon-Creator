@@ -1,7 +1,11 @@
 package data.event;
 
 import java.util.ArrayList;
-
+/**
+ * the event that has most of types of instructions to let the user DIY the combination of instructions
+ * @author cy122
+ *
+ */
 public class EventDIY extends Event{
 	
 	private static final long serialVersionUID = 7911921493930889760L;

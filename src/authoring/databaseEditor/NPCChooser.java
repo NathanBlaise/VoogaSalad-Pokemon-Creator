@@ -15,7 +15,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
-
+/**
+ * choose the NPC
+ * @author cy122
+ *
+ */
 public class NPCChooser {
 	private NPC localNPC;
 	private Callback<NPC, Integer> saver;

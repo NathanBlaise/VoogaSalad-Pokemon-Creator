@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 import authoring.ScreenDisplay;
 import data.items.Item;
 import data.items.PokemonBall;
-import data.model.NPC;
 import data.model.Pokemon;
 import data.player.Player;
 import engine.UI.PokemonLabel;
@@ -53,7 +52,7 @@ public class BattleScene extends ScreenDisplay{
 	private static final String DEFAULT_RESOURCE_PACKAGE = "util/English_Text";
 	
 	private ResourceBundle myResources;
-	private String backgroundImage="file:images/item_list_background.jpg";
+//	private String backgroundImage="file:images/item_list_background.jpg";
     private BattleScene bs;
 	private Stage myStage;
 	private Canvas canvas;
@@ -270,18 +269,18 @@ public class BattleScene extends ScreenDisplay{
 		
 	}
 	
-	private void pokemonListAction() {
-		listOfPokemons.setOnMouseClicked(new EventHandler<MouseEvent>(){
-	          @Override
-	          public void handle(MouseEvent arg0) {
-
-	                 String pokemon=listOfPokemons.getSelectionModel().getSelectedItems().get(0);
-	                 changeActivePokemon(pokemon);   
-	          }
-
-			
-	      });	
-	}
+//	private void pokemonListAction() {
+//		listOfPokemons.setOnMouseClicked(new EventHandler<MouseEvent>(){
+//	          @Override
+//	          public void handle(MouseEvent arg0) {
+//
+//	                 String pokemon=listOfPokemons.getSelectionModel().getSelectedItems().get(0);
+//	                 changeActivePokemon(pokemon);   
+//	          }
+//
+//			
+//	      });	
+//	}
 	
 	public void changeActivePokemon(String pokemon) {
 		for (Pokemon each: mainPlayer.getPokemons()) {

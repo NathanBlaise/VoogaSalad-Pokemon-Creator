@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import data.Database;
 import data.saving.DatabaseLoader;
 import data.saving.DatabaseSaver;
+import engine.UI.ScrollingText;
 import engine.pokemonScene.pokemonScene;
 import javafx.animation.*;
 import javafx.application.Application;

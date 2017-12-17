@@ -6,7 +6,11 @@ import data.event.InstructionVictory;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
-
+/**
+ * 
+ * @author Dan Sun
+ *
+ */
 public class InstructionVictoryEditor implements InstructionEditor {
 	
 	public InstructionVictoryEditor(InstructionVictory instructionVictory, Database database, Callback<Instruction, Integer> saver){

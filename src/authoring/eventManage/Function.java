@@ -4,7 +4,7 @@ package authoring.eventManage;
  * Functional interface that acts as a function
  * that takes in two parameters and returns 
  * a result
- * @author Dan Sun for commenting
+ * @author Dan Sun for commenting, cy122 the creator
  *
  * @param <One> Type of parameter 1
  * @param <Two> Type of parameter 2

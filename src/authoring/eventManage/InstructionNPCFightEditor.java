@@ -14,7 +14,11 @@ import data.event.Instruction;
 import data.event.InstructionNPCFight;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
-
+/**
+ * the editor to choose the pokemon of the NPC to fight
+ * @author cy122
+ *
+ */
 public class InstructionNPCFightEditor implements InstructionEditor{
 	private Callback<Instruction, Integer> saver;
 	private InstructionNPCFight npcFight;

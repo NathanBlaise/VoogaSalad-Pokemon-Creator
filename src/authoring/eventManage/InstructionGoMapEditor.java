@@ -21,7 +21,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 import javafx.util.Pair;
-
+/**
+ * the editor to customized which grid the player will be in the new map and which new map to go
+ * @author cy122
+ *
+ */
 public class InstructionGoMapEditor implements InstructionEditor {
 
     private InstructionGoMap instructionGoMap;

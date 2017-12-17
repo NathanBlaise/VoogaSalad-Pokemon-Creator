@@ -2,22 +2,21 @@ package engine.game;
 
 import java.util.ArrayList;
 
-import data.Database;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
-import javafx.stage.Stage;
-import javafx.util.Callback;
-
+/**
+ * 
+ * @author tony
+ *
+ */
 public class KeyItemBagScene extends BagScene {
 	
 	private final Image KEYITEM =new Image("file:inventory/keyitems.png",144,60,false,false);
 	private final Image KEYITEM_BAG =new Image("file:inventory/backpack_keyitems.png",144,180,false,false);
 	private ArrayList <ItemColomn> colList = new ArrayList <ItemColomn>();
-	private Database dataBase;
+//	private Database dataBase;
 	private int tarRow = 0;
 	private int listLength = 0;
 	private keyItemInterface app;
@@ -25,7 +24,7 @@ public class KeyItemBagScene extends BagScene {
 	
 	public KeyItemBagScene(int width, int height, Paint background, UserPage userPage, keyItemInterface app) {
 		super(width, height, background,userPage );
-		dataBase = userPage.getDataBase();
+//		dataBase = userPage.getDataBase();
 		this.app = app;
 		this.rootAdd(new ImageView(KEYITEM_BAG),0,30);
 		this.rootAdd(new ImageView(KEYITEM),0,253);

@@ -12,7 +12,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
-
+/**
+ * Choose the image for the event
+ * @author cy122
+ *
+ */
 public class EventImage extends BorderPane{
 	private String imagePath;
 	private ImageView imageHolder;

@@ -1,7 +1,6 @@
 package data.model.moves;
 
 import data.model.Pokemon;
-import data.model.PokemonStat;
 
 /**
  * a set of moves which has the certain power and takes damage to the opponent Pokemon

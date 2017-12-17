@@ -3,7 +3,6 @@ package engine.pokemonScene;
 import data.player.Player;
 import engine.UI.Path2Image;
 import engine.battle.BattleScene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 

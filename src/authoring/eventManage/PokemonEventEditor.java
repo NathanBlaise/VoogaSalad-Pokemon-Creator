@@ -11,7 +11,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-
+/**
+ * the event to edit the pokemon for EventPokemon
+ * @author cy122
+ *
+ */
 public class PokemonEventEditor implements Callback<Pokemon, Integer>{
 	private Stage stage;
 	private Pokemon pokemon;

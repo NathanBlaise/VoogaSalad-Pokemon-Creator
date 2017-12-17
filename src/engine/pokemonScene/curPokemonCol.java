@@ -1,6 +1,5 @@
 package engine.pokemonScene;
 
-import data.player.Player;
 import engine.battle.BattleScene;
 import engine.battle.HealthBar;
 import javafx.scene.image.Image;

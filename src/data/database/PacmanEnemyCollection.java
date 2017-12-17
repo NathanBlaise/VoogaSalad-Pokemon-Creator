@@ -3,19 +3,15 @@ package data.database;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
 import util.FilePathConverter;
-import util.fileParsers.NPCFileParser;
 import util.fileParsers.PacmanEnemyParser;
 import data.model.Model;
-import data.model.NPC;
 import data.model.PacmanEnemy;
 
 /**
