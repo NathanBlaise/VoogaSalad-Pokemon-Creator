@@ -9,10 +9,10 @@ import data.player.Player;
  */
 public class BattleBagOptions {
 	
-	private Player mainPlayer;
+//	private Player mainPlayer;
 	
 	public BattleBagOptions(Player player) {
-		mainPlayer = player;
+//		mainPlayer = player;
 	}
 	
 }

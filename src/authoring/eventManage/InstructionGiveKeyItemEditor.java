@@ -7,7 +7,11 @@ import data.Database;
 import data.event.Instruction;
 import data.event.InstructionGiveKeyItem;
 import engine.UI.UIComponentFactory.UIComponentFactory;
-
+/**
+ * the editor for InstructionKeyItem
+ * @author cy122
+ *
+ */
 public class InstructionGiveKeyItemEditor implements InstructionEditor {
 	
 	private InstructionGiveKeyItem instruction;

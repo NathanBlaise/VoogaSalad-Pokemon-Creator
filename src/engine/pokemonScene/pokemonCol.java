@@ -24,8 +24,6 @@ public class pokemonCol extends Pane{
 	
 	private ImageView myImage;
 	private int level;
-	private int fullHealth;
-	private int curHealth;
 	private String name = "";
 	private BattleScene myBs;
 	
@@ -38,8 +36,6 @@ public class pokemonCol extends Pane{
 	public pokemonCol(Image pokeImage,int le,String nam, int fullHea, int curHea) {
 		myImage = new ImageView(pokeImage);
 		level = le;
-		fullHealth = fullHea;
-		curHealth = curHea;
 		name = nam;
 		
 		healthBar = new HealthBar(fullHea, 120,8);
@@ -76,8 +72,6 @@ public class pokemonCol extends Pane{
 	public pokemonCol(Image pokeImage,int le,String nam, int fullHea, int curHea, BattleScene bSce) {
 		myImage = new ImageView(pokeImage);
 		level = le;
-		fullHealth = fullHea;
-		curHealth = curHea;
 		name = nam;
 		myBs = bSce;
 		

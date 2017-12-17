@@ -1,13 +1,5 @@
 package data.saving;
 
-import java.beans.ExceptionListener;
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +7,6 @@ import java.util.Map;
 import data.model.Pokemon;
 import data.model.PokemonSpecie;
 import data.model.PokemonStat;
-import data.model.moves.Action;
 import data.model.moves.ActionExample;
 import data.model.moves.Move;
 
@@ -48,12 +39,12 @@ public class xmlTester {
 		
 	    xmlWriter xw = new xmlWriter();
 	    
-	    xmlReader xr = new xmlReader();
+	    xmlReader<Pokemon> xr = new xmlReader<Pokemon>();
 		
 		Pokemon pok = new Pokemon(ps, "Jake", 1);
 
 	    xw.writeXML(pok, "xmlSerializeTest5.xml");
-	    Pokemon returnedPokemon = (Pokemon) xr.readXML("xmlSerializeTest5.xml");
+	    xr.readXML("xmlSerializeTest5.xml");
 
 	}
 }

@@ -26,7 +26,6 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import util.FilePathConverter;
 	
 
 	/**

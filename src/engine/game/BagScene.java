@@ -3,23 +3,20 @@ package engine.game;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 import authoring.ScreenDisplay;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
-
+/**
+ * 
+ * @author tony
+ *
+ */
 public class BagScene extends ScreenDisplay {
 	/*final variable*/
 	private final Image INVENTORY_GUI =new Image("file:inventory/inventory_gui.png",480,540,false,false);

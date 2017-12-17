@@ -16,7 +16,6 @@ import data.model.Model;
 import data.model.NPC;
 import data.model.Tile;
 import data.model.PokemonSpecie;
-import data.player.PacmanPlayer;
 import data.player.Player;
 
 /**

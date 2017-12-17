@@ -10,10 +10,10 @@ import data.player.Player;
 
 public class BattlePokemonOptions {
 	
-	private Player mainPlayer;
+//	private Player mainPlayer;
 	
 	public BattlePokemonOptions(Player player) {
-		mainPlayer = player;
+//		mainPlayer = player;
 	}
 	
 }

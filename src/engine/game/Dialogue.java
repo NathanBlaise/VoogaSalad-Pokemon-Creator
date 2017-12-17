@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import data.event.InstructionNPCDialogue;
+import engine.UI.ScrollingText;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;

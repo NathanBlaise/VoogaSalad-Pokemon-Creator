@@ -6,7 +6,11 @@ import data.event.InstructionGoShop;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
-
+/**
+ * the editor for go to the shop
+ * @author cy122
+ *
+ */
 public class InstructionGoShopEditor implements InstructionEditor {
 	
 	public InstructionGoShopEditor(InstructionGoShop instructionGoShop, Database database, Callback<Instruction, Integer> saver){

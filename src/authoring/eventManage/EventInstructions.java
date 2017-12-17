@@ -7,8 +7,6 @@ import java.util.Map;
 
 import data.event.Event;
 import data.event.Instruction;
-import data.event.InstructionCheckKeyItem;
-import data.event.InstructionGiveKeyItem;
 import engine.UI.UIComponentFactory.ListViewFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

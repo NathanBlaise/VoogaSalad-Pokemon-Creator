@@ -1,7 +1,6 @@
 package engine.pokemonScene;
 
 import authoring.ScreenDisplay;
-import data.Database;
 import data.player.Player;
 import engine.UI.Path2Image;
 import engine.battle.BattleScene;

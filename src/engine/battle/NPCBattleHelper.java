@@ -9,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;

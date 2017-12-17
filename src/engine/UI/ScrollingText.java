@@ -1,4 +1,4 @@
-package engine.game;
+package engine.UI;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.text.Font;
@@ -7,7 +7,7 @@ import javafx.scene.text.Text;
 
 /**
  * text that can print the letters on by one on the screen
- * @author nathanlewis
+ * @author nathanlewis cy122
  *
  */
 public class ScrollingText extends Text {

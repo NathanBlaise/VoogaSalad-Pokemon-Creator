@@ -22,7 +22,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
-
+/**
+ * the tab to customize the player
+ * @author cy122
+ *
+ */
 public class PlayerTab{
 	private BorderPane root;
 	private Tab tab;

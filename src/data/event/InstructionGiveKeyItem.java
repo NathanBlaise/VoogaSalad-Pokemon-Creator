@@ -6,8 +6,8 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import data.map.GameMap;
 import data.player.Player;
+import engine.UI.ScrollingText;
 import engine.game.GameScene;
-import engine.game.ScrollingText;
 /**
  * give a key item to the player
  * @author cy122

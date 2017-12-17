@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 /**
  * The class provides the functionality of producing image of the 
  * desired width and height from a path
- * @author Dan Sun for commenting
+ * @author Dan Sun for commenting, cy122 as creator
  *
  */
 public class Path2Image {

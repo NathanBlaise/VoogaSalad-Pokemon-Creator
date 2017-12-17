@@ -3,31 +3,28 @@ package engine.battle;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import data.model.Pokemon;
-import javafx.collections.ObservableList;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
+/**
+ * 
+ * @author Yiqin, nathan, tony, Dan Sun
+ *
+ */
 public class BattleGUI {
 	private static final String DEFAULT_RESOURCE_PACKAGE = "util/English_Text";
 	private ResourceBundle myResources;
 	private Image grassBattleBackground = new Image("file:images/grass_battle_background.png");
 	private Image grassBattleGrass1 = new Image("file:images/grass_battle_grass_1.png");
 	private Image grassBattleGrass2 = new Image("file:images/grass_battle_grass_2.png");
-	private Image itemList = new Image("file:images/item_list_background.jpg");
+//	private Image itemList = new Image("file:images/item_list_background.jpg");
 	private Image battleBox = new Image("file:images/battle_box.png");
-	private Image battle_button_box = new Image("file:images/battle_button_box.png");
+//	private Image battle_button_box = new Image("file:images/battle_button_box.png");
 	private Image hpBoxPlayer = new Image("file:images/hp_box_1.png");
 	private Image hpBoxEnemy = new Image("file:images/hp_box_2.png");
 	private String[] initialButtons = {"FIGHT","BAG","POKEMON","RUN"};
@@ -42,14 +39,14 @@ public class BattleGUI {
 	
 	
 	private GraphicsContext gc;
-	private Pokemon playerPokemon;
+//	private Pokemon playerPokemon;
 	private Pokemon enemyPokemon;
 	protected Button[] buttonArr;
-	private ImageView currentActivePokemon;
+//	private ImageView currentActivePokemon;
 	
 	public BattleGUI(GraphicsContext gc, int width, int height, Pokemon pokemon1, Pokemon pokemon2) {
 		this.gc = gc;
-		playerPokemon = pokemon1;
+//		playerPokemon = pokemon1;
 		enemyPokemon = pokemon2;
 		myResources = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE);
 		setUpScreen();
