@@ -72,7 +72,7 @@ public class HealthBar {
 	}
 	
 	public void setHealth(double health, boolean animate) {
-		System.out.println("New Health: " + health + "Last Health :" + lastHealth);
+//		System.out.println("New Health: " + health + "Last Health :" + lastHealth);
 		if(health != lastHealth) {
 			if(health > 0) finalWidth = (health/totalHealth) * totalWidth;
 			else if(health <= 0) finalWidth = 0;
@@ -109,7 +109,7 @@ public class HealthBar {
 					
 				}; timer.start();
 			} else {
-				System.out.println("Width changed");
+//				System.out.println("Width changed");
 				healthBar.setWidth(finalWidth);
 			}
 			

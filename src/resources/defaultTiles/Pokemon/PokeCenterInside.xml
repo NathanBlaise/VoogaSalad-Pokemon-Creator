@@ -1,7 +1,7 @@
 <defaultTile>
 	<name>CenterInside</name>
 	<wholePic>images/tiles/tiles4shop/deskWhole.png</wholePic>
-	<obstacle>true</obstacle>
+	<obstacle>false</obstacle>
 	<height>8</height>
 	<width>14</width>
 	<imagePaths>images/Center1/image_part_001.jpg</imagePaths>

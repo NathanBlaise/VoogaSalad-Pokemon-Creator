@@ -16,6 +16,7 @@ public class EventPacmanEnemy extends Event {
 
 	
 	private PacmanEnemy pacmanEnemy;
+	private double xPos, yPos;
 
 	/**
 	 * set PacmanEnemy in default empty value
@@ -31,6 +32,8 @@ public class EventPacmanEnemy extends Event {
 	public EventPacmanEnemy(PacmanEnemy pacmanEnemy){
 		super(pacmanEnemy.getImagePath());
 		this.pacmanEnemy = pacmanEnemy;
+		xPos = 0;
+		yPos = 0;
 	}
 
 	/**
@@ -47,6 +50,22 @@ public class EventPacmanEnemy extends Event {
 	 */
 	public void setPacmanEnemy(PacmanEnemy pacmanEnemy) {
 		this.pacmanEnemy = pacmanEnemy;
+	}
+	
+	public void setXPos(double x) {
+		xPos = x;
+	}
+	
+	public void setYPos(double y) {
+		yPos = y;
+	}
+	
+	public double getXPos() {
+		return xPos;
+	}
+
+	public double getYPos() {
+		return yPos;
 	}
 
 	@Override

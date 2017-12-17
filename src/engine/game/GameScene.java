@@ -8,7 +8,9 @@ import data.map.DrawMap;
 import data.map.GameMap;
 import data.player.Player;
 import engine.Engine;
+import engine.movement.Collisions;
 import engine.movement.Input;
+import engine.movement.PlayerMovement;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Node;
@@ -178,42 +180,17 @@ public abstract class GameScene extends ScreenDisplay {
 	 * Come back from the NPC Battle Scene to Game Scene
 	 */
 	public void changeBackScene() {
-
 		if((currentEvent!=null)&&(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
 			instructionIndex++;
 		}else{
-//			refreshCurrentEvent();
 			currentEvent = null;
 		}
 		myStage.setScene(this.getScene());
-//		refreshMap(mainMap, playerImage.getX()-tileCanvas.getLayoutX(), playerImage.getY()-tileCanvas.getLayoutY());
 		myStage.setWidth(screen_width);
 		myStage.setHeight(screen_height);
 		input.releaseAllKeys();
 		input.addListeners();
 		animation.play();
-//=======
-//	    if(currentEvent!=null){
-//		if((currentEvent.getInstructions().size() > instructionIndex) &&
-//			(currentEvent.getInstructions().get(instructionIndex).isGoNextInstruction())){
-//		    instructionIndex++;
-//		} 
-//	    }else{
-//		currentEvent = null;
-//		instructionIndex = 0;
-//	    }
-//	}
-//
-//	/**
-//	 * Access point after a battle is won, in which case 
-//	 * the battle event is removed from the instructoin list
-//	 * consequently we need to decrease the bookkeeping variables
-//	 */
-//	public void changeBackSceneFromWinningBattle() {
-//	    //currentEvent cannot be null
-//	    instructionIndex = instructionIndex > 0 ? instructionIndex - 1 : 0;
-//	    changeBackScene();
-//>>>>>>> master
 	}
 	
 	public boolean hasNextInstruction() {
@@ -232,7 +209,7 @@ public abstract class GameScene extends ScreenDisplay {
 		return myStage;
 	}
 	
-	public void refreshMap(GameMap mainMap, double futureX, double futureY){
+	public Map<Event,ImageView> refreshMap(GameMap mainMap, double futureX, double futureY){
 		this.mainMap = mainMap;
 		mainPlayer.setCurrentMapName(mainMap.getName());
 		this.rootClear();
@@ -245,6 +222,7 @@ public abstract class GameScene extends ScreenDisplay {
 		this.rootAdd(mapPane);
 		changePlayerImagePosition(futureX, futureY);
 		this.rootAdd(playerImage);
+		return drawMap.getMovingEvents();
 	}
 	
 	/**
@@ -281,5 +259,20 @@ public abstract class GameScene extends ScreenDisplay {
 	
 	public static double getPixelSize(){
 		return pixelSize;
+	}
+	
+	protected void executeFoundEvent(double nextPosX, double nextPosY, double sizeBlockX, double sizeBlockY) {
+		Pair<Integer, Integer> playerIndex = PlayerMovement.playerIndexOnGrid(nextPosX+offsetX+sizeBlockX/2-tileCanvas.getLayoutX(), nextPosY+offsetY+sizeBlockY/2-tileCanvas.getLayoutY(), pixelSize, pixelSize);
+		Map<Pair<Integer, Integer>, Event> collideEvents = Collisions.getCollideEvents(nextPosX+offsetX, nextPosY+offsetY, sizeBlockX, sizeBlockY, mapPane, mainMap);
+		ArrayList<Pair<Integer, Integer>> directions = new ArrayList<Pair<Integer, Integer>>();
+		for(String key: input2direction.keySet()){
+			if(input.getInputList().contains(key)){
+				directions.add(input2direction.get(key));
+			}
+		}
+		Event encounterEvent = Collisions.searchEvent(playerIndex, directions, collideEvents);
+		if((encounterEvent!=null)&&(directions.size()!=0)){
+			executeEvent(encounterEvent);
+		}
 	}
 }

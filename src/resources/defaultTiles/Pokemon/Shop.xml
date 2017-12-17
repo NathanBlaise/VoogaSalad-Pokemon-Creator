@@ -1,7 +1,7 @@
 <defaultTile>
 	<name>Shop</name>
 	<wholePic>images/tiles/tiles4shop/deskWhole.png</wholePic>
-	<obstacle>true</obstacle>
+	<obstacle>false</obstacle>
 	<height>8</height>
 	<width>11</width>
 	<imagePaths>images/Shop/image_part_001.jpg</imagePaths>

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import authoring.ScreenDisplay;
 import data.items.Item;
 import data.player.Player;
 import engine.game.GameScene;
@@ -13,12 +14,16 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.util.Callback;
  
 /**
@@ -27,10 +32,23 @@ import javafx.util.Callback;
  *
  */
 
-public class ShopScene extends ItemsScene{
+public class ShopScene extends ScreenDisplay{
+	
+	private final int TABLE_LIST_WIDTH = 350;
+	private final int ITEM_LIST_HEIGHT = 480;
+	private final int ITEM_LIST_XPOS = 360;
+	private final int TABLE_HEIGHT = 300;
+	private final int TABLE_YPOS= 100;
+	private final int QUIT_BUTTON_XPOS = 120;
+	private final int QUIT_BUTTON_YPOS = 420;
+	private final int CURRENCY_DISPLAY_SIZEX = 350;
+	private final int CURRENCY_DISPLAY_SIZEY = 100;
+	
+	private Player mainPlayer;
+	private StackPane currencyDisplay = new StackPane();
 	
 	/**
-	 * Scene used to buy items
+	 * Scene used to buy items, contains a listview to purchase items, a table view to show players items and currency display
 	 * @param width
 	 * @param height
 	 * @param gameScene
@@ -39,7 +57,14 @@ public class ShopScene extends ItemsScene{
 	 * @param player
 	 */
 	public ShopScene(int width, int height, GameScene gameScene, List<Item> availableItems, Paint background, Player player) {
-		super(width, height, availableItems, background, player);
+		super(width, height, background);
+		mainPlayer = player;
+		currencyDisplay.getChildren().addAll(createCurrencyDisplay());
+		currencyDisplay.setPrefSize(CURRENCY_DISPLAY_SIZEX, CURRENCY_DISPLAY_SIZEY);
+		currencyDisplay.setId("stack-pane");
+		this.rootAdd(currencyDisplay, 0, 0);
+		this.rootAdd(setListView(availableItems));
+		this.getScene().getStylesheets().add("resources/shopScene.css");
 		
 		Map<String,Integer> items = null;
 		try{
@@ -54,10 +79,10 @@ public class ShopScene extends ItemsScene{
 		quitButton.setOnMouseClicked(e->{
 			gameScene.changeBackScene();
 		});
-		this.rootAdd(quitButton,120, 420);
+		this.rootAdd(quitButton,QUIT_BUTTON_XPOS, QUIT_BUTTON_YPOS);
 	}
 	
-	protected ListView<String> setListView(List<Item> items) {
+	private ListView<String> setListView(List<Item> items) {
 		ObservableList<String> allItemsList = FXCollections.observableArrayList(
 			items.stream()
 				 .map(e->e.getItemName())
@@ -81,11 +106,19 @@ public class ShopScene extends ItemsScene{
 				return null;
 			}
 		}));
-        itemList.setPrefWidth(350);
-        itemList.setPrefHeight(480);
-        itemList.setLayoutX(360);
+        itemList.setPrefWidth(TABLE_LIST_WIDTH);
+        itemList.setPrefHeight(ITEM_LIST_HEIGHT);
+        itemList.setLayoutX(ITEM_LIST_XPOS);
         itemList.setLayoutY(0);
         return itemList;
+	}
+	
+	//https://stackoverflow.com/questions/37541279/javafx-centered-text-in-scene
+	private Text createCurrencyDisplay(){
+		Text currency =  new Text("Money: " + new Double(mainPlayer.getCurrency()).intValue());
+		currency.setTextAlignment(TextAlignment.CENTER);
+		StackPane.setAlignment(currency, Pos.CENTER);
+		return currency;
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -118,10 +151,10 @@ public class ShopScene extends ItemsScene{
         table.setItems(data); 
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         table.getColumns().addAll(abilityCol, valueCol);
-        table.setPrefWidth(350);
-        table.setPrefHeight(300);
+        table.setPrefWidth(TABLE_LIST_WIDTH);
+        table.setPrefHeight(TABLE_HEIGHT);
         table.setLayoutX(0);
-        table.setLayoutY(100);
+        table.setLayoutY(TABLE_YPOS);
         return table;
 	}
 	
